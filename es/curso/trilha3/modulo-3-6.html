@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="jarvis" name="inema-course"/>
+<!-- 1) ANTI-FOUC (REL = "../..") -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'purple' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'purple');
+      var s = html.style; var scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.purple;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<!-- 2) Manifesto (identico em TODAS as paginas) -->
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "jarvis",
+    "tracks": [
+      { "n": "1", "title": "Infraestrutura e Mentalidade", "modules": [
+        { "id": "1-1", "title": "A Virada: de Operador a Arquiteto", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "A Metafora do Jarvis", "topics": 7, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Infraestrutura: Pastas, Terminal e Versionamento", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Publicar no Mundo", "topics": 7, "href": "curso/trilha1/modulo-1-4.html" },
+        { "id": "1-5", "title": "Canais de Entrada e Saida", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+      ] },
+      { "n": "2", "title": "Construcao do Jarvis", "modules": [
+        { "id": "2-1", "title": "A Alma do Jarvis", "topics": 7, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Servicos Internos", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Agentes", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Habilidades", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+        { "id": "2-5", "title": "Memoria e Contexto", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+        { "id": "2-6", "title": "Muros de Seguranca", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" },
+        { "id": "2-7", "title": "Ferramentas e Integracoes", "topics": 6, "href": "curso/trilha2/modulo-2-7.html" }
+      ] },
+      { "n": "3", "title": "Solucao Real na Empresa", "modules": [
+        { "id": "3-1", "title": "A Intencao no Centro", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Mapear o Problema", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Desenhar a Arquitetura", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Prototipo Funcional", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Medir Resultado", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+        { "id": "3-6", "title": "Evolucao e Apresentacao", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 3.6 · Evolución y presentación | Arquitectura de intención de la IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento purple (T3) */
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,0.25); }
+    html:not(.dark) .hover\:bg-purple-500\/30:hover { background-color: rgba(124,58,237,0.18); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    /* hovers das outras trilhas no nav */
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    /* sem gradientes + especiais */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    /* dark - bordas suaves */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.2s} .wf-a:nth-child(3){animation-delay:.4s} .wf-a:nth-child(4){animation-delay:.6s}
+    }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+    .appearance-anchor { position: relative; }
+    .toc-link.is-active { color: #c084fc; font-weight: 600; }
+    html:not(.dark) .toc-link.is-active { color: #7c3aed; }
+  </style>
+<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha3/modulo-3-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha3/modulo-3-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha3/modulo-3-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip" href="#conteudo">Ir al contenido</a>
+<!-- NAV COMPLETO -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitectura de Intención</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
+<span class="sm:hidden">D1</span><span class="hidden sm:inline">Día 1</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">
+<span class="sm:hidden">D2</span><span class="hidden sm:inline">Día 2</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html">
+<span class="sm:hidden">D3</span><span class="hidden sm:inline">Día 3</span></a>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Mi recorrido" type="button">
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span>
+<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<div class="appearance-anchor">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Apariencia y lectura" type="button"><span aria-hidden="true">◑</span></button>
+<div class="inema-appearance-pop" data-inema-appearance="">
+<div aria-label="Tema" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark" type="button">Oscuro</button>
+<button data-inema-set-theme="claro" type="button">Claro</button>
+<button data-inema-set-theme="sepia" type="button">Sepia</button>
+<button data-inema-set-theme="foco" type="button">Enfoque</button>
+<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+</div>
+<div aria-label="Fuente" class="inema-segment" role="group">
+<button data-inema-set-font="inter" type="button">Inter</button>
+<button data-inema-set-font="system" type="button">Sistema</button>
+<button data-inema-set-font="leitura" type="button">Lectura</button>
+</div>
+<div aria-label="Tamaño del texto" class="inema-segment" role="group">
+<button data-inema-set-fontscale="100" type="button">A</button>
+<button data-inema-set-fontscale="112" type="button">A+</button>
+<button data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60" type="button">Estrecho</button>
+<button data-inema-set-linewidth="68" type="button">Medio</button>
+<button data-inema-set-linewidth="75" type="button">Amplio</button>
+</div>
+<div aria-label="Entre líneas" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45" type="button">Compacto</button>
+<button data-inema-set-leading="1.7" type="button">Cómodo</button>
+</div>
+<div aria-label="Color de acento" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-inema-set-accent="blue" title="Azul" type="button"></button>
+<button data-inema-set-accent="purple" title="Morado" type="button"></button>
+<button data-inema-set-accent="amber" title="Ámbar" type="button"></button>
+<button data-inema-set-accent="teal" title="Teal" type="button"></button>
+<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- BREADCRUMB -->
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-purple-400" href="index.html">Día 3</a><span>/</span>
+<span class="text-purple-400">Módulo 3.6</span>
+</div>
+</nav>
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.6</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📈 Evolución y presentación</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">La solución nació y se midió; ahora aprende, mejora y hay que mostrarla. Este es el cierre del curso: el ciclo de evolución continua que hace que el sistema mejore por sí solo, y el arte de presentar valor a la empresa. Aquí completas el recorrido de operador de prompts a arquitecto de intención.</p>
+<!-- SVG: loop de evolução (medir → aprender → melhorar) + entrega/apresentação -->
+<div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
+<svg aria-label="Diagrama: un ciclo continuo de medir, aprender y mejorar gira sobre sí mismo, asciende por una flecha de crecimiento y desemboca en la presentación de la solución a la empresa" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<defs>
+<lineargradient id="m36-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
+<filter height="180%" id="m36-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m36-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#a855f7" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m36-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#c084fc"></path></marker>
+<marker id="m36-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m36-grid)" height="250" width="1000" x="0" y="0"></rect>
+<!-- seta de crescimento ao fundo -->
+<path d="M70,210 L520,90" fill="none" marker-end="url(#m36-ah)" opacity="0.30" stroke="#a855f7" stroke-dasharray="8 8" stroke-width="1.6"></path>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" x="120" y="232">cada vuelta sube un peldaño</text>
+<!-- ciclo: medir -> aprender -> melhorar (ciano = feedback) -->
+<g fill="none" opacity="0.55" stroke="#38bdf8" stroke-width="1.8">
+<path d="M214,86 C268,70 320,70 360,86" marker-end="url(#m36-ahc)"></path>
+<path d="M404,128 C420,162 396,196 350,200" marker-end="url(#m36-ahc)"></path>
+<path d="M236,200 C176,196 156,150 188,118" marker-end="url(#m36-ahc)"></path>
+</g>
+<!-- nó: medir -->
+<g filter="url(#m36-glow)"><rect fill="#1a1230" height="50" rx="13" stroke="url(#m36-grad)" stroke-width="2" width="118" x="120" y="60"></rect></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="179" y="82">Medir</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="179" y="99">el resultado real</text>
+<!-- nó: aprender -->
+<rect fill="#1a1230" height="50" rx="13" stroke="#c084fc" stroke-width="2" width="118" x="344" y="86"></rect>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="403" y="108">Aprender</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="403" y="125">qué ajustar</text>
+<!-- nó: melhorar -->
+<rect fill="#1a1230" height="50" rx="13" stroke="#c084fc" stroke-width="2" width="118" x="232" y="176"></rect>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="291" y="198">Mejorar</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="291" y="215">la solución evoluciona</text>
+<!-- saída para apresentação -->
+<path d="M462,111 L560,125" fill="none" marker-end="url(#m36-ah)" opacity="0.55" stroke="#c084fc" stroke-width="1.8"></path>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="11" x="540" y="100">mostrar el valor</text>
+<!-- bloco apresentação / entrega -->
+<g filter="url(#m36-glow)"><rect fill="#1a1230" height="90" rx="14" stroke="url(#m36-grad)" stroke-width="2" width="180" x="566" y="80"></rect></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="656" y="108">Presentar</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="656" y="130">valor para la empresa</text>
+<text fill="#bfa8e6" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="656" y="150">antes → después → siguiente</text>
+<!-- entrega final: escala -->
+<g font-family="Inter,sans-serif" font-size="11.5" font-weight="600">
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="8" stroke="#38bdf8" stroke-width="1.8" width="166" x="788" y="62"></rect><text fill="#bfe6ff" text-anchor="middle" x="871" y="81">siguiente paso</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="8" stroke="#38bdf8" stroke-width="1.8" width="166" x="788" y="100"></rect><text fill="#bfe6ff" text-anchor="middle" x="871" y="119">escalar</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="8" stroke="#38bdf8" stroke-width="1.8" width="166" x="788" y="138"></rect><text fill="#bfe6ff" text-anchor="middle" x="871" y="157">arquitecto de intención</text></g>
+</g>
+<g fill="none" opacity="0.45" stroke="#38bdf8" stroke-width="1.6">
+<path d="M746,108 L786,77"></path>
+<path d="M746,120 L786,115"></path>
+<path d="M746,132 L786,153"></path>
+</g>
+</svg>
+</div>
+<div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Síntesis</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 3.6" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:3-6" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progreso del módulo</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 6</strong> · <span data-inema-meter-pct="">0%</span></span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</div>
+</header>
+<!-- CORPO + TOC -->
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
+<main id="conteudo">
+<!-- TÓPICO 1 -->
+<section class="mb-16" data-inema-module="3-6" data-inema-topic="modulo-3-6#topico-1" data-inema-track="3" id="topico-1">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">🔁 Mejora continua</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-6-t1-p1">Una solución de IA no es un cuadro que cuelgas en la pared y olvidas. Es un <strong class="text-purple-400">organismo que necesita atención continua</strong>. El prototipo del Día 3 es la versión 1, y la versión 1 nunca es la mejor. La mejora continua es el hábito de medir, aprender y ajustar en ciclos cortos, para que la solución mejore un poco cada semana, sin depender nunca de un gran relanzamiento.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">🔄</span> El ciclo que nunca se detiene</h3>
+<p class="text-neutral-300">Medir el resultado real → aprender qué está obstaculizando → mejorar una cosa a la vez → volver a medir. Cada vuelta del ciclo sube un peldaño. Las soluciones que evolucionan así superan a las soluciones «perfectas» que se quedaron estancadas, porque el mundo cambia y solo quienes se ajustan pueden seguirle el ritmo.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-4">✓ Evolución saludable</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Ajustes pequeños y frecuentes</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Cada cambio se guía por una métrica</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Una mejora a la vez, de forma aislada</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Aprende del uso real, no de las suposiciones</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Estancamiento o caos</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Está listo, no lo toques más"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Una gran reforma cada seis meses</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cambiar diez cosas sin saber qué funcionó</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Evolucionar según opiniones, sin datos</span></li>
+</ul>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🛠️</span> Conceptos clave</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ciclo corto</div><div class="text-xs text-neutral-400">medir → aprender → mejorar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Versión viva</div><div class="text-xs text-neutral-400">la v1 nunca es la mejor</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Una a la vez</div><div class="text-xs text-neutral-400">aislar la causa</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Guiada por datos</div><div class="text-xs text-neutral-400">no por suposiciones</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-16" data-inema-module="3-6" data-inema-topic="modulo-3-6#topico-2" data-inema-track="3" id="topico-2">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">🧠 El sistema aprende y se adapta</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-6-t2-p1">"Aprender" aquí no es magia ni entrenamiento de modelos. Es algo mucho más práctico: con cada interacción real, el sistema genera <strong class="text-purple-400">señales</strong> — preguntas que no supo responder, respuestas que el usuario corrigió, casos que se salieron de las reglas. El arquitecto convierte estas señales en ajustes en la esencia, el contexto, las habilidades y las reglas. Así se adapta Jarvis: el uso se convierte en materia prima para mejorar.</p>
+<!-- SVG: uso real -> sinais -> ajustes -->
+<div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Diagrama: el uso real genera señales (dudas, correcciones, casos fuera de la regla) que se convierten en ajustes en el alma, el contexto y las reglas, y vuelven al uso en un ciclo" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<filter height="180%" id="m36b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="30" id="m36b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#a855f7" opacity="0.10" r="1.2"></circle></pattern>
+<marker id="m36b-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#c084fc"></path></marker>
+<marker id="m36b-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m36b-grid)" height="200" width="1000" x="0" y="0"></rect>
+<!-- uso -> sinais -> ajustes -->
+<g fill="none" opacity="0.55" stroke="#c084fc" stroke-width="1.8">
+<path d="M214,90 L300,90" marker-end="url(#m36b-ah)"></path>
+<path d="M520,90 L606,90" marker-end="url(#m36b-ah)"></path>
+</g>
+<!-- laço de volta (ciano): ajustes -> uso -->
+<g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
+<path d="M788,128 C788,176 120,176 120,128" marker-end="url(#m36b-ahc)"></path>
+</g>
+<g filter="url(#m36b-glow)"><rect fill="#1a1230" height="52" rx="13" stroke="url(#m36-grad)" stroke-width="2" width="150" x="64" y="64"></rect></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="139" y="88">Uso real</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="139" y="105">personas usando</text>
+<rect fill="#0e1b26" height="68" rx="13" stroke="#38bdf8" stroke-width="1.8" width="216" x="304" y="56"></rect>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="412" y="80">Señales</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="412" y="99">dudas · correcciones</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="412" y="114">casos fuera de la regla</text>
+<g filter="url(#m36b-glow)"><rect fill="#1a1230" height="52" rx="13" stroke="url(#m36-grad)" stroke-width="2" width="178" x="610" y="64"></rect></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="699" y="88">Ajustes</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="699" y="105">alma · contexto · reglas</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="450" y="170">el uso vuelve como mejora — el sistema se adapta sin tener que rehacerlo desde cero</text>
+</svg>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Crea un lugar sencillo donde las señales queden visibles: una hoja de cálculo o un canal donde se anoten todas las dudas sin respuesta y todas las correcciones del usuario. Una vez por semana, lee esta lista: es la lista de mejoras del sistema, escrita a partir del uso real.</p>
+</div>
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🛠️</span> Conceptos clave</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Señal</div><div class="text-xs text-neutral-400">el uso se convierte en dato</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Adaptación</div><div class="text-xs text-neutral-400">ajustar, no rehacer</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Bucle</div><div class="text-xs text-neutral-400">uso → mejora → uso</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Curaduría</div><div class="text-xs text-neutral-400">el arquitecto elige</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-16" data-inema-module="3-6" data-inema-topic="modulo-3-6#topico-3" data-inema-track="3" id="topico-3">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">🎤 Presentar la solución</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-6-t3-p1">Una solución que nadie entiende no se adopta, y una solución que no se adopta es dinero tirado. Saber <strong class="text-purple-400">presentar</strong> es tan importante como construir. Presentar no es mostrar la tecnología: es contar una historia breve y clara: cuál era el problema, qué hiciste y qué cambió. Quienes toman decisiones en la empresa no quieren oír hablar de agentes y prompts; quieren ver el problema resuelto.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Guion para presentar la solución (5 bloques)</h3>
+<div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
+<div><span class="text-purple-400">1. el problema:</span> "Hoy, [quién] dedica [tiempo] a [problema]."</div>
+<div><span class="text-purple-400">2. la intención:</span> "Decidimos [un resultado claro y medible]."</div>
+<div><span class="text-purple-400">3. la solución:</span> "Construimos [lo que hace], en 1 frase."</div>
+<div><span class="text-purple-400">4. el resultado:</span> "Antes: [X]. Después: [Y]. Beneficio: [Z]."</div>
+<div><span class="text-purple-400">5. el siguiente paso:</span> "Con esto listo, podemos [escalar]."</div>
+</div>
+<p class="text-xs text-neutral-500 mt-3">Guion ilustrativo: completa los corchetes con tu solución real. Una buena presentación dura 3 minutos.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-4">✓ Presentación convincente</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Empieza por el problema de quien escucha</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Muestra el antes y el después</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Una demostración breve y real</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Termina con un siguiente paso claro</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Presentación que aleja</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Empieza explicando la tecnología</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Jerga: «agente», «embedding», «RAG»</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Demasiadas diapositivas, pocas demostraciones</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sin decir qué hacer a continuación</span></li>
+</ul>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🛠️</span> Conceptos clave</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Historia</div><div class="text-xs text-neutral-400">dolor → hecho → cambio</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Sin jerga</div><div class="text-xs text-neutral-400">voz de la empresa</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Demostrar</div><div class="text-xs text-neutral-400">mostrar &gt; describir</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">3 minutos</div><div class="text-xs text-neutral-400">breve y claro</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-16" data-inema-module="3-6" data-inema-topic="modulo-3-6#topico-4" data-inema-track="3" id="topico-4">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">💰 Mostrar el valor para la empresa</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-6-t4-p1">El valor, para una empresa, siempre es una de cuatro cosas: <strong class="text-purple-400">ganó tiempo, ahorró dinero, ganó dinero o redujo el riesgo</strong>. El arquitecto traduce la métrica que midió (Módulo 3.5) a uno de estos lenguajes. «La atención se volvió más rápida» es débil; «cada agente ahorra 2 horas al día, que se convierten en 40 horas al mes para el equipo» es un valor que el dueño entiende, porque puede ponerle una cifra de negocio.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Tiempo</h4><p class="text-neutral-300 text-sm">Horas que el equipo deja de dedicar —y que se convierten en otra entrega o en descanso.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Dinero ahorrado</h4><p class="text-neutral-300 text-sm">Costo que disminuye: menos retrabajo, menos errores, menos horas extra.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Dinero ganado</h4><p class="text-neutral-300 text-sm">Más ventas, clientes que se quedan, oportunidades que no se pierden.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Riesgo reducido</h4><p class="text-neutral-300 text-sm">Menos posibilidades de un error costoso, de perder información o de irritar a un cliente.</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Siempre que presentes un número técnico, hazte la pregunta del dueño: "¿y qué?". "Reduje el tiempo de respuesta de 10 a 2 minutos" → "¿y qué?" → "eso significa atender a 3x más clientes con el mismo equipo". El "¿y qué?" es el puente entre la métrica y el valor para el negocio.</p>
+</div>
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🛠️</span> Conceptos clave</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">4 valores</div><div class="text-xs text-neutral-400">tiempo · costo · ingresos · riesgo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Traducir</div><div class="text-xs text-neutral-400">métrica → negocio</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">"¿Y entonces?"</div><div class="text-xs text-neutral-400">el puente hacia el valor</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Número</div><div class="text-xs text-neutral-400">concreto, no vago</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-16" data-inema-module="3-6" data-inema-topic="modulo-3-6#topico-5" data-inema-track="3" id="topico-5">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">🚀 Próximos pasos / escala</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-6-t5-p1">Una solución que funciona y demuestra su valor abre puertas. El siguiente paso natural es <strong class="text-purple-400">escalar</strong>: llevar la misma solución a más personas, a más áreas o resolver el siguiente problema de la fila con la base que ya construiste. Escalar no es empezar de cero: es reutilizar la infraestructura, la esencia y los servicios que construiste el Día 1 y el Día 2, ahora orientados a una nueva intención. Cada solución entregada hace que la siguiente sea más rápida.</p>
+<!-- TIMELINE: do piloto à escala -->
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex flex-col items-center flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
+<div class="w-0.5 flex-1 bg-purple-500/20 mt-2"></div>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600 mb-2"><h4 class="font-semibold text-neutral-100 mb-1">Piloto funcional</h4><p class="text-neutral-300 text-sm">La solución del Día 3, funcionando para un grupo pequeño, con resultados medidos y valor comprobado.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex flex-col items-center flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
+<div class="w-0.5 flex-1 bg-purple-500/20 mt-2"></div>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600 mb-2"><h4 class="font-semibold text-neutral-100 mb-1">Ampliar el alcance</h4><p class="text-neutral-300 text-sm">Más usuarios, más canales, más casos cubiertos: la misma solución, en un círculo más amplio.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex flex-col items-center flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
+<div class="w-0.5 flex-1 bg-purple-500/20 mt-2"></div>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600 mb-2"><h4 class="font-semibold text-neutral-100 mb-1">Reutilizar la base</h4><p class="text-neutral-300 text-sm">La infraestructura y el alma ya están listas; el próximo problema parte de un terreno preparado.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex flex-col items-center flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">4</span></div>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Ecosistema de soluciones</h4><p class="text-neutral-300 text-sm">Varias intenciones resueltas sobre la misma base: la empresa pasa a tener un Jarvis de verdad.</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Antes de escalar, asegúrate de que el piloto sea estable y que los números den respaldo. Escalar una solución multiplica el valor; escalar un problema multiplica el caos. La medición del Módulo 3.5 es tu luz verde para crecer.</p>
+</div>
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🛠️</span> Conceptos clave</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Escalar</div><div class="text-xs text-neutral-400">más alcance, la misma base</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Reutilización</div><div class="text-xs text-neutral-400">infraestructura + esencia ya listas</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Siguiente problema</div><div class="text-xs text-neutral-400">la fila de valor</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ecosistema</div><div class="text-xs text-neutral-400">muchas intenciones, 1 base</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-16" data-inema-module="3-6" data-inema-topic="modulo-3-6#topico-6" data-inema-track="3" id="topico-6">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">🧭 De estudiante a arquitecto de intención</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-6-t6-p1">Empezaste este curso haciendo la pregunta de quien opera: <em class="text-neutral-400">"¿qué prompt uso?"</em>. Terminas haciendo la pregunta de quien construye: <strong class="text-purple-400">"¿qué sistema necesito para resolver esto y cómo hago que evolucione y muestre valor?"</strong>. Esta es toda la transformación. La herramienta cambiará mil veces; la capacidad de estructurar la intención, armar la solución, medir y presentar es lo que te queda, y lo que nadie te puede quitar.</p>
+<div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Diagrama: a la izquierda, el operador de prompts, conectado a una única respuesta; a la derecha, el arquitecto de intención, conectado a un sistema que entrega, mide, evoluciona y presenta valor" class="w-full h-auto" role="img" viewbox="0 0 1000 170">
+<defs>
+<filter height="180%" id="m36c-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="30" id="m36c-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#a855f7" opacity="0.10" r="1.2"></circle></pattern>
+<marker id="m36c-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#c084fc"></path></marker>
+<marker id="m36c-ahn" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#9ca3af"></path></marker>
+</defs>
+<rect fill="url(#m36c-grid)" height="170" width="1000" x="0" y="0"></rect>
+<line stroke="#374151" stroke-dasharray="7 7" stroke-width="1.5" x1="430" x2="430" y1="20" y2="150"></line>
+<!-- antes -->
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="14" font-weight="600" x="40" y="38">Antes — estudiante / operador</text>
+<rect fill="#26201a" height="48" rx="12" stroke="#9ca3af" stroke-width="2" width="150" x="40" y="64"></rect>
+<text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" x="115" y="93">"¿qué prompt?"</text>
+<path d="M194,88 L256,88" fill="none" marker-end="url(#m36c-ahn)" opacity="0.6" stroke="#9ca3af" stroke-width="1.8"></path>
+<rect fill="#26201a" height="48" rx="12" stroke="#9ca3af" stroke-width="2" width="140" x="260" y="64"></rect>
+<text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" x="330" y="93">respuesta aislada</text>
+<!-- depois -->
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" x="470" y="38">Después — arquitecto de intención</text>
+<g filter="url(#m36c-glow)"><rect fill="#1a1230" height="48" rx="12" stroke="url(#m36-grad)" stroke-width="2" width="140" x="470" y="64"></rect></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="540" y="86">Intención</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="540" y="103">"¿qué sistema?"</text>
+<g fill="none" opacity="0.5" stroke="#c084fc" stroke-width="1.6">
+<path d="M610,80 C648,80 652,58 690,58" marker-end="url(#m36c-ah)"></path>
+<path d="M610,88 L690,88" marker-end="url(#m36c-ah)"></path>
+<path d="M610,96 C648,96 652,118 690,118" marker-end="url(#m36c-ah)"></path>
+</g>
+<g font-family="Inter,sans-serif" font-size="11" font-weight="600">
+<g class="wf-a"><rect fill="#1a1230" height="28" rx="8" stroke="#c084fc" stroke-width="1.6" width="150" x="690" y="44"></rect><text fill="#e9d5ff" text-anchor="middle" x="765" y="62">entrega · mide</text></g>
+<g class="wf-a"><rect fill="#1a1230" height="28" rx="8" stroke="#c084fc" stroke-width="1.6" width="150" x="690" y="74"></rect><text fill="#e9d5ff" text-anchor="middle" x="765" y="92">evoluciona</text></g>
+<g class="wf-a"><rect fill="#1a1230" height="28" rx="8" stroke="#c084fc" stroke-width="1.6" width="150" x="690" y="104"></rect><text fill="#e9d5ff" text-anchor="middle" x="765" y="122">presenta valor</text></g>
+</g>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" transform="rotate(90 912 92)" x="912" y="92">solución viva</text>
+</svg>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">⭐</span> Lo que queda en tus manos</h3>
+<p class="text-neutral-300">No fue una herramienta lo que aprendiste: fue una forma de pensar. Observar un problema y reconocer la intención; transformar la intención en arquitectura; la arquitectura en prototipo; el prototipo en un resultado medido; y el resultado en valor presentado. <strong class="text-purple-400">El futuro pertenece a quien sabe estructurar mejor</strong>, no a quien memoriza el prompt de la semana.</p>
+</div>
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🛠️</span> Conceptos clave</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">El cambio de perspectiva</div><div class="text-xs text-neutral-400">prompt → sistema</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">El activo</div><div class="text-xs text-neutral-400">estructurar, no memorizar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">El ciclo completo</div><div class="text-xs text-neutral-400">intención → valor</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">El futuro</div><div class="text-xs text-neutral-400">de quién estructura mejor</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
+<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-3-6#q1">
+<p class="font-medium mb-4">Autoevaluación (opcional): ¿cuál es la mejor forma de mostrarle el valor de una solución a la empresa?</p>
+<div class="inema-check-options space-y-2">
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Explicar en detalle la tecnología: agentes, prompts e integraciones utilizados.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Traducir la métrica en un beneficio para el negocio —tiempo, dinero o riesgo— con el antes y el después.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Decir que «quedó mucho más moderno y usa IA de vanguardia».</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<!-- RESUMO — FECHO DO CURSO -->
+<section class="mb-8">
+<div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+<h2 class="text-2xl font-bold mb-2 flex items-center"><span class="mr-3">🏁</span> Fin del recorrido — felicidades</h2>
+<p class="text-neutral-300 mb-6">Llegaste al último módulo. En tres días, recorriste todo el camino: adoptaste la mentalidad y la infraestructura, construiste Jarvis pieza por pieza y resolviste un problema real en una empresa, desde el diagnóstico hasta la presentación del valor. Este módulo cerró el ciclo: ahora la solución aprende, mejora y se muestra.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Mejora continua</strong><span class="text-neutral-400"> — medir, aprender y ajustar en ciclos cortos; la v1 nunca es la mejor.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">El sistema aprende y se adapta</strong><span class="text-neutral-400"> — el uso real se convierte en señales que se transforman en ajustes en la esencia, el contexto y las reglas.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Presentar la solución</strong><span class="text-neutral-400"> — contar una historia corta: el problema, qué se hizo, qué cambió — sin jerga.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Mostrar valor</strong><span class="text-neutral-400"> — traducir la métrica a tiempo, dinero o riesgo que el dueño entienda.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Próximos pasos / escala</strong><span class="text-neutral-400"> — reutilizar la base para ampliar el alcance y resolver el siguiente problema.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">De alumno a arquitecto de intenciones</strong><span class="text-neutral-400"> — el cambio de «¿qué prompt?» a «¿qué sistema?» es lo que te llevas.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-6 mb-8 border border-purple-500/20">
+<h3 class="font-semibold text-purple-400 mb-2 flex items-center"><span class="mr-2">🚀</span> Ya no eres la misma persona</h3>
+<p class="text-neutral-300">Empezaste operando prompts; terminas diseñando arquitecturas de intenciones. Aprendiste a observar un problema y ver el sistema completo: intención, arquitectura, prototipo, medición, evolución y valor. Las herramientas cambiarán mil veces; la claridad para estructurar, medir y presentar es el activo que no queda obsoleto. <strong class="text-purple-400">El futuro pertenece a quien sabe estructurar mejor.</strong> Ahora te toca a ti: elige un problema real y construye.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver al Día 3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold transition-colors" href="../../index.html">Concluir · Volver al inicio ↺</a>
+</div>
+</div>
+</section>
+</main>
+<!-- TOC STICKY + SCROLLSPY -->
+<aside class="hidden lg:block">
+<nav aria-label="Índice del módulo" class="sticky top-20 self-start text-sm" data-inema-toc="">
+<p class="text-neutral-400 mb-3 font-medium">En esta página <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<ol class="space-y-2 border-l border-dark-600 pl-4">
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-1">1. Mejora continua</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. El sistema aprende</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. Presentar la solución</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. Mostrar el valor</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. Próximos pasos / escala</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. De alumno a arquitecto</a></li>
+</ol>
+</nav>
+</aside>
+</div>
+<footer class="border-t border-dark-600 py-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Arquitectura de Intención de la IA · Método JARVIS — Día 3 · Módulo 3.6 · Módulo final</p>
+</div>
+</footer>
+<!-- learn.js + init + checagem -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+      if (INEMA.registerCheck) {
+        INEMA.registerCheck('modulo-3-6#q1', {
+          answer: 1,
+          explain: {
+            0: 'Não — quem decide na empresa não quer ouvir sobre a tecnologia; quer ver o problema resolvido.',
+            1: 'Isso. Valor é tempo, dinheiro ou risco; mostrar o antes e o depois em linguagem de negócio é o que convence.',
+            2: 'Não — "moderno" e "IA de ponta" são vazios. Sem número e sem antes/depois, não há valor demonstrado.'
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="jarvis" name="inema-course"/>
+<!-- 1) ANTI-FOUC (REL = "../..") -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
+      var s = html.style; var scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.emerald;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<!-- 2) Manifesto (identico em TODAS as paginas) -->
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "jarvis",
+    "tracks": [
+      { "n": "1", "title": "Infraestrutura e Mentalidade", "modules": [
+        { "id": "1-1", "title": "A Virada: de Operador a Arquiteto", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "A Metafora do Jarvis", "topics": 7, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Infraestrutura: Pastas, Terminal e Versionamento", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Publicar no Mundo", "topics": 7, "href": "curso/trilha1/modulo-1-4.html" },
+        { "id": "1-5", "title": "Canais de Entrada e Saida", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+      ] },
+      { "n": "2", "title": "Construcao do Jarvis", "modules": [
+        { "id": "2-1", "title": "A Alma do Jarvis", "topics": 7, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Servicos Internos", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Agentes", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Habilidades", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+        { "id": "2-5", "title": "Memoria e Contexto", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+        { "id": "2-6", "title": "Muros de Seguranca", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" },
+        { "id": "2-7", "title": "Ferramentas e Integracoes", "topics": 6, "href": "curso/trilha2/modulo-2-7.html" }
+      ] },
+      { "n": "3", "title": "Solucao Real na Empresa", "modules": [
+        { "id": "3-1", "title": "A Intencao no Centro", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Mapear o Problema", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Desenhar a Arquitetura", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Prototipo Funcional", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Medir Resultado", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+        { "id": "3-6", "title": "Evolucao e Apresentacao", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Day 2 · Building Jarvis | AI Intention Architecture</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    .modal.hidden { display: none; }
+    [id^="modulo-"], [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    /* Light mode - base */
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento blue (T2) */
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+    /* hovers das outras trilhas no nav */
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    /* sem gradientes + especiais */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    /* dark - bordas suaves */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    /* hero SVG */
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.2s} .wf-a:nth-child(3){animation-delay:.4s}
+      .wf-a:nth-child(4){animation-delay:.6s} .wf-a:nth-child(5){animation-delay:.8s}
+    }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+    .appearance-anchor { position: relative; }
+  </style>
+<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha2/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Skip to content</a>
+<!-- NAV COMPLETO -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
+<span class="sm:hidden">D1</span><span class="hidden sm:inline">Day 1</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html">
+<span class="sm:hidden">D2</span><span class="hidden sm:inline">Day 2</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">D3</span><span class="hidden sm:inline">Day 3</span></a>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="My journey" type="button">
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span>
+<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<div class="appearance-anchor">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">◑</span></button>
+<div class="inema-appearance-pop" data-inema-appearance="">
+<div aria-label="Theme" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark" type="button">Dark</button>
+<button data-inema-set-theme="claro" type="button">Clear</button>
+<button data-inema-set-theme="sepia" type="button">Sepia</button>
+<button data-inema-set-theme="foco" type="button">Focus</button>
+<button data-inema-set-theme="contraste" type="button">High contrast</button>
+</div>
+<div aria-label="Source" class="inema-segment" role="group">
+<button data-inema-set-font="inter" type="button">Inter</button>
+<button data-inema-set-font="system" type="button">System</button>
+<button data-inema-set-font="leitura" type="button">Reading</button>
+</div>
+<div aria-label="Text size" class="inema-segment" role="group">
+<button data-inema-set-fontscale="100" type="button">A</button>
+<button data-inema-set-fontscale="112" type="button">A+</button>
+<button data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60" type="button">Narrow</button>
+<button data-inema-set-linewidth="68" type="button">Medium</button>
+<button data-inema-set-linewidth="75" type="button">Wide</button>
+</div>
+<div aria-label="Subtext" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45" type="button">Compact</button>
+<button data-inema-set-leading="1.7" type="button">Comfortable</button>
+</div>
+<div aria-label="Accent color" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Emerald" type="button"></button>
+<button data-inema-set-accent="blue" title="Blue" type="button"></button>
+<button data-inema-set-accent="purple" title="Purple" type="button"></button>
+<button data-inema-set-accent="amber" title="Amber" type="button"></button>
+<button data-inema-set-accent="teal" title="Teal" type="button"></button>
+<button data-inema-set-accent="rose" title="Pink" type="button"></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- HEADER + HERO SVG -->
+<header class="relative overflow-hidden bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">DAY 2 · TRACK 2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🤖 Building Jarvis</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Today you build the system’s “soul”: who it is, what it exists for, and what it can’t do. From this core identity, we assemble the layers — services, agents, skills, memory, and context — protected by security walls and connected to the world through tools and integrations. By the end of the day, Jarvis stops being an idea and becomes a coherent architecture.</p>
+<!-- HERO SVG: a alma irradia para serviços -> agentes -> habilidades -> ferramentas, com muros ao redor -->
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
+<svg aria-label="Diagram: the soul at the center radiates to services, agents, skills, and tools, surrounded by security walls" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<defs>
+<lineargradient id="t2-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="t2-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="t2-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#3b82f6" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="t2-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"></path></marker>
+<marker id="t2-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#t2-grid)" height="240" width="1000" x="0" y="0"></rect>
+<!-- muros de seguranca (tracejado ao redor de tudo) -->
+<rect fill="none" height="212" opacity="0.4" rx="18" stroke="#38bdf8" stroke-dasharray="9 9" stroke-width="1.6" width="972" x="14" y="14"></rect>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="120" y="34">safety barriers</text>
+<!-- alma -> serviços -->
+<g fill="none" opacity="0.55" stroke="#60a5fa" stroke-width="1.8">
+<path d="M214,120 C300,120 320,84 404,84" marker-end="url(#t2-ah)"></path>
+<path d="M214,120 L404,120" marker-end="url(#t2-ah)"></path>
+<path d="M214,120 C300,120 320,156 404,156" marker-end="url(#t2-ah)"></path>
+</g>
+<!-- serviços -> agentes/habilidades/ferramentas -->
+<g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
+<path d="M540,84  C660,84 680,72 800,64" marker-end="url(#t2-ahc)"></path>
+<path d="M540,120 L800,120" marker-end="url(#t2-ahc)"></path>
+<path d="M540,156 C660,156 680,168 800,176" marker-end="url(#t2-ahc)"></path>
+</g>
+<!-- alma (centro) -->
+<g filter="url(#t2-glow)"><rect fill="#0e1622" height="56" rx="14" stroke="url(#t2-grad)" stroke-width="2" width="152" x="62" y="92"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="138" y="116">The Core Identity</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="138" y="134">identity · intent</text>
+<!-- serviços (meio) -->
+<g filter="url(#t2-glow)"><rect fill="#0e1622" height="56" rx="13" stroke="url(#t2-grad)" stroke-width="2" width="136" x="404" y="92"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="472" y="116">Services</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="472" y="134">capability blocks</text>
+<!-- agentes / habilidades / ferramentas (direita) -->
+<g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="172" x="800" y="46"></rect><text fill="#bfe6ff" text-anchor="middle" x="886" y="67">agents</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="172" x="800" y="104"></rect><text fill="#bfe6ff" text-anchor="middle" x="886" y="125">skills · memory</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="172" x="800" y="162"></rect><text fill="#bfe6ff" text-anchor="middle" x="886" y="183">tools</text></g>
+</g>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="218">Everything comes from the soul and acts within the walls — intention at the center.</text>
+</svg>
+</div>
+<div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Modules</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">43</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~1 day</div><div class="text-xs text-neutral-400">Duration</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div>
+</div>
+<!-- Medidor da trilha -->
+<div aria-label="Day 2 Progress" aria-valuemax="100" aria-valuemin="0" data-inema-meter="trilha:2" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Day 2 Progress</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 of 43</strong> · <span data-inema-meter-pct="">0%</span></span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="conteudo">
+<!-- MAPA DA TRILHA -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Learning path map</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-1">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.1</span><span class="text-xs text-neutral-500">~55 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">💜 The Soul of Jarvis</h3>
+<p class="text-xs text-neutral-400">Identity, purpose, and limits</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-2">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.2</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🧱 Internal Services</h3>
+<p class="text-xs text-neutral-400">Capability blocks</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-3">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.3</span><span class="text-xs text-neutral-500">~50 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">👷 Agents</h3>
+<p class="text-xs text-neutral-400">Specialized workers</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-4">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.4</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">⚡ Skills</h3>
+<p class="text-xs text-neutral-400">What each agent can do</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-5">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.5</span><span class="text-xs text-neutral-500">~50 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🧠 Memory and Context</h3>
+<p class="text-xs text-neutral-400">What Jarvis remembers</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-6">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.6</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🛡️ Security Walls</h3>
+<p class="text-xs text-neutral-400">Operate within limits</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-7">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.7</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🔧 Tools and Integrations</h3>
+<p class="text-xs text-neutral-400">Act in the world</p>
+</a>
+</div>
+</section>
+<h2 class="text-2xl font-bold mb-6">Detailed content</h2>
+<!-- ===================== MÓDULO 2.1 ===================== -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-1">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~55 min · 7 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">💜 The Soul of Jarvis</h3>
+<p class="text-neutral-400 text-sm">The core that gives everything meaning: what the system is, why it exists, who it works for, and where its limits are.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-1"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 of 7</span></div>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="t2-1-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">💜</span><div><span class="font-medium">Who the system is</span><span class="text-neutral-500 text-sm ml-2">- the identity</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-1-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Identity defines who Jarvis is: its name, the role it occupies, and how it presents itself to those who speak with it.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">A system without an identity responds any old way. With a clear identity, every response conveys consistency and trust.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Identity; role; introduction; the foundation of the soul.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-1-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🎯</span><div><span class="font-medium">What it exists for</span><span class="text-neutral-500 text-sm ml-2">- the purpose</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-1-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The purpose is the central problem Jarvis exists to solve—the reason it was created.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's the purpose that determines what goes into the system and what stays out. Without it, everything becomes a "maybe."</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Purpose; core problem; reason for being.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-1-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">👥</span><div><span class="font-medium">Who works</span><span class="text-neutral-500 text-sm ml-2">- the audience</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-1-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Who Jarvis serves: end customers, the internal team, managers—each audience has its own needs and language.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Knowing who it works for defines the tone, level of detail, and what can or can't be said.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Audience; client × team; needs by profile.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-1-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🗣️</span><div><span class="font-medium">Communication tone</span><span class="text-neutral-500 text-sm ml-2">- how it speaks</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-1-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The tone is Jarvis’s speaking personality: formal or friendly, technical or simple, direct or warm.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The wrong tone puts people off, even when the answer is right. Tone is part of the experience.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Tone; voice; language consistency.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-1-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">⛔</span><div><span class="font-medium">What it CANNOT do</span><span class="text-neutral-500 text-sm ml-2">- the limits</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-1-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The limits are the list of things Jarvis must never do: promise what it can’t deliver, make up data, or act beyond its authority.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Defining the “no” is just as important as the “yes” — it’s what protects the company and the customer’s trust.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Limits; what not to do; boundaries of action.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-1-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">⚖️</span><div><span class="font-medium">How it makes decisions</span><span class="text-neutral-500 text-sm ml-2">- the criteria</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-1-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The criteria are the rules that guide Jarvis’s choices when there’s more than one possible path.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without clear criteria, similar decisions come out differently each time. Criteria make outcomes predictable.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Criteria; decision rules; predictability.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-1-7" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">📈</span><div><span class="font-medium">How it should evolve</span><span class="text-neutral-500 text-sm ml-2">- grow with purpose</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-1-7"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The core identity also defines the direction of growth: how Jarvis should grow, what it can gain, and what should stay true to its purpose.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without direction, evolution becomes bloat. With direction, the system grows without losing its identity.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Evolution; direction; fidelity to the purpose.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-1')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-1.html">View Full</a>
+</div>
+</div>
+<!-- ===================== MÓDULO 2.2 ===================== -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-2">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~45 min · 6 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">🧱 Internal Services</h3>
+<p class="text-neutral-400 text-sm">Jarvis’s capability blocks: each service solves a family of problems—support, sales, documents, scheduling.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-2"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 of 6</span></div>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="t2-2-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🧱</span><div><span class="font-medium">What a service is</span><span class="text-neutral-500 text-sm ml-2">- capability block</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-2-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">A service is a Jarvis capability block: an area of work that brings together everything needed to handle a type of request.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Thinking in terms of services organizes the system around the value delivered, not the tool used.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Services; capability block; value-based organization.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-2-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🎬</span><div><span class="font-medium">Customer service and support</span><span class="text-neutral-500 text-sm ml-2">- resolving the customer’s issue</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-2-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The customer support service answers questions, solves problems, and takes care of the experience for people who use the system.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It’s the most common service and the one that takes the most pressure off teams — responding quickly, at any time, and consistently.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Customer service; support; customer experience.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-2-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">💰</span><div><span class="font-medium">Sales and proposals</span><span class="text-neutral-500 text-sm ml-2">- guide toward a purchase</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-2-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The sales service qualifies leads, presents solutions, and helps put together proposals and close deals.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It’s where AI directly affects revenue — guiding the buying journey well changes the company’s results.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Sales; qualification; proposal.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-2-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📄</span><div><span class="font-medium">Document analysis</span><span class="text-neutral-500 text-sm ml-2">- read and extract</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-2-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The document service reads contracts, spreadsheets, emails, and reports to extract, summarize, and classify information.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It’s where AI saves the most time: reading a lot and returning only what matters in seconds.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Documents; extraction; summarization and classification.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-2-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">📅</span><div><span class="font-medium">Scheduling and appointments</span><span class="text-neutral-500 text-sm ml-2">- tag and respond</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-2-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The scheduling service books appointments, checks availability, and answers questions about dates and status.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Solves one of the most repetitive tasks in businesses—and one that causes the most friction when done by hand.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Scheduling; appointments; availability.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-2-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🗂️</span><div><span class="font-medium">One service, one or more agents</span><span class="text-neutral-500 text-sm ml-2">- how they connect</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-2-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">A service is delivered by one or more agents: the service defines the “what,” and the agents handle the “how.”</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Understanding this connection keeps you from confusing capability (service) with executor (agent) when designing the solution.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Service × agent; what × how; composition.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-2')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-2.html">View Full</a>
+</div>
+</div>
+<!-- ===================== MÓDULO 2.3 ===================== -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-3">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.3</span><span class="text-xs text-neutral-500">~50 min · 6 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">👷 Agents</h3>
+<p class="text-neutral-400 text-sm">Jarvis’s specialized workers: each agent does one job, with its own instructions, memory, and success criteria.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-3"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 of 6</span></div>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="t2-3-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">👷</span><div><span class="font-medium">What an agent is</span><span class="text-neutral-500 text-sm ml-2">- the worker</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-3-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">An agent is a system worker: a unit that receives a task, decides what to do, and delivers a result.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The agent is the part that actually does the work. Understanding it is the key to making the system act, not just respond.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Agents; executor; task → result.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-3-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🧩</span><div><span class="font-medium">Specialized</span><span class="text-neutral-500 text-sm ml-2">- one task each</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-3-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Each agent does one well-defined job. Instead of one "super-agent" that does everything more or less well, use several focused agents.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Specialization improves quality and makes it easier to adjust, test, and replace one piece without breaking the others.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Specialization; focus; division of labor.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-3-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📋</span><div><span class="font-medium">Instruction and context</span><span class="text-neutral-500 text-sm ml-2">- the brief</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-3-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Every agent receives an instruction (what to do and how) and context (the current situation and the available information).</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Instruction and context are the worker’s brief. When poorly written, they lead to off-target responses.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Instruction; context; agent brief.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-3-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🧠</span><div><span class="font-medium">Agent memory and rules</span><span class="text-neutral-500 text-sm ml-2">- what it follows</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-3-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Each agent has memory (what it remembers about what has happened) and rules (what it must always or must never do).</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Memory and rules make the agent consistent — it acts the same way in the same situations and respects the limits.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Agent memory; rules; consistency.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-3-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">✅</span><div><span class="font-medium">Success criteria</span><span class="text-neutral-500 text-sm ml-2">- when it worked</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-3-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">A success criterion is how the agent (and you) know the task was done well: the expected result, clear and verifiable.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without success criteria, "done" becomes a matter of opinion. With them, you can measure, fix, and trust the agent.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Success criterion; expected result; verification.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-3-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🎯</span><div><span class="font-medium">What intent does the agent fulfill</span><span class="text-neutral-500 text-sm ml-2">- in service of what</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-3-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Every agent exists to carry out a specific intent within the system—a concrete part of the larger purpose.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Tying each agent to an intent prevents “orphaned” agents that do things no one asked for.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Agent intent; part of the purpose; alignment.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-3')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-3.html">View Full</a>
+</div>
+</div>
+<!-- ===================== MÓDULO 2.4 ===================== -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-4">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.4</span><span class="text-xs text-neutral-500">~45 min · 6 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">⚡ Skills</h3>
+<p class="text-neutral-400 text-sm">What each agent can actually do: concrete actions, always tied to a goal—never skills for their own sake.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-4"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 of 6</span></div>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="t2-4-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">⚡</span><div><span class="font-medium">What is a skill</span><span class="text-neutral-500 text-sm ml-2">- one concrete action</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-4-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">A skill is a concrete action an agent knows how to perform — such as summarizing text, classifying a request, or querying a system.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Skills are what make an agent truly useful. Without them, it "understands" but doesn't act.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Skill; action; practical capability.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-4-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🔧</span><div><span class="font-medium">Common skills</span><span class="text-neutral-500 text-sm ml-2">- summarize, classify, query, generate</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-4-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The most common skills: summarize (condense), classify (organize into categories), query (retrieve data), and generate (create content).</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Knowing the basic repertoire lets you build almost any agent by combining a few key skills.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Summarize; classify; look up; generate.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-4-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔗</span><div><span class="font-medium">Skill tied to a goal</span><span class="text-neutral-500 text-sm ml-2">- never let go</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-4-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Every skill serves a goal: it’s the “how,” and the goal is the “why.”</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">A skill tied to a goal delivers results. On its own, it becomes a nice feature nobody uses.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Objective; how × why; a skill with a purpose.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-4-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🚫</span><div><span class="font-medium">Without intent, it becomes excessive</span><span class="text-neutral-500 text-sm ml-2">- less is more</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-4-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Giving an agent too many skills without a clear purpose leads to excess: the agent gets confused, and the system becomes fragile.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The temptation to “teach everything” is strong—but skills without purpose only add risk and noise.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Excess; less is more; focus on intent.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-4-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧰</span><div><span class="font-medium">Trigger the right skill</span><span class="text-neutral-500 text-sm ml-2">- at the right time</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-4-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">When faced with a request, the agent needs to choose and activate the right skill for that moment — not all of them at once.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Triggering the right skill at the right time is what separates an efficient agent from one that gets everything wrong while working hard.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Selection; right timing; activation.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-4-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🏗️</span><div><span class="font-medium">Skills make up a useful agent</span><span class="text-neutral-500 text-sm ml-2">- the sum of the parts</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-4-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">A useful agent is the sum of a few well-chosen skills, combined to carry out its intention from start to finish.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Thinking in terms of composition shows how to build strong agents from simple, reusable blocks.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Composition; building blocks; useful agent.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-4')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-4.html">View Full</a>
+</div>
+</div>
+<!-- ===================== MÓDULO 2.5 ===================== -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-5">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.5</span><span class="text-xs text-neutral-500">~50 min · 6 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">🧠 Memory and Context</h3>
+<p class="text-neutral-400 text-sm">What Jarvis remembers and what informs each decision—and, just as importantly, what it should NOT store.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-5"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 of 6</span></div>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="t2-5-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🧠</span><div><span class="font-medium">What Jarvis remembers</span><span class="text-neutral-500 text-sm ml-2">- the memory</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-5-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Memory is what Jarvis keeps between interactions: who the customer is, what’s already been discussed, decisions, and preferences.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without memory, the system starts from scratch with every message—and the experience becomes robotic and repetitive.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Memory; continuity; what remains between conversations.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-5-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🗃️</span><div><span class="font-medium">Types of memory</span><span class="text-neutral-500 text-sm ml-2">- session, short and long term</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-5-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">There’s session memory (the current conversation), short-term memory (days), and long-term memory (what’s worth remembering forever).</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Each type serves a purpose. Mixing them leads either to premature forgetting or unnecessary accumulation.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Session; short term; long term.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-5-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📚</span><div><span class="font-medium">Context</span><span class="text-neutral-500 text-sm ml-2">- what informs the decision</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-5-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Context is the set of relevant information at the time of a decision: who is speaking, the history, the rules, and the available data.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The quality of the answer depends on context. Poor context produces a generic answer; rich context, a spot-on answer.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Context; relevant information; basis for decisions.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-5-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔍</span><div><span class="font-medium">Retrieve the right information</span><span class="text-neutral-500 text-sm ml-2">- find what matters</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-5-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Retrieval means finding exactly the information that matters for the current situation among everything that’s stored.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Storing a lot doesn't help if you can't retrieve it. The right retrieval is what turns memory into usefulness.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Retrieval; relevant search; useful memory.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-5-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧹</span><div><span class="font-medium">What NOT to store</span><span class="text-neutral-500 text-sm ml-2">- privacy and noise</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-5-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Not everything should be saved: sensitive data and irrelevant information (noise) stay out of the system's memory.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Keeping what you shouldn't is a privacy risk and a source of confusion. Deciding what to discard is part of the design.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Privacy; noise; what to discard.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-5-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🔄</span><div><span class="font-medium">Memory in service of continuity</span><span class="text-neutral-500 text-sm ml-2">- the smooth experience</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-5-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Memory supports continuity: the customer doesn’t have to repeat what they’ve already said, and the system picks up where it left off.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Continuity is what makes Jarvis seem attentive and professional, rather than like a robot that forgets everything.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Continuity; smooth experience; picking up where you left off.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-5')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-5.html">View Full</a>
+</div>
+</div>
+<!-- ===================== MÓDULO 2.6 ===================== -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.6</span><span class="text-xs text-neutral-500">~45 min · 6 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">🛡️ Security Walls</h3>
+<p class="text-neutral-400 text-sm">When AI acts in the real world, safety becomes part of the architecture: access, action limits, sensitive data, and human validation.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-6"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 of 6</span></div>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="t2-6-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🛡️</span><div><span class="font-medium">Security is architecture</span><span class="text-neutral-500 text-sm ml-2">- not a detail</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-6-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Security isn’t something you add at the end: it’s part of Jarvis’s design from the start, at every layer.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">When AI performs real actions, mistakes are costly. Treating safety as architecture helps prevent accidents.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Security by design; architecture; prevention.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-6-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🔑</span><div><span class="font-medium">Access control</span><span class="text-neutral-500 text-sm ml-2">- and permissions</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-6-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Access control defines who can use each part of the system and what each person is allowed to see or do.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without access control, anyone can do anything. Permissions are the first layer of protection.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Access; permissions; who can do what.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-6-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🚧</span><div><span class="font-medium">Action limits</span><span class="text-neutral-500 text-sm ml-2">- how far it can go</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-6-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Action limits define how much Jarvis can do on its own: up to what amount, through which operation, without needing confirmation.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Well-designed limits let AI move quickly when it’s safe and act carefully when it’s risky.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Action limit; authority; automatic × confirmed action.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-6-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔒</span><div><span class="font-medium">Sensitive data protection</span><span class="text-neutral-500 text-sm ml-2">- store carefully</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-6-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Sensitive data — personal, financial, confidential — requires extra care: restricted access, and never exposed unnecessarily.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Leaking sensitive data breaks trust and can have legal consequences. It's a risk you can prevent through design.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Sensitive data; protection; restricted access.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-6-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">👤</span><div><span class="font-medium">Human validation and logs</span><span class="text-neutral-500 text-sm ml-2">- keep an eye on the process</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-6-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Human validation means asking someone to approve critical actions; logs are the record of everything the system did.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Having a person step in at the right time and keeping logs as a record of the process provide control, traceability, and confidence.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Human validation; logs; traceability.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-6-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🧪</span><div><span class="font-medium">Separate testing from production</span><span class="text-neutral-500 text-sm ml-2">- without accidents</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-6-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Keeping environments separate ensures that test experiments never affect real production data and customers.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Mixing testing and production is one of the biggest causes of accidents—and an easy safety rule to follow.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Testing × production; isolation; operational security.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-6')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-6.html">View Full</a>
+</div>
+</div>
+<!-- ===================== MÓDULO 2.7 ===================== -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-7">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.7</span><span class="text-xs text-neutral-500">~45 min · 6 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">🔧 Tools and Integrations</h3>
+<p class="text-neutral-400 text-sm">It's how Jarvis acts in the world: spreadsheets, CRM, database, APIs, messaging, payments—always in service of the intent.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-7"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 of 6</span></div>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="t2-7-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🔧</span><div><span class="font-medium">What tools are</span><span class="text-neutral-500 text-sm ml-2">- the system’s components</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-7-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Tools are the external resources Jarvis uses to act: anything it triggers to make something happen outside itself.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without tools, Jarvis only talks. With them, it takes action—updates, searches, sends, and records things in the real world.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Tool; external resource; action in the world.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-7-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📊</span><div><span class="font-medium">Spreadsheets, Notion, CRM</span><span class="text-neutral-500 text-sm ml-2">- where the data lives</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-7-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Spreadsheets, Notion, and CRM systems are where companies already store customer data, tasks, and processes—ready-made sources for Jarvis to read and write to.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Connecting to these tools is the fastest way for AI to work with what the company already has.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Spreadsheet; Notion; CRM; data sources.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-7-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🗄️</span><div><span class="font-medium">Databases and APIs</span><span class="text-neutral-500 text-sm ml-2">- deep connections</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-7-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">A database is where information is organized at scale; an API is the standardized gateway through which systems exchange data.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">These are the deepest and most powerful connections—they give Jarvis direct access to the heart of the company’s systems.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Database; API; deep integration.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-7-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">💬</span><div><span class="font-medium">Messaging</span><span class="text-neutral-500 text-sm ml-2">- WhatsApp, Telegram, email</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-7-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Messaging is the set of communication tools Jarvis uses to send and receive messages: WhatsApp, Telegram, email.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">They’re how the system talks to people on the channels they already use — the link between internal action and the customer.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Messaging; sending; communication channels.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-7-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">💳</span><div><span class="font-medium">Payments and internal systems</span><span class="text-neutral-500 text-sm ml-2">- critical actions</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-7-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Payments and internal systems (ERP, finance, inventory) are tools where actions have real consequences and require extra care.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It’s where tools run into security walls: here, limits and human validation are not optional.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Payments; internal systems; critical action.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button aria-controls="t2-7-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🎯</span><div><span class="font-medium">The tool serves the intent</span><span class="text-neutral-500 text-sm ml-2">- never the other way around</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="t2-7-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The tool never comes first: it’s chosen because the intent calls for that action. Intent defines the tool, not the other way around.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Reversing this creates a “solution looking for a problem”—lots of integration, little results. Intent is always the starting point.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Intent first; tool in service; focus on the outcome.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-7')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-7.html">View Full</a>
+</div>
+</div>
+<!-- NAVEGAÇÃO RODAPÉ -->
+<div class="flex flex-col sm:flex-row gap-4 mt-10">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha1/index.html">← Day 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3/index.html">Day 3 · Real Business Solution →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Intent Architecture · JARVIS Method — Day 2</p>
+</div>
+</footer>
+<!-- MODAIS (iframe carrega o módulo completo) -->
+<div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-1" onclick="if(event.target===this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">Jarvis’s Core Identity</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-1.html" title="Module 2.1"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-2" onclick="if(event.target===this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">Internal Services</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-2.html" title="Module 2.2"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-3" onclick="if(event.target===this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.3</span><span class="font-semibold">Agents</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-3.html" title="Module 2.3"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-4" onclick="if(event.target===this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.4</span><span class="font-semibold">Skills</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-4.html" title="Module 2.4"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-5" onclick="if(event.target===this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.5</span><span class="font-semibold">Memory and Context</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-5.html" title="Module 2.5"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-6" onclick="if(event.target===this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.6</span><span class="font-semibold">Security Walls</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-6.html" title="Module 2.6"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-7" onclick="if(event.target===this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.7</span><span class="font-semibold">Tools and Integrations</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-7.html" title="Module 2.7"></iframe>
+</div>
+</div>
+<!-- SCRIPTS v1 (toggleTopic + modal) -->
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+          const b = exp.closest('.topic-item').querySelector('button[aria-expanded]');
+          if (b) b.setAttribute('aria-expanded', 'false');
+        }
+      });
+      const open = explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      const ifr = modal.querySelector('iframe[data-src]');
+      if (ifr && !ifr.src) ifr.src = ifr.getAttribute('data-src');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden'));
+      document.body.style.overflow = 'auto';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<!-- learn.js + init -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+  </script>
+</body>
+</html>

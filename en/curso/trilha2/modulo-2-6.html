@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="jarvis" name="inema-course"/>
+<!-- 1) ANTI-FOUC (REL = "../..") -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
+      var s = html.style; var scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.emerald;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<!-- 2) Manifesto (identico em TODAS as paginas) -->
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "jarvis",
+    "tracks": [
+      { "n": "1", "title": "Infraestrutura e Mentalidade", "modules": [
+        { "id": "1-1", "title": "A Virada: de Operador a Arquiteto", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "A Metafora do Jarvis", "topics": 7, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Infraestrutura: Pastas, Terminal e Versionamento", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Publicar no Mundo", "topics": 7, "href": "curso/trilha1/modulo-1-4.html" },
+        { "id": "1-5", "title": "Canais de Entrada e Saida", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+      ] },
+      { "n": "2", "title": "Construcao do Jarvis", "modules": [
+        { "id": "2-1", "title": "A Alma do Jarvis", "topics": 7, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Servicos Internos", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Agentes", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Habilidades", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+        { "id": "2-5", "title": "Memoria e Contexto", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+        { "id": "2-6", "title": "Muros de Seguranca", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" },
+        { "id": "2-7", "title": "Ferramentas e Integracoes", "topics": 6, "href": "curso/trilha2/modulo-2-7.html" }
+      ] },
+      { "n": "3", "title": "Solucao Real na Empresa", "modules": [
+        { "id": "3-1", "title": "A Intencao no Centro", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Mapear o Problema", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Desenhar a Arquitetura", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Prototipo Funcional", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Medir Resultado", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+        { "id": "3-6", "title": "Evolucao e Apresentacao", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Module 2.6 · Safety Walls | AI Intent Architecture</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento blue (T2) */
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+    /* hovers das outras trilhas no nav */
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    /* sem gradientes + especiais */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185,28,28,0.07); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185,28,28,0.25); }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    /* dark - bordas suaves */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s} .wf-a:nth-child(4){animation-delay:.75s}
+    }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+    .appearance-anchor { position: relative; }
+    .toc-link.is-active { color: #60a5fa; font-weight: 600; }
+    html:not(.dark) .toc-link.is-active { color: #2563eb; }
+  </style>
+<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha2/modulo-2-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha2/modulo-2-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha2/modulo-2-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Skip to content</a>
+<!-- NAV COMPLETO -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
+<span class="sm:hidden">D1</span><span class="hidden sm:inline">Day 1</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html">
+<span class="sm:hidden">D2</span><span class="hidden sm:inline">Day 2</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">D3</span><span class="hidden sm:inline">Day 3</span></a>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="My journey" type="button">
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span>
+<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<div class="appearance-anchor">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">◑</span></button>
+<div class="inema-appearance-pop" data-inema-appearance="">
+<div aria-label="Theme" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark" type="button">Dark</button>
+<button data-inema-set-theme="claro" type="button">Clear</button>
+<button data-inema-set-theme="sepia" type="button">Sepia</button>
+<button data-inema-set-theme="foco" type="button">Focus</button>
+<button data-inema-set-theme="contraste" type="button">High contrast</button>
+</div>
+<div aria-label="Source" class="inema-segment" role="group">
+<button data-inema-set-font="inter" type="button">Inter</button>
+<button data-inema-set-font="system" type="button">System</button>
+<button data-inema-set-font="leitura" type="button">Reading</button>
+</div>
+<div aria-label="Text size" class="inema-segment" role="group">
+<button data-inema-set-fontscale="100" type="button">A</button>
+<button data-inema-set-fontscale="112" type="button">A+</button>
+<button data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60" type="button">Narrow</button>
+<button data-inema-set-linewidth="68" type="button">Medium</button>
+<button data-inema-set-linewidth="75" type="button">Wide</button>
+</div>
+<div aria-label="Subtext" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45" type="button">Compact</button>
+<button data-inema-set-leading="1.7" type="button">Comfortable</button>
+</div>
+<div aria-label="Accent color" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Emerald" type="button"></button>
+<button data-inema-set-accent="blue" title="Blue" type="button"></button>
+<button data-inema-set-accent="purple" title="Purple" type="button"></button>
+<button data-inema-set-accent="amber" title="Amber" type="button"></button>
+<button data-inema-set-accent="teal" title="Teal" type="button"></button>
+<button data-inema-set-accent="rose" title="Pink" type="button"></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- BREADCRUMB -->
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Day 2</a><span>/</span>
+<span class="text-blue-400">Module 2.6</span>
+</div>
+</nav>
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.6</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🛡️ Security Walls</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">When AI stops just chatting and starts carrying out real tasks—sending messages, changing data, acting in systems—it needs to operate within well-defined limits. Safety isn’t a technical detail you add at the end: it’s part of the architecture, decided during design. Here you’ll learn to surround Jarvis with access controls, permissions, action limits, data protection, human validation, and logs.</p>
+<!-- SVG: o Jarvis cercado por um muro de segurança tracejado com cadeados/permissões -->
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
+<svg aria-label="Diagram: the Jarvis box at the center, surrounded by a dashed security border with locks that control access, what goes in, and what goes out" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<defs>
+<lineargradient id="m26-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="m26-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m26-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#3b82f6" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m26-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"></path></marker>
+<marker id="m26-ahr" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#f87171"></path></marker>
+</defs>
+<rect fill="url(#m26-grid)" height="240" width="1000" x="0" y="0"></rect>
+<!-- muro de seguranca: borda tracejada cercando tudo -->
+<rect fill="none" height="168" opacity="0.6" rx="20" stroke="#60a5fa" stroke-dasharray="10 8" stroke-width="2" width="620" x="190" y="36"></rect>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="500" y="28">safety barriers — the system acts within these limits</text>
+<!-- cadeados nos cantos -->
+<g fill="#0e1622" stroke="#60a5fa" stroke-width="1.8">
+<g class="wf-a"><rect height="24" rx="5" width="28" x="176" y="78"></rect><path d="M183,78 a7,7 0 0 1 14,0" fill="none"></path></g>
+<g class="wf-a"><rect height="24" rx="5" width="28" x="796" y="78"></rect><path d="M803,78 a7,7 0 0 1 14,0" fill="none"></path></g>
+<g class="wf-a"><rect height="24" rx="5" width="28" x="176" y="138"></rect><path d="M183,138 a7,7 0 0 1 14,0" fill="none"></path></g>
+<g class="wf-a"><rect height="24" rx="5" width="28" x="796" y="138"></rect><path d="M803,138 a7,7 0 0 1 14,0" fill="none"></path></g>
+</g>
+<!-- nucleo: o Jarvis -->
+<g filter="url(#m26-glow)"><rect fill="#0e1622" height="72" rx="16" stroke="url(#m26-grad)" stroke-width="2" width="176" x="412" y="84"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="500" y="116">Jarvis</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="138">operates within limits</text>
+<!-- pedido permitido entra (azul) -->
+<path d="M60,110 L188,110" fill="none" marker-end="url(#m26-ah)" opacity="0.6" stroke="#60a5fa" stroke-width="2"></path>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="124" y="98">permitted request</text>
+<!-- acao perigosa barrada (vermelho, parede) -->
+<path d="M60,168 L182,168" fill="none" marker-end="url(#m26-ahr)" opacity="0.65" stroke="#f87171" stroke-width="2"></path>
+<line opacity="0.8" stroke="#f87171" stroke-width="3" x1="188" x2="188" y1="150" y2="188"></line>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="118" y="156">action outside the boundary</text>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="118" y="204">blocked at the wall</text>
+<!-- saida segura -->
+<path d="M812,110 L940,110" fill="none" marker-end="url(#m26-ah)" opacity="0.6" stroke="#60a5fa" stroke-width="2"></path>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="876" y="98">authorized action</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="876" y="156">+ log entry</text>
+</svg>
+</div>
+<div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~50</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Critical</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+<div aria-label="Module 2.6 Progress" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:2-6" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 of 6</strong> · <span data-inema-meter-pct="">0%</span></span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</div>
+</header>
+<!-- CORPO + TOC -->
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
+<main id="conteudo">
+<!-- TÓPICO 1 -->
+<section class="mb-16" data-inema-module="2-6" data-inema-topic="modulo-2-6#topico-1" data-inema-track="2" id="topico-1">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">🧱 Security is architecture, not a detail</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t1-p1">There’s an order-of-operations mistake that sinks AI projects: treating security as a technical detail that “we’ll deal with later.” When AI only chatted, the worst that could happen was a bad response. But from the moment it <strong class="text-blue-400">executes real tasks</strong> — sends an email, changes a record, issues a document, accesses the database—a wrong decision becomes a wrong action in the real world. That’s why security is a <strong class="text-blue-400">architecture decision</strong>: it defines, at the design stage, the limits within which the system can act.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🛡️</span> The wall starts in the project</h3>
+<p class="text-neutral-300">A security wall isn’t something you throw up in a hurry after a break-in. It’s a foundation: you decide where it goes before you build the house. In Jarvis, that means answering these questions during the design stage: what the system can access, what it must never access, who approves what, and what needs a human before it happens.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Warning: the cost of putting it off</h3>
+<p class="text-neutral-300 text-sm">Security added at the end is expensive and full of holes. An agent that already has full access to the database, which you try to "limit later," tends to retain forgotten pathways. The damage from a single poorly authorized automated action—a wrong email to a thousand customers, a deleted record—can cost more than all the productivity gains from the project.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Architecture</div><div class="text-xs text-neutral-400">not a detail</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Decide first</div><div class="text-xs text-neutral-400">in the design</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Real action</div><div class="text-xs text-neutral-400">has consequences</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Limits</div><div class="text-xs text-neutral-400">the foundation for taking action</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-16" data-inema-module="2-6" data-inema-topic="modulo-2-6#topico-2" data-inema-track="2" id="topico-2">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">🔑 Access Control and Permissions</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t2-p1">Access control answers two questions: <strong class="text-blue-400">who can use Jarvis</strong> e <strong class="text-blue-400">what each person can ask it to do</strong>. The golden rule is the <em class="text-blue-400">least privilege</em>: each person and each agent gets only the access they actually need to do their job—nothing more. An agent that only answers questions doesn’t need permission to delete records. A support representative doesn’t need the same authority as a manager.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔐</span> Three access layers</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li><strong class="text-neutral-100">Who comes in:</strong> only identified people and channels can communicate with the system (login, token, authorized number).</li>
+<li><strong class="text-neutral-100">What it can request:</strong> each profile has a set of permitted actions — support agent, salesperson, manager.</li>
+<li><strong class="text-neutral-100">What the agent can interact with:</strong> each agent gets permission only for the data and tools used by its service.</li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Safe permissions</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Each agent accesses only its own service</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Clear roles: attendant ≠ manager</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Least privilege by default</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Access reviewed when the role changes</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Unsafe permissions</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>One “admin” login for everything and everyone</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Every agent with full access to the database</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Release everything, we'll lock it down later"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Access still active for someone who has left the company</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Who</div><div class="text-xs text-neutral-400">identification</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">What</div><div class="text-xs text-neutral-400">actions by profile</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Least privilege</div><div class="text-xs text-neutral-400">only what’s needed</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Review</div><div class="text-xs text-neutral-400">when the role changes</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-16" data-inema-module="2-6" data-inema-topic="modulo-2-6#topico-3" data-inema-track="2" id="topico-3">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">🚧 Action limits</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t3-p1">Having permission to take an action doesn’t mean you can take it at any scale. Action limits are the <strong class="text-blue-400">boundaries within which each action is allowed</strong>: the maximum discount that can be given without approval, how many emails can be sent per hour, the limit for an automatic refund. It’s the difference between “Jarvis can issue an invoice” and “Jarvis can issue an invoice for up to R$ 500; above that, it asks for confirmation.”</p>
+<!-- SVG: a ação passa por um funil de limites -->
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="A requested action passes through three limit gates: within the limit, it is executed; above the limit, it is blocked and sent for human approval" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<filter height="180%" id="m26b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="30" id="m26b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#3b82f6" opacity="0.10" r="1.2"></circle></pattern>
+<marker id="m26b-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"></path></marker>
+<marker id="m26b-ahr" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#f87171"></path></marker>
+</defs>
+<rect fill="url(#m26b-grid)" height="200" width="1000" x="0" y="0"></rect>
+<!-- pedido -->
+<g filter="url(#m26b-glow)"><rect fill="#0e1622" height="48" rx="12" stroke="#60a5fa" stroke-width="2" width="150" x="34" y="78"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" text-anchor="middle" x="109" y="107">requested action</text>
+<!-- portao de limite -->
+<path d="M184,102 L300,102" fill="none" marker-end="url(#m26b-ah)" opacity="0.5" stroke="#60a5fa" stroke-width="1.8"></path>
+<rect fill="#0e1b26" height="80" rx="12" stroke="#38bdf8" stroke-width="2" width="168" x="304" y="62"></rect>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="388" y="96">within the limit?</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="388" y="118">value · volume · authority</text>
+<!-- sim: executa -->
+<path d="M472,86 C560,86 580,70 660,70" fill="none" marker-end="url(#m26b-ah)" opacity="0.55" stroke="#60a5fa" stroke-width="1.8"></path>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="540" y="60">yes</text>
+<g filter="url(#m26b-glow)"><rect fill="#0e1622" height="44" rx="11" stroke="url(#m26-grad)" stroke-width="2" width="150" x="660" y="48"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="735" y="75">executes</text>
+<!-- nao: aprovacao humana -->
+<path d="M472,118 C560,118 580,136 660,136" fill="none" marker-end="url(#m26b-ahr)" opacity="0.6" stroke="#f87171" stroke-width="1.8"></path>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="540" y="148">above</text>
+<rect fill="#2a0f16" height="44" rx="11" stroke="#f87171" stroke-width="2" width="150" x="660" y="114"></rect>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="735" y="141">asks for approval</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="500" y="186">ability + limit + scale — every action fits within a boundary.</text>
+</svg>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">For each action Jarvis performs, write a sentence: "it can do X up to limit Y; above that, it asks for Z." If you can’t complete the sentence, the limit isn’t defined yet—and an action without limits is an open door to serious damage.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Value</div><div class="text-xs text-neutral-400">financial cap</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Volume</div><div class="text-xs text-neutral-400">quantity per period</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Scope</div><div class="text-xs text-neutral-400">what it can access</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Up → human</div><div class="text-xs text-neutral-400">manual approval</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-16" data-inema-module="2-6" data-inema-topic="modulo-2-6#topico-4" data-inema-track="2" id="topico-4">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">🔒 Sensitive Data Protection</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t4-p1">Jarvis will handle information that can’t be leaked: customer data, contracts, amounts, internal documents. Protecting sensitive data means deciding <strong class="text-blue-400">what the system can see, what it can store, and what must never leave</strong>. Privacy here isn’t bureaucracy—it’s what keeps the customer’s trust and the company on the right side of the law (such as the LGPD). The simple rule: Jarvis only accesses the data it needs, for as long as it needs it, and never exposes confidential information.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Handling rule (illustrative)</h3>
+<div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
+<div><span class="text-blue-400">pode_ver:</span> name, open request</div>
+<div><span class="text-blue-400">never_expose:</span> CPF, card, password</div>
+<div><span class="text-blue-400">mask:</span> email → j***@***.com</div>
+<div><span class="text-blue-400">guardar_por:</span> only while the interaction lasts</div>
+<div><span class="text-red-400">never:</span> send confidential data outside</div>
+</div>
+<p class="text-xs text-neutral-500 mt-3">Illustrative data policy outline — adapted for each service.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Protected data</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Accesses only what the task requires</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Confidential data masked in the response</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>No sensitive data leaves the system</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Keep it for the minimum required time, then discard it</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Exposed data</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>System with access to the entire database</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>CPF and card details appearing in the chat</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Customer data pasted into an external service</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Confidential conversation stored forever</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Minimum</div><div class="text-xs text-neutral-400">only what’s needed</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Mask</div><div class="text-xs text-neutral-400">hide sensitive information</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">LGPD</div><div class="text-xs text-neutral-400">within the law</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Discard</div><div class="text-xs text-neutral-400">don't store data needlessly</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-16" data-inema-module="2-6" data-inema-topic="modulo-2-6#topico-5" data-inema-track="2" id="topico-5">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">👤 Human validation and logs</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t5-p1">Two mechanisms close the wall. The first is the <strong class="text-blue-400">human validation</strong>: for high-impact actions—irreversible, costly, or sensitive—Jarvis prepares everything, but a human gives the final “OK” before it runs. The second is the <strong class="text-blue-400">log</strong>: a record of who asked for what, when, and what the system did. Without a log, you don’t know what happened; with a log, every error can be traced, and monitoring can alert you when something goes wrong.</p>
+<!-- TIMELINE: o ciclo de uma ação de alto impacto -->
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Jarvis prepares the action</h4><p class="text-neutral-300 text-sm">Drafts the email, calculates the refund, writes the document—but still doesn't send it.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">A human validates</h4><p class="text-neutral-300 text-sm">If the action has a high impact, it stops at an approval point: the person confirms or declines.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Executes and logs</h4><p class="text-neutral-300 text-sm">Once approved, the action happens—and everything is recorded in the log: who, what, when.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Monitoring observes</h4><p class="text-neutral-300 text-sm">The log feeds monitoring, which alerts you when something deviates from the norm (unusual volume, repeated errors).</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">Use a simple rule: for a reversible, low-cost action, Jarvis acts on its own and records it; an irreversible, costly, or sensitive action always goes through a human. When in doubt, ask for validation — confirming is cheaper than undoing.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Validation</div><div class="text-xs text-neutral-400">human for high-impact decisions</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Log</div><div class="text-xs text-neutral-400">who, what, when</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Traceable</div><div class="text-xs text-neutral-400">errors have a source</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Monitor</div><div class="text-xs text-neutral-400">flags anything unusual</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-16" data-inema-module="2-6" data-inema-topic="modulo-2-6#topico-6" data-inema-track="2" id="topico-6">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">🧪 Separate testing from production</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t6-p1">Every change to Jarvis needs a place to fail without causing harm. That’s why two environments are separated: the <strong class="text-blue-400">test</strong>, where you experiment, make mistakes, and adjust using fake data; and the <strong class="text-blue-400">production</strong>, where the system serves real customers. You never test a new idea directly in production — first prove it in testing, then promote it to production with confidence. Mixing the two is like rehearsing the play in the middle of opening night.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Test environment</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Fake data, fictional customers</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>It can make mistakes without causing harm</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>A place to experiment with new things</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Real actions (email, billing) disabled</span></li>
+</ul>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Production environment</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Real data, real customers</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Only receives what has already passed the test</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>The change arrives reviewed and stable</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Real actions enabled, with their limits</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Warning: testing in production</h3>
+<p class="text-neutral-300 text-sm">Trying a new automation directly in the live environment is the kind of mistake that becomes a horror story: the test message goes to real customers, the “sample charge” is actually processed, the fake record deletes good data. If there’s no test environment, create one before enabling any action that affects the real world.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Test</div><div class="text-xs text-neutral-400">make mistakes without harm</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Production</div><div class="text-xs text-neutral-400">real customer</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Promote</div><div class="text-xs text-neutral-400">test → production</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Never mix</div><div class="text-xs text-neutral-400">everyone in their place</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
+<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-2-6#q1">
+<p class="font-medium mb-4">Self-check (optional): what is this module's central idea about security?</p>
+<div class="inema-check-options space-y-2">
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">It’s a technical detail to take care of at the end, after the system is ready.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">It’s part of the architecture: AI performs real tasks within well-defined limits.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">It's giving the agent full access and trusting that it won't make a mistake.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<!-- RESUMO -->
+<section class="mb-8">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🛡️</span> Module summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Security is architecture</strong><span class="text-neutral-400"> — decided in the design, not a detail to leave for later.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Access control</strong><span class="text-neutral-400"> — who gets in, what they ask for, what each agent can access; least privilege.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Action limits</strong><span class="text-neutral-400"> — value, volume, and scope boundaries; above the limit, it asks for a human.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Data protection</strong><span class="text-neutral-400"> — only what’s necessary, mask sensitive data, and stay within LGPD requirements.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Human validation and logs</strong><span class="text-neutral-400"> — a human in the high-impact loop; everything recorded and monitored.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Testing ≠ production</strong><span class="text-neutral-400"> — try it in testing, promote it to production; never mix them.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Next module:</h3>
+<p class="text-neutral-300">2.7 — Tools and Integrations: how Jarvis acts in the world, connected to real systems (within the boundaries you just put in place).</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Day 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-7.html">Next: 2.7 Tools and Integrations →</a>
+</div>
+</div>
+</section>
+</main>
+<!-- TOC STICKY + SCROLLSPY -->
+<aside class="hidden lg:block">
+<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-inema-toc="">
+<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<ol class="space-y-2 border-l border-dark-600 pl-4">
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. Security Is Architecture</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Access Control</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. Action limits</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. Data protection</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. Human validation and logs</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. Test × production</a></li>
+</ol>
+</nav>
+</aside>
+</div>
+<footer class="border-t border-dark-600 py-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Intent Architecture · JARVIS Method — Day 2 · Module 2.6</p>
+</div>
+</footer>
+<!-- learn.js + init + checagem -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+      if (INEMA.registerCheck) {
+        INEMA.registerCheck('modulo-2-6#q1', {
+          answer: 1,
+          explain: {
+            0: 'Não — segurança deixada para o fim sai cara e cheia de furos; ela entra no desenho.',
+            1: 'Isso. Quando a IA executa ações reais, ela opera dentro de limites definidos na arquitetura.',
+            2: 'Perigoso — acesso total sem limites é justamente o que os muros de segurança existem para evitar.'
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

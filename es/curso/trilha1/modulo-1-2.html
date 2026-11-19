@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="jarvis" name="inema-course"/>
+<!-- 1) ANTI-FOUC (REL = "../..") -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
+      var s = html.style; var scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.emerald;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<!-- 2) Manifesto (identico em TODAS as paginas) -->
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "jarvis",
+    "tracks": [
+      { "n": "1", "title": "Infraestrutura e Mentalidade", "modules": [
+        { "id": "1-1", "title": "A Virada: de Operador a Arquiteto", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "A Metafora do Jarvis", "topics": 7, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Infraestrutura: Pastas, Terminal e Versionamento", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Publicar no Mundo", "topics": 7, "href": "curso/trilha1/modulo-1-4.html" },
+        { "id": "1-5", "title": "Canais de Entrada e Saida", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+      ] },
+      { "n": "2", "title": "Construcao do Jarvis", "modules": [
+        { "id": "2-1", "title": "A Alma do Jarvis", "topics": 7, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Servicos Internos", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Agentes", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Habilidades", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+        { "id": "2-5", "title": "Memoria e Contexto", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+        { "id": "2-6", "title": "Muros de Seguranca", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" },
+        { "id": "2-7", "title": "Ferramentas e Integracoes", "topics": 6, "href": "curso/trilha2/modulo-2-7.html" }
+      ] },
+      { "n": "3", "title": "Solucao Real na Empresa", "modules": [
+        { "id": "3-1", "title": "A Intencao no Centro", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Mapear o Problema", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Desenhar a Arquitetura", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Prototipo Funcional", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Medir Resultado", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+        { "id": "3-6", "title": "Evolucao e Apresentacao", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 1.2 · La metáfora de Jarvis | Arquitectura de intención de la IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5,150,105,0.18); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.2s} .wf-a:nth-child(3){animation-delay:.4s} .wf-a:nth-child(4){animation-delay:.6s}
+    }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+    .appearance-anchor { position: relative; }
+    .toc-link.is-active { color: #34d399; font-weight: 600; }
+    html:not(.dark) .toc-link.is-active { color: #059669; }
+  </style>
+<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip" href="#conteudo">Ir al contenido</a>
+<!-- NAV COMPLETO -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitectura de Intención</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
+<span class="sm:hidden">D1</span><span class="hidden sm:inline">Día 1</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">
+<span class="sm:hidden">D2</span><span class="hidden sm:inline">Día 2</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">D3</span><span class="hidden sm:inline">Día 3</span></a>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Mi recorrido" type="button">
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span>
+<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<div class="appearance-anchor">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Apariencia y lectura" type="button"><span aria-hidden="true">◑</span></button>
+<div class="inema-appearance-pop" data-inema-appearance="">
+<div aria-label="Tema" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark" type="button">Oscuro</button>
+<button data-inema-set-theme="claro" type="button">Claro</button>
+<button data-inema-set-theme="sepia" type="button">Sepia</button>
+<button data-inema-set-theme="foco" type="button">Enfoque</button>
+<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+</div>
+<div aria-label="Fuente" class="inema-segment" role="group">
+<button data-inema-set-font="inter" type="button">Inter</button>
+<button data-inema-set-font="system" type="button">Sistema</button>
+<button data-inema-set-font="leitura" type="button">Lectura</button>
+</div>
+<div aria-label="Tamaño del texto" class="inema-segment" role="group">
+<button data-inema-set-fontscale="100" type="button">A</button>
+<button data-inema-set-fontscale="112" type="button">A+</button>
+<button data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60" type="button">Estrecho</button>
+<button data-inema-set-linewidth="68" type="button">Medio</button>
+<button data-inema-set-linewidth="75" type="button">Amplio</button>
+</div>
+<div aria-label="Entre líneas" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45" type="button">Compacto</button>
+<button data-inema-set-leading="1.7" type="button">Cómodo</button>
+</div>
+<div aria-label="Color de acento" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-inema-set-accent="blue" title="Azul" type="button"></button>
+<button data-inema-set-accent="purple" title="Morado" type="button"></button>
+<button data-inema-set-accent="amber" title="Ámbar" type="button"></button>
+<button data-inema-set-accent="teal" title="Teal" type="button"></button>
+<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- BREADCRUMB -->
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Día 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.2</span>
+</div>
+</nav>
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🤖 La metáfora de Jarvis</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">La imagen mental que guía todo el curso. Jarvis no es un chatbot: es un sistema vivo con alma, capas, límites, herramientas, memoria e intención en el núcleo. Esta es la anatomía que aprenderás a diseñar.</p>
+<!-- SVG: aninhamento — a alma no centro, envolta pela intenção, dentro do Jarvis que contém as camadas -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
+<svg aria-label="Diagrama de anidamiento: la intención en el núcleo, envuelta por el alma, dentro de Jarvis, que contiene canales, servicios, agentes, habilidades, memoria, seguridad y herramientas" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs>
+<lineargradient id="m12-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
+<filter height="180%" id="m12-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m12-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#10b981" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m12-grid)" height="260" width="1000" x="0" y="0"></rect>
+<!-- Caixa externa: o Jarvis -->
+<rect fill="none" height="212" rx="20" stroke="#34d399" stroke-width="2" width="952" x="24" y="24"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="44" y="50">Jarvis · sistema vivo</text>
+<!-- Núcleo: intenção + alma (caixa-foco com glow) -->
+<g filter="url(#m12-glow)"><rect fill="#0e2018" height="138" rx="16" stroke="url(#m12-grad)" stroke-width="2.5" width="200" x="60" y="74"></rect></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="160" y="104">Esencia</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="160" y="123">identidad · propósito</text>
+<rect fill="#0c1a14" height="52" rx="11" stroke="#34d399" stroke-width="1.8" width="152" x="84" y="140"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="160" y="168">Intención</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="160" y="184">el destino, en el centro</text>
+<!-- Camadas em volta (ciano) -->
+<g font-family="Inter,sans-serif" font-size="12" font-weight="600">
+<g class="wf-a"><rect fill="#0e1b26" height="38" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="300" y="74"></rect><text fill="#bfe6ff" text-anchor="middle" x="375" y="98">Canales</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="38" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="466" y="74"></rect><text fill="#bfe6ff" text-anchor="middle" x="541" y="98">Servicios</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="38" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="632" y="74"></rect><text fill="#bfe6ff" text-anchor="middle" x="707" y="98">Agentes</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="38" rx="9" stroke="#38bdf8" stroke-width="1.8" width="156" x="798" y="74"></rect><text fill="#bfe6ff" text-anchor="middle" x="876" y="98">Habilidades</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="38" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="300" y="124"></rect><text fill="#bfe6ff" text-anchor="middle" x="375" y="148">Memoria</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="38" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="466" y="124"></rect><text fill="#bfe6ff" text-anchor="middle" x="541" y="148">Seguridad</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="38" rx="9" stroke="#38bdf8" stroke-width="1.8" width="322" x="632" y="124"></rect><text fill="#bfe6ff" text-anchor="middle" x="793" y="148">Herramientas</text></g>
+<rect fill="#0e2018" height="38" rx="9" stroke="#34d399" stroke-width="1.8" width="654" x="300" y="174"></rect><text fill="#a7f3d0" text-anchor="middle" x="627" y="198">Evolución continua · Jarvis aprende y mejora</text>
+</g>
+</svg>
+</div>
+<div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">7</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~55</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Concepto</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 1.2" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:1-2" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progreso del módulo</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 7</strong> · <span data-inema-meter-pct="">0%</span></span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</div>
+</header>
+<!-- CORPO + TOC -->
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
+<main id="conteudo">
+<!-- TÓPICO 1 -->
+<section class="mb-16" data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-1" data-inema-track="1" id="topico-1">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">🤖 Entidad operativa, no un chatbot</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p1">Jarvis —el asistente de Tony Stark— no es una caja de chat: es una <strong class="text-emerald-400">entidad que opera con un propósito</strong>. Entiende la casa, controla sistemas, se anticipa a las necesidades y actúa. Usamos esta imagen durante todo el curso porque cambia una pregunta pequeña ("¿qué mensaje responde el bot?") por una grande ("¿qué entidad necesito construir para operar este problema?"). Operar es distinto de responder: responder devuelve texto; operar resuelve la situación.</p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">🎭</span> El sistema como personaje</h3>
+<p class="text-neutral-300">Pensar en el sistema como un personaje con nombre, función y forma de actuar no es un adorno: es un truco de diseño. Cuando puedes describir a Jarvis como "alguien" — el agente de atención que nunca duerme, el vendedor que conoce todo el catálogo — queda claro qué debe saber, qué puede hacer y qué nunca debe hacer. La metáfora se convierte en una lista de verificación.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Una entidad operativa</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Tiene un propósito y sabe para quién trabaja</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Recibe información por varios canales y actúa en el mundo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Recuerda el contexto y sigue las reglas</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Entrega resultados, no solo conversación</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Un chatbot suelto</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Espera un mensaje y devuelve texto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Una sola puerta, sin acciones en el mundo real</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Olvida todo en cada conversación</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>¿Dejó de responder? Se acabó el "valor"</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Entidad</div><div class="text-xs text-neutral-400">no es una herramienta aislada</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Operar</div><div class="text-xs text-neutral-400">× solo responder</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Personaje</div><div class="text-xs text-neutral-400">se convierte en una lista de verificación</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Metáfora</div><div class="text-xs text-neutral-400">modelo mental único</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-16" data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-2" data-inema-track="1" id="topico-2">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">💜 El alma — quién es y para quién trabaja</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p1">A <strong class="text-emerald-400">alma</strong> es el núcleo de la identidad de Jarvis: quién es, para qué existe, qué problema resuelve, para quién trabaja, qué puede hacer y qué nunca debe hacer. Sin alma, el sistema es un montón de herramientas sueltas que nadie sabe usar bien. Con alma, todas las partes encuentran un rumbo: cada canal, agente y herramienta pasa a servir a la misma identidad.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">El esqueleto del alma, una línea cada uno</h3>
+<div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
+<div><span class="text-emerald-400">quién_es:</span> "Agente sénior de la Tienda X"</div>
+<div><span class="text-emerald-400">para_qué_existe:</span> resolver dudas y cerrar ventas</div>
+<div><span class="text-emerald-400">para_quién_trabaja:</span> clientes y equipo de la tienda</div>
+<div><span class="text-emerald-400">pode_fazer:</span> consultar el inventario, generar el pedido</div>
+<div><span class="text-emerald-400">nao_pode_fazer:</span> dar un descuento sin aprobación</div>
+</div>
+<p class="text-xs text-neutral-500 mt-3">Recreación ilustrativa del "alma" — cada línea se convierte en una decisión de proyecto. Se profundiza en el Módulo 2.1.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Escribe el alma <em>antes</em> de elegir cualquier herramienta. Si no puedes decir en una frase para qué existe Jarvis y para quién trabaja, cualquier herramienta que agregues será una apuesta. El alma es lo primero que se redacta y lo último que se cambia.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Identidad</div><div class="text-xs text-neutral-400">quién es</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Propósito</div><div class="text-xs text-neutral-400">para qué existe</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Público</div><div class="text-xs text-neutral-400">para quién trabaja</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Límites</div><div class="text-xs text-neutral-400">puede × no puede</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-16" data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-3" data-inema-track="1" id="topico-3">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">🧩 Las capas — canales, servicios, agentes, habilidades</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p1">La anatomía de Jarvis tiene capas, y cada una tiene una responsabilidad única. <strong class="text-emerald-400">Canales</strong> son las puertas de entrada y salida (WhatsApp, sitio web, correo electrónico). <strong class="text-emerald-400">Servicios</strong> son bloques de capacidad (atender, vender, agendar). <strong class="text-emerald-400">Agentes</strong> son los trabajadores que ejecutan cada bloque. <strong class="text-emerald-400">Habilidades</strong> son lo que cada agente sabe hacer. Conocer las capas te da el vocabulario para diseñar cualquier solución sin que se vuelva un desorden.</p>
+<!-- SVG aninhamento: canal → serviço → agentes → habilidades -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Las capas en orden: un canal entrega al servicio, el servicio activa agentes y cada agente usa sus habilidades" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
+<defs>
+<filter height="180%" id="m12b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="30" id="m12b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#10b981" opacity="0.10" r="1.2"></circle></pattern>
+<marker id="m12b-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="m12b-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m12b-grid)" height="210" width="1000" x="0" y="0"></rect>
+<g filter="url(#m12b-glow)"><rect fill="#0e2018" height="50" rx="13" stroke="#34d399" stroke-width="2" width="150" x="30" y="80"></rect></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" text-anchor="middle" x="105" y="100">Canal</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="105" y="118">entrada / salida</text>
+<path d="M182,105 L246,105" fill="none" marker-end="url(#m12b-ah)" opacity="0.6" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0e2018" height="50" rx="13" stroke="#34d399" stroke-width="2" width="150" x="250" y="80"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" text-anchor="middle" x="325" y="100">Servicio</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="325" y="118">bloque de capacidad</text>
+<g fill="none" opacity="0.5" stroke="#34d399" stroke-width="1.6">
+<path d="M402,96 C440,96 444,64 484,64" marker-end="url(#m12b-ah)"></path>
+<path d="M402,114 C440,114 444,146 484,146" marker-end="url(#m12b-ah)"></path>
+</g>
+<g font-family="Inter,sans-serif" font-size="12" font-weight="600">
+<g class="wf-a"><rect fill="#0e1b26" height="34" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="488" y="48"></rect><text fill="#bfe6ff" text-anchor="middle" x="563" y="70">agente</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="34" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="488" y="128"></rect><text fill="#bfe6ff" text-anchor="middle" x="563" y="150">agente</text></g>
+</g>
+<g fill="none" opacity="0.45" stroke="#38bdf8" stroke-width="1.5">
+<path d="M640,65 L704,65" marker-end="url(#m12b-ahc)"></path>
+<path d="M640,145 L704,145" marker-end="url(#m12b-ahc)"></path>
+</g>
+<g font-family="Inter,sans-serif" font-size="11.5">
+<rect fill="#0c1722" height="30" opacity="0.9" rx="8" stroke="#38bdf8" stroke-width="1.5" width="262" x="708" y="50"></rect><text fill="#9ad6ff" text-anchor="middle" x="839" y="70">habilidades · lo que sabe hacer</text>
+<rect fill="#0c1722" height="30" opacity="0.9" rx="8" stroke="#38bdf8" stroke-width="1.5" width="262" x="708" y="130"></rect><text fill="#9ad6ff" text-anchor="middle" x="839" y="150">habilidades · lo que sabe hacer</text>
+</g>
+</svg>
+</div>
+<div class="space-y-3 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-emerald-400 text-xl flex-shrink-0">📥</span><div><strong class="text-neutral-100">Canales</strong><p class="text-sm text-neutral-400 mt-1">Las puertas: WhatsApp, sitio web, correo electrónico, panel interno. Por donde entra el problema y sale la solución.</p></div></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-emerald-400 text-xl flex-shrink-0">🧱</span><div><strong class="text-neutral-100">Servicios</strong><p class="text-sm text-neutral-400 mt-1">Bloques de capacidad: "atención", "ventas", "agenda". Cada bloque agrupa una parte del trabajo.</p></div></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-emerald-400 text-xl flex-shrink-0">🤝</span><div><strong class="text-neutral-100">Agentes</strong><p class="text-sm text-neutral-400 mt-1">Los trabajadores que ejecutan cada servicio, cada uno con un enfoque claro, sin mezclarlo todo en uno solo.</p></div></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-emerald-400 text-xl flex-shrink-0">⚙️</span><div><strong class="text-neutral-100">Habilidades</strong><p class="text-sm text-neutral-400 mt-1">Lo que cada agente sabe hacer: consultar el inventario, redactar una respuesta, calcular el envío, agendar una reunión.</p></div></div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Canales</div><div class="text-xs text-neutral-400">entrada y salida</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Servicios</div><div class="text-xs text-neutral-400">bloques de capacidad</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Agentes</div><div class="text-xs text-neutral-400">los trabajadores</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Habilidades</div><div class="text-xs text-neutral-400">lo que saben hacer</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-16" data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-4" data-inema-track="1" id="topico-4">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">🛡️ Límites y seguridad — muros que protegen</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p1">Jarvis tiene barreras: reglas, permisos, límites de acción y validaciones que impiden que el sistema haga cosas incorrectas. Mientras la IA solo conversa, equivocarse cuesta una frase desafortunada. Cuando la IA <strong class="text-emerald-400">ejecuta tareas reales</strong> — envía un mensaje al cliente, genera un pedido, mueve dinero: equivocarse cuesta caro. Por eso la seguridad deja de ser un detalle técnico y se convierte en parte de la arquitectura, diseñada desde el inicio.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Con límites bien establecidos</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Solo hace lo que está autorizado a hacer</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pide confirmación para acciones sensibles</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Valida los datos antes de actuar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Los errores se convierten en avisos, no en daños</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Sin límites</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Hace cualquier cosa que parezca correcta</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Actúa por su cuenta cuando debería preguntar</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Confía en datos erróneos y propaga el error</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Un error se convierte en un problema con el cliente</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">La línea "nao_pode_fazer" del alma es el primer muro. Antes de darle una herramienta poderosa a Jarvis (enviar correos, emitir pedidos), pregúntate: "si se equivoca en esto, ¿qué daño puede causar?". Si el daño es grande, pon una confirmación humana en el camino. La seguridad se decide en el diseño, no se remienda después.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Reglas</div><div class="text-xs text-neutral-400">lo que puede</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Permisos</div><div class="text-xs text-neutral-400">hasta dónde actúa</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Validación</div><div class="text-xs text-neutral-400">verifica antes de actuar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Arquitectura</div><div class="text-xs text-neutral-400">no es un adorno</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-16" data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-5" data-inema-track="1" id="topico-5">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">🔧 Herramientas — actuar en el mundo</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p1">Las herramientas son los recursos que Jarvis usa para <strong class="text-emerald-400">actuar</strong>: hojas de cálculo, CRM, base de datos, calendario, mensajería, APIs, pagos. Son las manos del sistema. Pero hay una regla de oro que distingue al arquitecto del entusiasta: <strong class="text-emerald-400">la herramienta nunca va antes que la intención</strong> — está al servicio de un resultado. Invertir esto genera el clásico «solución en busca de un problema»: mucha integración brillante, ningún resultado.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📊</div><h4 class="font-semibold text-neutral-100 mb-1">Hojas de cálculo / datos</h4><p class="text-xs text-neutral-400">Consultar y registrar información estructurada.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📇</div><h4 class="font-semibold text-neutral-100 mb-1">CRM</h4><p class="text-xs text-neutral-400">Ver el historial del cliente y actualizar sus datos.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📅</div><h4 class="font-semibold text-neutral-100 mb-1">Calendario</h4><p class="text-xs text-neutral-400">Programar, reprogramar y confirmar citas.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">💬</div><h4 class="font-semibold text-neutral-100 mb-1">Mensajería</h4><p class="text-xs text-neutral-400">Enviar y recibir por WhatsApp, correo electrónico, chat.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">🔌</div><h4 class="font-semibold text-neutral-100 mb-1">APIs</h4><p class="text-xs text-neutral-400">Conversar con cualquier sistema externo.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">💳</div><h4 class="font-semibold text-neutral-100 mb-1">Pagos</h4><p class="text-xs text-neutral-400">Generar un cobro y confirmar la recepción del pago.</p></div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">🧭</span> El orden correcto</h3>
+<p class="text-neutral-300">Primero la intención («cerrar más ventas por WhatsApp»), después lo que hay que hacer («responder consultas, consultar existencias, generar pedidos») y solo entonces la herramienta que lo hace. Quien empieza por la herramienta termina con un sistema lleno de capacidades que nadie pidió y sin la única que resolvería el problema.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Herramientas</div><div class="text-xs text-neutral-400">las manos del sistema</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Orden</div><div class="text-xs text-neutral-400">intención → herramienta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Riesgo</div><div class="text-xs text-neutral-400">solución en busca de un problema</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Conexión</div><div class="text-xs text-neutral-400">con el mundo real</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-16" data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-6" data-inema-track="1" id="topico-6">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">🧠 Memoria y evolución — recordar y mejorar</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p1">Jarvis recuerda el contexto y mejora con el tiempo: guarda el historial del cliente, aprende de los comentarios y se ajusta a medida que recibe nuevos datos. Sin memoria, hace la misma pregunta cada vez y nunca deja de ser principiante. Sin evolución, la solución <strong class="text-emerald-400">congela</strong> el día en que se entregó. Con las dos, Jarvis se convierte en un activo que mejora solo: cuanto más se usa, mejor funciona.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Recuerda el contexto</h4><p class="text-neutral-300 text-sm">Sabe quién es el cliente, qué se ha conversado y dónde quedó la tarea: no vuelve a empezar desde cero.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Aprende del feedback</h4><p class="text-neutral-300 text-sm">Ajusta las respuestas y reglas a medida que el equipo señala aciertos y errores.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Evoluciona como activo</h4><p class="text-neutral-300 text-sm">Se convierte en un activo del negocio: cuanto más funciona, más afinado y valioso se vuelve con el tiempo.</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Decide desde el principio qué vale la pena recordar: el historial de pedidos del cliente, sus preferencias y las preguntas frecuentes. Demasiada memoria genera ruido; muy poca convierte a Jarvis en un agente de atención al cliente amnésico. Trata la evolución como una rutina: revisa en qué se equivocó y haz ajustes, en vez de esperar a que la solución "esté lista".</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Memoria</div><div class="text-xs text-neutral-400">recuerda el contexto</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Adaptación</div><div class="text-xs text-neutral-400">aprende con el uso</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Mejora</div><div class="text-xs text-neutral-400">continua, no se congela</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Activo</div><div class="text-xs text-neutral-400">mejora por sí solo</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 7 -->
+<section class="mb-16" data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-7" data-inema-track="1" id="topico-7">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">7</span>
+<h2 class="text-2xl font-bold">🎯 La intención en el núcleo — el centro de todo</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t7-p1">Por encima de todo, Jarvis tiene una <strong class="text-emerald-400">intención</strong> — el destino que orienta cada decisión, canal, agente y herramienta. Es el corazón de la metáfora y la razón por la que el curso se llama Arquitectura de Intención. Sin destino, cualquier automatización parece buena y cualquier respuesta parece suficiente. Con la intención en el centro, cada elección tiene un criterio: «¿esto te acerca al destino?». La intención es la brújula que mantiene coherente el sistema cuando crece.</p>
+<!-- Timeline: da intenção até o resultado, tudo a serviço do destino -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">Todo parte de la intención</h3>
+<div class="relative border-l-2 border-emerald-500/40 pl-6 space-y-6">
+<div class="relative"><span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-800"></span><strong class="text-neutral-100">Intención</strong><p class="text-sm text-neutral-400 mt-1">El objetivo: "reducir el tiempo de respuesta al cliente a minutos".</p></div>
+<div class="relative"><span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500/60 border-2 border-dark-800"></span><strong class="text-neutral-100">Capas</strong><p class="text-sm text-neutral-400 mt-1">Se eligen canales, servicios y agentes para cumplir ese objetivo; nada más.</p></div>
+<div class="relative"><span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500/60 border-2 border-dark-800"></span><strong class="text-neutral-100">Herramientas y límites</strong><p class="text-sm text-neutral-400 mt-1">Cada herramienta se incorpora porque ayuda a llegar al destino; cada muro existe para protegerlo.</p></div>
+<div class="relative"><span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-800"></span><strong class="text-neutral-100">Resultado medido</strong><p class="text-sm text-neutral-400 mt-1">Al final, se mide en función de la intención: ¿bajó el tiempo de respuesta? Si no, se ajusta.</p></div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">🧲</span> La brújula que mantiene todo coherente</h3>
+<p class="text-neutral-300">Cuando el sistema crece, la intención es lo que evita el caos. Cada vez que surge la tentación de agregar un agente, un canal o una herramienta, hay una sola pregunta: "¿esto sirve al destino?". Si sí, se incluye. Si no, se deja fuera, por más interesante que parezca. Así es como la metáfora de Jarvis se convierte en método.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Intención</div><div class="text-xs text-neutral-400">el destino</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Núcleo</div><div class="text-xs text-neutral-400">centro de todo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Coherencia</div><div class="text-xs text-neutral-400">todo al servicio de ella</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Brújula</div><div class="text-xs text-neutral-400">"¿sirve para el objetivo?"</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
+<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-2#q1">
+<p class="font-medium mb-4">Autoevaluación (opcional): en la metáfora de Jarvis, ¿qué queda en el núcleo y guía todo lo demás?</p>
+<div class="inema-check-options space-y-2">
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Las herramientas —cuantas más integraciones, mejor el sistema.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">La intención — el destino que da criterio a cada canal, agente y herramienta.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">El chatbot: la puerta de conversación es el corazón de la solución.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<!-- RESUMO -->
+<section class="mb-8">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Entidad, no chatbot</strong><span class="text-neutral-400"> — Jarvis opera con un propósito; el bot solo responde.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">La esencia</strong><span class="text-neutral-400"> — la identidad, el propósito, el público y los límites orientan todo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Las capas</strong><span class="text-neutral-400"> — canales, servicios, agentes y habilidades, cada uno con su función.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Límites y seguridad</strong><span class="text-neutral-400"> — los muros son arquitectura cuando la IA actúa en el mundo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Herramientas al servicio de la intención</strong><span class="text-neutral-400"> — la herramienta nunca va antes que el resultado.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Memoria y evolución</strong><span class="text-neutral-400"> — recordar y mejorar convierten la solución en un activo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">La intención en el núcleo</strong><span class="text-neutral-400"> — la brújula que mantiene la coherencia del sistema a medida que crece.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Siguiente módulo:</h3>
+<p class="text-neutral-300">1.3 — Infraestructura: carpetas, terminal y control de versiones. Es hora de preparar el terreno donde vivirá Jarvis.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver al Día 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-3.html">Siguiente: 1.3 Infraestructura →</a>
+</div>
+</div>
+</section>
+</main>
+<!-- TOC STICKY + SCROLLSPY -->
+<aside class="hidden lg:block">
+<nav aria-label="Índice del módulo" class="sticky top-20 self-start text-sm" data-inema-toc="">
+<p class="text-neutral-400 mb-3 font-medium">En esta página <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<ol class="space-y-2 border-l border-dark-600 pl-4">
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. Entidad operativa</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. El alma</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-3">3. Las capas</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. Límites y seguridad</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-5">5. Herramientas</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. Memoria y evolución</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-7">7. La intención en el núcleo</a></li>
+</ol>
+</nav>
+</aside>
+</div>
+<footer class="border-t border-dark-600 py-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Arquitectura de Intención de la IA · Método JARVIS — Día 1 · Módulo 1.2</p>
+</div>
+</footer>
+<!-- learn.js + init + checagem -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+      if (INEMA.registerCheck) {
+        INEMA.registerCheck('modulo-1-2#q1', {
+          answer: 1,
+          explain: {
+            0: 'Não — ferramentas são as mãos, mas servem a um destino; sozinhas viram "solução à procura de problema".',
+            1: 'Isso. A intenção é o núcleo: ela dá critério a cada camada, ferramenta e limite, e mantém tudo coerente.',
+            2: 'Não — o chatbot é só uma porta (um canal). O coração da metáfora é a intenção no núcleo.'
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="jarvis" name="inema-course"/>
+<!-- 1) ANTI-FOUC (REL = "../..") -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
+      var s = html.style; var scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.emerald;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<!-- 2) Manifesto (identico em TODAS as paginas) -->
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "jarvis",
+    "tracks": [
+      { "n": "1", "title": "Infraestrutura e Mentalidade", "modules": [
+        { "id": "1-1", "title": "A Virada: de Operador a Arquiteto", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "A Metafora do Jarvis", "topics": 7, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Infraestrutura: Pastas, Terminal e Versionamento", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Publicar no Mundo", "topics": 7, "href": "curso/trilha1/modulo-1-4.html" },
+        { "id": "1-5", "title": "Canais de Entrada e Saida", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+      ] },
+      { "n": "2", "title": "Construcao do Jarvis", "modules": [
+        { "id": "2-1", "title": "A Alma do Jarvis", "topics": 7, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Servicos Internos", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Agentes", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Habilidades", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+        { "id": "2-5", "title": "Memoria e Contexto", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+        { "id": "2-6", "title": "Muros de Seguranca", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" },
+        { "id": "2-7", "title": "Ferramentas e Integracoes", "topics": 6, "href": "curso/trilha2/modulo-2-7.html" }
+      ] },
+      { "n": "3", "title": "Solucao Real na Empresa", "modules": [
+        { "id": "3-1", "title": "A Intencao no Centro", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Mapear o Problema", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Desenhar a Arquitetura", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Prototipo Funcional", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Medir Resultado", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+        { "id": "3-6", "title": "Evolucao e Apresentacao", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 2.7 · Herramientas e integraciones | Arquitectura de intención de la IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento blue (T2) */
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    /* hovers das outras trilhas no nav */
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    /* sem gradientes + especiais */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    /* dark - bordas suaves */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.2s} .wf-a:nth-child(3){animation-delay:.4s}
+      .wf-a:nth-child(4){animation-delay:.6s} .wf-a:nth-child(5){animation-delay:.8s}
+    }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+    .appearance-anchor { position: relative; }
+    .toc-link.is-active { color: #60a5fa; font-weight: 600; }
+    html:not(.dark) .toc-link.is-active { color: #2563eb; }
+  </style>
+<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha2/modulo-2-7.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha2/modulo-2-7.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha2/modulo-2-7.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-7.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-7.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-7.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip" href="#conteudo">Ir al contenido</a>
+<!-- NAV COMPLETO -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitectura de Intención</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
+<span class="sm:hidden">D1</span><span class="hidden sm:inline">Día 1</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html">
+<span class="sm:hidden">D2</span><span class="hidden sm:inline">Día 2</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">D3</span><span class="hidden sm:inline">Día 3</span></a>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Mi recorrido" type="button">
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span>
+<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<div class="appearance-anchor">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Apariencia y lectura" type="button"><span aria-hidden="true">◑</span></button>
+<div class="inema-appearance-pop" data-inema-appearance="">
+<div aria-label="Tema" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark" type="button">Oscuro</button>
+<button data-inema-set-theme="claro" type="button">Claro</button>
+<button data-inema-set-theme="sepia" type="button">Sepia</button>
+<button data-inema-set-theme="foco" type="button">Enfoque</button>
+<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+</div>
+<div aria-label="Fuente" class="inema-segment" role="group">
+<button data-inema-set-font="inter" type="button">Inter</button>
+<button data-inema-set-font="system" type="button">Sistema</button>
+<button data-inema-set-font="leitura" type="button">Lectura</button>
+</div>
+<div aria-label="Tamaño del texto" class="inema-segment" role="group">
+<button data-inema-set-fontscale="100" type="button">A</button>
+<button data-inema-set-fontscale="112" type="button">A+</button>
+<button data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60" type="button">Estrecho</button>
+<button data-inema-set-linewidth="68" type="button">Medio</button>
+<button data-inema-set-linewidth="75" type="button">Amplio</button>
+</div>
+<div aria-label="Entre líneas" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45" type="button">Compacto</button>
+<button data-inema-set-leading="1.7" type="button">Cómodo</button>
+</div>
+<div aria-label="Color de acento" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-inema-set-accent="blue" title="Azul" type="button"></button>
+<button data-inema-set-accent="purple" title="Morado" type="button"></button>
+<button data-inema-set-accent="amber" title="Ámbar" type="button"></button>
+<button data-inema-set-accent="teal" title="Teal" type="button"></button>
+<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- BREADCRUMB -->
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Día 2</a><span>/</span>
+<span class="text-blue-400">Módulo 2.7</span>
+</div>
+</nav>
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.7</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🔧 Herramientas e integraciones</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Las herramientas son los brazos de Jarvis en el mundo: gracias a ellas, deja de solo conversar y empieza a actuar —registrar en una hoja de cálculo, actualizar un CRM, agendar una cita, enviar un WhatsApp, cobrar un pago. La pregunta clave de este módulo no es «¿qué herramienta uso?», sino «¿qué resultado quiero generar?». La herramienta está al servicio de la intención; nunca al revés.</p>
+<!-- HERO SVG: fan-out — o Jarvis no centro conectado a varias ferramentas externas -->
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
+<svg aria-label="Jarvis en el centro, conectado en paralelo a varias herramientas externas: hoja de cálculo, CRM, base de datos, mensajería y pagos, todas al servicio de la misma intención" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<defs>
+<lineargradient id="m27-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="m27-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m27-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#3b82f6" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m27-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"></path></marker>
+<marker id="m27-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m27-grid)" height="240" width="1000" x="0" y="0"></rect>
+<!-- intencao -> jarvis -->
+<path d="M150,120 L196,120" fill="none" marker-end="url(#m27-ah)" opacity="0.6" stroke="#60a5fa" stroke-width="1.8"></path>
+<!-- jarvis -> ferramentas (fan-out ciano) -->
+<g fill="none" opacity="0.55" stroke="#38bdf8" stroke-width="1.8">
+<path d="M356,120 C470,120 490,38 600,38" marker-end="url(#m27-ahc)"></path>
+<path d="M356,120 C470,120 490,79 600,79" marker-end="url(#m27-ahc)"></path>
+<path d="M356,120 L600,120" marker-end="url(#m27-ahc)"></path>
+<path d="M356,120 C470,120 490,161 600,161" marker-end="url(#m27-ahc)"></path>
+<path d="M356,120 C470,120 490,202 600,202" marker-end="url(#m27-ahc)"></path>
+</g>
+<!-- ferramentas -> mundo (resultado) -->
+<g fill="none" opacity="0.45" stroke="#60a5fa" stroke-width="1.6">
+<path d="M760,38  C850,38 860,120 900,120"></path>
+<path d="M760,79  C850,79 860,120 900,120"></path>
+<path d="M760,120 L900,120"></path>
+<path d="M760,161 C850,161 860,120 900,120"></path>
+<path d="M760,202 C850,202 860,120 900,120"></path>
+</g>
+<!-- intencao (origem) -->
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="75" y="100">la intención</text>
+<rect fill="#26201a" height="34" rx="9" stroke="#9ca3af" stroke-width="1.8" width="132" x="18" y="104"></rect>
+<text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="84" y="126">resultado que quieres</text>
+<!-- jarvis (centro) -->
+<g filter="url(#m27-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#m27-grad)" stroke-width="2" width="160" x="196" y="88"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="16" font-weight="600" text-anchor="middle" x="276" y="114">Jarvis</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="276" y="134">decide y actúa</text>
+<!-- ferramentas (fan-out) -->
+<g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="160" x="600" y="22"></rect><text fill="#bfe6ff" text-anchor="middle" x="680" y="43">📊 hoja de cálculo</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="160" x="600" y="63"></rect><text fill="#bfe6ff" text-anchor="middle" x="680" y="84">📇 CRM</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="160" x="600" y="104"></rect><text fill="#bfe6ff" text-anchor="middle" x="680" y="125">🗄️ base de datos · API</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="160" x="600" y="145"></rect><text fill="#bfe6ff" text-anchor="middle" x="680" y="166">💬 mensajería</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="160" x="600" y="186"></rect><text fill="#bfe6ff" text-anchor="middle" x="680" y="207">💳 pagos</text></g>
+</g>
+<!-- mundo (resultado) -->
+<g filter="url(#m27-glow)"><rect fill="#0e1622" height="56" rx="13" stroke="url(#m27-grad)" stroke-width="2" width="86" x="900" y="92"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="943" y="116">el mundo</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="943" y="134">cambia de verdad</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="232">La intención guía a Jarvis; las herramientas son solo los brazos que tocan el mundo.</text>
+</svg>
+</div>
+<div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~50</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Práctico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 2.7" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:2-7" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progreso del módulo</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 6</strong> · <span data-inema-meter-pct="">0%</span></span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</div>
+</header>
+<!-- CORPO + TOC -->
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
+<main id="conteudo">
+<!-- TÓPICO 1 -->
+<section class="mb-16" data-inema-module="2-7" data-inema-topic="modulo-2-7#topico-1" data-inema-track="2" id="topico-1">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">🛠️ Qué son las herramientas</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-7-t1-p1">Hasta aquí, Jarvis piensa, conversa y decide, pero todo eso queda atrapado dentro de la conversación. <strong class="text-blue-400">Las herramientas son los recursos que permiten a Jarvis actuar en el mundo real</strong>: leer y escribir en una hoja de cálculo, crear un registro en un sistema, enviar un mensaje, cobrar un monto. Sin herramientas, es un asesor brillante con las manos atadas. Con herramientas, ejecuta.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🤲</span> Hablar es distinto de hacer</h3>
+<p class="text-neutral-300">Responder "voy a registrar tu solicitud" no registra nada. La herramienta es lo que transforma las palabras en hechos: es la mano que abre la hoja de cálculo y escribe la fila. Un Jarvis sin herramientas promete; un Jarvis con herramientas cumple.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Con herramientas, el Jarvis</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Registra el pedido en la hoja de cálculo automáticamente.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Crea el contacto en el CRM al cerrar la venta.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Envía la confirmación por WhatsApp al instante.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Consulta el inventario antes de prometer un plazo.</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Sin herramientas, Jarvis</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Dices «voy a anotarlo» — y no anotas nada.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Inventa un plazo sin consultar el inventario.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pide que una persona haga todo manualmente.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Se convierte solo en un chat bonito, sin efecto real.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Cada vez que pienses «y entonces Jarvis tiene que hacer X en el sistema de la empresa», acabas de descubrir una herramienta. Enumera esas acciones antes de elegir la tecnología: la lista de acciones es el mapa de tus herramientas.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Herramienta</div><div class="text-xs text-neutral-400">recurso para actuar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Sin ella</div><div class="text-xs text-neutral-400">solo conversación</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Con ella</div><div class="text-xs text-neutral-400">cambia el mundo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Mapa</div><div class="text-xs text-neutral-400">lista de acciones</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-16" data-inema-module="2-7" data-inema-topic="modulo-2-7#topico-2" data-inema-track="2" id="topico-2">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">📊 Hojas de cálculo, Notion y CRM</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-7-t2-p1">Las herramientas más comunes —y más subestimadas— son las que la empresa <strong class="text-blue-400">ya usa todos los días</strong>: la hoja de cálculo de Google, el Notion del equipo, el CRM de ventas. Jarvis puede leer y escribir en todos ellos. No necesitas tecnología nueva y costosa: necesitas conectarte a lo que ya existe y organizar lo que ya se registra a mano.</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📊</div><h4 class="font-semibold text-neutral-100 mb-1">Hoja de cálculo (Sheets)</h4><p class="text-xs text-neutral-400">Registrar solicitudes, leads y controles simples. La puerta de entrada a casi todo proyecto.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📝</div><h4 class="font-semibold text-neutral-100 mb-1">Notion</h4><p class="text-xs text-neutral-400">Base de conocimiento, tareas y documentación que Jarvis consulta y actualiza.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📇</div><h4 class="font-semibold text-neutral-100 mb-1">CRM</h4><p class="text-xs text-neutral-400">Clientes, oportunidades, historial de relaciones. El corazón comercial.</p></div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔁</span> Leer y escribir: dos direcciones</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li><strong class="text-neutral-100">Leer:</strong> Jarvis consulta la hoja de cálculo para responder "¿cuál es el estado del pedido 482?" sin molestar a nadie.</li>
+<li><strong class="text-neutral-100">Escribir:</strong> Jarvis crea una nueva fila en el CRM cuando un lead pide un presupuesto — sin digitación manual.</li>
+<li><strong class="text-neutral-100">Las dos juntas:</strong> leer para decidir, escribir para registrar — este es el ciclo que ahorra horas al día.</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Empieza con la hoja de cálculo que el equipo ya completa a mano. Conectar Jarvis a ella es la automatización de mayor retorno para empezar: ninguna herramienta nueva y alivio inmediato del trabajo repetitivo.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Ya existe</div><div class="text-xs text-neutral-400">usa lo que tienes</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Sheets</div><div class="text-xs text-neutral-400">puerta de entrada</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">CRM</div><div class="text-xs text-neutral-400">corazón comercial</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Ciclo</div><div class="text-xs text-neutral-400">leer y escribir</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-16" data-inema-module="2-7" data-inema-topic="modulo-2-7#topico-3" data-inema-track="2" id="topico-3">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">🗄️ Base de datos y APIs</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-7-t3-p1">Cuando el volumen crece, la hoja de cálculo no basta. Ahí entran los <strong class="text-blue-400">base de datos</strong> (un archivo grande y organizado de información, que soporta a muchas personas al mismo tiempo) y las <strong class="text-blue-400">APIs</strong> (la "toma" por la que se comunican dos sistemas). No necesitas programar esto desde cero: necesitas entender qué hace cada uno para pedir la pieza adecuada.</p>
+<!-- SVG: o Jarvis conversa com um sistema externo via API (tomada) -->
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Jarvis envía una solicitud a través de una API que funciona como un enchufe y recibe la respuesta desde una base de datos externa" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<filter height="180%" id="m27b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="30" id="m27b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#3b82f6" opacity="0.10" r="1.2"></circle></pattern>
+<lineargradient id="m27b-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<marker id="m27b-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"></path></marker>
+<marker id="m27b-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m27b-grid)" height="200" width="1000" x="0" y="0"></rect>
+<!-- jarvis -->
+<g filter="url(#m27b-glow)"><rect fill="#0e1622" height="56" rx="13" stroke="url(#m27b-grad)" stroke-width="2" width="150" x="40" y="72"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="115" y="97">Jarvis</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="115" y="115">hace el pedido</text>
+<!-- pedido -> API -->
+<path d="M190,86 L408,86" fill="none" marker-end="url(#m27b-ah)" opacity="0.6" stroke="#60a5fa" stroke-width="1.8"></path>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="299" y="76">pregunta / acción</text>
+<!-- API (tomada / ciano) -->
+<rect fill="#0e1b26" height="80" rx="12" stroke="#38bdf8" stroke-width="2" width="184" x="408" y="60"></rect>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="500" y="92">API</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="500" y="112">la conexión entre sistemas</text>
+<!-- API -> banco -->
+<path d="M592,114 L810,114" fill="none" marker-end="url(#m27b-ahc)" opacity="0.55" stroke="#38bdf8" stroke-width="1.8"></path>
+<!-- resposta de volta -->
+<path d="M810,72 L592,72" fill="none" marker-end="url(#m27b-ah)" opacity="0.45" stroke="#60a5fa" stroke-dasharray="6 6" stroke-width="1.6"></path>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="701" y="62">la respuesta vuelve</text>
+<!-- banco -->
+<g filter="url(#m27b-glow)"><rect fill="#0e1622" height="80" rx="13" stroke="url(#m27b-grad)" stroke-width="2" width="150" x="810" y="60"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="885" y="92">Banco</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="885" y="112">guarda la verdad</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="178">La API es el enchufe: Jarvis se «conecta» a ella para comunicarse con cualquier sistema externo.</text>
+</svg>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Solicitud a una API, en lenguaje sencillo</h3>
+<div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
+<div><span class="text-blue-400">para:</span> sistema de inventario</div>
+<div><span class="text-blue-400">acción:</span> consultar</div>
+<div><span class="text-blue-400">qué:</span> cantidad del producto #482</div>
+<div><span class="text-blue-400">respuesta:</span> { disponivel: 37 }</div>
+</div>
+<p class="text-xs text-neutral-500 mt-3">Esquema ilustrativo de una llamada a la API — pregunta clara, respuesta estructurada.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Error común</h3>
+<p class="text-neutral-300 text-sm">Querer una base de datos sofisticada cuando una hoja de cálculo resolvería el problema. La base de datos y la API son para cuando el volumen o la integración las exigen, no para impresionar. Sube de nivel solo cuando la necesidad lo pida.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Banco</div><div class="text-xs text-neutral-400">mucho volumen</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">API</div><div class="text-xs text-neutral-400">la conexión entre sistemas</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Solicitud</div><div class="text-xs text-neutral-400">claro y estructurado</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Subir un peldaño</div><div class="text-xs text-neutral-400">solo cuando duele</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-16" data-inema-module="2-7" data-inema-topic="modulo-2-7#topico-4" data-inema-track="2" id="topico-4">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">💬 Mensajería: WhatsApp, Telegram y correo electrónico</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-7-t4-p1">La mensajería es la herramienta que permite <strong class="text-blue-400">voz</strong> a Jarvis: WhatsApp, Telegram y correo electrónico. Aquí no solo recibe (canal de entrada, visto en el Día 1), sino que también <strong class="text-blue-400">envía activamente</strong> — confirma un pedido, avisa de un plazo, envía un recordatorio. Esa es la diferencia entre un sistema que solo responde cuando lo llaman y uno que toma la iniciativa de comunicarse.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-xl">📱</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">WhatsApp</h4><p class="text-neutral-300 text-sm">Donde ya está el cliente brasileño. Las confirmaciones, los recordatorios y la atención rápida llegan directamente a la palma de su mano.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-xl">✈️</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Telegram</h4><p class="text-neutral-300 text-sm">Ideal para equipos internos y alertas. Fácil de conectar e ideal para avisos operativos de Jarvis.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-xl">✉️</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Correo electrónico</h4><p class="text-neutral-300 text-sm">El canal formal: propuestas, resúmenes y registros que deben quedar documentados y ser fáciles de buscar.</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Elige el canal según el público, no por moda. ¿Cliente final en Brasil? WhatsApp. ¿Equipo técnico? Telegram. ¿Registro formal con un cliente corporativo? Correo electrónico. La herramienta adecuada es la que el destinatario ya abre.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Voz</div><div class="text-xs text-neutral-400">Jarvis habla</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Iniciativa</div><div class="text-xs text-neutral-400">envía, no solo responde</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Canal</div><div class="text-xs text-neutral-400">por el público</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Correcto</div><div class="text-xs text-neutral-400">lo que ya abre</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-16" data-inema-module="2-7" data-inema-topic="modulo-2-7#topico-5" data-inema-track="2" id="topico-5">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">💳 Pagos y sistemas internos</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-7-t5-p1">Las herramientas más poderosas —y más sensibles— son las que <strong class="text-blue-400">manejan dinero y los sistemas propios de la empresa</strong>: generar un cobro, emitir un boleto/Pix, registrar un pago, actualizar el ERP. Aquí los errores realmente cuestan caro, así que estas herramientas van de la mano con los muros de seguridad del módulo anterior.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">💳</div><h4 class="font-semibold text-neutral-100 mb-1">Cobro / Pix</h4><p class="text-xs text-neutral-400">Generar un enlace de pago o un Pix al cerrar la venta.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">🧾</div><h4 class="font-semibold text-neutral-100 mb-1">Descarga y toma nota</h4><p class="text-xs text-neutral-400">Confirmar que se recibió un pago y activar la siguiente etapa del proceso.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">🏢</div><h4 class="font-semibold text-neutral-100 mb-1">ERP / sistema interno</h4><p class="text-xs text-neutral-400">Actualizar el inventario, el estado del pedido, los datos de registro: el sistema que hace funcionar la operación.</p></div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🛡️</span> Una herramienta sensible necesita un muro alto</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li><strong class="text-neutral-100">Confirmar antes de actuar:</strong> cobrar o registrar el pago solo después de una verificación clara — nunca por suposición.</li>
+<li><strong class="text-neutral-100">Límite de valor:</strong> por encima de cierto monto, exigir aprobación humana antes de ejecutar.</li>
+<li><strong class="text-neutral-100">Registro de todo:</strong> toda acción con dinero queda registrada — quién la solicitó, cuándo, cuánto.</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Error común</h3>
+<p class="text-neutral-300 text-sm">Darle a Jarvis el poder de cobrar o modificar el ERP sin ninguna barrera. Cuanto más peligrosa sea la herramienta, más estricto debe ser el límite a su alrededor. El poder sin barreras de seguridad no es eficiencia: es riesgo.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Dinero</div><div class="text-xs text-neutral-400">el error cuesta caro</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">ERP</div><div class="text-xs text-neutral-400">ejecuta la operación</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Muro alto</div><div class="text-xs text-neutral-400">confirmar y limitar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Registro</div><div class="text-xs text-neutral-400">registrarlo todo</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-16" data-inema-module="2-7" data-inema-topic="modulo-2-7#topico-6" data-inema-track="2" id="topico-6">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">🎯 La herramienta sirve a la intención</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-7-t6-p1">Este es el corazón del módulo — y cierra el Día 2. La mayoría empieza mal, preguntando <em class="text-neutral-400">"¿qué herramienta uso?"</em>. El arquitecto pregunta <strong class="text-blue-400">"¿qué resultado quiero generar?"</strong> — y solo entonces elige la herramienta que entrega ese resultado. <strong class="text-blue-400">La herramienta está al servicio de la intención, nunca al revés.</strong> Cambiar el orden es el motivo n.º 1 de que haya proyectos llenos de tecnología y sin resultados.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Empezar por la intención</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>"Quiero confirmar pedidos sin trabajo manual."</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Entonces elige: una hoja de cálculo + WhatsApp resuelven el problema.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>La herramienta está al servicio del resultado.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Sencillo, barato y funciona.</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Empezar por la herramienta</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Quiero usar esa nueva base de datos."</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Entonces busca un problema para la herramienta.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Mucha tecnología, pocos resultados reales.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Caro, complejo y desaparece el primer mes.</span></li>
+</ul>
+</div>
+</div>
+<!-- TIMELINE: a ordem certa de decidir -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-5 flex items-center"><span class="mr-2">🧭</span> El orden correcto para decidir</h3>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-9 h-9 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold text-sm">1</span></div>
+<div class="flex-1"><h4 class="font-semibold text-neutral-100 mb-0.5">¿Cuál es el resultado?</h4><p class="text-sm text-neutral-400">Define primero la intención: qué debe cambiar en el mundo.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-9 h-9 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold text-sm">2</span></div>
+<div class="flex-1"><h4 class="font-semibold text-neutral-100 mb-0.5">¿Qué acción genera este resultado?</h4><p class="text-sm text-neutral-400">¿Escribir una línea? ¿Enviar un mensaje? ¿Cobrar un monto?</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-9 h-9 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold text-sm">3</span></div>
+<div class="flex-1"><h4 class="font-semibold text-neutral-100 mb-0.5">¿Cuál es la herramienta más sencilla para esta acción?</h4><p class="text-sm text-neutral-400">La más barata y fácil que cumple — no la más impresionante.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-9 h-9 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold text-sm">4</span></div>
+<div class="flex-1"><h4 class="font-semibold text-neutral-100 mb-0.5">¿Está dentro de los muros?</h4><p class="text-sm text-neutral-400">La acción sensible tiene confirmación, límites y registro. Solo entonces: se conecta.</p></div>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔑</span> La frase que cierra el Día 2</h3>
+<p class="text-neutral-300">Las herramientas son brazos, no cerebro. El cerebro es la intención; el alma y los muros deciden; las herramientas solo ejecutan. Cuando alguien te pregunte "¿qué stack usas?", responde primero: "¿qué resultado queremos generar?". Esa inversión es la marca del arquitecto.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Primero</div><div class="text-xs text-neutral-400">la intención</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Después</div><div class="text-xs text-neutral-400">la herramienta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Pregunta</div><div class="text-xs text-neutral-400">"¿qué resultado?"</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Regla</div><div class="text-xs text-neutral-400">brazo, no cerebro</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
+<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-2-7#q1">
+<p class="font-medium mb-4">Autoevaluación (opcional): ¿cuál es la pregunta adecuada al elegir una herramienta?</p>
+<div class="inema-check-options space-y-2">
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">"¿Cuál es la herramienta más nueva y poderosa del mercado?"</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">"¿Qué resultado quiero generar?" —y solo entonces elijo la herramienta que lo consigue.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">"¿Qué herramienta usan mis competidores?"</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<!-- RESUMO -->
+<section class="mb-8">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Herramientas = actuar en el mundo</strong><span class="text-neutral-400"> — los brazos que convierten las palabras de Jarvis en hechos.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Empieza por lo que ya existe</strong><span class="text-neutral-400"> — las hojas de cálculo, Notion y CRM resuelven la mayor parte.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Base de datos y API</strong><span class="text-neutral-400"> — entran con volumen e integración; la API es el enchufe entre sistemas.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">La mensajería le da voz</strong><span class="text-neutral-400"> — WhatsApp, Telegram y correo electrónico; elige según el público.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Pagos y sistemas internos</strong><span class="text-neutral-400"> — poderosos y sensibles; requieren un muro alto.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">La herramienta está al servicio de la intención</strong><span class="text-neutral-400"> — pregunta «¿qué resultado?», nunca «¿qué herramienta?».</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Fin del Día 2 — próximo día:</h3>
+<p class="text-neutral-300">La «esencia», los servicios, los agentes, la memoria, los muros y las herramientas están en su lugar. El Día 3 lo unes todo en una <strong class="text-neutral-100">solución real dentro de una empresa</strong> — de la intención al resultado medido.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver al Día 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3/index.html">Siguiente: Día 3 · Solución Real en la Empresa →</a>
+</div>
+</div>
+</section>
+</main>
+<!-- TOC STICKY + SCROLLSPY -->
+<aside class="hidden lg:block">
+<nav aria-label="Índice del módulo" class="sticky top-20 self-start text-sm" data-inema-toc="">
+<p class="text-neutral-400 mb-3 font-medium">En esta página <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<ol class="space-y-2 border-l border-dark-600 pl-4">
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. Qué son las herramientas</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Hojas de cálculo, Notion y CRM</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. Base de datos y APIs</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. Mensajería</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. Pagos y sistemas internos</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. La herramienta sirve a la intención</a></li>
+</ol>
+</nav>
+</aside>
+</div>
+<footer class="border-t border-dark-600 py-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Arquitectura de Intención de la IA · Método JARVIS — Día 2 · Módulo 2.7</p>
+</div>
+</footer>
+<!-- learn.js + init + checagem -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+      if (INEMA.registerCheck) {
+        INEMA.registerCheck('modulo-2-7#q1', {
+          answer: 1,
+          explain: {
+            0: 'Não — a ferramenta mais nova raramente é a que o resultado pede. Tecnologia não é o ponto de partida.',
+            1: 'Isso. A intenção vem primeiro; a ferramenta entra a serviço do resultado, nunca o contrário.',
+            2: 'Não — copiar a stack do concorrente ignora qual resultado a SUA empresa precisa gerar.'
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

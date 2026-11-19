@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="jarvis" name="inema-course"/>
+<!-- 1) ANTI-FOUC (REL = "../..") -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
+      var s = html.style; var scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.emerald;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<!-- 2) Manifesto (identico em TODAS as paginas) -->
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "jarvis",
+    "tracks": [
+      { "n": "1", "title": "Infraestrutura e Mentalidade", "modules": [
+        { "id": "1-1", "title": "A Virada: de Operador a Arquiteto", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "A Metafora do Jarvis", "topics": 7, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Infraestrutura: Pastas, Terminal e Versionamento", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Publicar no Mundo", "topics": 7, "href": "curso/trilha1/modulo-1-4.html" },
+        { "id": "1-5", "title": "Canais de Entrada e Saida", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+      ] },
+      { "n": "2", "title": "Construcao do Jarvis", "modules": [
+        { "id": "2-1", "title": "A Alma do Jarvis", "topics": 7, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Servicos Internos", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Agentes", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Habilidades", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+        { "id": "2-5", "title": "Memoria e Contexto", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+        { "id": "2-6", "title": "Muros de Seguranca", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" },
+        { "id": "2-7", "title": "Ferramentas e Integracoes", "topics": 6, "href": "curso/trilha2/modulo-2-7.html" }
+      ] },
+      { "n": "3", "title": "Solucao Real na Empresa", "modules": [
+        { "id": "3-1", "title": "A Intencao no Centro", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Mapear o Problema", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Desenhar a Arquitetura", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Prototipo Funcional", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Medir Resultado", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+        { "id": "3-6", "title": "Evolucao e Apresentacao", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 1.3 · Infraestructura: carpetas, terminal y control de versiones | Arquitectura de intención de la IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5,150,105,0.18); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.2s} .wf-a:nth-child(3){animation-delay:.4s} .wf-a:nth-child(4){animation-delay:.6s}
+    }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+    .appearance-anchor { position: relative; }
+    .toc-link.is-active { color: #34d399; font-weight: 600; }
+    html:not(.dark) .toc-link.is-active { color: #059669; }
+  </style>
+<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha1/modulo-1-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha1/modulo-1-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha1/modulo-1-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip" href="#conteudo">Ir al contenido</a>
+<!-- NAV COMPLETO -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitectura de Intención</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
+<span class="sm:hidden">D1</span><span class="hidden sm:inline">Día 1</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">
+<span class="sm:hidden">D2</span><span class="hidden sm:inline">Día 2</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">D3</span><span class="hidden sm:inline">Día 3</span></a>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Mi recorrido" type="button">
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span>
+<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<div class="appearance-anchor">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Apariencia y lectura" type="button"><span aria-hidden="true">◑</span></button>
+<div class="inema-appearance-pop" data-inema-appearance="">
+<div aria-label="Tema" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark" type="button">Oscuro</button>
+<button data-inema-set-theme="claro" type="button">Claro</button>
+<button data-inema-set-theme="sepia" type="button">Sepia</button>
+<button data-inema-set-theme="foco" type="button">Enfoque</button>
+<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+</div>
+<div aria-label="Fuente" class="inema-segment" role="group">
+<button data-inema-set-font="inter" type="button">Inter</button>
+<button data-inema-set-font="system" type="button">Sistema</button>
+<button data-inema-set-font="leitura" type="button">Lectura</button>
+</div>
+<div aria-label="Tamaño del texto" class="inema-segment" role="group">
+<button data-inema-set-fontscale="100" type="button">A</button>
+<button data-inema-set-fontscale="112" type="button">A+</button>
+<button data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60" type="button">Estrecho</button>
+<button data-inema-set-linewidth="68" type="button">Medio</button>
+<button data-inema-set-linewidth="75" type="button">Amplio</button>
+</div>
+<div aria-label="Entre líneas" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45" type="button">Compacto</button>
+<button data-inema-set-leading="1.7" type="button">Cómodo</button>
+</div>
+<div aria-label="Color de acento" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-inema-set-accent="blue" title="Azul" type="button"></button>
+<button data-inema-set-accent="purple" title="Morado" type="button"></button>
+<button data-inema-set-accent="amber" title="Ámbar" type="button"></button>
+<button data-inema-set-accent="teal" title="Teal" type="button"></button>
+<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- BREADCRUMB -->
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Día 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.3</span>
+</div>
+</nav>
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📁 Infraestructura: carpetas, terminal y versionado</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Perder el miedo a la infraestructura. Aquí no te conviertes en programador — entiendes el mapa: cómo organizar carpetas, comunicarte con la terminal sin miedo y versionar tu trabajo con Git y GitHub para no volver a perder nada.</p>
+<!-- SVG: pastas organizadas → versionar (commit) → GitHub (histórico/nuvem) -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
+<svg aria-label="Flujo de la infraestructura: las carpetas organizadas en la computadora se convierten en versiones registradas con Git, que se suben a GitHub en la nube, forman un historial y abren la puerta a la colaboración" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<defs>
+<lineargradient id="m13-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
+<filter height="180%" id="m13-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m13-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#10b981" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m13-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="m13-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m13-grid)" height="250" width="1000" x="0" y="0"></rect>
+<!-- 1) Pastas organizadas (computador local) -->
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="60" y="40">1 · En tu computadora</text>
+<rect fill="#0e2018" height="120" rx="14" stroke="#34d399" stroke-width="2" width="190" x="60" y="80"></rect>
+<g font-family="Inter,sans-serif" font-size="12" font-weight="600">
+<rect fill="#0e1b26" height="26" rx="7" stroke="#38bdf8" stroke-width="1.6" width="150" x="80" y="98"></rect><text fill="#bfe6ff" x="98" y="115">📁 projeto/</text>
+<rect fill="#0e1b26" height="24" opacity="0.85" rx="7" stroke="#38bdf8" stroke-width="1.4" width="138" x="92" y="130"></rect><text fill="#bfe6ff" font-size="11" x="108" y="146">📁 entrada/</text>
+<rect fill="#0e1b26" height="24" opacity="0.85" rx="7" stroke="#38bdf8" stroke-width="1.4" width="138" x="92" y="160"></rect><text fill="#bfe6ff" font-size="11" x="108" y="176">📄 anotaciones</text>
+</g>
+<!-- seta pastas -> commit -->
+<path d="M254,140 L356,140" fill="none" marker-end="url(#m13-ah)" opacity="0.6" stroke="#34d399" stroke-width="1.8"></path>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="305" y="128">guardar versión</text>
+<!-- 2) Versionar (commit) -->
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="360" y="40">2 · Git marca la versión</text>
+<g font-family="Inter,sans-serif" font-size="11.5" font-weight="600">
+<g class="wf-a"><circle cx="392" cy="140" fill="#0e1b26" r="13" stroke="#38bdf8" stroke-width="1.8"></circle><text fill="#bfe6ff" text-anchor="middle" x="392" y="144">v1</text></g>
+<g class="wf-a"><circle cx="450" cy="140" fill="#0e1b26" r="13" stroke="#38bdf8" stroke-width="1.8"></circle><text fill="#bfe6ff" text-anchor="middle" x="450" y="144">v2</text></g>
+<g class="wf-a"><circle cx="508" cy="140" fill="#0e1b26" r="13" stroke="#38bdf8" stroke-width="1.8"></circle><text fill="#bfe6ff" text-anchor="middle" x="508" y="144">v3</text></g>
+</g>
+<line opacity="0.5" stroke="#38bdf8" stroke-width="1.6" x1="405" x2="437" y1="140" y2="140"></line>
+<line opacity="0.5" stroke="#38bdf8" stroke-width="1.6" x1="463" x2="495" y1="140" y2="140"></line>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="450" y="178">cada commit = un punto al que volver</text>
+<!-- seta commit -> github -->
+<path d="M524,140 C600,140 640,120 700,120" fill="none" marker-end="url(#m13-ah)" opacity="0.6" stroke="#34d399" stroke-width="1.8"></path>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="612" y="100">enviar (push)</text>
+<!-- 3) GitHub na nuvem -->
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="708" y="40">3 · GitHub (en la nube)</text>
+<g filter="url(#m13-glow)"><rect fill="#0e2018" height="64" rx="14" stroke="url(#m13-grad)" stroke-width="2" width="232" x="708" y="90"></rect></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="824" y="118">☁️ Repositorio</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="824" y="138">historial · copia de seguridad · colaboración</text>
+<!-- pessoas colaborando -->
+<g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.6">
+<path d="M780,154 C780,190 760,196 740,200" marker-end="url(#m13-ahc)"></path>
+<path d="M868,154 C868,190 888,196 908,200" marker-end="url(#m13-ahc)"></path>
+</g>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="734" y="216">tú</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="914" y="216">equipo</text>
+</svg>
+</div>
+<div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~50</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Práctico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 1.3" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:1-3" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progreso del módulo</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 6</strong> · <span data-inema-meter-pct="">0%</span></span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</div>
+</header>
+<!-- CORPO + TOC -->
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
+<main id="conteudo">
+<!-- TÓPICO 1 — Pastas e arquivos -->
+<section class="mb-16" data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-1" data-inema-track="1" id="topico-1">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">📁 Carpetas y archivos: el hogar del proyecto</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t1-p1">Toda solución de IA vive en algún lugar: un conjunto de <strong class="text-emerald-400">carpetas y archivos</strong> dentro de una computadora. Parece banal, pero es la base física de todo. Un proyecto bien organizado es como una casa ordenada: encuentras lo que necesitas en segundos. Un proyecto desordenado es como un cajón lleno de chucherías: todo está ahí, pero nadie encuentra nada. No necesitas talento para eso, solo una convención sencilla y el hábito de respetarla.</p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">🏠</span> La regla de oro de la organización</h3>
+<p class="text-neutral-300">Una carpeta por proyecto. Dentro, carpetas por tema (entrada, salida, notas). Nombres en minúsculas, sin espacios ni tildes, separando las palabras con guiones. Esta convención por sí sola resuelve el 90% del desorden y funciona igual en tu computadora, en el servidor y en GitHub.</p>
+</div>
+<!-- MONO/CODE BOX (ilustrativo): estrutura de pastas -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Una estructura sencilla y clara</h3>
+<div class="font-mono text-sm text-neutral-300 space-y-1 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
+<div><span class="text-emerald-400">📁 meu-jarvis/</span> <span class="text-neutral-500"># la carpeta del proyecto</span></div>
+<div>  ├── <span class="text-emerald-400">entrada/</span> <span class="text-neutral-500"># lo que llega (mensajes, archivos)</span></div>
+<div>  ├── <span class="text-emerald-400">saida/</span> <span class="text-neutral-500"># lo que responde el sistema</span></div>
+<div>  ├── <span class="text-emerald-400">anotacoes/</span> <span class="text-neutral-500"># la memoria del proyecto</span></div>
+<div>  └── <span class="text-emerald-400">leiame.txt</span> <span class="text-neutral-500"># qué es esto, en 5 líneas</span></div>
+</div>
+<p class="text-xs text-neutral-500 mt-3">Ejemplo ilustrativo de estructura de carpetas — adapta los nombres a tu proyecto. Lo importante es el patrón, no estos nombres exactos.</p>
+</div>
+<!-- GRID ✓/✗ (1 de 2) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Nombres que ayudan</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><code class="font-mono">relatorio-vendas</code> — minúsculas, guion</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><code class="font-mono">2026-06-orcamento</code> — poner la fecha al principio los ordena automáticamente</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Una carpeta = un propósito claro</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Nombres que estorban</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><code class="font-mono">Relatório Final (2).docx</code> — espacios y tildes</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><code class="font-mono">novo</code>, <code class="font-mono">teste</code>, <code class="font-mono">aaa</code> — no dicen nada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Todo suelto en el Escritorio</span></li>
+</ul>
+</div>
+</div>
+<!-- GRID Conceitos-chave -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Estructura</div><div class="text-xs text-neutral-400">una carpeta por proyecto</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Convención</div><div class="text-xs text-neutral-400">minúsculas y guion</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Propósito</div><div class="text-xs text-neutral-400">cada carpeta, una función</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Hábito</div><div class="text-xs text-neutral-400">ordenar es decidir una sola vez</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 — O terminal -->
+<section class="mb-16" data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-2" data-inema-track="1" id="topico-2">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">⌨️ La terminal: perder el miedo</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t2-p1">El terminal es esa pantallita negra de las películas de hackers. Asusta porque parece que hay que memorizar mil comandos, pero la verdad es más sencilla: el terminal es solo una <strong class="text-emerald-400">conversación con la computadora por texto</strong>, en lugar de hacer clic con el mouse. Escribes una orden, presionas Enter y te responde. El objetivo aquí no es convertirte en especialista en línea de comandos: es perder el miedo, entender que es una herramienta amigable y saber pedir las pocas cosas que importan.</p>
+<!-- MOCK DE TERMINAL (HTML, ilustrativo) -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="flex items-center gap-2 px-4 py-2 bg-dark-900/70 border-b border-dark-700">
+<span class="w-3 h-3 rounded-full bg-red-400/70"></span>
+<span class="w-3 h-3 rounded-full bg-yellow-400/70"></span>
+<span class="w-3 h-3 rounded-full bg-emerald-400/70"></span>
+<span class="ml-3 text-xs text-neutral-500 font-mono">terminal — meu-jarvis</span>
+</div>
+<div class="font-mono text-sm p-4 space-y-1.5 bg-dark-900/40">
+<div><span class="text-emerald-400">tú ▸</span> <span class="text-neutral-200">cd meu-jarvis</span> <span class="text-neutral-500"># entrar en la carpeta del proyecto</span></div>
+<div><span class="text-emerald-400">tú ▸</span> <span class="text-neutral-200">ls</span> <span class="text-neutral-500"># listar lo que hay aquí dentro</span></div>
+<div class="text-neutral-400 pl-4">entrada/   saida/   anotacoes/   leiame.txt</div>
+<div><span class="text-emerald-400">tú ▸</span> <span class="text-neutral-200">pwd</span> <span class="text-neutral-500"># "¿dónde estoy?"</span></div>
+<div class="text-neutral-400 pl-4">/home/voce/meu-jarvis</div>
+</div>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Recreación ilustrativa de una terminal, no es una captura de pantalla real. Los comandos solo sirven para mostrar el ritmo "escribo → Enter → respuesta".</p>
+<!-- TIP BOX (1 de 2) -->
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico: tres comandos bastan para empezar</h3>
+<p class="text-neutral-300 text-sm">No necesitas memorizar nada. Para empezar, tres órdenes resuelven casi todo: <code class="font-mono text-neutral-100">cd</code> (entrar en una carpeta), <code class="font-mono text-neutral-100">ls</code> (ver lo que hay) y <code class="font-mono text-neutral-100">pwd</code> (saber dónde estás). Con esto ya puedes navegar. El resto se lo pides a la IA — y así es fácil entender lo que escribió.</p>
+</div>
+<!-- TABELA de comandos essenciais -->
+<div class="overflow-x-auto mb-6">
+<table class="w-full text-sm border border-dark-600 rounded-xl overflow-hidden">
+<thead class="bg-dark-800 text-neutral-400">
+<tr><th class="text-left font-semibold px-4 py-3 border-b border-dark-600">Escribes</th><th class="text-left font-semibold px-4 py-3 border-b border-dark-600">Qué sucede</th></tr>
+</thead>
+<tbody class="text-neutral-300">
+<tr class="bg-dark-800/40"><td class="px-4 py-3 border-b border-dark-700 font-mono text-emerald-400">cd carpeta</td><td class="px-4 py-3 border-b border-dark-700">Entra en una carpeta (como hacer doble clic en ella)</td></tr>
+<tr><td class="px-4 py-3 border-b border-dark-700 font-mono text-emerald-400">cd ..</td><td class="px-4 py-3 border-b border-dark-700">Vuelve una carpeta atrás</td></tr>
+<tr class="bg-dark-800/40"><td class="px-4 py-3 border-b border-dark-700 font-mono text-emerald-400">ls</td><td class="px-4 py-3 border-b border-dark-700">Lista los archivos y las carpetas donde estás</td></tr>
+<tr><td class="px-4 py-3 font-mono text-emerald-400">pwd</td><td class="px-4 py-3">Muestra el camino completo desde donde estás</td></tr>
+</tbody>
+</table>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Tabla ilustrativa de los comandos más usados en el día a día. En Windows algunos nombres cambian, pero la idea es idéntica.</p>
+<!-- GRID Conceitos-chave -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Es una conversación</div><div class="text-xs text-neutral-400">texto, no clic</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Familiaridad</div><div class="text-xs text-neutral-400">no dominio total</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Tres comandos</div><div class="text-xs text-neutral-400">cd · ls · pwd</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">La puerta</div><div class="text-xs text-neutral-400">servidores y deploy</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 — Git e GitHub -->
+<section class="mb-16" data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-3" data-inema-track="1" id="topico-3">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">🌿 Git y GitHub: versionar es guardar versiones</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t3-p1">Imagina un videojuego en el que puedes guardar la partida en cualquier momento y volver a cualquier partida guardada cuando te equivoques. Eso es exactamente lo que el <strong class="text-emerald-400">Git</strong> hace con tu proyecto: cada vez que "guardas", conserva una foto completa de todo; esto se llama <em class="text-neutral-400">commit</em>. O <strong class="text-emerald-400">GitHub</strong> es el lugar en internet donde se guardan esas fotos, lejos de tu computadora. Git es la herramienta que toma la foto; GitHub es el álbum en la nube. El control de versiones no es cosa de programadores avanzados: es solo el hábito de guardar con historial.</p>
+<!-- TIMELINE: do trabalho ao repositório (vertical) -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">El recorrido de un trabajo hasta la nube</h3>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">Trabajas</h4><p class="text-neutral-300 text-sm">Edita archivos en la carpeta del proyecto, como siempre lo hiciste.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">Haz uno <span class="font-mono text-emerald-400">commit</span></h4><p class="text-neutral-300 text-sm">Toma una «foto» del estado actual y escribe una frase sobre lo que cambió: <em>"agregué la carpeta de notas"</em>.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">Haz uno <span class="font-mono text-emerald-400">push</span></h4><p class="text-neutral-300 text-sm">Envía las fotos a GitHub. Ahora tu trabajo está seguro en la nube, con todo el historial.</p></div>
+</div>
+</div>
+</div>
+<!-- MONO/CODE BOX: o ciclo em comandos (ilustrativo) -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">El ciclo, en tres líneas</h3>
+<div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
+<div><span class="text-emerald-400">git add .</span> <span class="text-neutral-500"># "quiero guardar lo que cambié"</span></div>
+<div><span class="text-emerald-400">git commit -m "o que mudou"</span> <span class="text-neutral-500"># toma la foto + descríbela</span></div>
+<div><span class="text-emerald-400">git push</span> <span class="text-neutral-500"># envía a GitHub</span></div>
+</div>
+<p class="text-xs text-neutral-500 mt-3">Comandos ilustrativos: los pegarás una vez y los repetirás siempre. No hace falta memorizarlos: necesitas entender que cada línea es un paso de «guardar con historia».</p>
+</div>
+<!-- GRID Conceitos-chave -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Repositorio</div><div class="text-xs text-neutral-400">el proyecto versionado</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Commit</div><div class="text-xs text-neutral-400">una foto con leyenda</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Push</div><div class="text-xs text-neutral-400">enviar a la nube</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Git × GitHub</div><div class="text-xs text-neutral-400">cámara × álbum</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 — Histórico e colaboração -->
+<section class="mb-16" data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-4" data-inema-track="1" id="topico-4">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">📜 Historial y colaboración: la memoria del proyecto</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t4-p1">El control de versiones no sirve solo para que no pierdas el trabajo. Cuando el historial está en GitHub, se convierte en la <strong class="text-emerald-400">memoria del proyecto</strong>: puedes ver quién cambió qué, cuándo y por qué. Y eso permite algo esencial: que varias personas (o varias IA) trabajen en el mismo proyecto <strong class="text-emerald-400">sin pisarse</strong>. Casi nunca se crean soluciones reales en solitario. El historial es lo que permite volver atrás con seguridad y confiar cuando otra persona hace cambios.</p>
+<!-- GRID ✓/✗ (2 de 2): com histórico × sem histórico -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Con historial (GitHub)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"¿Se rompió? Vuelvo a la versión de ayer en 1 minuto."</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Se puede ver quién cambió cada línea y por qué.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Dos personas trabajan en el mismo proyecto sin sobrescribirse.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>El proyecto tiene memoria: nada se pierde al "guardar encima".</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Sin historial (archivos sueltos)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><code class="font-mono">projeto_final_v3_AGORA_VAI.zip</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nadie sabe cuál es la versión correcta.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Uno guarda encima del otro y el trabajo desaparece.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Funcionaba la semana pasada" —y no hay forma de volver atrás.</span></li>
+</ul>
+</div>
+</div>
+<!-- MOCK de histórico de commits (ilustrativo) -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Cómo aparece el historial</h3>
+<div class="font-mono text-sm space-y-2 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
+<div class="flex items-center gap-3"><span class="text-emerald-400">●</span><span class="text-neutral-200">creé la estructura de carpetas</span><span class="text-neutral-500 ml-auto text-xs">Maria · hace 3 días</span></div>
+<div class="flex items-center gap-3"><span class="text-emerald-400">●</span><span class="text-neutral-200">agregué el alma del asistente</span><span class="text-neutral-500 ml-auto text-xs">João · hace 2 días</span></div>
+<div class="flex items-center gap-3"><span class="text-emerald-400">●</span><span class="text-neutral-200">corregí el texto del archivo README</span><span class="text-neutral-500 ml-auto text-xs">Tú · hoy</span></div>
+</div>
+<p class="text-xs text-neutral-500 mt-3">Recreación ilustrativa de un historial en GitHub. Cada punto es un commit — una foto con descripción, autor y fecha.</p>
+</div>
+<!-- GRID Conceitos-chave -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Historial</div><div class="text-xs text-neutral-400">quién, qué, cuándo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Colaboración</div><div class="text-xs text-neutral-400">sin pisarse</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Trazabilidad</div><div class="text-xs text-neutral-400">volver con seguridad</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Copia de seguridad activa</div><div class="text-xs text-neutral-400">nada se pierde</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 — Entender o mapa -->
+<section class="mb-16" data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-5" data-inema-track="1" id="topico-5">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">🗺️ Entender el mapa, no dominarlo todo</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t5-p1">Aquí está la liberación de este módulo: tú <strong class="text-emerald-400">no necesitas dominar la infraestructura como un ingeniero sénior</strong>. Necesitas entender el mapa. Un taxista no construyó las calles ni sabe de ingeniería del asfalto, pero conoce la ciudad y llega adonde necesita. Esa es tu meta con las carpetas, la terminal y Git: saber lo suficiente para decidir, pedir lo correcto y no depender de nadie para recorrer el camino.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🧭</span> Mapa × dominio: la diferencia que libera</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li><strong class="text-neutral-100">Dominar</strong> sería saber cada comando, cada detalle, cada caso raro: años de estudio, y no es tu trabajo.</li>
+<li><strong class="text-neutral-100">Entiende el mapa</strong> es saber qué existe, para qué sirve y cuándo usarlo: semanas de familiarización, y eso es exactamente lo que necesita el arquitecto.</li>
+<li><strong class="text-neutral-100">La IA completa el resto:</strong> ella escribe el comando difícil; tú entiendes lo que escribió y decides si está bien.</li>
+</ul>
+</div>
+<!-- TIP BOX (2 de 2) -->
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico: la pregunta correcta para la IA</h3>
+<p class="text-neutral-300 text-sm">Cuando te trabes con la infraestructura, no preguntes "¿cómo hago todo esto?". Pregunta: <em>"explícame en una frase qué hace este comando y cuál es el riesgo de ejecutarlo"</em>. Tú sigues al mando de la decisión: la IA se convierte en tu copiloto técnico, no en tu jefe.</p>
+</div>
+<!-- GRID Conceitos-chave -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Mapa</div><div class="text-xs text-neutral-400">saber qué existe</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Dominio</div><div class="text-xs text-neutral-400">no es tu papel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Autonomía</div><div class="text-xs text-neutral-400">no depender de nadie</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Decidir</div><div class="text-xs text-neutral-400">lo suficiente para elegir</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 — O ambiente do arquiteto -->
+<section class="mb-16" data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-6" data-inema-track="1" id="topico-6">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">🧰 El entorno del arquitecto: configurar una vez</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t6-p1">Por último, el arquitecto arma un <strong class="text-emerald-400">entorno de trabajo</strong> — el conjunto mínimo de herramientas con las que construyes. No es mucho: un editor para escribir, la terminal abierta al lado, una cuenta de GitHub y el hábito de organizarte. Preparas este entorno una sola vez y te ahorra horas en todos los proyectos siguientes. Es como ordenar la mesa de trabajo antes de empezar: cinco minutos al inicio te ahorran todo el día buscando herramientas.</p>
+<!-- KIT mínimo em cards (variação de layout) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📝</div><h4 class="font-semibold text-neutral-100 mb-1">Un editor</h4><p class="text-xs text-neutral-400">Dónde escribes y lees los archivos del proyecto.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">⌨️</div><h4 class="font-semibold text-neutral-100 mb-1">El terminal</h4><p class="text-xs text-neutral-400">Abierto al lado, para dar órdenes rápidas.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">☁️</div><h4 class="font-semibold text-neutral-100 mb-1">Cuenta de GitHub</h4><p class="text-xs text-neutral-400">El álbum en la nube que guarda todo.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">🧹</div><h4 class="font-semibold text-neutral-100 mb-1">Hábito de organizar</h4><p class="text-xs text-neutral-400">La convención de carpetas y nombres, siempre.</p></div>
+</div>
+<!-- CHECKLIST de setup (variação) -->
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">✅</span> Lista de verificación del entorno configurado</h3>
+<div class="space-y-3">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">✓</span><span class="text-neutral-300 text-sm">Tengo un editor instalado y sé cómo abrir una carpeta en él.</span></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">✓</span><span class="text-neutral-300 text-sm">Puedo abrir la terminal y navegar con <code class="font-mono">cd</code> e <code class="font-mono">ls</code>.</span></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">✓</span><span class="text-neutral-300 text-sm">Tengo una cuenta de GitHub creada.</span></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">✓</span><span class="text-neutral-300 text-sm">Adopté una convención de carpetas y nombres para mis proyectos.</span></div>
+</div>
+</div>
+<!-- GRID Conceitos-chave -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Configuración</div><div class="text-xs text-neutral-400">armarlo una vez</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Editor</div><div class="text-xs text-neutral-400">leer y escribir</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Kit mínimo</div><div class="text-xs text-neutral-400">pocas herramientas</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Ahorro</div><div class="text-xs text-neutral-400">horas en cada proyecto</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
+<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-3#q1">
+<p class="font-medium mb-4">Autoevaluación (opcional): ¿cuál es la meta de este módulo en relación con la infraestructura?</p>
+<div class="inema-check-options space-y-2">
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Dominar la terminal, Git y los servidores como un ingeniero sénior.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Perder el miedo y entender el mapa — lo suficiente para decidir y no depender de nadie.</button>
+<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Evitar el terminal y Git para siempre, dejando todo en manos del equipo técnico.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<!-- RESUMO -->
+<section class="mb-8">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📁</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Carpetas y archivos</strong><span class="text-neutral-400"> — una carpeta por proyecto, nombres en minúsculas con guion: 90% del desorden resuelto.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">El terminal</strong><span class="text-neutral-400"> — una conversación por texto; tres comandos (cd, ls, pwd) ya te permiten navegar.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Git y GitHub</strong><span class="text-neutral-400"> — guardar con historial: commit es la foto, GitHub es el álbum en la nube.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Historial y colaboración</strong><span class="text-neutral-400"> — la memoria del proyecto: volver atrás y trabajar en equipo sin pisarse.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Entiende el mapa</strong><span class="text-neutral-400"> — saber lo suficiente para decidir; la IA escribe el comando difícil.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">El entorno del arquitecto</strong><span class="text-neutral-400"> — editor, terminal, GitHub y hábito: montar una vez, ahorrar siempre.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Siguiente módulo:</h3>
+<p class="text-neutral-300">1.4 — Publicar en el mundo: sacar la solución de tu computadora y ponerla en línea para que el mundo la use.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver al Día 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-4.html">Siguiente: 1.4 Publicar en el Mundo →</a>
+</div>
+</div>
+</section>
+</main>
+<!-- TOC STICKY + SCROLLSPY -->
+<aside class="hidden lg:block">
+<nav aria-label="Índice del módulo" class="sticky top-20 self-start text-sm" data-inema-toc="">
+<p class="text-neutral-400 mb-3 font-medium">En esta página <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<ol class="space-y-2 border-l border-dark-600 pl-4">
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. Carpetas y archivos</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. La terminal</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-3">3. Git y GitHub</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. Historial y colaboración</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-5">5. Entender el mapa</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. El entorno del arquitecto</a></li>
+</ol>
+</nav>
+</aside>
+</div>
+<footer class="border-t border-dark-600 py-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Arquitectura de Intención de la IA · Método JARVIS — Día 1 · Módulo 1.3</p>
+</div>
+</footer>
+<!-- learn.js + init + checagem -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+      if (INEMA.registerCheck) {
+        INEMA.registerCheck('modulo-1-3#q1', {
+          answer: 1,
+          explain: {
+            0: 'Não — você não precisa virar engenheiro. A meta é entender o mapa, não dominar cada detalhe.',
+            1: 'Isso. Perder o medo e entender o mapa: o suficiente para decidir, pedir certo e ter autonomia.',
+            2: 'Ao contrário — fugir da infraestrutura é o que cria dependência. O objetivo é a familiaridade que liberta.'
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
