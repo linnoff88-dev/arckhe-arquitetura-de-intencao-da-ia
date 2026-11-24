@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="inema-course"/>
+<meta content="jarvis" name="ARCKHÉ-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Módulo 2.4 · Habilidades | Arquitetura de Intenção da IA</title>
+<title>MÃ³dulo 2.4 Â· Habilidades | Arquitetura de IntenÃ§Ã£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -131,19 +131,19 @@
     .toc-link.is-active { color: #60a5fa; font-weight: 600; }
     html:not(.dark) .toc-link.is-active { color: #2563eb; }
   </style>
-<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha2/modulo-2-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha2/modulo-2-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha2/modulo-2-4.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitetura de Intenção</span>
+<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -152,46 +152,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span>
-<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Aparência e leitura" type="button"><span aria-hidden="true">◑</span></button>
-<div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark" type="button">Escuro</button>
-<button data-inema-set-theme="claro" type="button">Claro</button>
-<button data-inema-set-theme="sepia" type="button">Sépia</button>
-<button data-inema-set-theme="foco" type="button">Foco</button>
-<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
+<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
+<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
+<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
-<button data-inema-set-font="inter" type="button">Inter</button>
-<button data-inema-set-font="system" type="button">Sistema</button>
-<button data-inema-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
+<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
-<button data-inema-set-fontscale="100" type="button">A</button>
-<button data-inema-set-fontscale="112" type="button">A+</button>
-<button data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60" type="button">Estreito</button>
-<button data-inema-set-linewidth="68" type="button">Médio</button>
-<button data-inema-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
+<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45" type="button">Compacto</button>
-<button data-inema-set-leading="1.7" type="button">Confortável</button>
+<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-inema-set-accent="blue" title="Azul" type="button"></button>
-<button data-inema-set-accent="purple" title="Roxo" type="button"></button>
-<button data-inema-set-accent="amber" title="Âmbar" type="button"></button>
-<button data-inema-set-accent="teal" title="Teal" type="button"></button>
-<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
+<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
+<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -202,20 +202,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-blue-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-blue-400" href="../../index.html">InÃ­cio</a><span>/</span>
 <a class="hover:text-blue-400" href="index.html">Dia 2</a><span>/</span>
-<span class="text-blue-400">Módulo 2.4</span>
+<span class="text-blue-400">MÃ³dulo 2.4</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.4</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">⚡ Habilidades</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Habilidade é a capacidade específica e acionável de um agente: resumir, classificar, consultar uma planilha, gerar uma proposta. Aqui você aprende a tratá-las como peças deliberadas — cada uma ligada a um objetivo claro — porque habilidade sem intenção vira excesso, e excesso vira confusão. É a soma certa de habilidades que transforma um agente competente em um agente útil.</p>
-<!-- SVG header: agente + habilidades = agente útil -->
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 2.4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">âš¡ Habilidades</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Habilidade Ã© a capacidade especÃ­fica e acionÃ¡vel de um agente: resumir, classificar, consultar uma planilha, gerar uma proposta. Aqui vocÃª aprende a tratÃ¡-las como peÃ§as deliberadas â€” cada uma ligada a um objetivo claro â€” porque habilidade sem intenÃ§Ã£o vira excesso, e excesso vira confusÃ£o. Ã‰ a soma certa de habilidades que transforma um agente competente em um agente Ãºtil.</p>
+<!-- SVG header: agente + habilidades = agente Ãºtil -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Equação ilustrativa: uma caixa agente mais uma caixa de habilidades (resumir, classificar, consultar, gerar) é igual a uma caixa maior agente útil" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<svg aria-label="EquaÃ§Ã£o ilustrativa: uma caixa agente mais uma caixa de habilidades (resumir, classificar, consultar, gerar) Ã© igual a uma caixa maior agente Ãºtil" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
 <lineargradient id="m24-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <filter height="180%" id="m24-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -246,100 +246,100 @@
 <path d="M420,152 C540,152 560,128 690,124" marker-end="url(#m24-ahc)"></path>
 <path d="M420,192 C540,192 560,150 690,132" marker-end="url(#m24-ahc)"></path>
 </g>
-<!-- agente útil (resultado, glow) -->
+<!-- agente Ãºtil (resultado, glow) -->
 <g filter="url(#m24-glow)"><rect fill="#0e1622" height="80" rx="16" stroke="url(#m24-grad)" stroke-width="2" width="270" x="690" y="80"></rect></g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="825" y="116">Agente útil</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="825" y="116">Agente Ãºtil</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="825" y="138">resolve o problema de verdade</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="224">Cada habilidade ligada a um objetivo — a soma certa vira utilidade, não excesso.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="224">Cada habilidade ligada a um objetivo â€” a soma certa vira utilidade, nÃ£o excesso.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~45</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermediário</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">IntermediÃ¡rio</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Conceito</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do módulo 2.4" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:2-4" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do módulo</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 6</strong> · <span data-inema-meter-pct="">0%</span></span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progresso do mÃ³dulo 2.4" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:2-4" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-1" data-inema-track="2" id="topico-1">
+<!-- TÃ“PICO 1 -->
+<section class="mb-16" data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-1" data-ARCKHÉ-track="2" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">⚡ O que é uma habilidade</h2>
+<h2 class="text-2xl font-bold">âš¡ O que Ã© uma habilidade</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-4-t1-p1">Uma habilidade é uma <strong class="text-blue-400">capacidade específica e acionável</strong> de um agente — algo concreto que ele sabe fazer e pode ser disparado sob demanda. "Resumir um texto", "classificar um e-mail", "consultar uma planilha" são habilidades. Repare na precisão: não é "ser inteligente" nem "ajudar o cliente" (isso é papel ou objetivo), é uma ação delimitada, com uma entrada e uma saída claras. Pensar em habilidades é pensar em <em class="text-neutral-400">verbos</em>, não em adjetivos.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-4-t1-p1">Uma habilidade Ã© uma <strong class="text-blue-400">capacidade especÃ­fica e acionÃ¡vel</strong> de um agente â€” algo concreto que ele sabe fazer e pode ser disparado sob demanda. "Resumir um texto", "classificar um e-mail", "consultar uma planilha" sÃ£o habilidades. Repare na precisÃ£o: nÃ£o Ã© "ser inteligente" nem "ajudar o cliente" (isso Ã© papel ou objetivo), Ã© uma aÃ§Ã£o delimitada, com uma entrada e uma saÃ­da claras. Pensar em habilidades Ã© pensar em <em class="text-neutral-400">verbos</em>, nÃ£o em adjetivos.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🎯</span> A habilidade é um verbo, não um adjetivo</h3>
-<p class="text-neutral-300">"Atencioso" e "competente" não são habilidades — são impressões. Uma habilidade tem que caber numa frase do tipo "ele consegue <em>fazer X com Y e devolver Z</em>". Se você não consegue descrever a entrada e a saída, ainda não é uma habilidade: é uma intenção vaga esperando para ser concretizada.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> A habilidade Ã© um verbo, nÃ£o um adjetivo</h3>
+<p class="text-neutral-300">"Atencioso" e "competente" nÃ£o sÃ£o habilidades â€” sÃ£o impressÃµes. Uma habilidade tem que caber numa frase do tipo "ele consegue <em>fazer X com Y e devolver Z</em>". Se vocÃª nÃ£o consegue descrever a entrada e a saÃ­da, ainda nÃ£o Ã© uma habilidade: Ã© uma intenÃ§Ã£o vaga esperando para ser concretizada.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">✓ Isto é habilidade</h4>
+<h4 class="font-bold text-blue-400 mb-4">âœ“ Isto Ã© habilidade</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Resumir um contrato em 5 linhas</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Classificar um chamado por urgência</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Consultar o estoque de um produto</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Gerar uma proposta a partir de um briefing</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Resumir um contrato em 5 linhas</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Classificar um chamado por urgÃªncia</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Consultar o estoque de um produto</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Gerar uma proposta a partir de um briefing</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ Isto não é habilidade</h4>
+<h4 class="font-bold text-red-400 mb-4">âœ— Isto nÃ£o Ã© habilidade</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Ser prestativo"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Entender o cliente"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Ser inteligente"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Resolver tudo" (escopo aberto)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Ser prestativo"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Entender o cliente"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Ser inteligente"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Resolver tudo" (escopo aberto)</span></li>
 </ul>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Definição</div><div class="text-xs text-neutral-400">capacidade acionável</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Formato</div><div class="text-xs text-neutral-400">verbo, não adjetivo</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Tem</div><div class="text-xs text-neutral-400">entrada e saída claras</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Escopo</div><div class="text-xs text-neutral-400">delimitado, não aberto</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">DefiniÃ§Ã£o</div><div class="text-xs text-neutral-400">capacidade acionÃ¡vel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Formato</div><div class="text-xs text-neutral-400">verbo, nÃ£o adjetivo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Tem</div><div class="text-xs text-neutral-400">entrada e saÃ­da claras</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Escopo</div><div class="text-xs text-neutral-400">delimitado, nÃ£o aberto</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-2" data-inema-track="2" id="topico-2">
+<!-- TÃ“PICO 2 -->
+<section class="mb-16" data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-2" data-ARCKHÉ-track="2" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">🧰 Habilidades comuns</h2>
+<h2 class="text-2xl font-bold">ðŸ§° Habilidades comuns</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-4-t2-p1">A maioria das soluções de IA se monta combinando quatro famílias de habilidades: <strong class="text-blue-400">resumir, classificar, consultar e gerar</strong>. Resumir condensa muita informação em pouca. Classificar coloca cada coisa numa caixa (urgente/normal, lead quente/frio). Consultar busca um dado preciso onde ele mora (uma planilha, um sistema, uma base). Gerar produz algo novo a partir do que recebeu (um texto, uma proposta, uma resposta). Quase todo problema de negócio é uma receita dessas quatro.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-4-t2-p1">A maioria das soluÃ§Ãµes de IA se monta combinando quatro famÃ­lias de habilidades: <strong class="text-blue-400">resumir, classificar, consultar e gerar</strong>. Resumir condensa muita informaÃ§Ã£o em pouca. Classificar coloca cada coisa numa caixa (urgente/normal, lead quente/frio). Consultar busca um dado preciso onde ele mora (uma planilha, um sistema, uma base). Gerar produz algo novo a partir do que recebeu (um texto, uma proposta, uma resposta). Quase todo problema de negÃ³cio Ã© uma receita dessas quatro.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📝</div><h4 class="font-semibold text-neutral-100 mb-1">Resumir</h4><p class="text-xs text-neutral-400">Muita informação entra, o essencial sai. Contratos, reuniões, e-mails longos.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">🏷️</div><h4 class="font-semibold text-neutral-100 mb-1">Classificar</h4><p class="text-xs text-neutral-400">Cada item recebe um rótulo. Urgência, tema, sentimento, tipo de pedido.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">🔎</div><h4 class="font-semibold text-neutral-100 mb-1">Consultar</h4><p class="text-xs text-neutral-400">Buscar um dado preciso onde ele vive. Estoque, status do pedido, preço.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">✍️</div><h4 class="font-semibold text-neutral-100 mb-1">Gerar</h4><p class="text-xs text-neutral-400">Produzir algo novo a partir do contexto. Proposta, resposta, rascunho.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“</div><h4 class="font-semibold text-neutral-100 mb-1">Resumir</h4><p class="text-xs text-neutral-400">Muita informaÃ§Ã£o entra, o essencial sai. Contratos, reuniÃµes, e-mails longos.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ·ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Classificar</h4><p class="text-xs text-neutral-400">Cada item recebe um rÃ³tulo. UrgÃªncia, tema, sentimento, tipo de pedido.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ”Ž</div><h4 class="font-semibold text-neutral-100 mb-1">Consultar</h4><p class="text-xs text-neutral-400">Buscar um dado preciso onde ele vive. Estoque, status do pedido, preÃ§o.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">âœï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Gerar</h4><p class="text-xs text-neutral-400">Produzir algo novo a partir do contexto. Proposta, resposta, rascunho.</p></div>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">As 4 famílias, em uma linha cada</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">As 4 famÃ­lias, em uma linha cada</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div><span class="text-blue-400">resumir:</span>    muito_texto      →  essencial</div>
-<div><span class="text-blue-400">classificar:</span> item             →  rótulo</div>
-<div><span class="text-blue-400">consultar:</span>  pergunta         →  dado_preciso</div>
-<div><span class="text-blue-400">gerar:</span>      contexto         →  conteúdo_novo</div>
+<div><span class="text-blue-400">resumir:</span>    muito_texto      â†’  essencial</div>
+<div><span class="text-blue-400">classificar:</span> item             â†’  rÃ³tulo</div>
+<div><span class="text-blue-400">consultar:</span>  pergunta         â†’  dado_preciso</div>
+<div><span class="text-blue-400">gerar:</span>      contexto         â†’  conteÃºdo_novo</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Lista ilustrativa — toda habilidade tem uma entrada e uma saída.</p>
+<p class="text-xs text-neutral-500 mt-3">Lista ilustrativa â€” toda habilidade tem uma entrada e uma saÃ­da.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Resumir</div><div class="text-xs text-neutral-400">condensar</div></div>
@@ -348,25 +348,25 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Gerar</div><div class="text-xs text-neutral-400">produzir novo</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-3" data-inema-track="2" id="topico-3">
+<!-- TÃ“PICO 3 -->
+<section class="mb-16" data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-3" data-ARCKHÉ-track="2" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">🎯 Habilidade ligada a objetivo</h2>
+<h2 class="text-2xl font-bold">ðŸŽ¯ Habilidade ligada a objetivo</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-4-t3-p1">Toda habilidade só faz sentido quando está <strong class="text-blue-400">amarrada a um objetivo claro</strong>. A pergunta não é "que habilidade legal eu posso adicionar?", e sim "que objetivo esse agente persegue, e qual habilidade o aproxima dele?". A habilidade é o meio; o objetivo é o fim. Quando você parte do objetivo, cada habilidade ganha um motivo de existir — e fica fácil saber quando ela está sobrando.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-4-t3-p1">Toda habilidade sÃ³ faz sentido quando estÃ¡ <strong class="text-blue-400">amarrada a um objetivo claro</strong>. A pergunta nÃ£o Ã© "que habilidade legal eu posso adicionar?", e sim "que objetivo esse agente persegue, e qual habilidade o aproxima dele?". A habilidade Ã© o meio; o objetivo Ã© o fim. Quando vocÃª parte do objetivo, cada habilidade ganha um motivo de existir â€” e fica fÃ¡cil saber quando ela estÃ¡ sobrando.</p>
 <!-- SVG: objetivo no centro -> habilidades justificadas -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Um objetivo no centro irradia para três habilidades justificadas; ao lado, uma habilidade solta sem objetivo aparece desligada" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
+<svg aria-label="Um objetivo no centro irradia para trÃªs habilidades justificadas; ao lado, uma habilidade solta sem objetivo aparece desligada" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
 <defs>
 <lineargradient id="m24b-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <filter height="180%" id="m24b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -389,233 +389,233 @@
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="180" x="440" y="90"></rect><text fill="#bfe6ff" text-anchor="middle" x="530" y="111">habilidade que serve</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="180" x="440" y="144"></rect><text fill="#bfe6ff" text-anchor="middle" x="530" y="165">habilidade que serve</text></g>
 </g>
-<!-- habilidade solta (sem ligação, neutra/tracejada) -->
+<!-- habilidade solta (sem ligaÃ§Ã£o, neutra/tracejada) -->
 <rect fill="#26201a" height="50" rx="12" stroke="#9ca3af" stroke-dasharray="6 6" stroke-width="1.8" width="190" x="760" y="90"></rect>
 <text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="855" y="111">habilidade sem objetivo</text>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="855" y="129">desligada — é excesso</text>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="855" y="64">não se liga a nada</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="855" y="129">desligada â€” Ã© excesso</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="855" y="64">nÃ£o se liga a nada</text>
 </svg>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">Antes de adicionar qualquer habilidade, escreva a frase: "esta habilidade existe para que o agente consiga ___ (objetivo)". Se você não conseguir completar a frase com um objetivo real do negócio, a habilidade não deveria entrar — ainda.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">Antes de adicionar qualquer habilidade, escreva a frase: "esta habilidade existe para que o agente consiga ___ (objetivo)". Se vocÃª nÃ£o conseguir completar a frase com um objetivo real do negÃ³cio, a habilidade nÃ£o deveria entrar â€” ainda.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Meio × fim</div><div class="text-xs text-neutral-400">habilidade serve objetivo</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Parta do</div><div class="text-xs text-neutral-400">objetivo, não da feature</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Meio Ã— fim</div><div class="text-xs text-neutral-400">habilidade serve objetivo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Parta do</div><div class="text-xs text-neutral-400">objetivo, nÃ£o da feature</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Teste</div><div class="text-xs text-neutral-400">"existe para que ___?"</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Sem objetivo</div><div class="text-xs text-neutral-400">não entra</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Sem objetivo</div><div class="text-xs text-neutral-400">nÃ£o entra</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-4" data-inema-track="2" id="topico-4">
+<!-- TÃ“PICO 4 -->
+<section class="mb-16" data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-4" data-ARCKHÉ-track="2" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">🚫 Sem intenção vira excesso</h2>
+<h2 class="text-2xl font-bold">ðŸš« Sem intenÃ§Ã£o vira excesso</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-4-t4-p1">Existe uma tentação forte: dar ao agente <em class="text-neutral-400">todas</em> as habilidades possíveis, "por garantia". É um erro. <strong class="text-blue-400">Habilidade sem intenção vira excesso</strong>, e excesso cobra um preço: o agente fica mais lento, mais caro, mais difícil de prever e mais propenso a usar a habilidade errada na hora errada. Mais habilidades não é igual a mais valor — é frequentemente igual a mais confusão. O agente útil é enxuto: tem exatamente o que precisa para cumprir seu objetivo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-4-t4-p1">Existe uma tentaÃ§Ã£o forte: dar ao agente <em class="text-neutral-400">todas</em> as habilidades possÃ­veis, "por garantia". Ã‰ um erro. <strong class="text-blue-400">Habilidade sem intenÃ§Ã£o vira excesso</strong>, e excesso cobra um preÃ§o: o agente fica mais lento, mais caro, mais difÃ­cil de prever e mais propenso a usar a habilidade errada na hora errada. Mais habilidades nÃ£o Ã© igual a mais valor â€” Ã© frequentemente igual a mais confusÃ£o. O agente Ãºtil Ã© enxuto: tem exatamente o que precisa para cumprir seu objetivo.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">✓ Agente enxuto</h4>
+<h4 class="font-bold text-blue-400 mb-4">âœ“ Agente enxuto</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Só as habilidades que servem ao objetivo</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Rápido e previsível</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Fácil de explicar o que ele faz</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Escolhe a habilidade certa sem hesitar</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>SÃ³ as habilidades que servem ao objetivo</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>RÃ¡pido e previsÃ­vel</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>FÃ¡cil de explicar o que ele faz</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Escolhe a habilidade certa sem hesitar</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ Agente inchado</h4>
+<h4 class="font-bold text-red-400 mb-4">âœ— Agente inchado</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Habilidades "por garantia", sem uso real</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Lento e caro à toa</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ninguém sabe direito o que ele faz</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Usa a habilidade errada na hora errada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Habilidades "por garantia", sem uso real</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Lento e caro Ã  toa</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>NinguÃ©m sabe direito o que ele faz</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Usa a habilidade errada na hora errada</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">A pergunta de poda: "se eu remover esta habilidade, o agente deixa de cumprir algum objetivo real?". Se a resposta é não, remova. Um agente com 4 habilidades certeiras vale mais que um com 12 habilidades genéricas — menos é mais quando cada peça tem propósito.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">A pergunta de poda: "se eu remover esta habilidade, o agente deixa de cumprir algum objetivo real?". Se a resposta Ã© nÃ£o, remova. Um agente com 4 habilidades certeiras vale mais que um com 12 habilidades genÃ©ricas â€” menos Ã© mais quando cada peÃ§a tem propÃ³sito.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Regra</div><div class="text-xs text-neutral-400">menos é mais</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Regra</div><div class="text-xs text-neutral-400">menos Ã© mais</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Excesso</div><div class="text-xs text-neutral-400">lento, caro, confuso</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Poda</div><div class="text-xs text-neutral-400">remova o que não serve</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Enxuto</div><div class="text-xs text-neutral-400">só o necessário</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Poda</div><div class="text-xs text-neutral-400">remova o que nÃ£o serve</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Enxuto</div><div class="text-xs text-neutral-400">sÃ³ o necessÃ¡rio</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-5" data-inema-track="2" id="topico-5">
+<!-- TÃ“PICO 5 -->
+<section class="mb-16" data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-5" data-ARCKHÉ-track="2" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">🎚️ Acionar a habilidade certa</h2>
+<h2 class="text-2xl font-bold">ðŸŽšï¸ Acionar a habilidade certa</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-4-t5-p1">Ter a habilidade não basta — o agente precisa <strong class="text-blue-400">acionar a habilidade certa na hora certa</strong>. Quando alguém manda um contrato e pede "o que é importante aqui?", a resposta é resumir, não gerar. Quando pergunta "tem em estoque?", é consultar, não classificar. Esse roteamento — ler a intenção do pedido e escolher a habilidade adequada — é o que separa um agente que acerta de um que responde qualquer coisa. A intenção do pedido guia a escolha.</p>
-<!-- timeline: pedido -> ler intenção -> escolher -> executar -> devolver -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-4-t5-p1">Ter a habilidade nÃ£o basta â€” o agente precisa <strong class="text-blue-400">acionar a habilidade certa na hora certa</strong>. Quando alguÃ©m manda um contrato e pede "o que Ã© importante aqui?", a resposta Ã© resumir, nÃ£o gerar. Quando pergunta "tem em estoque?", Ã© consultar, nÃ£o classificar. Esse roteamento â€” ler a intenÃ§Ã£o do pedido e escolher a habilidade adequada â€” Ã© o que separa um agente que acerta de um que responde qualquer coisa. A intenÃ§Ã£o do pedido guia a escolha.</p>
+<!-- timeline: pedido -> ler intenÃ§Ã£o -> escolher -> executar -> devolver -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Chega o pedido</h4><p class="text-neutral-300 text-sm">O usuário fala em linguagem natural — nem sempre dizendo qual habilidade quer.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Chega o pedido</h4><p class="text-neutral-300 text-sm">O usuÃ¡rio fala em linguagem natural â€” nem sempre dizendo qual habilidade quer.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Lê a intenção</h4><p class="text-neutral-300 text-sm">O agente interpreta o que a pessoa realmente quer alcançar com aquele pedido.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">LÃª a intenÃ§Ã£o</h4><p class="text-neutral-300 text-sm">O agente interpreta o que a pessoa realmente quer alcanÃ§ar com aquele pedido.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Escolhe a habilidade</h4><p class="text-neutral-300 text-sm">Resumir? Classificar? Consultar? Gerar? Seleciona a que serve aquela intenção.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Escolhe a habilidade</h4><p class="text-neutral-300 text-sm">Resumir? Classificar? Consultar? Gerar? Seleciona a que serve aquela intenÃ§Ã£o.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">4</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Executa e devolve</h4><p class="text-neutral-300 text-sm">Aciona a habilidade, produz a saída e responde — resolvendo o pedido de verdade.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Executa e devolve</h4><p class="text-neutral-300 text-sm">Aciona a habilidade, produz a saÃ­da e responde â€” resolvendo o pedido de verdade.</p></div>
 </div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🧭</span> O mesmo assunto, habilidades diferentes</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸ§­</span> O mesmo assunto, habilidades diferentes</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">"O que importa neste contrato?"</strong> → resumir.</li>
-<li><strong class="text-neutral-100">"Este contrato é urgente ou pode esperar?"</strong> → classificar.</li>
-<li><strong class="text-neutral-100">"Qual o valor total deste contrato?"</strong> → consultar.</li>
-<li><strong class="text-neutral-100">"Escreve um e-mail respondendo a este contrato."</strong> → gerar.</li>
+<li><strong class="text-neutral-100">"O que importa neste contrato?"</strong> â†’ resumir.</li>
+<li><strong class="text-neutral-100">"Este contrato Ã© urgente ou pode esperar?"</strong> â†’ classificar.</li>
+<li><strong class="text-neutral-100">"Qual o valor total deste contrato?"</strong> â†’ consultar.</li>
+<li><strong class="text-neutral-100">"Escreve um e-mail respondendo a este contrato."</strong> â†’ gerar.</li>
 </ul>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Roteamento</div><div class="text-xs text-neutral-400">pedido → habilidade</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Guia</div><div class="text-xs text-neutral-400">a intenção do pedido</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Roteamento</div><div class="text-xs text-neutral-400">pedido â†’ habilidade</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Guia</div><div class="text-xs text-neutral-400">a intenÃ§Ã£o do pedido</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Erro comum</div><div class="text-xs text-neutral-400">habilidade errada</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Acerto</div><div class="text-xs text-neutral-400">certa na hora certa</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-6" data-inema-track="2" id="topico-6">
+<!-- TÃ“PICO 6 -->
+<section class="mb-16" data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-6" data-ARCKHÉ-track="2" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">🧩 Habilidades compõem o agente útil</h2>
+<h2 class="text-2xl font-bold">ðŸ§© Habilidades compÃµem o agente Ãºtil</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-4-t6-p1">No fim, um agente útil é uma <strong class="text-blue-400">composição enxuta de habilidades ligadas a um objetivo</strong>. Não é o número de habilidades que cria valor — é a coerência entre elas e o propósito do agente. Um bom agente de atendimento, por exemplo, normalmente combina poucas habilidades bem escolhidas: classificar o pedido, consultar a informação e gerar a resposta. Cada uma puxa o agente para mais perto do objetivo. Habilidades são as peças; a intenção é o que as monta na ordem certa.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-4-t6-p1">No fim, um agente Ãºtil Ã© uma <strong class="text-blue-400">composiÃ§Ã£o enxuta de habilidades ligadas a um objetivo</strong>. NÃ£o Ã© o nÃºmero de habilidades que cria valor â€” Ã© a coerÃªncia entre elas e o propÃ³sito do agente. Um bom agente de atendimento, por exemplo, normalmente combina poucas habilidades bem escolhidas: classificar o pedido, consultar a informaÃ§Ã£o e gerar a resposta. Cada uma puxa o agente para mais perto do objetivo. Habilidades sÃ£o as peÃ§as; a intenÃ§Ã£o Ã© o que as monta na ordem certa.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">As habilidades de um agente de atendimento</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-blue-400">agente:</span> atendimento</div>
-<div><span class="text-blue-400">objetivo:</span> resolver o cliente rápido e certo</div>
+<div><span class="text-blue-400">objetivo:</span> resolver o cliente rÃ¡pido e certo</div>
 <div><span class="text-blue-400">habilidades:</span></div>
 <div>  - classificar  <span class="text-neutral-500"># qual o tipo do pedido</span></div>
-<div>  - consultar    <span class="text-neutral-500"># status, preço, estoque</span></div>
+<div>  - consultar    <span class="text-neutral-500"># status, preÃ§o, estoque</span></div>
 <div>  - gerar        <span class="text-neutral-500"># a resposta ao cliente</span></div>
-<div>  - resumir      <span class="text-neutral-500"># histórico longo da conversa</span></div>
+<div>  - resumir      <span class="text-neutral-500"># histÃ³rico longo da conversa</span></div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Esqueleto ilustrativo — 4 habilidades, todas servindo ao mesmo objetivo.</p>
+<p class="text-xs text-neutral-500 mt-3">Esqueleto ilustrativo â€” 4 habilidades, todas servindo ao mesmo objetivo.</p>
 </div>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🧠</span> A intenção monta as peças</h3>
-<p class="text-neutral-300">Os módulos anteriores deram a alma (quem o sistema é) e os agentes (quem faz o trabalho). As habilidades são o que cada agente sabe fazer. Mas o que decide quais habilidades cada agente tem, e em que ordem ele as aciona, continua sendo a <strong class="text-blue-400">intenção no centro</strong> — o mesmo fio que costura o curso inteiro.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§ </span> A intenÃ§Ã£o monta as peÃ§as</h3>
+<p class="text-neutral-300">Os mÃ³dulos anteriores deram a alma (quem o sistema Ã©) e os agentes (quem faz o trabalho). As habilidades sÃ£o o que cada agente sabe fazer. Mas o que decide quais habilidades cada agente tem, e em que ordem ele as aciona, continua sendo a <strong class="text-blue-400">intenÃ§Ã£o no centro</strong> â€” o mesmo fio que costura o curso inteiro.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Composição</div><div class="text-xs text-neutral-400">peças coerentes</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Valor</div><div class="text-xs text-neutral-400">coerência, não quantidade</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Peças</div><div class="text-xs text-neutral-400">as habilidades</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Quem monta</div><div class="text-xs text-neutral-400">a intenção</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">ComposiÃ§Ã£o</div><div class="text-xs text-neutral-400">peÃ§as coerentes</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Valor</div><div class="text-xs text-neutral-400">coerÃªncia, nÃ£o quantidade</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">PeÃ§as</div><div class="text-xs text-neutral-400">as habilidades</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Quem monta</div><div class="text-xs text-neutral-400">a intenÃ§Ã£o</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
-<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-2-4#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): por que dar todas as habilidades possíveis a um agente é um erro?</p>
-<div class="inema-check-options space-y-2">
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque toda habilidade extra é gratuita e nunca atrapalha.</button>
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Porque habilidade sem intenção vira excesso: deixa o agente lento, caro e propenso a usar a habilidade errada.</button>
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Porque agentes só podem ter no máximo quatro habilidades.</button>
+<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
+<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-2-4#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): por que dar todas as habilidades possÃ­veis a um agente Ã© um erro?</p>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Porque toda habilidade extra Ã© gratuita e nunca atrapalha.</button>
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Porque habilidade sem intenÃ§Ã£o vira excesso: deixa o agente lento, caro e propenso a usar a habilidade errada.</button>
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Porque agentes sÃ³ podem ter no mÃ¡ximo quatro habilidades.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">⚡</span> Resumo do módulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">âš¡</span> Resumo do mÃ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">O que é habilidade</strong><span class="text-neutral-400"> — capacidade específica e acionável; um verbo com entrada e saída claras.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">As quatro famílias</strong><span class="text-neutral-400"> — resumir, classificar, consultar e gerar resolvem quase tudo.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Ligada a objetivo</strong><span class="text-neutral-400"> — a habilidade é o meio; o objetivo é o fim. Parta do objetivo.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Sem intenção vira excesso</strong><span class="text-neutral-400"> — mais habilidades não é mais valor; o agente útil é enxuto.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Acionar a certa</strong><span class="text-neutral-400"> — a intenção do pedido guia qual habilidade usar na hora certa.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Compõem o agente útil</strong><span class="text-neutral-400"> — peças coerentes montadas pela intenção, não acúmulo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">O que Ã© habilidade</strong><span class="text-neutral-400"> â€” capacidade especÃ­fica e acionÃ¡vel; um verbo com entrada e saÃ­da claras.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">As quatro famÃ­lias</strong><span class="text-neutral-400"> â€” resumir, classificar, consultar e gerar resolvem quase tudo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Ligada a objetivo</strong><span class="text-neutral-400"> â€” a habilidade Ã© o meio; o objetivo Ã© o fim. Parta do objetivo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Sem intenÃ§Ã£o vira excesso</strong><span class="text-neutral-400"> â€” mais habilidades nÃ£o Ã© mais valor; o agente Ãºtil Ã© enxuto.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Acionar a certa</strong><span class="text-neutral-400"> â€” a intenÃ§Ã£o do pedido guia qual habilidade usar na hora certa.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">CompÃµem o agente Ãºtil</strong><span class="text-neutral-400"> â€” peÃ§as coerentes montadas pela intenÃ§Ã£o, nÃ£o acÃºmulo.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-blue-400 mb-2">Próximo módulo:</h3>
-<p class="text-neutral-300">2.5 — Memória e Contexto: o que o Jarvis lembra para agir com história, não no escuro.</p>
+<h3 class="font-semibold text-blue-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
+<p class="text-neutral-300">2.5 â€” MemÃ³ria e Contexto: o que o Jarvis lembra para agir com histÃ³ria, nÃ£o no escuro.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para o Dia 2</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-5.html">Próximo: 2.5 Memória e Contexto →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-5.html">PrÃ³ximo: 2.5 MemÃ³ria e Contexto â†’</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Índice do módulo" class="sticky top-20 self-start text-sm" data-inema-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta página <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. O que é uma habilidade</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. O que Ã© uma habilidade</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Habilidades comuns</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. Ligada a objetivo</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. Sem intenção vira excesso</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. Sem intenÃ§Ã£o vira excesso</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. Acionar a certa</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. Compõem o agente útil</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. CompÃµem o agente Ãºtil</a></li>
 </ol>
 </nav>
 </aside>
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de Intenção da IA · Método JARVIS — Dia 2 · Módulo 2.4</p>
+<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 2 Â· MÃ³dulo 2.4</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
-      if (INEMA.registerCheck) {
-        INEMA.registerCheck('modulo-2-4#q1', {
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
+      if (ARCKHÉ.registerCheck) {
+        ARCKHÉ.registerCheck('modulo-2-4#q1', {
           answer: 1,
           explain: {
-            0: 'Não — habilidade extra nunca é de graça: custa velocidade, dinheiro e previsibilidade.',
-            1: 'Isso. Sem intenção, a habilidade vira excesso e o agente fica lento, caro e impreciso na escolha.',
-            2: 'Não há um limite fixo; o ponto é coerência com o objetivo, não um número mágico.'
+            0: 'NÃ£o â€” habilidade extra nunca Ã© de graÃ§a: custa velocidade, dinheiro e previsibilidade.',
+            1: 'Isso. Sem intenÃ§Ã£o, a habilidade vira excesso e o agente fica lento, caro e impreciso na escolha.',
+            2: 'NÃ£o hÃ¡ um limite fixo; o ponto Ã© coerÃªncia com o objetivo, nÃ£o um nÃºmero mÃ¡gico.'
           }
         });
       }

@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="inema-course"/>
+<meta content="jarvis" name="ARCKHÉ-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Módulo 2.1 · A Alma do Jarvis | Arquitetura de Intenção da IA</title>
+<title>MÃ³dulo 2.1 Â· A Alma do Jarvis | Arquitetura de IntenÃ§Ã£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -127,19 +127,19 @@
     .toc-link.is-active { color: #60a5fa; font-weight: 600; }
     html:not(.dark) .toc-link.is-active { color: #2563eb; }
   </style>
-<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha2/modulo-2-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha2/modulo-2-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha2/modulo-2-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitetura de Intenção</span>
+<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -148,46 +148,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span>
-<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Aparência e leitura" type="button"><span aria-hidden="true">◑</span></button>
-<div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark" type="button">Escuro</button>
-<button data-inema-set-theme="claro" type="button">Claro</button>
-<button data-inema-set-theme="sepia" type="button">Sépia</button>
-<button data-inema-set-theme="foco" type="button">Foco</button>
-<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
+<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
+<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
+<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
-<button data-inema-set-font="inter" type="button">Inter</button>
-<button data-inema-set-font="system" type="button">Sistema</button>
-<button data-inema-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
+<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
-<button data-inema-set-fontscale="100" type="button">A</button>
-<button data-inema-set-fontscale="112" type="button">A+</button>
-<button data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60" type="button">Estreito</button>
-<button data-inema-set-linewidth="68" type="button">Médio</button>
-<button data-inema-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
+<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45" type="button">Compacto</button>
-<button data-inema-set-leading="1.7" type="button">Confortável</button>
+<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-inema-set-accent="blue" title="Azul" type="button"></button>
-<button data-inema-set-accent="purple" title="Roxo" type="button"></button>
-<button data-inema-set-accent="amber" title="Âmbar" type="button"></button>
-<button data-inema-set-accent="teal" title="Teal" type="button"></button>
-<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
+<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
+<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -198,20 +198,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-blue-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-blue-400" href="../../index.html">InÃ­cio</a><span>/</span>
 <a class="hover:text-blue-400" href="index.html">Dia 2</a><span>/</span>
-<span class="text-blue-400">Módulo 2.1</span>
+<span class="text-blue-400">MÃ³dulo 2.1</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.1</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">💜 A Alma do Jarvis</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Antes de qualquer agente, ferramenta ou automação, o Jarvis precisa de uma alma: o núcleo que responde quem ele é, para que existe, para quem trabalha, o que pode e o que não pode fazer, como decide e como evolui. Sem alma, o sistema vira um amontoado de ferramentas soltas. Com alma, tudo passa a fazer sentido a partir de um centro.</p>
-<!-- SVG: a intenção no NÚCLEO irradiando para identidade, propósito, tom, limites, critérios, evolução -->
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 2.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ’œ A Alma do Jarvis</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Antes de qualquer agente, ferramenta ou automaÃ§Ã£o, o Jarvis precisa de uma alma: o nÃºcleo que responde quem ele Ã©, para que existe, para quem trabalha, o que pode e o que nÃ£o pode fazer, como decide e como evolui. Sem alma, o sistema vira um amontoado de ferramentas soltas. Com alma, tudo passa a fazer sentido a partir de um centro.</p>
+<!-- SVG: a intenÃ§Ã£o no NÃšCLEO irradiando para identidade, propÃ³sito, tom, limites, critÃ©rios, evoluÃ§Ã£o -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="A alma no núcleo central irradia para seis faces: identidade, propósito, público, tom, limites, critérios e evolução" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<svg aria-label="A alma no nÃºcleo central irradia para seis faces: identidade, propÃ³sito, pÃºblico, tom, limites, critÃ©rios e evoluÃ§Ã£o" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
 <lineargradient id="m21-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <filter height="180%" id="m21-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -219,7 +219,7 @@
 <marker id="m21-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#m21-grid)" height="250" width="1000" x="0" y="0"></rect>
-<!-- conexões do núcleo para as seis faces -->
+<!-- conexÃµes do nÃºcleo para as seis faces -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.6">
 <path d="M430,125 C360,125 320,52 250,52" marker-end="url(#m21-ahc)"></path>
 <path d="M430,125 L250,125" marker-end="url(#m21-ahc)"></path>
@@ -228,361 +228,361 @@
 <path d="M570,125 L750,125" marker-end="url(#m21-ahc)"></path>
 <path d="M570,125 C640,125 680,198 750,198" marker-end="url(#m21-ahc)"></path>
 </g>
-<!-- núcleo: a alma / intenção -->
+<!-- nÃºcleo: a alma / intenÃ§Ã£o -->
 <g filter="url(#m21-glow)"><circle cx="500" cy="125" fill="#0e1622" r="62" stroke="url(#m21-grad)" stroke-width="2.5"></circle></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="500" y="120">A alma</text>
-<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="500" y="142">a intenção no centro</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="500" y="142">a intenÃ§Ã£o no centro</text>
 <!-- seis faces (ciano, pulsando) -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="48" y="36"></rect><text fill="#bfe6ff" text-anchor="middle" x="149" y="57">quem é · identidade</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="48" y="109"></rect><text fill="#bfe6ff" text-anchor="middle" x="149" y="130">para que · propósito</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="48" y="182"></rect><text fill="#bfe6ff" text-anchor="middle" x="149" y="203">para quem · público</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="750" y="36"></rect><text fill="#bfe6ff" text-anchor="middle" x="851" y="57">como fala · tom</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="750" y="109"></rect><text fill="#bfe6ff" text-anchor="middle" x="851" y="130">limites · critérios</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="48" y="36"></rect><text fill="#bfe6ff" text-anchor="middle" x="149" y="57">quem Ã© Â· identidade</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="48" y="109"></rect><text fill="#bfe6ff" text-anchor="middle" x="149" y="130">para que Â· propÃ³sito</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="48" y="182"></rect><text fill="#bfe6ff" text-anchor="middle" x="149" y="203">para quem Â· pÃºblico</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="750" y="36"></rect><text fill="#bfe6ff" text-anchor="middle" x="851" y="57">como fala Â· tom</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="750" y="109"></rect><text fill="#bfe6ff" text-anchor="middle" x="851" y="130">limites Â· critÃ©rios</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="202" x="750" y="182"></rect><text fill="#bfe6ff" text-anchor="middle" x="851" y="203">como evolui</text></g>
 </g>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="236">Tudo irradia do núcleo — sem alma, viram ferramentas soltas.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="236">Tudo irradia do nÃºcleo â€” sem alma, viram ferramentas soltas.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~55</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermediário</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">IntermediÃ¡rio</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Conceito</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do módulo 2.1" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:2-1" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do módulo</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 7</strong> · <span data-inema-meter-pct="">0%</span></span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progresso do mÃ³dulo 2.1" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:2-1" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 7</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-1" data-inema-track="2" id="topico-1">
+<!-- TÃ“PICO 1 -->
+<section class="mb-16" data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-1" data-ARCKHÉ-track="2" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">💜 Quem é o sistema — a identidade</h2>
+<h2 class="text-2xl font-bold">ðŸ’œ Quem Ã© o sistema â€” a identidade</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t1-p1">A identidade é a definição de <strong class="text-blue-400">quem o Jarvis é</strong>: o nome, o papel que ocupa e a forma como se apresenta a quem fala com ele. É a primeira face da alma porque é o que dá unidade a tudo o que vem depois — um sistema sem identidade responde de qualquer jeito, cada vez de um jeito diferente. Com identidade clara, cada resposta carrega coerência e confiança.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-1-t1-p1">A identidade Ã© a definiÃ§Ã£o de <strong class="text-blue-400">quem o Jarvis Ã©</strong>: o nome, o papel que ocupa e a forma como se apresenta a quem fala com ele. Ã‰ a primeira face da alma porque Ã© o que dÃ¡ unidade a tudo o que vem depois â€” um sistema sem identidade responde de qualquer jeito, cada vez de um jeito diferente. Com identidade clara, cada resposta carrega coerÃªncia e confianÃ§a.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🪪</span> Identidade não é nome bonito</h3>
-<p class="text-neutral-300">Dar um nome é o passo fácil. Identidade de verdade é definir o papel: o Jarvis é um assistente de atendimento? Um analista de documentos? Um vendedor consultivo? O papel decide a postura — e a postura aparece em cada frase que ele escreve.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸªª</span> Identidade nÃ£o Ã© nome bonito</h3>
+<p class="text-neutral-300">Dar um nome Ã© o passo fÃ¡cil. Identidade de verdade Ã© definir o papel: o Jarvis Ã© um assistente de atendimento? Um analista de documentos? Um vendedor consultivo? O papel decide a postura â€” e a postura aparece em cada frase que ele escreve.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">Escreva a identidade em uma frase só: "Eu sou o [nome], o [papel] da [empresa], e existo para [propósito]." Se você não consegue completar essa frase sem hesitar, a identidade ainda não está pronta.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">Escreva a identidade em uma frase sÃ³: "Eu sou o [nome], o [papel] da [empresa], e existo para [propÃ³sito]." Se vocÃª nÃ£o consegue completar essa frase sem hesitar, a identidade ainda nÃ£o estÃ¡ pronta.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Identidade</div><div class="text-xs text-neutral-400">quem ele é</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Papel</div><div class="text-xs text-neutral-400">a função que ocupa</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Apresentação</div><div class="text-xs text-neutral-400">como se mostra</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Coerência</div><div class="text-xs text-neutral-400">a base da alma</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Identidade</div><div class="text-xs text-neutral-400">quem ele Ã©</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Papel</div><div class="text-xs text-neutral-400">a funÃ§Ã£o que ocupa</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">ApresentaÃ§Ã£o</div><div class="text-xs text-neutral-400">como se mostra</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">CoerÃªncia</div><div class="text-xs text-neutral-400">a base da alma</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-2" data-inema-track="2" id="topico-2">
+<!-- TÃ“PICO 2 -->
+<section class="mb-16" data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-2" data-ARCKHÉ-track="2" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">🎯 Para que existe — o propósito</h2>
+<h2 class="text-2xl font-bold">ðŸŽ¯ Para que existe â€” o propÃ³sito</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t2-p1">O propósito é o <strong class="text-blue-400">problema central</strong> que o Jarvis existe para resolver — a razão de ele ter sido criado. É a face mais poderosa da alma porque é ela que decide o que entra e o que fica de fora do sistema. Sem propósito, toda demanda vira um "talvez": tudo parece igualmente importante e nada é prioridade.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-1-t2-p1">O propÃ³sito Ã© o <strong class="text-blue-400">problema central</strong> que o Jarvis existe para resolver â€” a razÃ£o de ele ter sido criado. Ã‰ a face mais poderosa da alma porque Ã© ela que decide o que entra e o que fica de fora do sistema. Sem propÃ³sito, toda demanda vira um "talvez": tudo parece igualmente importante e nada Ã© prioridade.</p>
 <!-- documento da alma em formato chave: valor (mono, ilustrativo) -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">O documento da alma (esqueleto ilustrativo)</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-blue-400">quem_e:</span> assistente de atendimento da Acme</div>
-<div><span class="text-blue-400">para_que_existe:</span> resolver dúvidas de clientes sem fila</div>
+<div><span class="text-blue-400">para_que_existe:</span> resolver dÃºvidas de clientes sem fila</div>
 <div><span class="text-blue-400">para_quem_trabalha:</span> cliente final e equipe de suporte</div>
-<div><span class="text-blue-400">tom:</span> próximo, claro, sem jargão</div>
+<div><span class="text-blue-400">tom:</span> prÃ³ximo, claro, sem jargÃ£o</div>
 <div><span class="text-blue-400">pode_fazer:</span> consultar pedidos, explicar produtos</div>
 <div><span class="text-blue-400">nao_pode_fazer:</span> prometer prazos, inventar dados</div>
-<div><span class="text-blue-400">como_decide:</span> na dúvida, encaminha a um humano</div>
-<div><span class="text-blue-400">como_evolui:</span> ganha serviços, mantém o foco em atendimento</div>
+<div><span class="text-blue-400">como_decide:</span> na dÃºvida, encaminha a um humano</div>
+<div><span class="text-blue-400">como_evolui:</span> ganha serviÃ§os, mantÃ©m o foco em atendimento</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Recriação ilustrativa em chave: valor — não é um arquivo de configuração real. É o formato em que a alma costuma ser escrita.</p>
+<p class="text-xs text-neutral-500 mt-3">RecriaÃ§Ã£o ilustrativa em chave: valor â€” nÃ£o Ã© um arquivo de configuraÃ§Ã£o real. Ã‰ o formato em que a alma costuma ser escrita.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">Teste qualquer ideia nova contra o propósito: "isso ajuda o Jarvis a resolver o problema central?". Se a resposta for "mais ou menos", quase sempre é um "não" disfarçado.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">Teste qualquer ideia nova contra o propÃ³sito: "isso ajuda o Jarvis a resolver o problema central?". Se a resposta for "mais ou menos", quase sempre Ã© um "nÃ£o" disfarÃ§ado.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Propósito</div><div class="text-xs text-neutral-400">a razão de existir</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">PropÃ³sito</div><div class="text-xs text-neutral-400">a razÃ£o de existir</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Problema central</div><div class="text-xs text-neutral-400">a dor que resolve</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Filtro</div><div class="text-xs text-neutral-400">o que entra e sai</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Foco</div><div class="text-xs text-neutral-400">fim do "talvez"</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-3" data-inema-track="2" id="topico-3">
+<!-- TÃ“PICO 3 -->
+<section class="mb-16" data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-3" data-ARCKHÉ-track="2" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">👥 Para quem trabalha — o público</h2>
+<h2 class="text-2xl font-bold">ðŸ‘¥ Para quem trabalha â€” o pÃºblico</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t3-p1">A alma também define <strong class="text-blue-400">quem o Jarvis atende</strong>: cliente final, equipe interna, gestor. Cada público tem necessidades e linguagem próprias. Saber para quem ele trabalha define o tom, o nível de detalhe e até o que pode ou não ser dito — a mesma informação se entrega de formas diferentes para públicos diferentes.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-1-t3-p1">A alma tambÃ©m define <strong class="text-blue-400">quem o Jarvis atende</strong>: cliente final, equipe interna, gestor. Cada pÃºblico tem necessidades e linguagem prÃ³prias. Saber para quem ele trabalha define o tom, o nÃ­vel de detalhe e atÃ© o que pode ou nÃ£o ser dito â€” a mesma informaÃ§Ã£o se entrega de formas diferentes para pÃºblicos diferentes.</p>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">🙋</div><h4 class="font-semibold text-neutral-100 mb-1">Cliente final</h4><p class="text-xs text-neutral-400">Quer resolver rápido, sem termo técnico. Linguagem simples e acolhedora.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">👩‍💼</div><h4 class="font-semibold text-neutral-100 mb-1">Equipe interna</h4><p class="text-xs text-neutral-400">Quer agilidade e contexto. Pode receber detalhe técnico e atalhos.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📊</div><h4 class="font-semibold text-neutral-100 mb-1">Gestor</h4><p class="text-xs text-neutral-400">Quer visão e número. Resumos, indicadores e o porquê das decisões.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ™‹</div><h4 class="font-semibold text-neutral-100 mb-1">Cliente final</h4><p class="text-xs text-neutral-400">Quer resolver rÃ¡pido, sem termo tÃ©cnico. Linguagem simples e acolhedora.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ‘©â€ðŸ’¼</div><h4 class="font-semibold text-neutral-100 mb-1">Equipe interna</h4><p class="text-xs text-neutral-400">Quer agilidade e contexto. Pode receber detalhe tÃ©cnico e atalhos.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“Š</div><h4 class="font-semibold text-neutral-100 mb-1">Gestor</h4><p class="text-xs text-neutral-400">Quer visÃ£o e nÃºmero. Resumos, indicadores e o porquÃª das decisÃµes.</p></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">✓ Público definido</h4>
+<h4 class="font-bold text-blue-400 mb-4">âœ“ PÃºblico definido</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>O tom já vem decidido pela alma.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>O nível de detalhe é o certo na primeira vez.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Sabe o que não dizer para cada perfil.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>O tom jÃ¡ vem decidido pela alma.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>O nÃ­vel de detalhe Ã© o certo na primeira vez.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Sabe o que nÃ£o dizer para cada perfil.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ Público indefinido</h4>
+<h4 class="font-bold text-red-400 mb-4">âœ— PÃºblico indefinido</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Fala técnico com leigo e raso com especialista.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Entrega informação demais ou de menos.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Vaza para um perfil o que era de outro.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Fala tÃ©cnico com leigo e raso com especialista.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Entrega informaÃ§Ã£o demais ou de menos.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Vaza para um perfil o que era de outro.</span></li>
 </ul>
 </div>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Público</div><div class="text-xs text-neutral-400">quem ele atende</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Cliente × equipe</div><div class="text-xs text-neutral-400">perfis diferentes</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">PÃºblico</div><div class="text-xs text-neutral-400">quem ele atende</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Cliente Ã— equipe</div><div class="text-xs text-neutral-400">perfis diferentes</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Necessidade</div><div class="text-xs text-neutral-400">varia por perfil</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Linguagem</div><div class="text-xs text-neutral-400">ajustada ao público</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Linguagem</div><div class="text-xs text-neutral-400">ajustada ao pÃºblico</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-4" data-inema-track="2" id="topico-4">
+<!-- TÃ“PICO 4 -->
+<section class="mb-16" data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-4" data-ARCKHÉ-track="2" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">🗣️ Tom de comunicação — como ele fala</h2>
+<h2 class="text-2xl font-bold">ðŸ—£ï¸ Tom de comunicaÃ§Ã£o â€” como ele fala</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t4-p1">O tom é a <strong class="text-blue-400">personalidade da fala</strong> do Jarvis: formal ou próximo, técnico ou simples, direto ou acolhedor. O tom errado afasta o público mesmo quando a resposta está certa — porque o tom faz parte da experiência tanto quanto o conteúdo. A alma fixa o tom para que ele não mude de um atendimento para o outro.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-1-t4-p1">O tom Ã© a <strong class="text-blue-400">personalidade da fala</strong> do Jarvis: formal ou prÃ³ximo, tÃ©cnico ou simples, direto ou acolhedor. O tom errado afasta o pÃºblico mesmo quando a resposta estÃ¡ certa â€” porque o tom faz parte da experiÃªncia tanto quanto o conteÃºdo. A alma fixa o tom para que ele nÃ£o mude de um atendimento para o outro.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🎚️</span> O tom se ajusta em eixos</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸŽšï¸</span> O tom se ajusta em eixos</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Formalidade:</strong> de "Prezado cliente" a "Oi, tudo bem?" — escolha conforme a marca e o público.</li>
+<li><strong class="text-neutral-100">Formalidade:</strong> de "Prezado cliente" a "Oi, tudo bem?" â€” escolha conforme a marca e o pÃºblico.</li>
 <li><strong class="text-neutral-100">Profundidade:</strong> do "em uma frase" ao "passo a passo detalhado".</li>
-<li><strong class="text-neutral-100">Calor:</strong> do estritamente objetivo ao caloroso e empático.</li>
+<li><strong class="text-neutral-100">Calor:</strong> do estritamente objetivo ao caloroso e empÃ¡tico.</li>
 </ul>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">Defina o tom com três adjetivos e um contraexemplo: "claro, próximo, confiante — nunca bajulador". O contraexemplo é o que mais ajuda o sistema a não escorregar.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">Defina o tom com trÃªs adjetivos e um contraexemplo: "claro, prÃ³ximo, confiante â€” nunca bajulador". O contraexemplo Ã© o que mais ajuda o sistema a nÃ£o escorregar.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Tom</div><div class="text-xs text-neutral-400">a personalidade da fala</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Voz</div><div class="text-xs text-neutral-400">o jeito de se expressar</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Consistência</div><div class="text-xs text-neutral-400">igual em todo lugar</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Experiência</div><div class="text-xs text-neutral-400">o tom também entrega</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">ConsistÃªncia</div><div class="text-xs text-neutral-400">igual em todo lugar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">ExperiÃªncia</div><div class="text-xs text-neutral-400">o tom tambÃ©m entrega</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-5" data-inema-track="2" id="topico-5">
+<!-- TÃ“PICO 5 -->
+<section class="mb-16" data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-5" data-ARCKHÉ-track="2" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">⛔ O que NÃO pode fazer — os limites</h2>
+<h2 class="text-2xl font-bold">â›” O que NÃƒO pode fazer â€” os limites</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t5-p1">Os limites são a lista do que o Jarvis <strong class="text-blue-400">nunca deve fazer</strong>: prometer o que não cumpre, inventar dados, agir fora da sua alçada. Definir o "não" é tão importante quanto o "sim" — é o que protege a empresa e a confiança do cliente. A alma escreve os limites com a mesma clareza com que escreve o propósito.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-1-t5-p1">Os limites sÃ£o a lista do que o Jarvis <strong class="text-blue-400">nunca deve fazer</strong>: prometer o que nÃ£o cumpre, inventar dados, agir fora da sua alÃ§ada. Definir o "nÃ£o" Ã© tÃ£o importante quanto o "sim" â€” Ã© o que protege a empresa e a confianÃ§a do cliente. A alma escreve os limites com a mesma clareza com que escreve o propÃ³sito.</p>
 <div class="space-y-3 mb-6">
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">✗</span><div><strong class="text-neutral-100">Prometer o que não cumpre</strong> <span class="text-red-400">quebra a confiança.</span><p class="text-sm text-neutral-400 mt-1">Prazos, descontos e exceções que o sistema não pode garantir.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">✗</span><div><strong class="text-neutral-100">Inventar dados</strong> <span class="text-red-400">vira informação falsa.</span><p class="text-sm text-neutral-400 mt-1">Quando não sabe, o certo é dizer que não sabe — nunca preencher o vazio com chute.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">✗</span><div><strong class="text-neutral-100">Agir fora da alçada</strong> <span class="text-red-400">vira risco.</span><p class="text-sm text-neutral-400 mt-1">Decisões financeiras, jurídicas ou sensíveis pedem um humano no comando.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Prometer o que nÃ£o cumpre</strong> <span class="text-red-400">quebra a confianÃ§a.</span><p class="text-sm text-neutral-400 mt-1">Prazos, descontos e exceÃ§Ãµes que o sistema nÃ£o pode garantir.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Inventar dados</strong> <span class="text-red-400">vira informaÃ§Ã£o falsa.</span><p class="text-sm text-neutral-400 mt-1">Quando nÃ£o sabe, o certo Ã© dizer que nÃ£o sabe â€” nunca preencher o vazio com chute.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Agir fora da alÃ§ada</strong> <span class="text-red-400">vira risco.</span><p class="text-sm text-neutral-400 mt-1">DecisÃµes financeiras, jurÃ­dicas ou sensÃ­veis pedem um humano no comando.</p></div></div>
 </div>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🛟</span> O limite como rede de proteção</h3>
-<p class="text-neutral-300">Um bom limite não engessa o Jarvis — ele dá segurança para agir. Quando o sistema sabe exatamente onde parar, pode avançar com confiança até esse ponto. O "não" bem definido é o que torna o "sim" confiável.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ›Ÿ</span> O limite como rede de proteÃ§Ã£o</h3>
+<p class="text-neutral-300">Um bom limite nÃ£o engessa o Jarvis â€” ele dÃ¡ seguranÃ§a para agir. Quando o sistema sabe exatamente onde parar, pode avanÃ§ar com confianÃ§a atÃ© esse ponto. O "nÃ£o" bem definido Ã© o que torna o "sim" confiÃ¡vel.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Limites</div><div class="text-xs text-neutral-400">o que nunca fazer</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">O "não"</div><div class="text-xs text-neutral-400">tão importante quanto o sim</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Fronteira</div><div class="text-xs text-neutral-400">onde a ação para</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Proteção</div><div class="text-xs text-neutral-400">empresa e cliente</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">O "nÃ£o"</div><div class="text-xs text-neutral-400">tÃ£o importante quanto o sim</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Fronteira</div><div class="text-xs text-neutral-400">onde a aÃ§Ã£o para</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">ProteÃ§Ã£o</div><div class="text-xs text-neutral-400">empresa e cliente</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-6" data-inema-track="2" id="topico-6">
+<!-- TÃ“PICO 6 -->
+<section class="mb-16" data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-6" data-ARCKHÉ-track="2" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">⚖️ Como toma decisões — os critérios</h2>
+<h2 class="text-2xl font-bold">âš–ï¸ Como toma decisÃµes â€” os critÃ©rios</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t6-p1">Os critérios são as <strong class="text-blue-400">regras que orientam as escolhas</strong> do Jarvis quando há mais de um caminho possível. Sem critérios claros, decisões parecidas saem diferentes a cada vez — e a inconsistência corrói a confiança. Com critérios, o sistema fica previsível: dois casos iguais recebem o mesmo tratamento.</p>
-<!-- timeline: o caminho de uma decisão guiada por critérios -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-1-t6-p1">Os critÃ©rios sÃ£o as <strong class="text-blue-400">regras que orientam as escolhas</strong> do Jarvis quando hÃ¡ mais de um caminho possÃ­vel. Sem critÃ©rios claros, decisÃµes parecidas saem diferentes a cada vez â€” e a inconsistÃªncia corrÃ³i a confianÃ§a. Com critÃ©rios, o sistema fica previsÃ­vel: dois casos iguais recebem o mesmo tratamento.</p>
+<!-- timeline: o caminho de uma decisÃ£o guiada por critÃ©rios -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Entende o caso</h4><p class="text-neutral-300 text-sm">Lê o pedido e identifica de qual tipo de decisão se trata.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Entende o caso</h4><p class="text-neutral-300 text-sm">LÃª o pedido e identifica de qual tipo de decisÃ£o se trata.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Aplica o critério</h4><p class="text-neutral-300 text-sm">Consulta a regra da alma: prioridade do cliente, custo, risco, alçada.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Aplica o critÃ©rio</h4><p class="text-neutral-300 text-sm">Consulta a regra da alma: prioridade do cliente, custo, risco, alÃ§ada.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Decide ou escala</h4><p class="text-neutral-300 text-sm">Se o critério resolve, age; se passa do limite, encaminha a um humano.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Decide ou escala</h4><p class="text-neutral-300 text-sm">Se o critÃ©rio resolve, age; se passa do limite, encaminha a um humano.</p></div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">Para cada decisão recorrente, escreva a regra como "se… então…". "Se o cliente pede algo fora da política, então explica a política e oferece a alternativa." Critério escrito é critério que se repete igual.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">Para cada decisÃ£o recorrente, escreva a regra como "seâ€¦ entÃ£oâ€¦". "Se o cliente pede algo fora da polÃ­tica, entÃ£o explica a polÃ­tica e oferece a alternativa." CritÃ©rio escrito Ã© critÃ©rio que se repete igual.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Critérios</div><div class="text-xs text-neutral-400">regras de escolha</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Decisão</div><div class="text-xs text-neutral-400">vários caminhos</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Previsibilidade</div><div class="text-xs text-neutral-400">casos iguais, saída igual</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">CritÃ©rios</div><div class="text-xs text-neutral-400">regras de escolha</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">DecisÃ£o</div><div class="text-xs text-neutral-400">vÃ¡rios caminhos</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Previsibilidade</div><div class="text-xs text-neutral-400">casos iguais, saÃ­da igual</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Escalar</div><div class="text-xs text-neutral-400">quando passa do limite</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 7 -->
-<section class="mb-16" data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-7" data-inema-track="2" id="topico-7">
+<!-- TÃ“PICO 7 -->
+<section class="mb-16" data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-7" data-ARCKHÉ-track="2" id="topico-7">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">7</span>
-<h2 class="text-2xl font-bold">📈 Como deve evoluir — crescer com propósito</h2>
+<h2 class="text-2xl font-bold">ðŸ“ˆ Como deve evoluir â€” crescer com propÃ³sito</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t7-p1">A última face da alma é a <strong class="text-blue-400">direção de evolução</strong>: como o Jarvis deve crescer, o que pode ganhar e o que deve permanecer fiel ao propósito. Sem direção, a evolução vira inchaço — o sistema acumula funções soltas e perde a identidade. Com direção, ele cresce sem deixar de ser quem é.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-1-t7-p1">A Ãºltima face da alma Ã© a <strong class="text-blue-400">direÃ§Ã£o de evoluÃ§Ã£o</strong>: como o Jarvis deve crescer, o que pode ganhar e o que deve permanecer fiel ao propÃ³sito. Sem direÃ§Ã£o, a evoluÃ§Ã£o vira inchaÃ§o â€” o sistema acumula funÃ§Ãµes soltas e perde a identidade. Com direÃ§Ã£o, ele cresce sem deixar de ser quem Ã©.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">✓ Evolução com direção</h4>
+<h4 class="font-bold text-blue-400 mb-4">âœ“ EvoluÃ§Ã£o com direÃ§Ã£o</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Cada função nova reforça o propósito.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>A identidade continua reconhecível.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Cresce em profundidade, não só em tamanho.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Cada funÃ§Ã£o nova reforÃ§a o propÃ³sito.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>A identidade continua reconhecÃ­vel.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Cresce em profundidade, nÃ£o sÃ³ em tamanho.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ Evolução sem direção</h4>
+<h4 class="font-bold text-red-400 mb-4">âœ— EvoluÃ§Ã£o sem direÃ§Ã£o</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Acumula funções que ninguém usa.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Vira "faz de tudo" e não faz bem nada.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Perde a identidade pelo caminho.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Acumula funÃ§Ãµes que ninguÃ©m usa.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Vira "faz de tudo" e nÃ£o faz bem nada.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Perde a identidade pelo caminho.</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🌱</span> A alma é viva, mas tem raiz</h3>
-<p class="text-neutral-300">A alma não é uma camisa de força — ela pode ser revisada conforme a empresa muda. O que não muda toda hora é a raiz: o propósito e a identidade. Evoluir é estender a alma a partir do centro, não reescrevê-la a cada semana.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸŒ±</span> A alma Ã© viva, mas tem raiz</h3>
+<p class="text-neutral-300">A alma nÃ£o Ã© uma camisa de forÃ§a â€” ela pode ser revisada conforme a empresa muda. O que nÃ£o muda toda hora Ã© a raiz: o propÃ³sito e a identidade. Evoluir Ã© estender a alma a partir do centro, nÃ£o reescrevÃª-la a cada semana.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Evolução</div><div class="text-xs text-neutral-400">crescer com sentido</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Direção</div><div class="text-xs text-neutral-400">para onde cresce</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Fidelidade</div><div class="text-xs text-neutral-400">fiel ao propósito</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Raiz</div><div class="text-xs text-neutral-400">o centro não muda</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">EvoluÃ§Ã£o</div><div class="text-xs text-neutral-400">crescer com sentido</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">DireÃ§Ã£o</div><div class="text-xs text-neutral-400">para onde cresce</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Fidelidade</div><div class="text-xs text-neutral-400">fiel ao propÃ³sito</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Raiz</div><div class="text-xs text-neutral-400">o centro nÃ£o muda</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
-<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-2-1#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): o que é, no fundo, a "alma" do Jarvis?</p>
-<div class="inema-check-options space-y-2">
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Um prompt longo e bem escrito que resolve qualquer pergunta.</button>
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">O núcleo que responde quem o sistema é, para que existe, para quem trabalha, o que pode e não pode, como decide e como evolui.</button>
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">A lista de ferramentas e integrações que o sistema usa.</button>
+<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
+<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-2-1#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): o que Ã©, no fundo, a "alma" do Jarvis?</p>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Um prompt longo e bem escrito que resolve qualquer pergunta.</button>
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">O nÃºcleo que responde quem o sistema Ã©, para que existe, para quem trabalha, o que pode e nÃ£o pode, como decide e como evolui.</button>
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">A lista de ferramentas e integraÃ§Ãµes que o sistema usa.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">💜</span> Resumo do módulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ’œ</span> Resumo do mÃ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Identidade</strong><span class="text-neutral-400"> — quem o sistema é: nome, papel e apresentação coerente.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Propósito</strong><span class="text-neutral-400"> — o problema central; o filtro do que entra e do que fica de fora.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Público</strong><span class="text-neutral-400"> — para quem ele trabalha define tom, detalhe e o que dizer.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Tom</strong><span class="text-neutral-400"> — a personalidade da fala, consistente em todo atendimento.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Limites</strong><span class="text-neutral-400"> — o "não" que protege a empresa e a confiança do cliente.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Critérios e evolução</strong><span class="text-neutral-400"> — decisões previsíveis e crescimento fiel ao propósito.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Identidade</strong><span class="text-neutral-400"> â€” quem o sistema Ã©: nome, papel e apresentaÃ§Ã£o coerente.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">PropÃ³sito</strong><span class="text-neutral-400"> â€” o problema central; o filtro do que entra e do que fica de fora.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">PÃºblico</strong><span class="text-neutral-400"> â€” para quem ele trabalha define tom, detalhe e o que dizer.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Tom</strong><span class="text-neutral-400"> â€” a personalidade da fala, consistente em todo atendimento.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Limites</strong><span class="text-neutral-400"> â€” o "nÃ£o" que protege a empresa e a confianÃ§a do cliente.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">CritÃ©rios e evoluÃ§Ã£o</strong><span class="text-neutral-400"> â€” decisÃµes previsÃ­veis e crescimento fiel ao propÃ³sito.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-blue-400 mb-2">Próximo módulo:</h3>
-<p class="text-neutral-300">2.2 — Serviços Internos: os blocos de capacidade que a alma coloca para trabalhar.</p>
+<h3 class="font-semibold text-blue-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
+<p class="text-neutral-300">2.2 â€” ServiÃ§os Internos: os blocos de capacidade que a alma coloca para trabalhar.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para o Dia 2</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-2.html">Próximo: 2.2 Serviços Internos →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-2.html">PrÃ³ximo: 2.2 ServiÃ§os Internos â†’</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Índice do módulo" class="sticky top-20 self-start text-sm" data-inema-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta página <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. Identidade</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Propósito</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. Público</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. Tom de comunicação</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. PropÃ³sito</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. PÃºblico</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. Tom de comunicaÃ§Ã£o</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. Limites</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. Critérios de decisão</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. CritÃ©rios de decisÃ£o</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-7">7. Como evolui</a></li>
 </ol>
 </nav>
@@ -590,21 +590,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de Intenção da IA · Método JARVIS — Dia 2 · Módulo 2.1</p>
+<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 2 Â· MÃ³dulo 2.1</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
-      if (INEMA.registerCheck) {
-        INEMA.registerCheck('modulo-2-1#q1', {
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
+      if (ARCKHÉ.registerCheck) {
+        ARCKHÉ.registerCheck('modulo-2-1#q1', {
           answer: 1,
           explain: {
-            0: 'Não — um prompt longo é só texto. A alma é o núcleo que dá sentido a todo o sistema, prompt incluído.',
-            1: 'Isso. A alma é o centro que responde quem é, para que existe, para quem trabalha, o que pode/não pode, como decide e como evolui.',
-            2: 'Não — ferramentas são o "como agir no mundo". Sem a alma por trás, elas seriam ferramentas soltas, sem direção.'
+            0: 'NÃ£o â€” um prompt longo Ã© sÃ³ texto. A alma Ã© o nÃºcleo que dÃ¡ sentido a todo o sistema, prompt incluÃ­do.',
+            1: 'Isso. A alma Ã© o centro que responde quem Ã©, para que existe, para quem trabalha, o que pode/nÃ£o pode, como decide e como evolui.',
+            2: 'NÃ£o â€” ferramentas sÃ£o o "como agir no mundo". Sem a alma por trÃ¡s, elas seriam ferramentas soltas, sem direÃ§Ã£o.'
           }
         });
       }

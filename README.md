@@ -1,4 +1,4 @@
-﻿# Arquitetura de IntenÃ§Ã£o da IA â€” MÃ©todo JARVIS
+# Arquitetura de IntenÃ§Ã£o da IA â€” MÃ©todo JARVIS
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -29,7 +29,7 @@ tÃ©cnica e estratÃ©gica â€” onde a IA opera com propÃ³sito.
 
 Site estÃ¡tico (HTML + Tailwind via CDN + JavaScript inline), sem build, sem backend.
 
-**Publicado em: https://inematds.github.io/arquitetura-de-intencao-da-ia/**
+**Publicado em: https://linnoff88-dev.github.io/
 
 Ou abra `index.html` localmente.
 
@@ -40,7 +40,7 @@ se o JavaScript falhar, o conteÃºdo continua legÃ­vel.
 
 ---
 
-Formato INEMA.CLUB v2 Â· [inema.club](https://inema.club)
+Formato ARCKHÉ AI v2 Â· [ARCKHÉ AI](https://ARCKHÉ AI)
 
 ---
 

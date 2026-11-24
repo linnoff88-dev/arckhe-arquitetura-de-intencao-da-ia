@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="inema-course"/>
+<meta content="jarvis" name="ARCKHÉ-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Día 2 · Construcción de Jarvis | Arquitectura de Intención de la IA</title>
+<title>DÃ­a 2 Â· ConstrucciÃ³n de Jarvis | Arquitectura de IntenciÃ³n de la IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -132,8 +132,8 @@
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
     .appearance-anchor { position: relative; }
   </style>
-<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha2/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip" href="#conteudo">Ir al contenido</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -141,58 +141,58 @@
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitectura de Intención</span>
+<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitectura de IntenciÃ³n</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
-<span class="sm:hidden">D1</span><span class="hidden sm:inline">Día 1</span></a>
+<span class="sm:hidden">D1</span><span class="hidden sm:inline">DÃ­a 1</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html">
-<span class="sm:hidden">D2</span><span class="hidden sm:inline">Día 2</span></a>
+<span class="sm:hidden">D2</span><span class="hidden sm:inline">DÃ­a 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
-<span class="sm:hidden">D3</span><span class="hidden sm:inline">Día 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Mi recorrido" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span>
-<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<span class="sm:hidden">D3</span><span class="hidden sm:inline">DÃ­a 3</span></a>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Mi recorrido" type="button">
+<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Recorrido</span>
+<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Apariencia y lectura" type="button"><span aria-hidden="true">◑</span></button>
-<div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark" type="button">Oscuro</button>
-<button data-inema-set-theme="claro" type="button">Claro</button>
-<button data-inema-set-theme="sepia" type="button">Sepia</button>
-<button data-inema-set-theme="foco" type="button">Enfoque</button>
-<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Apariencia y lectura" type="button"><span aria-hidden="true">â—‘</span></button>
+<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
+<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Oscuro</button>
+<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button data-ARCKHÉ-set-theme="foco" type="button">Enfoque</button>
+<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fuente" class="inema-segment" role="group">
-<button data-inema-set-font="inter" type="button">Inter</button>
-<button data-inema-set-font="system" type="button">Sistema</button>
-<button data-inema-set-font="leitura" type="button">Lectura</button>
+<div aria-label="Fuente" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
+<button data-ARCKHÉ-set-font="leitura" type="button">Lectura</button>
 </div>
-<div aria-label="Tamaño del texto" class="inema-segment" role="group">
-<button data-inema-set-fontscale="100" type="button">A</button>
-<button data-inema-set-fontscale="112" type="button">A+</button>
-<button data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60" type="button">Estrecho</button>
-<button data-inema-set-linewidth="68" type="button">Medio</button>
-<button data-inema-set-linewidth="75" type="button">Amplio</button>
+<div aria-label="Ancho de lÃ­nea" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-linewidth="60" type="button">Estrecho</button>
+<button data-ARCKHÉ-set-linewidth="68" type="button">Medio</button>
+<button data-ARCKHÉ-set-linewidth="75" type="button">Amplio</button>
 </div>
-<div aria-label="Entre líneas" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45" type="button">Compacto</button>
-<button data-inema-set-leading="1.7" type="button">Cómodo</button>
+<div aria-label="Entre lÃ­neas" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHÉ-set-leading="1.7" type="button">CÃ³modo</button>
 </div>
-<div aria-label="Color de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-inema-set-accent="blue" title="Azul" type="button"></button>
-<button data-inema-set-accent="purple" title="Morado" type="button"></button>
-<button data-inema-set-accent="amber" title="Ámbar" type="button"></button>
-<button data-inema-set-accent="teal" title="Teal" type="button"></button>
-<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Color de acento" class="ARCKHÉ-accent-grid" role="group">
+<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHÉ-set-accent="purple" title="Morado" type="button"></button>
+<button data-ARCKHÉ-set-accent="amber" title="Ãmbar" type="button"></button>
+<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -203,10 +203,10 @@
 <!-- HEADER + HERO SVG -->
 <header class="relative overflow-hidden bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">DÍA 2 · TRAYECTO 2</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">🤖 Construcción de Jarvis</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Hoy construyes el «alma» del sistema: quién es, para qué existe y qué no puede hacer. A partir de este núcleo de identidad, montamos las capas —servicios, agentes, habilidades, memoria y contexto— protegidas por muros de seguridad y conectadas con el mundo mediante herramientas e integraciones. Al final del día, Jarvis deja de ser una idea y se convierte en una arquitectura coherente.</p>
-<!-- HERO SVG: a alma irradia para serviços -> agentes -> habilidades -> ferramentas, com muros ao redor -->
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">DÃA 2 Â· TRAYECTO 2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ¤– ConstrucciÃ³n de Jarvis</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Hoy construyes el Â«almaÂ» del sistema: quiÃ©n es, para quÃ© existe y quÃ© no puede hacer. A partir de este nÃºcleo de identidad, montamos las capas â€”servicios, agentes, habilidades, memoria y contextoâ€” protegidas por muros de seguridad y conectadas con el mundo mediante herramientas e integraciones. Al final del dÃ­a, Jarvis deja de ser una idea y se convierte en una arquitectura coherente.</p>
+<!-- HERO SVG: a alma irradia para serviÃ§os -> agentes -> habilidades -> ferramentas, com muros ao redor -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
 <svg aria-label="Diagrama: el alma en el centro irradia hacia servicios, agentes, habilidades y herramientas, rodeada por muros de seguridad" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
@@ -219,14 +219,14 @@
 <rect fill="url(#t2-grid)" height="240" width="1000" x="0" y="0"></rect>
 <!-- muros de seguranca (tracejado ao redor de tudo) -->
 <rect fill="none" height="212" opacity="0.4" rx="18" stroke="#38bdf8" stroke-dasharray="9 9" stroke-width="1.6" width="972" x="14" y="14"></rect>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="120" y="34">límites de seguridad</text>
-<!-- alma -> serviços -->
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="120" y="34">lÃ­mites de seguridad</text>
+<!-- alma -> serviÃ§os -->
 <g fill="none" opacity="0.55" stroke="#60a5fa" stroke-width="1.8">
 <path d="M214,120 C300,120 320,84 404,84" marker-end="url(#t2-ah)"></path>
 <path d="M214,120 L404,120" marker-end="url(#t2-ah)"></path>
 <path d="M214,120 C300,120 320,156 404,156" marker-end="url(#t2-ah)"></path>
 </g>
-<!-- serviços -> agentes/habilidades/ferramentas -->
+<!-- serviÃ§os -> agentes/habilidades/ferramentas -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M540,84  C660,84 680,72 800,64" marker-end="url(#t2-ahc)"></path>
 <path d="M540,120 L800,120" marker-end="url(#t2-ahc)"></path>
@@ -235,30 +235,30 @@
 <!-- alma (centro) -->
 <g filter="url(#t2-glow)"><rect fill="#0e1622" height="56" rx="14" stroke="url(#t2-grad)" stroke-width="2" width="152" x="62" y="92"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="138" y="116">La Esencia</text>
-<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="138" y="134">identidad · intención</text>
-<!-- serviços (meio) -->
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="138" y="134">identidad Â· intenciÃ³n</text>
+<!-- serviÃ§os (meio) -->
 <g filter="url(#t2-glow)"><rect fill="#0e1622" height="56" rx="13" stroke="url(#t2-grad)" stroke-width="2" width="136" x="404" y="92"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="472" y="116">Servicios</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="472" y="134">bloques de capacidad</text>
 <!-- agentes / habilidades / ferramentas (direita) -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="172" x="800" y="46"></rect><text fill="#bfe6ff" text-anchor="middle" x="886" y="67">agentes</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="172" x="800" y="104"></rect><text fill="#bfe6ff" text-anchor="middle" x="886" y="125">habilidades · memoria</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="172" x="800" y="104"></rect><text fill="#bfe6ff" text-anchor="middle" x="886" y="125">habilidades Â· memoria</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="172" x="800" y="162"></rect><text fill="#bfe6ff" text-anchor="middle" x="886" y="183">herramientas</text></g>
 </g>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="218">Todo nace del alma y actúa dentro de los muros: la intención en el centro.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="218">Todo nace del alma y actÃºa dentro de los muros: la intenciÃ³n en el centro.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Módulos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">MÃ³dulos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">43</div><div class="text-xs text-neutral-400">Temas</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~1 día</div><div class="text-xs text-neutral-400">Duración</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~1 dÃ­a</div><div class="text-xs text-neutral-400">DuraciÃ³n</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
 </div>
 <!-- Medidor da trilha -->
-<div aria-label="Progreso del día 2" aria-valuemax="100" aria-valuemin="0" data-inema-meter="trilha:2" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progreso del día 2</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 43</strong> · <span data-inema-meter-pct="">0%</span></span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del dÃ­a 2" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="trilha:2" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progreso del dÃ­a 2</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 43</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </div>
 </header>
@@ -269,126 +269,126 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-1">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.1</span><span class="text-xs text-neutral-500">~55 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">💜 El alma de Jarvis</h3>
-<p class="text-xs text-neutral-400">Identidad, propósito y límites</p>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">ðŸ’œ El alma de Jarvis</h3>
+<p class="text-xs text-neutral-400">Identidad, propÃ³sito y lÃ­mites</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-2">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.2</span><span class="text-xs text-neutral-500">~45 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🧱 Servicios internos</h3>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">ðŸ§± Servicios internos</h3>
 <p class="text-xs text-neutral-400">Bloques de capacidad</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-3">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.3</span><span class="text-xs text-neutral-500">~50 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">👷 Agentes</h3>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">ðŸ‘· Agentes</h3>
 <p class="text-xs text-neutral-400">Trabajadores especializados</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-4">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.4</span><span class="text-xs text-neutral-500">~45 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">⚡ Habilidades</h3>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">âš¡ Habilidades</h3>
 <p class="text-xs text-neutral-400">Lo que cada agente sabe hacer</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-5">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.5</span><span class="text-xs text-neutral-500">~50 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🧠 Memoria y contexto</h3>
-<p class="text-xs text-neutral-400">Qué recuerda Jarvis</p>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">ðŸ§  Memoria y contexto</h3>
+<p class="text-xs text-neutral-400">QuÃ© recuerda Jarvis</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-6">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.6</span><span class="text-xs text-neutral-500">~45 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🛡️ Muros de seguridad</h3>
-<p class="text-xs text-neutral-400">Operar dentro de los límites</p>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">ðŸ›¡ï¸ Muros de seguridad</h3>
+<p class="text-xs text-neutral-400">Operar dentro de los lÃ­mites</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-7">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.7</span><span class="text-xs text-neutral-500">~45 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🔧 Herramientas e integraciones</h3>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">ðŸ”§ Herramientas e integraciones</h3>
 <p class="text-xs text-neutral-400">Actuar en el mundo</p>
 </a>
 </div>
 </section>
 <h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
-<!-- ===================== MÓDULO 2.1 ===================== -->
+<!-- ===================== MÃ“DULO 2.1 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-1">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~55 min · 7 temas</span></div>
-<h3 class="text-2xl font-bold mb-2">💜 El alma de Jarvis</h3>
-<p class="text-neutral-400 text-sm">El núcleo que da sentido a todo: quién es el sistema, para qué existe, para quién trabaja y dónde están sus límites.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-1"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 7</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~55 min Â· 7 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ’œ El alma de Jarvis</h3>
+<p class="text-neutral-400 text-sm">El nÃºcleo que da sentido a todo: quiÃ©n es el sistema, para quÃ© existe, para quiÃ©n trabaja y dÃ³nde estÃ¡n sus lÃ­mites.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:2-1"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 7</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t2-1-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">💜</span><div><span class="font-medium">Quién es el sistema</span><span class="text-neutral-500 text-sm ml-2">- la identidad</span></div>
+<span class="text-lg">ðŸ’œ</span><div><span class="font-medium">QuiÃ©n es el sistema</span><span class="text-neutral-500 text-sm ml-2">- la identidad</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-1-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La identidad es la definición de quién es Jarvis: su nombre, el papel que ocupa y la forma en que se presenta ante quienes hablan con él.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Un sistema sin identidad responde de cualquier manera. Con una identidad clara, cada respuesta transmite coherencia y confianza.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Identidad; papel; presentación; la base del alma.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La identidad es la definiciÃ³n de quiÃ©n es Jarvis: su nombre, el papel que ocupa y la forma en que se presenta ante quienes hablan con Ã©l.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Un sistema sin identidad responde de cualquier manera. Con una identidad clara, cada respuesta transmite coherencia y confianza.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Identidad; papel; presentaciÃ³n; la base del alma.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-1-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🎯</span><div><span class="font-medium">Para qué existe</span><span class="text-neutral-500 text-sm ml-2">- el propósito</span></div>
+<span class="text-lg">ðŸŽ¯</span><div><span class="font-medium">Para quÃ© existe</span><span class="text-neutral-500 text-sm ml-2">- el propÃ³sito</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-1-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El propósito es el problema central que Jarvis existe para resolver: la razón por la que fue creado.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el propósito que decide qué entra y qué queda fuera del sistema. Sin él, todo se convierte en "tal vez".</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Propósito; problema central; razón de existir.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El propÃ³sito es el problema central que Jarvis existe para resolver: la razÃ³n por la que fue creado.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Es el propÃ³sito que decide quÃ© entra y quÃ© queda fuera del sistema. Sin Ã©l, todo se convierte en "tal vez".</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">PropÃ³sito; problema central; razÃ³n de existir.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-1-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">👥</span><div><span class="font-medium">Para quién trabaja</span><span class="text-neutral-500 text-sm ml-2">- el público</span></div>
+<span class="text-lg">ðŸ‘¥</span><div><span class="font-medium">Para quiÃ©n trabaja</span><span class="text-neutral-500 text-sm ml-2">- el pÃºblico</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-1-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">A quién atiende Jarvis: cliente final, equipo interno, gerente; cada público tiene sus propias necesidades y lenguaje.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Saber para quién trabaja define el tono, el nivel de detalle y lo que se puede o no decir.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Público; cliente × equipo; necesidad por perfil.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">A quiÃ©n atiende Jarvis: cliente final, equipo interno, gerente; cada pÃºblico tiene sus propias necesidades y lenguaje.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Saber para quiÃ©n trabaja define el tono, el nivel de detalle y lo que se puede o no decir.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">PÃºblico; cliente Ã— equipo; necesidad por perfil.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-1-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🗣️</span><div><span class="font-medium">Tono de comunicación</span><span class="text-neutral-500 text-sm ml-2">- cómo habla</span></div>
+<span class="text-lg">ðŸ—£ï¸</span><div><span class="font-medium">Tono de comunicaciÃ³n</span><span class="text-neutral-500 text-sm ml-2">- cÃ³mo habla</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-1-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El tono es la personalidad de la forma de hablar de Jarvis: formal o cercana, técnica o sencilla, directa o acogedora.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El tono equivocado aleja al público, incluso con la respuesta correcta. El tono forma parte de la experiencia.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El tono es la personalidad de la forma de hablar de Jarvis: formal o cercana, tÃ©cnica o sencilla, directa o acogedora.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">El tono equivocado aleja al pÃºblico, incluso con la respuesta correcta. El tono forma parte de la experiencia.</p></div>
 <div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Tono; voz; coherencia del lenguaje.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-1-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">⛔</span><div><span class="font-medium">Qué NO puede hacer</span><span class="text-neutral-500 text-sm ml-2">- los límites</span></div>
+<span class="text-lg">â›”</span><div><span class="font-medium">QuÃ© NO puede hacer</span><span class="text-neutral-500 text-sm ml-2">- los lÃ­mites</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-1-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Los límites son la lista de lo que Jarvis nunca debe hacer: prometer lo que no cumple, inventar datos, actuar fuera de sus atribuciones.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Definir el "no" es tan importante como el "sí": es lo que protege a la empresa y la confianza del cliente.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Límites; qué no hacer; frontera de la acción.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Los lÃ­mites son la lista de lo que Jarvis nunca debe hacer: prometer lo que no cumple, inventar datos, actuar fuera de sus atribuciones.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Definir el "no" es tan importante como el "sÃ­": es lo que protege a la empresa y la confianza del cliente.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">LÃ­mites; quÃ© no hacer; frontera de la acciÃ³n.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-1-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">⚖️</span><div><span class="font-medium">Cómo toma decisiones</span><span class="text-neutral-500 text-sm ml-2">- los criterios</span></div>
+<span class="text-lg">âš–ï¸</span><div><span class="font-medium">CÃ³mo toma decisiones</span><span class="text-neutral-500 text-sm ml-2">- los criterios</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-1-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Los criterios son las reglas que orientan las decisiones de Jarvis cuando hay más de un camino posible.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin criterios claros, las decisiones similares salen distintas cada vez. Los criterios aportan previsibilidad.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Criterios; reglas de decisión; previsibilidad.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Los criterios son las reglas que orientan las decisiones de Jarvis cuando hay mÃ¡s de un camino posible.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Sin criterios claros, las decisiones similares salen distintas cada vez. Los criterios aportan previsibilidad.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Criterios; reglas de decisiÃ³n; previsibilidad.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-1-7" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
-<span class="text-lg">📈</span><div><span class="font-medium">Cómo debe evolucionar</span><span class="text-neutral-500 text-sm ml-2">- crecer con propósito</span></div>
+<span class="text-lg">ðŸ“ˆ</span><div><span class="font-medium">CÃ³mo debe evolucionar</span><span class="text-neutral-500 text-sm ml-2">- crecer con propÃ³sito</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-1-7"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La esencia también define la dirección de la evolución: cómo debe crecer Jarvis, qué puede incorporar y qué debe mantenerse fiel al propósito.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin dirección, la evolución se convierte en crecimiento desmedido. Con dirección, el sistema crece sin perder su identidad.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Evolución; dirección; fidelidad al propósito.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La esencia tambiÃ©n define la direcciÃ³n de la evoluciÃ³n: cÃ³mo debe crecer Jarvis, quÃ© puede incorporar y quÃ© debe mantenerse fiel al propÃ³sito.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Sin direcciÃ³n, la evoluciÃ³n se convierte en crecimiento desmedido. Con direcciÃ³n, el sistema crece sin perder su identidad.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">EvoluciÃ³n; direcciÃ³n; fidelidad al propÃ³sito.</p></div>
 </div></div>
 </div>
 </div>
@@ -397,79 +397,79 @@
 <a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-1.html">Ver completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 2.2 ===================== -->
+<!-- ===================== MÃ“DULO 2.2 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-2">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~45 min · 6 temas</span></div>
-<h3 class="text-2xl font-bold mb-2">🧱 Servicios internos</h3>
-<p class="text-neutral-400 text-sm">Los bloques de capacidad de Jarvis: cada servicio resuelve una familia de problemas: atención, ventas, documentos, agenda.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-2"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~45 min Â· 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ§± Servicios internos</h3>
+<p class="text-neutral-400 text-sm">Los bloques de capacidad de Jarvis: cada servicio resuelve una familia de problemas: atenciÃ³n, ventas, documentos, agenda.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:2-2"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t2-2-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">🧱</span><div><span class="font-medium">Qué es un servicio</span><span class="text-neutral-500 text-sm ml-2">- bloque de capacidad</span></div>
+<span class="text-lg">ðŸ§±</span><div><span class="font-medium">QuÃ© es un servicio</span><span class="text-neutral-500 text-sm ml-2">- bloque de capacidad</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-2-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un servicio es un bloque de capacidad de Jarvis: un área de acción que reúne todo lo necesario para resolver un tipo de solicitud.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Pensar en servicios organiza el sistema según el valor que entrega, no según la herramienta que usa.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Servicio; bloque de capacidad; organización por valor.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Un servicio es un bloque de capacidad de Jarvis: un Ã¡rea de acciÃ³n que reÃºne todo lo necesario para resolver un tipo de solicitud.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Pensar en servicios organiza el sistema segÃºn el valor que entrega, no segÃºn la herramienta que usa.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Servicio; bloque de capacidad; organizaciÃ³n por valor.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-2-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🎬</span><div><span class="font-medium">Atención y soporte</span><span class="text-neutral-500 text-sm ml-2">- resolver el problema del cliente</span></div>
+<span class="text-lg">ðŸŽ¬</span><div><span class="font-medium">AtenciÃ³n y soporte</span><span class="text-neutral-500 text-sm ml-2">- resolver el problema del cliente</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-2-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El servicio de atención responde consultas, resuelve problemas y cuida la experiencia de quienes llegan al sistema.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el servicio más común y el que más alivia a los equipos: atiende rápido, a cualquier hora y con consistencia.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Atención; soporte; experiencia del cliente.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El servicio de atenciÃ³n responde consultas, resuelve problemas y cuida la experiencia de quienes llegan al sistema.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Es el servicio mÃ¡s comÃºn y el que mÃ¡s alivia a los equipos: atiende rÃ¡pido, a cualquier hora y con consistencia.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">AtenciÃ³n; soporte; experiencia del cliente.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-2-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">💰</span><div><span class="font-medium">Ventas y propuestas</span><span class="text-neutral-500 text-sm ml-2">- guiar hacia la compra</span></div>
+<span class="text-lg">ðŸ’°</span><div><span class="font-medium">Ventas y propuestas</span><span class="text-neutral-500 text-sm ml-2">- guiar hacia la compra</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-2-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El servicio de ventas califica a los interesados, presenta soluciones y ayuda a preparar propuestas y cerrar negocios.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es donde la IA incide directamente en los ingresos: guiar bien el recorrido de compra cambia los resultados de la empresa.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ventas; calificación; propuesta.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El servicio de ventas califica a los interesados, presenta soluciones y ayuda a preparar propuestas y cerrar negocios.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Es donde la IA incide directamente en los ingresos: guiar bien el recorrido de compra cambia los resultados de la empresa.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ventas; calificaciÃ³n; propuesta.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-2-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">📄</span><div><span class="font-medium">Análisis de documentos</span><span class="text-neutral-500 text-sm ml-2">- leer y extraer</span></div>
+<span class="text-lg">ðŸ“„</span><div><span class="font-medium">AnÃ¡lisis de documentos</span><span class="text-neutral-500 text-sm ml-2">- leer y extraer</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-2-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El servicio de documentos lee contratos, hojas de cálculo, correos electrónicos e informes para extraer, resumir y clasificar información.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es donde la IA ahorra más tiempo: leer mucho y devolver solo lo que importa, en segundos.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Documentos; extracción; resumen y clasificación.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El servicio de documentos lee contratos, hojas de cÃ¡lculo, correos electrÃ³nicos e informes para extraer, resumir y clasificar informaciÃ³n.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Es donde la IA ahorra mÃ¡s tiempo: leer mucho y devolver solo lo que importa, en segundos.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Documentos; extracciÃ³n; resumen y clasificaciÃ³n.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-2-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">📅</span><div><span class="font-medium">Programación y consultas</span><span class="text-neutral-500 text-sm ml-2">- marcar y responder</span></div>
+<span class="text-lg">ðŸ“…</span><div><span class="font-medium">ProgramaciÃ³n y consultas</span><span class="text-neutral-500 text-sm ml-2">- marcar y responder</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-2-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El servicio de programación agenda horarios, consulta la disponibilidad y responde preguntas sobre fechas y estados.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Resuelve una de las tareas más repetitivas de las empresas — y que más fricción genera cuando se hace a mano.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Programación; consulta; disponibilidad.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El servicio de programaciÃ³n agenda horarios, consulta la disponibilidad y responde preguntas sobre fechas y estados.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Resuelve una de las tareas mÃ¡s repetitivas de las empresas â€” y que mÃ¡s fricciÃ³n genera cuando se hace a mano.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">ProgramaciÃ³n; consulta; disponibilidad.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-2-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🗂️</span><div><span class="font-medium">Un servicio, uno o más agentes</span><span class="text-neutral-500 text-sm ml-2">- cómo se conectan</span></div>
+<span class="text-lg">ðŸ—‚ï¸</span><div><span class="font-medium">Un servicio, uno o mÃ¡s agentes</span><span class="text-neutral-500 text-sm ml-2">- cÃ³mo se conectan</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-2-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un servicio es entregado por uno o más agentes: el servicio define el «qué» y los agentes hacen el «cómo».</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Entender esta conexión evita confundir la capacidad (servicio) con quien la ejecuta (agente) al diseñar la solución.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Servicio × agente; qué × cómo; composición.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Un servicio es entregado por uno o mÃ¡s agentes: el servicio define el Â«quÃ©Â» y los agentes hacen el Â«cÃ³moÂ».</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Entender esta conexiÃ³n evita confundir la capacidad (servicio) con quien la ejecuta (agente) al diseÃ±ar la soluciÃ³n.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Servicio Ã— agente; quÃ© Ã— cÃ³mo; composiciÃ³n.</p></div>
 </div></div>
 </div>
 </div>
@@ -478,79 +478,79 @@
 <a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-2.html">Ver completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 2.3 ===================== -->
+<!-- ===================== MÃ“DULO 2.3 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-3">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.3</span><span class="text-xs text-neutral-500">~50 min · 6 temas</span></div>
-<h3 class="text-2xl font-bold mb-2">👷 Agentes</h3>
-<p class="text-neutral-400 text-sm">Los trabajadores especializados de Jarvis: cada agente realiza un trabajo, con instrucciones, memoria y criterio de éxito propios.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-3"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.3</span><span class="text-xs text-neutral-500">~50 min Â· 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ‘· Agentes</h3>
+<p class="text-neutral-400 text-sm">Los trabajadores especializados de Jarvis: cada agente realiza un trabajo, con instrucciones, memoria y criterio de Ã©xito propios.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:2-3"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t2-3-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">👷</span><div><span class="font-medium">Qué es un agente</span><span class="text-neutral-500 text-sm ml-2">- el trabajador</span></div>
+<span class="text-lg">ðŸ‘·</span><div><span class="font-medium">QuÃ© es un agente</span><span class="text-neutral-500 text-sm ml-2">- el trabajador</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-3-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un agente es un trabajador del sistema: una unidad que recibe una tarea, decide qué hacer y entrega un resultado.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El agente es la pieza que realmente ejecuta. Entenderlo es la clave para hacer que el sistema actúe y no solo responda.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Agente; ejecutor; tarea → resultado.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Un agente es un trabajador del sistema: una unidad que recibe una tarea, decide quÃ© hacer y entrega un resultado.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">El agente es la pieza que realmente ejecuta. Entenderlo es la clave para hacer que el sistema actÃºe y no solo responda.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Agente; ejecutor; tarea â†’ resultado.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-3-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🧩</span><div><span class="font-medium">Especializado</span><span class="text-neutral-500 text-sm ml-2">- un trabajo cada uno</span></div>
+<span class="text-lg">ðŸ§©</span><div><span class="font-medium">Especializado</span><span class="text-neutral-500 text-sm ml-2">- un trabajo cada uno</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-3-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cada agente realiza un trabajo bien definido. En lugar de un "superagente" que hace de todo más o menos, varios agentes enfocados.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La especialización aporta calidad y facilita ajustar, probar y reemplazar una pieza sin romper las demás.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Especialización; enfoque; división del trabajo.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Cada agente realiza un trabajo bien definido. En lugar de un "superagente" que hace de todo mÃ¡s o menos, varios agentes enfocados.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">La especializaciÃ³n aporta calidad y facilita ajustar, probar y reemplazar una pieza sin romper las demÃ¡s.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">EspecializaciÃ³n; enfoque; divisiÃ³n del trabajo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-3-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">📋</span><div><span class="font-medium">Instrucción y contexto</span><span class="text-neutral-500 text-sm ml-2">- el briefing</span></div>
+<span class="text-lg">ðŸ“‹</span><div><span class="font-medium">InstrucciÃ³n y contexto</span><span class="text-neutral-500 text-sm ml-2">- el briefing</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-3-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Todo agente recibe una instrucción (qué hacer y cómo) y un contexto (la situación actual y la información disponible).</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La instrucción y el contexto son el briefing del trabajador. Si están mal redactados, generan respuestas fuera de objetivo.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Instrucción; contexto; briefing del agente.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Todo agente recibe una instrucciÃ³n (quÃ© hacer y cÃ³mo) y un contexto (la situaciÃ³n actual y la informaciÃ³n disponible).</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">La instrucciÃ³n y el contexto son el briefing del trabajador. Si estÃ¡n mal redactados, generan respuestas fuera de objetivo.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">InstrucciÃ³n; contexto; briefing del agente.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-3-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🧠</span><div><span class="font-medium">Memoria y reglas del agente</span><span class="text-neutral-500 text-sm ml-2">- qué sigue</span></div>
+<span class="text-lg">ðŸ§ </span><div><span class="font-medium">Memoria y reglas del agente</span><span class="text-neutral-500 text-sm ml-2">- quÃ© sigue</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-3-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cada agente tiene memoria (lo que recuerda de lo que ya ocurrió) y reglas (lo que siempre debe hacer o nunca puede hacer).</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La memoria y las reglas dan consistencia al agente: actúa igual en situaciones iguales y respeta los límites.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Cada agente tiene memoria (lo que recuerda de lo que ya ocurriÃ³) y reglas (lo que siempre debe hacer o nunca puede hacer).</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">La memoria y las reglas dan consistencia al agente: actÃºa igual en situaciones iguales y respeta los lÃ­mites.</p></div>
 <div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Memoria del agente; reglas; consistencia.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-3-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">✅</span><div><span class="font-medium">Criterios de éxito</span><span class="text-neutral-500 text-sm ml-2">- cuando salió bien</span></div>
+<span class="text-lg">âœ…</span><div><span class="font-medium">Criterios de Ã©xito</span><span class="text-neutral-500 text-sm ml-2">- cuando saliÃ³ bien</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-3-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El criterio de éxito es cómo el agente (y tú) saben que la tarea se hizo bien: el resultado esperado, claro y verificable.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin un criterio de éxito, "listo" se convierte en una opinión. Con él, puedes medir, corregir y confiar en el agente.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Criterio de éxito; resultado esperado; verificación.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El criterio de Ã©xito es cÃ³mo el agente (y tÃº) saben que la tarea se hizo bien: el resultado esperado, claro y verificable.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Sin un criterio de Ã©xito, "listo" se convierte en una opiniÃ³n. Con Ã©l, puedes medir, corregir y confiar en el agente.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Criterio de Ã©xito; resultado esperado; verificaciÃ³n.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-3-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🎯</span><div><span class="font-medium">Qué intención lleva a cabo el agente</span><span class="text-neutral-500 text-sm ml-2">- al servicio de qué</span></div>
+<span class="text-lg">ðŸŽ¯</span><div><span class="font-medium">QuÃ© intenciÃ³n lleva a cabo el agente</span><span class="text-neutral-500 text-sm ml-2">- al servicio de quÃ©</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-3-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Todo agente existe para cumplir una intención específica dentro del sistema: una parte concreta del propósito mayor.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Vincular cada agente a una intención evita los agentes «huérfanos» que hacen cosas que nadie pidió.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Intención del agente; parte del propósito; alineación.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Todo agente existe para cumplir una intenciÃ³n especÃ­fica dentro del sistema: una parte concreta del propÃ³sito mayor.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Vincular cada agente a una intenciÃ³n evita los agentes Â«huÃ©rfanosÂ» que hacen cosas que nadie pidiÃ³.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">IntenciÃ³n del agente; parte del propÃ³sito; alineaciÃ³n.</p></div>
 </div></div>
 </div>
 </div>
@@ -559,79 +559,79 @@
 <a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-3.html">Ver completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 2.4 ===================== -->
+<!-- ===================== MÃ“DULO 2.4 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-4">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.4</span><span class="text-xs text-neutral-500">~45 min · 6 temas</span></div>
-<h3 class="text-2xl font-bold mb-2">⚡ Habilidades</h3>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.4</span><span class="text-xs text-neutral-500">~45 min Â· 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">âš¡ Habilidades</h3>
 <p class="text-neutral-400 text-sm">Lo que cada agente realmente sabe hacer: acciones concretas, siempre vinculadas a un objetivo; nunca habilidades por habilidades.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-4"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:2-4"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t2-4-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">⚡</span><div><span class="font-medium">Qué es una habilidad</span><span class="text-neutral-500 text-sm ml-2">- una acción concreta</span></div>
+<span class="text-lg">âš¡</span><div><span class="font-medium">QuÃ© es una habilidad</span><span class="text-neutral-500 text-sm ml-2">- una acciÃ³n concreta</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-4-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una habilidad es una acción concreta que un agente sabe ejecutar, como resumir un texto, clasificar una solicitud o consultar un sistema.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Las habilidades son lo que hace que el agente sea realmente útil. Sin ellas, «entiende», pero no hace nada.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Habilidad; acción; capacidad práctica.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Una habilidad es una acciÃ³n concreta que un agente sabe ejecutar, como resumir un texto, clasificar una solicitud o consultar un sistema.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Las habilidades son lo que hace que el agente sea realmente Ãºtil. Sin ellas, Â«entiendeÂ», pero no hace nada.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Habilidad; acciÃ³n; capacidad prÃ¡ctica.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-4-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🔧</span><div><span class="font-medium">Habilidades comunes</span><span class="text-neutral-500 text-sm ml-2">- resumir, clasificar, consultar, generar</span></div>
+<span class="text-lg">ðŸ”§</span><div><span class="font-medium">Habilidades comunes</span><span class="text-neutral-500 text-sm ml-2">- resumir, clasificar, consultar, generar</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-4-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Las habilidades más usadas: resumir (condensar), clasificar (organizar en categorías), consultar (buscar datos) y generar (crear contenido).</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Conocer el repertorio básico permite crear casi cualquier agente combinando pocas habilidades clave.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Las habilidades mÃ¡s usadas: resumir (condensar), clasificar (organizar en categorÃ­as), consultar (buscar datos) y generar (crear contenido).</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Conocer el repertorio bÃ¡sico permite crear casi cualquier agente combinando pocas habilidades clave.</p></div>
 <div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Resumir; clasificar; consultar; generar.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-4-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">🔗</span><div><span class="font-medium">Habilidad vinculada a un objetivo</span><span class="text-neutral-500 text-sm ml-2">- nunca se suelta</span></div>
+<span class="text-lg">ðŸ”—</span><div><span class="font-medium">Habilidad vinculada a un objetivo</span><span class="text-neutral-500 text-sm ml-2">- nunca se suelta</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-4-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Toda habilidad existe al servicio de un objetivo: es el «cómo», y el objetivo es el «para qué».</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una habilidad vinculada al objetivo entrega resultados. Aislada, se convierte en un recurso atractivo que nadie usa.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Objetivo; cómo × para qué; habilidad con propósito.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Toda habilidad existe al servicio de un objetivo: es el Â«cÃ³moÂ», y el objetivo es el Â«para quÃ©Â».</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Una habilidad vinculada al objetivo entrega resultados. Aislada, se convierte en un recurso atractivo que nadie usa.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Objetivo; cÃ³mo Ã— para quÃ©; habilidad con propÃ³sito.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-4-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🚫</span><div><span class="font-medium">Sin intención, hay exceso</span><span class="text-neutral-500 text-sm ml-2">- menos es más</span></div>
+<span class="text-lg">ðŸš«</span><div><span class="font-medium">Sin intenciÃ³n, hay exceso</span><span class="text-neutral-500 text-sm ml-2">- menos es mÃ¡s</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-4-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Darle demasiadas habilidades a un agente, sin una intención clara, se convierte en exceso: el agente se confunde y el sistema se vuelve frágil.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La tentación de «enseñarlo todo» es fuerte, pero una habilidad sin propósito solo añade riesgos y ruido.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Exceso; menos es más; enfoque en la intención.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Darle demasiadas habilidades a un agente, sin una intenciÃ³n clara, se convierte en exceso: el agente se confunde y el sistema se vuelve frÃ¡gil.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">La tentaciÃ³n de Â«enseÃ±arlo todoÂ» es fuerte, pero una habilidad sin propÃ³sito solo aÃ±ade riesgos y ruido.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Exceso; menos es mÃ¡s; enfoque en la intenciÃ³n.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-4-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">🧰</span><div><span class="font-medium">Activar la habilidad adecuada</span><span class="text-neutral-500 text-sm ml-2">- en el momento adecuado</span></div>
+<span class="text-lg">ðŸ§°</span><div><span class="font-medium">Activar la habilidad adecuada</span><span class="text-neutral-500 text-sm ml-2">- en el momento adecuado</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-4-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Ante una solicitud, el agente debe elegir y activar la habilidad adecuada para ese momento; no todas a la vez.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Activar la habilidad adecuada en el momento adecuado es lo que distingue a un agente eficiente de uno que hace todo mal con esfuerzo.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Selección; momento adecuado; activación.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Ante una solicitud, el agente debe elegir y activar la habilidad adecuada para ese momento; no todas a la vez.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Activar la habilidad adecuada en el momento adecuado es lo que distingue a un agente eficiente de uno que hace todo mal con esfuerzo.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">SelecciÃ³n; momento adecuado; activaciÃ³n.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-4-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🏗️</span><div><span class="font-medium">Las habilidades componen un agente útil</span><span class="text-neutral-500 text-sm ml-2">- la suma de las partes</span></div>
+<span class="text-lg">ðŸ—ï¸</span><div><span class="font-medium">Las habilidades componen un agente Ãºtil</span><span class="text-neutral-500 text-sm ml-2">- la suma de las partes</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-4-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un agente útil es la suma de unas pocas habilidades bien elegidas y combinadas para llevar a cabo su intención de principio a fin.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Pensar en composición muestra cómo crear agentes sólidos a partir de bloques simples y reutilizables.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Composición; bloques; agente útil.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Un agente Ãºtil es la suma de unas pocas habilidades bien elegidas y combinadas para llevar a cabo su intenciÃ³n de principio a fin.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Pensar en composiciÃ³n muestra cÃ³mo crear agentes sÃ³lidos a partir de bloques simples y reutilizables.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">ComposiciÃ³n; bloques; agente Ãºtil.</p></div>
 </div></div>
 </div>
 </div>
@@ -640,78 +640,78 @@
 <a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-4.html">Ver completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 2.5 ===================== -->
+<!-- ===================== MÃ“DULO 2.5 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-5">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.5</span><span class="text-xs text-neutral-500">~50 min · 6 temas</span></div>
-<h3 class="text-2xl font-bold mb-2">🧠 Memoria y contexto</h3>
-<p class="text-neutral-400 text-sm">Qué recuerda Jarvis y qué alimenta cada decisión; e, igualmente importante, qué NO debe guardar.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-5"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.5</span><span class="text-xs text-neutral-500">~50 min Â· 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ§  Memoria y contexto</h3>
+<p class="text-neutral-400 text-sm">QuÃ© recuerda Jarvis y quÃ© alimenta cada decisiÃ³n; e, igualmente importante, quÃ© NO debe guardar.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:2-5"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t2-5-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">🧠</span><div><span class="font-medium">Qué recuerda Jarvis</span><span class="text-neutral-500 text-sm ml-2">- la memoria</span></div>
+<span class="text-lg">ðŸ§ </span><div><span class="font-medium">QuÃ© recuerda Jarvis</span><span class="text-neutral-500 text-sm ml-2">- la memoria</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-5-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La memoria es lo que Jarvis guarda entre interacciones: quién es el cliente, qué se ha conversado, las decisiones y preferencias.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin memoria, el sistema vuelve a empezar desde cero con cada mensaje, y la experiencia se vuelve robótica y repetitiva.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La memoria es lo que Jarvis guarda entre interacciones: quiÃ©n es el cliente, quÃ© se ha conversado, las decisiones y preferencias.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Sin memoria, el sistema vuelve a empezar desde cero con cada mensaje, y la experiencia se vuelve robÃ³tica y repetitiva.</p></div>
 <div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Memoria; continuidad; lo que queda entre conversaciones.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-5-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🗃️</span><div><span class="font-medium">Tipos de memoria</span><span class="text-neutral-500 text-sm ml-2">- sesión, corto y largo plazo</span></div>
+<span class="text-lg">ðŸ—ƒï¸</span><div><span class="font-medium">Tipos de memoria</span><span class="text-neutral-500 text-sm ml-2">- sesiÃ³n, corto y largo plazo</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-5-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Hay memoria de sesión (la conversación actual), de corto plazo (días) y de largo plazo (lo que vale la pena recordar para siempre).</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cada tipo sirve a un propósito. Mezclarlos provoca olvido prematuro o acumulación innecesaria.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Sesión; corto plazo; largo plazo.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Hay memoria de sesiÃ³n (la conversaciÃ³n actual), de corto plazo (dÃ­as) y de largo plazo (lo que vale la pena recordar para siempre).</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Cada tipo sirve a un propÃ³sito. Mezclarlos provoca olvido prematuro o acumulaciÃ³n innecesaria.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">SesiÃ³n; corto plazo; largo plazo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-5-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">📚</span><div><span class="font-medium">Contexto</span><span class="text-neutral-500 text-sm ml-2">- lo que alimenta la decisión</span></div>
+<span class="text-lg">ðŸ“š</span><div><span class="font-medium">Contexto</span><span class="text-neutral-500 text-sm ml-2">- lo que alimenta la decisiÃ³n</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-5-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El contexto es el conjunto de información relevante en el momento de tomar una decisión: quién habla, el historial, las reglas y los datos disponibles.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La calidad de la respuesta depende del contexto. Un contexto pobre genera una respuesta genérica; uno rico, una respuesta precisa.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Contexto; información relevante; base de la decisión.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El contexto es el conjunto de informaciÃ³n relevante en el momento de tomar una decisiÃ³n: quiÃ©n habla, el historial, las reglas y los datos disponibles.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">La calidad de la respuesta depende del contexto. Un contexto pobre genera una respuesta genÃ©rica; uno rico, una respuesta precisa.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Contexto; informaciÃ³n relevante; base de la decisiÃ³n.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-5-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🔍</span><div><span class="font-medium">Recuperar la información correcta</span><span class="text-neutral-500 text-sm ml-2">- encontrar lo que importa</span></div>
+<span class="text-lg">ðŸ”</span><div><span class="font-medium">Recuperar la informaciÃ³n correcta</span><span class="text-neutral-500 text-sm ml-2">- encontrar lo que importa</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-5-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Recuperar es buscar, entre todo lo que está guardado, exactamente la información que importa para la situación actual.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Guardar mucho no sirve si no sabes recuperar la información. Recuperarla correctamente es lo que convierte la memoria en utilidad.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Recuperación; búsqueda relevante; memoria útil.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Recuperar es buscar, entre todo lo que estÃ¡ guardado, exactamente la informaciÃ³n que importa para la situaciÃ³n actual.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Guardar mucho no sirve si no sabes recuperar la informaciÃ³n. Recuperarla correctamente es lo que convierte la memoria en utilidad.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">RecuperaciÃ³n; bÃºsqueda relevante; memoria Ãºtil.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-5-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">🧹</span><div><span class="font-medium">Qué NO guardar</span><span class="text-neutral-500 text-sm ml-2">- privacidad y ruido</span></div>
+<span class="text-lg">ðŸ§¹</span><div><span class="font-medium">QuÃ© NO guardar</span><span class="text-neutral-500 text-sm ml-2">- privacidad y ruido</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-5-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">No todo debe guardarse: los datos sensibles y la información irrelevante (ruido) quedan fuera de la memoria del sistema.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Guardar lo que no se debería es un riesgo para la privacidad y una fuente de confusión. Decidir qué descartar es parte del diseño.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Privacidad; ruido; qué descartar.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">No todo debe guardarse: los datos sensibles y la informaciÃ³n irrelevante (ruido) quedan fuera de la memoria del sistema.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Guardar lo que no se deberÃ­a es un riesgo para la privacidad y una fuente de confusiÃ³n. Decidir quÃ© descartar es parte del diseÃ±o.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Privacidad; ruido; quÃ© descartar.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-5-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🔄</span><div><span class="font-medium">La memoria al servicio de la continuidad</span><span class="text-neutral-500 text-sm ml-2">- la experiencia fluida</span></div>
+<span class="text-lg">ðŸ”„</span><div><span class="font-medium">La memoria al servicio de la continuidad</span><span class="text-neutral-500 text-sm ml-2">- la experiencia fluida</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-5-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La memoria sirve para dar continuidad: el cliente no necesita repetir lo que ya dijo y el sistema retoma desde donde se quedó.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La continuidad es lo que hace que Jarvis parezca atento y profesional, y no un robot que lo olvida todo.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La memoria sirve para dar continuidad: el cliente no necesita repetir lo que ya dijo y el sistema retoma desde donde se quedÃ³.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">La continuidad es lo que hace que Jarvis parezca atento y profesional, y no un robot que lo olvida todo.</p></div>
 <div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Continuidad; experiencia fluida; retomar el hilo.</p></div>
 </div></div>
 </div>
@@ -721,79 +721,79 @@
 <a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-5.html">Ver completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 2.6 ===================== -->
+<!-- ===================== MÃ“DULO 2.6 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-6">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.6</span><span class="text-xs text-neutral-500">~45 min · 6 temas</span></div>
-<h3 class="text-2xl font-bold mb-2">🛡️ Muros de seguridad</h3>
-<p class="text-neutral-400 text-sm">Cuando la IA actúa en el mundo real, la seguridad se convierte en arquitectura: acceso, límites de acción, datos sensibles y validación humana.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-6"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.6</span><span class="text-xs text-neutral-500">~45 min Â· 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ›¡ï¸ Muros de seguridad</h3>
+<p class="text-neutral-400 text-sm">Cuando la IA actÃºa en el mundo real, la seguridad se convierte en arquitectura: acceso, lÃ­mites de acciÃ³n, datos sensibles y validaciÃ³n humana.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:2-6"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t2-6-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">🛡️</span><div><span class="font-medium">La seguridad es arquitectura</span><span class="text-neutral-500 text-sm ml-2">- no el detalle</span></div>
+<span class="text-lg">ðŸ›¡ï¸</span><div><span class="font-medium">La seguridad es arquitectura</span><span class="text-neutral-500 text-sm ml-2">- no el detalle</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-6-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La seguridad no es algo que se añade al final: forma parte del diseño de Jarvis desde el inicio, en cada capa.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cuando la IA ejecuta acciones reales, un error cuesta caro. Tratar la seguridad como arquitectura previene accidentes.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Seguridad por diseño; arquitectura; prevención.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La seguridad no es algo que se aÃ±ade al final: forma parte del diseÃ±o de Jarvis desde el inicio, en cada capa.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Cuando la IA ejecuta acciones reales, un error cuesta caro. Tratar la seguridad como arquitectura previene accidentes.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Seguridad por diseÃ±o; arquitectura; prevenciÃ³n.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-6-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🔑</span><div><span class="font-medium">Control de acceso</span><span class="text-neutral-500 text-sm ml-2">- y permisos</span></div>
+<span class="text-lg">ðŸ”‘</span><div><span class="font-medium">Control de acceso</span><span class="text-neutral-500 text-sm ml-2">- y permisos</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-6-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El control de acceso define quién puede usar cada parte del sistema y qué tiene permitido ver o hacer cada persona.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin control de acceso, cualquiera puede hacer cualquier cosa. Los permisos son la primera capa de protección.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Acceso; permisos; quién puede hacer qué.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">El control de acceso define quiÃ©n puede usar cada parte del sistema y quÃ© tiene permitido ver o hacer cada persona.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Sin control de acceso, cualquiera puede hacer cualquier cosa. Los permisos son la primera capa de protecciÃ³n.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Acceso; permisos; quiÃ©n puede hacer quÃ©.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-6-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">🚧</span><div><span class="font-medium">Límites de acción</span><span class="text-neutral-500 text-sm ml-2">- hasta dónde puede llegar</span></div>
+<span class="text-lg">ðŸš§</span><div><span class="font-medium">LÃ­mites de acciÃ³n</span><span class="text-neutral-500 text-sm ml-2">- hasta dÃ³nde puede llegar</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-6-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Los límites de acción definen cuánto puede hacer Jarvis por su cuenta: hasta qué valor, hasta qué operación, sin necesitar confirmación.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Los límites bien definidos permiten que la IA sea ágil en lo seguro y cuidadosa en lo arriesgado.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Límite de acción; nivel de autorización; acción automática × confirmada.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Los lÃ­mites de acciÃ³n definen cuÃ¡nto puede hacer Jarvis por su cuenta: hasta quÃ© valor, hasta quÃ© operaciÃ³n, sin necesitar confirmaciÃ³n.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Los lÃ­mites bien definidos permiten que la IA sea Ã¡gil en lo seguro y cuidadosa en lo arriesgado.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">LÃ­mite de acciÃ³n; nivel de autorizaciÃ³n; acciÃ³n automÃ¡tica Ã— confirmada.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-6-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🔒</span><div><span class="font-medium">Protección de datos sensibles</span><span class="text-neutral-500 text-sm ml-2">- guardar con cuidado</span></div>
+<span class="text-lg">ðŸ”’</span><div><span class="font-medium">ProtecciÃ³n de datos sensibles</span><span class="text-neutral-500 text-sm ml-2">- guardar con cuidado</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-6-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Los datos sensibles — personales, financieros, confidenciales — exigen cuidado adicional: acceso restringido y nunca deben exponerse sin necesidad.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Filtrar datos sensibles rompe la confianza y puede tener consecuencias legales. Es un riesgo que se evita desde el diseño.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Datos sensibles; protección; acceso restringido.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Los datos sensibles â€” personales, financieros, confidenciales â€” exigen cuidado adicional: acceso restringido y nunca deben exponerse sin necesidad.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Filtrar datos sensibles rompe la confianza y puede tener consecuencias legales. Es un riesgo que se evita desde el diseÃ±o.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Datos sensibles; protecciÃ³n; acceso restringido.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-6-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">👤</span><div><span class="font-medium">Validación humana y registros</span><span class="text-neutral-500 text-sm ml-2">- ojo en el proceso</span></div>
+<span class="text-lg">ðŸ‘¤</span><div><span class="font-medium">ValidaciÃ³n humana y registros</span><span class="text-neutral-500 text-sm ml-2">- ojo en el proceso</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-6-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La validación humana consiste en pedir la aprobación de una persona para acciones críticas; los registros documentan todo lo que hizo el sistema.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El humano en el punto adecuado y los logs como memoria del proceso aportan control, trazabilidad y confianza.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Validación humana; logs; trazabilidad.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La validaciÃ³n humana consiste en pedir la aprobaciÃ³n de una persona para acciones crÃ­ticas; los registros documentan todo lo que hizo el sistema.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">El humano en el punto adecuado y los logs como memoria del proceso aportan control, trazabilidad y confianza.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">ValidaciÃ³n humana; logs; trazabilidad.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-6-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🧪</span><div><span class="font-medium">Separar pruebas de producción</span><span class="text-neutral-500 text-sm ml-2">- sin accidentes</span></div>
+<span class="text-lg">ðŸ§ª</span><div><span class="font-medium">Separar pruebas de producciÃ³n</span><span class="text-neutral-500 text-sm ml-2">- sin accidentes</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-6-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Mantener los entornos separados garantiza que los experimentos de prueba nunca afecten los datos ni a los clientes reales de producción.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Mezclar las pruebas con la producción es una de las principales causas de accidentes, y es una regla de seguridad sencilla de seguir.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prueba × producción; aislamiento; seguridad operativa.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Mantener los entornos separados garantiza que los experimentos de prueba nunca afecten los datos ni a los clientes reales de producciÃ³n.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Mezclar las pruebas con la producciÃ³n es una de las principales causas de accidentes, y es una regla de seguridad sencilla de seguir.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prueba Ã— producciÃ³n; aislamiento; seguridad operativa.</p></div>
 </div></div>
 </div>
 </div>
@@ -802,79 +802,79 @@
 <a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-6.html">Ver completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 2.7 ===================== -->
+<!-- ===================== MÃ“DULO 2.7 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-7">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.7</span><span class="text-xs text-neutral-500">~45 min · 6 temas</span></div>
-<h3 class="text-2xl font-bold mb-2">🔧 Herramientas e integraciones</h3>
-<p class="text-neutral-400 text-sm">Es la forma en que Jarvis actúa en el mundo: hojas de cálculo, CRM, base de datos, APIs, mensajería, pagos, siempre al servicio de la intención.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:2-7"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.7</span><span class="text-xs text-neutral-500">~45 min Â· 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ”§ Herramientas e integraciones</h3>
+<p class="text-neutral-400 text-sm">Es la forma en que Jarvis actÃºa en el mundo: hojas de cÃ¡lculo, CRM, base de datos, APIs, mensajerÃ­a, pagos, siempre al servicio de la intenciÃ³n.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:2-7"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t2-7-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">🔧</span><div><span class="font-medium">Qué son las herramientas</span><span class="text-neutral-500 text-sm ml-2">- los brazos del sistema</span></div>
+<span class="text-lg">ðŸ”§</span><div><span class="font-medium">QuÃ© son las herramientas</span><span class="text-neutral-500 text-sm ml-2">- los brazos del sistema</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-7-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Las herramientas son los recursos externos que Jarvis usa para actuar: todo lo que activa para hacer que algo suceda fuera de él.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin herramientas, Jarvis solo habla. Con ellas, actúa: actualiza, busca, envía y registra en el mundo real.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Herramienta; recurso externo; acción en el mundo.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Las herramientas son los recursos externos que Jarvis usa para actuar: todo lo que activa para hacer que algo suceda fuera de Ã©l.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Sin herramientas, Jarvis solo habla. Con ellas, actÃºa: actualiza, busca, envÃ­a y registra en el mundo real.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Herramienta; recurso externo; acciÃ³n en el mundo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-7-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">📊</span><div><span class="font-medium">Hojas de cálculo, Notion, CRM</span><span class="text-neutral-500 text-sm ml-2">- dónde está el dato</span></div>
+<span class="text-lg">ðŸ“Š</span><div><span class="font-medium">Hojas de cÃ¡lculo, Notion, CRM</span><span class="text-neutral-500 text-sm ml-2">- dÃ³nde estÃ¡ el dato</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-7-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Las hojas de cálculo, Notion y CRM son donde las empresas ya guardan datos de clientes, tareas y procesos: fuentes listas para que Jarvis lea y escriba.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Conectarse a estas herramientas es el camino más rápido para que la IA actúe sobre lo que la empresa ya tiene.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Hoja de cálculo; Notion; CRM; fuentes de datos.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Las hojas de cÃ¡lculo, Notion y CRM son donde las empresas ya guardan datos de clientes, tareas y procesos: fuentes listas para que Jarvis lea y escriba.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Conectarse a estas herramientas es el camino mÃ¡s rÃ¡pido para que la IA actÃºe sobre lo que la empresa ya tiene.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Hoja de cÃ¡lculo; Notion; CRM; fuentes de datos.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-7-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">🗄️</span><div><span class="font-medium">Bases de datos y APIs</span><span class="text-neutral-500 text-sm ml-2">- conexiones profundas</span></div>
+<span class="text-lg">ðŸ—„ï¸</span><div><span class="font-medium">Bases de datos y APIs</span><span class="text-neutral-500 text-sm ml-2">- conexiones profundas</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-7-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La base de datos es donde la información se organiza a gran escala; la API es la puerta estandarizada por la que los sistemas intercambian datos.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Son las conexiones más profundas y poderosas — le dan a Jarvis acceso directo al corazón de los sistemas de la empresa.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Base de datos; API; integración profunda.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La base de datos es donde la informaciÃ³n se organiza a gran escala; la API es la puerta estandarizada por la que los sistemas intercambian datos.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Son las conexiones mÃ¡s profundas y poderosas â€” le dan a Jarvis acceso directo al corazÃ³n de los sistemas de la empresa.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Base de datos; API; integraciÃ³n profunda.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-7-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">💬</span><div><span class="font-medium">Mensajería</span><span class="text-neutral-500 text-sm ml-2">- WhatsApp, Telegram, correo electrónico</span></div>
+<span class="text-lg">ðŸ’¬</span><div><span class="font-medium">MensajerÃ­a</span><span class="text-neutral-500 text-sm ml-2">- WhatsApp, Telegram, correo electrÃ³nico</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-7-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La mensajería son las herramientas de comunicación que Jarvis usa para enviar y recibir mensajes: WhatsApp, Telegram, correo electrónico.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es a través de ellas que el sistema habla con las personas en el canal que ya usan: el vínculo entre la acción interna y el cliente.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Mensajería; envío; canales de comunicación.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La mensajerÃ­a son las herramientas de comunicaciÃ³n que Jarvis usa para enviar y recibir mensajes: WhatsApp, Telegram, correo electrÃ³nico.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Es a travÃ©s de ellas que el sistema habla con las personas en el canal que ya usan: el vÃ­nculo entre la acciÃ³n interna y el cliente.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">MensajerÃ­a; envÃ­o; canales de comunicaciÃ³n.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-7-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">💳</span><div><span class="font-medium">Pagos y sistemas internos</span><span class="text-neutral-500 text-sm ml-2">- acciones críticas</span></div>
+<span class="text-lg">ðŸ’³</span><div><span class="font-medium">Pagos y sistemas internos</span><span class="text-neutral-500 text-sm ml-2">- acciones crÃ­ticas</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-7-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Los pagos y los sistemas internos (ERP, finanzas, inventario) son herramientas donde la acción tiene un impacto real y exige doble cuidado.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es donde las herramientas encuentran los límites de seguridad: aquí, los límites y la validación humana no son opcionales.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Pagos; sistemas internos; acción crítica.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">Los pagos y los sistemas internos (ERP, finanzas, inventario) son herramientas donde la acciÃ³n tiene un impacto real y exige doble cuidado.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Es donde las herramientas encuentran los lÃ­mites de seguridad: aquÃ­, los lÃ­mites y la validaciÃ³n humana no son opcionales.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Pagos; sistemas internos; acciÃ³n crÃ­tica.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t2-7-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🎯</span><div><span class="font-medium">La herramienta está al servicio de la intención</span><span class="text-neutral-500 text-sm ml-2">- nunca al revés</span></div>
+<span class="text-lg">ðŸŽ¯</span><div><span class="font-medium">La herramienta estÃ¡ al servicio de la intenciÃ³n</span><span class="text-neutral-500 text-sm ml-2">- nunca al revÃ©s</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t2-7-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La herramienta nunca va primero: se elige porque la intención requiere esa acción. La intención define la herramienta, no al revés.</p></div>
-<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Invertir esto genera una «solución en busca de un problema»: mucha integración, pocos resultados. La intención siempre es el punto de partida.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Primero la intención; la herramienta al servicio; enfoque en el resultado.</p></div>
+<div><span class="text-blue-400 font-semibold">QuÃ© es:</span><p class="text-neutral-300 text-sm">La herramienta nunca va primero: se elige porque la intenciÃ³n requiere esa acciÃ³n. La intenciÃ³n define la herramienta, no al revÃ©s.</p></div>
+<div><span class="text-blue-400 font-semibold">Por quÃ© aprender:</span><p class="text-neutral-300 text-sm">Invertir esto genera una Â«soluciÃ³n en busca de un problemaÂ»: mucha integraciÃ³n, pocos resultados. La intenciÃ³n siempre es el punto de partida.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Primero la intenciÃ³n; la herramienta al servicio; enfoque en el resultado.</p></div>
 </div></div>
 </div>
 </div>
@@ -883,58 +883,58 @@
 <a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-7.html">Ver completo</a>
 </div>
 </div>
-<!-- NAVEGAÇÃO RODAPÉ -->
+<!-- NAVEGAÃ‡ÃƒO RODAPÃ‰ -->
 <div class="flex flex-col sm:flex-row gap-4 mt-10">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha1/index.html">← Día 1</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3/index.html">Día 3 · Solución Real en la Empresa →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha1/index.html">â† DÃ­a 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3/index.html">DÃ­a 3 Â· SoluciÃ³n Real en la Empresa â†’</a>
 </div>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitectura de Intención de la IA · Método JARVIS — Día 2</p>
+<p>Arquitectura de IntenciÃ³n de la IA Â· MÃ©todo JARVIS â€” DÃ­a 2</p>
 </div>
 </footer>
-<!-- MODAIS (iframe carrega o módulo completo) -->
+<!-- MODAIS (iframe carrega o mÃ³dulo completo) -->
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-1" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">La Esencia de Jarvis</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-1.html" title="Módulo 2.1"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">La Esencia de Jarvis</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-1.html" title="MÃ³dulo 2.1"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-2" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">Servicios internos</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-2.html" title="Módulo 2.2"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">Servicios internos</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-2.html" title="MÃ³dulo 2.2"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-3" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.3</span><span class="font-semibold">Agentes</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-3.html" title="Módulo 2.3"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.3</span><span class="font-semibold">Agentes</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-3.html" title="MÃ³dulo 2.3"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-4" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.4</span><span class="font-semibold">Habilidades</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-4.html" title="Módulo 2.4"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.4</span><span class="font-semibold">Habilidades</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-4.html" title="MÃ³dulo 2.4"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-5" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.5</span><span class="font-semibold">Memoria y Contexto</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-5.html" title="Módulo 2.5"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.5</span><span class="font-semibold">Memoria y Contexto</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-5.html" title="MÃ³dulo 2.5"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-6" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.6</span><span class="font-semibold">Muros de seguridad</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-6.html" title="Módulo 2.6"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.6</span><span class="font-semibold">Muros de seguridad</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-6.html" title="MÃ³dulo 2.6"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-7" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.7</span><span class="font-semibold">Herramientas e integraciones</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-7.html" title="Módulo 2.7"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.7</span><span class="font-semibold">Herramientas e integraciones</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-2-7.html" title="MÃ³dulo 2.7"></iframe>
 </div>
 </div>
 <!-- SCRIPTS v1 (toggleTopic + modal) -->
@@ -970,7 +970,7 @@
 <!-- learn.js + init -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>

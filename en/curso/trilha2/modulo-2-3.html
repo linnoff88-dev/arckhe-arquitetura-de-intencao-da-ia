@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="inema-course"/>
+<meta content="jarvis" name="ARCKHÉ-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Module 2.3 · Agents | AI Intent Architecture</title>
+<title>Module 2.3 Â· Agents | AI Intent Architecture</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -129,8 +129,8 @@
     .toc-link.is-active { color: #60a5fa; font-weight: 600; }
     html:not(.dark) .toc-link.is-active { color: #2563eb; }
   </style>
-<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha2/modulo-2-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha2/modulo-2-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha2/modulo-2-3.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip" href="#conteudo">Skip to content</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -138,10 +138,10 @@
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
+<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -150,46 +150,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Day 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Day 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="My journey" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span>
-<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="My journey" type="button">
+<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Journey</span>
+<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">◑</span></button>
-<div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Theme" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark" type="button">Dark</button>
-<button data-inema-set-theme="claro" type="button">Clear</button>
-<button data-inema-set-theme="sepia" type="button">Sepia</button>
-<button data-inema-set-theme="foco" type="button">Focus</button>
-<button data-inema-set-theme="contraste" type="button">High contrast</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">â—‘</span></button>
+<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
+<div aria-label="Theme" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
+<button data-ARCKHÉ-set-theme="claro" type="button">Clear</button>
+<button data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
+<button data-ARCKHÉ-set-theme="contraste" type="button">High contrast</button>
 </div>
-<div aria-label="Source" class="inema-segment" role="group">
-<button data-inema-set-font="inter" type="button">Inter</button>
-<button data-inema-set-font="system" type="button">System</button>
-<button data-inema-set-font="leitura" type="button">Reading</button>
+<div aria-label="Source" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button data-ARCKHÉ-set-font="system" type="button">System</button>
+<button data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
 </div>
-<div aria-label="Text size" class="inema-segment" role="group">
-<button data-inema-set-fontscale="100" type="button">A</button>
-<button data-inema-set-fontscale="112" type="button">A+</button>
-<button data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="Text size" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Line width" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60" type="button">Narrow</button>
-<button data-inema-set-linewidth="68" type="button">Medium</button>
-<button data-inema-set-linewidth="75" type="button">Wide</button>
+<div aria-label="Line width" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-linewidth="60" type="button">Narrow</button>
+<button data-ARCKHÉ-set-linewidth="68" type="button">Medium</button>
+<button data-ARCKHÉ-set-linewidth="75" type="button">Wide</button>
 </div>
-<div aria-label="Subtext" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45" type="button">Compact</button>
-<button data-inema-set-leading="1.7" type="button">Comfortable</button>
+<div aria-label="Subtext" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-leading="1.45" type="button">Compact</button>
+<button data-ARCKHÉ-set-leading="1.7" type="button">Comfortable</button>
 </div>
-<div aria-label="Accent color" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Emerald" type="button"></button>
-<button data-inema-set-accent="blue" title="Blue" type="button"></button>
-<button data-inema-set-accent="purple" title="Purple" type="button"></button>
-<button data-inema-set-accent="amber" title="Amber" type="button"></button>
-<button data-inema-set-accent="teal" title="Teal" type="button"></button>
-<button data-inema-set-accent="rose" title="Pink" type="button"></button>
+<div aria-label="Accent color" class="ARCKHÉ-accent-grid" role="group">
+<button data-ARCKHÉ-set-accent="emerald" title="Emerald" type="button"></button>
+<button data-ARCKHÉ-set-accent="blue" title="Blue" type="button"></button>
+<button data-ARCKHÉ-set-accent="purple" title="Purple" type="button"></button>
+<button data-ARCKHÉ-set-accent="amber" title="Amber" type="button"></button>
+<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHÉ-set-accent="rose" title="Pink" type="button"></button>
 </div>
 </div>
 </div>
@@ -209,9 +209,9 @@
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.3</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">👷 Agents</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">The agent is Jarvis’s specialized worker: each one does one thing, and does it well. But before creating any agent, the question comes first— <strong class="text-blue-400">what intent does this agent fulfill?</strong> Here, you’ll learn to give each agent what it needs to work: instructions, context, memory, rules, limits, and a clear success criterion.</p>
-<!-- SVG HERO: um serviço dispara vários agentes especializados (fan-out) -->
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ‘· Agents</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">The agent is Jarvisâ€™s specialized worker: each one does one thing, and does it well. But before creating any agent, the question comes firstâ€” <strong class="text-blue-400">what intent does this agent fulfill?</strong> Here, youâ€™ll learn to give each agent what it needs to work: instructions, context, memory, rules, limits, and a clear success criterion.</p>
+<!-- SVG HERO: um serviÃ§o dispara vÃ¡rios agentes especializados (fan-out) -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
 <svg aria-label="Diagram: one service triggers several specialized agents in parallel, each with a task, and together they deliver the service" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
@@ -222,7 +222,7 @@
 <marker id="m23-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#m23-grid)" height="240" width="1000" x="0" y="0"></rect>
-<!-- serviço -> agentes -->
+<!-- serviÃ§o -> agentes -->
 <g fill="none" opacity="0.6" stroke="#60a5fa" stroke-width="1.8">
 <path d="M196,120 C300,120 320,46 452,46" marker-end="url(#m23-ah)"></path>
 <path d="M196,120 C300,120 320,85 452,85" marker-end="url(#m23-ah)"></path>
@@ -230,7 +230,7 @@
 <path d="M196,120 C300,120 320,155 452,155" marker-end="url(#m23-ah)"></path>
 <path d="M196,120 C300,120 320,194 452,194" marker-end="url(#m23-ah)"></path>
 </g>
-<!-- agentes -> serviço entregue -->
+<!-- agentes -> serviÃ§o entregue -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M588,46  C700,46 720,120 800,120" marker-end="url(#m23-ahc)"></path>
 <path d="M588,85  C700,85 720,120 800,120" marker-end="url(#m23-ahc)"></path>
@@ -238,23 +238,23 @@
 <path d="M588,155 C700,155 720,120 800,120" marker-end="url(#m23-ahc)"></path>
 <path d="M588,194 C700,194 720,120 800,120" marker-end="url(#m23-ahc)"></path>
 </g>
-<!-- serviço (origem) -->
+<!-- serviÃ§o (origem) -->
 <g filter="url(#m23-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#m23-grad)" stroke-width="2" width="156" x="40" y="88"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="118" y="114">Service</text>
-<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="118" y="134">defines the “what”</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="118" y="134">defines the â€œwhatâ€</text>
 <!-- agentes especializados -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="30"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="51">triage</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="69"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="90">response</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="104"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="125">billing</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="139"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="160">scheduling</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="178"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="199">summary …</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="178"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="199">summary â€¦</text></g>
 </g>
-<!-- serviço entregue (resultado) -->
+<!-- serviÃ§o entregue (resultado) -->
 <g filter="url(#m23-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#m23-grad)" stroke-width="2" width="156" x="800" y="88"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="878" y="114">Delivered</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="878" y="134">the "how" implemented</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="228">One task each — several specialized agents get the job done.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="228">One task each â€” several specialized agents get the job done.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
@@ -263,46 +263,46 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Concept</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 2.3 Progress" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:2-3" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 of 6</strong> · <span data-inema-meter-pct="">0%</span></span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Module 2.3 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:2-3" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 of 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-1" data-inema-track="2" id="topico-1">
+<!-- TÃ“PICO 1 -->
+<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-1" data-ARCKHÉ-track="2" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">👷 What is an agent</h2>
+<h2 class="text-2xl font-bold">ðŸ‘· What is an agent</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-t1-p1">An agent is a <strong class="text-blue-400">Jarvis worker</strong>: a component that receives a task, carries it out, and returns a result. Think of a real company—you wouldn’t hire one person to “do everything.” You hire someone to support customers, someone to sell, someone to organize documents. Jarvis works the same way: each agent is like an employee with a clear role. The service says <em class="text-neutral-400">what</em> needs to be done; the agent is <em class="text-neutral-400">who</em> does.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t1-p1">An agent is a <strong class="text-blue-400">Jarvis worker</strong>: a component that receives a task, carries it out, and returns a result. Think of a real companyâ€”you wouldnâ€™t hire one person to â€œdo everything.â€ You hire someone to support customers, someone to sell, someone to organize documents. Jarvis works the same way: each agent is like an employee with a clear role. The service says <em class="text-neutral-400">what</em> needs to be done; the agent is <em class="text-neutral-400">who</em> does.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🧩</span> Agent = employee, not the entire system</h3>
-<p class="text-neutral-300">The system (Jarvis) is the company. The service is the department. The agent is the person who sits in the chair and does the work. When you separate these three things, it’s easy to design the solution: first the department (service), then who works in it (agents), then what each person needs to do their job well.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§©</span> Agent = employee, not the entire system</h3>
+<p class="text-neutral-300">The system (Jarvis) is the company. The service is the department. The agent is the person who sits in the chair and does the work. When you separate these three things, itâ€™s easy to design the solution: first the department (service), then who works in it (agents), then what each person needs to do their job well.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">✓ An agent is</h4>
+<h4 class="font-bold text-blue-400 mb-4">âœ“ An agent is</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>A worker with a role</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Who executes the service’s “how”</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Something that receives input and returns output</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>One component of the system, not the whole system</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>A worker with a role</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Who executes the serviceâ€™s â€œhowâ€</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Something that receives input and returns output</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>One component of the system, not the whole system</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ An agent isn't</h4>
+<h4 class="font-bold text-red-400 mb-4">âœ— An agent isn't</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>All of Jarvis in a single box</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>A jack-of-all-trades with no focus</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Just "a clever prompt"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Something that decides the strategy on its own</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>All of Jarvis in a single box</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>A jack-of-all-trades with no focus</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Just "a clever prompt"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Something that decides the strategy on its own</span></li>
 </ul>
 </div>
 </div>
@@ -310,49 +310,49 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Agent</div><div class="text-xs text-neutral-400">a worker</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Service</div><div class="text-xs text-neutral-400">the "what"</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Agent does</div><div class="text-xs text-neutral-400">the "how"</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">It’s a component</div><div class="text-xs text-neutral-400">not the whole thing</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Itâ€™s a component</div><div class="text-xs text-neutral-400">not the whole thing</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-2" data-inema-track="2" id="topico-2">
+<!-- TÃ“PICO 2 -->
+<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-2" data-ARCKHÉ-track="2" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">🎯 Specialized: one task each</h2>
+<h2 class="text-2xl font-bold">ðŸŽ¯ Specialized: one task each</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-t2-p1">The golden rule for agents: <strong class="text-blue-400">one agent, one job</strong>. An agent that tries to do everything does everything badly—it loses focus, the instructions become a jumble, and no one can tell whether it got things right. A specialized agent, on the other hand, is easy to instruct, test, and improve. Instead of one “super agent,” Jarvis uses several small agents, each honed for its task.</p>
-<!-- grid ✓/✗ #2 -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t2-p1">The golden rule for agents: <strong class="text-blue-400">one agent, one job</strong>. An agent that tries to do everything does everything badlyâ€”it loses focus, the instructions become a jumble, and no one can tell whether it got things right. A specialized agent, on the other hand, is easy to instruct, test, and improve. Instead of one â€œsuper agent,â€ Jarvis uses several small agents, each honed for its task.</p>
+<!-- grid âœ“/âœ— #2 -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ A jack of all trades</h4>
+<h4 class="font-bold text-red-400 mb-4">âœ— A jack of all trades</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Long, confusing instructions</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Gets a little wrong about everything</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Hard to know where it failed</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Impossible to measure success</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Long, confusing instructions</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Gets a little wrong about everything</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Hard to know where it failed</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Impossible to measure success</span></li>
 </ul>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">✓ Multiple specialized agents</h4>
+<h4 class="font-bold text-blue-400 mb-4">âœ“ Multiple specialized agents</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Short, clear instruction for each agent</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Each one gets its part right</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Easy to see who failed</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>You can measure and improve them one by one</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Short, clear instruction for each agent</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Each one gets its part right</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Easy to see who failed</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>You can measure and improve them one by one</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">If you can’t describe an agent’s job in one sentence ("it classifies emails as urgent or normal"), it’s doing too much. Split it into two. The shorter the description, the better the agent.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">If you canâ€™t describe an agentâ€™s job in one sentence ("it classifies emails as urgent or normal"), itâ€™s doing too much. Split it into two. The shorter the description, the better the agent.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Rule</div><div class="text-xs text-neutral-400">one job each</div></div>
@@ -361,22 +361,22 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Test</div><div class="text-xs text-neutral-400">fits in 1 sentence</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-3" data-inema-track="2" id="topico-3">
+<!-- TÃ“PICO 3 -->
+<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-3" data-ARCKHÉ-track="2" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">📝 Instructions and Context</h2>
+<h2 class="text-2xl font-bold">ðŸ“ Instructions and Context</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-t3-p1">A new worker needs two things on day one: <strong class="text-blue-400">the instruction</strong> (what to do and how) and <strong class="text-blue-400">the context</strong> (information about the company, the client, the situation). It's the same with an agent. The instruction describes the work; the context provides the lay of the land. An instruction without context leads to a generic response; context without an instruction becomes information without direction. Together, they make the agent work like someone on the inside.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t3-p1">A new worker needs two things on day one: <strong class="text-blue-400">the instruction</strong> (what to do and how) and <strong class="text-blue-400">the context</strong> (information about the company, the client, the situation). It's the same with an agent. The instruction describes the work; the context provides the lay of the land. An instruction without context leads to a generic response; context without an instruction becomes information without direction. Together, they make the agent work like someone on the inside.</p>
 <!-- timeline #1 -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
@@ -385,7 +385,7 @@
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">The context</h4><p class="text-neutral-300 text-sm">The table of deadlines, exchange policies, store name, and brand tone—the landscape the agent navigates to make decisions.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">The context</h4><p class="text-neutral-300 text-sm">The table of deadlines, exchange policies, store name, and brand toneâ€”the landscape the agent navigates to make decisions.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
@@ -393,8 +393,8 @@
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">When an agent answers “incorrectly,” it’s almost never the instruction—it’s the missing context. Before rewriting the instruction, ask: did it have the information it needed to get it right?</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">When an agent answers â€œincorrectly,â€ itâ€™s almost never the instructionâ€”itâ€™s the missing context. Before rewriting the instruction, ask: did it have the information it needed to get it right?</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Instruction</div><div class="text-xs text-neutral-400">what to do</div></div>
@@ -403,25 +403,25 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">The three</div><div class="text-xs text-neutral-400">= the right answer</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-4" data-inema-track="2" id="topico-4">
+<!-- TÃ“PICO 4 -->
+<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-4" data-ARCKHÉ-track="2" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">🧠 Agent memory and rules</h2>
+<h2 class="text-2xl font-bold">ðŸ§  Agent memory and rules</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-t4-p1">In addition to instructions and context, a good agent has <strong class="text-blue-400">memory</strong> (what it remembers from the conversation or history) and <strong class="text-blue-400">rules and limits</strong> (what it can and must never do). Memory prevents the client from repeating everything in every message. Rules protect the company: an agent without limits is a risk. This is where you write the agent's "profile" — and it fits in just a few key:value lines.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t4-p1">In addition to instructions and context, a good agent has <strong class="text-blue-400">memory</strong> (what it remembers from the conversation or history) and <strong class="text-blue-400">rules and limits</strong> (what it can and must never do). Memory prevents the client from repeating everything in every message. Rules protect the company: an agent without limits is a risk. This is where you write the agent's "profile" â€” and it fits in just a few key:value lines.</p>
 <!-- mono/code box: ficha de um agente em chave:valor #1 -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">An agent’s profile (key:value)</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">An agentâ€™s profile (key:value)</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-blue-400">name:</span> delivery_agent</div>
 <div><span class="text-blue-400">work:</span> answer questions about delivery status</div>
@@ -431,15 +431,15 @@
 <div><span class="text-blue-400">limits:</span> doesn't cancel the request; routes it to a human</div>
 <div><span class="text-blue-400">success:</span> the customer knows when they'll receive it, without opening a ticket</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Illustrative profile — every part of the agent fits on one line. Memory and context are covered in more depth in Module 2.5.</p>
+<p class="text-xs text-neutral-500 mt-3">Illustrative profile â€” every part of the agent fits on one line. Memory and context are covered in more depth in Module 2.5.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">🧠</span> Memory</h4>
-<p class="text-neutral-300 text-sm">What the agent carries from one message to the next: the customer’s name, the order in question, and what has already been said. Without this, it "forgets" and the customer has to repeat everything.</p>
+<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§ </span> Memory</h4>
+<p class="text-neutral-300 text-sm">What the agent carries from one message to the next: the customerâ€™s name, the order in question, and what has already been said. Without this, it "forgets" and the customer has to repeat everything.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">⛔</span> The rules and limits</h4>
+<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">â›”</span> The rules and limits</h4>
 <p class="text-neutral-300 text-sm">The lines an agent never crosses: don't make up data, don't promise what you can't deliver, and don't act beyond your authority. "No" protects as much as "yes."</p>
 </div>
 </div>
@@ -450,76 +450,76 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Profile</div><div class="text-xs text-neutral-400">fits in a few lines</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-5" data-inema-track="2" id="topico-5">
+<!-- TÃ“PICO 5 -->
+<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-5" data-ARCKHÉ-track="2" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">✅ Success criteria</h2>
+<h2 class="text-2xl font-bold">âœ… Success criteria</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-t5-p1">How do you know if an agent is doing a good job? You need an <strong class="text-blue-400">success criterion</strong>: a clear statement of what “success” means for that agent. Without a standard, any response seems acceptable, and you never know whether it’s worth improving. With a standard, you can test, compare, and improve the agent—and confidently say whether it’s ready.</p>
-<!-- grid bom/ruim de critério (✓/✗) -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t5-p1">How do you know if an agent is doing a good job? You need an <strong class="text-blue-400">success criterion</strong>: a clear statement of what â€œsuccessâ€ means for that agent. Without a standard, any response seems acceptable, and you never know whether itâ€™s worth improving. With a standard, you can test, compare, and improve the agentâ€”and confidently say whether itâ€™s ready.</p>
+<!-- grid bom/ruim de critÃ©rio (âœ“/âœ—) -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ Vague criterion</h4>
+<h4 class="font-bold text-red-400 mb-4">âœ— Vague criterion</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"The agent responds well"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"The customer is satisfied"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Can’t be measured</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Everyone evaluates differently</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"The agent responds well"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"The customer is satisfied"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Canâ€™t be measured</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Everyone evaluates differently</span></li>
 </ul>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">✓ Clear criteria</h4>
+<h4 class="font-bold text-blue-400 mb-4">âœ“ Clear criteria</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>"Gives the correct order status"</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>"Without opening a ticket for a human"</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>You can verify them case by case</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Everyone agrees on what “success” means</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>"Gives the correct order status"</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>"Without opening a ticket for a human"</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>You can verify them case by case</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Everyone agrees on what â€œsuccessâ€ means</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🎯</span> The criterion comes before measurement</h3>
-<p class="text-neutral-300">On Day 3, we'll measure real results. But measurement only works if the criterion was written down beforehand. Defining “what success means for this agent” is part of the design—not something you discover afterward.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> The criterion comes before measurement</h3>
+<p class="text-neutral-300">On Day 3, we'll measure real results. But measurement only works if the criterion was written down beforehand. Defining â€œwhat success means for this agentâ€ is part of the designâ€”not something you discover afterward.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Criterion</div><div class="text-xs text-neutral-400">what “worked” means</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Criterion</div><div class="text-xs text-neutral-400">what â€œworkedâ€ means</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Clear</div><div class="text-xs text-neutral-400">can be checked</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Vague</div><div class="text-xs text-neutral-400">no one measures</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Before</div><div class="text-xs text-neutral-400">of measuring</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-6" data-inema-track="2" id="topico-6">
+<!-- TÃ“PICO 6 -->
+<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-6" data-ARCKHÉ-track="2" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">🧭 Which intent the agent fulfills</h2>
+<h2 class="text-2xl font-bold">ðŸ§­ Which intent the agent fulfills</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-t6-p1">Here, the module closes with the question that comes before everything else: <strong class="text-blue-400">what intent does this agent fulfill?</strong> Don’t start by creating the agent; start with the intention it serves. The system’s intention (its soul, from 2.1) unfolds into services, and each service into agents. Each agent is the fine point of a larger intention. If you can’t say which intention an agent fulfills, that agent probably shouldn’t exist.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t6-p1">Here, the module closes with the question that comes before everything else: <strong class="text-blue-400">what intent does this agent fulfill?</strong> Donâ€™t start by creating the agent; start with the intention it serves. The systemâ€™s intention (its soul, from 2.1) unfolds into services, and each service into agents. Each agent is the fine point of a larger intention. If you canâ€™t say which intention an agent fulfills, that agent probably shouldnâ€™t exist.</p>
 <!-- tip box #2 -->
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> The question to ask before choosing a tool</h3>
-<p class="text-neutral-300 text-sm">The temptation is to start by asking, “What agent should I create?” The intent architect starts with, “What intent do I need to fulfill?”—and only then does the agent emerge as a natural consequence. Intent is the cause; the agent is the effect.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> The question to ask before choosing a tool</h3>
+<p class="text-neutral-300 text-sm">The temptation is to start by asking, â€œWhat agent should I create?â€ The intent architect starts with, â€œWhat intent do I need to fulfill?â€â€”and only then does the agent emerge as a natural consequence. Intent is the cause; the agent is the effect.</p>
 </div>
-<!-- timeline #2: intenção desce até o agente -->
+<!-- timeline #2: intenÃ§Ã£o desce atÃ© o agente -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
@@ -527,72 +527,72 @@
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">The service</h4><p class="text-neutral-300 text-sm">Support for deliveries—the department that handles this intent.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">The service</h4><p class="text-neutral-300 text-sm">Support for deliveriesâ€”the department that handles this intent.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">The agent</h4><p class="text-neutral-300 text-sm">The agente_de_entregas—the fine point that puts that intention into practice, with its complete profile.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">The agent</h4><p class="text-neutral-300 text-sm">The agente_de_entregasâ€”the fine point that puts that intention into practice, with its complete profile.</p></div>
 </div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🧾</span> A checklist for a healthy agent</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸ§¾</span> A checklist for a healthy agent</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
 <li><strong class="text-neutral-100">Has a clear intent</strong> that justifies its existence.</li>
-<li><strong class="text-neutral-100">Has only one job</strong> — can be described in one sentence.</li>
-<li><strong class="text-neutral-100">Has instructions, context, memory, rules, and limits</strong> — the complete profile.</li>
+<li><strong class="text-neutral-100">Has only one job</strong> â€” can be described in one sentence.</li>
+<li><strong class="text-neutral-100">Has instructions, context, memory, rules, and limits</strong> â€” the complete profile.</li>
 <li><strong class="text-neutral-100">Has a success criterion</strong> verifiable, written in advance.</li>
 </ul>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Intent</div><div class="text-xs text-neutral-400">comes first</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Unfolds</div><div class="text-xs text-neutral-400">in service → agent</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Unfolds</div><div class="text-xs text-neutral-400">in service â†’ agent</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Agent</div><div class="text-xs text-neutral-400">point of intent</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Without intent</div><div class="text-xs text-neutral-400">shouldn't exist</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
-<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-2-3#q1">
+<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
+<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-2-3#q1">
 <p class="font-medium mb-4">Self-check (optional): what question comes BEFORE creating an agent?</p>
-<div class="inema-check-options space-y-2">
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">What AI tool or model should this agent use?</button>
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">What intent does this agent fulfill?</button>
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">How many agents fit within a single service?</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">What AI tool or model should this agent use?</button>
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">What intent does this agent fulfill?</button>
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">How many agents fit within a single service?</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span> Module summary</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸŽ¯</span> Module summary</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">What an agent is</strong><span class="text-neutral-400"> — a Jarvis worker that carries out the service’s "how."</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Specialized</strong><span class="text-neutral-400"> — one job each; several small agents beat one do-it-all agent.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Instruction and context</strong><span class="text-neutral-400"> — what to do plus the terrain; neither is enough on its own.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Memory and rules</strong><span class="text-neutral-400"> — what it remembers and what it never does; the agent’s profile.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Success criteria</strong><span class="text-neutral-400"> — “what success looks like,” written down before measuring.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">What intent does it fulfill</strong><span class="text-neutral-400"> — the question comes first; intent is the cause, the agent is the effect.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">What an agent is</strong><span class="text-neutral-400"> â€” a Jarvis worker that carries out the serviceâ€™s "how."</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Specialized</strong><span class="text-neutral-400"> â€” one job each; several small agents beat one do-it-all agent.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Instruction and context</strong><span class="text-neutral-400"> â€” what to do plus the terrain; neither is enough on its own.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Memory and rules</strong><span class="text-neutral-400"> â€” what it remembers and what it never does; the agentâ€™s profile.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Success criteria</strong><span class="text-neutral-400"> â€” â€œwhat success looks like,â€ written down before measuring.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">What intent does it fulfill</strong><span class="text-neutral-400"> â€” the question comes first; intent is the cause, the agent is the effect.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
 <h3 class="font-semibold text-blue-400 mb-2">Next module:</h3>
-<p class="text-neutral-300">2.4 — Skills: what each agent can do in practice.</p>
+<p class="text-neutral-300">2.4 â€” Skills: what each agent can do in practice.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Day 2</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-4.html">Next: 2.4 Skills →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Back to Day 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-4.html">Next: 2.4 Skills â†’</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-inema-toc="">
-<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
+<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. What an Agent Is</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Specialized</a></li>
@@ -606,21 +606,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>AI Intent Architecture · JARVIS Method — Day 2 · Module 2.3</p>
+<p>AI Intent Architecture Â· JARVIS Method â€” Day 2 Â· Module 2.3</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
-      if (INEMA.registerCheck) {
-        INEMA.registerCheck('modulo-2-3#q1', {
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
+      if (ARCKHÉ.registerCheck) {
+        ARCKHÉ.registerCheck('modulo-2-3#q1', {
           answer: 1,
           explain: {
-            0: 'Ainda não — a ferramenta é detalhe. A pergunta de arquiteto vem antes da ferramenta.',
-            1: 'Isso. Comece pela intenção que o agente serve; o agente é consequência dela.',
-            2: 'Importa, mas é desenho posterior. Primeiro a intenção, depois quantos agentes ela exige.'
+            0: 'Ainda nÃ£o â€” a ferramenta Ã© detalhe. A pergunta de arquiteto vem antes da ferramenta.',
+            1: 'Isso. Comece pela intenÃ§Ã£o que o agente serve; o agente Ã© consequÃªncia dela.',
+            2: 'Importa, mas Ã© desenho posterior. Primeiro a intenÃ§Ã£o, depois quantos agentes ela exige.'
           }
         });
       }

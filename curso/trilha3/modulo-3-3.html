@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="inema-course"/>
+<meta content="jarvis" name="ARCKHÉ-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'purple' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'purple' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'purple');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Módulo 3.3 · Desenhar a Arquitetura | Arquitetura de Intenção da IA</title>
+<title>MÃ³dulo 3.3 Â· Desenhar a Arquitetura | Arquitetura de IntenÃ§Ã£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -130,19 +130,19 @@
     .toc-link.is-active { color: #c084fc; font-weight: 600; }
     html:not(.dark) .toc-link.is-active { color: #7c3aed; }
   </style>
-<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha3/modulo-3-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha3/modulo-3-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha3/modulo-3-3.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitetura de Intenção</span>
+<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -151,46 +151,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span>
-<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Aparência e leitura" type="button"><span aria-hidden="true">◑</span></button>
-<div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark" type="button">Escuro</button>
-<button data-inema-set-theme="claro" type="button">Claro</button>
-<button data-inema-set-theme="sepia" type="button">Sépia</button>
-<button data-inema-set-theme="foco" type="button">Foco</button>
-<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
+<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
+<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
+<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
-<button data-inema-set-font="inter" type="button">Inter</button>
-<button data-inema-set-font="system" type="button">Sistema</button>
-<button data-inema-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
+<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
-<button data-inema-set-fontscale="100" type="button">A</button>
-<button data-inema-set-fontscale="112" type="button">A+</button>
-<button data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60" type="button">Estreito</button>
-<button data-inema-set-linewidth="68" type="button">Médio</button>
-<button data-inema-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
+<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45" type="button">Compacto</button>
-<button data-inema-set-leading="1.7" type="button">Confortável</button>
+<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-inema-set-accent="blue" title="Azul" type="button"></button>
-<button data-inema-set-accent="purple" title="Roxo" type="button"></button>
-<button data-inema-set-accent="amber" title="Âmbar" type="button"></button>
-<button data-inema-set-accent="teal" title="Teal" type="button"></button>
-<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
+<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
+<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -201,20 +201,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-purple-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-purple-400" href="../../index.html">InÃ­cio</a><span>/</span>
 <a class="hover:text-purple-400" href="index.html">Dia 3</a><span>/</span>
-<span class="text-purple-400">Módulo 3.3</span>
+<span class="text-purple-400">MÃ³dulo 3.3</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="relative overflow-hidden bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.3</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">🗺️ Desenhar a Arquitetura</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Você já escolheu o problema e definiu a intenção. Agora é hora de desenhar o caminho: pegar tudo o que aprendeu no Dia 1 (canais, infraestrutura) e no Dia 2 (alma, serviços, agentes, ferramentas, segurança) e juntar num blueprint — o desenho da solução que guia a construção.</p>
-<!-- HERO SVG: blueprint do fluxo da intenção -->
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 3.3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ—ºï¸ Desenhar a Arquitetura</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">VocÃª jÃ¡ escolheu o problema e definiu a intenÃ§Ã£o. Agora Ã© hora de desenhar o caminho: pegar tudo o que aprendeu no Dia 1 (canais, infraestrutura) e no Dia 2 (alma, serviÃ§os, agentes, ferramentas, seguranÃ§a) e juntar num blueprint â€” o desenho da soluÃ§Ã£o que guia a construÃ§Ã£o.</p>
+<!-- HERO SVG: blueprint do fluxo da intenÃ§Ã£o -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Blueprint do fluxo: a intenção entra por canais, é roteada para serviços e agentes, que usam ferramentas dentro de regras de segurança e entregam o resultado — a junção de tudo do Dia 1 e do Dia 2" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<svg aria-label="Blueprint do fluxo: a intenÃ§Ã£o entra por canais, Ã© roteada para serviÃ§os e agentes, que usam ferramentas dentro de regras de seguranÃ§a e entregam o resultado â€” a junÃ§Ã£o de tudo do Dia 1 e do Dia 2" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
 <lineargradient id="m33-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
 <filter height="180%" id="m33-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -223,12 +223,12 @@
 <marker id="m33-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#m33-grid)" height="250" width="1000" x="0" y="0"></rect>
-<!-- moldura de regras/segurança envolvendo o miolo -->
+<!-- moldura de regras/seguranÃ§a envolvendo o miolo -->
 <rect fill="none" height="150" opacity="0.7" rx="16" stroke="#9ca3af" stroke-dasharray="7 7" stroke-width="1.6" width="540" x="232" y="34"></rect>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" x="248" y="52">regras e segurança envolvem o fluxo</text>
-<!-- intenção (origem, glow) -->
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" x="248" y="52">regras e seguranÃ§a envolvem o fluxo</text>
+<!-- intenÃ§Ã£o (origem, glow) -->
 <g filter="url(#m33-glow)"><rect fill="#1a1230" height="56" rx="13" stroke="url(#m33-grad)" stroke-width="2" width="120" x="24" y="84"></rect></g>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="84" y="108">Intenção</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="84" y="108">IntenÃ§Ã£o</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="84" y="126">o destino</text>
 <path d="M144,112 L244,112" fill="none" marker-end="url(#m33-ah)" opacity="0.55" stroke="#c084fc" stroke-width="1.8"></path>
 <!-- canais -->
@@ -236,7 +236,7 @@
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="308" y="108">Canais</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="308" y="126">a porta</text>
 <path d="M368,112 L460,112" fill="none" marker-end="url(#m33-ah)" opacity="0.55" stroke="#c084fc" stroke-width="1.8"></path>
-<!-- roteamento -> serviços/agentes (ciano, paralelo) -->
+<!-- roteamento -> serviÃ§os/agentes (ciano, paralelo) -->
 <rect fill="#1a1230" height="56" rx="13" stroke="#c084fc" stroke-width="2" width="124" x="464" y="84"></rect>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="526" y="108">Roteamento</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="526" y="126">manda p/ o certo</text>
@@ -245,7 +245,7 @@
 <path d="M588,124 C620,124 626,152 656,152" marker-end="url(#m33-ahc)"></path>
 </g>
 <g font-family="Inter,sans-serif" font-size="12" font-weight="600">
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="116" x="656" y="56"></rect><text fill="#bfe6ff" text-anchor="middle" x="714" y="76">serviços</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="116" x="656" y="56"></rect><text fill="#bfe6ff" text-anchor="middle" x="714" y="76">serviÃ§os</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="116" x="656" y="136"></rect><text fill="#bfe6ff" text-anchor="middle" x="714" y="156">agentes</text></g>
 </g>
 <!-- ferramentas -->
@@ -258,250 +258,250 @@
 <path d="M910,104 L910,128" fill="none" marker-end="url(#m33-ah)" opacity="0.55" stroke="#c084fc" stroke-width="1.8"></path>
 <g filter="url(#m33-glow)"><rect fill="#1a1230" height="48" rx="12" stroke="url(#m33-grad)" stroke-width="2" width="132" x="844" y="132"></rect></g>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="910" y="161">resultado</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="224">Da intenção ao resultado: canais → roteamento → serviços/agentes → ferramentas, tudo dentro das regras. É o blueprint.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="224">Da intenÃ§Ã£o ao resultado: canais â†’ roteamento â†’ serviÃ§os/agentes â†’ ferramentas, tudo dentro das regras. Ã‰ o blueprint.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~50</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">Nível</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">PrÃ¡tica</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do módulo 3.3" aria-valuemax="100" aria-valuemin="0" data-inema-meter="modulo:3-3" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do módulo</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 6</strong> · <span data-inema-meter-pct="">0%</span></span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progresso do mÃ³dulo 3.3" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:3-3" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-1" data-inema-track="3" id="topico-1">
+<!-- TÃ“PICO 1 -->
+<section class="mb-16" data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-1" data-ARCKHÉ-track="3" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">🗺️ Do problema ao desenho</h2>
+<h2 class="text-2xl font-bold">ðŸ—ºï¸ Do problema ao desenho</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-t1-p1">Você chegou aqui com duas coisas na mão: um <strong class="text-purple-400">problema escolhido</strong> (Módulo 3.2) e uma <strong class="text-purple-400">intenção clara</strong> (Módulo 3.1). Desenhar a arquitetura é traduzir isso num caminho concreto: quem fala com o sistema, o que ele faz com aquilo, e o que devolve. O desenho é a ponte entre "quero resolver isso" e "construí isso" — e desenhar antes evita refazer depois.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-t1-p1">VocÃª chegou aqui com duas coisas na mÃ£o: um <strong class="text-purple-400">problema escolhido</strong> (MÃ³dulo 3.2) e uma <strong class="text-purple-400">intenÃ§Ã£o clara</strong> (MÃ³dulo 3.1). Desenhar a arquitetura Ã© traduzir isso num caminho concreto: quem fala com o sistema, o que ele faz com aquilo, e o que devolve. O desenho Ã© a ponte entre "quero resolver isso" e "construÃ­ isso" â€” e desenhar antes evita refazer depois.</p>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">🧭</span> Arquitetura é só um desenho de fluxo</h3>
-<p class="text-neutral-300">Não se assuste com a palavra "arquitetura". Aqui ela não é código nem diagrama de engenheiro: é um desenho simples do caminho que a intenção percorre. Entra por algum lugar, passa por algumas mãos, usa algumas ferramentas, respeita algumas regras e sai como resultado. Desenhar esse caminho é o trabalho deste módulo.</p>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸ§­</span> Arquitetura Ã© sÃ³ um desenho de fluxo</h3>
+<p class="text-neutral-300">NÃ£o se assuste com a palavra "arquitetura". Aqui ela nÃ£o Ã© cÃ³digo nem diagrama de engenheiro: Ã© um desenho simples do caminho que a intenÃ§Ã£o percorre. Entra por algum lugar, passa por algumas mÃ£os, usa algumas ferramentas, respeita algumas regras e sai como resultado. Desenhar esse caminho Ã© o trabalho deste mÃ³dulo.</p>
 </div>
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Pega o problema e a intenção</h4><p class="text-neutral-300 text-sm">O ponto de partida é sempre a dor escolhida e o resultado que você quer — não a ferramenta da moda.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Pega o problema e a intenÃ§Ã£o</h4><p class="text-neutral-300 text-sm">O ponto de partida Ã© sempre a dor escolhida e o resultado que vocÃª quer â€” nÃ£o a ferramenta da moda.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Desenha o caminho</h4><p class="text-neutral-300 text-sm">Onde entra, por onde passa, o que usa, o que devolve — em caixas e setas, no papel ou na tela.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Desenha o caminho</h4><p class="text-neutral-300 text-sm">Onde entra, por onde passa, o que usa, o que devolve â€” em caixas e setas, no papel ou na tela.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Vira blueprint</h4><p class="text-neutral-300 text-sm">O desenho fechado guia o protótipo do Módulo 3.4 — construir vira execução, não improviso.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Vira blueprint</h4><p class="text-neutral-300 text-sm">O desenho fechado guia o protÃ³tipo do MÃ³dulo 3.4 â€” construir vira execuÃ§Ã£o, nÃ£o improviso.</p></div>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Entrada</div><div class="text-xs text-neutral-400">problema + intenção</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Entrada</div><div class="text-xs text-neutral-400">problema + intenÃ§Ã£o</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Trabalho</div><div class="text-xs text-neutral-400">desenhar o caminho</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Saída</div><div class="text-xs text-neutral-400">o blueprint</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">SaÃ­da</div><div class="text-xs text-neutral-400">o blueprint</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ganho</div><div class="text-xs text-neutral-400">desenhar antes de fazer</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-2" data-inema-track="3" id="topico-2">
+<!-- TÃ“PICO 2 -->
+<section class="mb-16" data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-2" data-ARCKHÉ-track="3" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">🚪 Canais e roteamento</h2>
+<h2 class="text-2xl font-bold">ðŸšª Canais e roteamento</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-t2-p1">Toda solução precisa de uma <strong class="text-purple-400">porta de entrada</strong> — o canal por onde a intenção chega (WhatsApp, site, e-mail, formulário). Mas o canal sozinho não basta: o sistema precisa de <strong class="text-purple-400">roteamento</strong> — saber, ao receber a mensagem, para qual serviço ou agente mandá-la lá dentro. Canal certo + roteamento certo faz a solução parecer fluida; o errado trava tudo na porta.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-t2-p1">Toda soluÃ§Ã£o precisa de uma <strong class="text-purple-400">porta de entrada</strong> â€” o canal por onde a intenÃ§Ã£o chega (WhatsApp, site, e-mail, formulÃ¡rio). Mas o canal sozinho nÃ£o basta: o sistema precisa de <strong class="text-purple-400">roteamento</strong> â€” saber, ao receber a mensagem, para qual serviÃ§o ou agente mandÃ¡-la lÃ¡ dentro. Canal certo + roteamento certo faz a soluÃ§Ã£o parecer fluida; o errado trava tudo na porta.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔀</span> Canal × roteamento, lado a lado</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸ”€</span> Canal Ã— roteamento, lado a lado</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Canal:</strong> por onde a intenção entra e por onde a resposta sai (a porta visível ao usuário).</li>
-<li><strong class="text-neutral-100">Roteamento:</strong> a decisão interna de "essa mensagem é para qual parte do sistema?" — invisível ao usuário.</li>
-<li><strong class="text-neutral-100">Juntos:</strong> o usuário fala num lugar só e cada pedido cai na mão certa, sem ele perceber a engrenagem.</li>
+<li><strong class="text-neutral-100">Canal:</strong> por onde a intenÃ§Ã£o entra e por onde a resposta sai (a porta visÃ­vel ao usuÃ¡rio).</li>
+<li><strong class="text-neutral-100">Roteamento:</strong> a decisÃ£o interna de "essa mensagem Ã© para qual parte do sistema?" â€” invisÃ­vel ao usuÃ¡rio.</li>
+<li><strong class="text-neutral-100">Juntos:</strong> o usuÃ¡rio fala num lugar sÃ³ e cada pedido cai na mÃ£o certa, sem ele perceber a engrenagem.</li>
 </ul>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">✓ Roteamento bem desenhado</h4>
+<h4 class="font-bold text-purple-400 mb-4">âœ“ Roteamento bem desenhado</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Cada tipo de pedido tem um destino claro.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Há um caminho para o "não entendi" (fallback).</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>O usuário fala num canal só e tudo flui.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Dá para acrescentar um destino novo sem quebrar.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Cada tipo de pedido tem um destino claro.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>HÃ¡ um caminho para o "nÃ£o entendi" (fallback).</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>O usuÃ¡rio fala num canal sÃ³ e tudo flui.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>DÃ¡ para acrescentar um destino novo sem quebrar.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ Sem roteamento pensado</h4>
+<h4 class="font-bold text-red-400 mb-4">âœ— Sem roteamento pensado</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Tudo cai no mesmo lugar e se mistura.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pedido fora do esperado trava sem resposta.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cada canal novo vira uma gambiarra separada.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ninguém sabe por onde a mensagem andou.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Tudo cai no mesmo lugar e se mistura.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Pedido fora do esperado trava sem resposta.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Cada canal novo vira uma gambiarra separada.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>NinguÃ©m sabe por onde a mensagem andou.</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">Comece com UM canal — o que o seu público já usa. WhatsApp para atendimento, formulário no site para captura, e-mail para o interno. Um canal bem roteado vale mais que cinco canais bagunçados. Você acrescenta os outros depois que o primeiro funciona.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">Comece com UM canal â€” o que o seu pÃºblico jÃ¡ usa. WhatsApp para atendimento, formulÃ¡rio no site para captura, e-mail para o interno. Um canal bem roteado vale mais que cinco canais bagunÃ§ados. VocÃª acrescenta os outros depois que o primeiro funciona.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Canal</div><div class="text-xs text-neutral-400">a porta visível</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Roteamento</div><div class="text-xs text-neutral-400">a decisão interna</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Fallback</div><div class="text-xs text-neutral-400">caminho do "não sei"</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Comece com</div><div class="text-xs text-neutral-400">um canal só</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Canal</div><div class="text-xs text-neutral-400">a porta visÃ­vel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Roteamento</div><div class="text-xs text-neutral-400">a decisÃ£o interna</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Fallback</div><div class="text-xs text-neutral-400">caminho do "nÃ£o sei"</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Comece com</div><div class="text-xs text-neutral-400">um canal sÃ³</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-3" data-inema-track="3" id="topico-3">
+<!-- TÃ“PICO 3 -->
+<section class="mb-16" data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-3" data-ARCKHÉ-track="3" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">🧱 Serviços e agentes da solução</h2>
+<h2 class="text-2xl font-bold">ðŸ§± ServiÃ§os e agentes da soluÃ§Ã£o</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-t3-p1">Dentro do sistema, o trabalho é feito por dois tipos de peça que você já conheceu no Dia 2: <strong class="text-purple-400">serviços</strong> (blocos de capacidade — buscar um dado, gerar um texto, registrar algo) e <strong class="text-purple-400">agentes</strong> (trabalhadores com uma missão, que decidem e usam serviços e ferramentas). Desenhar a arquitetura é decidir quais peças sua solução precisa e como elas se dividem o trabalho.</p>
-<!-- SVG: aninhamento — o sistema contém serviços e agentes -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-t3-p1">Dentro do sistema, o trabalho Ã© feito por dois tipos de peÃ§a que vocÃª jÃ¡ conheceu no Dia 2: <strong class="text-purple-400">serviÃ§os</strong> (blocos de capacidade â€” buscar um dado, gerar um texto, registrar algo) e <strong class="text-purple-400">agentes</strong> (trabalhadores com uma missÃ£o, que decidem e usam serviÃ§os e ferramentas). Desenhar a arquitetura Ã© decidir quais peÃ§as sua soluÃ§Ã£o precisa e como elas se dividem o trabalho.</p>
+<!-- SVG: aninhamento â€” o sistema contÃ©m serviÃ§os e agentes -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Uma caixa rotulada a solução contém serviços e agentes; cada agente usa serviços e ferramentas para fazer sua parte" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<svg aria-label="Uma caixa rotulada a soluÃ§Ã£o contÃ©m serviÃ§os e agentes; cada agente usa serviÃ§os e ferramentas para fazer sua parte" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
 <defs>
 <filter height="180%" id="m33b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 <pattern height="30" id="m33b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#a855f7" opacity="0.10" r="1.2"></circle></pattern>
 </defs>
 <rect fill="url(#m33b-grid)" height="200" width="1000" x="0" y="0"></rect>
 <g filter="url(#m33b-glow)"><rect fill="none" height="152" rx="18" stroke="#c084fc" stroke-width="2" width="952" x="24" y="24"></rect></g>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="44" y="50">A solução (a arquitetura)</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="44" y="50">A soluÃ§Ã£o (a arquitetura)</text>
 <text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" x="44" y="92">Agentes</text>
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
 <g class="wf-a"><rect fill="#1a1230" height="40" rx="9" stroke="#c084fc" stroke-width="1.8" width="140" x="44" y="102"></rect><text fill="#e9d5ff" text-anchor="middle" x="114" y="127">agente atende</text></g>
 <g class="wf-a"><rect fill="#1a1230" height="40" rx="9" stroke="#c084fc" stroke-width="1.8" width="140" x="200" y="102"></rect><text fill="#e9d5ff" text-anchor="middle" x="270" y="127">agente resolve</text></g>
 </g>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" x="372" y="92">Serviços</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" x="372" y="92">ServiÃ§os</text>
 <g font-family="Inter,sans-serif" font-size="12" font-weight="600">
 <g class="wf-a"><rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="120" x="372" y="102"></rect><text fill="#bfe6ff" text-anchor="middle" x="432" y="127">buscar dado</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="120" x="508" y="102"></rect><text fill="#bfe6ff" text-anchor="middle" x="568" y="127">gerar texto</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="120" x="644" y="102"></rect><text fill="#bfe6ff" text-anchor="middle" x="704" y="127">registrar</text></g>
 </g>
 <rect fill="#1a1230" height="60" rx="12" stroke="#c084fc" stroke-dasharray="6 6" stroke-width="1.8" width="166" x="788" y="92"></rect>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="871" y="118">cada peça</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="871" y="118">cada peÃ§a</text>
 <text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="871" y="136">uma responsabilidade</text>
 </svg>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">Regra de ouro: cada peça faz UMA coisa bem feita. Se você está descrevendo um agente e usa a palavra "e" muitas vezes ("ele atende <em>e</em> cobra <em>e</em> agenda <em>e</em> relata"), provavelmente são vários agentes disfarçados de um. Separar deixa tudo mais fácil de testar e de evoluir peça por peça.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">Regra de ouro: cada peÃ§a faz UMA coisa bem feita. Se vocÃª estÃ¡ descrevendo um agente e usa a palavra "e" muitas vezes ("ele atende <em>e</em> cobra <em>e</em> agenda <em>e</em> relata"), provavelmente sÃ£o vÃ¡rios agentes disfarÃ§ados de um. Separar deixa tudo mais fÃ¡cil de testar e de evoluir peÃ§a por peÃ§a.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Serviço</div><div class="text-xs text-neutral-400">um bloco de capacidade</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Agente</div><div class="text-xs text-neutral-400">um trabalhador com missão</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Regra</div><div class="text-xs text-neutral-400">uma coisa por peça</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">ServiÃ§o</div><div class="text-xs text-neutral-400">um bloco de capacidade</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Agente</div><div class="text-xs text-neutral-400">um trabalhador com missÃ£o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Regra</div><div class="text-xs text-neutral-400">uma coisa por peÃ§a</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ganho</div><div class="text-xs text-neutral-400">testar e evoluir aos poucos</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-4" data-inema-track="3" id="topico-4">
+<!-- TÃ“PICO 4 -->
+<section class="mb-16" data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-4" data-ARCKHÉ-track="3" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">🔧 Ferramentas necessárias</h2>
+<h2 class="text-2xl font-bold">ðŸ”§ Ferramentas necessÃ¡rias</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-t4-p1">Para agir no mundo real, a solução precisa de <strong class="text-purple-400">ferramentas</strong>: a planilha onde consulta um preço, o CRM onde registra um cliente, o calendário onde marca uma reunião, a API que envia uma mensagem. A regra de ouro do Dia 2 continua valendo: <strong class="text-purple-400">a ferramenta serve à intenção, nunca o contrário</strong>. Liste só o que o fluxo realmente precisa — e nada mais.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-t4-p1">Para agir no mundo real, a soluÃ§Ã£o precisa de <strong class="text-purple-400">ferramentas</strong>: a planilha onde consulta um preÃ§o, o CRM onde registra um cliente, o calendÃ¡rio onde marca uma reuniÃ£o, a API que envia uma mensagem. A regra de ouro do Dia 2 continua valendo: <strong class="text-purple-400">a ferramenta serve Ã  intenÃ§Ã£o, nunca o contrÃ¡rio</strong>. Liste sÃ³ o que o fluxo realmente precisa â€” e nada mais.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📊</div><h4 class="font-semibold text-neutral-100 mb-1">Planilha / banco</h4><p class="text-xs text-neutral-400">Onde a solução lê e grava dados.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">👥</div><h4 class="font-semibold text-neutral-100 mb-1">CRM</h4><p class="text-xs text-neutral-400">Onde ficam os clientes e o histórico.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📅</div><h4 class="font-semibold text-neutral-100 mb-1">Calendário</h4><p class="text-xs text-neutral-400">Para marcar, lembrar e organizar tempo.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">💬</div><h4 class="font-semibold text-neutral-100 mb-1">Mensageria</h4><p class="text-xs text-neutral-400">Para enviar e receber pelos canais.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">🔌</div><h4 class="font-semibold text-neutral-100 mb-1">APIs externas</h4><p class="text-xs text-neutral-400">Outros sistemas que a solução consulta.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">📁</div><h4 class="font-semibold text-neutral-100 mb-1">Arquivos / docs</h4><p class="text-xs text-neutral-400">A base de conhecimento que ela consulta.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“Š</div><h4 class="font-semibold text-neutral-100 mb-1">Planilha / banco</h4><p class="text-xs text-neutral-400">Onde a soluÃ§Ã£o lÃª e grava dados.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ‘¥</div><h4 class="font-semibold text-neutral-100 mb-1">CRM</h4><p class="text-xs text-neutral-400">Onde ficam os clientes e o histÃ³rico.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“…</div><h4 class="font-semibold text-neutral-100 mb-1">CalendÃ¡rio</h4><p class="text-xs text-neutral-400">Para marcar, lembrar e organizar tempo.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ’¬</div><h4 class="font-semibold text-neutral-100 mb-1">Mensageria</h4><p class="text-xs text-neutral-400">Para enviar e receber pelos canais.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ”Œ</div><h4 class="font-semibold text-neutral-100 mb-1">APIs externas</h4><p class="text-xs text-neutral-400">Outros sistemas que a soluÃ§Ã£o consulta.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“</div><h4 class="font-semibold text-neutral-100 mb-1">Arquivos / docs</h4><p class="text-xs text-neutral-400">A base de conhecimento que ela consulta.</p></div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🧰</span> O teste do mínimo necessário</h3>
-<p class="text-neutral-300 text-sm">Para cada ferramenta que você pensa em incluir, pergunte: <em class="text-neutral-400">"sem ela, o fluxo ainda entrega o resultado?"</em>. Se sim, ela fica de fora do protótipo — entra depois, se fizer falta. Solução enxuta nasce, roda e mostra valor mais rápido. Ferramenta a mais é peso que você carrega sem precisar.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§°</span> O teste do mÃ­nimo necessÃ¡rio</h3>
+<p class="text-neutral-300 text-sm">Para cada ferramenta que vocÃª pensa em incluir, pergunte: <em class="text-neutral-400">"sem ela, o fluxo ainda entrega o resultado?"</em>. Se sim, ela fica de fora do protÃ³tipo â€” entra depois, se fizer falta. SoluÃ§Ã£o enxuta nasce, roda e mostra valor mais rÃ¡pido. Ferramenta a mais Ã© peso que vocÃª carrega sem precisar.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Servem</div><div class="text-xs text-neutral-400">à intenção</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Critério</div><div class="text-xs text-neutral-400">o fluxo precisa?</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Quantidade</div><div class="text-xs text-neutral-400">o mínimo necessário</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Servem</div><div class="text-xs text-neutral-400">Ã  intenÃ§Ã£o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">CritÃ©rio</div><div class="text-xs text-neutral-400">o fluxo precisa?</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Quantidade</div><div class="text-xs text-neutral-400">o mÃ­nimo necessÃ¡rio</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Resto</div><div class="text-xs text-neutral-400">entra depois, se faltar</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-5" data-inema-track="3" id="topico-5">
+<!-- TÃ“PICO 5 -->
+<section class="mb-16" data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-5" data-ARCKHÉ-track="3" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">🛡️ Regras e segurança do fluxo</h2>
+<h2 class="text-2xl font-bold">ðŸ›¡ï¸ Regras e seguranÃ§a do fluxo</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-t5-p1">Quando a IA passa a agir no mundo real — enviar mensagens, mexer em dados, marcar coisas — a <strong class="text-purple-400">segurança vira parte da arquitetura</strong>, não um detalhe pra depois. Os muros que você viu no Módulo 2.6 entram no desenho: o que a solução pode fazer sozinha, o que precisa validar, e o que sempre exige um humano aprovando antes de acontecer.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-t5-p1">Quando a IA passa a agir no mundo real â€” enviar mensagens, mexer em dados, marcar coisas â€” a <strong class="text-purple-400">seguranÃ§a vira parte da arquitetura</strong>, nÃ£o um detalhe pra depois. Os muros que vocÃª viu no MÃ³dulo 2.6 entram no desenho: o que a soluÃ§Ã£o pode fazer sozinha, o que precisa validar, e o que sempre exige um humano aprovando antes de acontecer.</p>
 <div class="space-y-3 mb-6">
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">✗</span><div><strong class="text-neutral-100">Fluxo sem permissões</strong> <span class="text-red-400">deixa a IA fazer demais.</span><p class="text-sm text-neutral-400 mt-1">Sem limites, uma ação errada vira um estrago real e caro.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">✗</span><div><strong class="text-neutral-100">Fluxo sem validação</strong> <span class="text-red-400">aceita lixo como verdade.</span><p class="text-sm text-neutral-400 mt-1">Sem checar a entrada, o sistema age sobre dado errado.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">✗</span><div><strong class="text-neutral-100">Fluxo sem aprovação humana</strong> <span class="text-red-400">no ponto crítico, assusta.</span><p class="text-sm text-neutral-400 mt-1">Ações de risco (apagar, cobrar, enviar pra cliente) pedem um "ok" humano.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Fluxo sem permissÃµes</strong> <span class="text-red-400">deixa a IA fazer demais.</span><p class="text-sm text-neutral-400 mt-1">Sem limites, uma aÃ§Ã£o errada vira um estrago real e caro.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Fluxo sem validaÃ§Ã£o</strong> <span class="text-red-400">aceita lixo como verdade.</span><p class="text-sm text-neutral-400 mt-1">Sem checar a entrada, o sistema age sobre dado errado.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Fluxo sem aprovaÃ§Ã£o humana</strong> <span class="text-red-400">no ponto crÃ­tico, assusta.</span><p class="text-sm text-neutral-400 mt-1">AÃ§Ãµes de risco (apagar, cobrar, enviar pra cliente) pedem um "ok" humano.</p></div></div>
 </div>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">✅</span> O muro no ponto certo</h3>
-<p class="text-neutral-300">Nem tudo precisa de muro. O segredo é colocar a barreira onde o risco é alto: ler um dado pode ser livre; <strong class="text-purple-400">apagar, cobrar ou mandar mensagem para um cliente</strong> pede validação ou aprovação. Marque no seu blueprint, com um cadeado, cada ponto onde uma ação só acontece depois de checada.</p>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">âœ…</span> O muro no ponto certo</h3>
+<p class="text-neutral-300">Nem tudo precisa de muro. O segredo Ã© colocar a barreira onde o risco Ã© alto: ler um dado pode ser livre; <strong class="text-purple-400">apagar, cobrar ou mandar mensagem para um cliente</strong> pede validaÃ§Ã£o ou aprovaÃ§Ã£o. Marque no seu blueprint, com um cadeado, cada ponto onde uma aÃ§Ã£o sÃ³ acontece depois de checada.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Permissão</div><div class="text-xs text-neutral-400">o que pode fazer</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Validação</div><div class="text-xs text-neutral-400">checar a entrada</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Aprovação</div><div class="text-xs text-neutral-400">humano no risco</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">PermissÃ£o</div><div class="text-xs text-neutral-400">o que pode fazer</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">ValidaÃ§Ã£o</div><div class="text-xs text-neutral-400">checar a entrada</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">AprovaÃ§Ã£o</div><div class="text-xs text-neutral-400">humano no risco</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Onde</div><div class="text-xs text-neutral-400">no ponto de risco</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-6" data-inema-track="3" id="topico-6">
+<!-- TÃ“PICO 6 -->
+<section class="mb-16" data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-6" data-ARCKHÉ-track="3" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">📐 O blueprint da solução</h2>
+<h2 class="text-2xl font-bold">ðŸ“ O blueprint da soluÃ§Ã£o</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-t6-p1">Agora você junta tudo num só desenho: intenção, canais, roteamento, serviços, agentes, ferramentas e regras. Esse é o <strong class="text-purple-400">blueprint</strong> — a planta da sua solução. É a reunião de tudo o que você viu no Dia 1 (terreno e canais) e no Dia 2 (alma, serviços, agentes, ferramentas, segurança), aplicada ao SEU problema. Com o blueprint na mão, construir o protótipo vira execução, não improviso.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-t6-p1">Agora vocÃª junta tudo num sÃ³ desenho: intenÃ§Ã£o, canais, roteamento, serviÃ§os, agentes, ferramentas e regras. Esse Ã© o <strong class="text-purple-400">blueprint</strong> â€” a planta da sua soluÃ§Ã£o. Ã‰ a reuniÃ£o de tudo o que vocÃª viu no Dia 1 (terreno e canais) e no Dia 2 (alma, serviÃ§os, agentes, ferramentas, seguranÃ§a), aplicada ao SEU problema. Com o blueprint na mÃ£o, construir o protÃ³tipo vira execuÃ§Ã£o, nÃ£o improviso.</p>
 <!-- BLUEPRINT EM TEXTO ESTRUTURADO (mono/code box) -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">O blueprint, em texto estruturado</h3>
@@ -517,109 +517,109 @@
 <div><span class="text-purple-400">resultado:</span> _____________________________</div>
 <div><span class="text-purple-400">como_medir:</span> ____________________________</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Preencha uma linha de cada vez. Quando todas estiverem respondidas, você tem o blueprint da solução — pronto pro protótipo do Módulo 3.4.</p>
+<p class="text-xs text-neutral-500 mt-3">Preencha uma linha de cada vez. Quando todas estiverem respondidas, vocÃª tem o blueprint da soluÃ§Ã£o â€” pronto pro protÃ³tipo do MÃ³dulo 3.4.</p>
 </div>
 <!-- TIMELINE: como montar o blueprint, passo a passo -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Começa pela intenção e pelo resultado</h4><p class="text-neutral-300 text-sm">As duas pontas do desenho: de onde parte (a dor) e onde chega (o ganho medido).</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">ComeÃ§a pela intenÃ§Ã£o e pelo resultado</h4><p class="text-neutral-300 text-sm">As duas pontas do desenho: de onde parte (a dor) e onde chega (o ganho medido).</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Liga o canal de entrada</h4><p class="text-neutral-300 text-sm">Por onde a intenção chega e como o roteamento a manda para a peça certa.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Liga o canal de entrada</h4><p class="text-neutral-300 text-sm">Por onde a intenÃ§Ã£o chega e como o roteamento a manda para a peÃ§a certa.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Coloca serviços, agentes e ferramentas</h4><p class="text-neutral-300 text-sm">Quem faz o trabalho no meio do caminho e o que cada um usa para agir.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Coloca serviÃ§os, agentes e ferramentas</h4><p class="text-neutral-300 text-sm">Quem faz o trabalho no meio do caminho e o que cada um usa para agir.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">4</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Marca os muros</h4><p class="text-neutral-300 text-sm">Onde entram validação e aprovação humana — os pontos de risco do fluxo.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Marca os muros</h4><p class="text-neutral-300 text-sm">Onde entram validaÃ§Ã£o e aprovaÃ§Ã£o humana â€” os pontos de risco do fluxo.</p></div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
-<p class="text-neutral-300 text-sm">Um bom blueprint cabe em uma folha e qualquer pessoa da empresa consegue seguir o caminho com o dedo. Se o seu desenho ficou complexo demais para explicar em dois minutos, ele provavelmente está tentando resolver mais de um problema. Volte e recorte — foco em UM problema é o que faz a solução nascer.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
+<p class="text-neutral-300 text-sm">Um bom blueprint cabe em uma folha e qualquer pessoa da empresa consegue seguir o caminho com o dedo. Se o seu desenho ficou complexo demais para explicar em dois minutos, ele provavelmente estÃ¡ tentando resolver mais de um problema. Volte e recorte â€” foco em UM problema Ã© o que faz a soluÃ§Ã£o nascer.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Blueprint</div><div class="text-xs text-neutral-400">a planta da solução</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Reúne</div><div class="text-xs text-neutral-400">Dia 1 + Dia 2</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Blueprint</div><div class="text-xs text-neutral-400">a planta da soluÃ§Ã£o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">ReÃºne</div><div class="text-xs text-neutral-400">Dia 1 + Dia 2</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Cabe</div><div class="text-xs text-neutral-400">em uma folha</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Guia</div><div class="text-xs text-neutral-400">o protótipo (3.4)</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Guia</div><div class="text-xs text-neutral-400">o protÃ³tipo (3.4)</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, não bloqueia) -->
-<div class="inema-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-3-3#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): o que é o blueprint da solução, no método JARVIS?</p>
-<div class="inema-check-options space-y-2">
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">O código pronto da solução, escrito numa linguagem de programação.</button>
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Um desenho do fluxo que reúne intenção, canais, roteamento, serviços, agentes, ferramentas e regras.</button>
-<button class="inema-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">A lista de ferramentas da moda que todo projeto de IA precisa usar.</button>
+<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
+<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-3-3#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): o que Ã© o blueprint da soluÃ§Ã£o, no mÃ©todo JARVIS?</p>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">O cÃ³digo pronto da soluÃ§Ã£o, escrito numa linguagem de programaÃ§Ã£o.</button>
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Um desenho do fluxo que reÃºne intenÃ§Ã£o, canais, roteamento, serviÃ§os, agentes, ferramentas e regras.</button>
+<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">A lista de ferramentas da moda que todo projeto de IA precisa usar.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🗺️</span> Resumo do módulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ—ºï¸</span> Resumo do mÃ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Do problema ao desenho</strong><span class="text-neutral-400"> — arquitetura é um desenho de fluxo, não código; desenhar antes evita refazer.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Canais e roteamento</strong><span class="text-neutral-400"> — a porta de entrada e a decisão de mandar cada pedido para a peça certa.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Serviços e agentes</strong><span class="text-neutral-400"> — blocos de capacidade e trabalhadores; cada peça faz uma coisa bem feita.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Ferramentas necessárias</strong><span class="text-neutral-400"> — servem à intenção; só o mínimo que o fluxo realmente precisa.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">Regras e segurança</strong><span class="text-neutral-400"> — os muros entram no desenho, no ponto onde o risco é alto.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-neutral-100">O blueprint</strong><span class="text-neutral-400"> — reúne tudo do Dia 1 e do Dia 2 num desenho que cabe numa folha e guia o protótipo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Do problema ao desenho</strong><span class="text-neutral-400"> â€” arquitetura Ã© um desenho de fluxo, nÃ£o cÃ³digo; desenhar antes evita refazer.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Canais e roteamento</strong><span class="text-neutral-400"> â€” a porta de entrada e a decisÃ£o de mandar cada pedido para a peÃ§a certa.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">ServiÃ§os e agentes</strong><span class="text-neutral-400"> â€” blocos de capacidade e trabalhadores; cada peÃ§a faz uma coisa bem feita.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Ferramentas necessÃ¡rias</strong><span class="text-neutral-400"> â€” servem Ã  intenÃ§Ã£o; sÃ³ o mÃ­nimo que o fluxo realmente precisa.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Regras e seguranÃ§a</strong><span class="text-neutral-400"> â€” os muros entram no desenho, no ponto onde o risco Ã© alto.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">O blueprint</strong><span class="text-neutral-400"> â€” reÃºne tudo do Dia 1 e do Dia 2 num desenho que cabe numa folha e guia o protÃ³tipo.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-purple-400 mb-2">Próximo módulo:</h3>
-<p class="text-neutral-300">3.4 — Protótipo Funcional: sair do blueprint e construir algo que funciona de verdade.</p>
+<h3 class="font-semibold text-purple-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
+<p class="text-neutral-300">3.4 â€” ProtÃ³tipo Funcional: sair do blueprint e construir algo que funciona de verdade.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para o Dia 3</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-4.html">Próximo: 3.4 Protótipo Funcional →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-4.html">PrÃ³ximo: 3.4 ProtÃ³tipo Funcional â†’</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Índice do módulo" class="sticky top-20 self-start text-sm" data-inema-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta página <span class="text-neutral-500" data-inema-section-counter=""></span></p>
+<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-1">1. Do problema ao desenho</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. Canais e roteamento</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. Serviços e agentes</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. Ferramentas necessárias</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. Regras e segurança</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. O blueprint da solução</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. ServiÃ§os e agentes</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. Ferramentas necessÃ¡rias</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. Regras e seguranÃ§a</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. O blueprint da soluÃ§Ã£o</a></li>
 </ol>
 </nav>
 </aside>
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de Intenção da IA · Método JARVIS — Dia 3 · Módulo 3.3</p>
+<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 3 Â· MÃ³dulo 3.3</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
-      if (INEMA.registerCheck) {
-        INEMA.registerCheck('modulo-3-3#q1', {
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
+      if (ARCKHÉ.registerCheck) {
+        ARCKHÉ.registerCheck('modulo-3-3#q1', {
           answer: 1,
           explain: {
-            0: 'Não — o blueprint não é código; é o desenho do fluxo que vem antes de qualquer construção.',
-            1: 'Isso. O blueprint é o desenho que reúne todas as peças da solução em um caminho só, da intenção ao resultado.',
-            2: 'Não — ferramenta serve à intenção; o blueprint começa pelo problema e pelo fluxo, não por uma lista de ferramentas.'
+            0: 'NÃ£o â€” o blueprint nÃ£o Ã© cÃ³digo; Ã© o desenho do fluxo que vem antes de qualquer construÃ§Ã£o.',
+            1: 'Isso. O blueprint Ã© o desenho que reÃºne todas as peÃ§as da soluÃ§Ã£o em um caminho sÃ³, da intenÃ§Ã£o ao resultado.',
+            2: 'NÃ£o â€” ferramenta serve Ã  intenÃ§Ã£o; o blueprint comeÃ§a pelo problema e pelo fluxo, nÃ£o por uma lista de ferramentas.'
           }
         });
       }

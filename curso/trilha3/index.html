@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="inema-course"/>
+<meta content="jarvis" name="ARCKHÉ-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--inema-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Dia 3 · Solução Real na Empresa | Arquitetura de Intenção da IA</title>
+<title>Dia 3 Â· SoluÃ§Ã£o Real na Empresa | Arquitetura de IntenÃ§Ã£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -132,19 +132,19 @@
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
     .appearance-anchor { position: relative; }
   </style>
-<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/curso/trilha3/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/curso/trilha3/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/curso/trilha3/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitetura de Intenção</span>
+<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -153,46 +153,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span>
-<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Aparência e leitura" type="button"><span aria-hidden="true">◑</span></button>
-<div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark" type="button">Escuro</button>
-<button data-inema-set-theme="claro" type="button">Claro</button>
-<button data-inema-set-theme="sepia" type="button">Sépia</button>
-<button data-inema-set-theme="foco" type="button">Foco</button>
-<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
+<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
+<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
+<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
-<button data-inema-set-font="inter" type="button">Inter</button>
-<button data-inema-set-font="system" type="button">Sistema</button>
-<button data-inema-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
+<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
-<button data-inema-set-fontscale="100" type="button">A</button>
-<button data-inema-set-fontscale="112" type="button">A+</button>
-<button data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60" type="button">Estreito</button>
-<button data-inema-set-linewidth="68" type="button">Médio</button>
-<button data-inema-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
+<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45" type="button">Compacto</button>
-<button data-inema-set-leading="1.7" type="button">Confortável</button>
+<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-inema-set-accent="blue" title="Azul" type="button"></button>
-<button data-inema-set-accent="purple" title="Roxo" type="button"></button>
-<button data-inema-set-accent="amber" title="Âmbar" type="button"></button>
-<button data-inema-set-accent="teal" title="Teal" type="button"></button>
-<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
+<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
+<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -203,12 +203,12 @@
 <!-- HEADER + HERO SVG -->
 <header class="relative overflow-hidden bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">DIA 3 · TRILHA 3</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 Solução Real na Empresa</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Do conceito ao protótipo — escolher um problema, definir a intenção, desenhar a arquitetura, prototipar, medir e apresentar. Hoje você pega tudo o que aprendeu e constrói uma solução de verdade, que funciona e mostra valor para uma empresa real.</p>
-<!-- HERO SVG: pipeline da solução -->
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">DIA 3 Â· TRILHA 3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸŽ¯ SoluÃ§Ã£o Real na Empresa</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Do conceito ao protÃ³tipo â€” escolher um problema, definir a intenÃ§Ã£o, desenhar a arquitetura, prototipar, medir e apresentar. Hoje vocÃª pega tudo o que aprendeu e constrÃ³i uma soluÃ§Ã£o de verdade, que funciona e mostra valor para uma empresa real.</p>
+<!-- HERO SVG: pipeline da soluÃ§Ã£o -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Diagrama: a solução nasce de um problema, ganha intenção e arquitetura, vira protótipo, é medida e evolui num ciclo contínuo" class="w-full h-auto" role="img" viewbox="0 0 1000 230">
+<svg aria-label="Diagrama: a soluÃ§Ã£o nasce de um problema, ganha intenÃ§Ã£o e arquitetura, vira protÃ³tipo, Ã© medida e evolui num ciclo contÃ­nuo" class="w-full h-auto" role="img" viewbox="0 0 1000 230">
 <defs>
 <lineargradient id="t3-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
 <filter height="180%" id="t3-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -217,13 +217,13 @@
 <marker id="t3-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#t3-grid)" height="230" width="1000" x="0" y="0"></rect>
-<!-- pipeline: problema -> intencao -> arquitetura -> protótipo -->
+<!-- pipeline: problema -> intencao -> arquitetura -> protÃ³tipo -->
 <g fill="none" opacity="0.55" stroke="#c084fc" stroke-width="1.8">
 <path d="M168,98 L208,98" marker-end="url(#t3-ah)"></path>
 <path d="M376,98 L416,98" marker-end="url(#t3-ah)"></path>
 <path d="M584,98 L624,98" marker-end="url(#t3-ah)"></path>
 </g>
-<!-- protótipo -> medir -> evoluir (ciano = ciclo de feedback) -->
+<!-- protÃ³tipo -> medir -> evoluir (ciano = ciclo de feedback) -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M792,98 C840,98 848,150 792,158" marker-end="url(#t3-ahc)"></path>
 <path d="M624,158 L424,158" marker-end="url(#t3-ahc)"></path>
@@ -232,37 +232,37 @@
 <!-- caixa origem: problema -->
 <g filter="url(#t3-glow)"><rect fill="#1a1230" height="52" rx="13" stroke="url(#t3-grad)" stroke-width="2" width="152" x="16" y="72"></rect></g>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="92" y="96">Problema</text>
-<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="92" y="114">onde dói</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="92" y="114">onde dÃ³i</text>
 <!-- intencao -->
 <rect fill="#1a1230" height="52" rx="13" stroke="#c084fc" stroke-width="2" width="160" x="216" y="72"></rect>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="296" y="96">Intenção</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="296" y="96">IntenÃ§Ã£o</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="296" y="114">o destino</text>
 <!-- arquitetura -->
 <rect fill="#1a1230" height="52" rx="13" stroke="#c084fc" stroke-width="2" width="160" x="424" y="72"></rect>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="504" y="96">Arquitetura</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="504" y="114">o blueprint</text>
-<!-- protótipo -->
+<!-- protÃ³tipo -->
 <g filter="url(#t3-glow)"><rect fill="#1a1230" height="52" rx="13" stroke="url(#t3-grad)" stroke-width="2" width="160" x="632" y="72"></rect></g>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="712" y="96">Protótipo</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="712" y="96">ProtÃ³tipo</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="712" y="114">o que funciona</text>
 <!-- ciclo de volta: medir / evoluir -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="160" x="632" y="142"></rect><text fill="#bfe6ff" text-anchor="middle" x="712" y="162">medir resultado</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="160" x="416" y="142"></rect><text fill="#bfe6ff" text-anchor="middle" x="496" y="162">evoluir · ajustar</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="160" x="416" y="142"></rect><text fill="#bfe6ff" text-anchor="middle" x="496" y="162">evoluir Â· ajustar</text></g>
 </g>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="214">A intenção é o destino; a arquitetura é o caminho; medir é o que fecha o ciclo.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="214">A intenÃ§Ã£o Ã© o destino; a arquitetura Ã© o caminho; medir Ã© o que fecha o ciclo.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Módulos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">36</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~1 dia</div><div class="text-xs text-neutral-400">Duração</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">MÃ³dulos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">36</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~1 dia</div><div class="text-xs text-neutral-400">DuraÃ§Ã£o</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
 </div>
 <!-- Medidor da trilha -->
-<div aria-label="Progresso do Dia 3" aria-valuemax="100" aria-valuemin="0" data-inema-meter="trilha:3" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do Dia 3</span><span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 36</strong> · <span data-inema-meter-pct="">0%</span></span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progresso do Dia 3" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="trilha:3" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do Dia 3</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 36</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </div>
 </header>
@@ -273,110 +273,110 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-1">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.1</span><span class="text-xs text-neutral-500">~50 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🎯 A Intenção no Centro</h3>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">ðŸŽ¯ A IntenÃ§Ã£o no Centro</h3>
 <p class="text-xs text-neutral-400">Clareza antes de tudo</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-2">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.2</span><span class="text-xs text-neutral-500">~50 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🔍 Mapear o Problema</h3>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">ðŸ” Mapear o Problema</h3>
 <p class="text-xs text-neutral-400">Onde a IA multiplica</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-3">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.3</span><span class="text-xs text-neutral-500">~55 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🗺️ Desenhar a Arquitetura</h3>
-<p class="text-xs text-neutral-400">O fluxo da intenção</p>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">ðŸ—ºï¸ Desenhar a Arquitetura</h3>
+<p class="text-xs text-neutral-400">O fluxo da intenÃ§Ã£o</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-4">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.4</span><span class="text-xs text-neutral-500">~55 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🛠️ Protótipo Funcional</h3>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">ðŸ› ï¸ ProtÃ³tipo Funcional</h3>
 <p class="text-xs text-neutral-400">Do desenho ao que funciona</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-5">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.5</span><span class="text-xs text-neutral-500">~45 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">📏 Medir Resultado</h3>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">ðŸ“ Medir Resultado</h3>
 <p class="text-xs text-neutral-400">O que importa e como medir</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-6">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.6</span><span class="text-xs text-neutral-500">~50 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">📈 Evolução e Apresentação</h3>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">ðŸ“ˆ EvoluÃ§Ã£o e ApresentaÃ§Ã£o</h3>
 <p class="text-xs text-neutral-400">Entregar e melhorar</p>
 </a>
 </div>
 </section>
-<h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
-<!-- ===================== MÓDULO 3.1 ===================== -->
+<h2 class="text-2xl font-bold mb-6">ConteÃºdo detalhado</h2>
+<!-- ===================== MÃ“DULO 3.1 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-1">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.1</span><span class="text-xs text-neutral-500">~50 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">🎯 A Intenção no Centro</h3>
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.1</span><span class="text-xs text-neutral-500">~50 min Â· 6 tÃ³picos</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸŽ¯ A IntenÃ§Ã£o no Centro</h3>
 <p class="text-neutral-400 text-sm">Antes de qualquer ferramenta, a clareza: o que resolver, para quem, qual resultado importa e como medir.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:3-1"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:3-1"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t3-1-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">🎯</span><div><span class="font-medium">A intenção é o destino</span><span class="text-neutral-500 text-sm ml-2">- o ponto de chegada</span></div>
+<span class="text-lg">ðŸŽ¯</span><div><span class="font-medium">A intenÃ§Ã£o Ã© o destino</span><span class="text-neutral-500 text-sm ml-2">- o ponto de chegada</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-1-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A intenção é o resultado que você quer alcançar com a solução. É o destino que orienta cada decisão: qual canal, qual agente, qual ferramenta.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem destino, qualquer caminho parece bom e nenhum resultado parece insuficiente. A intenção dá direção e critério.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Intenção como destino; direção × movimento; tudo a serviço do resultado.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">A intenÃ§Ã£o Ã© o resultado que vocÃª quer alcanÃ§ar com a soluÃ§Ã£o. Ã‰ o destino que orienta cada decisÃ£o: qual canal, qual agente, qual ferramenta.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem destino, qualquer caminho parece bom e nenhum resultado parece insuficiente. A intenÃ§Ã£o dÃ¡ direÃ§Ã£o e critÃ©rio.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">IntenÃ§Ã£o como destino; direÃ§Ã£o Ã— movimento; tudo a serviÃ§o do resultado.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-1-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">❓</span><div><span class="font-medium">O que queremos resolver</span><span class="text-neutral-500 text-sm ml-2">- o problema real</span></div>
+<span class="text-lg">â“</span><div><span class="font-medium">O que queremos resolver</span><span class="text-neutral-500 text-sm ml-2">- o problema real</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-1-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Nomear com precisão o problema que a solução vai atacar — não "usar IA", mas "reduzir o tempo de resposta no atendimento", por exemplo.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Um problema mal definido gera uma solução que não resolve nada. A clareza do problema é metade da solução.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Problema específico × desejo vago; dor concreta; recorte do escopo.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Nomear com precisÃ£o o problema que a soluÃ§Ã£o vai atacar â€” nÃ£o "usar IA", mas "reduzir o tempo de resposta no atendimento", por exemplo.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Um problema mal definido gera uma soluÃ§Ã£o que nÃ£o resolve nada. A clareza do problema Ã© metade da soluÃ§Ã£o.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Problema especÃ­fico Ã— desejo vago; dor concreta; recorte do escopo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-1-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">👤</span><div><span class="font-medium">Para quem queremos resolver</span><span class="text-neutral-500 text-sm ml-2">- o público da solução</span></div>
+<span class="text-lg">ðŸ‘¤</span><div><span class="font-medium">Para quem queremos resolver</span><span class="text-neutral-500 text-sm ml-2">- o pÃºblico da soluÃ§Ã£o</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-1-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Definir quem é beneficiado: o cliente final, o atendente, o gestor, o dono. Cada público muda o tom, o canal e o que conta como sucesso.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Resolver "para todo mundo" é resolver para ninguém. Saber para quem é foca a solução e a torna útil de verdade.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Público-alvo; quem sente a dor; quem decide; foco no usuário.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Definir quem Ã© beneficiado: o cliente final, o atendente, o gestor, o dono. Cada pÃºblico muda o tom, o canal e o que conta como sucesso.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Resolver "para todo mundo" Ã© resolver para ninguÃ©m. Saber para quem Ã© foca a soluÃ§Ã£o e a torna Ãºtil de verdade.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">PÃºblico-alvo; quem sente a dor; quem decide; foco no usuÃ¡rio.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-1-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🏆</span><div><span class="font-medium">Qual resultado importa</span><span class="text-neutral-500 text-sm ml-2">- o que é sucesso</span></div>
+<span class="text-lg">ðŸ†</span><div><span class="font-medium">Qual resultado importa</span><span class="text-neutral-500 text-sm ml-2">- o que Ã© sucesso</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-1-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Definir, antes de construir, como vai ser o "antes" e o "depois" — o resultado concreto que prova que a solução funcionou.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Resultado definido evita a armadilha do "ficou legal mas não mudou nada". Ele amarra a solução a um ganho real.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Resultado esperado; sucesso definido; ganho concreto × impressão.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Definir, antes de construir, como vai ser o "antes" e o "depois" â€” o resultado concreto que prova que a soluÃ§Ã£o funcionou.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Resultado definido evita a armadilha do "ficou legal mas nÃ£o mudou nada". Ele amarra a soluÃ§Ã£o a um ganho real.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Resultado esperado; sucesso definido; ganho concreto Ã— impressÃ£o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-1-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">📏</span><div><span class="font-medium">Como vamos medir</span><span class="text-neutral-500 text-sm ml-2">- a métrica desde o início</span></div>
+<span class="text-lg">ðŸ“</span><div><span class="font-medium">Como vamos medir</span><span class="text-neutral-500 text-sm ml-2">- a mÃ©trica desde o inÃ­cio</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-1-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Escolher, já no desenho da intenção, qual número vai dizer se deu certo: tempo economizado, atendimentos resolvidos, erros reduzidos.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem não decide a métrica no começo mede o que for fácil no fim — e quase sempre se ilude. A medição nasce com a intenção.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Métrica desde o início; o que contar; medir intenção, não esforço.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Escolher, jÃ¡ no desenho da intenÃ§Ã£o, qual nÃºmero vai dizer se deu certo: tempo economizado, atendimentos resolvidos, erros reduzidos.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem nÃ£o decide a mÃ©trica no comeÃ§o mede o que for fÃ¡cil no fim â€” e quase sempre se ilude. A mediÃ§Ã£o nasce com a intenÃ§Ã£o.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">MÃ©trica desde o inÃ­cio; o que contar; medir intenÃ§Ã£o, nÃ£o esforÃ§o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-1-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🧭</span><div><span class="font-medium">Clareza como primeira habilidade</span><span class="text-neutral-500 text-sm ml-2">- pensar antes de fazer</span></div>
+<span class="text-lg">ðŸ§­</span><div><span class="font-medium">Clareza como primeira habilidade</span><span class="text-neutral-500 text-sm ml-2">- pensar antes de fazer</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-1-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A habilidade mais valiosa do arquiteto de intenção não é técnica: é pensar com clareza — definir problema, público, resultado e medida antes de mexer em ferramenta.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Ferramentas mudam toda semana; a clareza é o que faz qualquer ferramenta render. É o ativo que não fica obsoleto.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Clareza como habilidade; pensar × executar; a base de toda solução.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">A habilidade mais valiosa do arquiteto de intenÃ§Ã£o nÃ£o Ã© tÃ©cnica: Ã© pensar com clareza â€” definir problema, pÃºblico, resultado e medida antes de mexer em ferramenta.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Ferramentas mudam toda semana; a clareza Ã© o que faz qualquer ferramenta render. Ã‰ o ativo que nÃ£o fica obsoleto.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Clareza como habilidade; pensar Ã— executar; a base de toda soluÃ§Ã£o.</p></div>
 </div></div>
 </div>
 </div>
@@ -385,79 +385,79 @@
 <a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-1.html">Ver Completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 3.2 ===================== -->
+<!-- ===================== MÃ“DULO 3.2 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-2">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.2</span><span class="text-xs text-neutral-500">~50 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">🔍 Mapear o Problema</h3>
-<p class="text-neutral-400 text-sm">Ler a empresa e enxergar onde a IA multiplica: repetição, desorganização, lentidão — e escolher UM problema.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:3-2"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.2</span><span class="text-xs text-neutral-500">~50 min Â· 6 tÃ³picos</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ” Mapear o Problema</h3>
+<p class="text-neutral-400 text-sm">Ler a empresa e enxergar onde a IA multiplica: repetiÃ§Ã£o, desorganizaÃ§Ã£o, lentidÃ£o â€” e escolher UM problema.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:3-2"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t3-2-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">🔍</span><div><span class="font-medium">Ler a empresa</span><span class="text-neutral-500 text-sm ml-2">- onde dói</span></div>
+<span class="text-lg">ðŸ”</span><div><span class="font-medium">Ler a empresa</span><span class="text-neutral-500 text-sm ml-2">- onde dÃ³i</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-2-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Olhar a operação de uma empresa com olhos de arquiteto: onde as pessoas reclamam, onde o trabalho trava, onde o dinheiro vaza.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A dor é o melhor mapa de oportunidade. Quem aprende a ler a dor encontra problemas que valem a pena resolver.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Diagnóstico; escuta da operação; dor como sinal.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Olhar a operaÃ§Ã£o de uma empresa com olhos de arquiteto: onde as pessoas reclamam, onde o trabalho trava, onde o dinheiro vaza.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A dor Ã© o melhor mapa de oportunidade. Quem aprende a ler a dor encontra problemas que valem a pena resolver.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">DiagnÃ³stico; escuta da operaÃ§Ã£o; dor como sinal.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-2-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🔁</span><div><span class="font-medium">Repetição e perda de tempo</span><span class="text-neutral-500 text-sm ml-2">- o trabalho que se repete</span></div>
+<span class="text-lg">ðŸ”</span><div><span class="font-medium">RepetiÃ§Ã£o e perda de tempo</span><span class="text-neutral-500 text-sm ml-2">- o trabalho que se repete</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-2-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Tarefas que se repetem todo dia — responder as mesmas perguntas, preencher os mesmos campos, copiar dados de um lugar para outro.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Repetição é o alvo número 1 da IA: onde mais se repete, mais a automação multiplica o tempo das pessoas.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Tarefa repetitiva; tempo desperdiçado; alvo de automação.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Tarefas que se repetem todo dia â€” responder as mesmas perguntas, preencher os mesmos campos, copiar dados de um lugar para outro.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">RepetiÃ§Ã£o Ã© o alvo nÃºmero 1 da IA: onde mais se repete, mais a automaÃ§Ã£o multiplica o tempo das pessoas.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Tarefa repetitiva; tempo desperdiÃ§ado; alvo de automaÃ§Ã£o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-2-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">🗂️</span><div><span class="font-medium">Informação desorganizada</span><span class="text-neutral-500 text-sm ml-2">- dados espalhados</span></div>
+<span class="text-lg">ðŸ—‚ï¸</span><div><span class="font-medium">InformaÃ§Ã£o desorganizada</span><span class="text-neutral-500 text-sm ml-2">- dados espalhados</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-2-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Informação espalhada por planilhas, conversas, e-mails e cabeças — sem um lugar único onde a resposta esteja organizada.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A IA brilha em organizar e recuperar informação. Onde os dados estão bagunçados, há uma solução clara esperando.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Dado disperso; conhecimento na cabeça das pessoas; organização como oportunidade.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">InformaÃ§Ã£o espalhada por planilhas, conversas, e-mails e cabeÃ§as â€” sem um lugar Ãºnico onde a resposta esteja organizada.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A IA brilha em organizar e recuperar informaÃ§Ã£o. Onde os dados estÃ£o bagunÃ§ados, hÃ¡ uma soluÃ§Ã£o clara esperando.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Dado disperso; conhecimento na cabeÃ§a das pessoas; organizaÃ§Ã£o como oportunidade.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-2-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🐢</span><div><span class="font-medium">Decisão lenta / atendimento fraco</span><span class="text-neutral-500 text-sm ml-2">- onde o cliente espera</span></div>
+<span class="text-lg">ðŸ¢</span><div><span class="font-medium">DecisÃ£o lenta / atendimento fraco</span><span class="text-neutral-500 text-sm ml-2">- onde o cliente espera</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-2-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Lugares onde a empresa demora para responder, para decidir ou para atender — e isso custa vendas, confiança e clientes.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Velocidade de resposta é vantagem competitiva. A IA encurta o tempo entre a pergunta do cliente e a resposta certa.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Lentidão; gargalo de decisão; atendimento como diferencial.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Lugares onde a empresa demora para responder, para decidir ou para atender â€” e isso custa vendas, confianÃ§a e clientes.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Velocidade de resposta Ã© vantagem competitiva. A IA encurta o tempo entre a pergunta do cliente e a resposta certa.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">LentidÃ£o; gargalo de decisÃ£o; atendimento como diferencial.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-2-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">💡</span><div><span class="font-medium">Oportunidade de automatizar</span><span class="text-neutral-500 text-sm ml-2">- o que vale o esforço</span></div>
+<span class="text-lg">ðŸ’¡</span><div><span class="font-medium">Oportunidade de automatizar</span><span class="text-neutral-500 text-sm ml-2">- o que vale o esforÃ§o</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-2-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Avaliar cada dor encontrada por dois eixos: o quanto custa hoje e o quão fácil é resolver com IA — para achar o melhor alvo.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Nem toda dor vale automatizar. Saber priorizar evita gastar energia onde o retorno é pequeno.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Custo × facilidade; priorização; retorno do esforço.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Avaliar cada dor encontrada por dois eixos: o quanto custa hoje e o quÃ£o fÃ¡cil Ã© resolver com IA â€” para achar o melhor alvo.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Nem toda dor vale automatizar. Saber priorizar evita gastar energia onde o retorno Ã© pequeno.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Custo Ã— facilidade; priorizaÃ§Ã£o; retorno do esforÃ§o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-2-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">✂️</span><div><span class="font-medium">Escolher UM problema</span><span class="text-neutral-500 text-sm ml-2">- foco</span></div>
+<span class="text-lg">âœ‚ï¸</span><div><span class="font-medium">Escolher UM problema</span><span class="text-neutral-500 text-sm ml-2">- foco</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-2-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Sair do mapa de muitas dores e cravar UM problema para resolver agora — o mais doloroso e viável dentro do escopo de um dia.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Tentar resolver tudo de uma vez é receita de não entregar nada. Foco em um problema é o que faz a solução nascer.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Foco; escopo de um; um problema, uma solução.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Sair do mapa de muitas dores e cravar UM problema para resolver agora â€” o mais doloroso e viÃ¡vel dentro do escopo de um dia.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Tentar resolver tudo de uma vez Ã© receita de nÃ£o entregar nada. Foco em um problema Ã© o que faz a soluÃ§Ã£o nascer.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Foco; escopo de um; um problema, uma soluÃ§Ã£o.</p></div>
 </div></div>
 </div>
 </div>
@@ -466,79 +466,79 @@
 <a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-2.html">Ver Completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 3.3 ===================== -->
+<!-- ===================== MÃ“DULO 3.3 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-3">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.3</span><span class="text-xs text-neutral-500">~55 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">🗺️ Desenhar a Arquitetura</h3>
-<p class="text-neutral-400 text-sm">Transformar o problema escolhido no blueprint da solução: canais, serviços, agentes, ferramentas e regras.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:3-3"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.3</span><span class="text-xs text-neutral-500">~55 min Â· 6 tÃ³picos</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ—ºï¸ Desenhar a Arquitetura</h3>
+<p class="text-neutral-400 text-sm">Transformar o problema escolhido no blueprint da soluÃ§Ã£o: canais, serviÃ§os, agentes, ferramentas e regras.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:3-3"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t3-3-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">🗺️</span><div><span class="font-medium">Do problema ao desenho</span><span class="text-neutral-500 text-sm ml-2">- traduzir em fluxo</span></div>
+<span class="text-lg">ðŸ—ºï¸</span><div><span class="font-medium">Do problema ao desenho</span><span class="text-neutral-500 text-sm ml-2">- traduzir em fluxo</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-3-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Pegar o problema e a intenção e traduzir num desenho: quem fala com o sistema, o que ele faz com isso, e o que devolve.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O desenho é a ponte entre "quero resolver isso" e "construí isso". Desenhar antes evita refazer depois.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Tradução problema→fluxo; pensar o caminho; arquitetura como desenho.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Pegar o problema e a intenÃ§Ã£o e traduzir num desenho: quem fala com o sistema, o que ele faz com isso, e o que devolve.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O desenho Ã© a ponte entre "quero resolver isso" e "construÃ­ isso". Desenhar antes evita refazer depois.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">TraduÃ§Ã£o problemaâ†’fluxo; pensar o caminho; arquitetura como desenho.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-3-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🚪</span><div><span class="font-medium">Canais e roteamento</span><span class="text-neutral-500 text-sm ml-2">- por onde entra e vai</span></div>
+<span class="text-lg">ðŸšª</span><div><span class="font-medium">Canais e roteamento</span><span class="text-neutral-500 text-sm ml-2">- por onde entra e vai</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-3-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Decidir por onde a intenção entra (WhatsApp, site, e-mail) e como o sistema a roteia para o serviço certo lá dentro.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O canal certo e o roteamento certo fazem a solução parecer fluida. O errado faz tudo travar na porta de entrada.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Canal de entrada/saída; roteamento; intenção → serviço.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Decidir por onde a intenÃ§Ã£o entra (WhatsApp, site, e-mail) e como o sistema a roteia para o serviÃ§o certo lÃ¡ dentro.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O canal certo e o roteamento certo fazem a soluÃ§Ã£o parecer fluida. O errado faz tudo travar na porta de entrada.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Canal de entrada/saÃ­da; roteamento; intenÃ§Ã£o â†’ serviÃ§o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-3-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">🧱</span><div><span class="font-medium">Serviços e agentes da solução</span><span class="text-neutral-500 text-sm ml-2">- quem faz o trabalho</span></div>
+<span class="text-lg">ðŸ§±</span><div><span class="font-medium">ServiÃ§os e agentes da soluÃ§Ã£o</span><span class="text-neutral-500 text-sm ml-2">- quem faz o trabalho</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-3-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Definir os blocos de capacidade (serviços) e os trabalhadores (agentes) que executam cada parte do fluxo da solução.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Separar responsabilidades deixa a solução organizada, fácil de testar e fácil de evoluir peça por peça.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Serviço × agente; separação de responsabilidades; blocos da solução.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Definir os blocos de capacidade (serviÃ§os) e os trabalhadores (agentes) que executam cada parte do fluxo da soluÃ§Ã£o.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Separar responsabilidades deixa a soluÃ§Ã£o organizada, fÃ¡cil de testar e fÃ¡cil de evoluir peÃ§a por peÃ§a.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">ServiÃ§o Ã— agente; separaÃ§Ã£o de responsabilidades; blocos da soluÃ§Ã£o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-3-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🔧</span><div><span class="font-medium">Ferramentas necessárias</span><span class="text-neutral-500 text-sm ml-2">- o que conectar</span></div>
+<span class="text-lg">ðŸ”§</span><div><span class="font-medium">Ferramentas necessÃ¡rias</span><span class="text-neutral-500 text-sm ml-2">- o que conectar</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-3-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Listar as ferramentas que a solução precisa para agir: planilha, CRM, calendário, banco de dados, mensageria, APIs.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A ferramenta serve à intenção, nunca o contrário. Escolher só as necessárias mantém a solução enxuta.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ferramenta a serviço da intenção; integração; o mínimo necessário.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Listar as ferramentas que a soluÃ§Ã£o precisa para agir: planilha, CRM, calendÃ¡rio, banco de dados, mensageria, APIs.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A ferramenta serve Ã  intenÃ§Ã£o, nunca o contrÃ¡rio. Escolher sÃ³ as necessÃ¡rias mantÃ©m a soluÃ§Ã£o enxuta.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ferramenta a serviÃ§o da intenÃ§Ã£o; integraÃ§Ã£o; o mÃ­nimo necessÃ¡rio.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-3-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">🛡️</span><div><span class="font-medium">Regras e segurança do fluxo</span><span class="text-neutral-500 text-sm ml-2">- os muros</span></div>
+<span class="text-lg">ðŸ›¡ï¸</span><div><span class="font-medium">Regras e seguranÃ§a do fluxo</span><span class="text-neutral-500 text-sm ml-2">- os muros</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-3-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Definir o que a solução pode e não pode fazer: permissões, validações, limites de ação e o que sempre precisa de aprovação humana.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quando a IA age no mundo real, segurança é parte da arquitetura. Os muros impedem que um erro vire um estrago.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Regras; permissões; limites; aprovação humana no ponto certo.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Definir o que a soluÃ§Ã£o pode e nÃ£o pode fazer: permissÃµes, validaÃ§Ãµes, limites de aÃ§Ã£o e o que sempre precisa de aprovaÃ§Ã£o humana.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quando a IA age no mundo real, seguranÃ§a Ã© parte da arquitetura. Os muros impedem que um erro vire um estrago.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Regras; permissÃµes; limites; aprovaÃ§Ã£o humana no ponto certo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-3-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">📐</span><div><span class="font-medium">O blueprint da solução</span><span class="text-neutral-500 text-sm ml-2">- o desenho final</span></div>
+<span class="text-lg">ðŸ“</span><div><span class="font-medium">O blueprint da soluÃ§Ã£o</span><span class="text-neutral-500 text-sm ml-2">- o desenho final</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-3-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Juntar canais, serviços, agentes, ferramentas e regras num único desenho claro: o blueprint que guia a construção do protótipo.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Com o blueprint na mão, construir vira execução, não improviso. É o mapa que qualquer um consegue seguir.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Blueprint; visão do todo; desenho que orienta a construção.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Juntar canais, serviÃ§os, agentes, ferramentas e regras num Ãºnico desenho claro: o blueprint que guia a construÃ§Ã£o do protÃ³tipo.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Com o blueprint na mÃ£o, construir vira execuÃ§Ã£o, nÃ£o improviso. Ã‰ o mapa que qualquer um consegue seguir.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Blueprint; visÃ£o do todo; desenho que orienta a construÃ§Ã£o.</p></div>
 </div></div>
 </div>
 </div>
@@ -547,79 +547,79 @@
 <a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-3.html">Ver Completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 3.4 ===================== -->
+<!-- ===================== MÃ“DULO 3.4 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-4">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.4</span><span class="text-xs text-neutral-500">~55 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">🛠️ Protótipo Funcional</h3>
-<p class="text-neutral-400 text-sm">Sair do desenho e construir algo que funciona: começar pequeno, testar com caso real e iterar rápido.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:3-4"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.4</span><span class="text-xs text-neutral-500">~55 min Â· 6 tÃ³picos</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ› ï¸ ProtÃ³tipo Funcional</h3>
+<p class="text-neutral-400 text-sm">Sair do desenho e construir algo que funciona: comeÃ§ar pequeno, testar com caso real e iterar rÃ¡pido.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:3-4"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t3-4-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">🛠️</span><div><span class="font-medium">Do desenho ao protótipo</span><span class="text-neutral-500 text-sm ml-2">- sair do papel</span></div>
+<span class="text-lg">ðŸ› ï¸</span><div><span class="font-medium">Do desenho ao protÃ³tipo</span><span class="text-neutral-500 text-sm ml-2">- sair do papel</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-4-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Transformar o blueprint em algo que roda de verdade — mesmo que simples, manual em partes e longe de perfeito.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Um protótipo que funciona ensina mais em uma hora do que um plano perfeito que nunca saiu do papel.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Do plano à execução; rodar × planejar; aprender construindo.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Transformar o blueprint em algo que roda de verdade â€” mesmo que simples, manual em partes e longe de perfeito.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Um protÃ³tipo que funciona ensina mais em uma hora do que um plano perfeito que nunca saiu do papel.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Do plano Ã  execuÃ§Ã£o; rodar Ã— planejar; aprender construindo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-4-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🏃</span><div><span class="font-medium">Começar pequeno (MVP)</span><span class="text-neutral-500 text-sm ml-2">- o mínimo que resolve</span></div>
+<span class="text-lg">ðŸƒ</span><div><span class="font-medium">ComeÃ§ar pequeno (MVP)</span><span class="text-neutral-500 text-sm ml-2">- o mÃ­nimo que resolve</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-4-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Construir a menor versão possível que já entrega o resultado principal — o MVP, sem firulas, focado na intenção.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Começar pequeno entrega valor cedo e barato, e revela o que realmente importa antes de você investir demais.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">MVP; mínimo viável; entregar o essencial primeiro.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Construir a menor versÃ£o possÃ­vel que jÃ¡ entrega o resultado principal â€” o MVP, sem firulas, focado na intenÃ§Ã£o.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">ComeÃ§ar pequeno entrega valor cedo e barato, e revela o que realmente importa antes de vocÃª investir demais.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">MVP; mÃ­nimo viÃ¡vel; entregar o essencial primeiro.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-4-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">🧪</span><div><span class="font-medium">Testar com caso real</span><span class="text-neutral-500 text-sm ml-2">- dado de verdade</span></div>
+<span class="text-lg">ðŸ§ª</span><div><span class="font-medium">Testar com caso real</span><span class="text-neutral-500 text-sm ml-2">- dado de verdade</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-4-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Rodar o protótipo com um caso real da empresa — uma mensagem de cliente de verdade, um pedido real — e ver o que acontece.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Só o caso real expõe os buracos que o exemplo bonitinho esconde. É onde a solução prova (ou não) que funciona.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Rodar o protÃ³tipo com um caso real da empresa â€” uma mensagem de cliente de verdade, um pedido real â€” e ver o que acontece.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">SÃ³ o caso real expÃµe os buracos que o exemplo bonitinho esconde. Ã‰ onde a soluÃ§Ã£o prova (ou nÃ£o) que funciona.</p></div>
 <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Teste com dado real; caso de uso; confronto com a realidade.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-4-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🔁</span><div><span class="font-medium">Iterar rápido</span><span class="text-neutral-500 text-sm ml-2">- ajustar e repetir</span></div>
+<span class="text-lg">ðŸ”</span><div><span class="font-medium">Iterar rÃ¡pido</span><span class="text-neutral-500 text-sm ml-2">- ajustar e repetir</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-4-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Pegar o que falhou no teste, ajustar uma coisa de cada vez e rodar de novo — em ciclos curtos e frequentes.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A solução boa não nasce pronta: ela emerge de muitas pequenas correções. Iterar rápido é como se chega lá.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ciclo curto; um ajuste por vez; melhoria por iteração.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Pegar o que falhou no teste, ajustar uma coisa de cada vez e rodar de novo â€” em ciclos curtos e frequentes.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A soluÃ§Ã£o boa nÃ£o nasce pronta: ela emerge de muitas pequenas correÃ§Ãµes. Iterar rÃ¡pido Ã© como se chega lÃ¡.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ciclo curto; um ajuste por vez; melhoria por iteraÃ§Ã£o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-4-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">⚠️</span><div><span class="font-medium">Erros comuns no protótipo</span><span class="text-neutral-500 text-sm ml-2">- o que evitar</span></div>
+<span class="text-lg">âš ï¸</span><div><span class="font-medium">Erros comuns no protÃ³tipo</span><span class="text-neutral-500 text-sm ml-2">- o que evitar</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-4-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">As armadilhas clássicas: querer fazer tudo de uma vez, polir o que não importa, ignorar os casos que dão errado e fugir do teste real.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Reconhecer os erros comuns economiza dias. A maioria dos protótipos morre pelas mesmas razões previsíveis.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">As armadilhas clÃ¡ssicas: querer fazer tudo de uma vez, polir o que nÃ£o importa, ignorar os casos que dÃ£o errado e fugir do teste real.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Reconhecer os erros comuns economiza dias. A maioria dos protÃ³tipos morre pelas mesmas razÃµes previsÃ­veis.</p></div>
 <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Escopo inflado; polimento prematuro; medo do teste real.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-4-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">✅</span><div><span class="font-medium">Critério de "funciona"</span><span class="text-neutral-500 text-sm ml-2">- quando parar</span></div>
+<span class="text-lg">âœ…</span><div><span class="font-medium">CritÃ©rio de "funciona"</span><span class="text-neutral-500 text-sm ml-2">- quando parar</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-4-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Definir, de forma honesta, o que conta como "este protótipo funciona": resolve o problema central para o caso real, dentro das regras.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem critério de pronto, você itera para sempre ou para cedo demais. O critério diz quando a versão está boa o bastante.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Definição de pronto; bom o bastante; critério honesto.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Definir, de forma honesta, o que conta como "este protÃ³tipo funciona": resolve o problema central para o caso real, dentro das regras.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem critÃ©rio de pronto, vocÃª itera para sempre ou para cedo demais. O critÃ©rio diz quando a versÃ£o estÃ¡ boa o bastante.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">DefiniÃ§Ã£o de pronto; bom o bastante; critÃ©rio honesto.</p></div>
 </div></div>
 </div>
 </div>
@@ -628,79 +628,79 @@
 <a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-4.html">Ver Completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 3.5 ===================== -->
+<!-- ===================== MÃ“DULO 3.5 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-5">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.5</span><span class="text-xs text-neutral-500">~45 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">📏 Medir Resultado</h3>
-<p class="text-neutral-400 text-sm">Provar que a solução funcionou: a métrica certa, o antes × depois e ler os números sem se iludir.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:3-5"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.5</span><span class="text-xs text-neutral-500">~45 min Â· 6 tÃ³picos</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ“ Medir Resultado</h3>
+<p class="text-neutral-400 text-sm">Provar que a soluÃ§Ã£o funcionou: a mÃ©trica certa, o antes Ã— depois e ler os nÃºmeros sem se iludir.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:3-5"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t3-5-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">📏</span><div><span class="font-medium">Medir o que importa</span><span class="text-neutral-500 text-sm ml-2">- ligado à intenção</span></div>
+<span class="text-lg">ðŸ“</span><div><span class="font-medium">Medir o que importa</span><span class="text-neutral-500 text-sm ml-2">- ligado Ã  intenÃ§Ã£o</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-5-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Medir exatamente aquilo que a intenção prometeu resolver — não o que é fácil de contar, mas o que prova o resultado.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Medir a coisa errada gera relatórios bonitos e zero impacto. A medição certa fecha o ciclo aberto pela intenção.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Métrica ligada à intenção; importante × fácil; medir resultado.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Medir exatamente aquilo que a intenÃ§Ã£o prometeu resolver â€” nÃ£o o que Ã© fÃ¡cil de contar, mas o que prova o resultado.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Medir a coisa errada gera relatÃ³rios bonitos e zero impacto. A mediÃ§Ã£o certa fecha o ciclo aberto pela intenÃ§Ã£o.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">MÃ©trica ligada Ã  intenÃ§Ã£o; importante Ã— fÃ¡cil; medir resultado.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-5-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🎯</span><div><span class="font-medium">Definir a métrica certa</span><span class="text-neutral-500 text-sm ml-2">- um número claro</span></div>
+<span class="text-lg">ðŸŽ¯</span><div><span class="font-medium">Definir a mÃ©trica certa</span><span class="text-neutral-500 text-sm ml-2">- um nÃºmero claro</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-5-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Escolher um número simples e honesto que represente o sucesso: minutos economizados, % de respostas resolvidas, tempo médio de atendimento.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Uma métrica clara orienta a equipe e convence a empresa. Métrica confusa não move ninguém.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Indicador único; métrica simples; número que importa.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Escolher um nÃºmero simples e honesto que represente o sucesso: minutos economizados, % de respostas resolvidas, tempo mÃ©dio de atendimento.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Uma mÃ©trica clara orienta a equipe e convence a empresa. MÃ©trica confusa nÃ£o move ninguÃ©m.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Indicador Ãºnico; mÃ©trica simples; nÃºmero que importa.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-5-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">📊</span><div><span class="font-medium">Antes × depois</span><span class="text-neutral-500 text-sm ml-2">- a comparação honesta</span></div>
+<span class="text-lg">ðŸ“Š</span><div><span class="font-medium">Antes Ã— depois</span><span class="text-neutral-500 text-sm ml-2">- a comparaÃ§Ã£o honesta</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-5-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Registrar a situação antes da solução e compará-la com a situação depois — a forma mais direta de mostrar o ganho.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"Melhorou" não convence ninguém; "caiu de 8 horas para 20 minutos" convence. O antes × depois torna o valor visível.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Linha de base; comparação; ganho mensurável.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Registrar a situaÃ§Ã£o antes da soluÃ§Ã£o e comparÃ¡-la com a situaÃ§Ã£o depois â€” a forma mais direta de mostrar o ganho.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"Melhorou" nÃ£o convence ninguÃ©m; "caiu de 8 horas para 20 minutos" convence. O antes Ã— depois torna o valor visÃ­vel.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Linha de base; comparaÃ§Ã£o; ganho mensurÃ¡vel.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-5-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">🚫</span><div><span class="font-medium">Ilusão de produtividade</span><span class="text-neutral-500 text-sm ml-2">- parecer × ser</span></div>
+<span class="text-lg">ðŸš«</span><div><span class="font-medium">IlusÃ£o de produtividade</span><span class="text-neutral-500 text-sm ml-2">- parecer Ã— ser</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-5-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A armadilha de achar que a IA está ajudando só porque produz muito — quando, no fundo, gera retrabalho ou resultado que ninguém usa.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem medir o resultado real, é fácil confundir movimento com progresso. A métrica protege contra essa ilusão.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Movimento × progresso; volume × valor; ilusão de produtividade.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">A armadilha de achar que a IA estÃ¡ ajudando sÃ³ porque produz muito â€” quando, no fundo, gera retrabalho ou resultado que ninguÃ©m usa.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem medir o resultado real, Ã© fÃ¡cil confundir movimento com progresso. A mÃ©trica protege contra essa ilusÃ£o.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Movimento Ã— progresso; volume Ã— valor; ilusÃ£o de produtividade.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-5-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">🔍</span><div><span class="font-medium">Ler os números</span><span class="text-neutral-500 text-sm ml-2">- o que estão dizendo</span></div>
+<span class="text-lg">ðŸ”</span><div><span class="font-medium">Ler os nÃºmeros</span><span class="text-neutral-500 text-sm ml-2">- o que estÃ£o dizendo</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-5-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Interpretar o que a métrica revela: onde a solução acerta, onde ainda falha e o que os números sugerem como próximo ajuste.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Número sem leitura é só um dado. Ler bem transforma a medição em decisão de melhoria.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Interpretação; sinal × ruído; do número à decisão.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Interpretar o que a mÃ©trica revela: onde a soluÃ§Ã£o acerta, onde ainda falha e o que os nÃºmeros sugerem como prÃ³ximo ajuste.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">NÃºmero sem leitura Ã© sÃ³ um dado. Ler bem transforma a mediÃ§Ã£o em decisÃ£o de melhoria.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">InterpretaÃ§Ã£o; sinal Ã— ruÃ­do; do nÃºmero Ã  decisÃ£o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-5-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🔄</span><div><span class="font-medium">Medição alimenta a evolução</span><span class="text-neutral-500 text-sm ml-2">- o ciclo continua</span></div>
+<span class="text-lg">ðŸ”„</span><div><span class="font-medium">MediÃ§Ã£o alimenta a evoluÃ§Ã£o</span><span class="text-neutral-500 text-sm ml-2">- o ciclo continua</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-5-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Usar o que a medição mostrou para decidir o próximo passo da solução — a medição não é o fim, é o que abastece a próxima melhoria.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Medir e guardar na gaveta é desperdício. Medir para evoluir é o que faz a solução melhorar de verdade ao longo do tempo.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ciclo medir→evoluir; feedback; melhoria orientada por dado.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Usar o que a mediÃ§Ã£o mostrou para decidir o prÃ³ximo passo da soluÃ§Ã£o â€” a mediÃ§Ã£o nÃ£o Ã© o fim, Ã© o que abastece a prÃ³xima melhoria.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Medir e guardar na gaveta Ã© desperdÃ­cio. Medir para evoluir Ã© o que faz a soluÃ§Ã£o melhorar de verdade ao longo do tempo.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ciclo medirâ†’evoluir; feedback; melhoria orientada por dado.</p></div>
 </div></div>
 </div>
 </div>
@@ -709,79 +709,79 @@
 <a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-5.html">Ver Completo</a>
 </div>
 </div>
-<!-- ===================== MÓDULO 3.6 ===================== -->
+<!-- ===================== MÃ“DULO 3.6 ===================== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-6">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.6</span><span class="text-xs text-neutral-500">~50 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">📈 Evolução e Apresentação</h3>
-<p class="text-neutral-400 text-sm">Entregar e melhorar: o sistema que aprende, apresentar a solução, mostrar valor e dar os próximos passos.</p>
-<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-inema-meter="modulo:3-6"><div class="inema-bar" style="flex:1;max-width:200px"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div><span data-inema-meter-frac="">0 de 6</span></div>
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.6</span><span class="text-xs text-neutral-500">~50 min Â· 6 tÃ³picos</span></div>
+<h3 class="text-2xl font-bold mb-2">ðŸ“ˆ EvoluÃ§Ã£o e ApresentaÃ§Ã£o</h3>
+<p class="text-neutral-400 text-sm">Entregar e melhorar: o sistema que aprende, apresentar a soluÃ§Ã£o, mostrar valor e dar os prÃ³ximos passos.</p>
+<div class="flex items-center gap-3 mt-3 text-xs text-neutral-500" data-ARCKHÉ-meter="modulo:3-6"><div class="ARCKHÉ-bar" style="flex:1;max-width:200px"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div><span data-ARCKHÉ-meter-frac="">0 de 6</span></div>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-controls="t3-6-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-<span class="text-lg">📈</span><div><span class="font-medium">Melhoria contínua</span><span class="text-neutral-500 text-sm ml-2">- nunca está pronto</span></div>
+<span class="text-lg">ðŸ“ˆ</span><div><span class="font-medium">Melhoria contÃ­nua</span><span class="text-neutral-500 text-sm ml-2">- nunca estÃ¡ pronto</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-6-1"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Encarar a solução como algo vivo: a primeira versão é o começo, e cada ciclo de uso e medição traz a próxima melhoria.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Soluções que param de evoluir envelhecem rápido. A melhoria contínua é o que mantém o valor crescendo.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Solução viva; ciclo contínuo; primeira versão ≠ versão final.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Encarar a soluÃ§Ã£o como algo vivo: a primeira versÃ£o Ã© o comeÃ§o, e cada ciclo de uso e mediÃ§Ã£o traz a prÃ³xima melhoria.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">SoluÃ§Ãµes que param de evoluir envelhecem rÃ¡pido. A melhoria contÃ­nua Ã© o que mantÃ©m o valor crescendo.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">SoluÃ§Ã£o viva; ciclo contÃ­nuo; primeira versÃ£o â‰  versÃ£o final.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-6-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-<span class="text-lg">🔄</span><div><span class="font-medium">O sistema aprende e se adapta</span><span class="text-neutral-500 text-sm ml-2">- memória e feedback</span></div>
+<span class="text-lg">ðŸ”„</span><div><span class="font-medium">O sistema aprende e se adapta</span><span class="text-neutral-500 text-sm ml-2">- memÃ³ria e feedback</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-6-2"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Usar memória e feedback para que a solução melhore as respostas, aprenda padrões e se ajuste ao jeito da empresa com o tempo.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Usar memÃ³ria e feedback para que a soluÃ§Ã£o melhore as respostas, aprenda padrÃµes e se ajuste ao jeito da empresa com o tempo.</p></div>
 <div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Um sistema que se adapta vira um ativo cada vez mais valioso, em vez de um software congelado no dia em que nasceu.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Aprendizado; adaptação; feedback que retroalimenta.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Aprendizado; adaptaÃ§Ã£o; feedback que retroalimenta.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-6-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-<span class="text-lg">🗣️</span><div><span class="font-medium">Apresentar a solução</span><span class="text-neutral-500 text-sm ml-2">- contar a história</span></div>
+<span class="text-lg">ðŸ—£ï¸</span><div><span class="font-medium">Apresentar a soluÃ§Ã£o</span><span class="text-neutral-500 text-sm ml-2">- contar a histÃ³ria</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-6-3"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Mostrar a solução de forma clara: o problema, a intenção, o que foi construído, o caso real e o resultado medido — uma história curta e convincente.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Uma solução que ninguém entende não é adotada. Saber apresentar é o que transforma o protótipo em decisão de uso.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Narrativa problema→resultado; demonstração; comunicação clara.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Mostrar a soluÃ§Ã£o de forma clara: o problema, a intenÃ§Ã£o, o que foi construÃ­do, o caso real e o resultado medido â€” uma histÃ³ria curta e convincente.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Uma soluÃ§Ã£o que ninguÃ©m entende nÃ£o Ã© adotada. Saber apresentar Ã© o que transforma o protÃ³tipo em decisÃ£o de uso.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Narrativa problemaâ†’resultado; demonstraÃ§Ã£o; comunicaÃ§Ã£o clara.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-6-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-<span class="text-lg">💼</span><div><span class="font-medium">Mostrar valor para a empresa</span><span class="text-neutral-500 text-sm ml-2">- falar de negócio</span></div>
+<span class="text-lg">ðŸ’¼</span><div><span class="font-medium">Mostrar valor para a empresa</span><span class="text-neutral-500 text-sm ml-2">- falar de negÃ³cio</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-6-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Traduzir o resultado técnico em linguagem de negócio: tempo economizado em dinheiro, clientes mais satisfeitos, equipe liberada para o que importa.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A empresa não compra tecnologia, compra resultado. Falar de valor é o que destrava orçamento e apoio para escalar.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Valor de negócio; ROI; linguagem do decisor.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Traduzir o resultado tÃ©cnico em linguagem de negÃ³cio: tempo economizado em dinheiro, clientes mais satisfeitos, equipe liberada para o que importa.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A empresa nÃ£o compra tecnologia, compra resultado. Falar de valor Ã© o que destrava orÃ§amento e apoio para escalar.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Valor de negÃ³cio; ROI; linguagem do decisor.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-6-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-<span class="text-lg">🚀</span><div><span class="font-medium">Próximos passos / escala</span><span class="text-neutral-500 text-sm ml-2">- do protótipo ao real</span></div>
+<span class="text-lg">ðŸš€</span><div><span class="font-medium">PrÃ³ximos passos / escala</span><span class="text-neutral-500 text-sm ml-2">- do protÃ³tipo ao real</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-6-5"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Planejar como sair do protótipo para produção: aumentar volume, cobrir mais casos, robustecer regras e integrar de vez na operação.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Escalar sem plano quebra a solução. Pensar os próximos passos transforma o experimento em ferramenta do dia a dia.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Protótipo → produção; escala; roadmap de evolução.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">Planejar como sair do protÃ³tipo para produÃ§Ã£o: aumentar volume, cobrir mais casos, robustecer regras e integrar de vez na operaÃ§Ã£o.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Escalar sem plano quebra a soluÃ§Ã£o. Pensar os prÃ³ximos passos transforma o experimento em ferramenta do dia a dia.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">ProtÃ³tipo â†’ produÃ§Ã£o; escala; roadmap de evoluÃ§Ã£o.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-controls="t3-6-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-<span class="text-lg">🎓</span><div><span class="font-medium">De aluno a arquiteto de intenção</span><span class="text-neutral-500 text-sm ml-2">- o novo papel</span></div>
+<span class="text-lg">ðŸŽ“</span><div><span class="font-medium">De aluno a arquiteto de intenÃ§Ã£o</span><span class="text-neutral-500 text-sm ml-2">- o novo papel</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4" id="t3-6-6"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O fechamento da jornada: você deixa de ser quem usa prompts soltos e passa a ser quem entende problemas, desenha intenções e constrói soluções reais.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Esse é o papel mais valioso e escasso do mercado — a ponte entre o problema da empresa e o que a IA pode fazer.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Arquiteto de intenção; da prática à maestria; o construtor de soluções.</p></div>
+<div><span class="text-purple-400 font-semibold">O que Ã©:</span><p class="text-neutral-300 text-sm">O fechamento da jornada: vocÃª deixa de ser quem usa prompts soltos e passa a ser quem entende problemas, desenha intenÃ§Ãµes e constrÃ³i soluÃ§Ãµes reais.</p></div>
+<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Esse Ã© o papel mais valioso e escasso do mercado â€” a ponte entre o problema da empresa e o que a IA pode fazer.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Arquiteto de intenÃ§Ã£o; da prÃ¡tica Ã  maestria; o construtor de soluÃ§Ãµes.</p></div>
 </div></div>
 </div>
 </div>
@@ -790,52 +790,52 @@
 <a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-6.html">Ver Completo</a>
 </div>
 </div>
-<!-- NAVEGAÇÃO RODAPÉ -->
+<!-- NAVEGAÃ‡ÃƒO RODAPÃ‰ -->
 <div class="flex flex-col sm:flex-row gap-4 mt-10">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha2/index.html">← Dia 2 · Construção do Jarvis</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../../index.html">Voltar ao início ↺</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha2/index.html">â† Dia 2 Â· ConstruÃ§Ã£o do Jarvis</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../../index.html">Voltar ao inÃ­cio â†º</a>
 </div>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de Intenção da IA · Método JARVIS — Dia 3</p>
+<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 3</p>
 </div>
 </footer>
-<!-- MODAIS (iframe carrega o módulo completo) -->
+<!-- MODAIS (iframe carrega o mÃ³dulo completo) -->
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-1" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.1</span><span class="font-semibold">A Intenção no Centro</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-1.html" title="Módulo 3.1"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.1</span><span class="font-semibold">A IntenÃ§Ã£o no Centro</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-1.html" title="MÃ³dulo 3.1"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-2" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.2</span><span class="font-semibold">Mapear o Problema</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-2.html" title="Módulo 3.2"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.2</span><span class="font-semibold">Mapear o Problema</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-2.html" title="MÃ³dulo 3.2"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-3" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.3</span><span class="font-semibold">Desenhar a Arquitetura</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-3.html" title="Módulo 3.3"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.3</span><span class="font-semibold">Desenhar a Arquitetura</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-3.html" title="MÃ³dulo 3.3"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-4" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.4</span><span class="font-semibold">Protótipo Funcional</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-4.html" title="Módulo 3.4"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.4</span><span class="font-semibold">ProtÃ³tipo Funcional</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-4.html" title="MÃ³dulo 3.4"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-5" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.5</span><span class="font-semibold">Medir Resultado</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-5.html" title="Módulo 3.5"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.5</span><span class="font-semibold">Medir Resultado</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-5.html" title="MÃ³dulo 3.5"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-6" onclick="if(event.target===this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.6</span><span class="font-semibold">Evolução e Apresentação</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
-<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-6.html" title="Módulo 3.6"></iframe>
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.6</span><span class="font-semibold">EvoluÃ§Ã£o e ApresentaÃ§Ã£o</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">Ã—</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" data-src="modulo-3-6.html" title="MÃ³dulo 3.6"></iframe>
 </div>
 </div>
 <!-- SCRIPTS v1 (toggleTopic + modal) -->
@@ -871,7 +871,7 @@
 <!-- learn.js + init -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>

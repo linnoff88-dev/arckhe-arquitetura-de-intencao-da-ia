@@ -4,36 +4,36 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="inema-course"/>
-<!-- 1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO, antes do Tailwind e do learn.css.
-        Le inema.prefs (global) e aplica .dark + data-theme + vars de leitura ANTES do 1o paint.
-        try/catch total => default dark (preserva a marca INEMA). REL = "." (raiz com assets/). -->
+<meta content="jarvis" name="ARCKHÉ-course"/>
+<!-- 1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO, antes do Tailwind e do learn.css.
+        Le ARCKHÉ.prefs (global) e aplica .dark + data-theme + vars de leitura ANTES do 1o paint.
+        try/catch total => default dark (preserva a marca ARCKHÉ). REL = "." (raiz com assets/). -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
           if (legacy === 'light') p.theme = 'claro';
-          else if (legacy === 'dark') p.theme = 'inema-dark';
+          else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark');
       else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
@@ -41,7 +41,7 @@
       html.setAttribute('data-font', p.font || 'inter');
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style; var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -57,8 +57,8 @@
     }
   })();
   </script>
-<!-- 2) Manifesto do curso (estrutura COMPLETA — identico em TODAS as paginas) -->
-<script data-inema-manifest="" type="application/json">
+<!-- 2) Manifesto do curso (estrutura COMPLETA â€” identico em TODAS as paginas) -->
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -89,7 +89,7 @@
     ]
   }
   </script>
-<title>Arquitectura de Intención de la IA — Método JARVIS | INEMA.CLUB</title>
+<title>Arquitectura de IntenciÃ³n de la IA â€” MÃ©todo JARVIS | ARCKHÉ AI</title>
 <!-- 3) Tailwind + config -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -172,8 +172,8 @@
     /* Painel de aparencia ancorado ao gatilho */
     .appearance-anchor { position: relative; }
   </style>
-<link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/arquitetura-de-intencao-da-ia/es/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip" href="#conteudo">Ir al contenido</a>
 <!-- ===================== NAV COMPLETO ===================== -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -181,62 +181,62 @@
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="./index.html">
-<span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">Arquitectura de Intención</span>
+<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitectura de IntenciÃ³n</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="curso/trilha1/index.html">
-<span class="sm:hidden">D1</span><span class="hidden sm:inline">Día 1</span></a>
+<span class="sm:hidden">D1</span><span class="hidden sm:inline">DÃ­a 1</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="curso/trilha2/index.html">
-<span class="sm:hidden">D2</span><span class="hidden sm:inline">Día 2</span></a>
+<span class="sm:hidden">D2</span><span class="hidden sm:inline">DÃ­a 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="curso/trilha3/index.html">
-<span class="sm:hidden">D3</span><span class="hidden sm:inline">Día 3</span></a>
+<span class="sm:hidden">D3</span><span class="hidden sm:inline">DÃ­a 3</span></a>
 <!-- Minha jornada -->
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" title="Mi recorrido" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span>
-<span class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Mi recorrido" type="button">
+<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Recorrido</span>
+<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <!-- Aparencia -->
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-inema-appearance-toggle="[data-inema-appearance]" title="Apariencia y lectura" type="button">
-<span aria-hidden="true">◑</span>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Apariencia y lectura" type="button">
+<span aria-hidden="true">â—‘</span>
 </button>
-<div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark" type="button">Oscuro</button>
-<button data-inema-set-theme="claro" type="button">Claro</button>
-<button data-inema-set-theme="sepia" type="button">Sepia</button>
-<button data-inema-set-theme="foco" type="button">Enfoque</button>
-<button data-inema-set-theme="contraste" type="button">Alto contraste</button>
+<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
+<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Oscuro</button>
+<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button data-ARCKHÉ-set-theme="foco" type="button">Enfoque</button>
+<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fuente" class="inema-segment" role="group">
-<button data-inema-set-font="inter" type="button">Inter</button>
-<button data-inema-set-font="system" type="button">Sistema</button>
-<button data-inema-set-font="leitura" type="button">Lectura</button>
+<div aria-label="Fuente" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
+<button data-ARCKHÉ-set-font="leitura" type="button">Lectura</button>
 </div>
-<div aria-label="Tamaño del texto" class="inema-segment" role="group">
-<button data-inema-set-fontscale="100" type="button">A</button>
-<button data-inema-set-fontscale="112" type="button">A+</button>
-<button data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60" type="button">Estrecho</button>
-<button data-inema-set-linewidth="68" type="button">Medio</button>
-<button data-inema-set-linewidth="75" type="button">Amplio</button>
+<div aria-label="Ancho de lÃ­nea" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-linewidth="60" type="button">Estrecho</button>
+<button data-ARCKHÉ-set-linewidth="68" type="button">Medio</button>
+<button data-ARCKHÉ-set-linewidth="75" type="button">Amplio</button>
 </div>
-<div aria-label="Entre líneas" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45" type="button">Compacto</button>
-<button data-inema-set-leading="1.7" type="button">Cómodo</button>
+<div aria-label="Entre lÃ­neas" class="ARCKHÉ-segment" role="group">
+<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHÉ-set-leading="1.7" type="button">CÃ³modo</button>
 </div>
-<div aria-label="Color de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-inema-set-accent="blue" title="Azul" type="button"></button>
-<button data-inema-set-accent="purple" title="Morado" type="button"></button>
-<button data-inema-set-accent="amber" title="Ámbar" type="button"></button>
-<button data-inema-set-accent="teal" title="Teal" type="button"></button>
-<button data-inema-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Color de acento" class="ARCKHÉ-accent-grid" role="group">
+<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHÉ-set-accent="purple" title="Morado" type="button"></button>
+<button data-ARCKHÉ-set-accent="amber" title="Ãmbar" type="button"></button>
+<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -248,27 +248,27 @@
 <!-- ===================== HERO ===================== -->
 <header class="relative overflow-hidden bg-gradient-to-br from-emerald-900/20 via-dark-900 to-dark-900 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-<span class="inline-block px-3 py-1 bg-primary/10 border border-primary/40 text-primary text-xs font-semibold rounded-full mb-5 tracking-wide">MÉTODO JARVIS · CURSO PRESENCIAL DE 3 DÍAS</span>
-<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-5 leading-[1.05] tracking-tight">Arquitectura de Intención de la IA</h1>
-<p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mb-4 leading-relaxed">Deja de pedirle a la IA que lo haga mejor. Aprende a <strong class="text-primary">construir el sistema</strong> donde trabaja con propósito.</p>
-<p class="text-base text-neutral-400 max-w-3xl mb-8 leading-relaxed">En tres días dejas de operar prompts y pasas a diseñar soluciones de IA para problemas reales de la empresa — con identidad, canales, agentes, herramientas, seguridad y medición. No para convertirte en programador: para convertirte en <strong class="text-neutral-200">arquitecto de soluciones</strong>.</p>
+<span class="inline-block px-3 py-1 bg-primary/10 border border-primary/40 text-primary text-xs font-semibold rounded-full mb-5 tracking-wide">MÃ‰TODO JARVIS Â· CURSO PRESENCIAL DE 3 DÃAS</span>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-5 leading-[1.05] tracking-tight">Arquitectura de IntenciÃ³n de la IA</h1>
+<p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mb-4 leading-relaxed">Deja de pedirle a la IA que lo haga mejor. Aprende a <strong class="text-primary">construir el sistema</strong> donde trabaja con propÃ³sito.</p>
+<p class="text-base text-neutral-400 max-w-3xl mb-8 leading-relaxed">En tres dÃ­as dejas de operar prompts y pasas a diseÃ±ar soluciones de IA para problemas reales de la empresa â€” con identidad, canales, agentes, herramientas, seguridad y mediciÃ³n. No para convertirte en programador: para convertirte en <strong class="text-neutral-200">arquitecto de soluciones</strong>.</p>
 <div class="flex flex-wrap items-center gap-3 mb-6">
-<a class="inline-flex items-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors" href="curso/trilha1/index.html">Empezar con el Día 1 <span aria-hidden="true">→</span></a>
+<a class="inline-flex items-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors" href="curso/trilha1/index.html">Empezar con el DÃ­a 1 <span aria-hidden="true">â†’</span></a>
 <a class="inline-flex items-center gap-2 px-5 py-3 bg-dark-700 hover:bg-dark-600 text-neutral-200 rounded-lg font-semibold transition-colors" href="#estrutura">Ver la estructura</a>
 </div>
-<p class="text-xs text-neutral-500 mb-8">Sin registro · se abre directamente en el navegador · tu progreso, dudas y notas quedan solo en tu dispositivo.</p>
+<p class="text-xs text-neutral-500 mb-8">Sin registro Â· se abre directamente en el navegador Â· tu progreso, dudas y notas quedan solo en tu dispositivo.</p>
 <!-- CAPA do curso -->
 <div class="rounded-2xl border border-primary/30 bg-dark-900/40 p-1.5 sm:p-2 mb-8 overflow-hidden">
-<img alt="Arquitectura de Intención — el siguiente paso de la IA: la evolución de Coding a Vibe Coding, Agentic Engineering y, por último, la Arquitectura de Intención" class="w-full h-auto rounded-xl" height="941" loading="eager" src="../assets/img/capa.png" width="1672"/>
+<img alt="Arquitectura de IntenciÃ³n â€” el siguiente paso de la IA: la evoluciÃ³n de Coding a Vibe Coding, Agentic Engineering y, por Ãºltimo, la Arquitectura de IntenciÃ³n" class="w-full h-auto rounded-xl" height="941" loading="eager" src="../assets/img/capa.png" width="1672"/>
 </div>
 <!-- Medidor de progresso do curso -->
-<div aria-label="Progreso del curso" aria-valuemax="100" aria-valuemin="0" class="inema-bar-wrap" data-inema-meter="curso" role="progressbar" style="max-width:520px">
+<div aria-label="Progreso del curso" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-bar-wrap" data-ARCKHÉ-meter="curso" role="progressbar" style="max-width:520px">
 <div class="flex items-center justify-between text-sm text-neutral-400 mb-2">
 <span>Tu recorrido</span>
-<span><strong class="text-neutral-200" data-inema-meter-frac="">0 de 111</strong> secciones · <span data-inema-meter-pct="">0%</span></span>
+<span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 111</strong> secciones Â· <span data-ARCKHÉ-meter-pct="">0%</span></span>
 </div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
-<button class="mt-3 text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2" data-inema-journey-open="" type="button">continuar desde donde lo dejé →</button>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<button class="mt-3 text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2" data-ARCKHÉ-journey-open="" type="button">continuar desde donde lo dejÃ© â†’</button>
 </div>
 </div>
 </header>
@@ -279,91 +279,91 @@
 <div class="grid md:grid-cols-2 gap-6 items-start">
 <div class="space-y-4 text-neutral-300 leading-relaxed">
 <p>Este curso no trata de "aprender IA" ni de "programar". Trata de formar personas capaces de <strong class="text-neutral-100">construir soluciones con IA dentro de las empresas</strong>.</p>
-<p>La persona deja de preguntar <em class="text-neutral-400">"¿qué prompt uso?"</em> y empieza a preguntar <strong class="text-emerald-400">"¿qué sistema necesito construir para resolver este problema?"</strong></p>
-<p>Antes de crear agentes, prompts o automatizaciones, construyes la infraestructura mental, técnica y estratégica donde operará la IA. Una solución de IA no es un chatbot: es un <strong class="text-neutral-100">sistema vivo</strong>, con intención, identidad, canales, servicios, seguridad y evolución.</p>
+<p>La persona deja de preguntar <em class="text-neutral-400">"Â¿quÃ© prompt uso?"</em> y empieza a preguntar <strong class="text-emerald-400">"Â¿quÃ© sistema necesito construir para resolver este problema?"</strong></p>
+<p>Antes de crear agentes, prompts o automatizaciones, construyes la infraestructura mental, tÃ©cnica y estratÃ©gica donde operarÃ¡ la IA. Una soluciÃ³n de IA no es un chatbot: es un <strong class="text-neutral-100">sistema vivo</strong>, con intenciÃ³n, identidad, canales, servicios, seguridad y evoluciÃ³n.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h3 class="font-semibold text-neutral-200 mb-4">Sin arquitectura, la IA se convierte en ruido</h3>
 <ul class="space-y-3 text-sm text-neutral-300">
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">✗</span><span>La IA sin una intención clara se convierte en <strong>intento</strong>.</span></li>
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">✗</span><span>La IA sin contexto se convierte en <strong>suposición</strong>.</span></li>
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">✗</span><span>La IA sin reglas se convierte en <strong>riesgo</strong>.</span></li>
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">✗</span><span>La IA sin canal se convierte en <strong>herramienta aislada</strong>.</span></li>
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">✗</span><span>La IA sin medición se convierte en <strong>ilusión de productividad</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>La IA sin una intenciÃ³n clara se convierte en <strong>intento</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>La IA sin contexto se convierte en <strong>suposiciÃ³n</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>La IA sin reglas se convierte en <strong>riesgo</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>La IA sin canal se convierte en <strong>herramienta aislada</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>La IA sin mediciÃ³n se convierte en <strong>ilusiÃ³n de productividad</strong>.</span></li>
 </ul>
-<p class="mt-4 text-sm text-neutral-400">Con arquitectura, se convierte en <strong class="text-emerald-400">infraestructura de solución</strong>.</p>
+<p class="mt-4 text-sm text-neutral-400">Con arquitectura, se convierte en <strong class="text-emerald-400">infraestructura de soluciÃ³n</strong>.</p>
 </div>
 </div>
 </section>
-<!-- ===================== O METODO JARVIS (acrônimo) ===================== -->
+<!-- ===================== O METODO JARVIS (acrÃ´nimo) ===================== -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-dark-600">
-<span class="text-sm font-semibold text-primary tracking-wide uppercase">El método</span>
-<h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-3">J.A.R.V.I.S — seis pilares de una solución viva</h2>
-<p class="text-neutral-400 max-w-3xl mb-8">La metáfora de Jarvis: no un chatbot, sino una entidad operativa con alma, reglas, canales, servicios, agentes, herramientas y — sobre todo — una intención.</p>
+<span class="text-sm font-semibold text-primary tracking-wide uppercase">El mÃ©todo</span>
+<h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-3">J.A.R.V.I.S â€” seis pilares de una soluciÃ³n viva</h2>
+<p class="text-neutral-400 max-w-3xl mb-8">La metÃ¡fora de Jarvis: no un chatbot, sino una entidad operativa con alma, reglas, canales, servicios, agentes, herramientas y â€” sobre todo â€” una intenciÃ³n.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">J</span><h3 class="font-semibold">Recorrido de la intención</h3></div><p class="text-sm text-neutral-400">Toda solución empieza por la claridad: qué problema, para quién y qué resultado importa.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">A</span><h3 class="font-semibold">Arquitectura del sistema</h3></div><p class="text-sm text-neutral-400">Canales, servicios, agentes y habilidades organizados en torno al propósito.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">R</span><h3 class="font-semibold">Reglas y responsabilidades</h3></div><p class="text-sm text-neutral-400">Límites, permisos y barreras de seguridad: lo que el sistema puede y no puede hacer.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">V</span><h3 class="font-semibold">Validación de resultados</h3></div><p class="text-sm text-neutral-400">Medir lo que importa; si no, cualquier entrega parece un avance.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">I</span><h3 class="font-semibold">Integración con herramientas</h3></div><p class="text-sm text-neutral-400">Conectar el sistema con el mundo real: hojas de cálculo, CRM, APIs, mensajería.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">S</span><h3 class="font-semibold">Solución en evolución</h3></div><p class="text-sm text-neutral-400">El sistema aprende, se adapta y mejora con el tiempo.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">J</span><h3 class="font-semibold">Recorrido de la intenciÃ³n</h3></div><p class="text-sm text-neutral-400">Toda soluciÃ³n empieza por la claridad: quÃ© problema, para quiÃ©n y quÃ© resultado importa.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">A</span><h3 class="font-semibold">Arquitectura del sistema</h3></div><p class="text-sm text-neutral-400">Canales, servicios, agentes y habilidades organizados en torno al propÃ³sito.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">R</span><h3 class="font-semibold">Reglas y responsabilidades</h3></div><p class="text-sm text-neutral-400">LÃ­mites, permisos y barreras de seguridad: lo que el sistema puede y no puede hacer.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">V</span><h3 class="font-semibold">ValidaciÃ³n de resultados</h3></div><p class="text-sm text-neutral-400">Medir lo que importa; si no, cualquier entrega parece un avance.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">I</span><h3 class="font-semibold">IntegraciÃ³n con herramientas</h3></div><p class="text-sm text-neutral-400">Conectar el sistema con el mundo real: hojas de cÃ¡lculo, CRM, APIs, mensajerÃ­a.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">S</span><h3 class="font-semibold">SoluciÃ³n en evoluciÃ³n</h3></div><p class="text-sm text-neutral-400">El sistema aprende, se adapta y mejora con el tiempo.</p></div>
 </div>
 </section>
 <!-- ===================== ESTRUTURA / 3 DIAS ===================== -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-dark-600" id="estrutura">
-<span class="text-sm font-semibold text-neutral-400 tracking-wide uppercase">La estructura · 3 días · 18 módulos · 111 secciones</span>
+<span class="text-sm font-semibold text-neutral-400 tracking-wide uppercase">La estructura Â· 3 dÃ­as Â· 18 mÃ³dulos Â· 111 secciones</span>
 <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-8">El recorrido completo</h2>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 <!-- Dia 1 -->
 <a class="group bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl border border-emerald-500/30 p-6 transition-all hover:border-emerald-500/60" href="curso/trilha1/index.html">
 <div class="flex items-center justify-between mb-3">
-<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">DÍA 1</span>
-<span class="text-xs text-neutral-500">5 módulos · 32 secciones</span>
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">DÃA 1</span>
+<span class="text-xs text-neutral-500">5 mÃ³dulos Â· 32 secciones</span>
 </div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">🧱 Infraestructura y mentalidad</h3>
-<p class="text-sm text-neutral-400 mb-4">El cambio de mentalidad y el mapa del terreno: carpetas, terminal, control de versiones, publicación y los canales por los que el sistema se comunica con el mundo.</p>
+<h3 class="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">ðŸ§± Infraestructura y mentalidad</h3>
+<p class="text-sm text-neutral-400 mb-4">El cambio de mentalidad y el mapa del terreno: carpetas, terminal, control de versiones, publicaciÃ³n y los canales por los que el sistema se comunica con el mundo.</p>
 <ul class="space-y-1.5 text-sm text-neutral-300">
-<li class="flex gap-2"><span class="text-emerald-400">·</span>El Cambio: de operador a arquitecto</li>
-<li class="flex gap-2"><span class="text-emerald-400">·</span>La metáfora de Jarvis</li>
-<li class="flex gap-2"><span class="text-emerald-400">·</span>Carpetas, terminal y control de versiones</li>
-<li class="flex gap-2"><span class="text-emerald-400">·</span>Publicar en el mundo (hosting, VPS, deploy)</li>
-<li class="flex gap-2"><span class="text-emerald-400">·</span>Canales de entrada y salida</li>
+<li class="flex gap-2"><span class="text-emerald-400">Â·</span>El Cambio: de operador a arquitecto</li>
+<li class="flex gap-2"><span class="text-emerald-400">Â·</span>La metÃ¡fora de Jarvis</li>
+<li class="flex gap-2"><span class="text-emerald-400">Â·</span>Carpetas, terminal y control de versiones</li>
+<li class="flex gap-2"><span class="text-emerald-400">Â·</span>Publicar en el mundo (hosting, VPS, deploy)</li>
+<li class="flex gap-2"><span class="text-emerald-400">Â·</span>Canales de entrada y salida</li>
 </ul>
-<span class="inline-flex items-center gap-1 mt-5 text-emerald-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir el Día 1 <span aria-hidden="true">→</span></span>
+<span class="inline-flex items-center gap-1 mt-5 text-emerald-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir el DÃ­a 1 <span aria-hidden="true">â†’</span></span>
 </a>
 <!-- Dia 2 -->
 <a class="group bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl border border-blue-500/30 p-6 transition-all hover:border-blue-500/60" href="curso/trilha2/index.html">
 <div class="flex items-center justify-between mb-3">
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full">DÍA 2</span>
-<span class="text-xs text-neutral-500">7 módulos · 43 secciones</span>
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full">DÃA 2</span>
+<span class="text-xs text-neutral-500">7 mÃ³dulos Â· 43 secciones</span>
 </div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🤖 Construcción de Jarvis</h3>
-<p class="text-sm text-neutral-400 mb-4">La construcción del «alma»: identidad, reglas, servicios, agentes, habilidades, memoria, muros de seguridad y herramientas.</p>
+<h3 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">ðŸ¤– ConstrucciÃ³n de Jarvis</h3>
+<p class="text-sm text-neutral-400 mb-4">La construcciÃ³n del Â«almaÂ»: identidad, reglas, servicios, agentes, habilidades, memoria, muros de seguridad y herramientas.</p>
 <ul class="space-y-1.5 text-sm text-neutral-300">
-<li class="flex gap-2"><span class="text-blue-400">·</span>La esencia de Jarvis (identidad y límites)</li>
-<li class="flex gap-2"><span class="text-blue-400">·</span>Servicios internos y agentes</li>
-<li class="flex gap-2"><span class="text-blue-400">·</span>Habilidades y memoria</li>
-<li class="flex gap-2"><span class="text-blue-400">·</span>Muros de seguridad</li>
-<li class="flex gap-2"><span class="text-blue-400">·</span>Herramientas e integraciones</li>
+<li class="flex gap-2"><span class="text-blue-400">Â·</span>La esencia de Jarvis (identidad y lÃ­mites)</li>
+<li class="flex gap-2"><span class="text-blue-400">Â·</span>Servicios internos y agentes</li>
+<li class="flex gap-2"><span class="text-blue-400">Â·</span>Habilidades y memoria</li>
+<li class="flex gap-2"><span class="text-blue-400">Â·</span>Muros de seguridad</li>
+<li class="flex gap-2"><span class="text-blue-400">Â·</span>Herramientas e integraciones</li>
 </ul>
-<span class="inline-flex items-center gap-1 mt-5 text-blue-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir el Día 2 <span aria-hidden="true">→</span></span>
+<span class="inline-flex items-center gap-1 mt-5 text-blue-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir el DÃ­a 2 <span aria-hidden="true">â†’</span></span>
 </a>
 <!-- Dia 3 -->
 <a class="group bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl border border-purple-500/30 p-6 transition-all hover:border-purple-500/60" href="curso/trilha3/index.html">
 <div class="flex items-center justify-between mb-3">
-<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full">DÍA 3</span>
-<span class="text-xs text-neutral-500">6 módulos · 36 secciones</span>
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full">DÃA 3</span>
+<span class="text-xs text-neutral-500">6 mÃ³dulos Â· 36 secciones</span>
 </div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">🎯 Solución real en la empresa</h3>
-<p class="text-sm text-neutral-400 mb-4">Del concepto al prototipo: elegir un problema, definir la intención, armar el flujo, medir el resultado y presentar la solución.</p>
+<h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">ðŸŽ¯ SoluciÃ³n real en la empresa</h3>
+<p class="text-sm text-neutral-400 mb-4">Del concepto al prototipo: elegir un problema, definir la intenciÃ³n, armar el flujo, medir el resultado y presentar la soluciÃ³n.</p>
 <ul class="space-y-1.5 text-sm text-neutral-300">
-<li class="flex gap-2"><span class="text-purple-400">·</span>La intención en el centro</li>
-<li class="flex gap-2"><span class="text-purple-400">·</span>Mapear el problema en la empresa</li>
-<li class="flex gap-2"><span class="text-purple-400">·</span>Diseñar la arquitectura de la solución</li>
-<li class="flex gap-2"><span class="text-purple-400">·</span>Prototipo funcional y medición</li>
-<li class="flex gap-2"><span class="text-purple-400">·</span>Evolución y presentación</li>
+<li class="flex gap-2"><span class="text-purple-400">Â·</span>La intenciÃ³n en el centro</li>
+<li class="flex gap-2"><span class="text-purple-400">Â·</span>Mapear el problema en la empresa</li>
+<li class="flex gap-2"><span class="text-purple-400">Â·</span>DiseÃ±ar la arquitectura de la soluciÃ³n</li>
+<li class="flex gap-2"><span class="text-purple-400">Â·</span>Prototipo funcional y mediciÃ³n</li>
+<li class="flex gap-2"><span class="text-purple-400">Â·</span>EvoluciÃ³n y presentaciÃ³n</li>
 </ul>
-<span class="inline-flex items-center gap-1 mt-5 text-purple-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir el Día 3 <span aria-hidden="true">→</span></span>
+<span class="inline-flex items-center gap-1 mt-5 text-purple-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir el DÃ­a 3 <span aria-hidden="true">â†’</span></span>
 </a>
 </div>
 </section>
@@ -371,23 +371,23 @@
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-dark-600">
 <div class="grid md:grid-cols-2 gap-8">
 <div>
-<h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span>🧭</span> Para quién es</h2>
-<p class="text-neutral-400 mb-4 text-sm leading-relaxed">Personas comunes dentro de empresas que quieren crear soluciones con IA — sin convertirse en programadores tradicionales ni competir con ingenieros de software.</p>
-<p class="text-neutral-300 text-sm leading-relaxed">El arquitecto de intención observa una empresa y pregunta: ¿dónde hay repetición? ¿Dónde se pierde tiempo? ¿Dónde está desorganizada la información? ¿Dónde son lentas las decisiones? <strong class="text-neutral-100">¿Dónde puede la IA multiplicar los resultados?</strong></p>
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span>ðŸ§­</span> Para quiÃ©n es</h2>
+<p class="text-neutral-400 mb-4 text-sm leading-relaxed">Personas comunes dentro de empresas que quieren crear soluciones con IA â€” sin convertirse en programadores tradicionales ni competir con ingenieros de software.</p>
+<p class="text-neutral-300 text-sm leading-relaxed">El arquitecto de intenciÃ³n observa una empresa y pregunta: Â¿dÃ³nde hay repeticiÃ³n? Â¿DÃ³nde se pierde tiempo? Â¿DÃ³nde estÃ¡ desorganizada la informaciÃ³n? Â¿DÃ³nde son lentas las decisiones? <strong class="text-neutral-100">Â¿DÃ³nde puede la IA multiplicar los resultados?</strong></p>
 </div>
 <div>
-<h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span>✅</span> Lo que sales sabiendo hacer</h2>
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span>âœ…</span> Lo que sales sabiendo hacer</h2>
 <ul class="grid sm:grid-cols-2 gap-2.5 text-sm text-neutral-300">
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Entender un problema real</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Mapear una intención</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Estructurar el contexto</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Crear el alma de un Jarvis</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Definir canales de I/O</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Organizar agentes y servicios</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Elegir herramientas</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Crear reglas de seguridad</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Medir el resultado</li>
-<li class="flex gap-2"><span class="text-emerald-400">✓</span>Mejorar continuamente</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Entender un problema real</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Mapear una intenciÃ³n</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Estructurar el contexto</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Crear el alma de un Jarvis</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Definir canales de I/O</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Organizar agentes y servicios</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Elegir herramientas</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Crear reglas de seguridad</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Medir el resultado</li>
+<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Mejorar continuamente</li>
 </ul>
 </div>
 </div>
@@ -397,23 +397,23 @@
 <div class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl border border-emerald-500/30 p-8 sm:p-10 text-center">
 <h2 class="text-2xl sm:text-3xl font-bold mb-4">El futuro no pertenece a quien sabe pedir mejor.</h2>
 <p class="text-lg text-neutral-300 mb-2">Le pertenece a quien sabe <strong class="text-emerald-400">estructurar mejor</strong>.</p>
-<p class="text-neutral-400 max-w-2xl mx-auto mb-8 text-sm">Un prompt no basta. Una herramienta no basta. Un agente no basta. Lo que marca la diferencia es la arquitectura, y en el centro de la arquitectura está la intención.</p>
+<p class="text-neutral-400 max-w-2xl mx-auto mb-8 text-sm">Un prompt no basta. Una herramienta no basta. Un agente no basta. Lo que marca la diferencia es la arquitectura, y en el centro de la arquitectura estÃ¡ la intenciÃ³n.</p>
 <div class="flex flex-wrap justify-center gap-3">
-<a class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors" href="curso/trilha1/index.html">Empezar ahora con el Día 1 <span aria-hidden="true">→</span></a>
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors" href="curso/trilha1/index.html">Empezar ahora con el DÃ­a 1 <span aria-hidden="true">â†’</span></a>
 </div>
 </div>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p><strong class="text-neutral-300">Arquitectura de Intención de la IA</strong> — Método JARVIS · curso presencial de 3 días</p>
-<p class="mt-1">INEMA.CLUB · 2026 · tu progreso solo se guarda en este navegador</p>
+<p><strong class="text-neutral-300">Arquitectura de IntenciÃ³n de la IA</strong> â€” MÃ©todo JARVIS Â· curso presencial de 3 dÃ­as</p>
+<p class="mt-1">ARCKHÉ AI Â· 2026 Â· tu progreso solo se guarda en este navegador</p>
 </div>
 </footer>
 <!-- learn.js + init -->
 <script src="../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>
