@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>MÃ³dulo 1.5 Â· Canais de Entrada e SaÃ­da | Arquitetura de IntenÃ§Ã£o da IA</title>
+<title>MêÂ³dulo 1.5 êÂ· Canais de Entrada e SaêÂ­da | Arquitetura de IntenêÂ§êÂ£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -127,18 +127,18 @@
     html:not(.dark) .toc-link.is-active { color: #059669; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteêÂºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenêÂ§êÂ£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
@@ -147,46 +147,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="AparêÂªncia e leitura" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Tema" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Escuro</button>
+<button data-ARCKHê-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHê-set-theme="sepia" type="button">SêÂ©pia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHê-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">Sistema</button>
+<button data-ARCKHê-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHê-set-linewidth="68" type="button">MêÂ©dio</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
+<div aria-label="Entrelinha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHê-set-leading="1.7" type="button">ConfortêÂ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="êâmbar" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -197,20 +197,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-emerald-400" href="../../index.html">InÃ­cio</a><span>/</span>
+<a class="hover:text-emerald-400" href="../../index.html">InêÂ­cio</a><span>/</span>
 <a class="hover:text-emerald-400" href="index.html">Dia 1</a><span>/</span>
-<span class="text-emerald-400">MÃ³dulo 1.5</span>
+<span class="text-emerald-400">MêÂ³dulo 1.5</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 1.5</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸšª Canais de Entrada e SaÃ­da</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Por onde o mundo fala com o Jarvis e por onde ele responde. O canal Ã© a porta de entrada da intenÃ§Ã£o: quando o cliente manda mensagem, traz um desejo â€” comprar, resolver, agendar, reclamar. O sistema captura, interpreta o contexto e aciona o serviÃ§o certo. Entrada e saÃ­da, sempre mÃ£o dupla.</p>
-<!-- SVG: vÃ¡rios canais (fan-in) -> Jarvis interpreta intenÃ§Ã£o -> resposta de volta (fan-out) -->
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MêâDULO 1.5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸Å¡Âª Canais de Entrada e SaêÂ­da</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Por onde o mundo fala com o Jarvis e por onde ele responde. O canal êÂ© a porta de entrada da intenêÂ§êÂ£o: quando o cliente manda mensagem, traz um desejo ê¢â¬â comprar, resolver, agendar, reclamar. O sistema captura, interpreta o contexto e aciona o serviêÂ§o certo. Entrada e saêÂ­da, sempre mêÂ£o dupla.</p>
+<!-- SVG: vêÂ¡rios canais (fan-in) -> Jarvis interpreta intenêÂ§êÂ£o -> resposta de volta (fan-out) -->
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="VÃ¡rios canais â€” WhatsApp, Telegram, site, e-mail, voz e API â€” convergem para uma caixa central onde o Jarvis interpreta a intenÃ§Ã£o, e a resposta volta pelos mesmos canais" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<svg aria-label="VêÂ¡rios canais ê¢â¬â WhatsApp, Telegram, site, e-mail, voz e API ê¢â¬â convergem para uma caixa central onde o Jarvis interpreta a intenêÂ§êÂ£o, e a resposta volta pelos mesmos canais" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
 <lineargradient id="m15-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
 <filter height="180%" id="m15-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -219,7 +219,7 @@
 <marker id="m15-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#m15-grid)" height="250" width="1000" x="0" y="0"></rect>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" x="44" y="28">Canais (a intenÃ§Ã£o entra)</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" x="44" y="28">Canais (a intenêÂ§êÂ£o entra)</text>
 <text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="end" x="956" y="28">A resposta volta pelo mesmo canal</text>
 <!-- canais (esquerda) -> Jarvis : fan-in -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
@@ -239,202 +239,202 @@
 </g>
 <!-- caixas de canal (entrada, esquerda) -->
 <g font-family="Inter,sans-serif" font-size="12" font-weight="600">
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="42"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="62">ðŸ’¬ WhatsApp</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="78"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="98">âœˆï¸ Telegram</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="114"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="134">ðŸŒ site Â· chat</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="150"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="170">ðŸ“§ e-mail</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="186"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="206">ðŸŽ™ï¸ voz Â· API</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="42"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="62">ê°Å¸âÂ¬ WhatsApp</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="78"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="98">ê¢ÅËê¯Â¸Â Telegram</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="114"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="134">ê°Å¸ÅÂ site êÂ· chat</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="150"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="170">ê°Å¸âÂ§ e-mail</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="186"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="206">ê°Å¸Å½â¢ê¯Â¸Â voz êÂ· API</text></g>
 </g>
-<!-- caixa central: Jarvis interpreta intenÃ§Ã£o (foco com glow) -->
+<!-- caixa central: Jarvis interpreta intenêÂ§êÂ£o (foco com glow) -->
 <g filter="url(#m15-glow)"><rect fill="#0e2018" height="66" rx="15" stroke="url(#m15-grad)" stroke-width="2.5" width="160" x="420" y="92"></rect></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="17" font-weight="700" text-anchor="middle" x="500" y="120">Jarvis</text>
-<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="500" y="140">interpreta a intenÃ§Ã£o</text>
-<!-- caixas de canal (saÃ­da, direita) -->
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="500" y="140">interpreta a intenêÂ§êÂ£o</text>
+<!-- caixas de canal (saêÂ­da, direita) -->
 <g font-family="Inter,sans-serif" font-size="12" font-weight="600">
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="42"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="62">ðŸ’¬ WhatsApp</text>
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="78"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="98">âœˆï¸ Telegram</text>
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="114"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="134">ðŸŒ site Â· chat</text>
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="150"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="170">ðŸ“§ e-mail</text>
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="186"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="206">ðŸŽ™ï¸ voz Â· API</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="42"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="62">ê°Å¸âÂ¬ WhatsApp</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="78"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="98">ê¢ÅËê¯Â¸Â Telegram</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="114"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="134">ê°Å¸ÅÂ site êÂ· chat</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="150"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="170">ê°Å¸âÂ§ e-mail</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="186"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="206">ê°Å¸Å½â¢ê¯Â¸Â voz êÂ· API</text>
 </g>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="236">O canal Ã© de mÃ£o dupla: por ele entra a intenÃ§Ã£o e por ele sai a resposta.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="236">O canal êÂ© de mêÂ£o dupla: por ele entra a intenêÂ§êÂ£o e por ele sai a resposta.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">TêÂ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~45</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">BÃ¡sico</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">BêÂ¡sico</div><div class="text-xs text-neutral-400">NêÂ­vel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Conceito</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do mÃ³dulo 1.5" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:1-5" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Progresso do mêÂ³dulo 1.5" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:1-5" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mêÂ³dulo</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 de 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-1" data-ARCKHÉ-track="1" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-1" data-ARCKHê-track="1" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸšª A porta da intenÃ§Ã£o</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å¡Âª A porta da intenêÂ§êÂ£o</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t1-p1">O <strong class="text-emerald-400">canal</strong> Ã© por onde o mundo fala com o Jarvis e por onde ele responde. NÃ£o Ã© detalhe tÃ©cnico: Ã© a <strong class="text-emerald-400">porta de entrada da intenÃ§Ã£o</strong>. Quando alguÃ©m abre uma conversa, nÃ£o estÃ¡ sÃ³ mandando texto â€” estÃ¡ trazendo um desejo (comprar, resolver, agendar, reclamar). Sem canal, o sistema mais inteligente do mundo Ã© uma ilha: ninguÃ©m entra, ninguÃ©m Ã© atendido.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t1-p1">O <strong class="text-emerald-400">canal</strong> êÂ© por onde o mundo fala com o Jarvis e por onde ele responde. NêÂ£o êÂ© detalhe têÂ©cnico: êÂ© a <strong class="text-emerald-400">porta de entrada da intenêÂ§êÂ£o</strong>. Quando alguêÂ©m abre uma conversa, nêÂ£o estêÂ¡ sêÂ³ mandando texto ê¢â¬â estêÂ¡ trazendo um desejo (comprar, resolver, agendar, reclamar). Sem canal, o sistema mais inteligente do mundo êÂ© uma ilha: ninguêÂ©m entra, ninguêÂ©m êÂ© atendido.</p>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">ðŸšª</span> A porta antes do quarto</h3>
-<p class="text-neutral-300">Pense numa loja excelente sem porta: produtos Ã³timos, ninguÃ©m entra. O canal Ã© a porta. Ã‰ o primeiro contato com a intenÃ§Ã£o do cliente â€” e a qualidade dessa porta define se a intenÃ§Ã£o sequer chega ao sistema.</p>
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å¡Âª</span> A porta antes do quarto</h3>
+<p class="text-neutral-300">Pense numa loja excelente sem porta: produtos êÂ³timos, ninguêÂ©m entra. O canal êÂ© a porta. êâ° o primeiro contato com a intenêÂ§êÂ£o do cliente ê¢â¬â e a qualidade dessa porta define se a intenêÂ§êÂ£o sequer chega ao sistema.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Antes de escolher tecnologia, responda: por onde meu cliente jÃ¡ fala comigo hoje? Comece o canal por aÃ­. A melhor porta Ã© a que o cliente jÃ¡ sabe abrir.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Antes de escolher tecnologia, responda: por onde meu cliente jêÂ¡ fala comigo hoje? Comece o canal por aêÂ­. A melhor porta êÂ© a que o cliente jêÂ¡ sabe abrir.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Canal</div><div class="text-xs text-neutral-400">a porta do sistema</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Traz</div><div class="text-xs text-neutral-400">a intenÃ§Ã£o, nÃ£o sÃ³ texto</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Traz</div><div class="text-xs text-neutral-400">a intenêÂ§êÂ£o, nêÂ£o sêÂ³ texto</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Sem canal</div><div class="text-xs text-neutral-400">o sistema vira ilha</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Entrada e saÃ­da</div><div class="text-xs text-neutral-400">a porta abre nos dois sentidos</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Entrada e saêÂ­da</div><div class="text-xs text-neutral-400">a porta abre nos dois sentidos</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-2" data-ARCKHÉ-track="1" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-2" data-ARCKHê-track="1" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸ’¬ WhatsApp, Telegram e chat</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ¬ WhatsApp, Telegram e chat</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t2-p1">Os canais <strong class="text-emerald-400">conversacionais</strong> sÃ£o os mais usados em empresas: WhatsApp, Telegram e o chat no prÃ³prio site. A vantagem Ã© simples e poderosa â€” <strong class="text-emerald-400">o cliente jÃ¡ estÃ¡ lÃ¡</strong>. Encontrar o cliente no canal dele reduz o atrito a quase zero: ele nÃ£o precisa baixar nada, criar conta nem aprender uma ferramenta nova.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t2-p1">Os canais <strong class="text-emerald-400">conversacionais</strong> sêÂ£o os mais usados em empresas: WhatsApp, Telegram e o chat no prêÂ³prio site. A vantagem êÂ© simples e poderosa ê¢â¬â <strong class="text-emerald-400">o cliente jêÂ¡ estêÂ¡ lêÂ¡</strong>. Encontrar o cliente no canal dele reduz o atrito a quase zero: ele nêÂ£o precisa baixar nada, criar conta nem aprender uma ferramenta nova.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">âœ“ Bom uso do canal conversacional</h4>
+<h4 class="font-bold text-emerald-400 mb-4">ê¢Åâ Bom uso do canal conversacional</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Atender onde o cliente jÃ¡ conversa</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Responder rÃ¡pido, em linguagem natural</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Lembrar o contexto da conversa anterior</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Passar para um humano quando precisa</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Atender onde o cliente jêÂ¡ conversa</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Responder rêÂ¡pido, em linguagem natural</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Lembrar o contexto da conversa anterior</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Passar para um humano quando precisa</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Erros comuns</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Erros comuns</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>ForÃ§ar um canal que o cliente nÃ£o usa</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Respostas robÃ³ticas e fora de contexto</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Esquecer tudo a cada nova mensagem</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Prender o cliente sem saÃ­da para humano</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>ForêÂ§ar um canal que o cliente nêÂ£o usa</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Respostas robêÂ³ticas e fora de contexto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Esquecer tudo a cada nova mensagem</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Prender o cliente sem saêÂ­da para humano</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">No Brasil, o WhatsApp costuma ser a porta de maior trÃ¡fego. Mas "mais comum" nÃ£o Ã© "sempre o melhor": um cliente B2B pode preferir e-mail. O canal segue o cliente, nÃ£o a moda.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">No Brasil, o WhatsApp costuma ser a porta de maior trêÂ¡fego. Mas "mais comum" nêÂ£o êÂ© "sempre o melhor": um cliente B2B pode preferir e-mail. O canal segue o cliente, nêÂ£o a moda.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">WhatsApp</div><div class="text-xs text-neutral-400">maior trÃ¡fego (BR)</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">WhatsApp</div><div class="text-xs text-neutral-400">maior trêÂ¡fego (BR)</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Telegram</div><div class="text-xs text-neutral-400">comunidades, bots</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Chat no site</div><div class="text-xs text-neutral-400">visitante jÃ¡ interessado</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Regra</div><div class="text-xs text-neutral-400">onde o cliente estÃ¡</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Chat no site</div><div class="text-xs text-neutral-400">visitante jêÂ¡ interessado</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Regra</div><div class="text-xs text-neutral-400">onde o cliente estêÂ¡</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-3" data-ARCKHÉ-track="1" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-3" data-ARCKHê-track="1" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸ“§ E-mail, painel, voz e API</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ§ E-mail, painel, voz e API</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t3-p1">O chat Ã© sÃ³ uma das portas. O Jarvis tambÃ©m recebe e responde por <strong class="text-emerald-400">e-mail, painel interno, aplicativo, voz, formulÃ¡rio ou API</strong>. Cada canal serve a um <strong class="text-emerald-400">contexto</strong> diferente â€” e escolher o canal certo faz parte do desenho da soluÃ§Ã£o, nÃ£o Ã© decisÃ£o de Ãºltima hora.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t3-p1">O chat êÂ© sêÂ³ uma das portas. O Jarvis tambêÂ©m recebe e responde por <strong class="text-emerald-400">e-mail, painel interno, aplicativo, voz, formulêÂ¡rio ou API</strong>. Cada canal serve a um <strong class="text-emerald-400">contexto</strong> diferente ê¢â¬â e escolher o canal certo faz parte do desenho da soluêÂ§êÂ£o, nêÂ£o êÂ© decisêÂ£o de êÂºltima hora.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“§</div><h4 class="font-semibold text-neutral-100 mb-1">E-mail</h4><p class="text-xs text-neutral-400">Assuntos formais, anexos, registro com histÃ³rico.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ–¥ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Painel interno</h4><p class="text-xs text-neutral-400">Equipe operando o sistema por dentro da empresa.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“±</div><h4 class="font-semibold text-neutral-100 mb-1">App / formulÃ¡rio</h4><p class="text-xs text-neutral-400">Entrada estruturada, campos definidos, dados limpos.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸŽ™ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Voz</h4><p class="text-xs text-neutral-400">LigaÃ§Ã£o ou Ã¡udio: mÃ£os ocupadas, atendimento por telefone.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ”Œ</div><h4 class="font-semibold text-neutral-100 mb-1">API</h4><p class="text-xs text-neutral-400">Outro sistema falando com o Jarvis, sem humano no meio.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ§­</div><h4 class="font-semibold text-neutral-100 mb-1">Cada um, seu contexto</h4><p class="text-xs text-neutral-400">O canal certo depende de quem usa e do que precisa.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÂ§</div><h4 class="font-semibold text-neutral-100 mb-1">E-mail</h4><p class="text-xs text-neutral-400">Assuntos formais, anexos, registro com histêÂ³rico.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÂ¥ê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">Painel interno</h4><p class="text-xs text-neutral-400">Equipe operando o sistema por dentro da empresa.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÂ±</div><h4 class="font-semibold text-neutral-100 mb-1">App / formulêÂ¡rio</h4><p class="text-xs text-neutral-400">Entrada estruturada, campos definidos, dados limpos.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸Å½â¢ê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">Voz</h4><p class="text-xs text-neutral-400">LigaêÂ§êÂ£o ou êÂ¡udio: mêÂ£os ocupadas, atendimento por telefone.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÅ</div><h4 class="font-semibold text-neutral-100 mb-1">API</h4><p class="text-xs text-neutral-400">Outro sistema falando com o Jarvis, sem humano no meio.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸Â§Â­</div><h4 class="font-semibold text-neutral-100 mb-1">Cada um, seu contexto</h4><p class="text-xs text-neutral-400">O canal certo depende de quem usa e do que precisa.</p></div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§©</span> Multicanal, uma sÃ³ inteligÃªncia</h3>
-<p class="text-neutral-300 text-sm">O segredo: vÃ¡rios canais na frente, <strong class="text-neutral-100">um Ãºnico cÃ©rebro atrÃ¡s</strong>. WhatsApp, e-mail e API podem ser portas diferentes para o mesmo Jarvis â€” quem decide Ã© a intenÃ§Ã£o, nÃ£o o canal. VocÃª nÃ£o constrÃ³i cinco sistemas; constrÃ³i um, com cinco portas.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â©</span> Multicanal, uma sêÂ³ inteligêÂªncia</h3>
+<p class="text-neutral-300 text-sm">O segredo: vêÂ¡rios canais na frente, <strong class="text-neutral-100">um êÂºnico cêÂ©rebro atrêÂ¡s</strong>. WhatsApp, e-mail e API podem ser portas diferentes para o mesmo Jarvis ê¢â¬â quem decide êÂ© a intenêÂ§êÂ£o, nêÂ£o o canal. VocêÂª nêÂ£o constrêÂ³i cinco sistemas; constrêÂ³i um, com cinco portas.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Multicanal</div><div class="text-xs text-neutral-400">vÃ¡rias portas</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Um cÃ©rebro</div><div class="text-xs text-neutral-400">a mesma inteligÃªncia</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Multicanal</div><div class="text-xs text-neutral-400">vêÂ¡rias portas</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Um cêÂ©rebro</div><div class="text-xs text-neutral-400">a mesma inteligêÂªncia</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Contexto</div><div class="text-xs text-neutral-400">define o canal</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Desenho</div><div class="text-xs text-neutral-400">escolha consciente</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-4" data-ARCKHÉ-track="1" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-4" data-ARCKHê-track="1" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸŽ¯ Capturar a intenÃ§Ã£o</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å½Â¯ Capturar a intenêÂ§êÂ£o</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t4-p1">Quando o cliente manda uma mensagem, ele nÃ£o estÃ¡ sÃ³ escrevendo texto: estÃ¡ trazendo uma <strong class="text-emerald-400">intenÃ§Ã£o</strong>. "Quanto custa?" Ã© vontade de comprar. "NÃ£o chegou" Ã© um problema para resolver. "Tem horÃ¡rio amanhÃ£?" Ã© um agendamento. O sistema precisa capturar o que o cliente <strong class="text-emerald-400">quer de verdade</strong> â€” nÃ£o sÃ³ as palavras que ele digitou.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t4-p1">Quando o cliente manda uma mensagem, ele nêÂ£o estêÂ¡ sêÂ³ escrevendo texto: estêÂ¡ trazendo uma <strong class="text-emerald-400">intenêÂ§êÂ£o</strong>. "Quanto custa?" êÂ© vontade de comprar. "NêÂ£o chegou" êÂ© um problema para resolver. "Tem horêÂ¡rio amanhêÂ£?" êÂ© um agendamento. O sistema precisa capturar o que o cliente <strong class="text-emerald-400">quer de verdade</strong> ê¢â¬â nêÂ£o sêÂ³ as palavras que ele digitou.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Da mensagem Ã  intenÃ§Ã£o</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Da mensagem êÂ  intenêÂ§êÂ£o</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-2 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div><span class="text-neutral-500">cliente:</span> "quanto custa o plano?"      <span class="text-emerald-400">â†’ intenÃ§Ã£o: comprar</span></div>
-<div><span class="text-neutral-500">cliente:</span> "meu pedido nÃ£o chegou"      <span class="text-emerald-400">â†’ intenÃ§Ã£o: resolver</span></div>
-<div><span class="text-neutral-500">cliente:</span> "tem horÃ¡rio amanhÃ£?"        <span class="text-emerald-400">â†’ intenÃ§Ã£o: agendar</span></div>
-<div><span class="text-neutral-500">cliente:</span> "isso Ã© um absurdo"          <span class="text-emerald-400">â†’ intenÃ§Ã£o: reclamar</span></div>
+<div><span class="text-neutral-500">cliente:</span> "quanto custa o plano?"      <span class="text-emerald-400">ê¢â â intenêÂ§êÂ£o: comprar</span></div>
+<div><span class="text-neutral-500">cliente:</span> "meu pedido nêÂ£o chegou"      <span class="text-emerald-400">ê¢â â intenêÂ§êÂ£o: resolver</span></div>
+<div><span class="text-neutral-500">cliente:</span> "tem horêÂ¡rio amanhêÂ£?"        <span class="text-emerald-400">ê¢â â intenêÂ§êÂ£o: agendar</span></div>
+<div><span class="text-neutral-500">cliente:</span> "isso êÂ© um absurdo"          <span class="text-emerald-400">ê¢â â intenêÂ§êÂ£o: reclamar</span></div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">As palavras mudam; a intenÃ§Ã£o por trÃ¡s Ã© o que o sistema precisa ler.</p>
+<p class="text-xs text-neutral-500 mt-3">As palavras mudam; a intenêÂ§êÂ£o por trêÂ¡s êÂ© o que o sistema precisa ler.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Liste as 5 a 8 intenÃ§Ãµes mais comuns dos seus clientes (comprar, resolver, agendar, reclamar, perguntar...). Esse pequeno mapa de intenÃ§Ãµes Ã© a base do roteamento que vocÃª vÃª no prÃ³ximo tÃ³pico.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Liste as 5 a 8 intenêÂ§êÂµes mais comuns dos seus clientes (comprar, resolver, agendar, reclamar, perguntar...). Esse pequeno mapa de intenêÂ§êÂµes êÂ© a base do roteamento que vocêÂª vêÂª no prêÂ³ximo têÂ³pico.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Comprar</div><div class="text-xs text-neutral-400">preÃ§o, plano, produto</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Comprar</div><div class="text-xs text-neutral-400">preêÂ§o, plano, produto</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Resolver</div><div class="text-xs text-neutral-400">algo deu errado</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Agendar</div><div class="text-xs text-neutral-400">marcar horÃ¡rio</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Reclamar</div><div class="text-xs text-neutral-400">insatisfaÃ§Ã£o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Agendar</div><div class="text-xs text-neutral-400">marcar horêÂ¡rio</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Reclamar</div><div class="text-xs text-neutral-400">insatisfaêÂ§êÂ£o</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-5" data-ARCKHÉ-track="1" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-5" data-ARCKHê-track="1" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸ§­ Interpretar e rotear</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Â§Â­ Interpretar e rotear</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t5-p1">Capturada a intenÃ§Ã£o, o sistema <strong class="text-emerald-400">interpreta o contexto</strong> e aciona o <strong class="text-emerald-400">serviÃ§o certo</strong>: vendas, suporte, agendamento, financeiro. Essa Ã© a inteligÃªncia de <strong class="text-emerald-400">roteamento</strong> â€” a ponte que liga o canal aos serviÃ§os internos. Ã‰ o coraÃ§Ã£o do fluxo: sem ele, toda mensagem cairia no mesmo lugar e nada seria resolvido bem.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t5-p1">Capturada a intenêÂ§êÂ£o, o sistema <strong class="text-emerald-400">interpreta o contexto</strong> e aciona o <strong class="text-emerald-400">serviêÂ§o certo</strong>: vendas, suporte, agendamento, financeiro. Essa êÂ© a inteligêÂªncia de <strong class="text-emerald-400">roteamento</strong> ê¢â¬â a ponte que liga o canal aos serviêÂ§os internos. êâ° o coraêÂ§êÂ£o do fluxo: sem ele, toda mensagem cairia no mesmo lugar e nada seria resolvido bem.</p>
 <!-- Timeline: a jornada de uma mensagem -->
 <div class="bg-dark-800/40 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">A jornada de uma mensagem</h3>
@@ -445,15 +445,15 @@
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Captura a intenÃ§Ã£o</h4><p class="text-neutral-300 text-sm">O sistema lÃª: isso Ã© vontade de comprar.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Captura a intenêÂ§êÂ£o</h4><p class="text-neutral-300 text-sm">O sistema lêÂª: isso êÂ© vontade de comprar.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Interpreta o contexto</h4><p class="text-neutral-300 text-sm">Cliente novo? Qual plano faz sentido? JÃ¡ falou antes?</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Interpreta o contexto</h4><p class="text-neutral-300 text-sm">Cliente novo? Qual plano faz sentido? JêÂ¡ falou antes?</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Aciona o serviÃ§o certo</h4><p class="text-neutral-300 text-sm">Roteia para o serviÃ§o de vendas, nÃ£o para o suporte.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Aciona o serviêÂ§o certo</h4><p class="text-neutral-300 text-sm">Roteia para o serviêÂ§o de vendas, nêÂ£o para o suporte.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">5</span></div>
@@ -462,35 +462,35 @@
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">O roteamento erra quando confunde intenÃ§Ãµes parecidas ("cancelar" pode ser dÃºvida ou churn). Quando errar, registre â€” o mapa de intenÃ§Ãµes do tÃ³pico anterior Ã© o que vocÃª refina para acertar mais.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">O roteamento erra quando confunde intenêÂ§êÂµes parecidas ("cancelar" pode ser dêÂºvida ou churn). Quando errar, registre ê¢â¬â o mapa de intenêÂ§êÂµes do têÂ³pico anterior êÂ© o que vocêÂª refina para acertar mais.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Interpretar</div><div class="text-xs text-neutral-400">ler o contexto</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Rotear</div><div class="text-xs text-neutral-400">intenÃ§Ã£o â†’ serviÃ§o</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Ponte</div><div class="text-xs text-neutral-400">canal â†” serviÃ§os</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">CoraÃ§Ã£o</div><div class="text-xs text-neutral-400">o centro do fluxo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Rotear</div><div class="text-xs text-neutral-400">intenêÂ§êÂ£o ê¢â â serviêÂ§o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Ponte</div><div class="text-xs text-neutral-400">canal ê¢â â serviêÂ§os</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">CoraêÂ§êÂ£o</div><div class="text-xs text-neutral-400">o centro do fluxo</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-6" data-ARCKHÉ-track="1" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-6" data-ARCKHê-track="1" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ” O ciclo de comunicaÃ§Ã£o</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ O ciclo de comunicaêÂ§êÂ£o</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t6-p1">O canal Ã© de <strong class="text-emerald-400">mÃ£o dupla</strong>: por ele entra a intenÃ§Ã£o e por ele sai a resposta do Jarvis, fechando o <strong class="text-emerald-400">ciclo de comunicaÃ§Ã£o</strong>. Pensar entrada e saÃ­da juntas evita um erro comum â€” sistemas que <em class="text-neutral-400">entendem</em> o cliente muito bem, mas <em class="text-neutral-400">respondem</em> mal: na hora errada, no tom errado ou no canal errado.</p>
-<!-- SVG: o ciclo de mÃ£o dupla -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t6-p1">O canal êÂ© de <strong class="text-emerald-400">mêÂ£o dupla</strong>: por ele entra a intenêÂ§êÂ£o e por ele sai a resposta do Jarvis, fechando o <strong class="text-emerald-400">ciclo de comunicaêÂ§êÂ£o</strong>. Pensar entrada e saêÂ­da juntas evita um erro comum ê¢â¬â sistemas que <em class="text-neutral-400">entendem</em> o cliente muito bem, mas <em class="text-neutral-400">respondem</em> mal: na hora errada, no tom errado ou no canal errado.</p>
+<!-- SVG: o ciclo de mêÂ£o dupla -->
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Ciclo de mÃ£o dupla: do cliente sai a intenÃ§Ã£o que entra no Jarvis, e do Jarvis sai a resposta que volta ao cliente, fechando o ciclo" class="w-full h-auto" role="img" viewbox="0 0 1000 180">
+<svg aria-label="Ciclo de mêÂ£o dupla: do cliente sai a intenêÂ§êÂ£o que entra no Jarvis, e do Jarvis sai a resposta que volta ao cliente, fechando o ciclo" class="w-full h-auto" role="img" viewbox="0 0 1000 180">
 <defs>
 <filter height="180%" id="m15b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 <pattern height="30" id="m15b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#10b981" opacity="0.10" r="1.2"></circle></pattern>
@@ -501,13 +501,13 @@
 <!-- cliente -->
 <rect fill="#26201a" height="56" rx="14" stroke="#9ca3af" stroke-width="2" width="180" x="60" y="62"></rect>
 <text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="150" y="86">Cliente</text>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="150" y="105">tem uma intenÃ§Ã£o</text>
-<!-- entrada: intenÃ§Ã£o -> jarvis (ciano, por cima) -->
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="150" y="105">tem uma intenêÂ§êÂ£o</text>
+<!-- entrada: intenêÂ§êÂ£o -> jarvis (ciano, por cima) -->
 <path d="M240,78 C420,52 560,52 720,72" fill="none" marker-end="url(#m15b-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="2"></path>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="480" y="44">entra a intenÃ§Ã£o â†’</text>
-<!-- saÃ­da: jarvis -> cliente (emerald, por baixo) -->
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="480" y="44">entra a intenêÂ§êÂ£o ê¢â â</text>
+<!-- saêÂ­da: jarvis -> cliente (emerald, por baixo) -->
 <path d="M720,108 C560,128 420,128 240,102" fill="none" marker-end="url(#m15b-ah)" opacity="0.6" stroke="#34d399" stroke-width="2"></path>
-<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="480" y="148">â† volta a resposta</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="480" y="148">ê¢â Â volta a resposta</text>
 <!-- jarvis -->
 <g filter="url(#m15b-glow)"><rect fill="#0e2018" height="56" rx="14" stroke="#34d399" stroke-width="2.5" width="220" x="720" y="62"></rect></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="830" y="86">Jarvis</text>
@@ -516,100 +516,100 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">âœ“ Ciclo bem fechado</h4>
+<h4 class="font-bold text-emerald-400 mb-4">ê¢Åâ Ciclo bem fechado</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Responde no mesmo canal em que entrou</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Tom e formato adequados ao canal</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Confirma que o cliente foi atendido</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Responde no mesmo canal em que entrou</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Tom e formato adequados ao canal</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Confirma que o cliente foi atendido</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Ciclo quebrado</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Ciclo quebrado</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Entende bem, mas responde mal ou tarde</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Resposta num canal que o cliente nÃ£o vÃª</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Deixa a conversa sem fechamento</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Entende bem, mas responde mal ou tarde</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Resposta num canal que o cliente nêÂ£o vêÂª</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Deixa a conversa sem fechamento</span></li>
 </ul>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">MÃ£o dupla</div><div class="text-xs text-neutral-400">entra e sai</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">MêÂ£o dupla</div><div class="text-xs text-neutral-400">entra e sai</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Ciclo</div><div class="text-xs text-neutral-400">conversa fechada</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Resposta</div><div class="text-xs text-neutral-400">parte do canal</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Entender â‰ </div><div class="text-xs text-neutral-400">responder bem</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Entender ê¢â°Â </div><div class="text-xs text-neutral-400">responder bem</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-1-5#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): por que dizemos que "o canal Ã© a porta de entrada da intenÃ§Ã£o"?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Porque o canal Ã© a parte mais difÃ­cil de programar do sistema.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Porque, ao mandar mensagem, o cliente traz uma intenÃ§Ã£o (comprar, resolver, agendar) que entra pelo canal â€” e a resposta volta por ele.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Porque quanto mais canais, mais inteligente o sistema fica automaticamente.</button>
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-1-5#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): por que dizemos que "o canal êÂ© a porta de entrada da intenêÂ§êÂ£o"?</p>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Porque o canal êÂ© a parte mais difêÂ­cil de programar do sistema.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Porque, ao mandar mensagem, o cliente traz uma intenêÂ§êÂ£o (comprar, resolver, agendar) que entra pelo canal ê¢â¬â e a resposta volta por ele.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Porque quanto mais canais, mais inteligente o sistema fica automaticamente.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸšª</span> Resumo do mÃ³dulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸Å¡Âª</span> Resumo do mêÂ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">A porta da intenÃ§Ã£o</strong><span class="text-neutral-400"> â€” o canal conecta o desejo do cliente ao sistema; sem ele, vira ilha.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Canais conversacionais</strong><span class="text-neutral-400"> â€” WhatsApp, Telegram e chat: encontrar o cliente onde ele jÃ¡ estÃ¡.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Multicanal</strong><span class="text-neutral-400"> â€” e-mail, painel, voz e API: vÃ¡rias portas, um sÃ³ cÃ©rebro.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Capturar a intenÃ§Ã£o</strong><span class="text-neutral-400"> â€” ler o que o cliente quer de verdade, nÃ£o sÃ³ as palavras.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Interpretar e rotear</strong><span class="text-neutral-400"> â€” o contexto aciona o serviÃ§o certo; Ã© o coraÃ§Ã£o do fluxo.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">O ciclo de comunicaÃ§Ã£o</strong><span class="text-neutral-400"> â€” mÃ£o dupla: entender bem e responder bem fecham o ciclo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">A porta da intenêÂ§êÂ£o</strong><span class="text-neutral-400"> ê¢â¬â o canal conecta o desejo do cliente ao sistema; sem ele, vira ilha.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Canais conversacionais</strong><span class="text-neutral-400"> ê¢â¬â WhatsApp, Telegram e chat: encontrar o cliente onde ele jêÂ¡ estêÂ¡.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Multicanal</strong><span class="text-neutral-400"> ê¢â¬â e-mail, painel, voz e API: vêÂ¡rias portas, um sêÂ³ cêÂ©rebro.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Capturar a intenêÂ§êÂ£o</strong><span class="text-neutral-400"> ê¢â¬â ler o que o cliente quer de verdade, nêÂ£o sêÂ³ as palavras.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Interpretar e rotear</strong><span class="text-neutral-400"> ê¢â¬â o contexto aciona o serviêÂ§o certo; êÂ© o coraêÂ§êÂ£o do fluxo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">O ciclo de comunicaêÂ§êÂ£o</strong><span class="text-neutral-400"> ê¢â¬â mêÂ£o dupla: entender bem e responder bem fecham o ciclo.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
 <h3 class="font-semibold text-emerald-400 mb-2">Fim do Dia 1:</h3>
-<p class="text-neutral-300">VocÃª fechou a base â€” mentalidade, infraestrutura, publicaÃ§Ã£o e canais. No Dia 2 comeÃ§a a construÃ§Ã£o do Jarvis por dentro: alma, serviÃ§os, agentes e seguranÃ§a.</p>
+<p class="text-neutral-300">VocêÂª fechou a base ê¢â¬â mentalidade, infraestrutura, publicaêÂ§êÂ£o e canais. No Dia 2 comeêÂ§a a construêÂ§êÂ£o do Jarvis por dentro: alma, serviêÂ§os, agentes e seguranêÂ§a.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 1</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha2/index.html">PrÃ³ximo: Dia 2 Â· ConstruÃ§Ã£o do Jarvis â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Voltar para o Dia 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha2/index.html">PrêÂ³ximo: Dia 2 êÂ· ConstruêÂ§êÂ£o do Jarvis ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="êÂndice do mêÂ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pêÂ¡gina <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
-<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. A porta da intenÃ§Ã£o</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. A porta da intenêÂ§êÂ£o</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. WhatsApp, Telegram, chat</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-3">3. E-mail, painel, voz, API</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. Capturar a intenÃ§Ã£o</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. Capturar a intenêÂ§êÂ£o</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-5">5. Interpretar e rotear</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. O ciclo de comunicaÃ§Ã£o</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. O ciclo de comunicaêÂ§êÂ£o</a></li>
 </ol>
 </nav>
 </aside>
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 1 Â· MÃ³dulo 1.5</p>
+<p>Arquitetura de IntenêÂ§êÂ£o da IA êÂ· MêÂ©todo JARVIS ê¢â¬â Dia 1 êÂ· MêÂ³dulo 1.5</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-1-5#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-1-5#q1', {
           answer: 1,
           explain: {
-            0: 'NÃ£o â€” a dificuldade tÃ©cnica nÃ£o Ã© o ponto. O canal Ã© a porta porque Ã© por onde a intenÃ§Ã£o chega.',
-            1: 'Isso. O cliente traz uma intenÃ§Ã£o que entra pelo canal; o sistema captura, interpreta e responde pelo mesmo canal.',
-            2: 'NÃ£o â€” mais canais sem inteligÃªncia por trÃ¡s sÃ³ multiplica portas. Quem decide Ã© a intenÃ§Ã£o, nÃ£o a quantidade de canais.'
+            0: 'NêÂ£o ê¢â¬â a dificuldade têÂ©cnica nêÂ£o êÂ© o ponto. O canal êÂ© a porta porque êÂ© por onde a intenêÂ§êÂ£o chega.',
+            1: 'Isso. O cliente traz uma intenêÂ§êÂ£o que entra pelo canal; o sistema captura, interpreta e responde pelo mesmo canal.',
+            2: 'NêÂ£o ê¢â¬â mais canais sem inteligêÂªncia por trêÂ¡s sêÂ³ multiplica portas. Quem decide êÂ© a intenêÂ§êÂ£o, nêÂ£o a quantidade de canais.'
           }
         });
       }

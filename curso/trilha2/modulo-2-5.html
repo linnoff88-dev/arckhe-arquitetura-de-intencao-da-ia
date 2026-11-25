@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>MÃ³dulo 2.5 Â· MemÃ³ria e Contexto | Arquitetura de IntenÃ§Ã£o da IA</title>
+<title>MêÂ³dulo 2.5 êÂ· MemêÂ³ria e Contexto | Arquitetura de IntenêÂ§êÂ£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -130,18 +130,18 @@
     html:not(.dark) .toc-link.is-active { color: #2563eb; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteêÂºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenêÂ§êÂ£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -150,46 +150,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="AparêÂªncia e leitura" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Tema" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Escuro</button>
+<button data-ARCKHê-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHê-set-theme="sepia" type="button">SêÂ©pia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHê-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">Sistema</button>
+<button data-ARCKHê-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHê-set-linewidth="68" type="button">MêÂ©dio</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
+<div aria-label="Entrelinha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHê-set-leading="1.7" type="button">ConfortêÂ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="êâmbar" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -200,20 +200,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-blue-400" href="../../index.html">InÃ­cio</a><span>/</span>
+<a class="hover:text-blue-400" href="../../index.html">InêÂ­cio</a><span>/</span>
 <a class="hover:text-blue-400" href="index.html">Dia 2</a><span>/</span>
-<span class="text-blue-400">MÃ³dulo 2.5</span>
+<span class="text-blue-400">MêÂ³dulo 2.5</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 2.5</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ§  MemÃ³ria e Contexto</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Um Jarvis sem memÃ³ria recomeÃ§a do zero a cada mensagem â€” e cada conversa vira uma reapresentaÃ§Ã£o cansativa. Aqui vocÃª entende o que o sistema lembra, em que prazos, o que alimenta cada decisÃ£o e como recuperar a informaÃ§Ã£o certa na hora certa â€” sem virar um arquivo bisbilhoteiro. MemÃ³ria boa nÃ£o Ã© guardar tudo: Ã© guardar o que serve Ã  continuidade.</p>
-<!-- SVG: entrada -> memÃ³ria (curto/longo) -> recuperaÃ§Ã£o do contexto certo -> decisÃ£o -->
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MêâDULO 2.5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸Â§Â  MemêÂ³ria e Contexto</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Um Jarvis sem memêÂ³ria recomeêÂ§a do zero a cada mensagem ê¢â¬â e cada conversa vira uma reapresentaêÂ§êÂ£o cansativa. Aqui vocêÂª entende o que o sistema lembra, em que prazos, o que alimenta cada decisêÂ£o e como recuperar a informaêÂ§êÂ£o certa na hora certa ê¢â¬â sem virar um arquivo bisbilhoteiro. MemêÂ³ria boa nêÂ£o êÂ© guardar tudo: êÂ© guardar o que serve êÂ  continuidade.</p>
+<!-- SVG: entrada -> memêÂ³ria (curto/longo) -> recuperaêÂ§êÂ£o do contexto certo -> decisêÂ£o -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Fluxo: a entrada do usuÃ¡rio alimenta a memÃ³ria de curto e de longo prazo; dela o sistema recupera sÃ³ o contexto certo, que entÃ£o alimenta a decisÃ£o e a resposta" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<svg aria-label="Fluxo: a entrada do usuêÂ¡rio alimenta a memêÂ³ria de curto e de longo prazo; dela o sistema recupera sêÂ³ o contexto certo, que entêÂ£o alimenta a decisêÂ£o e a resposta" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
 <lineargradient id="m25-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <filter height="180%" id="m25-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -225,362 +225,362 @@
 <!-- entrada -->
 <g filter="url(#m25-glow)"><rect fill="#0e1622" height="56" rx="13" stroke="url(#m25-grad)" stroke-width="2" width="130" x="36" y="98"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14.5" font-weight="600" text-anchor="middle" x="101" y="122">Entrada</text>
-<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="101" y="140">o que o usuÃ¡rio diz</text>
-<!-- entrada -> memÃ³rias -->
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="101" y="140">o que o usuêÂ¡rio diz</text>
+<!-- entrada -> memêÂ³rias -->
 <g fill="none" opacity="0.55" stroke="#60a5fa" stroke-width="1.8">
 <path d="M166,118 C240,118 250,78 330,78" marker-end="url(#m25-ah)"></path>
 <path d="M166,134 C240,134 250,174 330,174" marker-end="url(#m25-ah)"></path>
 </g>
-<!-- memÃ³ria curto/longo (ciano) -->
+<!-- memêÂ³ria curto/longo (ciano) -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
-<g class="wf-a"><rect fill="#0e1b26" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="330" y="58"></rect><text fill="#bfe6ff" text-anchor="middle" x="420" y="83">memÃ³ria de curto prazo</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="330" y="154"></rect><text fill="#bfe6ff" text-anchor="middle" x="420" y="179">memÃ³ria de longo prazo</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="330" y="58"></rect><text fill="#bfe6ff" text-anchor="middle" x="420" y="83">memêÂ³ria de curto prazo</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="330" y="154"></rect><text fill="#bfe6ff" text-anchor="middle" x="420" y="179">memêÂ³ria de longo prazo</text></g>
 </g>
-<!-- memÃ³rias -> recuperaÃ§Ã£o -->
+<!-- memêÂ³rias -> recuperaêÂ§êÂ£o -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M510,78 C580,78 590,112 620,112" marker-end="url(#m25-ahc)"></path>
 <path d="M510,174 C580,174 590,138 620,138" marker-end="url(#m25-ahc)"></path>
 </g>
-<!-- recuperaÃ§Ã£o (cor da trilha) -->
+<!-- recuperaêÂ§êÂ£o (cor da trilha) -->
 <g filter="url(#m25-glow)"><rect fill="#0e1622" height="58" rx="13" stroke="url(#m25-grad)" stroke-width="2" width="150" x="620" y="96"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="695" y="120">Recuperar</text>
-<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="695" y="138">sÃ³ o contexto certo</text>
-<!-- recuperaÃ§Ã£o -> decisÃ£o -->
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="695" y="138">sêÂ³ o contexto certo</text>
+<!-- recuperaêÂ§êÂ£o -> decisêÂ£o -->
 <path d="M770,125 L856,125" fill="none" marker-end="url(#m25-ah)" opacity="0.55" stroke="#60a5fa" stroke-width="1.8"></path>
-<!-- decisÃ£o -->
+<!-- decisêÂ£o -->
 <g filter="url(#m25-glow)"><rect fill="#0e1622" height="56" rx="13" stroke="url(#m25-grad)" stroke-width="2" width="116" x="856" y="98"></rect></g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="914" y="122">DecisÃ£o</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="914" y="122">DecisêÂ£o</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="914" y="140">resposta no ponto</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="228">MemÃ³ria alimenta a recuperaÃ§Ã£o; a recuperaÃ§Ã£o alimenta a decisÃ£o â€” guardar nÃ£o Ã© o fim, lembrar na hora certa Ã©.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="228">MemêÂ³ria alimenta a recuperaêÂ§êÂ£o; a recuperaêÂ§êÂ£o alimenta a decisêÂ£o ê¢â¬â guardar nêÂ£o êÂ© o fim, lembrar na hora certa êÂ©.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">TêÂ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~45</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">IntermediÃ¡rio</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">IntermediêÂ¡rio</div><div class="text-xs text-neutral-400">NêÂ­vel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Conceito</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do mÃ³dulo 2.5" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:2-5" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Progresso do mêÂ³dulo 2.5" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:2-5" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mêÂ³dulo</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 de 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-1" data-ARCKHÉ-track="2" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-1" data-ARCKHê-track="2" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸ“Œ O que o Jarvis lembra</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÅ O que o Jarvis lembra</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t1-p1">Por padrÃ£o, um modelo de IA nÃ£o lembra de nada: cada mensagem chega como se fosse a primeira. <strong class="text-blue-400">MemÃ³ria Ã© o que vocÃª adiciona ao redor do modelo para que ele nÃ£o recomece do zero.</strong> Ã‰ a diferenÃ§a entre o atendente que te reconhece e jÃ¡ sabe seu pedido habitual, e aquele que pergunta seu nome toda vez. MemÃ³ria nÃ£o Ã© mÃ¡gica do modelo â€” Ã© uma decisÃ£o de arquitetura do arquiteto de intenÃ§Ã£o.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t1-p1">Por padrêÂ£o, um modelo de IA nêÂ£o lembra de nada: cada mensagem chega como se fosse a primeira. <strong class="text-blue-400">MemêÂ³ria êÂ© o que vocêÂª adiciona ao redor do modelo para que ele nêÂ£o recomece do zero.</strong> êâ° a diferenêÂ§a entre o atendente que te reconhece e jêÂ¡ sabe seu pedido habitual, e aquele que pergunta seu nome toda vez. MemêÂ³ria nêÂ£o êÂ© mêÂ¡gica do modelo ê¢â¬â êÂ© uma decisêÂ£o de arquitetura do arquiteto de intenêÂ§êÂ£o.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§©</span> MemÃ³ria Ã© tudo que sobrevive entre mensagens</h3>
-<p class="text-neutral-300">Sem memÃ³ria, o Jarvis vive um eterno presente: cada turno Ã© isolado. Com memÃ³ria, ele acumula â€” o que foi dito, quem Ã© a pessoa, o que jÃ¡ foi resolvido. O arquiteto decide o que vale carregar adiante e por quanto tempo. Lembrar custa espaÃ§o e atenÃ§Ã£o; por isso lembra-se de propÃ³sito, nÃ£o por acaso.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â©</span> MemêÂ³ria êÂ© tudo que sobrevive entre mensagens</h3>
+<p class="text-neutral-300">Sem memêÂ³ria, o Jarvis vive um eterno presente: cada turno êÂ© isolado. Com memêÂ³ria, ele acumula ê¢â¬â o que foi dito, quem êÂ© a pessoa, o que jêÂ¡ foi resolvido. O arquiteto decide o que vale carregar adiante e por quanto tempo. Lembrar custa espaêÂ§o e atenêÂ§êÂ£o; por isso lembra-se de propêÂ³sito, nêÂ£o por acaso.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ Com memÃ³ria, o Jarvis</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ Com memêÂ³ria, o Jarvis</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Reconhece quem estÃ¡ falando.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Retoma o assunto de onde parou.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>NÃ£o repete perguntas jÃ¡ respondidas.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Soa coerente ao longo do tempo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Reconhece quem estêÂ¡ falando.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Retoma o assunto de onde parou.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>NêÂ£o repete perguntas jêÂ¡ respondidas.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Soa coerente ao longo do tempo.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Sem memÃ³ria, o Jarvis</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Sem memêÂ³ria, o Jarvis</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Pergunta seu nome a cada mensagem.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Esquece o que vocÃª acabou de dizer.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Contradiz o que falou antes.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Trata cada turno como estranho novo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Pergunta seu nome a cada mensagem.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Esquece o que vocêÂª acabou de dizer.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Contradiz o que falou antes.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Trata cada turno como estranho novo.</span></li>
 </ul>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">PadrÃ£o</div><div class="text-xs text-neutral-400">modelo nÃ£o lembra</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">MemÃ³ria</div><div class="text-xs text-neutral-400">camada ao redor</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">DecisÃ£o</div><div class="text-xs text-neutral-400">de arquitetura</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">PadrêÂ£o</div><div class="text-xs text-neutral-400">modelo nêÂ£o lembra</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">MemêÂ³ria</div><div class="text-xs text-neutral-400">camada ao redor</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">DecisêÂ£o</div><div class="text-xs text-neutral-400">de arquitetura</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Efeito</div><div class="text-xs text-neutral-400">continuidade</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-2" data-ARCKHÉ-track="2" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-2" data-ARCKHê-track="2" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸ—‚ï¸ Tipos de memÃ³ria</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââê¯Â¸Â Tipos de memêÂ³ria</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t2-p1">Nem toda memÃ³ria Ã© igual. Existem trÃªs prazos que o arquiteto precisa distinguir: a <strong class="text-blue-400">memÃ³ria de sessÃ£o</strong> (vale sÃ³ durante a conversa atual), a <strong class="text-blue-400">memÃ³ria de curto prazo</strong> (vale por algumas interaÃ§Ãµes ou pelo dia) e a <strong class="text-blue-400">memÃ³ria de longo prazo</strong> (atravessa conversas â€” o que define quem Ã© aquela pessoa). Misturar os trÃªs Ã© uma das maiores fontes de confusÃ£o em projetos de IA.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t2-p1">Nem toda memêÂ³ria êÂ© igual. Existem trêÂªs prazos que o arquiteto precisa distinguir: a <strong class="text-blue-400">memêÂ³ria de sessêÂ£o</strong> (vale sêÂ³ durante a conversa atual), a <strong class="text-blue-400">memêÂ³ria de curto prazo</strong> (vale por algumas interaêÂ§êÂµes ou pelo dia) e a <strong class="text-blue-400">memêÂ³ria de longo prazo</strong> (atravessa conversas ê¢â¬â o que define quem êÂ© aquela pessoa). Misturar os trêÂªs êÂ© uma das maiores fontes de confusêÂ£o em projetos de IA.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">â±ï¸</span> Os trÃªs prazos da memÃ³ria</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ê¢ÂÂ±ê¯Â¸Â</span> Os trêÂªs prazos da memêÂ³ria</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">SessÃ£o:</strong> o que estÃ¡ sendo dito agora, nesta conversa. Acaba quando a conversa acaba â€” Ã© o bloco de notas da mesa.</li>
-<li><strong class="text-neutral-100">Curto prazo:</strong> o que vale lembrar por algumas interaÃ§Ãµes ou pelo dia ("vocÃª jÃ¡ me passou esse pedido hoje"). Expira sozinha.</li>
-<li><strong class="text-neutral-100">Longo prazo:</strong> o que define a pessoa e atravessa todas as conversas â€” nome, preferÃªncias, histÃ³rico relevante. Ã‰ o cadastro persistente.</li>
+<li><strong class="text-neutral-100">SessêÂ£o:</strong> o que estêÂ¡ sendo dito agora, nesta conversa. Acaba quando a conversa acaba ê¢â¬â êÂ© o bloco de notas da mesa.</li>
+<li><strong class="text-neutral-100">Curto prazo:</strong> o que vale lembrar por algumas interaêÂ§êÂµes ou pelo dia ("vocêÂª jêÂ¡ me passou esse pedido hoje"). Expira sozinha.</li>
+<li><strong class="text-neutral-100">Longo prazo:</strong> o que define a pessoa e atravessa todas as conversas ê¢â¬â nome, preferêÂªncias, histêÂ³rico relevante. êâ° o cadastro persistente.</li>
 </ul>
 </div>
-<!-- TIMELINE: como a memÃ³ria evolui numa conversa -->
+<!-- TIMELINE: como a memêÂ³ria evolui numa conversa -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">Como a memÃ³ria evolui numa conversa</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">Como a memêÂ³ria evolui numa conversa</h3>
 <div class="relative border-l-2 border-blue-500/40 pl-6 space-y-6">
 <div class="relative">
 <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500/30 border-2 border-blue-400"></span>
 <h4 class="font-semibold text-neutral-100">1. Cliente abre a conversa</h4>
-<p class="text-sm text-neutral-400">A memÃ³ria de longo prazo Ã© consultada: o Jarvis jÃ¡ sabe o nome e o histÃ³rico. A sessÃ£o comeÃ§a vazia.</p>
+<p class="text-sm text-neutral-400">A memêÂ³ria de longo prazo êÂ© consultada: o Jarvis jêÂ¡ sabe o nome e o histêÂ³rico. A sessêÂ£o comeêÂ§a vazia.</p>
 </div>
 <div class="relative">
 <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500/30 border-2 border-blue-400"></span>
 <h4 class="font-semibold text-neutral-100">2. Durante o papo</h4>
-<p class="text-sm text-neutral-400">Cada mensagem entra na memÃ³ria de sessÃ£o. O Jarvis liga "o produto que falei" ao item citado trÃªs turnos atrÃ¡s.</p>
+<p class="text-sm text-neutral-400">Cada mensagem entra na memêÂ³ria de sessêÂ£o. O Jarvis liga "o produto que falei" ao item citado trêÂªs turnos atrêÂ¡s.</p>
 </div>
 <div class="relative">
 <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500/30 border-2 border-blue-400"></span>
 <h4 class="font-semibold text-neutral-100">3. Surge algo que vale guardar</h4>
-<p class="text-sm text-neutral-400">"Prefiro ser chamado pelo apelido" promove um fato da sessÃ£o para a memÃ³ria de longo prazo.</p>
+<p class="text-sm text-neutral-400">"Prefiro ser chamado pelo apelido" promove um fato da sessêÂ£o para a memêÂ³ria de longo prazo.</p>
 </div>
 <div class="relative">
 <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500/30 border-2 border-blue-400"></span>
 <h4 class="font-semibold text-neutral-100">4. A conversa termina</h4>
-<p class="text-sm text-neutral-400">A memÃ³ria de sessÃ£o Ã© descartada; sÃ³ o que foi promovido sobrevive para a prÃ³xima conversa.</p>
+<p class="text-sm text-neutral-400">A memêÂ³ria de sessêÂ£o êÂ© descartada; sêÂ³ o que foi promovido sobrevive para a prêÂ³xima conversa.</p>
 </div>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">SessÃ£o</div><div class="text-xs text-neutral-400">sÃ³ esta conversa</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">SessêÂ£o</div><div class="text-xs text-neutral-400">sêÂ³ esta conversa</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Curto prazo</div><div class="text-xs text-neutral-400">horas ou o dia</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Longo prazo</div><div class="text-xs text-neutral-400">atravessa tudo</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Promover</div><div class="text-xs text-neutral-400">sessÃ£o â†’ longo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Promover</div><div class="text-xs text-neutral-400">sessêÂ£o ê¢â â longo</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-3" data-ARCKHÉ-track="2" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-3" data-ARCKHê-track="2" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸ± Contexto: o que alimenta a decisÃ£o</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ÂÂ± Contexto: o que alimenta a decisêÂ£o</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t3-p1">MemÃ³ria Ã© o que o Jarvis <em class="text-neutral-400">tem guardado</em>; <strong class="text-blue-400">contexto Ã© o que ele coloca na mesa para decidir agora</strong>. SÃ£o coisas diferentes. A cada resposta, o sistema monta um "prato" com pedaÃ§os da memÃ³ria, a mensagem atual, a identidade (a alma) e as regras. Esse prato Ã© o contexto â€” e a qualidade da resposta depende muito mais do que entra nele do que do tamanho do modelo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t3-p1">MemêÂ³ria êÂ© o que o Jarvis <em class="text-neutral-400">tem guardado</em>; <strong class="text-blue-400">contexto êÂ© o que ele coloca na mesa para decidir agora</strong>. SêÂ£o coisas diferentes. A cada resposta, o sistema monta um "prato" com pedaêÂ§os da memêÂ³ria, a mensagem atual, a identidade (a alma) e as regras. Esse prato êÂ© o contexto ê¢â¬â e a qualidade da resposta depende muito mais do que entra nele do que do tamanho do modelo.</p>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Quando o Jarvis "responde errado", a primeira pergunta nÃ£o Ã© "qual prompt melhorar?" e sim <strong class="text-neutral-100">"o que tinha no contexto na hora dessa resposta?"</strong>. Muitas falhas sÃ£o contexto faltando (ele nÃ£o recebeu a informaÃ§Ã£o) ou contexto sobrando (ruÃ­do que desviou a atenÃ§Ã£o) â€” nÃ£o falta de inteligÃªncia.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Quando o Jarvis "responde errado", a primeira pergunta nêÂ£o êÂ© "qual prompt melhorar?" e sim <strong class="text-neutral-100">"o que tinha no contexto na hora dessa resposta?"</strong>. Muitas falhas sêÂ£o contexto faltando (ele nêÂ£o recebeu a informaêÂ§êÂ£o) ou contexto sobrando (ruêÂ­do que desviou a atenêÂ§êÂ£o) ê¢â¬â nêÂ£o falta de inteligêÂªncia.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">O que costuma compor o contexto de uma resposta</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-neutral-300">
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">A alma:</strong> quem ele Ã© e seus limites.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">A mensagem atual:</strong> o que estÃ¡ sendo pedido.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">Trechos da memÃ³ria:</strong> sÃ³ os relevantes.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">Dados do negÃ³cio:</strong> preÃ§o, estoque, status.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">As regras:</strong> o que pode e o que nÃ£o pode.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">A tarefa em curso:</strong> em que passo estamos.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">A alma:</strong> quem ele êÂ© e seus limites.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">A mensagem atual:</strong> o que estêÂ¡ sendo pedido.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">Trechos da memêÂ³ria:</strong> sêÂ³ os relevantes.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">Dados do negêÂ³cio:</strong> preêÂ§o, estoque, status.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">As regras:</strong> o que pode e o que nêÂ£o pode.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">A tarefa em curso:</strong> em que passo estamos.</span></div>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">MemÃ³ria</div><div class="text-xs text-neutral-400">o que guarda</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">MemêÂ³ria</div><div class="text-xs text-neutral-400">o que guarda</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Contexto</div><div class="text-xs text-neutral-400">o que entra agora</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Qualidade</div><div class="text-xs text-neutral-400">vem do contexto</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">DiagnÃ³stico</div><div class="text-xs text-neutral-400">"o que havia na mesa?"</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">DiagnêÂ³stico</div><div class="text-xs text-neutral-400">"o que havia na mesa?"</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-4" data-ARCKHÉ-track="2" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-4" data-ARCKHê-track="2" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ”Ž Recuperar a informaÃ§Ã£o certa</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÅ½ Recuperar a informaêÂ§êÂ£o certa</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t4-p1">Guardar muita coisa nÃ£o adianta se o Jarvis nÃ£o consegue <strong class="text-blue-400">achar o pedaÃ§o certo na hora certa</strong>. RecuperaÃ§Ã£o Ã© a arte de trazer, de uma memÃ³ria grande, sÃ³ os trechos que importam para a pergunta atual. NÃ£o se despeja a memÃ³ria inteira no contexto â€” isso Ã© caro, lento e atrapalha. Recupera-se por relevÃ¢ncia: o que tem a ver com o que estÃ¡ sendo pedido agora.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t4-p1">Guardar muita coisa nêÂ£o adianta se o Jarvis nêÂ£o consegue <strong class="text-blue-400">achar o pedaêÂ§o certo na hora certa</strong>. RecuperaêÂ§êÂ£o êÂ© a arte de trazer, de uma memêÂ³ria grande, sêÂ³ os trechos que importam para a pergunta atual. NêÂ£o se despeja a memêÂ³ria inteira no contexto ê¢â¬â isso êÂ© caro, lento e atrapalha. Recupera-se por relevêÂ¢ncia: o que tem a ver com o que estêÂ¡ sendo pedido agora.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> A regra de ouro da recuperaÃ§Ã£o</h3>
-<p class="text-neutral-300 text-sm">Traga <strong class="text-neutral-100">o suficiente para responder bem, e nada alÃ©m</strong>. MemÃ³ria demais no contexto nÃ£o deixa o Jarvis mais esperto â€” deixa mais confuso e mais caro. O segredo nÃ£o Ã© lembrar de tudo; Ã© lembrar do que serve para esta resposta.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å½Â¯</span> A regra de ouro da recuperaêÂ§êÂ£o</h3>
+<p class="text-neutral-300 text-sm">Traga <strong class="text-neutral-100">o suficiente para responder bem, e nada alêÂ©m</strong>. MemêÂ³ria demais no contexto nêÂ£o deixa o Jarvis mais esperto ê¢â¬â deixa mais confuso e mais caro. O segredo nêÂ£o êÂ© lembrar de tudo; êÂ© lembrar do que serve para esta resposta.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ RecuperaÃ§Ã£o saudÃ¡vel</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ RecuperaêÂ§êÂ£o saudêÂ¡vel</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Traz trechos ligados Ã  pergunta atual.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Prioriza o mais recente e o mais relevante.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Resume o que Ã© longo antes de usar.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Deixa de fora o que nÃ£o tem a ver.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Traz trechos ligados êÂ  pergunta atual.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Prioriza o mais recente e o mais relevante.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Resume o que êÂ© longo antes de usar.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Deixa de fora o que nêÂ£o tem a ver.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— RecuperaÃ§Ã£o ruim</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ RecuperaêÂ§êÂ£o ruim</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Joga a memÃ³ria inteira no contexto.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Mistura assuntos sem relaÃ§Ã£o.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Repete dados velhos e desatualizados.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Custa caro e responde devagar.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Joga a memêÂ³ria inteira no contexto.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Mistura assuntos sem relaêÂ§êÂ£o.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Repete dados velhos e desatualizados.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Custa caro e responde devagar.</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">RecuperaÃ§Ã£o em uma linha de raciocÃ­nio</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">RecuperaêÂ§êÂ£o em uma linha de raciocêÂ­nio</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-blue-400">pergunta:</span> "qual era o prazo do meu pedido?"</div>
 <div><span class="text-blue-400">busca_por:</span> pedidos + este cliente + prazo</div>
-<div><span class="text-blue-400">traz:</span> sÃ³ o pedido #4471 e seu prazo</div>
+<div><span class="text-blue-400">traz:</span> sêÂ³ o pedido #4471 e seu prazo</div>
 <div><span class="text-blue-400">ignora:</span> conversas antigas sobre outros temas</div>
 <div><span class="text-blue-400">contexto_final:</span> enxuto e certeiro</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Esquema ilustrativo de recuperaÃ§Ã£o por relevÃ¢ncia â€” nÃ£o Ã© cÃ³digo real.</p>
+<p class="text-xs text-neutral-500 mt-3">Esquema ilustrativo de recuperaêÂ§êÂ£o por relevêÂ¢ncia ê¢â¬â nêÂ£o êÂ© cêÂ³digo real.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">RelevÃ¢ncia</div><div class="text-xs text-neutral-400">ligado Ã  pergunta</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">RecÃªncia</div><div class="text-xs text-neutral-400">o mais novo pesa</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">RelevêÂ¢ncia</div><div class="text-xs text-neutral-400">ligado êÂ  pergunta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">RecêÂªncia</div><div class="text-xs text-neutral-400">o mais novo pesa</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Resumir</div><div class="text-xs text-neutral-400">comprimir o longo</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Suficiente</div><div class="text-xs text-neutral-400">nÃ£o despejar tudo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Suficiente</div><div class="text-xs text-neutral-400">nêÂ£o despejar tudo</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-5" data-ARCKHÉ-track="2" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-5" data-ARCKHê-track="2" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸš« O que NÃƒO guardar</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å¡Â« O que NêÆO guardar</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t5-p1">A tentaÃ§Ã£o do iniciante Ã© guardar tudo "por garantia". O arquiteto faz o contrÃ¡rio: <strong class="text-blue-400">decide o que NÃƒO guardar</strong>. Dois motivos pesam aqui â€” privacidade (dados sensÃ­veis que nÃ£o deviam ficar) e ruÃ­do (lixo que sÃ³ atrapalha a recuperaÃ§Ã£o). Guardar tudo Ã©, ao mesmo tempo, um risco legal e um veneno para a qualidade. MemÃ³ria limpa Ã© memÃ³ria Ãºtil.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t5-p1">A tentaêÂ§êÂ£o do iniciante êÂ© guardar tudo "por garantia". O arquiteto faz o contrêÂ¡rio: <strong class="text-blue-400">decide o que NêÆO guardar</strong>. Dois motivos pesam aqui ê¢â¬â privacidade (dados sensêÂ­veis que nêÂ£o deviam ficar) e ruêÂ­do (lixo que sêÂ³ atrapalha a recuperaêÂ§êÂ£o). Guardar tudo êÂ©, ao mesmo tempo, um risco legal e um veneno para a qualidade. MemêÂ³ria limpa êÂ© memêÂ³ria êÂºtil.</p>
 <div class="space-y-3 mb-6">
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Dados sensÃ­veis sem necessidade</strong> <span class="text-red-400">â€” risco de privacidade.</span><p class="text-sm text-neutral-400 mt-1">Senhas, documentos completos, dados de cartÃ£o: se nÃ£o precisa guardar, nÃ£o guarde.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Conversa fiada e ruÃ­do</strong> <span class="text-red-400">â€” veneno da recuperaÃ§Ã£o.</span><p class="text-sm text-neutral-400 mt-1">"Bom dia", "obrigado", desabafos sem fato: ocupam espaÃ§o e atrapalham achar o que importa.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">InformaÃ§Ã£o que envelhece rÃ¡pido</strong> <span class="text-red-400">â€” vira mentira.</span><p class="text-sm text-neutral-400 mt-1">PreÃ§o de hoje, estoque do momento: guardar como verdade fixa faz o Jarvis afirmar dados velhos.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Dados sensêÂ­veis sem necessidade</strong> <span class="text-red-400">ê¢â¬â risco de privacidade.</span><p class="text-sm text-neutral-400 mt-1">Senhas, documentos completos, dados de cartêÂ£o: se nêÂ£o precisa guardar, nêÂ£o guarde.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Conversa fiada e ruêÂ­do</strong> <span class="text-red-400">ê¢â¬â veneno da recuperaêÂ§êÂ£o.</span><p class="text-sm text-neutral-400 mt-1">"Bom dia", "obrigado", desabafos sem fato: ocupam espaêÂ§o e atrapalham achar o que importa.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">InformaêÂ§êÂ£o que envelhece rêÂ¡pido</strong> <span class="text-red-400">ê¢â¬â vira mentira.</span><p class="text-sm text-neutral-400 mt-1">PreêÂ§o de hoje, estoque do momento: guardar como verdade fixa faz o Jarvis afirmar dados velhos.</p></div></div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Antes de guardar algo na memÃ³ria de longo prazo, passe por trÃªs perguntas: <strong class="text-neutral-100">isso Ã© sensÃ­vel?</strong> (se sim, evite ou proteja), <strong class="text-neutral-100">isso vai servir de novo?</strong> (se nÃ£o, descarte) e <strong class="text-neutral-100">isso vai continuar verdade amanhÃ£?</strong> (se nÃ£o, busque na fonte em vez de guardar).</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Antes de guardar algo na memêÂ³ria de longo prazo, passe por trêÂªs perguntas: <strong class="text-neutral-100">isso êÂ© sensêÂ­vel?</strong> (se sim, evite ou proteja), <strong class="text-neutral-100">isso vai servir de novo?</strong> (se nêÂ£o, descarte) e <strong class="text-neutral-100">isso vai continuar verdade amanhêÂ£?</strong> (se nêÂ£o, busque na fonte em vez de guardar).</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Privacidade</div><div class="text-xs text-neutral-400">nÃ£o guardar sensÃ­vel</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">RuÃ­do</div><div class="text-xs text-neutral-400">fora da memÃ³ria</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Privacidade</div><div class="text-xs text-neutral-400">nêÂ£o guardar sensêÂ­vel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">RuêÂ­do</div><div class="text-xs text-neutral-400">fora da memêÂ³ria</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Validade</div><div class="text-xs text-neutral-400">o que envelhece</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">MemÃ³ria limpa</div><div class="text-xs text-neutral-400">memÃ³ria Ãºtil</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">MemêÂ³ria limpa</div><div class="text-xs text-neutral-400">memêÂ³ria êÂºtil</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-6" data-ARCKHÉ-track="2" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-6" data-ARCKHê-track="2" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ”— MemÃ³ria a serviÃ§o da continuidade</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââ MemêÂ³ria a serviêÂ§o da continuidade</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t6-p1">Tudo isso existe por um motivo sÃ³: <strong class="text-blue-400">continuidade</strong>. MemÃ³ria nÃ£o Ã© um trofÃ©u de quanto o sistema acumula â€” Ã© o que faz o Jarvis parecer uma Ãºnica presenÃ§a coerente em vez de mil atendentes desconexos. O objetivo final nÃ£o Ã© "lembrar muito", Ã© fazer a pessoa sentir que estÃ¡ falando com alguÃ©m que <em class="text-neutral-400">a conhece e continua de onde pararam</em>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t6-p1">Tudo isso existe por um motivo sêÂ³: <strong class="text-blue-400">continuidade</strong>. MemêÂ³ria nêÂ£o êÂ© um trofêÂ©u de quanto o sistema acumula ê¢â¬â êÂ© o que faz o Jarvis parecer uma êÂºnica presenêÂ§a coerente em vez de mil atendentes desconexos. O objetivo final nêÂ£o êÂ© "lembrar muito", êÂ© fazer a pessoa sentir que estêÂ¡ falando com alguêÂ©m que <em class="text-neutral-400">a conhece e continua de onde pararam</em>.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§­</span> A bÃºssola da memÃ³ria</h3>
-<p class="text-neutral-300">Diante de "guardo isso?", a pergunta certa Ã©: <strong class="text-neutral-100">isso ajuda o Jarvis a continuar a relaÃ§Ã£o melhor amanhÃ£?</strong> Se ajuda, vale a memÃ³ria. Se nÃ£o, Ã© peso. A continuidade Ã© o critÃ©rio que separa memÃ³ria de acÃºmulo â€” e Ã© ela que transforma respostas isoladas numa experiÃªncia Ãºnica e confiÃ¡vel.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â­</span> A bêÂºssola da memêÂ³ria</h3>
+<p class="text-neutral-300">Diante de "guardo isso?", a pergunta certa êÂ©: <strong class="text-neutral-100">isso ajuda o Jarvis a continuar a relaêÂ§êÂ£o melhor amanhêÂ£?</strong> Se ajuda, vale a memêÂ³ria. Se nêÂ£o, êÂ© peso. A continuidade êÂ© o critêÂ©rio que separa memêÂ³ria de acêÂºmulo ê¢â¬â e êÂ© ela que transforma respostas isoladas numa experiêÂªncia êÂºnica e confiêÂ¡vel.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">O contraste em uma linha cada</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div><span class="text-blue-400">sem_memoria:</span> "OlÃ¡! Em que posso ajudar?" (de novo)</div>
+<div><span class="text-blue-400">sem_memoria:</span> "OlêÂ¡! Em que posso ajudar?" (de novo)</div>
 <div><span class="text-blue-400">com_memoria:</span> "Oi, Ana! Sobre o pedido de ontem..."</div>
 <div><span class="text-blue-400">acumulo_cego:</span> lembra tudo, acha nada, vaza dado</div>
 <div><span class="text-blue-400">memoria_boa:</span> lembra o que serve, na hora certa</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">IlustraÃ§Ã£o do efeito da memÃ³ria na experiÃªncia â€” nÃ£o Ã© configuraÃ§Ã£o real.</p>
+<p class="text-xs text-neutral-500 mt-3">IlustraêÂ§êÂ£o do efeito da memêÂ³ria na experiêÂªncia ê¢â¬â nêÂ£o êÂ© configuraêÂ§êÂ£o real.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Objetivo</div><div class="text-xs text-neutral-400">continuidade</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">CritÃ©rio</div><div class="text-xs text-neutral-400">"ajuda amanhÃ£?"</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">PresenÃ§a</div><div class="text-xs text-neutral-400">Ãºnica e coerente</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Resultado</div><div class="text-xs text-neutral-400">relaÃ§Ã£o, nÃ£o turnos</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">CritêÂ©rio</div><div class="text-xs text-neutral-400">"ajuda amanhêÂ£?"</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">PresenêÂ§a</div><div class="text-xs text-neutral-400">êÂºnica e coerente</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Resultado</div><div class="text-xs text-neutral-400">relaêÂ§êÂ£o, nêÂ£o turnos</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-2-5#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): qual Ã© o critÃ©rio que separa boa memÃ³ria de puro acÃºmulo?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Guardar o mÃ¡ximo possÃ­vel, por garantia.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Guardar sÃ³ o que serve Ã  continuidade â€” o que ajuda a relaÃ§Ã£o a seguir melhor.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Nunca guardar nada para proteger a privacidade.</button>
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-2-5#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): qual êÂ© o critêÂ©rio que separa boa memêÂ³ria de puro acêÂºmulo?</p>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Guardar o mêÂ¡ximo possêÂ­vel, por garantia.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Guardar sêÂ³ o que serve êÂ  continuidade ê¢â¬â o que ajuda a relaêÂ§êÂ£o a seguir melhor.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Nunca guardar nada para proteger a privacidade.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ§ </span> Resumo do mÃ³dulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸Â§Â </span> Resumo do mêÂ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">O que o Jarvis lembra</strong><span class="text-neutral-400"> â€” memÃ³ria Ã© a camada ao redor do modelo, uma decisÃ£o de arquitetura.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Tipos de memÃ³ria</strong><span class="text-neutral-400"> â€” sessÃ£o, curto prazo e longo prazo; cada uma com seu tempo de vida.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Contexto</strong><span class="text-neutral-400"> â€” o que entra na mesa para decidir agora; a qualidade nasce dele.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Recuperar o certo</strong><span class="text-neutral-400"> â€” trazer por relevÃ¢ncia o suficiente, e nada alÃ©m.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">O que NÃƒO guardar</strong><span class="text-neutral-400"> â€” privacidade e ruÃ­do; memÃ³ria limpa Ã© memÃ³ria Ãºtil.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">A serviÃ§o da continuidade</strong><span class="text-neutral-400"> â€” o objetivo nÃ£o Ã© lembrar muito, Ã© continuar a relaÃ§Ã£o.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">O que o Jarvis lembra</strong><span class="text-neutral-400"> ê¢â¬â memêÂ³ria êÂ© a camada ao redor do modelo, uma decisêÂ£o de arquitetura.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Tipos de memêÂ³ria</strong><span class="text-neutral-400"> ê¢â¬â sessêÂ£o, curto prazo e longo prazo; cada uma com seu tempo de vida.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Contexto</strong><span class="text-neutral-400"> ê¢â¬â o que entra na mesa para decidir agora; a qualidade nasce dele.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Recuperar o certo</strong><span class="text-neutral-400"> ê¢â¬â trazer por relevêÂ¢ncia o suficiente, e nada alêÂ©m.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">O que NêÆO guardar</strong><span class="text-neutral-400"> ê¢â¬â privacidade e ruêÂ­do; memêÂ³ria limpa êÂ© memêÂ³ria êÂºtil.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">A serviêÂ§o da continuidade</strong><span class="text-neutral-400"> ê¢â¬â o objetivo nêÂ£o êÂ© lembrar muito, êÂ© continuar a relaêÂ§êÂ£o.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-blue-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
-<p class="text-neutral-300">2.6 â€” Muros de SeguranÃ§a: como o Jarvis opera dentro de limites claros e seguros.</p>
+<h3 class="font-semibold text-blue-400 mb-2">PrêÂ³ximo mêÂ³dulo:</h3>
+<p class="text-neutral-300">2.6 ê¢â¬â Muros de SeguranêÂ§a: como o Jarvis opera dentro de limites claros e seguros.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 2</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-6.html">PrÃ³ximo: 2.6 Muros de SeguranÃ§a â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Voltar para o Dia 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-6.html">PrêÂ³ximo: 2.6 Muros de SeguranêÂ§a ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="êÂndice do mêÂ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pêÂ¡gina <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. O que o Jarvis lembra</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Tipos de memÃ³ria</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. Contexto e decisÃ£o</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Tipos de memêÂ³ria</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. Contexto e decisêÂ£o</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. Recuperar o certo</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. O que NÃƒO guardar</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. O que NêÆO guardar</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. Continuidade</a></li>
 </ol>
 </nav>
@@ -588,21 +588,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 2 Â· MÃ³dulo 2.5</p>
+<p>Arquitetura de IntenêÂ§êÂ£o da IA êÂ· MêÂ©todo JARVIS ê¢â¬â Dia 2 êÂ· MêÂ³dulo 2.5</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-2-5#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-2-5#q1', {
           answer: 1,
           explain: {
-            0: 'NÃ£o â€” guardar tudo "por garantia" vira risco de privacidade e ruÃ­do que atrapalha a recuperaÃ§Ã£o.',
-            1: 'Isso. O critÃ©rio Ã© a continuidade: guarda-se o que ajuda a relaÃ§Ã£o a seguir melhor amanhÃ£.',
-            2: 'Quase â€” privacidade importa, mas o extremo de nÃ£o guardar nada quebra a continuidade; o ponto Ã© guardar o que serve.'
+            0: 'NêÂ£o ê¢â¬â guardar tudo "por garantia" vira risco de privacidade e ruêÂ­do que atrapalha a recuperaêÂ§êÂ£o.',
+            1: 'Isso. O critêÂ©rio êÂ© a continuidade: guarda-se o que ajuda a relaêÂ§êÂ£o a seguir melhor amanhêÂ£.',
+            2: 'Quase ê¢â¬â privacidade importa, mas o extremo de nêÂ£o guardar nada quebra a continuidade; o ponto êÂ© guardar o que serve.'
           }
         });
       }

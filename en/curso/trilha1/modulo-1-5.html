@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Module 1.5 Â· Input and Output Channels | AI Intent Architecture</title>
+<title>Module 1.5 êÂ· Input and Output Channels | AI Intent Architecture</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -127,7 +127,7 @@
     html:not(.dark) .toc-link.is-active { color: #059669; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip" href="#conteudo">Skip to content</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -135,10 +135,10 @@
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
@@ -147,46 +147,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Day 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Day 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="My journey" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Journey</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="My journey" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Journey</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Theme" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Clear</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">High contrast</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Theme" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Dark</button>
+<button data-ARCKHê-set-theme="claro" type="button">Clear</button>
+<button data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Focus</button>
+<button data-ARCKHê-set-theme="contraste" type="button">High contrast</button>
 </div>
-<div aria-label="Source" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">System</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
+<div aria-label="Source" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">System</button>
+<button data-ARCKHê-set-font="leitura" type="button">Reading</button>
 </div>
-<div aria-label="Text size" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Text size" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Line width" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Narrow</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">Medium</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Wide</button>
+<div aria-label="Line width" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Narrow</button>
+<button data-ARCKHê-set-linewidth="68" type="button">Medium</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Wide</button>
 </div>
-<div aria-label="Subtext" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compact</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">Comfortable</button>
+<div aria-label="Subtext" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compact</button>
+<button data-ARCKHê-set-leading="1.7" type="button">Comfortable</button>
 </div>
-<div aria-label="Accent color" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Emerald" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Blue" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Purple" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Amber" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Pink" type="button"></button>
+<div aria-label="Accent color" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Emerald" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Blue" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Purple" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="Amber" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Pink" type="button"></button>
 </div>
 </div>
 </div>
@@ -206,11 +206,11 @@
 <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULE 1.5</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸšª Input and Output Channels</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">How the world talks to Jarvis and how it responds. The channel is the entry point for intent: when a customer sends a message, they bring a goalâ€”buy, resolve an issue, schedule, complain. The system captures it, interprets the context, and activates the right service. In and out, always two-way.</p>
-<!-- SVG: vÃ¡rios canais (fan-in) -> Jarvis interpreta intenÃ§Ã£o -> resposta de volta (fan-out) -->
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸Å¡Âª Input and Output Channels</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">How the world talks to Jarvis and how it responds. The channel is the entry point for intent: when a customer sends a message, they bring a goalê¢â¬âbuy, resolve an issue, schedule, complain. The system captures it, interprets the context, and activates the right service. In and out, always two-way.</p>
+<!-- SVG: vêÂ¡rios canais (fan-in) -> Jarvis interpreta intenêÂ§êÂ£o -> resposta de volta (fan-out) -->
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Multiple channels â€” WhatsApp, Telegram, website, email, voice, and API â€” converge into a central inbox where Jarvis interprets the intent, and the response goes back through the same channels" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<svg aria-label="Multiple channels ê¢â¬â WhatsApp, Telegram, website, email, voice, and API ê¢â¬â converge into a central inbox where Jarvis interprets the intent, and the response goes back through the same channels" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
 <lineargradient id="m15-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
 <filter height="180%" id="m15-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -239,23 +239,23 @@
 </g>
 <!-- caixas de canal (entrada, esquerda) -->
 <g font-family="Inter,sans-serif" font-size="12" font-weight="600">
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="42"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="62">ðŸ’¬ WhatsApp</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="78"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="98">âœˆï¸ Telegram</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="114"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="134">ðŸŒ website Â· chat</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="150"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="170">ðŸ“§ email</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="186"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="206">ðŸŽ™ï¸ voice Â· API</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="42"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="62">ê°Å¸âÂ¬ WhatsApp</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="78"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="98">ê¢ÅËê¯Â¸Â Telegram</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="114"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="134">ê°Å¸ÅÂ website êÂ· chat</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="150"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="170">ê°Å¸âÂ§ email</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="30" rx="9" stroke="#38bdf8" stroke-width="1.8" width="152" x="44" y="186"></rect><text fill="#bfe6ff" text-anchor="middle" x="120" y="206">ê°Å¸Å½â¢ê¯Â¸Â voice êÂ· API</text></g>
 </g>
-<!-- caixa central: Jarvis interpreta intenÃ§Ã£o (foco com glow) -->
+<!-- caixa central: Jarvis interpreta intenêÂ§êÂ£o (foco com glow) -->
 <g filter="url(#m15-glow)"><rect fill="#0e2018" height="66" rx="15" stroke="url(#m15-grad)" stroke-width="2.5" width="160" x="420" y="92"></rect></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="17" font-weight="700" text-anchor="middle" x="500" y="120">Jarvis</text>
 <text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="500" y="140">interprets intent</text>
-<!-- caixas de canal (saÃ­da, direita) -->
+<!-- caixas de canal (saêÂ­da, direita) -->
 <g font-family="Inter,sans-serif" font-size="12" font-weight="600">
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="42"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="62">ðŸ’¬ WhatsApp</text>
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="78"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="98">âœˆï¸ Telegram</text>
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="114"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="134">ðŸŒ website Â· chat</text>
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="150"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="170">ðŸ“§ email</text>
-<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="186"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="206">ðŸŽ™ï¸ voice Â· API</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="42"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="62">ê°Å¸âÂ¬ WhatsApp</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="78"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="98">ê¢ÅËê¯Â¸Â Telegram</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="114"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="134">ê°Å¸ÅÂ website êÂ· chat</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="150"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="170">ê°Å¸âÂ§ email</text>
+<rect fill="#0e2018" height="30" rx="9" stroke="#34d399" stroke-width="1.8" width="152" x="804" y="186"></rect><text fill="#a7f3d0" text-anchor="middle" x="880" y="206">ê°Å¸Å½â¢ê¯Â¸Â voice êÂ· API</text>
 </g>
 <text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="236">The channel works both ways: the intention comes in through it, and the response goes out through it.</text>
 </svg>
@@ -266,31 +266,31 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Basic</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Concept</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 1.5 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:1-5" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 of 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Module 1.5 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:1-5" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 of 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-1" data-ARCKHÉ-track="1" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-1" data-ARCKHê-track="1" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸšª The door of intent</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å¡Âª The door of intent</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t1-p1">O <strong class="text-emerald-400">channel</strong> is how the world talks to Jarvis and how it responds. Itâ€™s not a technical detail: itâ€™s the <strong class="text-emerald-400">intent entry point</strong>. When someone opens a conversation, theyâ€™re not just sending textâ€”theyâ€™re bringing a need (to buy, solve something, schedule, complain). Without a channel, the smartest system in the world is an island: no one gets in, no one gets help.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t1-p1">O <strong class="text-emerald-400">channel</strong> is how the world talks to Jarvis and how it responds. Itê¢â¬â¢s not a technical detail: itê¢â¬â¢s the <strong class="text-emerald-400">intent entry point</strong>. When someone opens a conversation, theyê¢â¬â¢re not just sending textê¢â¬âtheyê¢â¬â¢re bringing a need (to buy, solve something, schedule, complain). Without a channel, the smartest system in the world is an island: no one gets in, no one gets help.</p>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">ðŸšª</span> The door before the room</h3>
-<p class="text-neutral-300">Imagine an excellent store with no door: great products, but no one comes in. The channel is the door. It's the first contact with the customer's intentâ€”and the quality of that door determines whether the intent even reaches the system.</p>
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å¡Âª</span> The door before the room</h3>
+<p class="text-neutral-300">Imagine an excellent store with no door: great products, but no one comes in. The channel is the door. It's the first contact with the customer's intentê¢â¬âand the quality of that door determines whether the intent even reaches the system.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
 <p class="text-neutral-300 text-sm">Before choosing technology, answer this: where does my customer already talk to me today? Start the channel there. The best door is the one the customer already knows how to open.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
@@ -300,45 +300,45 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Input and output</div><div class="text-xs text-neutral-400">the door opens both ways</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-2" data-ARCKHÉ-track="1" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-2" data-ARCKHê-track="1" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸ’¬ WhatsApp, Telegram, and chat</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ¬ WhatsApp, Telegram, and chat</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t2-p1">The channels <strong class="text-emerald-400">conversational</strong> are the most used in companies: WhatsApp, Telegram, and the chat on the website itself. The advantage is simple and powerful â€” <strong class="text-emerald-400">the customer is already there</strong>. Meeting the customer on their channel brings friction close to zero: they donâ€™t need to download anything, create an account, or learn a new tool.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t2-p1">The channels <strong class="text-emerald-400">conversational</strong> are the most used in companies: WhatsApp, Telegram, and the chat on the website itself. The advantage is simple and powerful ê¢â¬â <strong class="text-emerald-400">the customer is already there</strong>. Meeting the customer on their channel brings friction close to zero: they donê¢â¬â¢t need to download anything, create an account, or learn a new tool.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">âœ“ A good use of the conversational channel</h4>
+<h4 class="font-bold text-emerald-400 mb-4">ê¢Åâ A good use of the conversational channel</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Provide support where the customer already chats</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Respond quickly, in natural language</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Remember the context of the previous conversation</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Escalate to a human when needed</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Provide support where the customer already chats</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Respond quickly, in natural language</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Remember the context of the previous conversation</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Escalate to a human when needed</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Common mistakes</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Common mistakes</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Forcing a channel the customer doesn't use</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Robotic and out-of-context responses</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Forgetting everything with each new message</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Trapping the customer with no way to reach a human</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Forcing a channel the customer doesn't use</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Robotic and out-of-context responses</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Forgetting everything with each new message</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Trapping the customer with no way to reach a human</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">In Brazil, WhatsApp is usually the highest-traffic entry point. But â€œmore commonâ€ doesn't mean â€œalways bestâ€: a B2B customer may prefer email. The channel should follow the customer, not the trend.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">In Brazil, WhatsApp is usually the highest-traffic entry point. But ê¢â¬Åmore commonê¢â¬Â doesn't mean ê¢â¬Åalways bestê¢â¬Â: a B2B customer may prefer email. The channel should follow the customer, not the trend.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">WhatsApp</div><div class="text-xs text-neutral-400">highest traffic (BR)</div></div>
@@ -347,33 +347,33 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Rule</div><div class="text-xs text-neutral-400">where the customer is</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-3" data-ARCKHÉ-track="1" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-3" data-ARCKHê-track="1" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸ“§ Email, Dashboard, Voice, and API</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ§ Email, Dashboard, Voice, and API</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t3-p1">Chat is just one of the gateways. Jarvis also receives and responds through <strong class="text-emerald-400">email, internal dashboard, app, voice, form, or API</strong>. Each channel serves a <strong class="text-emerald-400">context</strong> differentâ€”and choosing the right channel is part of designing the solution, not a last-minute decision.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t3-p1">Chat is just one of the gateways. Jarvis also receives and responds through <strong class="text-emerald-400">email, internal dashboard, app, voice, form, or API</strong>. Each channel serves a <strong class="text-emerald-400">context</strong> differentê¢â¬âand choosing the right channel is part of designing the solution, not a last-minute decision.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“§</div><h4 class="font-semibold text-neutral-100 mb-1">Email</h4><p class="text-xs text-neutral-400">Formal matters, attachments, records with history.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ–¥ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Internal dashboard</h4><p class="text-xs text-neutral-400">The team operating the system within the company.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“±</div><h4 class="font-semibold text-neutral-100 mb-1">App / form</h4><p class="text-xs text-neutral-400">Structured input, defined fields, clean data.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸŽ™ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Voice</h4><p class="text-xs text-neutral-400">Phone call or audio: hands are busy, service by phone.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ”Œ</div><h4 class="font-semibold text-neutral-100 mb-1">API</h4><p class="text-xs text-neutral-400">Another system talking to Jarvis, with no human in the middle.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ§­</div><h4 class="font-semibold text-neutral-100 mb-1">Each one, its own context</h4><p class="text-xs text-neutral-400">The right channel depends on who uses it and what they need.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÂ§</div><h4 class="font-semibold text-neutral-100 mb-1">Email</h4><p class="text-xs text-neutral-400">Formal matters, attachments, records with history.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÂ¥ê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">Internal dashboard</h4><p class="text-xs text-neutral-400">The team operating the system within the company.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÂ±</div><h4 class="font-semibold text-neutral-100 mb-1">App / form</h4><p class="text-xs text-neutral-400">Structured input, defined fields, clean data.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸Å½â¢ê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">Voice</h4><p class="text-xs text-neutral-400">Phone call or audio: hands are busy, service by phone.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÅ</div><h4 class="font-semibold text-neutral-100 mb-1">API</h4><p class="text-xs text-neutral-400">Another system talking to Jarvis, with no human in the middle.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸Â§Â­</div><h4 class="font-semibold text-neutral-100 mb-1">Each one, its own context</h4><p class="text-xs text-neutral-400">The right channel depends on who uses it and what they need.</p></div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§©</span> Multichannel, one intelligence</h3>
-<p class="text-neutral-300 text-sm">The secret: multiple channels up front, <strong class="text-neutral-100">a single brain behind it</strong>. WhatsApp, email, and API can be different doors to the same Jarvisâ€”the intent decides, not the channel. You donâ€™t build five systems; you build one with five doors.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â©</span> Multichannel, one intelligence</h3>
+<p class="text-neutral-300 text-sm">The secret: multiple channels up front, <strong class="text-neutral-100">a single brain behind it</strong>. WhatsApp, email, and API can be different doors to the same Jarvisê¢â¬âthe intent decides, not the channel. You donê¢â¬â¢t build five systems; you build one with five doors.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Multichannel</div><div class="text-xs text-neutral-400">multiple entry points</div></div>
@@ -382,35 +382,35 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Design</div><div class="text-xs text-neutral-400">conscious choice</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-4" data-ARCKHÉ-track="1" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-4" data-ARCKHê-track="1" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸŽ¯ Capture the intent</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å½Â¯ Capture the intent</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t4-p1">When a customer sends a message, theyâ€™re not just writing text: theyâ€™re bringing an <strong class="text-emerald-400">intent</strong>. â€œHow much does it cost?â€ signals intent to buy. â€œIt didnâ€™t arriveâ€ is a problem to solve. â€œDo you have an appointment tomorrow?â€ is a booking. The system needs to capture what the customer <strong class="text-emerald-400">truly wants</strong> â€” not just the words they typed.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t4-p1">When a customer sends a message, theyê¢â¬â¢re not just writing text: theyê¢â¬â¢re bringing an <strong class="text-emerald-400">intent</strong>. ê¢â¬ÅHow much does it cost?ê¢â¬Â signals intent to buy. ê¢â¬ÅIt didnê¢â¬â¢t arriveê¢â¬Â is a problem to solve. ê¢â¬ÅDo you have an appointment tomorrow?ê¢â¬Â is a booking. The system needs to capture what the customer <strong class="text-emerald-400">truly wants</strong> ê¢â¬â not just the words they typed.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">From message to intent</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-2 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div><span class="text-neutral-500">customer:</span> "how much does the plan cost?"      <span class="text-emerald-400">â†’ intent: buy</span></div>
-<div><span class="text-neutral-500">customer:</span> "my order hasn't arrived"      <span class="text-emerald-400">â†’ intent: resolve</span></div>
-<div><span class="text-neutral-500">customer:</span> "do you have any openings tomorrow?"        <span class="text-emerald-400">â†’ intent: schedule</span></div>
-<div><span class="text-neutral-500">customer:</span> "this is outrageous"          <span class="text-emerald-400">â†’ intent: complain</span></div>
+<div><span class="text-neutral-500">customer:</span> "how much does the plan cost?"      <span class="text-emerald-400">ê¢â â intent: buy</span></div>
+<div><span class="text-neutral-500">customer:</span> "my order hasn't arrived"      <span class="text-emerald-400">ê¢â â intent: resolve</span></div>
+<div><span class="text-neutral-500">customer:</span> "do you have any openings tomorrow?"        <span class="text-emerald-400">ê¢â â intent: schedule</span></div>
+<div><span class="text-neutral-500">customer:</span> "this is outrageous"          <span class="text-emerald-400">ê¢â â intent: complain</span></div>
 </div>
 <p class="text-xs text-neutral-500 mt-3">The words change; what the system needs to read is the intent behind them.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">List the 5 to 8 most common intentions of your customers (buy, resolve an issue, schedule, complain, ask...). This small map of intentions is the basis for the routing youâ€™ll see in the next topic.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">List the 5 to 8 most common intentions of your customers (buy, resolve an issue, schedule, complain, ask...). This small map of intentions is the basis for the routing youê¢â¬â¢ll see in the next topic.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Buy</div><div class="text-xs text-neutral-400">price, plan, product</div></div>
@@ -419,25 +419,25 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Complain</div><div class="text-xs text-neutral-400">dissatisfaction</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-5" data-ARCKHÉ-track="1" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-5" data-ARCKHê-track="1" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸ§­ Interpret and route</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Â§Â­ Interpret and route</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t5-p1">Once the intent is captured, the system <strong class="text-emerald-400">interprets the context</strong> and triggers the <strong class="text-emerald-400">the right service</strong>: sales, support, scheduling, finance. Thatâ€™s the intelligence of <strong class="text-emerald-400">routing</strong> â€” the bridge connecting the channel to internal services. Itâ€™s the heart of the workflow: without it, every message would go to the same place and nothing would be handled well.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t5-p1">Once the intent is captured, the system <strong class="text-emerald-400">interprets the context</strong> and triggers the <strong class="text-emerald-400">the right service</strong>: sales, support, scheduling, finance. Thatê¢â¬â¢s the intelligence of <strong class="text-emerald-400">routing</strong> ê¢â¬â the bridge connecting the channel to internal services. Itê¢â¬â¢s the heart of the workflow: without it, every message would go to the same place and nothing would be handled well.</p>
 <!-- Timeline: a jornada de uma mensagem -->
 <div class="bg-dark-800/40 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">A messageâ€™s journey</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">A messageê¢â¬â¢s journey</h3>
 <div class="space-y-4">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
@@ -462,33 +462,33 @@
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">Routing fails when it confuses similar intents ("cancel" could mean a question or churn). When it gets it wrong, make a noteâ€”the intent map from the previous topic is what you refine to get it right more often.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">Routing fails when it confuses similar intents ("cancel" could mean a question or churn). When it gets it wrong, make a noteê¢â¬âthe intent map from the previous topic is what you refine to get it right more often.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Interpret</div><div class="text-xs text-neutral-400">read the context</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Route</div><div class="text-xs text-neutral-400">intent â†’ service</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Bridge</div><div class="text-xs text-neutral-400">channel â†” services</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Route</div><div class="text-xs text-neutral-400">intent ê¢â â service</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Bridge</div><div class="text-xs text-neutral-400">channel ê¢â â services</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Heart</div><div class="text-xs text-neutral-400">the center of the flow</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="1-5" data-ARCKHÉ-topic="modulo-1-5#topico-6" data-ARCKHÉ-track="1" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="1-5" data-ARCKHê-topic="modulo-1-5#topico-6" data-ARCKHê-track="1" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ” The Communication Cycle</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ The Communication Cycle</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t6-p1">The channel is <strong class="text-emerald-400">two-way</strong>: the intent goes in through it, and Jarvisâ€™s response comes out through it, completing the <strong class="text-emerald-400">communication cycle</strong>. Thinking about input and output together avoids a common mistakeâ€”systems that <em class="text-neutral-400">understand</em> the customer very well, but <em class="text-neutral-400">respond</em> bad: at the wrong time, in the wrong tone, or on the wrong channel.</p>
-<!-- SVG: o ciclo de mÃ£o dupla -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-5-t6-p1">The channel is <strong class="text-emerald-400">two-way</strong>: the intent goes in through it, and Jarvisê¢â¬â¢s response comes out through it, completing the <strong class="text-emerald-400">communication cycle</strong>. Thinking about input and output together avoids a common mistakeê¢â¬âsystems that <em class="text-neutral-400">understand</em> the customer very well, but <em class="text-neutral-400">respond</em> bad: at the wrong time, in the wrong tone, or on the wrong channel.</p>
+<!-- SVG: o ciclo de mêÂ£o dupla -->
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Two-way cycle: the customer's intent enters Jarvis, and Jarvis's response goes back to the customer, closing the loop" class="w-full h-auto" role="img" viewbox="0 0 1000 180">
 <defs>
@@ -502,12 +502,12 @@
 <rect fill="#26201a" height="56" rx="14" stroke="#9ca3af" stroke-width="2" width="180" x="60" y="62"></rect>
 <text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="150" y="86">Customer</text>
 <text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="150" y="105">has an intention</text>
-<!-- entrada: intenÃ§Ã£o -> jarvis (ciano, por cima) -->
+<!-- entrada: intenêÂ§êÂ£o -> jarvis (ciano, por cima) -->
 <path d="M240,78 C420,52 560,52 720,72" fill="none" marker-end="url(#m15b-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="2"></path>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="480" y="44">the intention comes in â†’</text>
-<!-- saÃ­da: jarvis -> cliente (emerald, por baixo) -->
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="480" y="44">the intention comes in ê¢â â</text>
+<!-- saêÂ­da: jarvis -> cliente (emerald, por baixo) -->
 <path d="M720,108 C560,128 420,128 240,102" fill="none" marker-end="url(#m15b-ah)" opacity="0.6" stroke="#34d399" stroke-width="2"></path>
-<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="480" y="148">â† the answer returns</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="480" y="148">ê¢â Â the answer returns</text>
 <!-- jarvis -->
 <g filter="url(#m15b-glow)"><rect fill="#0e2018" height="56" rx="14" stroke="#34d399" stroke-width="2.5" width="220" x="720" y="62"></rect></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="830" y="86">Jarvis</text>
@@ -516,19 +516,19 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">âœ“ A well-closed loop</h4>
+<h4 class="font-bold text-emerald-400 mb-4">ê¢Åâ A well-closed loop</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Responds in the same channel where it came in</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Tone and format suited to the channel</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Confirms that the customer was helped</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Responds in the same channel where it came in</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Tone and format suited to the channel</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Confirms that the customer was helped</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Broken cycle</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Broken cycle</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Understands well, but responds poorly or too late</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Reply in a channel the customer can't see</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Leaves the conversation without a resolution</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Understands well, but responds poorly or too late</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Reply in a channel the customer can't see</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Leaves the conversation without a resolution</span></li>
 </ul>
 </div>
 </div>
@@ -536,52 +536,52 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Two-way</div><div class="text-xs text-neutral-400">goes in and out</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Cycle</div><div class="text-xs text-neutral-400">closed conversation</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Response</div><div class="text-xs text-neutral-400">part of the channel</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Understand â‰ </div><div class="text-xs text-neutral-400">respond well</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Understand ê¢â°Â </div><div class="text-xs text-neutral-400">respond well</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-1-5#q1">
-<p class="font-medium mb-4">Self-check (optional): why do we say that â€œthe channel is the entry point for intentâ€?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Because the channel is the hardest part of the system to program.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Because when a customer sends a message, they bring an intent (buy, resolve an issue, schedule) through the channelâ€”and the response comes back through it.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Because the more channels you have, the smarter the system automatically becomes.</button>
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-1-5#q1">
+<p class="font-medium mb-4">Self-check (optional): why do we say that ê¢â¬Åthe channel is the entry point for intentê¢â¬Â?</p>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Because the channel is the hardest part of the system to program.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Because when a customer sends a message, they bring an intent (buy, resolve an issue, schedule) through the channelê¢â¬âand the response comes back through it.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Because the more channels you have, the smarter the system automatically becomes.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸšª</span> Module summary</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸Å¡Âª</span> Module summary</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">The door to intent</strong><span class="text-neutral-400"> â€” the channel connects the customerâ€™s desire to the system; without it, it becomes an island.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Conversational channels</strong><span class="text-neutral-400"> â€” WhatsApp, Telegram, and chat: meet the customer where they already are.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Multichannel</strong><span class="text-neutral-400"> â€” email, dashboard, voice, and API: multiple entry points, one brain.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Capture the intent</strong><span class="text-neutral-400"> â€” understand what the customer really wants, not just the words.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Interpret and route</strong><span class="text-neutral-400"> â€” context triggers the right service; itâ€™s the heart of the flow.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">The communication cycle</strong><span class="text-neutral-400"> â€” a two-way street: understanding well and responding well complete the loop.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">The door to intent</strong><span class="text-neutral-400"> ê¢â¬â the channel connects the customerê¢â¬â¢s desire to the system; without it, it becomes an island.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Conversational channels</strong><span class="text-neutral-400"> ê¢â¬â WhatsApp, Telegram, and chat: meet the customer where they already are.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Multichannel</strong><span class="text-neutral-400"> ê¢â¬â email, dashboard, voice, and API: multiple entry points, one brain.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Capture the intent</strong><span class="text-neutral-400"> ê¢â¬â understand what the customer really wants, not just the words.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Interpret and route</strong><span class="text-neutral-400"> ê¢â¬â context triggers the right service; itê¢â¬â¢s the heart of the flow.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">The communication cycle</strong><span class="text-neutral-400"> ê¢â¬â a two-way street: understanding well and responding well complete the loop.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
 <h3 class="font-semibold text-emerald-400 mb-2">End of Day 1:</h3>
-<p class="text-neutral-300">You laid the foundationâ€”mindset, infrastructure, deployment, and channels. On Day 2, you'll start building Jarvis from the inside: its soul, services, agents, and security.</p>
+<p class="text-neutral-300">You laid the foundationê¢â¬âmindset, infrastructure, deployment, and channels. On Day 2, you'll start building Jarvis from the inside: its soul, services, agents, and security.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Back to Day 1</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha2/index.html">Next: Day 2 Â· Building Jarvis â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Back to Day 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha2/index.html">Next: Day 2 êÂ· Building Jarvis ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. The door to intent</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. WhatsApp, Telegram, Chat</a></li>
@@ -595,21 +595,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>AI Intent Architecture Â· JARVIS Method â€” Day 1 Â· Module 1.5</p>
+<p>AI Intent Architecture êÂ· JARVIS Method ê¢â¬â Day 1 êÂ· Module 1.5</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-1-5#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-1-5#q1', {
           answer: 1,
           explain: {
-            0: 'NÃ£o â€” a dificuldade tÃ©cnica nÃ£o Ã© o ponto. O canal Ã© a porta porque Ã© por onde a intenÃ§Ã£o chega.',
-            1: 'Isso. O cliente traz uma intenÃ§Ã£o que entra pelo canal; o sistema captura, interpreta e responde pelo mesmo canal.',
-            2: 'NÃ£o â€” mais canais sem inteligÃªncia por trÃ¡s sÃ³ multiplica portas. Quem decide Ã© a intenÃ§Ã£o, nÃ£o a quantidade de canais.'
+            0: 'NêÂ£o ê¢â¬â a dificuldade têÂ©cnica nêÂ£o êÂ© o ponto. O canal êÂ© a porta porque êÂ© por onde a intenêÂ§êÂ£o chega.',
+            1: 'Isso. O cliente traz uma intenêÂ§êÂ£o que entra pelo canal; o sistema captura, interpreta e responde pelo mesmo canal.',
+            2: 'NêÂ£o ê¢â¬â mais canais sem inteligêÂªncia por trêÂ¡s sêÂ³ multiplica portas. Quem decide êÂ© a intenêÂ§êÂ£o, nêÂ£o a quantidade de canais.'
           }
         });
       }

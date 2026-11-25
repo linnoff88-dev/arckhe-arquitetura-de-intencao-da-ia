@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>MÃ³dulo 3.5 Â· Medir Resultado | Arquitetura de IntenÃ§Ã£o da IA</title>
+<title>MêÂ³dulo 3.5 êÂ· Medir Resultado | Arquitetura de IntenêÂ§êÂ£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -143,18 +143,18 @@
     .dash-track > i { display:block; height:100%; border-radius:9999px; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteêÂºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenêÂ§êÂ£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -163,46 +163,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="AparêÂªncia e leitura" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Tema" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Escuro</button>
+<button data-ARCKHê-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHê-set-theme="sepia" type="button">SêÂ©pia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHê-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">Sistema</button>
+<button data-ARCKHê-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHê-set-linewidth="68" type="button">MêÂ©dio</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
+<div aria-label="Entrelinha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHê-set-leading="1.7" type="button">ConfortêÂ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="êâmbar" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -213,20 +213,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-purple-400" href="../../index.html">InÃ­cio</a><span>/</span>
+<a class="hover:text-purple-400" href="../../index.html">InêÂ­cio</a><span>/</span>
 <a class="hover:text-purple-400" href="index.html">Dia 3</a><span>/</span>
-<span class="text-purple-400">MÃ³dulo 3.5</span>
+<span class="text-purple-400">MêÂ³dulo 3.5</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 3.5</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ“ Medir Resultado</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Sem mediÃ§Ã£o, qualquer entrega parece progresso. Aqui vocÃª aprende a escolher o que importa, definir a mÃ©trica certa, comparar o antes com o depois e ler os nÃºmeros sem se iludir â€” porque Ã© a mediÃ§Ã£o que diz se a soluÃ§Ã£o resolveu o problema e abre o caminho para evoluir.</p>
-<!-- SVG: antes Ã— depois (duas colunas comparando o resultado) -->
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MêâDULO 3.5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸âÂ Medir Resultado</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Sem mediêÂ§êÂ£o, qualquer entrega parece progresso. Aqui vocêÂª aprende a escolher o que importa, definir a mêÂ©trica certa, comparar o antes com o depois e ler os nêÂºmeros sem se iludir ê¢â¬â porque êÂ© a mediêÂ§êÂ£o que diz se a soluêÂ§êÂ£o resolveu o problema e abre o caminho para evoluir.</p>
+<!-- SVG: antes êâ depois (duas colunas comparando o resultado) -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="ComparaÃ§Ã£o antes e depois: Ã  esquerda uma barra alta de tempo gasto sem a soluÃ§Ã£o; Ã  direita uma barra baixa de tempo gasto com a soluÃ§Ã£o, mostrando a queda que a mediÃ§Ã£o revela" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<svg aria-label="ComparaêÂ§êÂ£o antes e depois: êÂ  esquerda uma barra alta de tempo gasto sem a soluêÂ§êÂ£o; êÂ  direita uma barra baixa de tempo gasto com a soluêÂ§êÂ£o, mostrando a queda que a mediêÂ§êÂ£o revela" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
 <lineargradient id="m35-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
 <filter height="180%" id="m35-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -238,99 +238,99 @@
 <!-- eixo base -->
 <line stroke="#4b5563" stroke-width="1.5" x1="60" x2="940" y1="200" y2="200"></line>
 <!-- ESQUERDA: ANTES (barra alta, neutra) -->
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="70" y="46">Antes (sem a soluÃ§Ã£o)</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="70" y="46">Antes (sem a soluêÂ§êÂ£o)</text>
 <rect fill="#26201a" height="126" rx="8" stroke="#9ca3af" stroke-width="2" width="120" x="150" y="74"></rect>
 <text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="22" font-weight="600" text-anchor="middle" x="210" y="100">40 min</text>
 <text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="210" y="122">por atendimento</text>
 <text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" x="300" y="100">linha de base</text>
 <text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" x="300" y="118">medida antes</text>
 <!-- DIREITA: DEPOIS (barra baixa, roxa em destaque) -->
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="540" y="46">Depois (com a soluÃ§Ã£o)</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="540" y="46">Depois (com a soluêÂ§êÂ£o)</text>
 <g filter="url(#m35-glow)"><rect fill="#1a1230" height="48" rx="8" stroke="url(#m35-grad)" stroke-width="2" width="120" x="640" y="152"></rect></g>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="20" font-weight="600" text-anchor="middle" x="700" y="182">12 min</text>
-<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="700" y="128">a mesma mÃ©trica,</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="700" y="128">a mesma mêÂ©trica,</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="700" y="144">medida depois</text>
-<!-- seta da queda (ciano = o que a mediÃ§Ã£o revela) -->
+<!-- seta da queda (ciano = o que a mediêÂ§êÂ£o revela) -->
 <path d="M270,110 C420,110 470,170 636,176" fill="none" marker-end="url(#m35-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="2"></path>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="455" y="150">âˆ’70% no tempo</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="238">A mesma rÃ©gua nos dois momentos: a diferenÃ§a Ã© o resultado que a soluÃ§Ã£o entregou.</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="455" y="150">ê¢Ëâ70% no tempo</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="238">A mesma rêÂ©gua nos dois momentos: a diferenêÂ§a êÂ© o resultado que a soluêÂ§êÂ£o entregou.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">TêÂ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~45</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">PrÃ¡tica</div><div class="text-xs text-neutral-400">Tipo</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">NêÂ­vel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">PrêÂ¡tica</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do mÃ³dulo 3.5" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:3-5" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Progresso do mêÂ³dulo 3.5" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:3-5" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mêÂ³dulo</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 de 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-1" data-ARCKHÉ-track="3" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="3-5" data-ARCKHê-topic="modulo-3-5#topico-1" data-ARCKHê-track="3" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸŽ¯ Medir o que importa</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å½Â¯ Medir o que importa</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t1-p1">Medir nÃ£o Ã© encher um painel de nÃºmeros. Ã‰ escolher <strong class="text-purple-400">o nÃºmero que prova que o problema foi resolvido</strong> â€” e ignorar todo o resto. A maioria mede o que Ã© fÃ¡cil de contar (cliques, mensagens, telas bonitas) e esquece de medir o que a intenÃ§Ã£o pedia (tempo economizado, dor que sumiu, dinheiro que ficou). A mÃ©trica certa nasce da intenÃ§Ã£o, nÃ£o do que a ferramenta entrega de graÃ§a.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-5-t1-p1">Medir nêÂ£o êÂ© encher um painel de nêÂºmeros. êâ° escolher <strong class="text-purple-400">o nêÂºmero que prova que o problema foi resolvido</strong> ê¢â¬â e ignorar todo o resto. A maioria mede o que êÂ© fêÂ¡cil de contar (cliques, mensagens, telas bonitas) e esquece de medir o que a intenêÂ§êÂ£o pedia (tempo economizado, dor que sumiu, dinheiro que ficou). A mêÂ©trica certa nasce da intenêÂ§êÂ£o, nêÂ£o do que a ferramenta entrega de graêÂ§a.</p>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸ§­</span> A mediÃ§Ã£o responde Ã  intenÃ§Ã£o</h3>
-<p class="text-neutral-300">No MÃ³dulo 3.1 vocÃª definiu o resultado que importa. Medir Ã© sÃ³ voltar lÃ¡ e perguntar: <em class="text-neutral-400">"aquele resultado aconteceu?"</em>. Se a intenÃ§Ã£o era reduzir o tempo de resposta, a mÃ©trica Ã© tempo de resposta â€” nÃ£o nÃºmero de mensagens enviadas. MÃ©trica boa Ã© a que, sozinha, diz se valeu a pena.</p>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â­</span> A mediêÂ§êÂ£o responde êÂ  intenêÂ§êÂ£o</h3>
+<p class="text-neutral-300">No MêÂ³dulo 3.1 vocêÂª definiu o resultado que importa. Medir êÂ© sêÂ³ voltar lêÂ¡ e perguntar: <em class="text-neutral-400">"aquele resultado aconteceu?"</em>. Se a intenêÂ§êÂ£o era reduzir o tempo de resposta, a mêÂ©trica êÂ© tempo de resposta ê¢â¬â nêÂ£o nêÂºmero de mensagens enviadas. MêÂ©trica boa êÂ© a que, sozinha, diz se valeu a pena.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">âœ“ Vale medir</h4>
+<h4 class="font-bold text-purple-400 mb-4">ê¢Åâ Vale medir</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Tempo economizado por tarefa</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Atendimentos resolvidos sem humano</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Erros que deixaram de acontecer</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Dinheiro ou horas que sobraram</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Tempo economizado por tarefa</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Atendimentos resolvidos sem humano</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Erros que deixaram de acontecer</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Dinheiro ou horas que sobraram</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— MÃ©trica de vaidade</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ MêÂ©trica de vaidade</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"O agente respondeu 900 vezes"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Ficou lindo no celular"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Tem muitas funcionalidades"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>(nÃºmeros que nÃ£o tocam a dor)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"O agente respondeu 900 vezes"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"Ficou lindo no celular"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"Tem muitas funcionalidades"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>(nêÂºmeros que nêÂ£o tocam a dor)</span></li>
 </ul>
 </div>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">MÃ©trica</div><div class="text-xs text-neutral-400">prova do resultado</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Vem da intenÃ§Ã£o</div><div class="text-xs text-neutral-400">nÃ£o da ferramenta</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Vaidade</div><div class="text-xs text-neutral-400">conta, mas nÃ£o importa</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Foco</div><div class="text-xs text-neutral-400">poucos nÃºmeros certos</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">MêÂ©trica</div><div class="text-xs text-neutral-400">prova do resultado</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Vem da intenêÂ§êÂ£o</div><div class="text-xs text-neutral-400">nêÂ£o da ferramenta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Vaidade</div><div class="text-xs text-neutral-400">conta, mas nêÂ£o importa</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Foco</div><div class="text-xs text-neutral-400">poucos nêÂºmeros certos</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-2" data-ARCKHÉ-track="3" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="3-5" data-ARCKHê-topic="modulo-3-5#topico-2" data-ARCKHê-track="3" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸ“ Definir a mÃ©trica certa</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ Definir a mêÂ©trica certa</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t2-p1">Uma mÃ©trica certa tem trÃªs qualidades: ela Ã© <strong class="text-purple-400">especÃ­fica</strong> (um nÃºmero, uma unidade), <strong class="text-purple-400">honesta</strong> (nÃ£o dÃ¡ pra fingir que melhorou) e <strong class="text-purple-400">acionÃ¡vel</strong> (se piorar, vocÃª sabe o que mexer). "Melhorar o atendimento" nÃ£o Ã© mÃ©trica. "Tempo mÃ©dio atÃ© a primeira resposta, em minutos" Ã©. A diferenÃ§a Ã© que a segunda pode ser anotada, comparada e cobrada.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-5-t2-p1">Uma mêÂ©trica certa tem trêÂªs qualidades: ela êÂ© <strong class="text-purple-400">especêÂ­fica</strong> (um nêÂºmero, uma unidade), <strong class="text-purple-400">honesta</strong> (nêÂ£o dêÂ¡ pra fingir que melhorou) e <strong class="text-purple-400">acionêÂ¡vel</strong> (se piorar, vocêÂª sabe o que mexer). "Melhorar o atendimento" nêÂ£o êÂ© mêÂ©trica. "Tempo mêÂ©dio atêÂ© a primeira resposta, em minutos" êÂ©. A diferenêÂ§a êÂ© que a segunda pode ser anotada, comparada e cobrada.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">A mÃ©trica escrita como uma frase sÃ³</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">A mêÂ©trica escrita como uma frase sêÂ³</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-purple-400">o_que:</span> tempo medio ate a 1a resposta</div>
 <div><span class="text-purple-400">unidade:</span> minutos</div>
@@ -338,163 +338,163 @@
 <div><span class="text-purple-400">linha_de_base:</span> 40 min (medido na semana antes)</div>
 <div><span class="text-purple-400">meta:</span> abaixo de 15 min</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Esqueleto ilustrativo de uma definiÃ§Ã£o de mÃ©trica â€” uma por intenÃ§Ã£o.</p>
+<p class="text-xs text-neutral-500 mt-3">Esqueleto ilustrativo de uma definiêÂ§êÂ£o de mêÂ©trica ê¢â¬â uma por intenêÂ§êÂ£o.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Teste a sua mÃ©trica com a pergunta do "fingir": <em class="text-neutral-400">"dÃ¡ para esse nÃºmero melhorar sem o problema melhorar?"</em>. Se der (ex.: "mensagens enviadas" sobe sÃ³ por mandar mais texto), troque por uma mÃ©trica que nÃ£o se deixa enganar â€” como "problemas resolvidos no primeiro contato".</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Teste a sua mêÂ©trica com a pergunta do "fingir": <em class="text-neutral-400">"dêÂ¡ para esse nêÂºmero melhorar sem o problema melhorar?"</em>. Se der (ex.: "mensagens enviadas" sobe sêÂ³ por mandar mais texto), troque por uma mêÂ©trica que nêÂ£o se deixa enganar ê¢â¬â como "problemas resolvidos no primeiro contato".</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">EspecÃ­fica</div><div class="text-xs text-neutral-400">nÃºmero + unidade</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Honesta</div><div class="text-xs text-neutral-400">nÃ£o dÃ¡ pra fingir</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">AcionÃ¡vel</div><div class="text-xs text-neutral-400">guia o ajuste</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Uma frase</div><div class="text-xs text-neutral-400">o quÃª, unidade, meta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">EspecêÂ­fica</div><div class="text-xs text-neutral-400">nêÂºmero + unidade</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Honesta</div><div class="text-xs text-neutral-400">nêÂ£o dêÂ¡ pra fingir</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">AcionêÂ¡vel</div><div class="text-xs text-neutral-400">guia o ajuste</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Uma frase</div><div class="text-xs text-neutral-400">o quêÂª, unidade, meta</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-3" data-ARCKHÉ-track="3" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="3-5" data-ARCKHê-topic="modulo-3-5#topico-3" data-ARCKHê-track="3" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">âš–ï¸ Antes Ã— depois</h2>
+<h2 class="text-2xl font-bold">ê¢Å¡âê¯Â¸Â Antes êâ depois</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t3-p1">Um nÃºmero sozinho nÃ£o diz nada. "12 minutos" Ã© bom ou ruim? SÃ³ dÃ¡ pra saber comparando com o <strong class="text-purple-400">antes</strong>. Por isso a regra de ouro da mediÃ§Ã£o Ã©: <strong class="text-purple-400">capture a linha de base ANTES de ligar a soluÃ§Ã£o</strong>. Se vocÃª sÃ³ medir depois, perdeu a metade que prova o resultado â€” e vai ter que adivinhar o ponto de partida, que Ã© exatamente onde a ilusÃ£o entra.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-5-t3-p1">Um nêÂºmero sozinho nêÂ£o diz nada. "12 minutos" êÂ© bom ou ruim? SêÂ³ dêÂ¡ pra saber comparando com o <strong class="text-purple-400">antes</strong>. Por isso a regra de ouro da mediêÂ§êÂ£o êÂ©: <strong class="text-purple-400">capture a linha de base ANTES de ligar a soluêÂ§êÂ£o</strong>. Se vocêÂª sêÂ³ medir depois, perdeu a metade que prova o resultado ê¢â¬â e vai ter que adivinhar o ponto de partida, que êÂ© exatamente onde a ilusêÂ£o entra.</p>
 <!-- Timeline -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-5 flex items-center"><span class="mr-2">ðŸ•’</span> A linha do tempo da mediÃ§Ã£o</h3>
+<h3 class="text-lg font-semibold text-purple-400 mb-5 flex items-center"><span class="mr-2">ê°Å¸â¢â</span> A linha do tempo da mediêÂ§êÂ£o</h3>
 <ol class="relative border-l border-dark-600 ml-3 space-y-6">
 <li class="ml-6">
 <span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold">1</span>
 <h4 class="font-semibold text-neutral-100">Mede o antes (linha de base)</h4>
-<p class="text-sm text-neutral-400">Antes de qualquer IA, anote o nÃºmero atual: 40 min por atendimento, 30 tickets/dia, 8 erros/semana.</p>
+<p class="text-sm text-neutral-400">Antes de qualquer IA, anote o nêÂºmero atual: 40 min por atendimento, 30 tickets/dia, 8 erros/semana.</p>
 </li>
 <li class="ml-6">
 <span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold">2</span>
-<h4 class="font-semibold text-neutral-100">Liga a soluÃ§Ã£o</h4>
-<p class="text-sm text-neutral-400">Coloca o protÃ³tipo do MÃ³dulo 3.4 para rodar de verdade, com gente usando.</p>
+<h4 class="font-semibold text-neutral-100">Liga a soluêÂ§êÂ£o</h4>
+<p class="text-sm text-neutral-400">Coloca o protêÂ³tipo do MêÂ³dulo 3.4 para rodar de verdade, com gente usando.</p>
 </li>
 <li class="ml-6">
 <span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold">3</span>
-<h4 class="font-semibold text-neutral-100">Mede o depois (mesma rÃ©gua)</h4>
-<p class="text-sm text-neutral-400">Passado um perÃ­odo justo, mede de novo â€” exatamente o mesmo nÃºmero, do mesmo jeito.</p>
+<h4 class="font-semibold text-neutral-100">Mede o depois (mesma rêÂ©gua)</h4>
+<p class="text-sm text-neutral-400">Passado um perêÂ­odo justo, mede de novo ê¢â¬â exatamente o mesmo nêÂºmero, do mesmo jeito.</p>
 </li>
 <li class="ml-6">
 <span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold">4</span>
 <h4 class="font-semibold text-neutral-100">Compara e conclui</h4>
-<p class="text-sm text-neutral-400">A diferenÃ§a entre antes e depois Ã© o resultado. Sem o passo 1, esse cÃ¡lculo Ã© impossÃ­vel.</p>
+<p class="text-sm text-neutral-400">A diferenêÂ§a entre antes e depois êÂ© o resultado. Sem o passo 1, esse cêÂ¡lculo êÂ© impossêÂ­vel.</p>
 </li>
 </ol>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">âœ“ ComparaÃ§Ã£o honesta</h4>
+<h4 class="font-bold text-purple-400 mb-4">ê¢Åâ ComparaêÂ§êÂ£o honesta</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Mesma mÃ©trica nos dois momentos</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Mesmo jeito de coletar</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>PerÃ­odo comparÃ¡vel (semana Ã— semana)</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Linha de base anotada antes</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Mesma mêÂ©trica nos dois momentos</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Mesmo jeito de coletar</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>PerêÂ­odo comparêÂ¡vel (semana êâ semana)</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Linha de base anotada antes</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— ComparaÃ§Ã£o que engana</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ ComparaêÂ§êÂ£o que engana</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Estimar o "antes" de memÃ³ria</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Medir depois de um jeito diferente</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Comparar dia cheio com dia vazio</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Nunca ter medido o ponto de partida</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Estimar o "antes" de memêÂ³ria</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Medir depois de um jeito diferente</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Comparar dia cheio com dia vazio</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Nunca ter medido o ponto de partida</span></li>
 </ul>
 </div>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Linha de base</div><div class="text-xs text-neutral-400">medir antes</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Mesma rÃ©gua</div><div class="text-xs text-neutral-400">antes e depois</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">A diferenÃ§a</div><div class="text-xs text-neutral-400">Ã© o resultado</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">PerÃ­odo justo</div><div class="text-xs text-neutral-400">comparÃ¡vel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Mesma rêÂ©gua</div><div class="text-xs text-neutral-400">antes e depois</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">A diferenêÂ§a</div><div class="text-xs text-neutral-400">êÂ© o resultado</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">PerêÂ­odo justo</div><div class="text-xs text-neutral-400">comparêÂ¡vel</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-4" data-ARCKHÉ-track="3" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="3-5" data-ARCKHê-topic="modulo-3-5#topico-4" data-ARCKHê-track="3" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸª„ IlusÃ£o de produtividade</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Âªâ IlusêÂ£o de produtividade</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t4-p1">Aqui estÃ¡ a armadilha mais perigosa do curso inteiro: <strong class="text-purple-400">sem mediÃ§Ã£o, qualquer entrega parece progresso</strong>. A soluÃ§Ã£o roda, o painel pisca, todo mundo aplaude â€” e ninguÃ©m percebe que o problema continua exatamente do mesmo tamanho. Isso Ã© a ilusÃ£o de produtividade: confundir <em class="text-neutral-400">atividade</em> (coisas acontecendo) com <em class="text-neutral-400">resultado</em> (a dor diminuindo). A Ãºnica vacina Ã© medir antes e depois.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-5-t4-p1">Aqui estêÂ¡ a armadilha mais perigosa do curso inteiro: <strong class="text-purple-400">sem mediêÂ§êÂ£o, qualquer entrega parece progresso</strong>. A soluêÂ§êÂ£o roda, o painel pisca, todo mundo aplaude ê¢â¬â e ninguêÂ©m percebe que o problema continua exatamente do mesmo tamanho. Isso êÂ© a ilusêÂ£o de produtividade: confundir <em class="text-neutral-400">atividade</em> (coisas acontecendo) com <em class="text-neutral-400">resultado</em> (a dor diminuindo). A êÂºnica vacina êÂ© medir antes e depois.</p>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">âš ï¸</span> Sinais de que vocÃª estÃ¡ se iludindo</h3>
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">ê¢Å¡Â ê¯Â¸Â</span> Sinais de que vocêÂª estêÂ¡ se iludindo</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>VocÃª fala da soluÃ§Ã£o pelo que ela <em>faz</em>, nunca pelo que ela <em>mudou</em>.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>O orgulho Ã© da tecnologia, nÃ£o do nÃºmero que caiu (ou subiu).</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>NinguÃ©m sabe dizer qual era o "antes".</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>O painel mostra muita atividade e nenhum resultado.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>VocêÂª fala da soluêÂ§êÂ£o pelo que ela <em>faz</em>, nunca pelo que ela <em>mudou</em>.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>O orgulho êÂ© da tecnologia, nêÂ£o do nêÂºmero que caiu (ou subiu).</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>NinguêÂ©m sabe dizer qual era o "antes".</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>O painel mostra muita atividade e nenhum resultado.</span></li>
 </ul>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
 <h4 class="font-bold text-neutral-100 mb-2">Atividade</h4>
-<p class="text-sm text-neutral-400 mb-3">Coisas acontecendo. FÃ¡cil de ver, fÃ¡cil de comemorar.</p>
+<p class="text-sm text-neutral-400 mb-3">Coisas acontecendo. FêÂ¡cil de ver, fêÂ¡cil de comemorar.</p>
 <ul class="text-sm text-neutral-400 space-y-1.5">
-<li>â€¢ "O agente respondeu 900 vezes"</li>
-<li>â€¢ "Rodou a semana toda sem cair"</li>
-<li>â€¢ "Tem 12 funcionalidades"</li>
+<li>ê¢â¬Â¢ "O agente respondeu 900 vezes"</li>
+<li>ê¢â¬Â¢ "Rodou a semana toda sem cair"</li>
+<li>ê¢â¬Â¢ "Tem 12 funcionalidades"</li>
 </ul>
 </div>
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
 <h4 class="font-bold text-purple-400 mb-2">Resultado</h4>
-<p class="text-sm text-neutral-300 mb-3">A dor diminuindo. Ã‰ isso que a empresa paga para ter.</p>
+<p class="text-sm text-neutral-300 mb-3">A dor diminuindo. êâ° isso que a empresa paga para ter.</p>
 <ul class="text-sm text-neutral-300 space-y-1.5">
-<li>â€¢ "Atendimento caiu de 40 para 12 min"</li>
-<li>â€¢ "Equipe ganhou 6 h por semana"</li>
-<li>â€¢ "Erros de cadastro caÃ­ram 80%"</li>
+<li>ê¢â¬Â¢ "Atendimento caiu de 40 para 12 min"</li>
+<li>ê¢â¬Â¢ "Equipe ganhou 6 h por semana"</li>
+<li>ê¢â¬Â¢ "Erros de cadastro caêÂ­ram 80%"</li>
 </ul>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Antes de apresentar qualquer soluÃ§Ã£o, faÃ§a o "teste da frase de resultado": consiga completar <em class="text-neutral-400">"antes era ___, agora Ã© ___"</em> com dois nÃºmeros reais. Se vocÃª nÃ£o consegue preencher os dois espaÃ§os, ainda nÃ£o mediu â€” sÃ³ achou que mediu.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Antes de apresentar qualquer soluêÂ§êÂ£o, faêÂ§a o "teste da frase de resultado": consiga completar <em class="text-neutral-400">"antes era ___, agora êÂ© ___"</em> com dois nêÂºmeros reais. Se vocêÂª nêÂ£o consegue preencher os dois espaêÂ§os, ainda nêÂ£o mediu ê¢â¬â sêÂ³ achou que mediu.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">IlusÃ£o</div><div class="text-xs text-neutral-400">atividade â‰  resultado</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Sem mÃ©trica</div><div class="text-xs text-neutral-400">tudo parece progresso</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">IlusêÂ£o</div><div class="text-xs text-neutral-400">atividade ê¢â°Â  resultado</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Sem mêÂ©trica</div><div class="text-xs text-neutral-400">tudo parece progresso</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Vacina</div><div class="text-xs text-neutral-400">medir antes e depois</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Teste da frase</div><div class="text-xs text-neutral-400">"antes ___, agora ___"</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-5" data-ARCKHÉ-track="3" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="3-5" data-ARCKHê-topic="modulo-3-5#topico-5" data-ARCKHê-track="3" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸ“Š Ler os nÃºmeros</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÅ  Ler os nêÂºmeros</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t5-p1">Ter o nÃºmero Ã© metade; <strong class="text-purple-400">ler o nÃºmero</strong> Ã© a outra. Ler bem Ã© saber a diferenÃ§a entre uma variaÃ§Ã£o real e um ruÃ­do, olhar a tendÃªncia e nÃ£o sÃ³ o ponto de hoje, e desconfiar de um resultado bom demais (quase sempre Ã© erro de mediÃ§Ã£o, nÃ£o milagre). Um painel nÃ£o pensa por vocÃª â€” ele mostra; quem conclui Ã© o arquiteto.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-5-t5-p1">Ter o nêÂºmero êÂ© metade; <strong class="text-purple-400">ler o nêÂºmero</strong> êÂ© a outra. Ler bem êÂ© saber a diferenêÂ§a entre uma variaêÂ§êÂ£o real e um ruêÂ­do, olhar a tendêÂªncia e nêÂ£o sêÂ³ o ponto de hoje, e desconfiar de um resultado bom demais (quase sempre êÂ© erro de mediêÂ§êÂ£o, nêÂ£o milagre). Um painel nêÂ£o pensa por vocêÂª ê¢â¬â ele mostra; quem conclui êÂ© o arquiteto.</p>
 <!-- MOCK DASHBOARD (HTML, ilustrativo) -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-3 overflow-hidden">
 <div class="dash bg-dark-900/70 rounded-xl border border-dark-700 overflow-hidden">
@@ -502,53 +502,53 @@
 <span class="w-3 h-3 rounded-full bg-red-400/70"></span>
 <span class="w-3 h-3 rounded-full bg-primary/70"></span>
 <span class="w-3 h-3 rounded-full bg-purple-400/70"></span>
-<span class="ml-3 text-xs text-neutral-400 font-mono">painel/resultado Â· soluÃ§Ã£o de atendimento</span>
+<span class="ml-3 text-xs text-neutral-400 font-mono">painel/resultado êÂ· soluêÂ§êÂ£o de atendimento</span>
 </div>
 <div class="p-5 space-y-4">
 <div class="dash-bar"><span class="text-sm text-neutral-300">Tempo de resposta</span><span class="dash-track"><i style="width:30%;background:linear-gradient(90deg,#c084fc,#a855f7)"></i></span><span class="text-sm font-semibold text-purple-400 text-right">12 min</span></div>
 <div class="dash-bar"><span class="text-sm text-neutral-300">Resolvidos sem humano</span><span class="dash-track"><i style="width:72%;background:linear-gradient(90deg,#c084fc,#a855f7)"></i></span><span class="text-sm font-semibold text-purple-400 text-right">72%</span></div>
 <div class="dash-bar"><span class="text-sm text-neutral-300">Horas economizadas/sem</span><span class="dash-track"><i style="width:60%;background:linear-gradient(90deg,#38bdf8,#0ea5e9)"></i></span><span class="text-sm font-semibold text-sky-400 text-right">6 h</span></div>
-<div class="dash-bar"><span class="text-sm text-neutral-300">Erros de cadastro</span><span class="dash-track"><i style="width:18%;background:linear-gradient(90deg,#38bdf8,#0ea5e9)"></i></span><span class="text-sm font-semibold text-sky-400 text-right">âˆ’80%</span></div>
-<div class="dash-bar"><span class="text-sm text-neutral-300">SatisfaÃ§Ã£o (CSAT)</span><span class="dash-track"><i style="width:88%;background:linear-gradient(90deg,#c084fc,#a855f7)"></i></span><span class="text-sm font-semibold text-purple-400 text-right">4.4/5</span></div>
+<div class="dash-bar"><span class="text-sm text-neutral-300">Erros de cadastro</span><span class="dash-track"><i style="width:18%;background:linear-gradient(90deg,#38bdf8,#0ea5e9)"></i></span><span class="text-sm font-semibold text-sky-400 text-right">ê¢Ëâ80%</span></div>
+<div class="dash-bar"><span class="text-sm text-neutral-300">SatisfaêÂ§êÂ£o (CSAT)</span><span class="dash-track"><i style="width:88%;background:linear-gradient(90deg,#c084fc,#a855f7)"></i></span><span class="text-sm font-semibold text-purple-400 text-right">4.4/5</span></div>
 </div>
 </div>
 </div>
-<p class="text-xs text-neutral-500 mb-6">RecriaÃ§Ã£o ilustrativa de um painel de resultado â€” nÃ£o Ã© um screenshot real. As barras representam cada mÃ©trica contra sua meta.</p>
+<p class="text-xs text-neutral-500 mb-6">RecriaêÂ§êÂ£o ilustrativa de um painel de resultado ê¢â¬â nêÂ£o êÂ© um screenshot real. As barras representam cada mêÂ©trica contra sua meta.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">ðŸ”Ž</span> TrÃªs perguntas ao ler um nÃºmero</h3>
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">ê°Å¸âÅ½</span> TrêÂªs perguntas ao ler um nêÂºmero</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Ã‰ tendÃªncia ou foi um dia?</strong> Olhe a sÃ©rie, nÃ£o o pico isolado â€” um dia bom nÃ£o Ã© resultado.</li>
-<li><strong class="text-neutral-100">Ã‰ sinal ou ruÃ­do?</strong> VariaÃ§Ãµes pequenas vÃ£o e voltam; sÃ³ uma mudanÃ§a grande e estÃ¡vel conta.</li>
-<li><strong class="text-neutral-100">Bom demais para ser verdade?</strong> Resultado milagroso quase sempre Ã© erro de coleta â€” confira a fonte.</li>
+<li><strong class="text-neutral-100">êâ° tendêÂªncia ou foi um dia?</strong> Olhe a sêÂ©rie, nêÂ£o o pico isolado ê¢â¬â um dia bom nêÂ£o êÂ© resultado.</li>
+<li><strong class="text-neutral-100">êâ° sinal ou ruêÂ­do?</strong> VariaêÂ§êÂµes pequenas vêÂ£o e voltam; sêÂ³ uma mudanêÂ§a grande e estêÂ¡vel conta.</li>
+<li><strong class="text-neutral-100">Bom demais para ser verdade?</strong> Resultado milagroso quase sempre êÂ© erro de coleta ê¢â¬â confira a fonte.</li>
 </ul>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">TendÃªncia</div><div class="text-xs text-neutral-400">sÃ©rie &gt; ponto</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Sinal Ã— ruÃ­do</div><div class="text-xs text-neutral-400">grande e estÃ¡vel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">TendêÂªncia</div><div class="text-xs text-neutral-400">sêÂ©rie &gt; ponto</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Sinal êâ ruêÂ­do</div><div class="text-xs text-neutral-400">grande e estêÂ¡vel</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Desconfiar</div><div class="text-xs text-neutral-400">bom demais = erro</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Quem conclui</div><div class="text-xs text-neutral-400">vocÃª, nÃ£o o painel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Quem conclui</div><div class="text-xs text-neutral-400">vocêÂª, nêÂ£o o painel</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-6" data-ARCKHÉ-track="3" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="3-5" data-ARCKHê-topic="modulo-3-5#topico-6" data-ARCKHê-track="3" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ”„ MediÃ§Ã£o alimenta a evoluÃ§Ã£o</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââ MediêÂ§êÂ£o alimenta a evoluêÂ§êÂ£o</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t6-p1">Medir nÃ£o Ã© o fim da linha â€” Ã© o que abre a prÃ³xima volta. <strong class="text-purple-400">O nÃºmero aponta exatamente onde mexer</strong>: se o tempo de resposta caiu mas a satisfaÃ§Ã£o nÃ£o subiu, a resposta estÃ¡ rÃ¡pida e ruim; se resolve pouco sozinho, falta contexto ou habilidade. Sem mediÃ§Ã£o vocÃª ajusta no escuro, mexendo no que "acha"; com mediÃ§Ã£o vocÃª ajusta no claro, mexendo no que o nÃºmero mostra. Ã‰ assim que a mediÃ§Ã£o vira o motor da evoluÃ§Ã£o (MÃ³dulo 3.6).</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-5-t6-p1">Medir nêÂ£o êÂ© o fim da linha ê¢â¬â êÂ© o que abre a prêÂ³xima volta. <strong class="text-purple-400">O nêÂºmero aponta exatamente onde mexer</strong>: se o tempo de resposta caiu mas a satisfaêÂ§êÂ£o nêÂ£o subiu, a resposta estêÂ¡ rêÂ¡pida e ruim; se resolve pouco sozinho, falta contexto ou habilidade. Sem mediêÂ§êÂ£o vocêÂª ajusta no escuro, mexendo no que "acha"; com mediêÂ§êÂ£o vocêÂª ajusta no claro, mexendo no que o nêÂºmero mostra. êâ° assim que a mediêÂ§êÂ£o vira o motor da evoluêÂ§êÂ£o (MêÂ³dulo 3.6).</p>
 <!-- SVG aninhamento/ciclo: medir -> evoluir -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Ciclo: a soluÃ§Ã£o roda, a mediÃ§Ã£o lÃª o resultado, o nÃºmero aponta o ajuste e a soluÃ§Ã£o evolui â€” um laÃ§o contÃ­nuo que se repete" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<svg aria-label="Ciclo: a soluêÂ§êÂ£o roda, a mediêÂ§êÂ£o lêÂª o resultado, o nêÂºmero aponta o ajuste e a soluêÂ§êÂ£o evolui ê¢â¬â um laêÂ§o contêÂ­nuo que se repete" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
 <defs>
 <filter height="180%" id="m35b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 <pattern height="30" id="m35b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#a855f7" opacity="0.10" r="1.2"></circle></pattern>
@@ -562,103 +562,103 @@
 <path d="M918,128 C918,180 300,182 158,128" marker-end="url(#m35b-ahc)"></path>
 </g>
 <g filter="url(#m35b-glow)"><rect fill="#1a1230" height="52" rx="13" stroke="#c084fc" stroke-width="2" width="158" x="56" y="74"></rect></g>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="135" y="98">SoluÃ§Ã£o roda</text>
-<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="135" y="116">em produÃ§Ã£o</text>
-<g class="wf-a"><rect fill="#0e1b26" height="52" rx="13" stroke="#38bdf8" stroke-width="2" width="158" x="286" y="74"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="365" y="98">Mede</text><text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="365" y="116">antes Ã— depois</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="52" rx="13" stroke="#38bdf8" stroke-width="2" width="158" x="572" y="74"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="651" y="98">NÃºmero aponta</text><text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="651" y="116">onde mexer</text></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="135" y="98">SoluêÂ§êÂ£o roda</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="135" y="116">em produêÂ§êÂ£o</text>
+<g class="wf-a"><rect fill="#0e1b26" height="52" rx="13" stroke="#38bdf8" stroke-width="2" width="158" x="286" y="74"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="365" y="98">Mede</text><text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="365" y="116">antes êâ depois</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="52" rx="13" stroke="#38bdf8" stroke-width="2" width="158" x="572" y="74"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="651" y="98">NêÂºmero aponta</text><text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="651" y="116">onde mexer</text></g>
 <g filter="url(#m35b-glow)"><rect fill="#1a1230" height="52" rx="13" stroke="#c084fc" stroke-width="2" width="120" x="858" y="74"></rect></g>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="918" y="98">Evolui</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="918" y="116">ajusta</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="172">A volta se repete: cada mediÃ§Ã£o alimenta o prÃ³ximo ajuste.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="172">A volta se repete: cada mediêÂ§êÂ£o alimenta o prêÂ³ximo ajuste.</text>
 </svg>
 </div>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸ”§</span> O nÃºmero diz o que ajustar</h3>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ§</span> O nêÂºmero diz o que ajustar</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Resposta rÃ¡pida mas satisfaÃ§Ã£o baixa</strong> â†’ mexer na qualidade (alma, contexto), nÃ£o na velocidade.</li>
-<li><strong class="text-neutral-100">Resolve pouco sozinho</strong> â†’ falta contexto, habilidade ou ferramenta â€” voltar ao Dia 2.</li>
-<li><strong class="text-neutral-100">MÃ©trica travada</strong> â†’ talvez o gargalo seja outro; remapear o problema (MÃ³dulo 3.2).</li>
+<li><strong class="text-neutral-100">Resposta rêÂ¡pida mas satisfaêÂ§êÂ£o baixa</strong> ê¢â â mexer na qualidade (alma, contexto), nêÂ£o na velocidade.</li>
+<li><strong class="text-neutral-100">Resolve pouco sozinho</strong> ê¢â â falta contexto, habilidade ou ferramenta ê¢â¬â voltar ao Dia 2.</li>
+<li><strong class="text-neutral-100">MêÂ©trica travada</strong> ê¢â â talvez o gargalo seja outro; remapear o problema (MêÂ³dulo 3.2).</li>
 </ul>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Conceitos-chave</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">NÃ£o Ã© o fim</div><div class="text-xs text-neutral-400">Ã© a prÃ³xima volta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">NêÂ£o êÂ© o fim</div><div class="text-xs text-neutral-400">êÂ© a prêÂ³xima volta</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Aponta o ajuste</div><div class="text-xs text-neutral-400">onde mexer</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">No claro</div><div class="text-xs text-neutral-400">nÃ£o no achismo</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Motor</div><div class="text-xs text-neutral-400">da evoluÃ§Ã£o (3.6)</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">No claro</div><div class="text-xs text-neutral-400">nêÂ£o no achismo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Motor</div><div class="text-xs text-neutral-400">da evoluêÂ§êÂ£o (3.6)</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-3-5#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): por que medir o "antes" da soluÃ§Ã£o Ã© tÃ£o importante?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Porque deixa o painel mais bonito para a apresentaÃ§Ã£o.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Porque sem a linha de base nÃ£o dÃ¡ para provar o resultado â€” e qualquer entrega parece progresso.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Porque a IA exige um valor inicial para funcionar.</button>
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-3-5#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): por que medir o "antes" da soluêÂ§êÂ£o êÂ© têÂ£o importante?</p>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Porque deixa o painel mais bonito para a apresentaêÂ§êÂ£o.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Porque sem a linha de base nêÂ£o dêÂ¡ para provar o resultado ê¢â¬â e qualquer entrega parece progresso.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Porque a IA exige um valor inicial para funcionar.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ“</span> Resumo do mÃ³dulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸âÂ</span> Resumo do mêÂ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Medir o que importa</strong><span class="text-neutral-400"> â€” a mÃ©trica certa nasce da intenÃ§Ã£o, nÃ£o da ferramenta.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Definir a mÃ©trica certa</strong><span class="text-neutral-400"> â€” especÃ­fica, honesta e acionÃ¡vel; escrita numa frase sÃ³.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Antes Ã— depois</strong><span class="text-neutral-400"> â€” capture a linha de base antes; a diferenÃ§a Ã© o resultado.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">IlusÃ£o de produtividade</strong><span class="text-neutral-400"> â€” sem mediÃ§Ã£o, qualquer entrega parece progresso.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Ler os nÃºmeros</strong><span class="text-neutral-400"> â€” tendÃªncia, sinal Ã— ruÃ­do; quem conclui Ã© vocÃª, nÃ£o o painel.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">MediÃ§Ã£o alimenta a evoluÃ§Ã£o</strong><span class="text-neutral-400"> â€” o nÃºmero aponta onde mexer; Ã© o motor da prÃ³xima volta.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Medir o que importa</strong><span class="text-neutral-400"> ê¢â¬â a mêÂ©trica certa nasce da intenêÂ§êÂ£o, nêÂ£o da ferramenta.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Definir a mêÂ©trica certa</strong><span class="text-neutral-400"> ê¢â¬â especêÂ­fica, honesta e acionêÂ¡vel; escrita numa frase sêÂ³.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Antes êâ depois</strong><span class="text-neutral-400"> ê¢â¬â capture a linha de base antes; a diferenêÂ§a êÂ© o resultado.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">IlusêÂ£o de produtividade</strong><span class="text-neutral-400"> ê¢â¬â sem mediêÂ§êÂ£o, qualquer entrega parece progresso.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Ler os nêÂºmeros</strong><span class="text-neutral-400"> ê¢â¬â tendêÂªncia, sinal êâ ruêÂ­do; quem conclui êÂ© vocêÂª, nêÂ£o o painel.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">MediêÂ§êÂ£o alimenta a evoluêÂ§êÂ£o</strong><span class="text-neutral-400"> ê¢â¬â o nêÂºmero aponta onde mexer; êÂ© o motor da prêÂ³xima volta.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-purple-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
-<p class="text-neutral-300">3.6 â€” EvoluÃ§Ã£o e ApresentaÃ§Ã£o: usar o que vocÃª mediu para melhorar a soluÃ§Ã£o e mostrar o valor com clareza.</p>
+<h3 class="font-semibold text-purple-400 mb-2">PrêÂ³ximo mêÂ³dulo:</h3>
+<p class="text-neutral-300">3.6 ê¢â¬â EvoluêÂ§êÂ£o e ApresentaêÂ§êÂ£o: usar o que vocêÂª mediu para melhorar a soluêÂ§êÂ£o e mostrar o valor com clareza.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 3</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-6.html">PrÃ³ximo: 3.6 EvoluÃ§Ã£o e ApresentaÃ§Ã£o â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Voltar para o Dia 3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-6.html">PrêÂ³ximo: 3.6 EvoluêÂ§êÂ£o e ApresentaêÂ§êÂ£o ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="êÂndice do mêÂ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pêÂ¡gina <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-1">1. Medir o que importa</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. A mÃ©trica certa</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. Antes Ã— depois</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. IlusÃ£o de produtividade</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. Ler os nÃºmeros</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. MediÃ§Ã£o alimenta a evoluÃ§Ã£o</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. A mêÂ©trica certa</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. Antes êâ depois</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. IlusêÂ£o de produtividade</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. Ler os nêÂºmeros</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. MediêÂ§êÂ£o alimenta a evoluêÂ§êÂ£o</a></li>
 </ol>
 </nav>
 </aside>
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 3 Â· MÃ³dulo 3.5</p>
+<p>Arquitetura de IntenêÂ§êÂ£o da IA êÂ· MêÂ©todo JARVIS ê¢â¬â Dia 3 êÂ· MêÂ³dulo 3.5</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-3-5#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-3-5#q1', {
           answer: 1,
           explain: {
-            0: 'NÃ£o â€” um painel bonito Ã© estÃ©tica; o que prova valor Ã© a comparaÃ§Ã£o honesta entre antes e depois.',
-            1: 'Isso. Sem a linha de base nÃ£o hÃ¡ com o que comparar, e aÃ­ toda atividade vira "progresso" sem prova.',
-            2: 'NÃ£o â€” a IA nÃ£o precisa de um valor inicial para rodar; a linha de base Ã© para vocÃª, nÃ£o para o modelo.'
+            0: 'NêÂ£o ê¢â¬â um painel bonito êÂ© estêÂ©tica; o que prova valor êÂ© a comparaêÂ§êÂ£o honesta entre antes e depois.',
+            1: 'Isso. Sem a linha de base nêÂ£o hêÂ¡ com o que comparar, e aêÂ­ toda atividade vira "progresso" sem prova.',
+            2: 'NêÂ£o ê¢â¬â a IA nêÂ£o precisa de um valor inicial para rodar; a linha de base êÂ© para vocêÂª, nêÂ£o para o modelo.'
           }
         });
       }

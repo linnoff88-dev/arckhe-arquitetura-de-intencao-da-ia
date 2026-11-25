@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Module 2.5 Â· Memory and Context | AI Intent Architecture</title>
+<title>Module 2.5 êÂ· Memory and Context | AI Intent Architecture</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -130,7 +130,7 @@
     html:not(.dark) .toc-link.is-active { color: #2563eb; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip" href="#conteudo">Skip to content</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -138,10 +138,10 @@
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -150,46 +150,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Day 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Day 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="My journey" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Journey</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="My journey" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Journey</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Theme" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Clear</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">High contrast</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Theme" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Dark</button>
+<button data-ARCKHê-set-theme="claro" type="button">Clear</button>
+<button data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Focus</button>
+<button data-ARCKHê-set-theme="contraste" type="button">High contrast</button>
 </div>
-<div aria-label="Source" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">System</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
+<div aria-label="Source" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">System</button>
+<button data-ARCKHê-set-font="leitura" type="button">Reading</button>
 </div>
-<div aria-label="Text size" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Text size" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Line width" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Narrow</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">Medium</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Wide</button>
+<div aria-label="Line width" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Narrow</button>
+<button data-ARCKHê-set-linewidth="68" type="button">Medium</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Wide</button>
 </div>
-<div aria-label="Subtext" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compact</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">Comfortable</button>
+<div aria-label="Subtext" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compact</button>
+<button data-ARCKHê-set-leading="1.7" type="button">Comfortable</button>
 </div>
-<div aria-label="Accent color" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Emerald" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Blue" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Purple" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Amber" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Pink" type="button"></button>
+<div aria-label="Accent color" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Emerald" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Blue" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Purple" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="Amber" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Pink" type="button"></button>
 </div>
 </div>
 </div>
@@ -209,9 +209,9 @@
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.5</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ§  Memory and Context</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">A Jarvis without memory starts from scratch with every message â€” and every conversation becomes a tiring reintroduction. Here youâ€™ll learn what the system remembers, for how long, what informs each decision, and how to retrieve the right information at the right time â€” without turning it into a snooping archive. Good memory isnâ€™t about storing everything: itâ€™s about storing what supports continuity.</p>
-<!-- SVG: entrada -> memÃ³ria (curto/longo) -> recuperaÃ§Ã£o do contexto certo -> decisÃ£o -->
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸Â§Â  Memory and Context</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">A Jarvis without memory starts from scratch with every message ê¢â¬â and every conversation becomes a tiring reintroduction. Here youê¢â¬â¢ll learn what the system remembers, for how long, what informs each decision, and how to retrieve the right information at the right time ê¢â¬â without turning it into a snooping archive. Good memory isnê¢â¬â¢t about storing everything: itê¢â¬â¢s about storing what supports continuity.</p>
+<!-- SVG: entrada -> memêÂ³ria (curto/longo) -> recuperaêÂ§êÂ£o do contexto certo -> decisêÂ£o -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
 <svg aria-label="Flow: the user's input feeds short-term and long-term memory; from there, the system retrieves only the right context, which then informs the decision and response" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
@@ -226,32 +226,32 @@
 <g filter="url(#m25-glow)"><rect fill="#0e1622" height="56" rx="13" stroke="url(#m25-grad)" stroke-width="2" width="130" x="36" y="98"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14.5" font-weight="600" text-anchor="middle" x="101" y="122">Input</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="101" y="140">what the user says</text>
-<!-- entrada -> memÃ³rias -->
+<!-- entrada -> memêÂ³rias -->
 <g fill="none" opacity="0.55" stroke="#60a5fa" stroke-width="1.8">
 <path d="M166,118 C240,118 250,78 330,78" marker-end="url(#m25-ah)"></path>
 <path d="M166,134 C240,134 250,174 330,174" marker-end="url(#m25-ah)"></path>
 </g>
-<!-- memÃ³ria curto/longo (ciano) -->
+<!-- memêÂ³ria curto/longo (ciano) -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
 <g class="wf-a"><rect fill="#0e1b26" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="330" y="58"></rect><text fill="#bfe6ff" text-anchor="middle" x="420" y="83">short-term memory</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="330" y="154"></rect><text fill="#bfe6ff" text-anchor="middle" x="420" y="179">long-term memory</text></g>
 </g>
-<!-- memÃ³rias -> recuperaÃ§Ã£o -->
+<!-- memêÂ³rias -> recuperaêÂ§êÂ£o -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M510,78 C580,78 590,112 620,112" marker-end="url(#m25-ahc)"></path>
 <path d="M510,174 C580,174 590,138 620,138" marker-end="url(#m25-ahc)"></path>
 </g>
-<!-- recuperaÃ§Ã£o (cor da trilha) -->
+<!-- recuperaêÂ§êÂ£o (cor da trilha) -->
 <g filter="url(#m25-glow)"><rect fill="#0e1622" height="58" rx="13" stroke="url(#m25-grad)" stroke-width="2" width="150" x="620" y="96"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="695" y="120">Retrieve</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="695" y="138">only the right context</text>
-<!-- recuperaÃ§Ã£o -> decisÃ£o -->
+<!-- recuperaêÂ§êÂ£o -> decisêÂ£o -->
 <path d="M770,125 L856,125" fill="none" marker-end="url(#m25-ah)" opacity="0.55" stroke="#60a5fa" stroke-width="1.8"></path>
-<!-- decisÃ£o -->
+<!-- decisêÂ£o -->
 <g filter="url(#m25-glow)"><rect fill="#0e1622" height="56" rx="13" stroke="url(#m25-grad)" stroke-width="2" width="116" x="856" y="98"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="914" y="122">Decision</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="914" y="140">on-point response</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="228">Memory supports recovery; recovery supports decision-making â€” storing isn't the end; remembering at the right time is.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="228">Memory supports recovery; recovery supports decision-making ê¢â¬â storing isn't the end; remembering at the right time is.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
@@ -260,46 +260,46 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Concept</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 2.5 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:2-5" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 of 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Module 2.5 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:2-5" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 of 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-1" data-ARCKHÉ-track="2" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-1" data-ARCKHê-track="2" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸ“Œ What Jarvis Remembers</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÅ What Jarvis Remembers</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t1-p1">By default, an AI model doesn't remember anything: each message arrives as if it were the first. <strong class="text-blue-400">Memory is what you add around the model so it doesn't start from scratch each time.</strong> It's the difference between a support agent that recognizes you and already knows your usual order, and one that asks your name every time. Memory isn't model magicâ€”it's an architecture decision made by the intent architect.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t1-p1">By default, an AI model doesn't remember anything: each message arrives as if it were the first. <strong class="text-blue-400">Memory is what you add around the model so it doesn't start from scratch each time.</strong> It's the difference between a support agent that recognizes you and already knows your usual order, and one that asks your name every time. Memory isn't model magicê¢â¬âit's an architecture decision made by the intent architect.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§©</span> Memory is everything that survives between messages</h3>
-<p class="text-neutral-300">Without memory, Jarvis lives in an eternal present: each turn is isolated. With memory, it accumulatesâ€”what was said, who the person is, what has already been resolved. The architect decides whatâ€™s worth carrying forward and for how long. Remembering takes space and attention, so it remembers deliberately, not by accident.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â©</span> Memory is everything that survives between messages</h3>
+<p class="text-neutral-300">Without memory, Jarvis lives in an eternal present: each turn is isolated. With memory, it accumulatesê¢â¬âwhat was said, who the person is, what has already been resolved. The architect decides whatê¢â¬â¢s worth carrying forward and for how long. Remembering takes space and attention, so it remembers deliberately, not by accident.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ With memory, Jarvis</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ With memory, Jarvis</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Recognizes whoâ€™s speaking.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Picks up where you left off.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Doesnâ€™t repeat questions that have already been answered.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Sounds coherent over time.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Recognizes whoê¢â¬â¢s speaking.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Picks up where you left off.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Doesnê¢â¬â¢t repeat questions that have already been answered.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Sounds coherent over time.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Without memory, Jarvis</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Without memory, Jarvis</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Asks your name with every message.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Forget what you just said.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Contradicts what it said before.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Treats every turn as a brand-new stranger.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Asks your name with every message.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Forget what you just said.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Contradicts what it said before.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Treats every turn as a brand-new stranger.</span></li>
 </ul>
 </div>
 </div>
@@ -310,31 +310,31 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Effect</div><div class="text-xs text-neutral-400">continuity</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-2" data-ARCKHÉ-track="2" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-2" data-ARCKHê-track="2" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸ—‚ï¸ Types of Memory</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââê¯Â¸Â Types of Memory</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t2-p1">Not all memory is the same. There are three time horizons the architect needs to distinguish: a <strong class="text-blue-400">session memory</strong> (lasts only for the current conversation), the <strong class="text-blue-400">short-term memory</strong> (lasts for a few interactions or for the day) and the <strong class="text-blue-400">long-term memory</strong> (carries across conversations â€” what defines who that person is). Mixing the three is one of the biggest sources of confusion in AI projects.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t2-p1">Not all memory is the same. There are three time horizons the architect needs to distinguish: a <strong class="text-blue-400">session memory</strong> (lasts only for the current conversation), the <strong class="text-blue-400">short-term memory</strong> (lasts for a few interactions or for the day) and the <strong class="text-blue-400">long-term memory</strong> (carries across conversations ê¢â¬â what defines who that person is). Mixing the three is one of the biggest sources of confusion in AI projects.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">â±ï¸</span> The three memory time frames</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ê¢ÂÂ±ê¯Â¸Â</span> The three memory time frames</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Session:</strong> what's being said now, in this conversation. It ends when the conversation ends â€” it's the notepad on the table.</li>
+<li><strong class="text-neutral-100">Session:</strong> what's being said now, in this conversation. It ends when the conversation ends ê¢â¬â it's the notepad on the table.</li>
 <li><strong class="text-neutral-100">Short term:</strong> what's worth remembering for a few interactions or for the day ("you already gave me this request today"). It expires on its own.</li>
-<li><strong class="text-neutral-100">Long term:</strong> what defines the person and carries across all conversations â€” name, preferences, relevant history. It's the persistent profile.</li>
+<li><strong class="text-neutral-100">Long term:</strong> what defines the person and carries across all conversations ê¢â¬â name, preferences, relevant history. It's the persistent profile.</li>
 </ul>
 </div>
-<!-- TIMELINE: como a memÃ³ria evolui numa conversa -->
+<!-- TIMELINE: como a memêÂ³ria evolui numa conversa -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">How memory evolves during a conversation</h3>
 <div class="relative border-l-2 border-blue-500/40 pl-6 space-y-6">
@@ -364,38 +364,38 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Session</div><div class="text-xs text-neutral-400">just this conversation</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Short term</div><div class="text-xs text-neutral-400">hours or the day</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Long term</div><div class="text-xs text-neutral-400">runs through everything</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Promote</div><div class="text-xs text-neutral-400">session â†’ long</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Promote</div><div class="text-xs text-neutral-400">session ê¢â â long</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-3" data-ARCKHÉ-track="2" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-3" data-ARCKHê-track="2" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸ± Context: what informs the decision</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ÂÂ± Context: what informs the decision</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t3-p1">Memory is what Jarvis <em class="text-neutral-400">has stored</em>; <strong class="text-blue-400">context is what it puts on the table to make a decision now</strong>. Theyâ€™re different things. With each response, the system puts together a â€œplateâ€ with pieces of memory, the current message, the identity (the soul), and the rules. That plate is the contextâ€”and the quality of the response depends much more on what goes into it than on the modelâ€™s size.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t3-p1">Memory is what Jarvis <em class="text-neutral-400">has stored</em>; <strong class="text-blue-400">context is what it puts on the table to make a decision now</strong>. Theyê¢â¬â¢re different things. With each response, the system puts together a ê¢â¬Åplateê¢â¬Â with pieces of memory, the current message, the identity (the soul), and the rules. That plate is the contextê¢â¬âand the quality of the response depends much more on what goes into it than on the modelê¢â¬â¢s size.</p>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">When Jarvis â€œanswers incorrectly,â€ the first question isnâ€™t â€œwhich prompt should I improve?â€ but <strong class="text-neutral-100">"what was in the context when this response was given?"</strong>. Many failures come from missing context (it didnâ€™t receive the information) or excess context (noise that distracted it)â€”not a lack of intelligence.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">When Jarvis ê¢â¬Åanswers incorrectly,ê¢â¬Â the first question isnê¢â¬â¢t ê¢â¬Åwhich prompt should I improve?ê¢â¬Â but <strong class="text-neutral-100">"what was in the context when this response was given?"</strong>. Many failures come from missing context (it didnê¢â¬â¢t receive the information) or excess context (noise that distracted it)ê¢â¬ânot a lack of intelligence.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">What typically makes up the context for a response</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-neutral-300">
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">The soul:</strong> who it is and its limits.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">The current message:</strong> what's being requested.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">Memory passages:</strong> only the relevant ones.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">Business data:</strong> price, inventory, status.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">The rules:</strong> what's allowed and what's not.</span></div>
-<div class="flex items-start gap-2"><span class="text-blue-400">â€¢</span><span><strong class="text-neutral-100">The task in progress:</strong> where we are in the process.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">The soul:</strong> who it is and its limits.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">The current message:</strong> what's being requested.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">Memory passages:</strong> only the relevant ones.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">Business data:</strong> price, inventory, status.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">The rules:</strong> what's allowed and what's not.</span></div>
+<div class="flex items-start gap-2"><span class="text-blue-400">ê¢â¬Â¢</span><span><strong class="text-neutral-100">The task in progress:</strong> where we are in the process.</span></div>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
@@ -405,43 +405,43 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Diagnosis</div><div class="text-xs text-neutral-400">"what was on the table?"</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-4" data-ARCKHÉ-track="2" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-4" data-ARCKHê-track="2" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ”Ž Retrieve the Right Information</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÅ½ Retrieve the Right Information</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t4-p1">Storing a lot doesn't help if Jarvis can't <strong class="text-blue-400">find the right piece at the right time</strong>. Retrieval is the art of bringing back only the passages relevant to the current question from a large memory. You donâ€™t pour the entire memory into the contextâ€”thatâ€™s expensive, slow, and gets in the way. You retrieve by relevance: what relates to whatâ€™s being asked now.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t4-p1">Storing a lot doesn't help if Jarvis can't <strong class="text-blue-400">find the right piece at the right time</strong>. Retrieval is the art of bringing back only the passages relevant to the current question from a large memory. You donê¢â¬â¢t pour the entire memory into the contextê¢â¬âthatê¢â¬â¢s expensive, slow, and gets in the way. You retrieve by relevance: what relates to whatê¢â¬â¢s being asked now.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> The golden rule of retrieval</h3>
-<p class="text-neutral-300 text-sm">Bring <strong class="text-neutral-100">enough to answer well, and nothing more</strong>. Too much memory in the context doesnâ€™t make Jarvis smarterâ€”it makes it more confused and more expensive. The secret isnâ€™t remembering everything; itâ€™s remembering whatâ€™s useful for this response.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å½Â¯</span> The golden rule of retrieval</h3>
+<p class="text-neutral-300 text-sm">Bring <strong class="text-neutral-100">enough to answer well, and nothing more</strong>. Too much memory in the context doesnê¢â¬â¢t make Jarvis smarterê¢â¬âit makes it more confused and more expensive. The secret isnê¢â¬â¢t remembering everything; itê¢â¬â¢s remembering whatê¢â¬â¢s useful for this response.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ Healthy recovery</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ Healthy recovery</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Brings back passages related to the current question.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Prioritize what's most recent and relevant.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Summarize long content before using it.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Leave out what isnâ€™t relevant.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Brings back passages related to the current question.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Prioritize what's most recent and relevant.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Summarize long content before using it.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Leave out what isnê¢â¬â¢t relevant.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Poor recovery</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Poor recovery</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Puts the entire memory into the context.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Mixes unrelated topics.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Repeats old, outdated data.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Costs a lot and responds slowly.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Puts the entire memory into the context.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Mixes unrelated topics.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Repeats old, outdated data.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Costs a lot and responds slowly.</span></li>
 </ul>
 </div>
 </div>
@@ -454,7 +454,7 @@
 <div><span class="text-blue-400">ignores:</span> old conversations about other topics</div>
 <div><span class="text-blue-400">final_context:</span> lean and precise</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Illustrative relevance-based retrieval diagram â€” not real code.</p>
+<p class="text-xs text-neutral-500 mt-3">Illustrative relevance-based retrieval diagram ê¢â¬â not real code.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Relevance</div><div class="text-xs text-neutral-400">connected to the question</div></div>
@@ -463,29 +463,29 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Sufficient</div><div class="text-xs text-neutral-400">not dump everything</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-5" data-ARCKHÉ-track="2" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-5" data-ARCKHê-track="2" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸš« What NOT to store</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å¡Â« What NOT to store</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t5-p1">A beginnerâ€™s temptation is to save everything â€œjust in case.â€ The architect does the opposite: <strong class="text-blue-400">decides what NOT to store</strong>. Two reasons matter hereâ€”privacy (sensitive data that shouldnâ€™t be retained) and noise (junk that only gets in the way of retrieval). Storing everything is both a legal risk and poison for quality. Clean memory is useful memory.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t5-p1">A beginnerê¢â¬â¢s temptation is to save everything ê¢â¬Åjust in case.ê¢â¬Â The architect does the opposite: <strong class="text-blue-400">decides what NOT to store</strong>. Two reasons matter hereê¢â¬âprivacy (sensitive data that shouldnê¢â¬â¢t be retained) and noise (junk that only gets in the way of retrieval). Storing everything is both a legal risk and poison for quality. Clean memory is useful memory.</p>
 <div class="space-y-3 mb-6">
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Sensitive data without a need</strong> <span class="text-red-400">â€” privacy risk.</span><p class="text-sm text-neutral-400 mt-1">Passwords, complete documents, card details: if you donâ€™t need to store them, donâ€™t.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Chatter and noise</strong> <span class="text-red-400">â€” the poison of retrieval.</span><p class="text-sm text-neutral-400 mt-1">"Good morning," "thank you," venting without facts: they take up space and make it harder to find what matters.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Information that becomes outdated quickly</strong> <span class="text-red-400">â€” becomes a lie.</span><p class="text-sm text-neutral-400 mt-1">Today's price, current inventory: storing them as fixed facts makes Jarvis state outdated information.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Sensitive data without a need</strong> <span class="text-red-400">ê¢â¬â privacy risk.</span><p class="text-sm text-neutral-400 mt-1">Passwords, complete documents, card details: if you donê¢â¬â¢t need to store them, donê¢â¬â¢t.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Chatter and noise</strong> <span class="text-red-400">ê¢â¬â the poison of retrieval.</span><p class="text-sm text-neutral-400 mt-1">"Good morning," "thank you," venting without facts: they take up space and make it harder to find what matters.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Information that becomes outdated quickly</strong> <span class="text-red-400">ê¢â¬â becomes a lie.</span><p class="text-sm text-neutral-400 mt-1">Today's price, current inventory: storing them as fixed facts makes Jarvis state outdated information.</p></div></div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
 <p class="text-neutral-300 text-sm">Before storing anything in long-term memory, ask three questions: <strong class="text-neutral-100">is this sensitive?</strong> (if yes, avoid or protect it), <strong class="text-neutral-100">will this be useful again?</strong> (if not, discard it) and <strong class="text-neutral-100">will this still be true tomorrow?</strong> (if not, look it up at the source instead of saving it).</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
@@ -495,25 +495,25 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Clean memory</div><div class="text-xs text-neutral-400">useful memory</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="2-5" data-ARCKHÉ-topic="modulo-2-5#topico-6" data-ARCKHÉ-track="2" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="2-5" data-ARCKHê-topic="modulo-2-5#topico-6" data-ARCKHê-track="2" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ”— Memory in Service of Continuity</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââ Memory in Service of Continuity</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-5-t6-p1">All of this exists for one reason: <strong class="text-blue-400">continuity</strong>. Memory isnâ€™t a trophy for how much the system accumulatesâ€”itâ€™s what makes Jarvis feel like one coherent presence instead of a thousand disconnected agents. The ultimate goal isnâ€™t â€œto remember a lotâ€; itâ€™s to make the person feel theyâ€™re talking to someone who <em class="text-neutral-400">knows it and picks up where they left off</em>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-5-t6-p1">All of this exists for one reason: <strong class="text-blue-400">continuity</strong>. Memory isnê¢â¬â¢t a trophy for how much the system accumulatesê¢â¬âitê¢â¬â¢s what makes Jarvis feel like one coherent presence instead of a thousand disconnected agents. The ultimate goal isnê¢â¬â¢t ê¢â¬Åto remember a lotê¢â¬Â; itê¢â¬â¢s to make the person feel theyê¢â¬â¢re talking to someone who <em class="text-neutral-400">knows it and picks up where they left off</em>.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§­</span> The compass of memory</h3>
-<p class="text-neutral-300">When faced with â€œShould I save this?â€, the right question is: <strong class="text-neutral-100">will this help Jarvis continue the relationship better tomorrow?</strong> If it helps, it's worth remembering. If it doesn't, it's baggage. Continuity is the criterion that separates memory from accumulationâ€”and it's what turns isolated responses into a single, reliable experience.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â­</span> The compass of memory</h3>
+<p class="text-neutral-300">When faced with ê¢â¬ÅShould I save this?ê¢â¬Â, the right question is: <strong class="text-neutral-100">will this help Jarvis continue the relationship better tomorrow?</strong> If it helps, it's worth remembering. If it doesn't, it's baggage. Continuity is the criterion that separates memory from accumulationê¢â¬âand it's what turns isolated responses into a single, reliable experience.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">The contrast in one line each</h3>
@@ -523,7 +523,7 @@
 <div><span class="text-blue-400">blind_accumulation:</span> remembers everything, finds nothing, leaks data</div>
 <div><span class="text-blue-400">memoria_boa:</span> remembers what matters, at the right time</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Illustration of how memory affects the experience â€” not an actual configuration.</p>
+<p class="text-xs text-neutral-500 mt-3">Illustration of how memory affects the experience ê¢â¬â not an actual configuration.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Objective</div><div class="text-xs text-neutral-400">continuity</div></div>
@@ -532,49 +532,49 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Outcome</div><div class="text-xs text-neutral-400">relationship, not turns</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-2-5#q1">
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-2-5#q1">
 <p class="font-medium mb-4">Self-check (optional): what criterion separates good memory from mere accumulation?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Store as much as possible, just in case.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Keep only what supports continuity â€” what helps the relationship move forward.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Never store anything to protect privacy.</button>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Store as much as possible, just in case.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Keep only what supports continuity ê¢â¬â what helps the relationship move forward.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Never store anything to protect privacy.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ§ </span> Module summary</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸Â§Â </span> Module summary</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">What Jarvis remembers</strong><span class="text-neutral-400"> â€” memory is the layer around the model, an architectural decision.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Types of memory</strong><span class="text-neutral-400"> â€” session, short-term, and long-term; each with its own lifespan.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Context</strong><span class="text-neutral-400"> â€” what goes on the table to make a decision now; quality starts with it.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Retrieve the right thing</strong><span class="text-neutral-400"> â€” retrieve enough to be relevant, and nothing more.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">What NOT to store</strong><span class="text-neutral-400"> â€” privacy and noise; clean memory is useful memory.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">In service of continuity</strong><span class="text-neutral-400"> â€” the goal isnâ€™t to remember a lot; itâ€™s to continue the relationship.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">What Jarvis remembers</strong><span class="text-neutral-400"> ê¢â¬â memory is the layer around the model, an architectural decision.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Types of memory</strong><span class="text-neutral-400"> ê¢â¬â session, short-term, and long-term; each with its own lifespan.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Context</strong><span class="text-neutral-400"> ê¢â¬â what goes on the table to make a decision now; quality starts with it.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Retrieve the right thing</strong><span class="text-neutral-400"> ê¢â¬â retrieve enough to be relevant, and nothing more.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">What NOT to store</strong><span class="text-neutral-400"> ê¢â¬â privacy and noise; clean memory is useful memory.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">In service of continuity</strong><span class="text-neutral-400"> ê¢â¬â the goal isnê¢â¬â¢t to remember a lot; itê¢â¬â¢s to continue the relationship.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
 <h3 class="font-semibold text-blue-400 mb-2">Next module:</h3>
-<p class="text-neutral-300">2.6 â€” Safety Boundaries: how Jarvis operates within clear, safe limits.</p>
+<p class="text-neutral-300">2.6 ê¢â¬â Safety Boundaries: how Jarvis operates within clear, safe limits.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Back to Day 2</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-6.html">Next: 2.6 Guardrails â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Back to Day 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-6.html">Next: 2.6 Guardrails ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. What Jarvis Remembers</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Types of Memory</a></li>
@@ -588,21 +588,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>AI Intent Architecture Â· JARVIS Method â€” Day 2 Â· Module 2.5</p>
+<p>AI Intent Architecture êÂ· JARVIS Method ê¢â¬â Day 2 êÂ· Module 2.5</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-2-5#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-2-5#q1', {
           answer: 1,
           explain: {
-            0: 'NÃ£o â€” guardar tudo "por garantia" vira risco de privacidade e ruÃ­do que atrapalha a recuperaÃ§Ã£o.',
-            1: 'Isso. O critÃ©rio Ã© a continuidade: guarda-se o que ajuda a relaÃ§Ã£o a seguir melhor amanhÃ£.',
-            2: 'Quase â€” privacidade importa, mas o extremo de nÃ£o guardar nada quebra a continuidade; o ponto Ã© guardar o que serve.'
+            0: 'NêÂ£o ê¢â¬â guardar tudo "por garantia" vira risco de privacidade e ruêÂ­do que atrapalha a recuperaêÂ§êÂ£o.',
+            1: 'Isso. O critêÂ©rio êÂ© a continuidade: guarda-se o que ajuda a relaêÂ§êÂ£o a seguir melhor amanhêÂ£.',
+            2: 'Quase ê¢â¬â privacidade importa, mas o extremo de nêÂ£o guardar nada quebra a continuidade; o ponto êÂ© guardar o que serve.'
           }
         });
       }

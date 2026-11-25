@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Module 3.4 Â· Functional Prototype | AI Intent Architecture</title>
+<title>Module 3.4 êÂ· Functional Prototype | AI Intent Architecture</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -131,7 +131,7 @@
     html:not(.dark) .toc-link.is-active { color: #7c3aed; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip" href="#conteudo">Skip to content</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -139,10 +139,10 @@
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -151,46 +151,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Day 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Day 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="My journey" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Journey</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="My journey" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Journey</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Theme" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Clear</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">High contrast</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Theme" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Dark</button>
+<button data-ARCKHê-set-theme="claro" type="button">Clear</button>
+<button data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Focus</button>
+<button data-ARCKHê-set-theme="contraste" type="button">High contrast</button>
 </div>
-<div aria-label="Source" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">System</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
+<div aria-label="Source" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">System</button>
+<button data-ARCKHê-set-font="leitura" type="button">Reading</button>
 </div>
-<div aria-label="Text size" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Text size" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Line width" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Narrow</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">Medium</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Wide</button>
+<div aria-label="Line width" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Narrow</button>
+<button data-ARCKHê-set-linewidth="68" type="button">Medium</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Wide</button>
 </div>
-<div aria-label="Subtext" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compact</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">Comfortable</button>
+<div aria-label="Subtext" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compact</button>
+<button data-ARCKHê-set-leading="1.7" type="button">Comfortable</button>
 </div>
-<div aria-label="Accent color" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Emerald" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Blue" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Purple" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Amber" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Pink" type="button"></button>
+<div aria-label="Accent color" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Emerald" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Blue" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Purple" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="Amber" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Pink" type="button"></button>
 </div>
 </div>
 </div>
@@ -210,9 +210,9 @@
 <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MODULE 3.4</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ› ï¸ Functional Prototype</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">A design on paper can't solve a problem on its own. Here, you move beyond the blueprint and build the first working versionâ€”small, real, and tested. Starting small, testing with a real case, iterating quickly, and having a clear criterion for "working" are what turn a good-looking idea into a solution that delivers.</p>
-<!-- SVG: ciclo iterativo do MVP â€” desenho â†’ protÃ³tipo â†’ testar â†’ iterar (loop) -->
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸âºÂ ê¯Â¸Â Functional Prototype</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">A design on paper can't solve a problem on its own. Here, you move beyond the blueprint and build the first working versionê¢â¬âsmall, real, and tested. Starting small, testing with a real case, iterating quickly, and having a clear criterion for "working" are what turn a good-looking idea into a solution that delivers.</p>
+<!-- SVG: ciclo iterativo do MVP ê¢â¬â desenho ê¢â â protêÂ³tipo ê¢â â testar ê¢â â iterar (loop) -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
 <svg aria-label="Iterative MVP cycle: the design produces a prototype, which is tested with a real case, generating lessons that feed into iterating and improving the prototype itself, in a continuous loop" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
@@ -223,12 +223,12 @@
 <marker id="m34-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#m34-grid)" height="240" width="1000" x="0" y="0"></rect>
-<!-- linha de avanÃ§o: desenho -> protÃ³tipo -> testar -->
+<!-- linha de avanêÂ§o: desenho -> protêÂ³tipo -> testar -->
 <g fill="none" opacity="0.55" stroke="#c084fc" stroke-width="1.8">
 <path d="M196,86 L296,86" marker-end="url(#m34-ah)"></path>
 <path d="M512,86 L612,86" marker-end="url(#m34-ah)"></path>
 </g>
-<!-- ciclo de volta (ciano): testar -> iterar -> protÃ³tipo -->
+<!-- ciclo de volta (ciano): testar -> iterar -> protêÂ³tipo -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M712,112 C712,168 540,176 540,176" marker-end="url(#m34-ahc)"></path>
 <path d="M324,176 L300,176" marker-end="url(#m34-ahc)"></path>
@@ -238,7 +238,7 @@
 <rect fill="#1a1230" height="52" rx="13" stroke="#c084fc" stroke-width="2" width="156" x="40" y="60"></rect>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="118" y="84">Design</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="118" y="102">the blueprint</text>
-<!-- caixa foco: protÃ³tipo -->
+<!-- caixa foco: protêÂ³tipo -->
 <g filter="url(#m34-glow)"><rect fill="#1a1230" height="52" rx="13" stroke="url(#m34-grad)" stroke-width="2" width="216" x="296" y="60"></rect></g>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="404" y="84">Prototype (MVP)</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="404" y="102">the smallest version that works</text>
@@ -248,9 +248,9 @@
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="712" y="102">with a real case</text>
 <!-- caixa de volta: iterar (ciano, pulsa) -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="216" x="324" y="160"></rect><text fill="#bfe6ff" text-anchor="middle" x="432" y="180">iterate Â· adjust Â· improve</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="216" x="324" y="160"></rect><text fill="#bfe6ff" text-anchor="middle" x="432" y="180">iterate êÂ· adjust êÂ· improve</text></g>
 </g>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="224">Each loop brings the prototype closer to â€œactually works.â€</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="224">Each loop brings the prototype closer to ê¢â¬Åactually works.ê¢â¬Â</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
@@ -259,30 +259,30 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Applied</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Practice</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 3.4 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:3-4" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 of 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Module 3.4 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:3-4" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 of 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="3-4" data-ARCKHÉ-topic="modulo-3-4#topico-1" data-ARCKHÉ-track="3" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="3-4" data-ARCKHê-topic="modulo-3-4#topico-1" data-ARCKHê-track="3" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">âœï¸ From sketch to prototype</h2>
+<h2 class="text-2xl font-bold">ê¢ÅÂê¯Â¸Â From sketch to prototype</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-4-t1-p1">In the previous module, you designed the architecture: channels, agents, services, tools. But a design is a promise, not proof. The <strong class="text-purple-400">a prototype is when the promise becomes something that runs</strong> â€” where someone types a message and the system actually responds. Moving from the design to the prototype is when you discover what the paper didnâ€™t tell you.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-4-t1-p1">In the previous module, you designed the architecture: channels, agents, services, tools. But a design is a promise, not proof. The <strong class="text-purple-400">a prototype is when the promise becomes something that runs</strong> ê¢â¬â where someone types a message and the system actually responds. Moving from the design to the prototype is when you discover what the paper didnê¢â¬â¢t tell you.</p>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸ› ï¸</span> A design proves an idea; a prototype proves reality</h3>
-<p class="text-neutral-300">The design answers, "Does this make sense?" The prototype answers, "Does this work?" They're different questionsâ€”and only the second pays the bills. That's why the architect doesn't fall in love with the perfect blueprint: they hurry to get the smallest version up and running and see how the system responds to a real case.</p>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸âºÂ ê¯Â¸Â</span> A design proves an idea; a prototype proves reality</h3>
+<p class="text-neutral-300">The design answers, "Does this make sense?" The prototype answers, "Does this work?" They're different questionsê¢â¬âand only the second pays the bills. That's why the architect doesn't fall in love with the perfect blueprint: they hurry to get the smallest version up and running and see how the system responds to a real case.</p>
 </div>
-<!-- VARIEDADE: timeline do ciclo desenho -> protÃ³tipo -> testar -> iterar -->
+<!-- VARIEDADE: timeline do ciclo desenho -> protêÂ³tipo -> testar -> iterar -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">The prototyper's cycle</h3>
 <div class="space-y-4">
@@ -300,57 +300,57 @@
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-9 h-9 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold text-sm">4</span></div>
-<div class="flex-1 bg-dark-700/40 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Iterate</h4><p class="text-sm text-neutral-400">Adjust based on what you saw, then return to the prototypeâ€”in a loop.</p></div>
+<div class="flex-1 bg-dark-700/40 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Iterate</h4><p class="text-sm text-neutral-400">Adjust based on what you saw, then return to the prototypeê¢â¬âin a loop.</p></div>
 </div>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Design</div><div class="text-xs text-neutral-400">proves the idea</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Prototype</div><div class="text-xs text-neutral-400">proves the reality</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Cycle</div><div class="text-xs text-neutral-400">designâ†’testâ†’iterate</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Cycle</div><div class="text-xs text-neutral-400">designê¢â âtestê¢â âiterate</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Rule</div><div class="text-xs text-neutral-400">run &gt; plan more</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="3-4" data-ARCKHÉ-topic="modulo-3-4#topico-2" data-ARCKHÉ-track="3" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="3-4" data-ARCKHê-topic="modulo-3-4#topico-2" data-ARCKHê-track="3" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸŒ± Start Small (MVP)</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ÅÂ± Start Small (MVP)</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-4-t2-p1">MVP means <strong class="text-purple-400">Minimum Viable Product</strong>: the smallest version of the solution that already solves the main problem end to end. Minimal doesnâ€™t mean poorly made â€” it means lean. You cut everything that would be "nice to have" and keep only the path that delivers the core result. Your Jarvis MVP does <em class="text-neutral-400">one</em> one thing well, not ten things halfway.</p>
-<!-- VARIEDADE: grid âœ“/âœ— â€” MVP certo Ã— errado -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-4-t2-p1">MVP means <strong class="text-purple-400">Minimum Viable Product</strong>: the smallest version of the solution that already solves the main problem end to end. Minimal doesnê¢â¬â¢t mean poorly made ê¢â¬â it means lean. You cut everything that would be "nice to have" and keep only the path that delivers the core result. Your Jarvis MVP does <em class="text-neutral-400">one</em> one thing well, not ten things halfway.</p>
+<!-- VARIEDADE: grid ê¢Åâ/ê¢Åâ ê¢â¬â MVP certo êâ errado -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">âœ“ A well-scoped MVP</h4>
+<h4 class="font-bold text-purple-400 mb-4">ê¢Åâ A well-scoped MVP</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Solves ONE problem from end to end.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Start with one channel (e.g., WhatsApp).</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Is ready in hours or a few days.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Ready to show someone so they can use it.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Solves ONE problem from end to end.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Start with one channel (e.g., WhatsApp).</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Is ready in hours or a few days.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Ready to show someone so they can use it.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Bloated MVP (not an MVP)</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Bloated MVP (not an MVP)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Tries to solve everything at once.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Three channels and five integrations before the first test.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Takes weeks and is never â€œfinished.â€</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Packed with features nobody asked for.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Tries to solve everything at once.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Three channels and five integrations before the first test.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Takes weeks and is never ê¢â¬Åfinished.ê¢â¬Â</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Packed with features nobody asked for.</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">Cut question: "if I remove this, will the system still solve the main problem?". If the answer is yes, remove it from the MVP. Keep the cut listâ€”it becomes the improvement backlog after the prototype proves its value.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">Cut question: "if I remove this, will the system still solve the main problem?". If the answer is yes, remove it from the MVP. Keep the cut listê¢â¬âit becomes the improvement backlog after the prototype proves its value.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">MVP</div><div class="text-xs text-neutral-400">minimum viable</div></div>
@@ -359,37 +359,37 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Cut</div><div class="text-xs text-neutral-400">"does it still work without this?"</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="3-4" data-ARCKHÉ-topic="modulo-3-4#topico-3" data-ARCKHÉ-track="3" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="3-4" data-ARCKHê-topic="modulo-3-4#topico-3" data-ARCKHê-track="3" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸŽ¯ Test with a real case</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å½Â¯ Test with a real case</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-4-t3-p1">Testing with a made-up example is easyâ€”and misleading. The prototype only proves anything when it faces a <strong class="text-purple-400">real case</strong>: a message a real customer sent, a document that exists at the company, a request as it arrives in everyday work. A real case brings the mess that a clean example hides: slang, typos, and questions that fall outside the script.</p>
-<!-- VARIEDADE: code/mono box â€” caso real entrando no sistema -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-4-t3-p1">Testing with a made-up example is easyê¢â¬âand misleading. The prototype only proves anything when it faces a <strong class="text-purple-400">real case</strong>: a message a real customer sent, a document that exists at the company, a request as it arrives in everyday work. A real case brings the mess that a clean example hides: slang, typos, and questions that fall outside the script.</p>
+<!-- VARIEDADE: code/mono box ê¢â¬â caso real entrando no sistema -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">A real case entering the prototype</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-purple-400">customer:</span> "hi, do you deliver to Curitiba? how much does it cost?"</div>
-<div><span class="text-purple-400">jarvis  :</span> "Hello! Yes, we deliver in Curitiba ðŸšš"</div>
+<div><span class="text-purple-400">jarvis  :</span> "Hello! Yes, we deliver in Curitiba ê°Å¸Å¡Å¡"</div>
 <div><span class="text-purple-400">jarvis  :</span> "Shipping costs R$ 18 and arrives in 2 business days."</div>
 <div class="text-neutral-500">--- what the test revealed ---</div>
 <div><span class="text-red-400">failure  :</span> didn't understand "qnto" (abbreviation)</div>
-<div><span class="text-purple-400">adjustment :</span> teach variations of â€œhow much does it cost?â€</div>
+<div><span class="text-purple-400">adjustment :</span> teach variations of ê¢â¬Åhow much does it cost?ê¢â¬Â</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Illustrative recreation of a testâ€”the real case reveals what the clean example never would.</p>
+<p class="text-xs text-neutral-500 mt-3">Illustrative recreation of a testê¢â¬âthe real case reveals what the clean example never would.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸ”Ž</span> What to observe in the test</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ê°Å¸âÅ½</span> What to observe in the test</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
 <li><strong class="text-neutral-100">Did you get the essentials right?</strong> The answer solves what the customer wanted.</li>
 <li><strong class="text-neutral-100">Where did it get stuck?</strong> At what point the system got lost or guessed.</li>
@@ -403,23 +403,23 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Truth</div><div class="text-xs text-neutral-400">the test doesn't lie</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="3-4" data-ARCKHÉ-topic="modulo-3-4#topico-4" data-ARCKHÉ-track="3" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="3-4" data-ARCKHê-topic="modulo-3-4#topico-4" data-ARCKHê-track="3" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ”„ Iterate Quickly</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââ Iterate Quickly</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-4-t4-p1">To iterate is to repeat the cycle <strong class="text-purple-400">test â†’ adjust â†’ test again</strong>, in short cycles. The secret isnâ€™t getting it right the first time â€” itâ€™s shortening the time between spotting a problem and fixing it. Small, frequent cycles beat the big â€œIâ€™ll fix everything at onceâ€ approach: each adjustment is easy to measure and, if it makes things worse, easy to undo.</p>
-<!-- VARIEDADE: timeline do loop de iteraÃ§Ã£o -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-4-t4-p1">To iterate is to repeat the cycle <strong class="text-purple-400">test ê¢â â adjust ê¢â â test again</strong>, in short cycles. The secret isnê¢â¬â¢t getting it right the first time ê¢â¬â itê¢â¬â¢s shortening the time between spotting a problem and fixing it. Small, frequent cycles beat the big ê¢â¬ÅIê¢â¬â¢ll fix everything at onceê¢â¬Â approach: each adjustment is easy to measure and, if it makes things worse, easy to undo.</p>
+<!-- VARIEDADE: timeline do loop de iteraêÂ§êÂ£o -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">One (short) iteration cycle</h3>
 <div class="space-y-4">
@@ -433,50 +433,50 @@
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-9 h-9 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold text-sm">3</span></div>
-<div class="flex-1 bg-dark-700/40 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Adjust one thing</h4><p class="text-sm text-neutral-400">Change only that one thingâ€”an instruction, a rule, an example.</p></div>
+<div class="flex-1 bg-dark-700/40 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Adjust one thing</h4><p class="text-sm text-neutral-400">Change only that one thingê¢â¬âan instruction, a rule, an example.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-9 h-9 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold text-sm">4</span></div>
-<div class="flex-1 bg-dark-700/40 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Test again</h4><p class="text-sm text-neutral-400">Confirms that it improved â€” and starts another round.</p></div>
+<div class="flex-1 bg-dark-700/40 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Test again</h4><p class="text-sm text-neutral-400">Confirms that it improved ê¢â¬â and starts another round.</p></div>
 </div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">Change one thing at a time. If you adjust five things and the result improves, you don't know which adjustment workedâ€”and if it gets worse, you don't know which one caused it. One change per round keeps the learning clear.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">Change one thing at a time. If you adjust five things and the result improves, you don't know which adjustment workedê¢â¬âand if it gets worse, you don't know which one caused it. One change per round keeps the learning clear.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Iterate</div><div class="text-xs text-neutral-400">testâ†’adjustâ†’test</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Iterate</div><div class="text-xs text-neutral-400">testê¢â âadjustê¢â âtest</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Turns</div><div class="text-xs text-neutral-400">short and frequent</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">A change</div><div class="text-xs text-neutral-400">at a time</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Speed</div><div class="text-xs text-neutral-400">short errorâ†’correction cycle</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Speed</div><div class="text-xs text-neutral-400">short errorê¢â âcorrection cycle</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="3-4" data-ARCKHÉ-topic="modulo-3-4#topico-5" data-ARCKHÉ-track="3" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="3-4" data-ARCKHê-topic="modulo-3-4#topico-5" data-ARCKHê-track="3" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">âš ï¸ Common prototype mistakes</h2>
+<h2 class="text-2xl font-bold">ê¢Å¡Â ê¯Â¸Â Common prototype mistakes</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-4-t5-p1">Most prototypes donâ€™t die from a lack of technical capabilityâ€”they die from <strong class="text-purple-400">predictable pitfalls</strong>. Knowing the most common mistakes before you make them saves days. Here are the five that most often sink an AI prototypeâ€”and the antidote to each.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-4-t5-p1">Most prototypes donê¢â¬â¢t die from a lack of technical capabilityê¢â¬âthey die from <strong class="text-purple-400">predictable pitfalls</strong>. Knowing the most common mistakes before you make them saves days. Here are the five that most often sink an AI prototypeê¢â¬âand the antidote to each.</p>
 <div class="space-y-3 mb-6">
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Scope creep</strong> <span class="text-red-400">â€” wanting everything in the MVP.</span><p class="text-sm text-neutral-400 mt-1">Antidote: cut it down until only the path that solves the main problem remains.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Polish before testing</strong> <span class="text-red-400">â€” polishing what no one has validated.</span><p class="text-sm text-neutral-400 mt-1">Antidote: test rough versions first; invest in polish only for what has proven its value.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Testing only with a perfect example</strong> <span class="text-red-400">â€” avoiding reality.</span><p class="text-sm text-neutral-400 mt-1">Antidote: use real, messy cases from the first round.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">Change ten things at once</strong> <span class="text-red-400">â€” blind iteration.</span><p class="text-sm text-neutral-400 mt-1">Antidote: make one change per round so you know what worked.</p></div></div>
-<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">âœ—</span><div><strong class="text-neutral-100">No "done" criterion</strong> <span class="text-red-400">â€” iterate forever.</span><p class="text-sm text-neutral-400 mt-1">Antidote: define in advance what counts as "working" (next topic).</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Scope creep</strong> <span class="text-red-400">ê¢â¬â wanting everything in the MVP.</span><p class="text-sm text-neutral-400 mt-1">Antidote: cut it down until only the path that solves the main problem remains.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Polish before testing</strong> <span class="text-red-400">ê¢â¬â polishing what no one has validated.</span><p class="text-sm text-neutral-400 mt-1">Antidote: test rough versions first; invest in polish only for what has proven its value.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Testing only with a perfect example</strong> <span class="text-red-400">ê¢â¬â avoiding reality.</span><p class="text-sm text-neutral-400 mt-1">Antidote: use real, messy cases from the first round.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">Change ten things at once</strong> <span class="text-red-400">ê¢â¬â blind iteration.</span><p class="text-sm text-neutral-400 mt-1">Antidote: make one change per round so you know what worked.</p></div></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5 flex items-start gap-4"><span class="text-red-400 text-xl flex-shrink-0">ê¢Åâ</span><div><strong class="text-neutral-100">No "done" criterion</strong> <span class="text-red-400">ê¢â¬â iterate forever.</span><p class="text-sm text-neutral-400 mt-1">Antidote: define in advance what counts as "working" (next topic).</p></div></div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
 <p class="text-neutral-300 text-sm">The most costly mistake is premature perfectionism: spending days polishing something no one has used yet. An ugly prototype that runs is worth more than a beautiful one that never left the drawing board.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
@@ -486,45 +486,45 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">No "done"</div><div class="text-xs text-neutral-400">define the criterion</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="3-4" data-ARCKHÉ-topic="modulo-3-4#topico-6" data-ARCKHÉ-track="3" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="3-4" data-ARCKHê-topic="modulo-3-4#topico-6" data-ARCKHê-track="3" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">âœ… â€œWorksâ€ criteria</h2>
+<h2 class="text-2xl font-bold">ê¢Åâ¦ ê¢â¬ÅWorksê¢â¬Â criteria</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-4-t6-p1">"Works" can't be a feeling. Without a clear criterion, you iterate forever or stop too soon. The criterion for "works" is a <strong class="text-purple-400">objective statement, defined before testing</strong>, which says what result proves the prototype is ready for the next stage â€” measuring and evolving. Itâ€™s what completes the MVP cycle.</p>
-<!-- VARIEDADE: grid âœ“/âœ— â€” critÃ©rio claro Ã— vago -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-4-t6-p1">"Works" can't be a feeling. Without a clear criterion, you iterate forever or stop too soon. The criterion for "works" is a <strong class="text-purple-400">objective statement, defined before testing</strong>, which says what result proves the prototype is ready for the next stage ê¢â¬â measuring and evolving. Itê¢â¬â¢s what completes the MVP cycle.</p>
+<!-- VARIEDADE: grid ê¢Åâ/ê¢Åâ ê¢â¬â critêÂ©rio claro êâ vago -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">âœ“ Clear (measurable) criteria</h4>
+<h4 class="font-bold text-purple-400 mb-4">ê¢Åâ Clear (measurable) criteria</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>"Answers 8 out of 10 real questions correctly."</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>"Resolve the issue without needing a human."</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>"Delivered in under 30 seconds."</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>You can answer yes or no, without debate.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>"Answers 8 out of 10 real questions correctly."</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>"Resolve the issue without needing a human."</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>"Delivered in under 30 seconds."</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>You can answer yes or no, without debate.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Vague criterion (a feeling)</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Vague criterion (a feeling)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Looks good."</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"It's almost there."</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"I think we can show it."</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Depends on who you ask.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"Looks good."</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"It's almost there."</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"I think we can show it."</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Depends on who you ask.</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸ</span> The criterion completes the cycle</h3>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸ÂÂ</span> The criterion completes the cycle</h3>
 <p class="text-neutral-300">With an objective criterion, you know when to stop iterating and move on to Module 3.5 (measuring results). Without one, the prototype either never gets called "ready" or is declared ready too soon. The criterion is the finish line you draw before you start running.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
@@ -534,49 +534,49 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Closes</div><div class="text-xs text-neutral-400">the MVP cycle</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-3-4#q1">
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-3-4#q1">
 <p class="font-medium mb-4">Self-check (optional): what does it mean to start with the MVP?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Build the most complete version possible before showing it to anyone.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Build the smallest version that solves the main problem end to end, then test it with a real case.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Deliver an intentionally rough prototype to save time.</button>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Build the most complete version possible before showing it to anyone.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Build the smallest version that solves the main problem end to end, then test it with a real case.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Deliver an intentionally rough prototype to save time.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ› ï¸</span> Module summary</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸âºÂ ê¯Â¸Â</span> Module summary</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">From design to prototype</strong><span class="text-neutral-400"> â€” a design proves the idea; a prototype proves it in reality.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Start small (MVP)</strong><span class="text-neutral-400"> â€” the smallest version that solves the main problem from end to end.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Test with a real-world case</strong><span class="text-neutral-400"> â€” the messiness of the real world exposes what a clean example hides.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Iterate quickly</strong><span class="text-neutral-400"> â€” short cycles, one change at a time, from error to fix in little time.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Common errors</strong><span class="text-neutral-400"> â€” inflated scope, polishing too early, the perfect example, changing everything at once, no criteria.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Criterion for â€œworkingâ€</strong><span class="text-neutral-400"> â€” an objective sentence, defined in advance, that closes the MVP loop.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">From design to prototype</strong><span class="text-neutral-400"> ê¢â¬â a design proves the idea; a prototype proves it in reality.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Start small (MVP)</strong><span class="text-neutral-400"> ê¢â¬â the smallest version that solves the main problem from end to end.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Test with a real-world case</strong><span class="text-neutral-400"> ê¢â¬â the messiness of the real world exposes what a clean example hides.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Iterate quickly</strong><span class="text-neutral-400"> ê¢â¬â short cycles, one change at a time, from error to fix in little time.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Common errors</strong><span class="text-neutral-400"> ê¢â¬â inflated scope, polishing too early, the perfect example, changing everything at once, no criteria.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Criterion for ê¢â¬Åworkingê¢â¬Â</strong><span class="text-neutral-400"> ê¢â¬â an objective sentence, defined in advance, that closes the MVP loop.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
 <h3 class="font-semibold text-purple-400 mb-2">Next module:</h3>
-<p class="text-neutral-300">3.5 â€” Measure Results: move from â€œit seems to workâ€ to the numbers that prove its value.</p>
+<p class="text-neutral-300">3.5 ê¢â¬â Measure Results: move from ê¢â¬Åit seems to workê¢â¬Â to the numbers that prove its value.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Back to Day 3</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-5.html">Next: 3.5 Measure Results â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Back to Day 3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-5.html">Next: 3.5 Measure Results ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-1">1. From design to prototype</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. Start Small (MVP)</a></li>
@@ -590,21 +590,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>AI Intent Architecture Â· JARVIS Method â€” Day 3 Â· Module 3.4</p>
+<p>AI Intent Architecture êÂ· JARVIS Method ê¢â¬â Day 3 êÂ· Module 3.4</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-3-4#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-3-4#q1', {
           answer: 1,
           explain: {
-            0: 'Ao contrÃ¡rio â€” o MVP Ã© a MENOR versÃ£o que resolve o problema, nÃ£o a mais completa. O completo vem depois de provar valor.',
-            1: 'Isso. MVP Ã© o menor caminho que entrega o resultado principal de ponta a ponta â€” e que vocÃª testa logo com um caso real.',
-            2: 'NÃ£o â€” mÃ­nimo Ã© enxuto, nÃ£o malfeito. Cortar escopo Ã© diferente de entregar com defeito de propÃ³sito.'
+            0: 'Ao contrêÂ¡rio ê¢â¬â o MVP êÂ© a MENOR versêÂ£o que resolve o problema, nêÂ£o a mais completa. O completo vem depois de provar valor.',
+            1: 'Isso. MVP êÂ© o menor caminho que entrega o resultado principal de ponta a ponta ê¢â¬â e que vocêÂª testa logo com um caso real.',
+            2: 'NêÂ£o ê¢â¬â mêÂ­nimo êÂ© enxuto, nêÂ£o malfeito. Cortar escopo êÂ© diferente de entregar com defeito de propêÂ³sito.'
           }
         });
       }

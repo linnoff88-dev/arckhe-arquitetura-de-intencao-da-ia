@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>MÃ³dulo 3.2 Â· Mapear o Problema | Arquitetura de IntenÃ§Ã£o da IA</title>
+<title>MêÂ³dulo 3.2 êÂ· Mapear o Problema | Arquitetura de IntenêÂ§êÂ£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -129,18 +129,18 @@
     html:not(.dark) .toc-link.is-active { color: #7c3aed; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteêÂºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenêÂ§êÂ£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -149,46 +149,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="AparêÂªncia e leitura" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Tema" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Escuro</button>
+<button data-ARCKHê-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHê-set-theme="sepia" type="button">SêÂ©pia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHê-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">Sistema</button>
+<button data-ARCKHê-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHê-set-linewidth="68" type="button">MêÂ©dio</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
+<div aria-label="Entrelinha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHê-set-leading="1.7" type="button">ConfortêÂ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="êâmbar" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -199,20 +199,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-purple-400" href="../../index.html">InÃ­cio</a><span>/</span>
+<a class="hover:text-purple-400" href="../../index.html">InêÂ­cio</a><span>/</span>
 <a class="hover:text-purple-400" href="index.html">Dia 3</a><span>/</span>
-<span class="text-purple-400">MÃ³dulo 3.2</span>
+<span class="text-purple-400">MêÂ³dulo 3.2</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 3.2</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ” Mapear o Problema</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Antes de construir, Ã© preciso enxergar. Aqui vocÃª liga o radar sobre uma empresa real e aprende a localizar onde a IA multiplica: repetiÃ§Ã£o, perda de tempo, informaÃ§Ã£o desorganizada, atendimento fraco e decisÃ£o lenta. No fim, vocÃª crava UM problema para resolver.</p>
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MêâDULO 3.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸âÂ Mapear o Problema</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Antes de construir, êÂ© preciso enxergar. Aqui vocêÂª liga o radar sobre uma empresa real e aprende a localizar onde a IA multiplica: repetiêÂ§êÂ£o, perda de tempo, informaêÂ§êÂ£o desorganizada, atendimento fraco e decisêÂ£o lenta. No fim, vocêÂª crava UM problema para resolver.</p>
 <!-- SVG: radar/lupa sobre a empresa identificando pontos de dor -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Uma lupa de diagnÃ³stico varre a empresa e acende cinco pontos de dor â€” repetiÃ§Ã£o, perda de tempo, informaÃ§Ã£o desorganizada, atendimento fraco e decisÃ£o lenta â€” dos quais um Ã© escolhido como o problema a resolver" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<svg aria-label="Uma lupa de diagnêÂ³stico varre a empresa e acende cinco pontos de dor ê¢â¬â repetiêÂ§êÂ£o, perda de tempo, informaêÂ§êÂ£o desorganizada, atendimento fraco e decisêÂ£o lenta ê¢â¬â dos quais um êÂ© escolhido como o problema a resolver" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
 <lineargradient id="m32-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
 <filter height="180%" id="m32-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -221,11 +221,11 @@
 <marker id="m32-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#m32-grid)" height="250" width="1000" x="0" y="0"></rect>
-<!-- lupa / radar de diagnÃ³stico (origem) -->
+<!-- lupa / radar de diagnêÂ³stico (origem) -->
 <g filter="url(#m32-glow)"><rect fill="#1a1230" height="64" rx="14" stroke="url(#m32-grad)" stroke-width="2" width="150" x="40" y="92"></rect></g>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="115" y="118">ðŸ” DiagnÃ³stico</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="115" y="118">ê°Å¸âÂ DiagnêÂ³stico</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="115" y="138">ler a empresa</text>
-<!-- feixes do radar atÃ© os pontos de dor -->
+<!-- feixes do radar atêÂ© os pontos de dor -->
 <g fill="none" opacity="0.55" stroke="#c084fc" stroke-width="1.8">
 <path d="M190,124 C300,124 318,40 452,40" marker-end="url(#m32-ah)"></path>
 <path d="M190,124 C300,124 318,82 452,82" marker-end="url(#m32-ah)"></path>
@@ -235,13 +235,13 @@
 </g>
 <!-- cinco pontos de dor (pulsando) -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="24"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="45">ðŸ” repetiÃ§Ã£o</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="66"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="87">â³ perda de tempo</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="108"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="129">ðŸ—‚ï¸ info desorganizada</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="150"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="171">ðŸ’¬ atendimento fraco</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="192"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="213">ðŸ¢ decisÃ£o lenta</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="24"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="45">ê°Å¸âÂ repetiêÂ§êÂ£o</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="66"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="87">ê¢ÂÂ³ perda de tempo</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="108"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="129">ê°Å¸ââê¯Â¸Â info desorganizada</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="150"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="171">ê°Å¸âÂ¬ atendimento fraco</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="172" x="452" y="192"></rect><text fill="#bfe6ff" text-anchor="middle" x="538" y="213">ê°Å¸ÂÂ¢ decisêÂ£o lenta</text></g>
 </g>
-<!-- convergÃªncia: escolher UM problema -->
+<!-- convergêÂªncia: escolher UM problema -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M624,40  C740,40 760,124 812,124" marker-end="url(#m32-ahc)"></path>
 <path d="M624,82  C740,82 760,124 812,124" marker-end="url(#m32-ahc)"></path>
@@ -250,123 +250,123 @@
 <path d="M624,208 C740,208 760,124 812,124" marker-end="url(#m32-ahc)"></path>
 </g>
 <g filter="url(#m32-glow)"><rect fill="#1a1230" height="64" rx="14" stroke="url(#m32-grad)" stroke-width="2" width="150" x="812" y="92"></rect></g>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="887" y="118">âœ‚ï¸ UM problema</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="887" y="118">ê¢Åâê¯Â¸Â UM problema</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="887" y="138">o foco do dia</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="242">Onde hÃ¡ atrito, hÃ¡ oportunidade â€” e foco Ã© escolher um ponto, nÃ£o cinco.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="242">Onde hêÂ¡ atrito, hêÂ¡ oportunidade ê¢â¬â e foco êÂ© escolher um ponto, nêÂ£o cinco.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">TêÂ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~45</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">PrÃ¡tica</div><div class="text-xs text-neutral-400">Tipo</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Aplicado</div><div class="text-xs text-neutral-400">NêÂ­vel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">PrêÂ¡tica</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do mÃ³dulo 3.2" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:3-2" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Progresso do mêÂ³dulo 3.2" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:3-2" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mêÂ³dulo</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 de 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-1" data-ARCKHÉ-track="3" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="3-2" data-ARCKHê-topic="modulo-3-2#topico-1" data-ARCKHê-track="3" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸ” Ler a empresa (onde dÃ³i)</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ Ler a empresa (onde dêÂ³i)</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-t1-p1">Antes de qualquer ferramenta, o arquiteto de intenÃ§Ã£o faz uma coisa simples e poderosa: <strong class="text-purple-400">olha a empresa com olhos de quem procura dor</strong>. NÃ£o Ã© olhar o que estÃ¡ bonito, Ã© perceber onde as pessoas reclamam, onde o trabalho trava, onde o cliente espera e onde o dinheiro vaza. A dor Ã© o melhor mapa de oportunidade que existe â€” e quase ninguÃ©m para para lÃª-lo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-2-t1-p1">Antes de qualquer ferramenta, o arquiteto de intenêÂ§êÂ£o faz uma coisa simples e poderosa: <strong class="text-purple-400">olha a empresa com olhos de quem procura dor</strong>. NêÂ£o êÂ© olhar o que estêÂ¡ bonito, êÂ© perceber onde as pessoas reclamam, onde o trabalho trava, onde o cliente espera e onde o dinheiro vaza. A dor êÂ© o melhor mapa de oportunidade que existe ê¢â¬â e quase ninguêÂ©m para para lêÂª-lo.</p>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> A dor Ã© um sinal, nÃ£o um defeito</h3>
-<p class="text-neutral-300">Cada reclamaÃ§Ã£o repetida ("isso aqui toma um tempo enorme", "ninguÃ©m acha essa informaÃ§Ã£o", "o cliente ficou bravo de novo") Ã© uma seta apontando para um lugar onde a IA pode multiplicar resultado. O diagnÃ³stico nÃ£o julga a empresa â€” ele transforma queixa em oportunidade.</p>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å½Â¯</span> A dor êÂ© um sinal, nêÂ£o um defeito</h3>
+<p class="text-neutral-300">Cada reclamaêÂ§êÂ£o repetida ("isso aqui toma um tempo enorme", "ninguêÂ©m acha essa informaêÂ§êÂ£o", "o cliente ficou bravo de novo") êÂ© uma seta apontando para um lugar onde a IA pode multiplicar resultado. O diagnêÂ³stico nêÂ£o julga a empresa ê¢â¬â ele transforma queixa em oportunidade.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Passe um dia (ou uma conversa de 30 minutos) observando uma Ã¡rea com o "radar de dor" ligado. Toda vez que alguÃ©m disser "que saco fazer isso", "de novo?" ou "cadÃª aquilo?", anote a frase literal. VocÃª vai sair com uma lista de candidatos que valem ouro.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Passe um dia (ou uma conversa de 30 minutos) observando uma êÂ¡rea com o "radar de dor" ligado. Toda vez que alguêÂ©m disser "que saco fazer isso", "de novo?" ou "cadêÂª aquilo?", anote a frase literal. VocêÂª vai sair com uma lista de candidatos que valem ouro.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Olhar</div><div class="text-xs text-neutral-400">de quem procura dor</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Dor</div><div class="text-xs text-neutral-400">mapa de oportunidade</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Escuta</div><div class="text-xs text-neutral-400">reclamaÃ§Ã£o repetida</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">SaÃ­da</div><div class="text-xs text-neutral-400">lista de candidatos</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Escuta</div><div class="text-xs text-neutral-400">reclamaêÂ§êÂ£o repetida</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">SaêÂ­da</div><div class="text-xs text-neutral-400">lista de candidatos</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-2" data-ARCKHÉ-track="3" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="3-2" data-ARCKHê-topic="modulo-3-2#topico-2" data-ARCKHê-track="3" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸ” RepetiÃ§Ã£o e perda de tempo</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ RepetiêÂ§êÂ£o e perda de tempo</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-t2-p1">O primeiro alvo do radar Ã© a <strong class="text-purple-400">repetiÃ§Ã£o</strong>: a mesma tarefa, feita Ã  mÃ£o, vÃ¡rias vezes ao dia. Responder as mesmas perguntas, preencher os mesmos campos, copiar dados de um sistema para outro, montar o mesmo relatÃ³rio toda segunda. Onde mais se repete, mais a IA multiplica â€” porque automatizar uma tarefa que acontece 50 vezes por dia devolve 50 vezes o tempo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-2-t2-p1">O primeiro alvo do radar êÂ© a <strong class="text-purple-400">repetiêÂ§êÂ£o</strong>: a mesma tarefa, feita êÂ  mêÂ£o, vêÂ¡rias vezes ao dia. Responder as mesmas perguntas, preencher os mesmos campos, copiar dados de um sistema para outro, montar o mesmo relatêÂ³rio toda segunda. Onde mais se repete, mais a IA multiplica ê¢â¬â porque automatizar uma tarefa que acontece 50 vezes por dia devolve 50 vezes o tempo.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">âœ“ Sinais de repetiÃ§Ã£o cara</h4>
+<h4 class="font-bold text-purple-400 mb-4">ê¢Åâ Sinais de repetiêÂ§êÂ£o cara</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>"FaÃ§o isso toda vez que chega um pedido."</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Copiar/colar entre planilha, e-mail e sistema.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Mesma resposta digitada para clientes diferentes.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Acontece muitas vezes por dia, por muitas pessoas.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>"FaêÂ§o isso toda vez que chega um pedido."</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Copiar/colar entre planilha, e-mail e sistema.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Mesma resposta digitada para clientes diferentes.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Acontece muitas vezes por dia, por muitas pessoas.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— NÃ£o confunda com</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ NêÂ£o confunda com</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Tarefa que acontece uma vez por mÃªs (pouco ganho).</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>DecisÃ£o criativa Ãºnica que exige julgamento humano.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Algo que "incomoda" mas custa pouquÃ­ssimo tempo.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>RepetiÃ§Ã£o que ninguÃ©m de fato faz mais.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Tarefa que acontece uma vez por mêÂªs (pouco ganho).</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>DecisêÂ£o criativa êÂºnica que exige julgamento humano.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Algo que "incomoda" mas custa pouquêÂ­ssimo tempo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>RepetiêÂ§êÂ£o que ninguêÂ©m de fato faz mais.</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">A conta do tempo desperdiÃ§ado</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">A conta do tempo desperdiêÂ§ado</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-purple-400">tarefa:</span> ___________________________</div>
-<div><span class="text-purple-400">vezes_por_dia:</span> ____ Ã— <span class="text-purple-400">minutos:</span> ____</div>
+<div><span class="text-purple-400">vezes_por_dia:</span> ____ êâ <span class="text-purple-400">minutos:</span> ____</div>
 <div><span class="text-purple-400">pessoas:</span> ____</div>
-<div class="text-neutral-500">= horas/semana desperdiÃ§adas â†’ potencial da IA</div>
+<div class="text-neutral-500">= horas/semana desperdiêÂ§adas ê¢â â potencial da IA</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Preencha para uma tarefa real. O nÃºmero costuma assustar â€” e Ã© o seu melhor argumento.</p>
+<p class="text-xs text-neutral-500 mt-3">Preencha para uma tarefa real. O nêÂºmero costuma assustar ê¢â¬â e êÂ© o seu melhor argumento.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Alvo nÂº 1</div><div class="text-xs text-neutral-400">tarefa repetitiva</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Multiplicador</div><div class="text-xs text-neutral-400">vezes Ã— pessoas</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Alvo nêÂº 1</div><div class="text-xs text-neutral-400">tarefa repetitiva</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Multiplicador</div><div class="text-xs text-neutral-400">vezes êâ pessoas</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Conta</div><div class="text-xs text-neutral-400">horas/semana</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Cuidado</div><div class="text-xs text-neutral-400">repetiÃ§Ã£o Ã— julgamento</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Cuidado</div><div class="text-xs text-neutral-400">repetiêÂ§êÂ£o êâ julgamento</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-3" data-ARCKHÉ-track="3" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="3-2" data-ARCKHê-topic="modulo-3-2#topico-3" data-ARCKHê-track="3" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸ—‚ï¸ InformaÃ§Ã£o desorganizada</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââê¯Â¸Â InformaêÂ§êÂ£o desorganizada</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-t3-p1">A segunda dor clÃ¡ssica Ã© a <strong class="text-purple-400">informaÃ§Ã£o espalhada</strong>: a resposta existe, mas ninguÃ©m sabe onde. EstÃ¡ numa planilha, num grupo de WhatsApp, num e-mail antigo, ou sÃ³ na cabeÃ§a de uma pessoa que estÃ¡ de fÃ©rias. Quando o conhecimento nÃ£o tem um lugar Ãºnico e recuperÃ¡vel, a empresa perde tempo procurando e erra por falta de acesso. A IA brilha exatamente aqui: organizar e recuperar informaÃ§Ã£o Ã© uma das coisas que ela faz melhor.</p>
-<!-- SVG: informaÃ§Ã£o espalhada â†’ IA organiza â†’ resposta Ãºnica -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-2-t3-p1">A segunda dor clêÂ¡ssica êÂ© a <strong class="text-purple-400">informaêÂ§êÂ£o espalhada</strong>: a resposta existe, mas ninguêÂ©m sabe onde. EstêÂ¡ numa planilha, num grupo de WhatsApp, num e-mail antigo, ou sêÂ³ na cabeêÂ§a de uma pessoa que estêÂ¡ de fêÂ©rias. Quando o conhecimento nêÂ£o tem um lugar êÂºnico e recuperêÂ¡vel, a empresa perde tempo procurando e erra por falta de acesso. A IA brilha exatamente aqui: organizar e recuperar informaêÂ§êÂ£o êÂ© uma das coisas que ela faz melhor.</p>
+<!-- SVG: informaêÂ§êÂ£o espalhada ê¢â â IA organiza ê¢â â resposta êÂºnica -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Fontes espalhadas â€” planilhas, conversas, e-mails e a cabeÃ§a das pessoas â€” passam por uma camada de organizaÃ§Ã£o da IA e viram uma resposta Ãºnica e recuperÃ¡vel" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<svg aria-label="Fontes espalhadas ê¢â¬â planilhas, conversas, e-mails e a cabeêÂ§a das pessoas ê¢â¬â passam por uma camada de organizaêÂ§êÂ£o da IA e viram uma resposta êÂºnica e recuperêÂ¡vel" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
 <defs>
 <filter height="180%" id="m32b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 <pattern height="30" id="m32b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#a855f7" opacity="0.10" r="1.2"></circle></pattern>
@@ -378,237 +378,237 @@
 <rect fill="#26201a" height="30" rx="8" stroke="#9ca3af" stroke-width="1.6" width="120" x="30" y="28"></rect><text fill="#e5e7eb" text-anchor="middle" x="90" y="48">planilhas</text>
 <rect fill="#26201a" height="30" rx="8" stroke="#9ca3af" stroke-width="1.6" width="120" x="44" y="78"></rect><text fill="#e5e7eb" text-anchor="middle" x="104" y="98">conversas</text>
 <rect fill="#26201a" height="30" rx="8" stroke="#9ca3af" stroke-width="1.6" width="120" x="30" y="128"></rect><text fill="#e5e7eb" text-anchor="middle" x="90" y="148">e-mails</text>
-<rect fill="#26201a" height="30" rx="8" stroke="#9ca3af" stroke-width="1.6" width="150" x="60" y="160"></rect><text fill="#e5e7eb" text-anchor="middle" x="135" y="180">cabeÃ§a das pessoas</text>
+<rect fill="#26201a" height="30" rx="8" stroke="#9ca3af" stroke-width="1.6" width="150" x="60" y="160"></rect><text fill="#e5e7eb" text-anchor="middle" x="135" y="180">cabeêÂ§a das pessoas</text>
 </g>
-<!-- setas para a camada de organizaÃ§Ã£o -->
+<!-- setas para a camada de organizaêÂ§êÂ£o -->
 <g fill="none" opacity="0.55" stroke="#9ca3af" stroke-width="1.6">
 <path d="M150,43 C320,43 360,100 432,100" marker-end="url(#m32b-ah)"></path>
 <path d="M164,93 C320,93 360,100 432,100"></path>
 <path d="M150,143 C320,143 360,100 432,100"></path>
 <path d="M210,175 C340,175 370,110 432,110"></path>
 </g>
-<!-- camada de organizaÃ§Ã£o (IA) -->
+<!-- camada de organizaêÂ§êÂ£o (IA) -->
 <g filter="url(#m32b-glow)"><rect fill="#1a1230" height="60" rx="13" stroke="url(#m32-grad)" stroke-width="2" width="180" x="432" y="70"></rect></g>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="522" y="96">IA organiza</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="522" y="116">indexa e recupera</text>
-<!-- resposta Ãºnica -->
+<!-- resposta êÂºnica -->
 <path d="M612,100 L760,100" fill="none" marker-end="url(#m32b-ah)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
 <rect fill="#0e1b26" height="52" rx="13" stroke="#38bdf8" stroke-width="1.8" width="200" x="760" y="74"></rect>
-<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" text-anchor="middle" x="860" y="98">resposta Ãºnica</text>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="860" y="116">um lugar, recuperÃ¡vel</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" text-anchor="middle" x="860" y="98">resposta êÂºnica</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="860" y="116">um lugar, recuperêÂ¡vel</text>
 </svg>
 </div>
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">ðŸ§­</span> Como a desorganizaÃ§Ã£o aparece</h3>
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">ê°Å¸Â§Â­</span> Como a desorganizaêÂ§êÂ£o aparece</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Conhecimento na cabeÃ§a:</strong> "sÃ³ fulano sabe responder isso" â€” e fulano vira gargalo.</li>
-<li><strong class="text-neutral-100">Dado duplicado:</strong> a mesma informaÃ§Ã£o em trÃªs lugares, todos desatualizados.</li>
-<li><strong class="text-neutral-100">Busca manual:</strong> minutos rolando histÃ³rico de conversa para achar um nÃºmero.</li>
+<li><strong class="text-neutral-100">Conhecimento na cabeêÂ§a:</strong> "sêÂ³ fulano sabe responder isso" ê¢â¬â e fulano vira gargalo.</li>
+<li><strong class="text-neutral-100">Dado duplicado:</strong> a mesma informaêÂ§êÂ£o em trêÂªs lugares, todos desatualizados.</li>
+<li><strong class="text-neutral-100">Busca manual:</strong> minutos rolando histêÂ³rico de conversa para achar um nêÂºmero.</li>
 </ul>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Dado disperso</div><div class="text-xs text-neutral-400">sem lugar Ãºnico</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Na cabeÃ§a</div><div class="text-xs text-neutral-400">pessoa vira gargalo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Dado disperso</div><div class="text-xs text-neutral-400">sem lugar êÂºnico</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Na cabeêÂ§a</div><div class="text-xs text-neutral-400">pessoa vira gargalo</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">IA brilha</div><div class="text-xs text-neutral-400">organiza e recupera</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Resultado</div><div class="text-xs text-neutral-400">resposta Ãºnica</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Resultado</div><div class="text-xs text-neutral-400">resposta êÂºnica</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-4" data-ARCKHÉ-track="3" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="3-2" data-ARCKHê-topic="modulo-3-2#topico-4" data-ARCKHê-track="3" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ¢ DecisÃ£o lenta e atendimento fraco</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ÂÂ¢ DecisêÂ£o lenta e atendimento fraco</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-t4-p1">A terceira famÃ­lia de dores Ã© o <strong class="text-purple-400">tempo entre a pergunta e a resposta</strong>: o cliente que espera horas por um retorno, o gestor que adia uma decisÃ£o por falta de informaÃ§Ã£o, o atendente que repete as mesmas respostas sem dar conta da fila. Velocidade de resposta Ã© vantagem competitiva â€” e cada minuto de espera custa venda, confianÃ§a e cliente. A IA encurta esse intervalo entre a dÃºvida e a resposta certa.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-2-t4-p1">A terceira famêÂ­lia de dores êÂ© o <strong class="text-purple-400">tempo entre a pergunta e a resposta</strong>: o cliente que espera horas por um retorno, o gestor que adia uma decisêÂ£o por falta de informaêÂ§êÂ£o, o atendente que repete as mesmas respostas sem dar conta da fila. Velocidade de resposta êÂ© vantagem competitiva ê¢â¬â e cada minuto de espera custa venda, confianêÂ§a e cliente. A IA encurta esse intervalo entre a dêÂºvida e a resposta certa.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">â±ï¸</span> Onde o relÃ³gio dÃ³i</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ê¢ÂÂ±ê¯Â¸Â</span> Onde o relêÂ³gio dêÂ³i</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Atendimento:</strong> cliente espera, perguntas se repetem, fila nÃ£o anda.</li>
-<li><strong class="text-neutral-100">DecisÃ£o:</strong> "preciso de um dado para decidir" e o dado demora a chegar.</li>
-<li><strong class="text-neutral-100">Resposta interna:</strong> uma equipe trava esperando informaÃ§Ã£o de outra.</li>
+<li><strong class="text-neutral-100">Atendimento:</strong> cliente espera, perguntas se repetem, fila nêÂ£o anda.</li>
+<li><strong class="text-neutral-100">DecisêÂ£o:</strong> "preciso de um dado para decidir" e o dado demora a chegar.</li>
+<li><strong class="text-neutral-100">Resposta interna:</strong> uma equipe trava esperando informaêÂ§êÂ£o de outra.</li>
 </ul>
 </div>
 <!-- TIMELINE: a jornada lenta de uma pergunta de cliente -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Cliente pergunta</h4><p class="text-neutral-300 text-sm">Manda mensagem fora do horÃ¡rio â€” e fica sem resposta.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Cliente pergunta</h4><p class="text-neutral-300 text-sm">Manda mensagem fora do horêÂ¡rio ê¢â¬â e fica sem resposta.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Espera na fila</h4><p class="text-neutral-300 text-sm">Atendente sÃ³ vÃª de manhÃ£; a dÃºvida envelhece junto com a paciÃªncia.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Espera na fila</h4><p class="text-neutral-300 text-sm">Atendente sêÂ³ vêÂª de manhêÂ£; a dêÂºvida envelhece junto com a paciêÂªncia.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Busca da resposta</h4><p class="text-neutral-300 text-sm">Atendente procura a informaÃ§Ã£o espalhada â€” o gargalo do tÃ³pico anterior.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Busca da resposta</h4><p class="text-neutral-300 text-sm">Atendente procura a informaêÂ§êÂ£o espalhada ê¢â¬â o gargalo do têÂ³pico anterior.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center"><span class="text-red-400 font-bold">!</span></div>
-<div class="flex-1 bg-red-900/20 rounded-xl p-5 border border-red-500/30"><h4 class="font-semibold text-neutral-100 mb-1">Cliente jÃ¡ desistiu</h4><p class="text-neutral-300 text-sm">A resposta chega tarde â€” e o cliente jÃ¡ comprou no concorrente que respondeu na hora.</p></div>
+<div class="flex-1 bg-red-900/20 rounded-xl p-5 border border-red-500/30"><h4 class="font-semibold text-neutral-100 mb-1">Cliente jêÂ¡ desistiu</h4><p class="text-neutral-300 text-sm">A resposta chega tarde ê¢â¬â e o cliente jêÂ¡ comprou no concorrente que respondeu na hora.</p></div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">MeÃ§a o "tempo de primeira resposta" em alguma frente da empresa. Se ele Ã© medido em horas (ou dias), ali hÃ¡ uma dor de velocidade clara â€” e um Ã³timo problema para a IA encurtar.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">MeêÂ§a o "tempo de primeira resposta" em alguma frente da empresa. Se ele êÂ© medido em horas (ou dias), ali hêÂ¡ uma dor de velocidade clara ê¢â¬â e um êÂ³timo problema para a IA encurtar.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">LentidÃ£o</div><div class="text-xs text-neutral-400">pergunta â†’ resposta</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Gargalo</div><div class="text-xs text-neutral-400">decisÃ£o sem dado</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Custo</div><div class="text-xs text-neutral-400">venda e confianÃ§a</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">MÃ©trica</div><div class="text-xs text-neutral-400">tempo de resposta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">LentidêÂ£o</div><div class="text-xs text-neutral-400">pergunta ê¢â â resposta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Gargalo</div><div class="text-xs text-neutral-400">decisêÂ£o sem dado</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Custo</div><div class="text-xs text-neutral-400">venda e confianêÂ§a</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">MêÂ©trica</div><div class="text-xs text-neutral-400">tempo de resposta</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-5" data-ARCKHÉ-track="3" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="3-2" data-ARCKHê-topic="modulo-3-2#topico-5" data-ARCKHê-track="3" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸ’¡ Oportunidade de automatizar</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ¡ Oportunidade de automatizar</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-t5-p1">Encontrar dores Ã© fÃ¡cil; <strong class="text-purple-400">priorizar</strong> Ã© o que separa o arquiteto. Nem toda dor vale automatizar agora. A pergunta Ã© dupla: <em class="text-neutral-400">quanto essa dor custa hoje</em> (tempo, dinheiro, clientes perdidos) e <em class="text-neutral-400">quÃ£o fÃ¡cil Ã© resolver com IA</em>. O melhor alvo Ã© a dor que custa caro e Ã© fÃ¡cil de atacar â€” o famoso ganho rÃ¡pido. O pior Ã© a que custa pouco e Ã© difÃ­cil de resolver: muita energia para pouco retorno.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-2-t5-p1">Encontrar dores êÂ© fêÂ¡cil; <strong class="text-purple-400">priorizar</strong> êÂ© o que separa o arquiteto. Nem toda dor vale automatizar agora. A pergunta êÂ© dupla: <em class="text-neutral-400">quanto essa dor custa hoje</em> (tempo, dinheiro, clientes perdidos) e <em class="text-neutral-400">quêÂ£o fêÂ¡cil êÂ© resolver com IA</em>. O melhor alvo êÂ© a dor que custa caro e êÂ© fêÂ¡cil de atacar ê¢â¬â o famoso ganho rêÂ¡pido. O pior êÂ© a que custa pouco e êÂ© difêÂ­cil de resolver: muita energia para pouco retorno.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Matriz custo Ã— facilidade (mental)</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Matriz custo êâ facilidade (mental)</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div><span class="text-purple-400">custo_alto</span> + <span class="text-purple-400">fÃ¡cil</span>  â†’ <span class="text-neutral-100">FAÃ‡A AGORA  (ganho rÃ¡pido)</span></div>
-<div><span class="text-purple-400">custo_alto</span> + <span class="text-neutral-500">difÃ­cil</span> â†’ planeje (vale, mas exige projeto)</div>
-<div><span class="text-neutral-500">custo_baixo</span> + <span class="text-purple-400">fÃ¡cil</span>  â†’ talvez (bÃ´nus, se sobrar tempo)</div>
-<div><span class="text-neutral-500">custo_baixo</span> + <span class="text-neutral-500">difÃ­cil</span> â†’ <span class="text-red-400">ignore  (nÃ£o vale o esforÃ§o)</span></div>
+<div><span class="text-purple-400">custo_alto</span> + <span class="text-purple-400">fêÂ¡cil</span>  ê¢â â <span class="text-neutral-100">FAêâ¡A AGORA  (ganho rêÂ¡pido)</span></div>
+<div><span class="text-purple-400">custo_alto</span> + <span class="text-neutral-500">difêÂ­cil</span> ê¢â â planeje (vale, mas exige projeto)</div>
+<div><span class="text-neutral-500">custo_baixo</span> + <span class="text-purple-400">fêÂ¡cil</span>  ê¢â â talvez (bêÂ´nus, se sobrar tempo)</div>
+<div><span class="text-neutral-500">custo_baixo</span> + <span class="text-neutral-500">difêÂ­cil</span> ê¢â â <span class="text-red-400">ignore  (nêÂ£o vale o esforêÂ§o)</span></div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">RecriaÃ§Ã£o ilustrativa da matriz â€” use-a para ranquear as dores que vocÃª mapeou.</p>
+<p class="text-xs text-neutral-500 mt-3">RecriaêÂ§êÂ£o ilustrativa da matriz ê¢â¬â use-a para ranquear as dores que vocêÂª mapeou.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">âœ“ Bom alvo de automaÃ§Ã£o</h4>
+<h4 class="font-bold text-purple-400 mb-4">ê¢Åâ Bom alvo de automaêÂ§êÂ£o</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Custa muito tempo ou dinheiro hoje.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Tem entrada e saÃ­da claras (regra repetÃ­vel).</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Cabe num protÃ³tipo de um dia.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>AlguÃ©m na empresa sente a dor todo dia.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Custa muito tempo ou dinheiro hoje.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Tem entrada e saêÂ­da claras (regra repetêÂ­vel).</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Cabe num protêÂ³tipo de um dia.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>AlguêÂ©m na empresa sente a dor todo dia.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Alvo a evitar (por ora)</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Alvo a evitar (por ora)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Exige integraÃ§Ã£o com 5 sistemas crÃ­ticos.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Depende de decisÃ£o humana sutil e cara.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Ganho minÃºsculo mesmo se der certo.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>NinguÃ©m consegue dizer como seria o "depois".</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Exige integraêÂ§êÂ£o com 5 sistemas crêÂ­ticos.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Depende de decisêÂ£o humana sutil e cara.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Ganho minêÂºsculo mesmo se der certo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>NinguêÂ©m consegue dizer como seria o "depois".</span></li>
 </ul>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Eixo 1</div><div class="text-xs text-neutral-400">quanto custa hoje</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Eixo 2</div><div class="text-xs text-neutral-400">facilidade de resolver</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Melhor</div><div class="text-xs text-neutral-400">caro + fÃ¡cil</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ranquear</div><div class="text-xs text-neutral-400">retorno do esforÃ§o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Melhor</div><div class="text-xs text-neutral-400">caro + fêÂ¡cil</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ranquear</div><div class="text-xs text-neutral-400">retorno do esforêÂ§o</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-6" data-ARCKHÉ-track="3" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="3-2" data-ARCKHê-topic="modulo-3-2#topico-6" data-ARCKHê-track="3" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">âœ‚ï¸ Escolher UM problema (foco)</h2>
+<h2 class="text-2xl font-bold">ê¢Åâê¯Â¸Â Escolher UM problema (foco)</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-t6-p1">Agora o passo mais difÃ­cil: <strong class="text-purple-400">cravar UM problema</strong>. Depois de mapear muitas dores, a tentaÃ§Ã£o Ã© resolver tudo. Mas tentar resolver tudo de uma vez Ã© a receita mais confiÃ¡vel de nÃ£o entregar nada. Foco Ã© escolher o problema mais doloroso e viÃ¡vel dentro do escopo de um dia â€” e deixar os outros na lista para depois. Um problema, uma soluÃ§Ã£o, um resultado para mostrar.</p>
-<!-- CHECKLIST DE DIAGNÃ“STICO (mono/code box) -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-2-t6-p1">Agora o passo mais difêÂ­cil: <strong class="text-purple-400">cravar UM problema</strong>. Depois de mapear muitas dores, a tentaêÂ§êÂ£o êÂ© resolver tudo. Mas tentar resolver tudo de uma vez êÂ© a receita mais confiêÂ¡vel de nêÂ£o entregar nada. Foco êÂ© escolher o problema mais doloroso e viêÂ¡vel dentro do escopo de um dia ê¢â¬â e deixar os outros na lista para depois. Um problema, uma soluêÂ§êÂ£o, um resultado para mostrar.</p>
+<!-- CHECKLIST DE DIAGNêâSTICO (mono/code box) -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Checklist de diagnÃ³stico â€” fecho o problema</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Checklist de diagnêÂ³stico ê¢â¬â fecho o problema</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div><span class="text-purple-400">[ ]</span> A dor Ã© concreta (consigo descrever em uma frase)?</div>
+<div><span class="text-purple-400">[ ]</span> A dor êÂ© concreta (consigo descrever em uma frase)?</div>
 <div><span class="text-purple-400">[ ]</span> Custa caro hoje (tempo, dinheiro ou clientes)?</div>
-<div><span class="text-purple-400">[ ]</span> Tem entrada e saÃ­da claras (dÃ¡ para repetir)?</div>
-<div><span class="text-purple-400">[ ]</span> Cabe num protÃ³tipo de UM dia?</div>
-<div><span class="text-purple-400">[ ]</span> AlguÃ©m real sente essa dor e vai usar a soluÃ§Ã£o?</div>
+<div><span class="text-purple-400">[ ]</span> Tem entrada e saêÂ­da claras (dêÂ¡ para repetir)?</div>
+<div><span class="text-purple-400">[ ]</span> Cabe num protêÂ³tipo de UM dia?</div>
+<div><span class="text-purple-400">[ ]</span> AlguêÂ©m real sente essa dor e vai usar a soluêÂ§êÂ£o?</div>
 <div><span class="text-purple-400">[ ]</span> Sei como seria o "antes" e o "depois"?</div>
-<div class="text-neutral-500 pt-1">6 de 6 â†’ este Ã© o problema. Menos â†’ escolha outro.</div>
+<div class="text-neutral-500 pt-1">6 de 6 ê¢â â este êÂ© o problema. Menos ê¢â â escolha outro.</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Rode o checklist nas dores mais fortes do seu mapa. A que marcar tudo Ã© a sua escolha.</p>
+<p class="text-xs text-neutral-500 mt-3">Rode o checklist nas dores mais fortes do seu mapa. A que marcar tudo êÂ© a sua escolha.</p>
 </div>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> Foco Ã© dizer nÃ£o</h3>
-<p class="text-neutral-300">Escolher um problema Ã©, na prÃ¡tica, dizer "nÃ£o, agora nÃ£o" para os outros quatro. Isso assusta â€” parece que vocÃª estÃ¡ deixando valor na mesa. Mas Ã© o contrÃ¡rio: sÃ³ entregando UM resultado de verdade vocÃª ganha o direito (e a confianÃ§a) de atacar o prÃ³ximo. A lista de dores nÃ£o some; ela vira seu roteiro.</p>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å½Â¯</span> Foco êÂ© dizer nêÂ£o</h3>
+<p class="text-neutral-300">Escolher um problema êÂ©, na prêÂ¡tica, dizer "nêÂ£o, agora nêÂ£o" para os outros quatro. Isso assusta ê¢â¬â parece que vocêÂª estêÂ¡ deixando valor na mesa. Mas êÂ© o contrêÂ¡rio: sêÂ³ entregando UM resultado de verdade vocêÂª ganha o direito (e a confianêÂ§a) de atacar o prêÂ³ximo. A lista de dores nêÂ£o some; ela vira seu roteiro.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Foco</div><div class="text-xs text-neutral-400">um problema sÃ³</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">CritÃ©rio</div><div class="text-xs text-neutral-400">doloroso + viÃ¡vel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Foco</div><div class="text-xs text-neutral-400">um problema sêÂ³</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">CritêÂ©rio</div><div class="text-xs text-neutral-400">doloroso + viêÂ¡vel</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Escopo</div><div class="text-xs text-neutral-400">cabe em um dia</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">O resto</div><div class="text-xs text-neutral-400">vira roteiro, nÃ£o some</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">O resto</div><div class="text-xs text-neutral-400">vira roteiro, nêÂ£o some</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-3-2#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): depois de mapear cinco dores numa empresa, qual Ã© o prÃ³ximo passo do arquiteto?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Atacar as cinco dores ao mesmo tempo para entregar mais valor.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Escolher UM problema â€” o mais doloroso e viÃ¡vel â€” e focar nele.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Escolher o problema mais difÃ­cil para impressionar a empresa.</button>
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-3-2#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): depois de mapear cinco dores numa empresa, qual êÂ© o prêÂ³ximo passo do arquiteto?</p>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Atacar as cinco dores ao mesmo tempo para entregar mais valor.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Escolher UM problema ê¢â¬â o mais doloroso e viêÂ¡vel ê¢â¬â e focar nele.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Escolher o problema mais difêÂ­cil para impressionar a empresa.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ”</span> Resumo do mÃ³dulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸âÂ</span> Resumo do mêÂ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Ler a empresa</strong><span class="text-neutral-400"> â€” olhar com olhos de quem procura dor; a dor Ã© o mapa.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">RepetiÃ§Ã£o e tempo</strong><span class="text-neutral-400"> â€” onde mais se repete, mais a IA multiplica.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">InformaÃ§Ã£o desorganizada</strong><span class="text-neutral-400"> â€” dado espalhado vira oportunidade de organizar.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">DecisÃ£o lenta / atendimento</strong><span class="text-neutral-400"> â€” velocidade de resposta Ã© vantagem competitiva.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Priorizar</strong><span class="text-neutral-400"> â€” custo Ã— facilidade; o melhor alvo Ã© caro e fÃ¡cil.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Escolher UM</strong><span class="text-neutral-400"> â€” foco em um problema viÃ¡vel; o resto vira roteiro.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Ler a empresa</strong><span class="text-neutral-400"> ê¢â¬â olhar com olhos de quem procura dor; a dor êÂ© o mapa.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">RepetiêÂ§êÂ£o e tempo</strong><span class="text-neutral-400"> ê¢â¬â onde mais se repete, mais a IA multiplica.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">InformaêÂ§êÂ£o desorganizada</strong><span class="text-neutral-400"> ê¢â¬â dado espalhado vira oportunidade de organizar.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">DecisêÂ£o lenta / atendimento</strong><span class="text-neutral-400"> ê¢â¬â velocidade de resposta êÂ© vantagem competitiva.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Priorizar</strong><span class="text-neutral-400"> ê¢â¬â custo êâ facilidade; o melhor alvo êÂ© caro e fêÂ¡cil.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Escolher UM</strong><span class="text-neutral-400"> ê¢â¬â foco em um problema viêÂ¡vel; o resto vira roteiro.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-purple-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
-<p class="text-neutral-300">3.3 â€” Desenhar a Arquitetura: transformar o problema escolhido no blueprint da soluÃ§Ã£o.</p>
+<h3 class="font-semibold text-purple-400 mb-2">PrêÂ³ximo mêÂ³dulo:</h3>
+<p class="text-neutral-300">3.3 ê¢â¬â Desenhar a Arquitetura: transformar o problema escolhido no blueprint da soluêÂ§êÂ£o.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 3</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-3.html">PrÃ³ximo: 3.3 Desenhar a Arquitetura â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Voltar para o Dia 3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-3.html">PrêÂ³ximo: 3.3 Desenhar a Arquitetura ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="êÂndice do mêÂ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pêÂ¡gina <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-1">1. Ler a empresa</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. RepetiÃ§Ã£o e tempo</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. RepetiêÂ§êÂ£o e tempo</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. Info desorganizada</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. DecisÃ£o lenta / atendimento</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. DecisêÂ£o lenta / atendimento</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. Oportunidade de automatizar</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. Escolher UM problema</a></li>
 </ol>
@@ -617,21 +617,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 3 Â· MÃ³dulo 3.2</p>
+<p>Arquitetura de IntenêÂ§êÂ£o da IA êÂ· MêÂ©todo JARVIS ê¢â¬â Dia 3 êÂ· MêÂ³dulo 3.2</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-3-2#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-3-2#q1', {
           answer: 1,
           explain: {
-            0: 'Cuidado â€” atacar tudo de uma vez Ã© a receita de nÃ£o entregar nada. Foco primeiro.',
-            1: 'Isso. Escolher UM problema doloroso e viÃ¡vel Ã© o que faz a soluÃ§Ã£o nascer.',
-            2: 'NÃ£o â€” o mais difÃ­cil costuma estourar o escopo de um dia; busque o doloroso E viÃ¡vel.'
+            0: 'Cuidado ê¢â¬â atacar tudo de uma vez êÂ© a receita de nêÂ£o entregar nada. Foco primeiro.',
+            1: 'Isso. Escolher UM problema doloroso e viêÂ¡vel êÂ© o que faz a soluêÂ§êÂ£o nascer.',
+            2: 'NêÂ£o ê¢â¬â o mais difêÂ­cil costuma estourar o escopo de um dia; busque o doloroso E viêÂ¡vel.'
           }
         });
       }

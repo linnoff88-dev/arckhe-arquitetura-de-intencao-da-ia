@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>MÃ³dulo 1.4 Â· Publicar no Mundo | Arquitetura de IntenÃ§Ã£o da IA</title>
+<title>MêÂ³dulo 1.4 êÂ· Publicar no Mundo | Arquitetura de IntenêÂ§êÂ£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -126,18 +126,18 @@
     html:not(.dark) .toc-link.is-active { color: #059669; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteêÂºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenêÂ§êÂ£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
@@ -146,46 +146,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="AparêÂªncia e leitura" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Tema" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Escuro</button>
+<button data-ARCKHê-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHê-set-theme="sepia" type="button">SêÂ©pia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHê-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">Sistema</button>
+<button data-ARCKHê-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHê-set-linewidth="68" type="button">MêÂ©dio</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
+<div aria-label="Entrelinha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHê-set-leading="1.7" type="button">ConfortêÂ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="êâmbar" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -196,20 +196,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-emerald-400" href="../../index.html">InÃ­cio</a><span>/</span>
+<a class="hover:text-emerald-400" href="../../index.html">InêÂ­cio</a><span>/</span>
 <a class="hover:text-emerald-400" href="index.html">Dia 1</a><span>/</span>
-<span class="text-emerald-400">MÃ³dulo 1.4</span>
+<span class="text-emerald-400">MêÂ³dulo 1.4</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 1.4</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸŒ Publicar no Mundo</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Uma soluÃ§Ã£o que sÃ³ roda na sua mÃ¡quina nÃ£o resolve o problema de ninguÃ©m. Aqui vocÃª aprende o mapa de pÃ´r a soluÃ§Ã£o "no ar": hospedagem, VPS, servidor, domÃ­nio, banco, API, webhook, deploy â€” e a separaÃ§Ã£o sagrada entre teste e produÃ§Ã£o. Tudo como conceito, sem tutorial tÃ©cnico. A ferramenta serve Ã  intenÃ§Ã£o.</p>
-<!-- SVG: do cÃ³digo (local) â†’ deploy â†’ servidor + domÃ­nio â†’ no ar -->
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MêâDULO 1.4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸ÅÂ Publicar no Mundo</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Uma soluêÂ§êÂ£o que sêÂ³ roda na sua mêÂ¡quina nêÂ£o resolve o problema de ninguêÂ©m. Aqui vocêÂª aprende o mapa de pêÂ´r a soluêÂ§êÂ£o "no ar": hospedagem, VPS, servidor, domêÂ­nio, banco, API, webhook, deploy ê¢â¬â e a separaêÂ§êÂ£o sagrada entre teste e produêÂ§êÂ£o. Tudo como conceito, sem tutorial têÂ©cnico. A ferramenta serve êÂ  intenêÂ§êÂ£o.</p>
+<!-- SVG: do cêÂ³digo (local) ê¢â â deploy ê¢â â servidor + domêÂ­nio ê¢â â no ar -->
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Fluxo: o cÃ³digo no computador local passa por um deploy, vai para um servidor na nuvem com um domÃ­nio, e fica acessÃ­vel no mundo por vÃ¡rios canais" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<svg aria-label="Fluxo: o cêÂ³digo no computador local passa por um deploy, vai para um servidor na nuvem com um domêÂ­nio, e fica acessêÂ­vel no mundo por vêÂ¡rios canais" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
 <lineargradient id="m14-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
 <filter height="180%" id="m14-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -220,8 +220,8 @@
 <rect fill="url(#m14-grid)" height="240" width="1000" x="0" y="0"></rect>
 <!-- local -->
 <rect fill="#26201a" height="60" rx="13" stroke="#9ca3af" stroke-width="2" width="150" x="36" y="86"></rect>
-<text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="111" y="112">CÃ³digo local</text>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="111" y="131">na sua mÃ¡quina</text>
+<text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="111" y="112">CêÂ³digo local</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="111" y="131">na sua mêÂ¡quina</text>
 <!-- local -> deploy -->
 <path d="M188,116 L266,116" fill="none" marker-end="url(#m14-ah)" opacity="0.55" stroke="#34d399" stroke-width="1.8"></path>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="227" y="104">deploy</text>
@@ -230,15 +230,15 @@
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="350" y="106">Servidor / VPS</text>
 <text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="350" y="125">sempre ligado</text>
 <text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="350" y="142">na nuvem</text>
-<!-- domÃ­nio aponta para o servidor -->
+<!-- domêÂ­nio aponta para o servidor -->
 <rect fill="#0e1b26" height="34" rx="9" stroke="#38bdf8" stroke-width="1.8" width="160" x="270" y="22"></rect>
-<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="350" y="44">domÃ­nio Â· DNS</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="350" y="44">domêÂ­nio êÂ· DNS</text>
 <path d="M350,56 L350,78" fill="none" marker-end="url(#m14-ahc)" opacity="0.5" stroke="#38bdf8" stroke-width="1.8"></path>
 <!-- servidor -> no ar -->
 <path d="M432,116 L512,116" fill="none" marker-end="url(#m14-ah)" opacity="0.55" stroke="#34d399" stroke-width="1.8"></path>
 <g filter="url(#m14-glow)"><rect fill="#0e2018" height="60" rx="13" stroke="url(#m14-grad)" stroke-width="2" width="140" x="516" y="86"></rect></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="586" y="112">No ar</text>
-<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="586" y="131">acessÃ­vel ao mundo</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="586" y="131">acessêÂ­vel ao mundo</text>
 <!-- no ar -> canais -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.6">
 <path d="M656,100 C740,100 760,58 820,58" marker-end="url(#m14-ahc)"></path>
@@ -246,395 +246,395 @@
 <path d="M656,132 C740,132 760,174 820,174" marker-end="url(#m14-ahc)"></path>
 </g>
 <g font-family="Inter,sans-serif" font-size="12" font-weight="600">
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="820" y="42"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="63">site Â· painel</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="820" y="100"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="121">WhatsApp Â· chat</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="820" y="158"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="179">API Â· webhook</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="820" y="42"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="63">site êÂ· painel</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="820" y="100"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="121">WhatsApp êÂ· chat</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="820" y="158"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="179">API êÂ· webhook</text></g>
 </g>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="222">Do "roda no meu computador" ao "funciona para o cliente" â€” esse Ã© o caminho de publicar.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="222">Do "roda no meu computador" ao "funciona para o cliente" ê¢â¬â esse êÂ© o caminho de publicar.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">7</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">7</div><div class="text-xs text-neutral-400">TêÂ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~55</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">BÃ¡sico</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">PrÃ¡tico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">BêÂ¡sico</div><div class="text-xs text-neutral-400">NêÂ­vel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">PrêÂ¡tico</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do mÃ³dulo 1.4" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:1-4" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 7</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Progresso do mêÂ³dulo 1.4" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:1-4" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mêÂ³dulo</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 de 7</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-1" data-ARCKHÉ-track="1" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-1" data-ARCKHê-track="1" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸŒ O que Ã© publicar</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ÅÂ O que êÂ© publicar</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t1-p1">VocÃª montou a soluÃ§Ã£o, ela roda lindamente no seu computador â€” e ainda assim nÃ£o resolve o problema de ninguÃ©m. Por quÃª? Porque estÃ¡ <strong class="text-emerald-400">trancada na sua mÃ¡quina</strong>. Publicar Ã© o ato de colocar a soluÃ§Ã£o no mundo: deixÃ¡-la num lugar que fica ligado, com um endereÃ§o, para que pessoas e outros sistemas a usem de verdade. Ã‰ a diferenÃ§a entre uma maquete na sua mesa e uma loja aberta na rua.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-4-t1-p1">VocêÂª montou a soluêÂ§êÂ£o, ela roda lindamente no seu computador ê¢â¬â e ainda assim nêÂ£o resolve o problema de ninguêÂ©m. Por quêÂª? Porque estêÂ¡ <strong class="text-emerald-400">trancada na sua mêÂ¡quina</strong>. Publicar êÂ© o ato de colocar a soluêÂ§êÂ£o no mundo: deixêÂ¡-la num lugar que fica ligado, com um endereêÂ§o, para que pessoas e outros sistemas a usem de verdade. êâ° a diferenêÂ§a entre uma maquete na sua mesa e uma loja aberta na rua.</p>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">ðŸšª</span> "No ar" significa trÃªs coisas</h3>
-<p class="text-neutral-300">Uma soluÃ§Ã£o estÃ¡ "no ar" quando: (1) estÃ¡ num lugar que <strong class="text-emerald-400">fica ligado sozinho</strong>, sem o seu computador aberto; (2) tem um <strong class="text-emerald-400">endereÃ§o</strong> que outras pessoas conseguem acessar; e (3) estÃ¡ <strong class="text-emerald-400">conectada</strong> aos canais por onde o cliente fala com ela. Tudo neste mÃ³dulo gira em torno desses trÃªs pontos.</p>
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å¡Âª</span> "No ar" significa trêÂªs coisas</h3>
+<p class="text-neutral-300">Uma soluêÂ§êÂ£o estêÂ¡ "no ar" quando: (1) estêÂ¡ num lugar que <strong class="text-emerald-400">fica ligado sozinho</strong>, sem o seu computador aberto; (2) tem um <strong class="text-emerald-400">endereêÂ§o</strong> que outras pessoas conseguem acessar; e (3) estêÂ¡ <strong class="text-emerald-400">conectada</strong> aos canais por onde o cliente fala com ela. Tudo neste mêÂ³dulo gira em torno desses trêÂªs pontos.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">âœ“ Publicado (no ar)</h4>
+<h4 class="font-bold text-emerald-400 mb-4">ê¢Åâ Publicado (no ar)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Roda mesmo com seu computador desligado</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Tem um endereÃ§o que qualquer um acessa</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>O cliente usa quando quiser, sozinho</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Resolve o problema de verdade</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Roda mesmo com seu computador desligado</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Tem um endereêÂ§o que qualquer um acessa</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>O cliente usa quando quiser, sozinho</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Resolve o problema de verdade</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— SÃ³ local (preso)</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ SêÂ³ local (preso)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>SÃ³ funciona com seu computador aberto</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>NinguÃ©m de fora consegue acessar</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>VocÃª vira o "servidor humano" do projeto</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Fica eterno protÃ³tipo, nunca soluÃ§Ã£o</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>SêÂ³ funciona com seu computador aberto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>NinguêÂ©m de fora consegue acessar</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>VocêÂª vira o "servidor humano" do projeto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Fica eterno protêÂ³tipo, nunca soluêÂ§êÂ£o</span></li>
 </ul>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Publicar</div><div class="text-xs text-neutral-400">colocar no mundo</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Local Ã— pÃºblico</div><div class="text-xs text-neutral-400">mesa Ã— loja aberta</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">"No ar"</div><div class="text-xs text-neutral-400">ligado Â· endereÃ§o Â· canal</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Acessibilidade</div><div class="text-xs text-neutral-400">Ã© o que torna real</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Local êâ pêÂºblico</div><div class="text-xs text-neutral-400">mesa êâ loja aberta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">"No ar"</div><div class="text-xs text-neutral-400">ligado êÂ· endereêÂ§o êÂ· canal</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Acessibilidade</div><div class="text-xs text-neutral-400">êÂ© o que torna real</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-2" data-ARCKHÉ-track="1" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-2" data-ARCKHê-track="1" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸ–¥ï¸ Hospedagem de site</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ¥ê¯Â¸Â Hospedagem de site</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t2-p1">A forma mais simples de publicar Ã© <strong class="text-emerald-400">hospedar</strong>. Hospedar Ã© alugar um pedacinho de um computador que vive ligado na internet (um "armÃ¡rio" num prÃ©dio que nunca apaga as luzes) e deixar sua pÃ¡gina ou site lÃ¡. Para muitos protÃ³tipos, isso jÃ¡ basta: serviÃ§os prontos colocam um site no ar em minutos, de graÃ§a ou quase. Ã‰ o seu primeiro "no ar" possÃ­vel â€” rÃ¡pido, barato e suficiente para validar a ideia.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-4-t2-p1">A forma mais simples de publicar êÂ© <strong class="text-emerald-400">hospedar</strong>. Hospedar êÂ© alugar um pedacinho de um computador que vive ligado na internet (um "armêÂ¡rio" num prêÂ©dio que nunca apaga as luzes) e deixar sua pêÂ¡gina ou site lêÂ¡. Para muitos protêÂ³tipos, isso jêÂ¡ basta: serviêÂ§os prontos colocam um site no ar em minutos, de graêÂ§a ou quase. êâ° o seu primeiro "no ar" possêÂ­vel ê¢â¬â rêÂ¡pido, barato e suficiente para validar a ideia.</p>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">NÃ£o comece comprando servidor caro. Para uma pÃ¡gina, um folder ou uma demonstraÃ§Ã£o, use uma hospedagem gratuita de site estÃ¡tico. Funciona, custa zero e jÃ¡ te dÃ¡ um link para mandar pro cliente. Complexidade depois â€” sÃ³ quando a soluÃ§Ã£o pedir.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">NêÂ£o comece comprando servidor caro. Para uma pêÂ¡gina, um folder ou uma demonstraêÂ§êÂ£o, use uma hospedagem gratuita de site estêÂ¡tico. Funciona, custa zero e jêÂ¡ te dêÂ¡ um link para mandar pro cliente. Complexidade depois ê¢â¬â sêÂ³ quando a soluêÂ§êÂ£o pedir.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸ§±</span> Site estÃ¡tico Ã— dinÃ¢mico (a diferenÃ§a em uma frase)</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ê°Å¸Â§Â±</span> Site estêÂ¡tico êâ dinêÂ¢mico (a diferenêÂ§a em uma frase)</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">EstÃ¡tico:</strong> pÃ¡ginas prontas, iguais para todo mundo (um folder, um catÃ¡logo). Barato e fÃ¡cil de hospedar.</li>
-<li><strong class="text-neutral-100">DinÃ¢mico:</strong> o conteÃºdo muda conforme quem acessa e o que ele faz (um painel, um chat com memÃ³ria). Precisa de um servidor que "pensa" â€” o prÃ³ximo tÃ³pico.</li>
+<li><strong class="text-neutral-100">EstêÂ¡tico:</strong> pêÂ¡ginas prontas, iguais para todo mundo (um folder, um catêÂ¡logo). Barato e fêÂ¡cil de hospedar.</li>
+<li><strong class="text-neutral-100">DinêÂ¢mico:</strong> o conteêÂºdo muda conforme quem acessa e o que ele faz (um painel, um chat com memêÂ³ria). Precisa de um servidor que "pensa" ê¢â¬â o prêÂ³ximo têÂ³pico.</li>
 </ul>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Hospedar</div><div class="text-xs text-neutral-400">alugar lugar ligado</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">EstÃ¡tico</div><div class="text-xs text-neutral-400">igual para todos</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Primeiro "no ar"</div><div class="text-xs text-neutral-400">rÃ¡pido e barato</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">EstêÂ¡tico</div><div class="text-xs text-neutral-400">igual para todos</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Primeiro "no ar"</div><div class="text-xs text-neutral-400">rêÂ¡pido e barato</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Comece simples</div><div class="text-xs text-neutral-400">complexidade depois</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-3" data-ARCKHÉ-track="1" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-3" data-ARCKHê-track="1" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">â˜ï¸ VPS e servidor</h2>
+<h2 class="text-2xl font-bold">ê¢ËÂê¯Â¸Â VPS e servidor</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t3-p1">Quando a soluÃ§Ã£o cresce alÃ©m de uma pÃ¡gina â€” quando ela precisa <strong class="text-emerald-400">ficar pensando, lembrando e respondendo o tempo todo</strong>, como um Jarvis â€” vocÃª precisa de um <strong class="text-emerald-400">servidor</strong>. Um servidor Ã© sÃ³ um computador que vive ligado para servir os outros. Um <strong class="text-emerald-400">VPS</strong> (servidor virtual privado) Ã© o jeito mais comum de ter um: vocÃª aluga um computador na nuvem, com ele sÃ³ seu, ligado 24 horas, e roda ali os serviÃ§os do seu sistema.</p>
-<!-- Aninhamento: o servidor contÃ©m os serviÃ§os do Jarvis -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-4-t3-p1">Quando a soluêÂ§êÂ£o cresce alêÂ©m de uma pêÂ¡gina ê¢â¬â quando ela precisa <strong class="text-emerald-400">ficar pensando, lembrando e respondendo o tempo todo</strong>, como um Jarvis ê¢â¬â vocêÂª precisa de um <strong class="text-emerald-400">servidor</strong>. Um servidor êÂ© sêÂ³ um computador que vive ligado para servir os outros. Um <strong class="text-emerald-400">VPS</strong> (servidor virtual privado) êÂ© o jeito mais comum de ter um: vocêÂª aluga um computador na nuvem, com ele sêÂ³ seu, ligado 24 horas, e roda ali os serviêÂ§os do seu sistema.</p>
+<!-- Aninhamento: o servidor contêÂ©m os serviêÂ§os do Jarvis -->
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Uma caixa grande rotulada servidor VPS contÃ©m os serviÃ§os que ficam sempre ligados: a alma do Jarvis, agentes, memÃ³ria e conexÃµes" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<svg aria-label="Uma caixa grande rotulada servidor VPS contêÂ©m os serviêÂ§os que ficam sempre ligados: a alma do Jarvis, agentes, memêÂ³ria e conexêÂµes" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
 <defs>
 <filter height="180%" id="m14b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 <pattern height="30" id="m14b-grid" patternunits="userSpaceOnUse" width="30"><circle cx="1.2" cy="1.2" fill="#10b981" opacity="0.10" r="1.2"></circle></pattern>
 </defs>
 <rect fill="url(#m14b-grid)" height="200" width="1000" x="0" y="0"></rect>
 <g filter="url(#m14b-glow)"><rect fill="none" height="152" rx="18" stroke="#34d399" stroke-width="2" width="952" x="24" y="24"></rect></g>
-<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="44" y="50">Servidor / VPS â€” sempre ligado na nuvem</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="44" y="50">Servidor / VPS ê¢â¬â sempre ligado na nuvem</text>
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
 <rect fill="#0e2018" height="40" rx="9" stroke="#34d399" stroke-width="1.8" width="150" x="44" y="70"></rect><text fill="#a7f3d0" text-anchor="middle" x="119" y="95">Alma do Jarvis</text>
 <g class="wf-a"><rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="210" y="70"></rect><text fill="#bfe6ff" text-anchor="middle" x="285" y="95">Agentes</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="376" y="70"></rect><text fill="#bfe6ff" text-anchor="middle" x="451" y="95">MemÃ³ria</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="542" y="70"></rect><text fill="#bfe6ff" text-anchor="middle" x="617" y="95">ConexÃµes</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="376" y="70"></rect><text fill="#bfe6ff" text-anchor="middle" x="451" y="95">MemêÂ³ria</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="150" x="542" y="70"></rect><text fill="#bfe6ff" text-anchor="middle" x="617" y="95">ConexêÂµes</text></g>
 <rect fill="#0e1b26" height="40" rx="9" stroke="#38bdf8" stroke-width="1.8" width="316" x="210" y="122"></rect><text fill="#bfe6ff" text-anchor="middle" x="368" y="147">Processos rodando 24 horas</text>
 <rect fill="#0e2018" height="40" rx="9" stroke="#34d399" stroke-width="1.8" width="150" x="44" y="122"></rect><text fill="#a7f3d0" text-anchor="middle" x="119" y="147">Sempre ligado</text>
 </g>
 <rect fill="#26201a" height="92" rx="12" stroke="#9ca3af" stroke-dasharray="6 6" stroke-width="1.8" width="230" x="724" y="70"></rect>
 <text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="839" y="110">seu computador</text>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="839" y="130">pode desligar â€” nÃ£o importa</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="839" y="130">pode desligar ê¢â¬â nêÂ£o importa</text>
 </svg>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">VocÃª nÃ£o precisa "ser de TI" para ter um VPS. Hoje se aluga um servidor pequeno por poucos reais por mÃªs, em minutos, com painel visual. O importante Ã© entender o conceito: existe um computador na nuvem, ligado para vocÃª, onde o Jarvis mora.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">VocêÂª nêÂ£o precisa "ser de TI" para ter um VPS. Hoje se aluga um servidor pequeno por poucos reais por mêÂªs, em minutos, com painel visual. O importante êÂ© entender o conceito: existe um computador na nuvem, ligado para vocêÂª, onde o Jarvis mora.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Servidor</div><div class="text-xs text-neutral-400">computador que serve</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">VPS</div><div class="text-xs text-neutral-400">seu, na nuvem</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Sempre ligado</div><div class="text-xs text-neutral-400">24 horas, sozinho</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Quando usar</div><div class="text-xs text-neutral-400">soluÃ§Ã£o alÃ©m de site</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Quando usar</div><div class="text-xs text-neutral-400">soluêÂ§êÂ£o alêÂ©m de site</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-4" data-ARCKHÉ-track="1" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-4" data-ARCKHê-track="1" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ”— DomÃ­nio</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââ DomêÂ­nio</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t4-p1">Seu servidor tem um nÃºmero â€” uma sequÃªncia feia, difÃ­cil de lembrar, que ninguÃ©m vai digitar. O <strong class="text-emerald-400">domÃ­nio</strong> Ã© o nome bonito que aponta para esse nÃºmero: <code class="text-emerald-400">ARCKHÉ AI</code> em vez de uma fileira de dÃ­gitos. Ã‰ a identidade pÃºblica e profissional da soluÃ§Ã£o â€” o nome pelo qual ela Ã© encontrada e lembrada. Por trÃ¡s, um sistema chamado <strong class="text-emerald-400">DNS</strong> funciona como a agenda de contatos da internet: vocÃª digita o nome, ele acha o nÃºmero.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-4-t4-p1">Seu servidor tem um nêÂºmero ê¢â¬â uma sequêÂªncia feia, difêÂ­cil de lembrar, que ninguêÂ©m vai digitar. O <strong class="text-emerald-400">domêÂ­nio</strong> êÂ© o nome bonito que aponta para esse nêÂºmero: <code class="text-emerald-400">ARCKHê AI</code> em vez de uma fileira de dêÂ­gitos. êâ° a identidade pêÂºblica e profissional da soluêÂ§êÂ£o ê¢â¬â o nome pelo qual ela êÂ© encontrada e lembrada. Por trêÂ¡s, um sistema chamado <strong class="text-emerald-400">DNS</strong> funciona como a agenda de contatos da internet: vocêÂª digita o nome, ele acha o nêÂºmero.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">A traduÃ§Ã£o que o DNS faz (ilustrativa)</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">A traduêÂ§êÂ£o que o DNS faz (ilustrativa)</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div><span class="text-emerald-400">vocÃª digita:</span> ARCKHÉ AI</div>
-<div><span class="text-emerald-400">DNS procura:</span> "que servidor Ã© esse nome?"</div>
-<div><span class="text-emerald-400">DNS responde:</span> 203.0.113.42 (o nÃºmero do servidor)</div>
+<div><span class="text-emerald-400">vocêÂª digita:</span> ARCKHê AI</div>
+<div><span class="text-emerald-400">DNS procura:</span> "que servidor êÂ© esse nome?"</div>
+<div><span class="text-emerald-400">DNS responde:</span> 203.0.113.42 (o nêÂºmero do servidor)</div>
 <div><span class="text-emerald-400">navegador vai:</span> direto ao servidor certo</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">NÃºmero fictÃ­cio â€” sÃ³ para mostrar o conceito: nome â†’ DNS â†’ endereÃ§o real.</p>
+<p class="text-xs text-neutral-500 mt-3">NêÂºmero fictêÂ­cio ê¢â¬â sêÂ³ para mostrar o conceito: nome ê¢â â DNS ê¢â â endereêÂ§o real.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">O domÃ­nio Ã© barato e vale a pena cedo: passa profissionalismo e fica seu. VocÃª pode trocar de servidor depois e o domÃ­nio continua o mesmo â€” basta reapontar. O nome Ã© da marca; o servidor Ã© sÃ³ onde ela mora hoje.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">O domêÂ­nio êÂ© barato e vale a pena cedo: passa profissionalismo e fica seu. VocêÂª pode trocar de servidor depois e o domêÂ­nio continua o mesmo ê¢â¬â basta reapontar. O nome êÂ© da marca; o servidor êÂ© sêÂ³ onde ela mora hoje.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">DomÃ­nio</div><div class="text-xs text-neutral-400">o nome bonito</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">DomêÂ­nio</div><div class="text-xs text-neutral-400">o nome bonito</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">DNS</div><div class="text-xs text-neutral-400">agenda da internet</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">EndereÃ§o pÃºblico</div><div class="text-xs text-neutral-400">como te acham</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Identidade</div><div class="text-xs text-neutral-400">Ã© da marca, nÃ£o do servidor</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">EndereêÂ§o pêÂºblico</div><div class="text-xs text-neutral-400">como te acham</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Identidade</div><div class="text-xs text-neutral-400">êÂ© da marca, nêÂ£o do servidor</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-5" data-ARCKHÉ-track="1" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-5" data-ARCKHê-track="1" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸ—„ï¸ Banco, API e webhook</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââê¯Â¸Â Banco, API e webhook</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t5-p1">Uma soluÃ§Ã£o publicada raramente vive sozinha â€” ela conversa com outros sistemas. TrÃªs encaixes aparecem o tempo todo, e vocÃª sÃ³ precisa entender o <strong class="text-emerald-400">conceito</strong> de cada um para desenhar o fluxo: o <strong class="text-emerald-400">banco de dados</strong> guarda a informaÃ§Ã£o (a memÃ³ria organizada), a <strong class="text-emerald-400">API</strong> Ã© o jeito padrÃ£o de dois sistemas conversarem (o "balcÃ£o de atendimento" de um programa), e o <strong class="text-emerald-400">webhook</strong> Ã© um aviso automÃ¡tico que dispara quando algo acontece ("me chama quando o pagamento cair").</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-4-t5-p1">Uma soluêÂ§êÂ£o publicada raramente vive sozinha ê¢â¬â ela conversa com outros sistemas. TrêÂªs encaixes aparecem o tempo todo, e vocêÂª sêÂ³ precisa entender o <strong class="text-emerald-400">conceito</strong> de cada um para desenhar o fluxo: o <strong class="text-emerald-400">banco de dados</strong> guarda a informaêÂ§êÂ£o (a memêÂ³ria organizada), a <strong class="text-emerald-400">API</strong> êÂ© o jeito padrêÂ£o de dois sistemas conversarem (o "balcêÂ£o de atendimento" de um programa), e o <strong class="text-emerald-400">webhook</strong> êÂ© um aviso automêÂ¡tico que dispara quando algo acontece ("me chama quando o pagamento cair").</p>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ—„ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Banco de dados</h4><p class="text-xs text-neutral-400">Onde a informaÃ§Ã£o fica guardada e organizada â€” clientes, pedidos, histÃ³rico. A memÃ³ria do sistema.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ”Œ</div><h4 class="font-semibold text-neutral-100 mb-1">API</h4><p class="text-xs text-neutral-400">O balcÃ£o por onde outros sistemas pedem e entregam coisas ao seu â€” de forma padronizada.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ””</div><h4 class="font-semibold text-neutral-100 mb-1">Webhook</h4><p class="text-xs text-neutral-400">O aviso automÃ¡tico: "aconteceu X, te avisei na hora". Dispara sozinho, sem ninguÃ©m perguntar.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸ââê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">Banco de dados</h4><p class="text-xs text-neutral-400">Onde a informaêÂ§êÂ£o fica guardada e organizada ê¢â¬â clientes, pedidos, histêÂ³rico. A memêÂ³ria do sistema.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÅ</div><h4 class="font-semibold text-neutral-100 mb-1">API</h4><p class="text-xs text-neutral-400">O balcêÂ£o por onde outros sistemas pedem e entregam coisas ao seu ê¢â¬â de forma padronizada.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸ââ</div><h4 class="font-semibold text-neutral-100 mb-1">Webhook</h4><p class="text-xs text-neutral-400">O aviso automêÂ¡tico: "aconteceu X, te avisei na hora". Dispara sozinho, sem ninguêÂ©m perguntar.</p></div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ”„</span> API Ã— webhook (a diferenÃ§a que confunde todo mundo)</h3>
-<p class="text-neutral-300 text-sm"><strong class="text-neutral-100">API</strong> Ã© vocÃª <em>perguntando</em>: "ei, tem novidade?" â€” vocÃª puxa a informaÃ§Ã£o quando quer. <strong class="text-neutral-100">Webhook</strong> Ã© o sistema <em>avisando</em>: "olha, aconteceu agora" â€” a informaÃ§Ã£o chega sozinha. Um vocÃª puxa; o outro te empurra. Ã‰ a diferenÃ§a entre ligar para perguntar e receber uma notificaÃ§Ã£o.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸ââ</span> API êâ webhook (a diferenêÂ§a que confunde todo mundo)</h3>
+<p class="text-neutral-300 text-sm"><strong class="text-neutral-100">API</strong> êÂ© vocêÂª <em>perguntando</em>: "ei, tem novidade?" ê¢â¬â vocêÂª puxa a informaêÂ§êÂ£o quando quer. <strong class="text-neutral-100">Webhook</strong> êÂ© o sistema <em>avisando</em>: "olha, aconteceu agora" ê¢â¬â a informaêÂ§êÂ£o chega sozinha. Um vocêÂª puxa; o outro te empurra. êâ° a diferenêÂ§a entre ligar para perguntar e receber uma notificaêÂ§êÂ£o.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Banco</div><div class="text-xs text-neutral-400">guarda a informaÃ§Ã£o</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">API</div><div class="text-xs text-neutral-400">vocÃª pergunta</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Banco</div><div class="text-xs text-neutral-400">guarda a informaêÂ§êÂ£o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">API</div><div class="text-xs text-neutral-400">vocêÂª pergunta</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Webhook</div><div class="text-xs text-neutral-400">o sistema avisa</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">IntegraÃ§Ã£o</div><div class="text-xs text-neutral-400">os encaixes do fluxo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">IntegraêÂ§êÂ£o</div><div class="text-xs text-neutral-400">os encaixes do fluxo</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-6" data-ARCKHÉ-track="1" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-6" data-ARCKHê-track="1" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸš€ Deploy: do cÃ³digo ao ar</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å¡â¬ Deploy: do cêÂ³digo ao ar</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t6-p1">VocÃª fez uma mudanÃ§a na soluÃ§Ã£o. Como ela chega ao servidor onde o cliente usa? Esse ato â€” levar a versÃ£o atual para o lugar onde ela roda de verdade â€” chama-se <strong class="text-emerald-400">deploy</strong>. Ã‰ o passo que conecta "estÃ¡ pronto no meu computador" com "estÃ¡ funcionando para o cliente". No fluxo do arquiteto, deploy Ã© a ponte: do versionamento (que vocÃª viu no mÃ³dulo anterior) atÃ© o sistema no ar.</p>
-<!-- Timeline: do cÃ³digo ao ar -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-4-t6-p1">VocêÂª fez uma mudanêÂ§a na soluêÂ§êÂ£o. Como ela chega ao servidor onde o cliente usa? Esse ato ê¢â¬â levar a versêÂ£o atual para o lugar onde ela roda de verdade ê¢â¬â chama-se <strong class="text-emerald-400">deploy</strong>. êâ° o passo que conecta "estêÂ¡ pronto no meu computador" com "estêÂ¡ funcionando para o cliente". No fluxo do arquiteto, deploy êÂ© a ponte: do versionamento (que vocêÂª viu no mêÂ³dulo anterior) atêÂ© o sistema no ar.</p>
+<!-- Timeline: do cêÂ³digo ao ar -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-lg font-semibold text-emerald-400 mb-6 flex items-center"><span class="mr-2">ðŸ›¤ï¸</span> A linha do deploy</h3>
+<h3 class="text-lg font-semibold text-emerald-400 mb-6 flex items-center"><span class="mr-2">ê°Å¸âºÂ¤ê¯Â¸Â</span> A linha do deploy</h3>
 <div class="relative border-l-2 border-emerald-500/40 ml-3 space-y-6">
 <div class="relative pl-6">
 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
 <h4 class="font-semibold text-neutral-100">1. Commit</h4>
-<p class="text-sm text-neutral-400">VocÃª salva a mudanÃ§a no versionamento â€” uma foto do "agora estÃ¡ como eu quero".</p>
+<p class="text-sm text-neutral-400">VocêÂª salva a mudanêÂ§a no versionamento ê¢â¬â uma foto do "agora estêÂ¡ como eu quero".</p>
 </div>
 <div class="relative pl-6">
 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
 <h4 class="font-semibold text-neutral-100">2. Enviar (push)</h4>
-<p class="text-sm text-neutral-400">A mudanÃ§a sobe para o repositÃ³rio central, onde o servidor consegue alcanÃ§Ã¡-la.</p>
+<p class="text-sm text-neutral-400">A mudanêÂ§a sobe para o repositêÂ³rio central, onde o servidor consegue alcanêÂ§êÂ¡-la.</p>
 </div>
 <div class="relative pl-6">
 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
 <h4 class="font-semibold text-neutral-100">3. Deploy</h4>
-<p class="text-sm text-neutral-400">O servidor pega a versÃ£o nova e a coloca para rodar â€” automaticamente ou com um clique.</p>
+<p class="text-sm text-neutral-400">O servidor pega a versêÂ£o nova e a coloca para rodar ê¢â¬â automaticamente ou com um clique.</p>
 </div>
 <div class="relative pl-6">
 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-emerald-300"></span>
-<h4 class="font-semibold text-emerald-400">4. No ar (produÃ§Ã£o)</h4>
-<p class="text-sm text-neutral-400">A mudanÃ§a estÃ¡ viva para o cliente. O que era cÃ³digo virou soluÃ§Ã£o em uso.</p>
+<h4 class="font-semibold text-emerald-400">4. No ar (produêÂ§êÂ£o)</h4>
+<p class="text-sm text-neutral-400">A mudanêÂ§a estêÂ¡ viva para o cliente. O que era cêÂ³digo virou soluêÂ§êÂ£o em uso.</p>
 </div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">O melhor deploy Ã© o que vocÃª nem percebe: muitos serviÃ§os fazem deploy automÃ¡tico a cada envio. VocÃª salva e envia; o sistema sobe sozinho. Quanto menos manual o deploy, menos erro humano â€” e mais o arquiteto fica livre para pensar na intenÃ§Ã£o, nÃ£o no aperto de botÃµes.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">O melhor deploy êÂ© o que vocêÂª nem percebe: muitos serviêÂ§os fazem deploy automêÂ¡tico a cada envio. VocêÂª salva e envia; o sistema sobe sozinho. Quanto menos manual o deploy, menos erro humano ê¢â¬â e mais o arquiteto fica livre para pensar na intenêÂ§êÂ£o, nêÂ£o no aperto de botêÂµes.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Deploy</div><div class="text-xs text-neutral-400">levar a versÃ£o ao ar</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">A ponte</div><div class="text-xs text-neutral-400">pronto â†’ em uso</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">AutomÃ¡tico</div><div class="text-xs text-neutral-400">menos erro humano</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Do cÃ³digo ao ar</div><div class="text-xs text-neutral-400">commit â†’ produÃ§Ã£o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Deploy</div><div class="text-xs text-neutral-400">levar a versêÂ£o ao ar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">A ponte</div><div class="text-xs text-neutral-400">pronto ê¢â â em uso</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">AutomêÂ¡tico</div><div class="text-xs text-neutral-400">menos erro humano</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Do cêÂ³digo ao ar</div><div class="text-xs text-neutral-400">commit ê¢â â produêÂ§êÂ£o</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 7 -->
-<section class="mb-16" data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-7" data-ARCKHÉ-track="1" id="topico-7">
+<!-- TêâPICO 7 -->
+<section class="mb-16" data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-7" data-ARCKHê-track="1" id="topico-7">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">7</span>
-<h2 class="text-2xl font-bold">ðŸ§ª Teste Ã— produÃ§Ã£o</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Â§Âª Teste êâ produêÂ§êÂ£o</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t7-p1">Aqui estÃ¡ uma das regras de ouro de quem publica: <strong class="text-emerald-400">nunca experimente onde o cliente estÃ¡</strong>. O ambiente de <strong class="text-emerald-400">teste</strong> Ã© onde vocÃª quebra, erra e descobre sem risco; o de <strong class="text-emerald-400">produÃ§Ã£o</strong> Ã© onde o cliente realmente usa, e onde um erro custa caro. Eles ficam separados de propÃ³sito. Misturar os dois Ã© uma das maiores fontes de acidente â€” e por isso a separaÃ§Ã£o teste Ã— produÃ§Ã£o Ã©, ao mesmo tempo, uma regra de seguranÃ§a.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-4-t7-p1">Aqui estêÂ¡ uma das regras de ouro de quem publica: <strong class="text-emerald-400">nunca experimente onde o cliente estêÂ¡</strong>. O ambiente de <strong class="text-emerald-400">teste</strong> êÂ© onde vocêÂª quebra, erra e descobre sem risco; o de <strong class="text-emerald-400">produêÂ§êÂ£o</strong> êÂ© onde o cliente realmente usa, e onde um erro custa caro. Eles ficam separados de propêÂ³sito. Misturar os dois êÂ© uma das maiores fontes de acidente ê¢â¬â e por isso a separaêÂ§êÂ£o teste êâ produêÂ§êÂ£o êÂ©, ao mesmo tempo, uma regra de seguranêÂ§a.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">ðŸ§ª Teste (rascunho)</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê°Å¸Â§Âª Teste (rascunho)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">â€¢</span><span>Pode quebrar Ã  vontade</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">â€¢</span><span>Dados falsos, sem consequÃªncia</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">â€¢</span><span>Lugar de experimentar e aprender</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">â€¢</span><span>O cliente nunca vÃª</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢â¬Â¢</span><span>Pode quebrar êÂ  vontade</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢â¬Â¢</span><span>Dados falsos, sem consequêÂªncia</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢â¬Â¢</span><span>Lugar de experimentar e aprender</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢â¬Â¢</span><span>O cliente nunca vêÂª</span></li>
 </ul>
 </div>
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">ðŸŒ ProduÃ§Ã£o (no ar)</h4>
+<h4 class="font-bold text-emerald-400 mb-4">ê°Å¸ÅÂ ProduêÂ§êÂ£o (no ar)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">â€¢</span><span>O cliente usa de verdade</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">â€¢</span><span>Dados reais, consequÃªncias reais</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">â€¢</span><span>SÃ³ entra o que jÃ¡ foi testado</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">â€¢</span><span>Erro aqui custa caro</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢â¬Â¢</span><span>O cliente usa de verdade</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢â¬Â¢</span><span>Dados reais, consequêÂªncias reais</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢â¬Â¢</span><span>SêÂ³ entra o que jêÂ¡ foi testado</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢â¬Â¢</span><span>Erro aqui custa caro</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">âš ï¸</span> O acidente clÃ¡ssico</h3>
-<p class="text-neutral-300 text-sm">"Foi sÃ³ um testezinho rÃ¡pido na produÃ§Ã£o." Ã‰ assim que se apaga o banco de clientes, dispara mil mensagens erradas ou cobra alguÃ©m duas vezes. Teste Ã© teste; produÃ§Ã£o Ã© produÃ§Ã£o. Quando a IA executa aÃ§Ãµes reais, essa fronteira deixa de ser detalhe tÃ©cnico e vira parte da arquitetura de seguranÃ§a.</p>
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">ê¢Å¡Â ê¯Â¸Â</span> O acidente clêÂ¡ssico</h3>
+<p class="text-neutral-300 text-sm">"Foi sêÂ³ um testezinho rêÂ¡pido na produêÂ§êÂ£o." êâ° assim que se apaga o banco de clientes, dispara mil mensagens erradas ou cobra alguêÂ©m duas vezes. Teste êÂ© teste; produêÂ§êÂ£o êÂ© produêÂ§êÂ£o. Quando a IA executa aêÂ§êÂµes reais, essa fronteira deixa de ser detalhe têÂ©cnico e vira parte da arquitetura de seguranêÂ§a.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Teste</div><div class="text-xs text-neutral-400">quebrar sem risco</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">ProduÃ§Ã£o</div><div class="text-xs text-neutral-400">o cliente de verdade</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Separados</div><div class="text-xs text-neutral-400">de propÃ³sito</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">SeguranÃ§a</div><div class="text-xs text-neutral-400">nÃ£o Ã© sÃ³ tÃ©cnica</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">ProduêÂ§êÂ£o</div><div class="text-xs text-neutral-400">o cliente de verdade</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Separados</div><div class="text-xs text-neutral-400">de propêÂ³sito</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">SeguranêÂ§a</div><div class="text-xs text-neutral-400">nêÂ£o êÂ© sêÂ³ têÂ©cnica</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-1-4#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): por que teste e produÃ§Ã£o ficam em ambientes separados?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Porque Ã© mais barato manter dois servidores do que um.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Para vocÃª experimentar e quebrar sem risco, enquanto o cliente usa sÃ³ o que jÃ¡ foi testado.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Porque o domÃ­nio sÃ³ funciona em ambiente de produÃ§Ã£o.</button>
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-1-4#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): por que teste e produêÂ§êÂ£o ficam em ambientes separados?</p>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Porque êÂ© mais barato manter dois servidores do que um.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Para vocêÂª experimentar e quebrar sem risco, enquanto o cliente usa sêÂ³ o que jêÂ¡ foi testado.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Porque o domêÂ­nio sêÂ³ funciona em ambiente de produêÂ§êÂ£o.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸŽ¯</span> Resumo do mÃ³dulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸Å½Â¯</span> Resumo do mêÂ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Publicar</strong><span class="text-neutral-400"> â€” tirar a soluÃ§Ã£o da sua mÃ¡quina e colocÃ¡-la "no ar": ligada, com endereÃ§o e conectada.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Hospedagem</strong><span class="text-neutral-400"> â€” o jeito mais simples; site estÃ¡tico no ar em minutos, barato e suficiente para protÃ³tipos.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">VPS e servidor</strong><span class="text-neutral-400"> â€” um computador na nuvem, sempre ligado, onde o Jarvis mora quando cresce.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">DomÃ­nio</strong><span class="text-neutral-400"> â€” o nome bonito que aponta para o servidor; a identidade pÃºblica, via DNS.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Banco, API e webhook</strong><span class="text-neutral-400"> â€” guardar, conversar e avisar: os encaixes que ligam o sistema ao mundo.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Deploy</strong><span class="text-neutral-400"> â€” do cÃ³digo ao ar: commit â†’ envio â†’ deploy â†’ produÃ§Ã£o.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Teste Ã— produÃ§Ã£o</strong><span class="text-neutral-400"> â€” ambientes separados; nunca experimente onde o cliente estÃ¡.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Publicar</strong><span class="text-neutral-400"> ê¢â¬â tirar a soluêÂ§êÂ£o da sua mêÂ¡quina e colocêÂ¡-la "no ar": ligada, com endereêÂ§o e conectada.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Hospedagem</strong><span class="text-neutral-400"> ê¢â¬â o jeito mais simples; site estêÂ¡tico no ar em minutos, barato e suficiente para protêÂ³tipos.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">VPS e servidor</strong><span class="text-neutral-400"> ê¢â¬â um computador na nuvem, sempre ligado, onde o Jarvis mora quando cresce.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">DomêÂ­nio</strong><span class="text-neutral-400"> ê¢â¬â o nome bonito que aponta para o servidor; a identidade pêÂºblica, via DNS.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Banco, API e webhook</strong><span class="text-neutral-400"> ê¢â¬â guardar, conversar e avisar: os encaixes que ligam o sistema ao mundo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Deploy</strong><span class="text-neutral-400"> ê¢â¬â do cêÂ³digo ao ar: commit ê¢â â envio ê¢â â deploy ê¢â â produêÂ§êÂ£o.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Teste êâ produêÂ§êÂ£o</strong><span class="text-neutral-400"> ê¢â¬â ambientes separados; nunca experimente onde o cliente estêÂ¡.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-emerald-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
-<p class="text-neutral-300">1.5 â€” Canais de Entrada e SaÃ­da: por onde o mundo fala com o Jarvis e por onde ele responde.</p>
+<h3 class="font-semibold text-emerald-400 mb-2">PrêÂ³ximo mêÂ³dulo:</h3>
+<p class="text-neutral-300">1.5 ê¢â¬â Canais de Entrada e SaêÂ­da: por onde o mundo fala com o Jarvis e por onde ele responde.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 1</a>
-<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-5.html">PrÃ³ximo: 1.5 Canais de Entrada e SaÃ­da â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Voltar para o Dia 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-5.html">PrêÂ³ximo: 1.5 Canais de Entrada e SaêÂ­da ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="êÂndice do mêÂ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pêÂ¡gina <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
-<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. O que Ã© publicar</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. O que êÂ© publicar</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. Hospedagem de site</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-3">3. VPS e servidor</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. DomÃ­nio</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. DomêÂ­nio</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-5">5. Banco, API e webhook</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. Deploy</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-7">7. Teste Ã— produÃ§Ã£o</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-7">7. Teste êâ produêÂ§êÂ£o</a></li>
 </ol>
 </nav>
 </aside>
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 1 Â· MÃ³dulo 1.4</p>
+<p>Arquitetura de IntenêÂ§êÂ£o da IA êÂ· MêÂ©todo JARVIS ê¢â¬â Dia 1 êÂ· MêÂ³dulo 1.4</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-1-4#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-1-4#q1', {
           answer: 1,
           explain: {
-            0: 'NÃ£o Ã© por custo â€” dÃ¡ atÃ© para ter os dois no mesmo servidor. O motivo Ã© proteger o cliente do risco do experimento.',
-            1: 'Isso. Teste Ã© onde vocÃª quebra sem dÃ³; produÃ§Ã£o Ã© onde o cliente usa. SÃ³ sobe para produÃ§Ã£o o que jÃ¡ passou pelo teste.',
-            2: 'NÃ£o â€” o domÃ­nio Ã© independente disso. A separaÃ§Ã£o existe para isolar o risco dos experimentos do ambiente real.'
+            0: 'NêÂ£o êÂ© por custo ê¢â¬â dêÂ¡ atêÂ© para ter os dois no mesmo servidor. O motivo êÂ© proteger o cliente do risco do experimento.',
+            1: 'Isso. Teste êÂ© onde vocêÂª quebra sem dêÂ³; produêÂ§êÂ£o êÂ© onde o cliente usa. SêÂ³ sobe para produêÂ§êÂ£o o que jêÂ¡ passou pelo teste.',
+            2: 'NêÂ£o ê¢â¬â o domêÂ­nio êÂ© independente disso. A separaêÂ§êÂ£o existe para isolar o risco dos experimentos do ambiente real.'
           }
         });
       }

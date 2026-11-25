@@ -4,36 +4,36 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
-<!-- 1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO, antes do Tailwind e do learn.css.
-        Le ARCKHÉ.prefs (global) e aplica .dark + data-theme + vars de leitura ANTES do 1o paint.
-        try/catch total => default dark (preserva a marca ARCKHÉ). REL = "." (raiz com assets/). -->
+<meta content="jarvis" name="ARCKHê-course"/>
+<!-- 1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO, antes do Tailwind e do learn.css.
+        Le ARCKHê.prefs (global) e aplica .dark + data-theme + vars de leitura ANTES do 1o paint.
+        try/catch total => default dark (preserva a ARCKHÉê). REL = "." (raiz com assets/). -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
           if (legacy === 'light') p.theme = 'claro';
-          else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
+          else if (legacy === 'dark') p.theme = 'ARCKHê-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHê-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark === true) html.classList.add('dark');
       else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
@@ -41,7 +41,7 @@
       html.setAttribute('data-font', p.font || 'inter');
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style; var scale = (+p.fontScale || 100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHê-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -57,8 +57,8 @@
     }
   })();
   </script>
-<!-- 2) Manifesto do curso (estrutura COMPLETA â€” identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<!-- 2) Manifesto do curso (estrutura COMPLETA ê¢â¬â identico em TODAS as paginas) -->
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -89,7 +89,7 @@
     ]
   }
   </script>
-<title>Arquitetura de IntenÃ§Ã£o da IA â€” MÃ©todo JARVIS | ARCKHÉ AI</title>
+<title>Arquitetura de IntenêÂ§êÂ£o da IA ê¢â¬â MêÂ©todo JARVIS | ARCKHê AI</title>
 <!-- 3) Tailwind + config -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -173,18 +173,18 @@
     .appearance-anchor { position: relative; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteêÂºdo</a>
 <!-- ===================== NAV COMPLETO ===================== -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="./index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenêÂ§êÂ£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="curso/trilha1/index.html">
@@ -194,49 +194,49 @@
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="curso/trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
 <!-- Minha jornada -->
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <!-- Aparencia -->
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button">
-<span aria-hidden="true">â—‘</span>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="AparêÂªncia e leitura" type="button">
+<span aria-hidden="true">ê¢ââ</span>
 </button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Tema" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Escuro</button>
+<button data-ARCKHê-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHê-set-theme="sepia" type="button">SêÂ©pia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHê-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">Sistema</button>
+<button data-ARCKHê-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHê-set-linewidth="68" type="button">MêÂ©dio</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
+<div aria-label="Entrelinha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHê-set-leading="1.7" type="button">ConfortêÂ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="êâmbar" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -248,122 +248,122 @@
 <!-- ===================== HERO ===================== -->
 <header class="relative overflow-hidden bg-gradient-to-br from-emerald-900/20 via-dark-900 to-dark-900 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-<span class="inline-block px-3 py-1 bg-primary/10 border border-primary/40 text-primary text-xs font-semibold rounded-full mb-5 tracking-wide">MÃ‰TODO JARVIS Â· CURSO PRESENCIAL DE 3 DIAS</span>
-<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-5 leading-[1.05] tracking-tight">Arquitetura de IntenÃ§Ã£o da IA</h1>
-<p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mb-4 leading-relaxed">Pare de pedir melhor para a IA. Aprenda a <strong class="text-primary">construir o sistema</strong> onde ela trabalha com propÃ³sito.</p>
-<p class="text-base text-neutral-400 max-w-3xl mb-8 leading-relaxed">Em trÃªs dias vocÃª deixa de operar prompts e passa a desenhar soluÃ§Ãµes de IA para problemas reais da empresa â€” com identidade, canais, agentes, ferramentas, seguranÃ§a e mediÃ§Ã£o. NÃ£o para virar programador: para virar <strong class="text-neutral-200">arquiteto de soluÃ§Ãµes</strong>.</p>
+<span class="inline-block px-3 py-1 bg-primary/10 border border-primary/40 text-primary text-xs font-semibold rounded-full mb-5 tracking-wide">Mêâ°TODO JARVIS êÂ· CURSO PRESENCIAL DE 3 DIAS</span>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-5 leading-[1.05] tracking-tight">Arquitetura de IntenêÂ§êÂ£o da IA</h1>
+<p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mb-4 leading-relaxed">Pare de pedir melhor para a IA. Aprenda a <strong class="text-primary">construir o sistema</strong> onde ela trabalha com propêÂ³sito.</p>
+<p class="text-base text-neutral-400 max-w-3xl mb-8 leading-relaxed">Em trêÂªs dias vocêÂª deixa de operar prompts e passa a desenhar soluêÂ§êÂµes de IA para problemas reais da empresa ê¢â¬â com identidade, canais, agentes, ferramentas, seguranêÂ§a e mediêÂ§êÂ£o. NêÂ£o para virar programador: para virar <strong class="text-neutral-200">arquiteto de soluêÂ§êÂµes</strong>.</p>
 <div class="flex flex-wrap items-center gap-3 mb-6">
-<a class="inline-flex items-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors" href="curso/trilha1/index.html">ComeÃ§ar pelo Dia 1 <span aria-hidden="true">â†’</span></a>
+<a class="inline-flex items-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors" href="curso/trilha1/index.html">ComeêÂ§ar pelo Dia 1 <span aria-hidden="true">ê¢â â</span></a>
 <a class="inline-flex items-center gap-2 px-5 py-3 bg-dark-700 hover:bg-dark-600 text-neutral-200 rounded-lg font-semibold transition-colors" href="#estrutura">Ver a estrutura</a>
 </div>
-<p class="text-xs text-neutral-500 mb-8">Sem cadastro Â· abre direto no navegador Â· seu progresso, dÃºvidas e anotaÃ§Ãµes ficam sÃ³ no seu dispositivo.</p>
+<p class="text-xs text-neutral-500 mb-8">Sem cadastro êÂ· abre direto no navegador êÂ· seu progresso, dêÂºvidas e anotaêÂ§êÂµes ficam sêÂ³ no seu dispositivo.</p>
 <!-- CAPA do curso -->
 <div class="rounded-2xl border border-primary/30 bg-dark-900/40 p-1.5 sm:p-2 mb-8 overflow-hidden">
-<img alt="Arquitetura de IntenÃ§Ã£o â€” o prÃ³ximo passo da IA: a evoluÃ§Ã£o de Coding para Vibe Coding, Agentic Engineering e, por fim, a Arquitetura de IntenÃ§Ã£o" class="w-full h-auto rounded-xl" height="941" loading="eager" src="assets/img/capa.png" width="1672"/>
+<img alt="Arquitetura de IntenêÂ§êÂ£o ê¢â¬â o prêÂ³ximo passo da IA: a evoluêÂ§êÂ£o de Coding para Vibe Coding, Agentic Engineering e, por fim, a Arquitetura de IntenêÂ§êÂ£o" class="w-full h-auto rounded-xl" height="941" loading="eager" src="assets/img/capa.png" width="1672"/>
 </div>
 <!-- Medidor de progresso do curso -->
-<div aria-label="Progresso do curso" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-bar-wrap" data-ARCKHÉ-meter="curso" role="progressbar" style="max-width:520px">
+<div aria-label="Progresso do curso" aria-valuemax="100" aria-valuemin="0" class="ARCKHê-bar-wrap" data-ARCKHê-meter="curso" role="progressbar" style="max-width:520px">
 <div class="flex items-center justify-between text-sm text-neutral-400 mb-2">
 <span>Seu percurso</span>
-<span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 111</strong> seÃ§Ãµes Â· <span data-ARCKHÉ-meter-pct="">0%</span></span>
+<span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 de 111</strong> seêÂ§êÂµes êÂ· <span data-ARCKHê-meter-pct="">0%</span></span>
 </div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
-<button class="mt-3 text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2" data-ARCKHÉ-journey-open="" type="button">continuar de onde parei â†’</button>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
+<button class="mt-3 text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2" data-ARCKHê-journey-open="" type="button">continuar de onde parei ê¢â â</button>
 </div>
 </div>
 </header>
 <!-- ===================== A VIRADA ===================== -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-dark-600">
 <span class="text-sm font-semibold text-emerald-400 tracking-wide uppercase">A virada</span>
-<h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-6">De operador de prompt a arquiteto de intenÃ§Ã£o</h2>
+<h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-6">De operador de prompt a arquiteto de intenêÂ§êÂ£o</h2>
 <div class="grid md:grid-cols-2 gap-6 items-start">
 <div class="space-y-4 text-neutral-300 leading-relaxed">
-<p>Este curso nÃ£o Ã© sobre "aprender IA" nem sobre "programar". Ã‰ sobre formar pessoas capazes de <strong class="text-neutral-100">construir soluÃ§Ãµes com IA dentro das empresas</strong>.</p>
-<p>A pessoa deixa de perguntar <em class="text-neutral-400">"que prompt eu uso?"</em> e comeÃ§a a perguntar <strong class="text-emerald-400">"que sistema eu preciso construir para resolver esse problema?"</strong></p>
-<p>Antes de criar agentes, prompts ou automaÃ§Ãµes, vocÃª constrÃ³i a infraestrutura mental, tÃ©cnica e estratÃ©gica onde a IA vai operar. Uma soluÃ§Ã£o de IA nÃ£o Ã© um chatbot â€” Ã© um <strong class="text-neutral-100">sistema vivo</strong>, com intenÃ§Ã£o, identidade, canais, serviÃ§os, seguranÃ§a e evoluÃ§Ã£o.</p>
+<p>Este curso nêÂ£o êÂ© sobre "aprender IA" nem sobre "programar". êâ° sobre formar pessoas capazes de <strong class="text-neutral-100">construir soluêÂ§êÂµes com IA dentro das empresas</strong>.</p>
+<p>A pessoa deixa de perguntar <em class="text-neutral-400">"que prompt eu uso?"</em> e comeêÂ§a a perguntar <strong class="text-emerald-400">"que sistema eu preciso construir para resolver esse problema?"</strong></p>
+<p>Antes de criar agentes, prompts ou automaêÂ§êÂµes, vocêÂª constrêÂ³i a infraestrutura mental, têÂ©cnica e estratêÂ©gica onde a IA vai operar. Uma soluêÂ§êÂ£o de IA nêÂ£o êÂ© um chatbot ê¢â¬â êÂ© um <strong class="text-neutral-100">sistema vivo</strong>, com intenêÂ§êÂ£o, identidade, canais, serviêÂ§os, seguranêÂ§a e evoluêÂ§êÂ£o.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
-<h3 class="font-semibold text-neutral-200 mb-4">Sem arquitetura, a IA vira ruÃ­do</h3>
+<h3 class="font-semibold text-neutral-200 mb-4">Sem arquitetura, a IA vira ruêÂ­do</h3>
 <ul class="space-y-3 text-sm text-neutral-300">
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>IA sem intenÃ§Ã£o clara vira <strong>tentativa</strong>.</span></li>
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>IA sem contexto vira <strong>chute</strong>.</span></li>
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>IA sem regra vira <strong>risco</strong>.</span></li>
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>IA sem canal vira <strong>ferramenta isolada</strong>.</span></li>
-<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">âœ—</span><span>IA sem mediÃ§Ã£o vira <strong>ilusÃ£o de produtividade</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">ê¢Åâ</span><span>IA sem intenêÂ§êÂ£o clara vira <strong>tentativa</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">ê¢Åâ</span><span>IA sem contexto vira <strong>chute</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">ê¢Åâ</span><span>IA sem regra vira <strong>risco</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">ê¢Åâ</span><span>IA sem canal vira <strong>ferramenta isolada</strong>.</span></li>
+<li class="flex gap-3"><span class="text-red-400 flex-shrink-0">ê¢Åâ</span><span>IA sem mediêÂ§êÂ£o vira <strong>ilusêÂ£o de produtividade</strong>.</span></li>
 </ul>
-<p class="mt-4 text-sm text-neutral-400">Com arquitetura, ela vira <strong class="text-emerald-400">infraestrutura de soluÃ§Ã£o</strong>.</p>
+<p class="mt-4 text-sm text-neutral-400">Com arquitetura, ela vira <strong class="text-emerald-400">infraestrutura de soluêÂ§êÂ£o</strong>.</p>
 </div>
 </div>
 </section>
-<!-- ===================== O METODO JARVIS (acrÃ´nimo) ===================== -->
+<!-- ===================== O METODO JARVIS (acrêÂ´nimo) ===================== -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-dark-600">
-<span class="text-sm font-semibold text-primary tracking-wide uppercase">O mÃ©todo</span>
-<h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-3">J.A.R.V.I.S â€” seis pilares de uma soluÃ§Ã£o viva</h2>
-<p class="text-neutral-400 max-w-3xl mb-8">A metÃ¡fora do Jarvis: nÃ£o um chatbot, mas uma entidade operacional com alma, regras, canais, serviÃ§os, agentes, ferramentas e â€” acima de tudo â€” uma intenÃ§Ã£o.</p>
+<span class="text-sm font-semibold text-primary tracking-wide uppercase">O mêÂ©todo</span>
+<h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-3">J.A.R.V.I.S ê¢â¬â seis pilares de uma soluêÂ§êÂ£o viva</h2>
+<p class="text-neutral-400 max-w-3xl mb-8">A metêÂ¡fora do Jarvis: nêÂ£o um chatbot, mas uma entidade operacional com alma, regras, canais, serviêÂ§os, agentes, ferramentas e ê¢â¬â acima de tudo ê¢â¬â uma intenêÂ§êÂ£o.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">J</span><h3 class="font-semibold">Jornada da intenÃ§Ã£o</h3></div><p class="text-sm text-neutral-400">Toda soluÃ§Ã£o comeÃ§a por clareza: que problema, para quem, qual resultado importa.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">A</span><h3 class="font-semibold">Arquitetura do sistema</h3></div><p class="text-sm text-neutral-400">Canais, serviÃ§os, agentes e habilidades organizados em torno do propÃ³sito.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">R</span><h3 class="font-semibold">Regras e responsabilidades</h3></div><p class="text-sm text-neutral-400">Limites, permissÃµes e muros de seguranÃ§a: o que o sistema pode e nÃ£o pode.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">V</span><h3 class="font-semibold">ValidaÃ§Ã£o de resultados</h3></div><p class="text-sm text-neutral-400">Medir o que importa â€” senÃ£o qualquer entrega parece progresso.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">I</span><h3 class="font-semibold">IntegraÃ§Ã£o com ferramentas</h3></div><p class="text-sm text-neutral-400">Conectar o sistema ao mundo real: planilhas, CRM, APIs, mensageria.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">S</span><h3 class="font-semibold">SoluÃ§Ã£o em evoluÃ§Ã£o</h3></div><p class="text-sm text-neutral-400">O sistema aprende, se adapta e melhora com o tempo.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">J</span><h3 class="font-semibold">Jornada da intenêÂ§êÂ£o</h3></div><p class="text-sm text-neutral-400">Toda soluêÂ§êÂ£o comeêÂ§a por clareza: que problema, para quem, qual resultado importa.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">A</span><h3 class="font-semibold">Arquitetura do sistema</h3></div><p class="text-sm text-neutral-400">Canais, serviêÂ§os, agentes e habilidades organizados em torno do propêÂ³sito.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">R</span><h3 class="font-semibold">Regras e responsabilidades</h3></div><p class="text-sm text-neutral-400">Limites, permissêÂµes e muros de seguranêÂ§a: o que o sistema pode e nêÂ£o pode.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">V</span><h3 class="font-semibold">ValidaêÂ§êÂ£o de resultados</h3></div><p class="text-sm text-neutral-400">Medir o que importa ê¢â¬â senêÂ£o qualquer entrega parece progresso.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">I</span><h3 class="font-semibold">IntegraêÂ§êÂ£o com ferramentas</h3></div><p class="text-sm text-neutral-400">Conectar o sistema ao mundo real: planilhas, CRM, APIs, mensageria.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="flex items-center gap-3 mb-2"><span class="w-9 h-9 rounded-full bg-primary/10 border border-primary/40 text-primary font-bold flex items-center justify-center">S</span><h3 class="font-semibold">SoluêÂ§êÂ£o em evoluêÂ§êÂ£o</h3></div><p class="text-sm text-neutral-400">O sistema aprende, se adapta e melhora com o tempo.</p></div>
 </div>
 </section>
 <!-- ===================== ESTRUTURA / 3 DIAS ===================== -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-dark-600" id="estrutura">
-<span class="text-sm font-semibold text-neutral-400 tracking-wide uppercase">A estrutura Â· 3 dias Â· 18 mÃ³dulos Â· 111 seÃ§Ãµes</span>
+<span class="text-sm font-semibold text-neutral-400 tracking-wide uppercase">A estrutura êÂ· 3 dias êÂ· 18 mêÂ³dulos êÂ· 111 seêÂ§êÂµes</span>
 <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-8">O percurso completo</h2>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 <!-- Dia 1 -->
 <a class="group bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl border border-emerald-500/30 p-6 transition-all hover:border-emerald-500/60" href="curso/trilha1/index.html">
 <div class="flex items-center justify-between mb-3">
 <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">DIA 1</span>
-<span class="text-xs text-neutral-500">5 mÃ³dulos Â· 32 seÃ§Ãµes</span>
+<span class="text-xs text-neutral-500">5 mêÂ³dulos êÂ· 32 seêÂ§êÂµes</span>
 </div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">ðŸ§± Infraestrutura e Mentalidade</h3>
-<p class="text-sm text-neutral-400 mb-4">A virada de mentalidade e o mapa do terreno: pastas, terminal, versionamento, publicaÃ§Ã£o e os canais por onde o sistema fala com o mundo.</p>
+<h3 class="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">ê°Å¸Â§Â± Infraestrutura e Mentalidade</h3>
+<p class="text-sm text-neutral-400 mb-4">A virada de mentalidade e o mapa do terreno: pastas, terminal, versionamento, publicaêÂ§êÂ£o e os canais por onde o sistema fala com o mundo.</p>
 <ul class="space-y-1.5 text-sm text-neutral-300">
-<li class="flex gap-2"><span class="text-emerald-400">Â·</span>A Virada: de operador a arquiteto</li>
-<li class="flex gap-2"><span class="text-emerald-400">Â·</span>A metÃ¡fora do Jarvis</li>
-<li class="flex gap-2"><span class="text-emerald-400">Â·</span>Pastas, terminal e versionamento</li>
-<li class="flex gap-2"><span class="text-emerald-400">Â·</span>Publicar no mundo (hospedagem, VPS, deploy)</li>
-<li class="flex gap-2"><span class="text-emerald-400">Â·</span>Canais de entrada e saÃ­da</li>
+<li class="flex gap-2"><span class="text-emerald-400">êÂ·</span>A Virada: de operador a arquiteto</li>
+<li class="flex gap-2"><span class="text-emerald-400">êÂ·</span>A metêÂ¡fora do Jarvis</li>
+<li class="flex gap-2"><span class="text-emerald-400">êÂ·</span>Pastas, terminal e versionamento</li>
+<li class="flex gap-2"><span class="text-emerald-400">êÂ·</span>Publicar no mundo (hospedagem, VPS, deploy)</li>
+<li class="flex gap-2"><span class="text-emerald-400">êÂ·</span>Canais de entrada e saêÂ­da</li>
 </ul>
-<span class="inline-flex items-center gap-1 mt-5 text-emerald-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir o Dia 1 <span aria-hidden="true">â†’</span></span>
+<span class="inline-flex items-center gap-1 mt-5 text-emerald-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir o Dia 1 <span aria-hidden="true">ê¢â â</span></span>
 </a>
 <!-- Dia 2 -->
 <a class="group bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl border border-blue-500/30 p-6 transition-all hover:border-blue-500/60" href="curso/trilha2/index.html">
 <div class="flex items-center justify-between mb-3">
 <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full">DIA 2</span>
-<span class="text-xs text-neutral-500">7 mÃ³dulos Â· 43 seÃ§Ãµes</span>
+<span class="text-xs text-neutral-500">7 mêÂ³dulos êÂ· 43 seêÂ§êÂµes</span>
 </div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">ðŸ¤– ConstruÃ§Ã£o do Jarvis</h3>
-<p class="text-sm text-neutral-400 mb-4">A construÃ§Ã£o da "alma": identidade, regras, serviÃ§os, agentes, habilidades, memÃ³ria, muros de seguranÃ§a e ferramentas.</p>
+<h3 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">ê°Å¸Â¤â ConstruêÂ§êÂ£o do Jarvis</h3>
+<p class="text-sm text-neutral-400 mb-4">A construêÂ§êÂ£o da "alma": identidade, regras, serviêÂ§os, agentes, habilidades, memêÂ³ria, muros de seguranêÂ§a e ferramentas.</p>
 <ul class="space-y-1.5 text-sm text-neutral-300">
-<li class="flex gap-2"><span class="text-blue-400">Â·</span>A alma do Jarvis (identidade e limites)</li>
-<li class="flex gap-2"><span class="text-blue-400">Â·</span>ServiÃ§os internos e agentes</li>
-<li class="flex gap-2"><span class="text-blue-400">Â·</span>Habilidades e memÃ³ria</li>
-<li class="flex gap-2"><span class="text-blue-400">Â·</span>Muros de seguranÃ§a</li>
-<li class="flex gap-2"><span class="text-blue-400">Â·</span>Ferramentas e integraÃ§Ãµes</li>
+<li class="flex gap-2"><span class="text-blue-400">êÂ·</span>A alma do Jarvis (identidade e limites)</li>
+<li class="flex gap-2"><span class="text-blue-400">êÂ·</span>ServiêÂ§os internos e agentes</li>
+<li class="flex gap-2"><span class="text-blue-400">êÂ·</span>Habilidades e memêÂ³ria</li>
+<li class="flex gap-2"><span class="text-blue-400">êÂ·</span>Muros de seguranêÂ§a</li>
+<li class="flex gap-2"><span class="text-blue-400">êÂ·</span>Ferramentas e integraêÂ§êÂµes</li>
 </ul>
-<span class="inline-flex items-center gap-1 mt-5 text-blue-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir o Dia 2 <span aria-hidden="true">â†’</span></span>
+<span class="inline-flex items-center gap-1 mt-5 text-blue-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir o Dia 2 <span aria-hidden="true">ê¢â â</span></span>
 </a>
 <!-- Dia 3 -->
 <a class="group bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl border border-purple-500/30 p-6 transition-all hover:border-purple-500/60" href="curso/trilha3/index.html">
 <div class="flex items-center justify-between mb-3">
 <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full">DIA 3</span>
-<span class="text-xs text-neutral-500">6 mÃ³dulos Â· 36 seÃ§Ãµes</span>
+<span class="text-xs text-neutral-500">6 mêÂ³dulos êÂ· 36 seêÂ§êÂµes</span>
 </div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">ðŸŽ¯ SoluÃ§Ã£o Real na Empresa</h3>
-<p class="text-sm text-neutral-400 mb-4">Do conceito ao protÃ³tipo: escolher um problema, definir a intenÃ§Ã£o, montar o fluxo, medir o resultado e apresentar a soluÃ§Ã£o.</p>
+<h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">ê°Å¸Å½Â¯ SoluêÂ§êÂ£o Real na Empresa</h3>
+<p class="text-sm text-neutral-400 mb-4">Do conceito ao protêÂ³tipo: escolher um problema, definir a intenêÂ§êÂ£o, montar o fluxo, medir o resultado e apresentar a soluêÂ§êÂ£o.</p>
 <ul class="space-y-1.5 text-sm text-neutral-300">
-<li class="flex gap-2"><span class="text-purple-400">Â·</span>A intenÃ§Ã£o no centro</li>
-<li class="flex gap-2"><span class="text-purple-400">Â·</span>Mapear o problema na empresa</li>
-<li class="flex gap-2"><span class="text-purple-400">Â·</span>Desenhar a arquitetura da soluÃ§Ã£o</li>
-<li class="flex gap-2"><span class="text-purple-400">Â·</span>ProtÃ³tipo funcional e mediÃ§Ã£o</li>
-<li class="flex gap-2"><span class="text-purple-400">Â·</span>EvoluÃ§Ã£o e apresentaÃ§Ã£o</li>
+<li class="flex gap-2"><span class="text-purple-400">êÂ·</span>A intenêÂ§êÂ£o no centro</li>
+<li class="flex gap-2"><span class="text-purple-400">êÂ·</span>Mapear o problema na empresa</li>
+<li class="flex gap-2"><span class="text-purple-400">êÂ·</span>Desenhar a arquitetura da soluêÂ§êÂ£o</li>
+<li class="flex gap-2"><span class="text-purple-400">êÂ·</span>ProtêÂ³tipo funcional e mediêÂ§êÂ£o</li>
+<li class="flex gap-2"><span class="text-purple-400">êÂ·</span>EvoluêÂ§êÂ£o e apresentaêÂ§êÂ£o</li>
 </ul>
-<span class="inline-flex items-center gap-1 mt-5 text-purple-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir o Dia 3 <span aria-hidden="true">â†’</span></span>
+<span class="inline-flex items-center gap-1 mt-5 text-purple-400 font-semibold text-sm group-hover:gap-2 transition-all">Abrir o Dia 3 <span aria-hidden="true">ê¢â â</span></span>
 </a>
 </div>
 </section>
@@ -371,23 +371,23 @@
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-dark-600">
 <div class="grid md:grid-cols-2 gap-8">
 <div>
-<h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span>ðŸ§­</span> Para quem Ã©</h2>
-<p class="text-neutral-400 mb-4 text-sm leading-relaxed">Pessoas comuns dentro das empresas que querem construir soluÃ§Ãµes com IA â€” sem virar programadores tradicionais nem competir com engenheiros de software.</p>
-<p class="text-neutral-300 text-sm leading-relaxed">O arquiteto de intenÃ§Ã£o olha para uma empresa e pergunta: onde hÃ¡ repetiÃ§Ã£o? Onde se perde tempo? Onde a informaÃ§Ã£o estÃ¡ desorganizada? Onde a decisÃ£o Ã© lenta? <strong class="text-neutral-100">Onde a IA pode multiplicar resultado?</strong></p>
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span>ê°Å¸Â§Â­</span> Para quem êÂ©</h2>
+<p class="text-neutral-400 mb-4 text-sm leading-relaxed">Pessoas comuns dentro das empresas que querem construir soluêÂ§êÂµes com IA ê¢â¬â sem virar programadores tradicionais nem competir com engenheiros de software.</p>
+<p class="text-neutral-300 text-sm leading-relaxed">O arquiteto de intenêÂ§êÂ£o olha para uma empresa e pergunta: onde hêÂ¡ repetiêÂ§êÂ£o? Onde se perde tempo? Onde a informaêÂ§êÂ£o estêÂ¡ desorganizada? Onde a decisêÂ£o êÂ© lenta? <strong class="text-neutral-100">Onde a IA pode multiplicar resultado?</strong></p>
 </div>
 <div>
-<h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span>âœ…</span> O que vocÃª sai sabendo fazer</h2>
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span>ê¢Åâ¦</span> O que vocêÂª sai sabendo fazer</h2>
 <ul class="grid sm:grid-cols-2 gap-2.5 text-sm text-neutral-300">
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Entender um problema real</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Mapear uma intenÃ§Ã£o</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Estruturar contexto</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Criar a alma de um Jarvis</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Definir canais de I/O</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Organizar agentes e serviÃ§os</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Escolher ferramentas</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Criar regras de seguranÃ§a</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Medir resultado</li>
-<li class="flex gap-2"><span class="text-emerald-400">âœ“</span>Melhorar continuamente</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Entender um problema real</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Mapear uma intenêÂ§êÂ£o</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Estruturar contexto</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Criar a alma de um Jarvis</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Definir canais de I/O</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Organizar agentes e serviêÂ§os</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Escolher ferramentas</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Criar regras de seguranêÂ§a</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Medir resultado</li>
+<li class="flex gap-2"><span class="text-emerald-400">ê¢Åâ</span>Melhorar continuamente</li>
 </ul>
 </div>
 </div>
@@ -395,25 +395,25 @@
 <!-- ===================== PROMESSA / FECHO ===================== -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 <div class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl border border-emerald-500/30 p-8 sm:p-10 text-center">
-<h2 class="text-2xl sm:text-3xl font-bold mb-4">O futuro nÃ£o pertence a quem sabe pedir melhor.</h2>
+<h2 class="text-2xl sm:text-3xl font-bold mb-4">O futuro nêÂ£o pertence a quem sabe pedir melhor.</h2>
 <p class="text-lg text-neutral-300 mb-2">Pertence a quem sabe <strong class="text-emerald-400">estruturar melhor</strong>.</p>
-<p class="text-neutral-400 max-w-2xl mx-auto mb-8 text-sm">Prompt nÃ£o basta. Ferramenta nÃ£o basta. Agente nÃ£o basta. O que faz a diferenÃ§a Ã© a arquitetura â€” e no centro da arquitetura estÃ¡ a intenÃ§Ã£o.</p>
+<p class="text-neutral-400 max-w-2xl mx-auto mb-8 text-sm">Prompt nêÂ£o basta. Ferramenta nêÂ£o basta. Agente nêÂ£o basta. O que faz a diferenêÂ§a êÂ© a arquitetura ê¢â¬â e no centro da arquitetura estêÂ¡ a intenêÂ§êÂ£o.</p>
 <div class="flex flex-wrap justify-center gap-3">
-<a class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors" href="curso/trilha1/index.html">ComeÃ§ar agora pelo Dia 1 <span aria-hidden="true">â†’</span></a>
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors" href="curso/trilha1/index.html">ComeêÂ§ar agora pelo Dia 1 <span aria-hidden="true">ê¢â â</span></a>
 </div>
 </div>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p><strong class="text-neutral-300">Arquitetura de IntenÃ§Ã£o da IA</strong> â€” MÃ©todo JARVIS Â· curso presencial de 3 dias</p>
-<p class="mt-1">ARCKHÉ AI Â· 2026 Â· seu progresso fica salvo sÃ³ neste navegador</p>
+<p><strong class="text-neutral-300">Arquitetura de IntenêÂ§êÂ£o da IA</strong> ê¢â¬â MêÂ©todo JARVIS êÂ· curso presencial de 3 dias</p>
+<p class="mt-1">ARCKHê AI êÂ· 2026 êÂ· seu progresso fica salvo sêÂ³ neste navegador</p>
 </div>
 </footer>
 <!-- learn.js + init -->
 <script src="./assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') { window.ARCKHê.init(); }
   </script>
 </body>
 </html>

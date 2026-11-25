@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Module 2.2 Â· Internal Services | AI Intent Architecture</title>
+<title>Module 2.2 êÂ· Internal Services | AI Intent Architecture</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -128,7 +128,7 @@
     html:not(.dark) .toc-link.is-active { color: #2563eb; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip" href="#conteudo">Skip to content</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -136,10 +136,10 @@
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -148,46 +148,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Day 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Day 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="My journey" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Journey</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="My journey" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Journey</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Theme" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Clear</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">High contrast</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Theme" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Dark</button>
+<button data-ARCKHê-set-theme="claro" type="button">Clear</button>
+<button data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Focus</button>
+<button data-ARCKHê-set-theme="contraste" type="button">High contrast</button>
 </div>
-<div aria-label="Source" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">System</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
+<div aria-label="Source" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">System</button>
+<button data-ARCKHê-set-font="leitura" type="button">Reading</button>
 </div>
-<div aria-label="Text size" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Text size" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Line width" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Narrow</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">Medium</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Wide</button>
+<div aria-label="Line width" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Narrow</button>
+<button data-ARCKHê-set-linewidth="68" type="button">Medium</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Wide</button>
 </div>
-<div aria-label="Subtext" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compact</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">Comfortable</button>
+<div aria-label="Subtext" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compact</button>
+<button data-ARCKHê-set-leading="1.7" type="button">Comfortable</button>
 </div>
-<div aria-label="Accent color" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Emerald" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Blue" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Purple" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Amber" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Pink" type="button"></button>
+<div aria-label="Accent color" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Emerald" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Blue" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Purple" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="Amber" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Pink" type="button"></button>
 </div>
 </div>
 </div>
@@ -207,11 +207,11 @@
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.2</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ§± Internal Services</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">The core identity defines who Jarvis is. The services define what it does. Each service is a capability blockâ€”support, sales, documents, schedulingâ€”and the entire system is the sum of these blocks working side by side. Here, youâ€™ll learn to think about the solution in terms of value delivered, not tools used.</p>
-<!-- SVG header (aninhamento): o Jarvis CONTÃ‰M vÃ¡rios serviÃ§os lado a lado -->
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸Â§Â± Internal Services</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">The core identity defines who Jarvis is. The services define what it does. Each service is a capability blockê¢â¬âsupport, sales, documents, schedulingê¢â¬âand the entire system is the sum of these blocks working side by side. Here, youê¢â¬â¢ll learn to think about the solution in terms of value delivered, not tools used.</p>
+<!-- SVG header (aninhamento): o Jarvis CONTêâ°M vêÂ¡rios serviêÂ§os lado a lado -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="A large box labeled Jarvis contains several services side by side: support, sales, documents, scheduling, and others â€” each service is a capability block" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
+<svg aria-label="A large box labeled Jarvis contains several services side by side: support, sales, documents, scheduling, and others ê¢â¬â each service is a capability block" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
 <defs>
 <lineargradient id="m22-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <filter height="180%" id="m22-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -221,7 +221,7 @@
 <!-- caixa grande = Jarvis (caixa-foco com glow) -->
 <g filter="url(#m22-glow)"><rect fill="none" height="162" rx="18" stroke="#60a5fa" stroke-width="2" width="952" x="24" y="24"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="44" y="50">Jarvis (one system, multiple services)</text>
-<!-- serviÃ§os lado a lado (ciano = blocos internos) -->
+<!-- serviêÂ§os lado a lado (ciano = blocos internos) -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
 <g class="wf-a"><rect fill="#0e1b26" height="44" rx="10" stroke="#38bdf8" stroke-width="1.8" width="172" x="44" y="72"></rect><text fill="#bfe6ff" text-anchor="middle" x="130" y="93">Customer service</text><text fill="#9ad6ff" font-size="10.5" font-weight="400" text-anchor="middle" x="130" y="108">resolve the customer's issue</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="44" rx="10" stroke="#38bdf8" stroke-width="1.8" width="172" x="232" y="72"></rect><text fill="#bfe6ff" text-anchor="middle" x="318" y="93">Sales</text><text fill="#9ad6ff" font-size="10.5" font-weight="400" text-anchor="middle" x="318" y="108">guide the purchase</text></g>
@@ -230,7 +230,7 @@
 <rect fill="#0e1622" height="44" rx="10" stroke="#60a5fa" stroke-dasharray="6 6" stroke-width="1.8" width="160" x="796" y="72"></rect><text fill="#bfdbfe" text-anchor="middle" x="876" y="93">+ others</text><text fill="#bfdbfe" font-size="10.5" font-weight="400" text-anchor="middle" x="876" y="108">new blocks</text>
 </g>
 <!-- nota inferior -->
-<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="12" x="44" y="148">Each service is a family of problems solved â€”</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="12" x="44" y="148">Each service is a family of problems solved ê¢â¬â</text>
 <text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" x="44" y="166">a block of capability that can be switched on or off without breaking the others.</text>
 </svg>
 </div>
@@ -240,46 +240,46 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Concept</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 2.2 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:2-2" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 of 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Module 2.2 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:2-2" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 of 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-1" data-ARCKHÉ-track="2" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="2-2" data-ARCKHê-topic="modulo-2-2#topico-1" data-ARCKHê-track="2" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸ§± What a service is</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Â§Â± What a service is</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t1-p1">One <strong class="text-blue-400">service</strong> is a Jarvis capability block: an area of work that brings together everything needed to solve a type of request. Itâ€™s not a tool or a prompt â€” itâ€™s the answer to the question <em class="text-neutral-400">"what kind of problem can this system solve?"</em>. Thinking in terms of services means organizing Jarvis by <strong class="text-blue-400">value delivered</strong>, not by the technology used.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-2-t1-p1">One <strong class="text-blue-400">service</strong> is a Jarvis capability block: an area of work that brings together everything needed to solve a type of request. Itê¢â¬â¢s not a tool or a prompt ê¢â¬â itê¢â¬â¢s the answer to the question <em class="text-neutral-400">"what kind of problem can this system solve?"</em>. Thinking in terms of services means organizing Jarvis by <strong class="text-blue-400">value delivered</strong>, not by the technology used.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> Service = a family of problems</h3>
-<p class="text-neutral-300">When you organize the system by service, each block gets a clear owner, a clear objective, and a way to measure whether itâ€™s working. â€œSupport,â€ â€œsales,â€ and â€œdocumentsâ€ are problem areasâ€”and each one becomes a service with clearly defined beginning, middle, and end.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å½Â¯</span> Service = a family of problems</h3>
+<p class="text-neutral-300">When you organize the system by service, each block gets a clear owner, a clear objective, and a way to measure whether itê¢â¬â¢s working. ê¢â¬ÅSupport,ê¢â¬Â ê¢â¬Åsales,ê¢â¬Â and ê¢â¬Ådocumentsê¢â¬Â are problem areasê¢â¬âand each one becomes a service with clearly defined beginning, middle, and end.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ Think in terms of services</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ Think in terms of services</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>"What value does this deliver?"</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Each block has an objective and an owner</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>You can turn it on and off by itself</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Grows without becoming a mess</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>"What value does this deliver?"</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Each block has an objective and an owner</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>You can turn it on and off by itself</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Grows without becoming a mess</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Think in terms of tools</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Think in terms of tools</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"What trendy tool should I use?"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Everything mixed together in a single block</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Changing one part breaks another</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>No one knows what delivers value</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"What trendy tool should I use?"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Everything mixed together in a single block</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Changing one part breaks another</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>No one knows what delivers value</span></li>
 </ul>
 </div>
 </div>
@@ -290,22 +290,22 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Advantage</div><div class="text-xs text-neutral-400">modular and measurable</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-2" data-ARCKHÉ-track="2" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="2-2" data-ARCKHê-topic="modulo-2-2#topico-2" data-ARCKHê-track="2" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸŽ¬ Customer Service and Support</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å½Â¬ Customer Service and Support</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t2-p1">The service for <strong class="text-blue-400">customer support</strong> is the most common and, in general, the first one to be built. It answers questions, solves problems, and takes care of the experience of people who arrive at the system. Its greatest value is <strong class="text-blue-400">consistency</strong>: responds quickly, at any time, always to the same standardâ€”and frees the human team from repetitive questions so they can handle difficult cases.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-2-t2-p1">The service for <strong class="text-blue-400">customer support</strong> is the most common and, in general, the first one to be built. It answers questions, solves problems, and takes care of the experience of people who arrive at the system. Its greatest value is <strong class="text-blue-400">consistency</strong>: responds quickly, at any time, always to the same standardê¢â¬âand frees the human team from repetitive questions so they can handle difficult cases.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">The cycle of good customer service</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
@@ -314,11 +314,11 @@
 <div><span class="text-blue-400">3. answers:</span> with the right information and the right tone</div>
 <div><span class="text-blue-400">4. resolve_or_routes:</span> closes the case or hands it off to a human</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Illustrative outline of a customer service system â€” the "how" is up to the agents (topic 6).</p>
+<p class="text-xs text-neutral-500 mt-3">Illustrative outline of a customer service system ê¢â¬â the "how" is up to the agents (topic 6).</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">Start the customer service offering with the 10 questions the company gets most often. Answering those ten well already takes half the workload off the teamâ€”and quickly shows value to decision-makers.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">Start the customer service offering with the 10 questions the company gets most often. Answering those ten well already takes half the workload off the teamê¢â¬âand quickly shows value to decision-makers.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Focus</div><div class="text-xs text-neutral-400">resolve the customer's issue</div></div>
@@ -327,27 +327,27 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Beginning</div><div class="text-xs text-neutral-400">the most common questions</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-3" data-ARCKHÉ-track="2" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="2-2" data-ARCKHê-topic="modulo-2-2#topico-3" data-ARCKHê-track="2" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸ’° Sales and proposals</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ° Sales and proposals</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t3-p1">The service for <strong class="text-blue-400">sales</strong> qualifies prospects, presents solutions, and helps put together proposals and close deals. Itâ€™s where AI directly touches the <strong class="text-blue-400">revenue</strong> of the company: guiding the buying journey wellâ€”from the first question to the proposalâ€”changes the result at the end of the month. Unlike customer service, which solves problems, the sales service <em class="text-neutral-400">guides</em>: it moves someone from â€œIâ€™m curiousâ€ to â€œI want to close the deal.â€</p>
-<!-- TIMELINE: a jornada de compra que o serviÃ§o de vendas conduz -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-2-t3-p1">The service for <strong class="text-blue-400">sales</strong> qualifies prospects, presents solutions, and helps put together proposals and close deals. Itê¢â¬â¢s where AI directly touches the <strong class="text-blue-400">revenue</strong> of the company: guiding the buying journey wellê¢â¬âfrom the first question to the proposalê¢â¬âchanges the result at the end of the month. Unlike customer service, which solves problems, the sales service <em class="text-neutral-400">guides</em>: it moves someone from ê¢â¬ÅIê¢â¬â¢m curiousê¢â¬Â to ê¢â¬ÅI want to close the deal.ê¢â¬Â</p>
+<!-- TIMELINE: a jornada de compra que o serviêÂ§o de vendas conduz -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Qualifies</h4><p class="text-neutral-300 text-sm">Understand whether the person has the problem the company solvesâ€”and how much it affects them.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Qualifies</h4><p class="text-neutral-300 text-sm">Understand whether the person has the problem the company solvesê¢â¬âand how much it affects them.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
@@ -355,7 +355,7 @@
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Proposes and closes</h4><p class="text-neutral-300 text-sm">Puts together the proposal, answers the last question, and clears the way for a "yes"â€”or passes it to a human salesperson.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Proposes and closes</h4><p class="text-neutral-300 text-sm">Puts together the proposal, answers the last question, and clears the way for a "yes"ê¢â¬âor passes it to a human salesperson.</p></div>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
@@ -365,59 +365,59 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Output</div><div class="text-xs text-neutral-400">proposal and closing</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-4" data-ARCKHÉ-track="2" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="2-2" data-ARCKHê-topic="modulo-2-2#topico-4" data-ARCKHê-track="2" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ“„ Document Analysis</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââ Document Analysis</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t4-p1">The service for <strong class="text-blue-400">documents</strong> reads contracts, spreadsheets, emails, and reports to <strong class="text-blue-400">extract, summarize, and classify</strong> information. This is where AI saves the most time: it takes a large amount of material that would take a human hours to read and returns, in seconds, only what matters. The value isnâ€™t â€œreadingâ€â€”itâ€™s turning a pile of text into a useful answer.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-2-t4-p1">The service for <strong class="text-blue-400">documents</strong> reads contracts, spreadsheets, emails, and reports to <strong class="text-blue-400">extract, summarize, and classify</strong> information. This is where AI saves the most time: it takes a large amount of material that would take a human hours to read and returns, in seconds, only what matters. The value isnê¢â¬â¢t ê¢â¬Åreadingê¢â¬Âê¢â¬âitê¢â¬â¢s turning a pile of text into a useful answer.</p>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ”Ž</div><h4 class="font-semibold text-neutral-100 mb-1">Extracts</h4><p class="text-xs text-neutral-400">Pulls the right data from the document (values, dates, names, clauses).</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“</div><h4 class="font-semibold text-neutral-100 mb-1">Summarize</h4><p class="text-xs text-neutral-400">Condenses pages into a paragraph that conveys the essentials without losing meaning.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ—‚ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Classifies</h4><p class="text-xs text-neutral-400">Organizes and labels (this one is urgent, this one is financial, this one needs review).</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÅ½</div><h4 class="font-semibold text-neutral-100 mb-1">Extracts</h4><p class="text-xs text-neutral-400">Pulls the right data from the document (values, dates, names, clauses).</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÂ</div><h4 class="font-semibold text-neutral-100 mb-1">Summarize</h4><p class="text-xs text-neutral-400">Condenses pages into a paragraph that conveys the essentials without losing meaning.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸ââê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">Classifies</h4><p class="text-xs text-neutral-400">Organizes and labels (this one is urgent, this one is financial, this one needs review).</p></div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">Define first <em>what</em> you want back from the document. "Summarize this contract" is vague; "list the deadline, amount, and cancellation fee in this contract" is a service with a clear outputâ€”and much more reliable answers.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">Define first <em>what</em> you want back from the document. "Summarize this contract" is vague; "list the deadline, amount, and cancellation fee in this contract" is a service with a clear outputê¢â¬âand much more reliable answers.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Focus</div><div class="text-xs text-neutral-400">read and extract</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Gain</div><div class="text-xs text-neutral-400">hours â†’ seconds</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Outputs</div><div class="text-xs text-neutral-400">extract Â· summarize Â· classify</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Gain</div><div class="text-xs text-neutral-400">hours ê¢â â seconds</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Outputs</div><div class="text-xs text-neutral-400">extract êÂ· summarize êÂ· classify</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Secret</div><div class="text-xs text-neutral-400">request a precise output</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-5" data-ARCKHÉ-track="2" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="2-2" data-ARCKHê-topic="modulo-2-2#topico-5" data-ARCKHê-track="2" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸ“… Scheduling and Consultations</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââ¦ Scheduling and Consultations</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t5-p1">The service for <strong class="text-blue-400">scheduling</strong> schedules appointments, checks availability, and answers questions about dates and status. Itâ€™s one of the most repetitive tasks at companies â€” and one of the biggest sources of friction when done by hand, with endless back-and-forth messages like "what day works for you?" Doing this well frees up time and gets rid of the feeling of being stuck in a queue.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-2-t5-p1">The service for <strong class="text-blue-400">scheduling</strong> schedules appointments, checks availability, and answers questions about dates and status. Itê¢â¬â¢s one of the most repetitive tasks at companies ê¢â¬â and one of the biggest sources of friction when done by hand, with endless back-and-forth messages like "what day works for you?" Doing this well frees up time and gets rid of the feeling of being stuck in a queue.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸ”</span> The friction it eliminates</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ê°Å¸âÂ</span> The friction it eliminates</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Without the service:</strong> "do you have any openings Thursday?" â†’ wait â†’ "only Friday" â†’ "how about in the morning?" â†’ waitâ€¦ ten messages to schedule one thing.</li>
-<li><strong class="text-neutral-100">With the service:</strong> checks the calendar, offers available times, and confirms on the spotâ€”in a single conversation.</li>
+<li><strong class="text-neutral-100">Without the service:</strong> "do you have any openings Thursday?" ê¢â â wait ê¢â â "only Friday" ê¢â â "how about in the morning?" ê¢â â waitê¢â¬Â¦ ten messages to schedule one thing.</li>
+<li><strong class="text-neutral-100">With the service:</strong> checks the calendar, offers available times, and confirms on the spotê¢â¬âin a single conversation.</li>
 </ul>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
@@ -433,27 +433,27 @@
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Focus</div><div class="text-xs text-neutral-400">schedule and respond</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Pain point</div><div class="text-xs text-neutral-400">endless date changes</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Actions</div><div class="text-xs text-neutral-400">check Â· schedule Â· reschedule</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Actions</div><div class="text-xs text-neutral-400">check êÂ· schedule êÂ· reschedule</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Gain</div><div class="text-xs text-neutral-400">resolves in 1 conversation</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-6" data-ARCKHÉ-track="2" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="2-2" data-ARCKHê-topic="modulo-2-2#topico-6" data-ARCKHê-track="2" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ—‚ï¸ One Service, One or More Agents</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ââê¯Â¸Â One Service, One or More Agents</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t6-p1">A service is delivered by <strong class="text-blue-400">one or more agents</strong>. The separation is key: the <strong class="text-blue-400">service defines the "what"</strong> (what value to deliver), and the <strong class="text-blue-400">agents handle the â€œhowâ€</strong> (the work that produces this value). A simple service may have just one agent; a large service, such as sales, may have several â€” one that qualifies leads, another that puts together the proposal â€” working together toward the same goal.</p>
-<!-- SVG: um serviÃ§o se desdobra em 1+ agentes -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-2-t6-p1">A service is delivered by <strong class="text-blue-400">one or more agents</strong>. The separation is key: the <strong class="text-blue-400">service defines the "what"</strong> (what value to deliver), and the <strong class="text-blue-400">agents handle the ê¢â¬Åhowê¢â¬Â</strong> (the work that produces this value). A simple service may have just one agent; a large service, such as sales, may have several ê¢â¬â one that qualifies leads, another that puts together the proposal ê¢â¬â working together toward the same goal.</p>
+<!-- SVG: um serviêÂ§o se desdobra em 1+ agentes -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="A service on the left branches into one or more agents on the right: the service defines what to deliver, and the agents do the work" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
 <defs>
@@ -465,11 +465,11 @@
 <rect fill="url(#m22b-grid)" height="200" width="1000" x="0" y="0"></rect>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="600" x="60" y="34">The service says WHAT</text>
 <text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="14" font-weight="600" x="700" y="34">Agents handle the HOW</text>
-<!-- serviÃ§o (esquerda, caixa-foco) -->
+<!-- serviêÂ§o (esquerda, caixa-foco) -->
 <g filter="url(#m22b-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#m22b-grad)" stroke-width="2" width="180" x="60" y="74"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="150" y="100">Service: Sales</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="150" y="120">guide the purchase</text>
-<!-- conectores serviÃ§o -> agentes -->
+<!-- conectores serviêÂ§o -> agentes -->
 <g fill="none" opacity="0.55" stroke="#60a5fa" stroke-width="1.8">
 <path d="M240,106 C420,106 440,54 600,54" marker-end="url(#m22b-ah)"></path>
 <path d="M240,106 L600,106" marker-end="url(#m22b-ah)"></path>
@@ -485,21 +485,21 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ Separate service from agent</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ Separate service from agent</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Service = the capability (the â€œwhatâ€)</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Agent = the executor (the â€œhowâ€)</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Replace an agent without changing the service</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Multiple agents working toward the same goal</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Service = the capability (the ê¢â¬Åwhatê¢â¬Â)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Agent = the executor (the ê¢â¬Åhowê¢â¬Â)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Replace an agent without changing the service</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Multiple agents working toward the same goal</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Mixing the two</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Mixing the two</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"The agent is the service" (confuses the role)</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Capability tied to a single executor</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Changing how it's done breaks what gets delivered</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Impossible to grow without redoing everything</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"The agent is the service" (confuses the role)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Capability tied to a single executor</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Changing how it's done breaks what gets delivered</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Impossible to grow without redoing everything</span></li>
 </ul>
 </div>
 </div>
@@ -510,49 +510,49 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Next</div><div class="text-xs text-neutral-400">the agents (2.3)</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-2-2#q1">
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-2-2#q1">
 <p class="font-medium mb-4">Self-check (optional): what is a service in Jarvis?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">A specific tool the system uses to respond.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">A capability block â€” a family of problems the system solves.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">The same as an agent, just with a different name.</button>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">A specific tool the system uses to respond.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">A capability block ê¢â¬â a family of problems the system solves.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">The same as an agent, just with a different name.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸŽ¯</span> Module summary</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸Å½Â¯</span> Module summary</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Service = a capability block</strong><span class="text-neutral-400"> â€” organizes Jarvis by value delivered, not by tool.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Customer service</strong><span class="text-neutral-400"> â€” solves the customerâ€™s problem quickly and consistently, anytime.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Sales</strong><span class="text-neutral-400"> â€” guides the buying journey and directly affects revenue.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Documents</strong><span class="text-neutral-400"> â€” extracts, summarizes, and classifies; turns a pile of text into a useful answer.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Scheduling</strong><span class="text-neutral-400"> â€” books, checks, and reschedules; ends the endless back-and-forth over dates.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Service Ã— agent</strong><span class="text-neutral-400"> â€” the service defines the â€œwhatâ€; one or more agents handle the â€œhow.â€</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Service = a capability block</strong><span class="text-neutral-400"> ê¢â¬â organizes Jarvis by value delivered, not by tool.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Customer service</strong><span class="text-neutral-400"> ê¢â¬â solves the customerê¢â¬â¢s problem quickly and consistently, anytime.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Sales</strong><span class="text-neutral-400"> ê¢â¬â guides the buying journey and directly affects revenue.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Documents</strong><span class="text-neutral-400"> ê¢â¬â extracts, summarizes, and classifies; turns a pile of text into a useful answer.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Scheduling</strong><span class="text-neutral-400"> ê¢â¬â books, checks, and reschedules; ends the endless back-and-forth over dates.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Service êâ agent</strong><span class="text-neutral-400"> ê¢â¬â the service defines the ê¢â¬Åwhatê¢â¬Â; one or more agents handle the ê¢â¬Åhow.ê¢â¬Â</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
 <h3 class="font-semibold text-blue-400 mb-2">Next module:</h3>
-<p class="text-neutral-300">2.3 â€” Agents: the specialized workers who carry out the "how" within each service.</p>
+<p class="text-neutral-300">2.3 ê¢â¬â Agents: the specialized workers who carry out the "how" within each service.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Back to Day 2</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-3.html">Next: 2.3 Agents â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Back to Day 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-3.html">Next: 2.3 Agents ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. What a Service Is</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Customer Service and Support</a></li>
@@ -566,21 +566,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>AI Intent Architecture Â· JARVIS Method â€” Day 2 Â· Module 2.2</p>
+<p>AI Intent Architecture êÂ· JARVIS Method ê¢â¬â Day 2 êÂ· Module 2.2</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-2-2#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-2-2#q1', {
           answer: 1,
           explain: {
-            0: 'Quase â€” a ferramenta Ã© o "como". O serviÃ§o Ã© a capacidade que ela ajuda a entregar.',
-            1: 'Isso. ServiÃ§o Ã© um bloco de capacidade: uma famÃ­lia de problemas que o sistema resolve.',
-            2: 'NÃ£o â€” o serviÃ§o diz o "o quÃª"; o agente Ã© o executor que faz o "como" dentro do serviÃ§o.'
+            0: 'Quase ê¢â¬â a ferramenta êÂ© o "como". O serviêÂ§o êÂ© a capacidade que ela ajuda a entregar.',
+            1: 'Isso. ServiêÂ§o êÂ© um bloco de capacidade: uma famêÂ­lia de problemas que o sistema resolve.',
+            2: 'NêÂ£o ê¢â¬â o serviêÂ§o diz o "o quêÂª"; o agente êÂ© o executor que faz o "como" dentro do serviêÂ§o.'
           }
         });
       }

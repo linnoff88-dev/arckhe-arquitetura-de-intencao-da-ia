@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>MÃ³dulo 2.3 Â· Agentes | Arquitetura de IntenÃ§Ã£o da IA</title>
+<title>MêÂ³dulo 2.3 êÂ· Agentes | Arquitetura de IntenêÂ§êÂ£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -130,18 +130,18 @@
     html:not(.dark) .toc-link.is-active { color: #2563eb; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteêÂºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenêÂ§êÂ£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -150,46 +150,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="AparêÂªncia e leitura" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Tema" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Escuro</button>
+<button data-ARCKHê-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHê-set-theme="sepia" type="button">SêÂ©pia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHê-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">Sistema</button>
+<button data-ARCKHê-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHê-set-linewidth="68" type="button">MêÂ©dio</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
+<div aria-label="Entrelinha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHê-set-leading="1.7" type="button">ConfortêÂ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="êâmbar" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -200,20 +200,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-blue-400" href="../../index.html">InÃ­cio</a><span>/</span>
+<a class="hover:text-blue-400" href="../../index.html">InêÂ­cio</a><span>/</span>
 <a class="hover:text-blue-400" href="index.html">Dia 2</a><span>/</span>
-<span class="text-blue-400">MÃ³dulo 2.3</span>
+<span class="text-blue-400">MêÂ³dulo 2.3</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 2.3</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ‘· Agentes</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">O agente Ã© o trabalhador especializado do Jarvis: um faz uma coisa, e faz bem. Mas antes de criar qualquer agente, a pergunta vem primeiro â€” <strong class="text-blue-400">qual intenÃ§Ã£o esse agente realiza?</strong> Aqui vocÃª aprende a dar a cada agente o que ele precisa para trabalhar: instruÃ§Ã£o, contexto, memÃ³ria, regras, limites e um critÃ©rio claro de sucesso.</p>
-<!-- SVG HERO: um serviÃ§o dispara vÃ¡rios agentes especializados (fan-out) -->
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MêâDULO 2.3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸âÂ· Agentes</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">O agente êÂ© o trabalhador especializado do Jarvis: um faz uma coisa, e faz bem. Mas antes de criar qualquer agente, a pergunta vem primeiro ê¢â¬â <strong class="text-blue-400">qual intenêÂ§êÂ£o esse agente realiza?</strong> Aqui vocêÂª aprende a dar a cada agente o que ele precisa para trabalhar: instruêÂ§êÂ£o, contexto, memêÂ³ria, regras, limites e um critêÂ©rio claro de sucesso.</p>
+<!-- SVG HERO: um serviêÂ§o dispara vêÂ¡rios agentes especializados (fan-out) -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Diagrama: um serviÃ§o dispara vÃ¡rios agentes especializados em paralelo, cada um com um trabalho, e juntos entregam o serviÃ§o" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<svg aria-label="Diagrama: um serviêÂ§o dispara vêÂ¡rios agentes especializados em paralelo, cada um com um trabalho, e juntos entregam o serviêÂ§o" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
 <lineargradient id="m23-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <filter height="180%" id="m23-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -222,7 +222,7 @@
 <marker id="m23-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#m23-grid)" height="240" width="1000" x="0" y="0"></rect>
-<!-- serviÃ§o -> agentes -->
+<!-- serviêÂ§o -> agentes -->
 <g fill="none" opacity="0.6" stroke="#60a5fa" stroke-width="1.8">
 <path d="M196,120 C300,120 320,46 452,46" marker-end="url(#m23-ah)"></path>
 <path d="M196,120 C300,120 320,85 452,85" marker-end="url(#m23-ah)"></path>
@@ -230,7 +230,7 @@
 <path d="M196,120 C300,120 320,155 452,155" marker-end="url(#m23-ah)"></path>
 <path d="M196,120 C300,120 320,194 452,194" marker-end="url(#m23-ah)"></path>
 </g>
-<!-- agentes -> serviÃ§o entregue -->
+<!-- agentes -> serviêÂ§o entregue -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M588,46  C700,46 720,120 800,120" marker-end="url(#m23-ahc)"></path>
 <path d="M588,85  C700,85 720,120 800,120" marker-end="url(#m23-ahc)"></path>
@@ -238,389 +238,389 @@
 <path d="M588,155 C700,155 720,120 800,120" marker-end="url(#m23-ahc)"></path>
 <path d="M588,194 C700,194 720,120 800,120" marker-end="url(#m23-ahc)"></path>
 </g>
-<!-- serviÃ§o (origem) -->
+<!-- serviêÂ§o (origem) -->
 <g filter="url(#m23-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#m23-grad)" stroke-width="2" width="156" x="40" y="88"></rect></g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="118" y="114">ServiÃ§o</text>
-<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="118" y="134">define o "o quÃª"</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="118" y="114">ServiêÂ§o</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="118" y="134">define o "o quêÂª"</text>
 <!-- agentes especializados -->
 <g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="30"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="51">triagem</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="69"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="90">resposta</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="104"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="125">cobranÃ§a</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="104"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="125">cobranêÂ§a</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="139"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="160">agendamento</text></g>
-<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="178"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="199">resumo â€¦</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="178"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="199">resumo ê¢â¬Â¦</text></g>
 </g>
-<!-- serviÃ§o entregue (resultado) -->
+<!-- serviêÂ§o entregue (resultado) -->
 <g filter="url(#m23-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#m23-grad)" stroke-width="2" width="156" x="800" y="88"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="878" y="114">Entregue</text>
 <text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="878" y="134">o "como" feito</text>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="228">Um trabalho cada â€” vÃ¡rios agentes especializados realizam o serviÃ§o.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="228">Um trabalho cada ê¢â¬â vêÂ¡rios agentes especializados realizam o serviêÂ§o.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">TêÂ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~50</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">IntermediÃ¡rio</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">IntermediêÂ¡rio</div><div class="text-xs text-neutral-400">NêÂ­vel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Conceito</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do mÃ³dulo 2.3" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:2-3" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Progresso do mêÂ³dulo 2.3" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:2-3" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mêÂ³dulo</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 de 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-1" data-ARCKHÉ-track="2" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="2-3" data-ARCKHê-topic="modulo-2-3#topico-1" data-ARCKHê-track="2" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸ‘· O que Ã© um agente</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ· O que êÂ© um agente</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t1-p1">Um agente Ã© um <strong class="text-blue-400">trabalhador do Jarvis</strong>: uma peÃ§a que recebe uma tarefa, executa e devolve um resultado. Pense numa empresa de verdade â€” vocÃª nÃ£o contrata uma pessoa para "fazer tudo". VocÃª contrata alguÃ©m para atender, alguÃ©m para vender, alguÃ©m para organizar documentos. No Jarvis Ã© igual: cada agente Ã© como um funcionÃ¡rio com uma funÃ§Ã£o clara. O serviÃ§o diz <em class="text-neutral-400">o que</em> precisa ser feito; o agente Ã© <em class="text-neutral-400">quem</em> faz.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-3-t1-p1">Um agente êÂ© um <strong class="text-blue-400">trabalhador do Jarvis</strong>: uma peêÂ§a que recebe uma tarefa, executa e devolve um resultado. Pense numa empresa de verdade ê¢â¬â vocêÂª nêÂ£o contrata uma pessoa para "fazer tudo". VocêÂª contrata alguêÂ©m para atender, alguêÂ©m para vender, alguêÂ©m para organizar documentos. No Jarvis êÂ© igual: cada agente êÂ© como um funcionêÂ¡rio com uma funêÂ§êÂ£o clara. O serviêÂ§o diz <em class="text-neutral-400">o que</em> precisa ser feito; o agente êÂ© <em class="text-neutral-400">quem</em> faz.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§©</span> Agente = funcionÃ¡rio, nÃ£o o sistema inteiro</h3>
-<p class="text-neutral-300">O sistema (o Jarvis) Ã© a empresa. O serviÃ§o Ã© o departamento. O agente Ã© a pessoa que senta na cadeira e faz o trabalho. Quando vocÃª separa essas trÃªs coisas, fica fÃ¡cil desenhar a soluÃ§Ã£o: primeiro o departamento (serviÃ§o), depois quem trabalha nele (agentes), depois o que cada um precisa para trabalhar bem.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â©</span> Agente = funcionêÂ¡rio, nêÂ£o o sistema inteiro</h3>
+<p class="text-neutral-300">O sistema (o Jarvis) êÂ© a empresa. O serviêÂ§o êÂ© o departamento. O agente êÂ© a pessoa que senta na cadeira e faz o trabalho. Quando vocêÂª separa essas trêÂªs coisas, fica fêÂ¡cil desenhar a soluêÂ§êÂ£o: primeiro o departamento (serviêÂ§o), depois quem trabalha nele (agentes), depois o que cada um precisa para trabalhar bem.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ Um agente Ã©</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ Um agente êÂ©</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Um trabalhador com uma funÃ§Ã£o</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Quem executa o "como" do serviÃ§o</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Algo que recebe entrada e devolve saÃ­da</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Uma peÃ§a do sistema, nÃ£o o sistema</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Um trabalhador com uma funêÂ§êÂ£o</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Quem executa o "como" do serviêÂ§o</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Algo que recebe entrada e devolve saêÂ­da</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Uma peêÂ§a do sistema, nêÂ£o o sistema</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Um agente nÃ£o Ã©</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Um agente nêÂ£o êÂ©</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>O Jarvis inteiro numa caixa sÃ³</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Um faz-tudo sem foco</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Apenas "um prompt esperto"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Algo que decide sozinho a estratÃ©gia</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>O Jarvis inteiro numa caixa sêÂ³</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Um faz-tudo sem foco</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Apenas "um prompt esperto"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Algo que decide sozinho a estratêÂ©gia</span></li>
 </ul>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Agente</div><div class="text-xs text-neutral-400">um trabalhador</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">ServiÃ§o</div><div class="text-xs text-neutral-400">o "o quÃª"</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">ServiêÂ§o</div><div class="text-xs text-neutral-400">o "o quêÂª"</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Agente faz</div><div class="text-xs text-neutral-400">o "como"</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Ã‰ peÃ§a</div><div class="text-xs text-neutral-400">nÃ£o o todo</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">êâ° peêÂ§a</div><div class="text-xs text-neutral-400">nêÂ£o o todo</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-2" data-ARCKHÉ-track="2" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="2-3" data-ARCKHê-topic="modulo-2-3#topico-2" data-ARCKHê-track="2" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">ðŸŽ¯ Especializado: um trabalho cada</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å½Â¯ Especializado: um trabalho cada</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t2-p1">A regra de ouro dos agentes: <strong class="text-blue-400">um agente, um trabalho</strong>. Um agente que tenta fazer tudo faz tudo mal â€” ele perde o foco, as instruÃ§Ãµes viram um amontoado e ninguÃ©m consegue dizer se ele acertou. JÃ¡ um agente especializado Ã© fÃ¡cil de instruir, fÃ¡cil de testar e fÃ¡cil de melhorar. Em vez de um "super agente", o Jarvis usa vÃ¡rios agentes pequenos, cada um afiado na sua tarefa.</p>
-<!-- grid âœ“/âœ— #2 -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-3-t2-p1">A regra de ouro dos agentes: <strong class="text-blue-400">um agente, um trabalho</strong>. Um agente que tenta fazer tudo faz tudo mal ê¢â¬â ele perde o foco, as instruêÂ§êÂµes viram um amontoado e ninguêÂ©m consegue dizer se ele acertou. JêÂ¡ um agente especializado êÂ© fêÂ¡cil de instruir, fêÂ¡cil de testar e fêÂ¡cil de melhorar. Em vez de um "super agente", o Jarvis usa vêÂ¡rios agentes pequenos, cada um afiado na sua tarefa.</p>
+<!-- grid ê¢Åâ/ê¢Åâ #2 -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Um faz-tudo</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Um faz-tudo</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>InstruÃ§Ãµes enormes e confusas</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Erra em tudo um pouco</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>DifÃ­cil saber onde falhou</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>ImpossÃ­vel medir sucesso</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>InstruêÂ§êÂµes enormes e confusas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Erra em tudo um pouco</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>DifêÂ­cil saber onde falhou</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>ImpossêÂ­vel medir sucesso</span></li>
 </ul>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ VÃ¡rios especializados</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ VêÂ¡rios especializados</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>InstruÃ§Ã£o curta e clara por agente</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Cada um acerta no que faz</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>FÃ¡cil ver quem falhou</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>DÃ¡ para medir e melhorar um por um</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>InstruêÂ§êÂ£o curta e clara por agente</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Cada um acerta no que faz</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>FêÂ¡cil ver quem falhou</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>DêÂ¡ para medir e melhorar um por um</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Se vocÃª nÃ£o consegue descrever o trabalho de um agente em uma frase ("ele classifica e-mails como urgente ou normal"), ele estÃ¡ fazendo demais. Quebre em dois. Quanto mais curta a descriÃ§Ã£o, melhor o agente.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Se vocêÂª nêÂ£o consegue descrever o trabalho de um agente em uma frase ("ele classifica e-mails como urgente ou normal"), ele estêÂ¡ fazendo demais. Quebre em dois. Quanto mais curta a descriêÂ§êÂ£o, melhor o agente.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Regra</div><div class="text-xs text-neutral-400">um trabalho cada</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Faz-tudo</div><div class="text-xs text-neutral-400">faz tudo mal</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Especialista</div><div class="text-xs text-neutral-400">afiado e testÃ¡vel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Especialista</div><div class="text-xs text-neutral-400">afiado e testêÂ¡vel</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Teste</div><div class="text-xs text-neutral-400">cabe em 1 frase</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-3" data-ARCKHÉ-track="2" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="2-3" data-ARCKHê-topic="modulo-2-3#topico-3" data-ARCKHê-track="2" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸ“ InstruÃ§Ã£o e contexto</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ InstruêÂ§êÂ£o e contexto</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t3-p1">Um trabalhador novo precisa de duas coisas no primeiro dia: <strong class="text-blue-400">a instruÃ§Ã£o</strong> (o que fazer e como) e <strong class="text-blue-400">o contexto</strong> (informaÃ§Ã£o sobre a empresa, o cliente, a situaÃ§Ã£o). Com o agente Ã© igual. A instruÃ§Ã£o diz o trabalho; o contexto dÃ¡ o terreno. InstruÃ§Ã£o sem contexto vira resposta genÃ©rica; contexto sem instruÃ§Ã£o vira informaÃ§Ã£o solta. Os dois juntos Ã© que fazem o agente trabalhar como gente de dentro da casa.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-3-t3-p1">Um trabalhador novo precisa de duas coisas no primeiro dia: <strong class="text-blue-400">a instruêÂ§êÂ£o</strong> (o que fazer e como) e <strong class="text-blue-400">o contexto</strong> (informaêÂ§êÂ£o sobre a empresa, o cliente, a situaêÂ§êÂ£o). Com o agente êÂ© igual. A instruêÂ§êÂ£o diz o trabalho; o contexto dêÂ¡ o terreno. InstruêÂ§êÂ£o sem contexto vira resposta genêÂ©rica; contexto sem instruêÂ§êÂ£o vira informaêÂ§êÂ£o solta. Os dois juntos êÂ© que fazem o agente trabalhar como gente de dentro da casa.</p>
 <!-- timeline #1 -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">A instruÃ§Ã£o</h4><p class="text-neutral-300 text-sm">"VocÃª responde dÃºvidas de clientes sobre entrega. Seja direto, gentil e nunca prometa prazo que nÃ£o estÃ¡ na tabela."</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">A instruêÂ§êÂ£o</h4><p class="text-neutral-300 text-sm">"VocêÂª responde dêÂºvidas de clientes sobre entrega. Seja direto, gentil e nunca prometa prazo que nêÂ£o estêÂ¡ na tabela."</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">O contexto</h4><p class="text-neutral-300 text-sm">A tabela de prazos, as polÃ­ticas de troca, o nome da loja, o tom da marca â€” o terreno em que o agente pisa para decidir.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">O contexto</h4><p class="text-neutral-300 text-sm">A tabela de prazos, as polêÂ­ticas de troca, o nome da loja, o tom da marca ê¢â¬â o terreno em que o agente pisa para decidir.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">A tarefa</h4><p class="text-neutral-300 text-sm">A pergunta concreta que chega na hora: "meu pedido 1042 chega quando?". InstruÃ§Ã£o + contexto + tarefa = resposta certa.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">A tarefa</h4><p class="text-neutral-300 text-sm">A pergunta concreta que chega na hora: "meu pedido 1042 chega quando?". InstruêÂ§êÂ£o + contexto + tarefa = resposta certa.</p></div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica</h3>
-<p class="text-neutral-300 text-sm">Quando um agente responde "errado", quase sempre nÃ£o Ã© a instruÃ§Ã£o â€” Ã© o contexto que faltou. Antes de reescrever a instruÃ§Ã£o, pergunte: ele tinha a informaÃ§Ã£o necessÃ¡ria em mÃ£os para acertar?</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica</h3>
+<p class="text-neutral-300 text-sm">Quando um agente responde "errado", quase sempre nêÂ£o êÂ© a instruêÂ§êÂ£o ê¢â¬â êÂ© o contexto que faltou. Antes de reescrever a instruêÂ§êÂ£o, pergunte: ele tinha a informaêÂ§êÂ£o necessêÂ¡ria em mêÂ£os para acertar?</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">InstruÃ§Ã£o</div><div class="text-xs text-neutral-400">o que fazer</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">InstruêÂ§êÂ£o</div><div class="text-xs text-neutral-400">o que fazer</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Contexto</div><div class="text-xs text-neutral-400">o terreno</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Tarefa</div><div class="text-xs text-neutral-400">o pedido da hora</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Os trÃªs</div><div class="text-xs text-neutral-400">= resposta certa</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Os trêÂªs</div><div class="text-xs text-neutral-400">= resposta certa</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-4" data-ARCKHÉ-track="2" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="2-3" data-ARCKHê-topic="modulo-2-3#topico-4" data-ARCKHê-track="2" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ§  MemÃ³ria e regras do agente</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Â§Â  MemêÂ³ria e regras do agente</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t4-p1">AlÃ©m de instruÃ§Ã£o e contexto, um bom agente tem <strong class="text-blue-400">memÃ³ria</strong> (o que ele lembra da conversa ou do histÃ³rico) e <strong class="text-blue-400">regras e limites</strong> (o que ele pode e o que nunca deve fazer). A memÃ³ria evita que o cliente repita tudo a cada mensagem. As regras protegem a empresa: um agente sem limites Ã© um risco. Ã‰ aqui que se escreve a "ficha" do agente â€” e ela cabe em poucas linhas de chave:valor.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-3-t4-p1">AlêÂ©m de instruêÂ§êÂ£o e contexto, um bom agente tem <strong class="text-blue-400">memêÂ³ria</strong> (o que ele lembra da conversa ou do histêÂ³rico) e <strong class="text-blue-400">regras e limites</strong> (o que ele pode e o que nunca deve fazer). A memêÂ³ria evita que o cliente repita tudo a cada mensagem. As regras protegem a empresa: um agente sem limites êÂ© um risco. êâ° aqui que se escreve a "ficha" do agente ê¢â¬â e ela cabe em poucas linhas de chave:valor.</p>
 <!-- mono/code box: ficha de um agente em chave:valor #1 -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Ficha de um agente (chave:valor)</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-blue-400">nome:</span> agente_de_entregas</div>
-<div><span class="text-blue-400">trabalho:</span> responder dÃºvidas sobre status de entrega</div>
-<div><span class="text-blue-400">contexto:</span> tabela de prazos + polÃ­tica de troca</div>
-<div><span class="text-blue-400">memoria:</span> nÃºmero do pedido jÃ¡ informado na conversa</div>
+<div><span class="text-blue-400">trabalho:</span> responder dêÂºvidas sobre status de entrega</div>
+<div><span class="text-blue-400">contexto:</span> tabela de prazos + polêÂ­tica de troca</div>
+<div><span class="text-blue-400">memoria:</span> nêÂºmero do pedido jêÂ¡ informado na conversa</div>
 <div><span class="text-blue-400">regras:</span> nunca prometer prazo fora da tabela</div>
-<div><span class="text-blue-400">limites:</span> nÃ£o cancela pedido; encaminha ao humano</div>
+<div><span class="text-blue-400">limites:</span> nêÂ£o cancela pedido; encaminha ao humano</div>
 <div><span class="text-blue-400">sucesso:</span> cliente sabe quando recebe, sem abrir chamado</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Ficha ilustrativa â€” toda peÃ§a do agente cabe em uma linha. MemÃ³ria e contexto sÃ£o aprofundados no MÃ³dulo 2.5.</p>
+<p class="text-xs text-neutral-500 mt-3">Ficha ilustrativa ê¢â¬â toda peêÂ§a do agente cabe em uma linha. MemêÂ³ria e contexto sêÂ£o aprofundados no MêÂ³dulo 2.5.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸ§ </span> A memÃ³ria</h4>
-<p class="text-neutral-300 text-sm">O que o agente carrega entre uma mensagem e outra: o nome do cliente, o pedido em questÃ£o, o que jÃ¡ foi dito. Sem isso, ele "esquece" e o cliente repete tudo.</p>
+<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â </span> A memêÂ³ria</h4>
+<p class="text-neutral-300 text-sm">O que o agente carrega entre uma mensagem e outra: o nome do cliente, o pedido em questêÂ£o, o que jêÂ¡ foi dito. Sem isso, ele "esquece" e o cliente repete tudo.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">â›”</span> As regras e limites</h4>
-<p class="text-neutral-300 text-sm">As linhas que o agente nunca cruza: nÃ£o inventar dados, nÃ£o prometer o que nÃ£o cumpre, nÃ£o agir fora da sua alÃ§ada. O "nÃ£o" protege tanto quanto o "sim".</p>
+<h4 class="font-bold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê¢âºâ</span> As regras e limites</h4>
+<p class="text-neutral-300 text-sm">As linhas que o agente nunca cruza: nêÂ£o inventar dados, nêÂ£o prometer o que nêÂ£o cumpre, nêÂ£o agir fora da sua alêÂ§ada. O "nêÂ£o" protege tanto quanto o "sim".</p>
 </div>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">MemÃ³ria</div><div class="text-xs text-neutral-400">o que lembra</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">MemêÂ³ria</div><div class="text-xs text-neutral-400">o que lembra</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Regras</div><div class="text-xs text-neutral-400">o que pode</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Limites</div><div class="text-xs text-neutral-400">o que nunca</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Ficha</div><div class="text-xs text-neutral-400">cabe em linhas</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-5" data-ARCKHÉ-track="2" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="2-3" data-ARCKHê-topic="modulo-2-3#topico-5" data-ARCKHê-track="2" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">âœ… CritÃ©rios de sucesso</h2>
+<h2 class="text-2xl font-bold">ê¢Åâ¦ CritêÂ©rios de sucesso</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t5-p1">Como vocÃª sabe se um agente estÃ¡ fazendo um bom trabalho? VocÃª precisa de um <strong class="text-blue-400">critÃ©rio de sucesso</strong>: uma frase clara que diz o que Ã© "deu certo" para aquele agente. Sem critÃ©rio, qualquer resposta parece aceitÃ¡vel e vocÃª nunca sabe se vale melhorar. Com critÃ©rio, vocÃª consegue testar, comparar e evoluir o agente â€” e dizer com seguranÃ§a se ele estÃ¡ pronto ou nÃ£o.</p>
-<!-- grid bom/ruim de critÃ©rio (âœ“/âœ—) -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-3-t5-p1">Como vocêÂª sabe se um agente estêÂ¡ fazendo um bom trabalho? VocêÂª precisa de um <strong class="text-blue-400">critêÂ©rio de sucesso</strong>: uma frase clara que diz o que êÂ© "deu certo" para aquele agente. Sem critêÂ©rio, qualquer resposta parece aceitêÂ¡vel e vocêÂª nunca sabe se vale melhorar. Com critêÂ©rio, vocêÂª consegue testar, comparar e evoluir o agente ê¢â¬â e dizer com seguranêÂ§a se ele estêÂ¡ pronto ou nêÂ£o.</p>
+<!-- grid bom/ruim de critêÂ©rio (ê¢Åâ/ê¢Åâ) -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— CritÃ©rio vago</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ CritêÂ©rio vago</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"O agente responde bem"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"O cliente fica satisfeito"</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>NÃ£o dÃ¡ para medir</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Cada pessoa avalia diferente</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"O agente responde bem"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"O cliente fica satisfeito"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>NêÂ£o dêÂ¡ para medir</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Cada pessoa avalia diferente</span></li>
 </ul>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">âœ“ CritÃ©rio claro</h4>
+<h4 class="font-bold text-blue-400 mb-4">ê¢Åâ CritêÂ©rio claro</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>"Responde o status correto do pedido"</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>"Sem abrir chamado para o humano"</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>DÃ¡ para verificar caso a caso</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">âœ“</span><span>Todo mundo concorda no que Ã© "deu certo"</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>"Responde o status correto do pedido"</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>"Sem abrir chamado para o humano"</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>DêÂ¡ para verificar caso a caso</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">ê¢Åâ</span><span>Todo mundo concorda no que êÂ© "deu certo"</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> O critÃ©rio vem antes de medir</h3>
-<p class="text-neutral-300">No Dia 3 a gente mede resultado de verdade. Mas a mediÃ§Ã£o sÃ³ funciona se o critÃ©rio foi escrito antes. Definir "o que Ã© sucesso para este agente" Ã© parte do desenho â€” nÃ£o algo que se descobre depois.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å½Â¯</span> O critêÂ©rio vem antes de medir</h3>
+<p class="text-neutral-300">No Dia 3 a gente mede resultado de verdade. Mas a mediêÂ§êÂ£o sêÂ³ funciona se o critêÂ©rio foi escrito antes. Definir "o que êÂ© sucesso para este agente" êÂ© parte do desenho ê¢â¬â nêÂ£o algo que se descobre depois.</p>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">CritÃ©rio</div><div class="text-xs text-neutral-400">o que Ã© "deu certo"</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Claro</div><div class="text-xs text-neutral-400">dÃ¡ para verificar</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Vago</div><div class="text-xs text-neutral-400">ninguÃ©m mede</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">CritêÂ©rio</div><div class="text-xs text-neutral-400">o que êÂ© "deu certo"</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Claro</div><div class="text-xs text-neutral-400">dêÂ¡ para verificar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Vago</div><div class="text-xs text-neutral-400">ninguêÂ©m mede</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Antes</div><div class="text-xs text-neutral-400">de medir</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#topico-6" data-ARCKHÉ-track="2" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="2-3" data-ARCKHê-topic="modulo-2-3#topico-6" data-ARCKHê-track="2" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ§­ Qual intenÃ§Ã£o o agente realiza</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Â§Â­ Qual intenêÂ§êÂ£o o agente realiza</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-t6-p1">Aqui fecha o mÃ³dulo com a pergunta que vem antes de tudo: <strong class="text-blue-400">qual intenÃ§Ã£o esse agente realiza?</strong> NÃ£o comece criando o agente; comece pela intenÃ§Ã£o que ele serve. A intenÃ§Ã£o do sistema (a alma, do 2.1) se desdobra em serviÃ§os, e cada serviÃ§o em agentes. Cada agente Ã© a ponta fina de uma intenÃ§Ã£o maior. Se vocÃª nÃ£o consegue dizer qual intenÃ§Ã£o um agente realiza, esse agente provavelmente nÃ£o deveria existir.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m2-3-t6-p1">Aqui fecha o mêÂ³dulo com a pergunta que vem antes de tudo: <strong class="text-blue-400">qual intenêÂ§êÂ£o esse agente realiza?</strong> NêÂ£o comece criando o agente; comece pela intenêÂ§êÂ£o que ele serve. A intenêÂ§êÂ£o do sistema (a alma, do 2.1) se desdobra em serviêÂ§os, e cada serviêÂ§o em agentes. Cada agente êÂ© a ponta fina de uma intenêÂ§êÂ£o maior. Se vocêÂª nêÂ£o consegue dizer qual intenêÂ§êÂ£o um agente realiza, esse agente provavelmente nêÂ£o deveria existir.</p>
 <!-- tip box #2 -->
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> A pergunta antes da ferramenta</h3>
-<p class="text-neutral-300 text-sm">A tentaÃ§Ã£o Ã© comeÃ§ar perguntando "que agente eu crio?". O arquiteto de intenÃ§Ã£o comeÃ§a por "qual intenÃ§Ã£o eu preciso realizar?" â€” e sÃ³ entÃ£o o agente aparece como consequÃªncia natural. A intenÃ§Ã£o Ã© a causa; o agente Ã© o efeito.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> A pergunta antes da ferramenta</h3>
+<p class="text-neutral-300 text-sm">A tentaêÂ§êÂ£o êÂ© comeêÂ§ar perguntando "que agente eu crio?". O arquiteto de intenêÂ§êÂ£o comeêÂ§a por "qual intenêÂ§êÂ£o eu preciso realizar?" ê¢â¬â e sêÂ³ entêÂ£o o agente aparece como consequêÂªncia natural. A intenêÂ§êÂ£o êÂ© a causa; o agente êÂ© o efeito.</p>
 </div>
-<!-- timeline #2: intenÃ§Ã£o desce atÃ© o agente -->
+<!-- timeline #2: intenêÂ§êÂ£o desce atêÂ© o agente -->
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">A intenÃ§Ã£o</h4><p class="text-neutral-300 text-sm">"Quero que nenhum cliente fique sem resposta sobre sua entrega." Ã‰ a dor que justifica o sistema.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">A intenêÂ§êÂ£o</h4><p class="text-neutral-300 text-sm">"Quero que nenhum cliente fique sem resposta sobre sua entrega." êâ° a dor que justifica o sistema.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">O serviÃ§o</h4><p class="text-neutral-300 text-sm">Atendimento sobre entregas â€” o departamento que atende essa intenÃ§Ã£o.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">O serviêÂ§o</h4><p class="text-neutral-300 text-sm">Atendimento sobre entregas ê¢â¬â o departamento que atende essa intenêÂ§êÂ£o.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">O agente</h4><p class="text-neutral-300 text-sm">O agente_de_entregas â€” a ponta fina que realiza, na prÃ¡tica, aquela intenÃ§Ã£o, com sua ficha completa.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">O agente</h4><p class="text-neutral-300 text-sm">O agente_de_entregas ê¢â¬â a ponta fina que realiza, na prêÂ¡tica, aquela intenêÂ§êÂ£o, com sua ficha completa.</p></div>
 </div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸ§¾</span> O checklist de um agente saudÃ¡vel</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ê°Å¸Â§Â¾</span> O checklist de um agente saudêÂ¡vel</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Tem uma intenÃ§Ã£o clara</strong> que justifica sua existÃªncia.</li>
-<li><strong class="text-neutral-100">Tem um trabalho sÃ³</strong> â€” descreve-se em uma frase.</li>
-<li><strong class="text-neutral-100">Tem instruÃ§Ã£o, contexto, memÃ³ria, regras e limites</strong> â€” a ficha completa.</li>
-<li><strong class="text-neutral-100">Tem um critÃ©rio de sucesso</strong> verificÃ¡vel, escrito antes.</li>
+<li><strong class="text-neutral-100">Tem uma intenêÂ§êÂ£o clara</strong> que justifica sua existêÂªncia.</li>
+<li><strong class="text-neutral-100">Tem um trabalho sêÂ³</strong> ê¢â¬â descreve-se em uma frase.</li>
+<li><strong class="text-neutral-100">Tem instruêÂ§êÂ£o, contexto, memêÂ³ria, regras e limites</strong> ê¢â¬â a ficha completa.</li>
+<li><strong class="text-neutral-100">Tem um critêÂ©rio de sucesso</strong> verificêÂ¡vel, escrito antes.</li>
 </ul>
 </div>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">IntenÃ§Ã£o</div><div class="text-xs text-neutral-400">vem antes</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Desdobra</div><div class="text-xs text-neutral-400">em serviÃ§o â†’ agente</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Agente</div><div class="text-xs text-neutral-400">ponta da intenÃ§Ã£o</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Sem intenÃ§Ã£o</div><div class="text-xs text-neutral-400">nÃ£o deveria existir</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">IntenêÂ§êÂ£o</div><div class="text-xs text-neutral-400">vem antes</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Desdobra</div><div class="text-xs text-neutral-400">em serviêÂ§o ê¢â â agente</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Agente</div><div class="text-xs text-neutral-400">ponta da intenêÂ§êÂ£o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-blue-400 font-bold text-sm mb-1">Sem intenêÂ§êÂ£o</div><div class="text-xs text-neutral-400">nêÂ£o deveria existir</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-2-3#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): qual Ã© a pergunta que vem ANTES de criar um agente?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Qual ferramenta ou modelo de IA esse agente deve usar?</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Qual intenÃ§Ã£o esse agente realiza?</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Quantos agentes cabem dentro de um Ãºnico serviÃ§o?</button>
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-2-3#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): qual êÂ© a pergunta que vem ANTES de criar um agente?</p>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Qual ferramenta ou modelo de IA esse agente deve usar?</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Qual intenêÂ§êÂ£o esse agente realiza?</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Quantos agentes cabem dentro de um êÂºnico serviêÂ§o?</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸŽ¯</span> Resumo do mÃ³dulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸Å½Â¯</span> Resumo do mêÂ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">O que Ã© um agente</strong><span class="text-neutral-400"> â€” um trabalhador do Jarvis que executa o "como" do serviÃ§o.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Especializado</strong><span class="text-neutral-400"> â€” um trabalho cada; vÃ¡rios agentes pequenos batem um faz-tudo.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">InstruÃ§Ã£o e contexto</strong><span class="text-neutral-400"> â€” o que fazer mais o terreno; um sem o outro nÃ£o basta.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">MemÃ³ria e regras</strong><span class="text-neutral-400"> â€” o que lembra e o que nunca faz; a ficha do agente.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">CritÃ©rios de sucesso</strong><span class="text-neutral-400"> â€” "o que Ã© deu certo", escrito antes de medir.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Qual intenÃ§Ã£o realiza</strong><span class="text-neutral-400"> â€” a pergunta vem antes; a intenÃ§Ã£o Ã© a causa, o agente o efeito.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">O que êÂ© um agente</strong><span class="text-neutral-400"> ê¢â¬â um trabalhador do Jarvis que executa o "como" do serviêÂ§o.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Especializado</strong><span class="text-neutral-400"> ê¢â¬â um trabalho cada; vêÂ¡rios agentes pequenos batem um faz-tudo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">InstruêÂ§êÂ£o e contexto</strong><span class="text-neutral-400"> ê¢â¬â o que fazer mais o terreno; um sem o outro nêÂ£o basta.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">MemêÂ³ria e regras</strong><span class="text-neutral-400"> ê¢â¬â o que lembra e o que nunca faz; a ficha do agente.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">CritêÂ©rios de sucesso</strong><span class="text-neutral-400"> ê¢â¬â "o que êÂ© deu certo", escrito antes de medir.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Qual intenêÂ§êÂ£o realiza</strong><span class="text-neutral-400"> ê¢â¬â a pergunta vem antes; a intenêÂ§êÂ£o êÂ© a causa, o agente o efeito.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-blue-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
-<p class="text-neutral-300">2.4 â€” Habilidades: o que cada agente sabe fazer, na prÃ¡tica.</p>
+<h3 class="font-semibold text-blue-400 mb-2">PrêÂ³ximo mêÂ³dulo:</h3>
+<p class="text-neutral-300">2.4 ê¢â¬â Habilidades: o que cada agente sabe fazer, na prêÂ¡tica.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 2</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-4.html">PrÃ³ximo: 2.4 Habilidades â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Voltar para o Dia 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-4.html">PrêÂ³ximo: 2.4 Habilidades ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="êÂndice do mêÂ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pêÂ¡gina <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. O que Ã© um agente</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. O que êÂ© um agente</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Especializado</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. InstruÃ§Ã£o e contexto</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. MemÃ³ria e regras</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. CritÃ©rios de sucesso</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. Qual intenÃ§Ã£o realiza</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. InstruêÂ§êÂ£o e contexto</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. MemêÂ³ria e regras</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. CritêÂ©rios de sucesso</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. Qual intenêÂ§êÂ£o realiza</a></li>
 </ol>
 </nav>
 </aside>
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 2 Â· MÃ³dulo 2.3</p>
+<p>Arquitetura de IntenêÂ§êÂ£o da IA êÂ· MêÂ©todo JARVIS ê¢â¬â Dia 2 êÂ· MêÂ³dulo 2.3</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-2-3#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-2-3#q1', {
           answer: 1,
           explain: {
-            0: 'Ainda nÃ£o â€” a ferramenta Ã© detalhe. A pergunta de arquiteto vem antes da ferramenta.',
-            1: 'Isso. Comece pela intenÃ§Ã£o que o agente serve; o agente Ã© consequÃªncia dela.',
-            2: 'Importa, mas Ã© desenho posterior. Primeiro a intenÃ§Ã£o, depois quantos agentes ela exige.'
+            0: 'Ainda nêÂ£o ê¢â¬â a ferramenta êÂ© detalhe. A pergunta de arquiteto vem antes da ferramenta.',
+            1: 'Isso. Comece pela intenêÂ§êÂ£o que o agente serve; o agente êÂ© consequêÂªncia dela.',
+            2: 'Importa, mas êÂ© desenho posterior. Primeiro a intenêÂ§êÂ£o, depois quantos agentes ela exige.'
           }
         });
       }

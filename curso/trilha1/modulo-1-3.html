@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>MÃ³dulo 1.3 Â· Infraestrutura: Pastas, Terminal e Versionamento | Arquitetura de IntenÃ§Ã£o da IA</title>
+<title>MêÂ³dulo 1.3 êÂ· Infraestrutura: Pastas, Terminal e Versionamento | Arquitetura de IntenêÂ§êÂ£o da IA</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -126,18 +126,18 @@
     html:not(.dark) .toc-link.is-active { color: #059669; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Pular para o conteÃºdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Pular para o conteêÂºdo</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenÃ§Ã£o</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Arquitetura de IntenêÂ§êÂ£o</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
@@ -146,46 +146,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Dia 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Dia 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="Minha jornada" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Jornada</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="Minha jornada" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Jornada</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="AparÃªncia e leitura" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Tema" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Escuro</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">SÃ©pia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Foco</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">Alto contraste</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="AparêÂªncia e leitura" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Tema" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Escuro</button>
+<button data-ARCKHê-set-theme="claro" type="button">Claro</button>
+<button data-ARCKHê-set-theme="sepia" type="button">SêÂ©pia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Foco</button>
+<button data-ARCKHê-set-theme="contraste" type="button">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">Sistema</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Leitura</button>
+<div aria-label="Fonte" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">Sistema</button>
+<button data-ARCKHê-set-font="leitura" type="button">Leitura</button>
 </div>
-<div aria-label="Tamanho do texto" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Tamanho do texto" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Largura da linha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Estreito</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">MÃ©dio</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Largo</button>
+<div aria-label="Largura da linha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Estreito</button>
+<button data-ARCKHê-set-linewidth="68" type="button">MêÂ©dio</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Largo</button>
 </div>
-<div aria-label="Entrelinha" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compacto</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">ConfortÃ¡vel</button>
+<div aria-label="Entrelinha" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compacto</button>
+<button data-ARCKHê-set-leading="1.7" type="button">ConfortêÂ¡vel</button>
 </div>
-<div aria-label="Cor de acento" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Esmeralda" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Azul" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Roxo" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Ã‚mbar" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Rosa" type="button"></button>
+<div aria-label="Cor de acento" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Esmeralda" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Azul" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Roxo" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="êâmbar" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Rosa" type="button"></button>
 </div>
 </div>
 </div>
@@ -196,20 +196,20 @@
 <!-- BREADCRUMB -->
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-emerald-400" href="../../index.html">InÃ­cio</a><span>/</span>
+<a class="hover:text-emerald-400" href="../../index.html">InêÂ­cio</a><span>/</span>
 <a class="hover:text-emerald-400" href="index.html">Dia 1</a><span>/</span>
-<span class="text-emerald-400">MÃ³dulo 1.3</span>
+<span class="text-emerald-400">MêÂ³dulo 1.3</span>
 </div>
 </nav>
 <!-- HEADER -->
 <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 1.3</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ“ Infraestrutura: Pastas, Terminal e Versionamento</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Perder o medo da infraestrutura. Aqui vocÃª nÃ£o vira programador â€” vocÃª entende o mapa: como organizar pastas, conversar com o terminal sem susto e versionar seu trabalho com Git e GitHub para nunca mais perder nada.</p>
-<!-- SVG: pastas organizadas â†’ versionar (commit) â†’ GitHub (histÃ³rico/nuvem) -->
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MêâDULO 1.3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸âÂ Infraestrutura: Pastas, Terminal e Versionamento</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Perder o medo da infraestrutura. Aqui vocêÂª nêÂ£o vira programador ê¢â¬â vocêÂª entende o mapa: como organizar pastas, conversar com o terminal sem susto e versionar seu trabalho com Git e GitHub para nunca mais perder nada.</p>
+<!-- SVG: pastas organizadas ê¢â â versionar (commit) ê¢â â GitHub (histêÂ³rico/nuvem) -->
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
-<svg aria-label="Fluxo da infraestrutura: pastas organizadas no computador viram versÃµes marcadas pelo Git, que sobem para o GitHub na nuvem, formando histÃ³rico e abrindo colaboraÃ§Ã£o" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
+<svg aria-label="Fluxo da infraestrutura: pastas organizadas no computador viram versêÂµes marcadas pelo Git, que sobem para o GitHub na nuvem, formando histêÂ³rico e abrindo colaboraêÂ§êÂ£o" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
 <lineargradient id="m13-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
 <filter height="180%" id="m13-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -219,18 +219,18 @@
 </defs>
 <rect fill="url(#m13-grid)" height="250" width="1000" x="0" y="0"></rect>
 <!-- 1) Pastas organizadas (computador local) -->
-<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="60" y="40">1 Â· No seu computador</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="60" y="40">1 êÂ· No seu computador</text>
 <rect fill="#0e2018" height="120" rx="14" stroke="#34d399" stroke-width="2" width="190" x="60" y="80"></rect>
 <g font-family="Inter,sans-serif" font-size="12" font-weight="600">
-<rect fill="#0e1b26" height="26" rx="7" stroke="#38bdf8" stroke-width="1.6" width="150" x="80" y="98"></rect><text fill="#bfe6ff" x="98" y="115">ðŸ“ projeto/</text>
-<rect fill="#0e1b26" height="24" opacity="0.85" rx="7" stroke="#38bdf8" stroke-width="1.4" width="138" x="92" y="130"></rect><text fill="#bfe6ff" font-size="11" x="108" y="146">ðŸ“ entrada/</text>
-<rect fill="#0e1b26" height="24" opacity="0.85" rx="7" stroke="#38bdf8" stroke-width="1.4" width="138" x="92" y="160"></rect><text fill="#bfe6ff" font-size="11" x="108" y="176">ðŸ“„ anotacoes</text>
+<rect fill="#0e1b26" height="26" rx="7" stroke="#38bdf8" stroke-width="1.6" width="150" x="80" y="98"></rect><text fill="#bfe6ff" x="98" y="115">ê°Å¸âÂ projeto/</text>
+<rect fill="#0e1b26" height="24" opacity="0.85" rx="7" stroke="#38bdf8" stroke-width="1.4" width="138" x="92" y="130"></rect><text fill="#bfe6ff" font-size="11" x="108" y="146">ê°Å¸âÂ entrada/</text>
+<rect fill="#0e1b26" height="24" opacity="0.85" rx="7" stroke="#38bdf8" stroke-width="1.4" width="138" x="92" y="160"></rect><text fill="#bfe6ff" font-size="11" x="108" y="176">ê°Å¸ââ anotacoes</text>
 </g>
 <!-- seta pastas -> commit -->
 <path d="M254,140 L356,140" fill="none" marker-end="url(#m13-ah)" opacity="0.6" stroke="#34d399" stroke-width="1.8"></path>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="305" y="128">salvar versÃ£o</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="305" y="128">salvar versêÂ£o</text>
 <!-- 2) Versionar (commit) -->
-<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="360" y="40">2 Â· Git marca a versÃ£o</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="360" y="40">2 êÂ· Git marca a versêÂ£o</text>
 <g font-family="Inter,sans-serif" font-size="11.5" font-weight="600">
 <g class="wf-a"><circle cx="392" cy="140" fill="#0e1b26" r="13" stroke="#38bdf8" stroke-width="1.8"></circle><text fill="#bfe6ff" text-anchor="middle" x="392" y="144">v1</text></g>
 <g class="wf-a"><circle cx="450" cy="140" fill="#0e1b26" r="13" stroke="#38bdf8" stroke-width="1.8"></circle><text fill="#bfe6ff" text-anchor="middle" x="450" y="144">v2</text></g>
@@ -243,381 +243,381 @@
 <path d="M524,140 C600,140 640,120 700,120" fill="none" marker-end="url(#m13-ah)" opacity="0.6" stroke="#34d399" stroke-width="1.8"></path>
 <text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="612" y="100">enviar (push)</text>
 <!-- 3) GitHub na nuvem -->
-<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="708" y="40">3 Â· GitHub (na nuvem)</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" x="708" y="40">3 êÂ· GitHub (na nuvem)</text>
 <g filter="url(#m13-glow)"><rect fill="#0e2018" height="64" rx="14" stroke="url(#m13-grad)" stroke-width="2" width="232" x="708" y="90"></rect></g>
-<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="824" y="118">â˜ï¸ RepositÃ³rio</text>
-<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="824" y="138">histÃ³rico Â· backup Â· colaboraÃ§Ã£o</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="824" y="118">ê¢ËÂê¯Â¸Â RepositêÂ³rio</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="824" y="138">histêÂ³rico êÂ· backup êÂ· colaboraêÂ§êÂ£o</text>
 <!-- pessoas colaborando -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.6">
 <path d="M780,154 C780,190 760,196 740,200" marker-end="url(#m13-ahc)"></path>
 <path d="M868,154 C868,190 888,196 908,200" marker-end="url(#m13-ahc)"></path>
 </g>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="734" y="216">vocÃª</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="734" y="216">vocêÂª</text>
 <text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="914" y="216">equipe</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">TêÂ³picos</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~50</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">BÃ¡sico</div><div class="text-xs text-neutral-400">NÃ­vel</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">PrÃ¡tico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">BêÂ¡sico</div><div class="text-xs text-neutral-400">NêÂ­vel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">PrêÂ¡tico</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do mÃ³dulo 1.3" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:1-3" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mÃ³dulo</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 de 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Progresso do mêÂ³dulo 1.3" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:1-3" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Progresso do mêÂ³dulo</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 de 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 â€” Pastas e arquivos -->
-<section class="mb-16" data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-1" data-ARCKHÉ-track="1" id="topico-1">
+<!-- TêâPICO 1 ê¢â¬â Pastas e arquivos -->
+<section class="mb-16" data-ARCKHê-module="1-3" data-ARCKHê-topic="modulo-1-3#topico-1" data-ARCKHê-track="1" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸ“ Pastas e arquivos: a casa do projeto</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ Pastas e arquivos: a casa do projeto</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-3-t1-p1">Toda soluÃ§Ã£o de IA mora em algum lugar: um conjunto de <strong class="text-emerald-400">pastas e arquivos</strong> dentro de um computador. Parece banal, mas Ã© a base fÃ­sica de tudo. Um projeto bem organizado Ã© como uma casa arrumada â€” vocÃª acha o que precisa em segundos. Um projeto bagunÃ§ado Ã© uma gaveta de quinquilharias: tudo estÃ¡ lÃ¡, mas ninguÃ©m encontra nada. VocÃª nÃ£o precisa de talento para isso, sÃ³ de uma convenÃ§Ã£o simples e o hÃ¡bito de respeitÃ¡-la.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-3-t1-p1">Toda soluêÂ§êÂ£o de IA mora em algum lugar: um conjunto de <strong class="text-emerald-400">pastas e arquivos</strong> dentro de um computador. Parece banal, mas êÂ© a base fêÂ­sica de tudo. Um projeto bem organizado êÂ© como uma casa arrumada ê¢â¬â vocêÂª acha o que precisa em segundos. Um projeto bagunêÂ§ado êÂ© uma gaveta de quinquilharias: tudo estêÂ¡ lêÂ¡, mas ninguêÂ©m encontra nada. VocêÂª nêÂ£o precisa de talento para isso, sêÂ³ de uma convenêÂ§êÂ£o simples e o hêÂ¡bito de respeitêÂ¡-la.</p>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">ðŸ </span> A regra de ouro da organizaÃ§Ã£o</h3>
-<p class="text-neutral-300">Uma pasta por projeto. Dentro dela, pastas por assunto (entrada, saÃ­da, anotaÃ§Ãµes). Nomes em minÃºsculas, sem espaÃ§os nem acentos, separando palavras com hÃ­fen. Essa convenÃ§Ã£o sozinha resolve 90% da bagunÃ§a â€” e funciona igual no seu computador, no servidor e no GitHub.</p>
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸ÂÂ </span> A regra de ouro da organizaêÂ§êÂ£o</h3>
+<p class="text-neutral-300">Uma pasta por projeto. Dentro dela, pastas por assunto (entrada, saêÂ­da, anotaêÂ§êÂµes). Nomes em minêÂºsculas, sem espaêÂ§os nem acentos, separando palavras com hêÂ­fen. Essa convenêÂ§êÂ£o sozinha resolve 90% da bagunêÂ§a ê¢â¬â e funciona igual no seu computador, no servidor e no GitHub.</p>
 </div>
 <!-- MONO/CODE BOX (ilustrativo): estrutura de pastas -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Uma estrutura simples e clara</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div><span class="text-emerald-400">ðŸ“ meu-jarvis/</span> <span class="text-neutral-500"># a casa do projeto</span></div>
-<div>Â Â â”œâ”€â”€ <span class="text-emerald-400">entrada/</span> <span class="text-neutral-500"># o que chega (mensagens, arquivos)</span></div>
-<div>Â Â â”œâ”€â”€ <span class="text-emerald-400">saida/</span> <span class="text-neutral-500"># o que o sistema responde</span></div>
-<div>Â Â â”œâ”€â”€ <span class="text-emerald-400">anotacoes/</span> <span class="text-neutral-500"># a memÃ³ria do projeto</span></div>
-<div>Â Â â””â”€â”€ <span class="text-emerald-400">leiame.txt</span> <span class="text-neutral-500"># o que Ã© isso, em 5 linhas</span></div>
+<div><span class="text-emerald-400">ê°Å¸âÂ meu-jarvis/</span> <span class="text-neutral-500"># a casa do projeto</span></div>
+<div>êÂ êÂ ê¢âÅê¢ââ¬ê¢ââ¬ <span class="text-emerald-400">entrada/</span> <span class="text-neutral-500"># o que chega (mensagens, arquivos)</span></div>
+<div>êÂ êÂ ê¢âÅê¢ââ¬ê¢ââ¬ <span class="text-emerald-400">saida/</span> <span class="text-neutral-500"># o que o sistema responde</span></div>
+<div>êÂ êÂ ê¢âÅê¢ââ¬ê¢ââ¬ <span class="text-emerald-400">anotacoes/</span> <span class="text-neutral-500"># a memêÂ³ria do projeto</span></div>
+<div>êÂ êÂ ê¢ââê¢ââ¬ê¢ââ¬ <span class="text-emerald-400">leiame.txt</span> <span class="text-neutral-500"># o que êÂ© isso, em 5 linhas</span></div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Exemplo ilustrativo de estrutura de pastas â€” adapte os nomes ao seu projeto. O importante Ã© o padrÃ£o, nÃ£o estes nomes exatos.</p>
+<p class="text-xs text-neutral-500 mt-3">Exemplo ilustrativo de estrutura de pastas ê¢â¬â adapte os nomes ao seu projeto. O importante êÂ© o padrêÂ£o, nêÂ£o estes nomes exatos.</p>
 </div>
-<!-- GRID âœ“/âœ— (1 de 2) -->
+<!-- GRID ê¢Åâ/ê¢Åâ (1 de 2) -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">âœ“ Nomes que ajudam</h4>
+<h4 class="font-bold text-emerald-400 mb-4">ê¢Åâ Nomes que ajudam</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span><code class="font-mono">relatorio-vendas</code> â€” minÃºsculas, hÃ­fen</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span><code class="font-mono">2026-06-orcamento</code> â€” data na frente ordena sozinho</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Uma pasta = um propÃ³sito claro</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span><code class="font-mono">relatorio-vendas</code> ê¢â¬â minêÂºsculas, hêÂ­fen</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span><code class="font-mono">2026-06-orcamento</code> ê¢â¬â data na frente ordena sozinho</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Uma pasta = um propêÂ³sito claro</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Nomes que atrapalham</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Nomes que atrapalham</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span><code class="font-mono">RelatÃ³rio Final (2).docx</code> â€” espaÃ§os e acento</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span><code class="font-mono">novo</code>, <code class="font-mono">teste</code>, <code class="font-mono">aaa</code> â€” nÃ£o dizem nada</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Tudo solto na Ãrea de Trabalho</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span><code class="font-mono">RelatêÂ³rio Final (2).docx</code> ê¢â¬â espaêÂ§os e acento</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span><code class="font-mono">novo</code>, <code class="font-mono">teste</code>, <code class="font-mono">aaa</code> ê¢â¬â nêÂ£o dizem nada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Tudo solto na êÂrea de Trabalho</span></li>
 </ul>
 </div>
 </div>
 <!-- GRID Conceitos-chave -->
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Estrutura</div><div class="text-xs text-neutral-400">uma pasta por projeto</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">ConvenÃ§Ã£o</div><div class="text-xs text-neutral-400">minÃºsculas e hÃ­fen</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">PropÃ³sito</div><div class="text-xs text-neutral-400">cada pasta, uma funÃ§Ã£o</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">HÃ¡bito</div><div class="text-xs text-neutral-400">arrumar Ã© decidir uma vez</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">ConvenêÂ§êÂ£o</div><div class="text-xs text-neutral-400">minêÂºsculas e hêÂ­fen</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">PropêÂ³sito</div><div class="text-xs text-neutral-400">cada pasta, uma funêÂ§êÂ£o</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">HêÂ¡bito</div><div class="text-xs text-neutral-400">arrumar êÂ© decidir uma vez</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 â€” O terminal -->
-<section class="mb-16" data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-2" data-ARCKHÉ-track="1" id="topico-2">
+<!-- TêâPICO 2 ê¢â¬â O terminal -->
+<section class="mb-16" data-ARCKHê-module="1-3" data-ARCKHê-topic="modulo-1-3#topico-2" data-ARCKHê-track="1" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">âŒ¨ï¸ O terminal: perder o medo</h2>
+<h2 class="text-2xl font-bold">ê¢ÅÂ¨ê¯Â¸Â O terminal: perder o medo</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-3-t2-p1">O terminal Ã© aquela telinha preta de filme de hacker. Assusta porque parece exigir decorar mil comandos â€” mas a verdade Ã© mais simples: o terminal Ã© sÃ³ uma <strong class="text-emerald-400">conversa com o computador por texto</strong>, em vez de clicar com o mouse. VocÃª digita uma ordem, aperta Enter, ele responde. O objetivo aqui nÃ£o Ã© virar especialista em linha de comando: Ã© perder o medo, entender que Ã© uma ferramenta amistosa e saber pedir as poucas coisas que importam.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-3-t2-p1">O terminal êÂ© aquela telinha preta de filme de hacker. Assusta porque parece exigir decorar mil comandos ê¢â¬â mas a verdade êÂ© mais simples: o terminal êÂ© sêÂ³ uma <strong class="text-emerald-400">conversa com o computador por texto</strong>, em vez de clicar com o mouse. VocêÂª digita uma ordem, aperta Enter, ele responde. O objetivo aqui nêÂ£o êÂ© virar especialista em linha de comando: êÂ© perder o medo, entender que êÂ© uma ferramenta amistosa e saber pedir as poucas coisas que importam.</p>
 <!-- MOCK DE TERMINAL (HTML, ilustrativo) -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
 <div class="flex items-center gap-2 px-4 py-2 bg-dark-900/70 border-b border-dark-700">
 <span class="w-3 h-3 rounded-full bg-red-400/70"></span>
 <span class="w-3 h-3 rounded-full bg-yellow-400/70"></span>
 <span class="w-3 h-3 rounded-full bg-emerald-400/70"></span>
-<span class="ml-3 text-xs text-neutral-500 font-mono">terminal â€” meu-jarvis</span>
+<span class="ml-3 text-xs text-neutral-500 font-mono">terminal ê¢â¬â meu-jarvis</span>
 </div>
 <div class="font-mono text-sm p-4 space-y-1.5 bg-dark-900/40">
-<div><span class="text-emerald-400">vocÃª â–¸</span> <span class="text-neutral-200">cd meu-jarvis</span> <span class="text-neutral-500"># entrar na pasta do projeto</span></div>
-<div><span class="text-emerald-400">vocÃª â–¸</span> <span class="text-neutral-200">ls</span> <span class="text-neutral-500"># listar o que tem aqui dentro</span></div>
+<div><span class="text-emerald-400">vocêÂª ê¢âÂ¸</span> <span class="text-neutral-200">cd meu-jarvis</span> <span class="text-neutral-500"># entrar na pasta do projeto</span></div>
+<div><span class="text-emerald-400">vocêÂª ê¢âÂ¸</span> <span class="text-neutral-200">ls</span> <span class="text-neutral-500"># listar o que tem aqui dentro</span></div>
 <div class="text-neutral-400 pl-4">entrada/   saida/   anotacoes/   leiame.txt</div>
-<div><span class="text-emerald-400">vocÃª â–¸</span> <span class="text-neutral-200">pwd</span> <span class="text-neutral-500"># "onde eu estou?"</span></div>
+<div><span class="text-emerald-400">vocêÂª ê¢âÂ¸</span> <span class="text-neutral-200">pwd</span> <span class="text-neutral-500"># "onde eu estou?"</span></div>
 <div class="text-neutral-400 pl-4">/home/voce/meu-jarvis</div>
 </div>
 </div>
-<p class="text-xs text-neutral-500 -mt-3 mb-6">RecriaÃ§Ã£o ilustrativa de um terminal, nÃ£o uma captura de tela real. Os comandos servem sÃ³ para mostrar o ritmo "digito â†’ Enter â†’ resposta".</p>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">RecriaêÂ§êÂ£o ilustrativa de um terminal, nêÂ£o uma captura de tela real. Os comandos servem sêÂ³ para mostrar o ritmo "digito ê¢â â Enter ê¢â â resposta".</p>
 <!-- TIP BOX (1 de 2) -->
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica: trÃªs comandos bastam para comeÃ§ar</h3>
-<p class="text-neutral-300 text-sm">VocÃª nÃ£o precisa decorar nada. Para se virar no comeÃ§o, trÃªs ordens resolvem quase tudo: <code class="font-mono text-neutral-100">cd</code> (entrar numa pasta), <code class="font-mono text-neutral-100">ls</code> (ver o que tem) e <code class="font-mono text-neutral-100">pwd</code> (saber onde vocÃª estÃ¡). Com isso vocÃª jÃ¡ navega. O resto vocÃª pede para a IA escrever â€” e aÃ­ entender o que ela escreveu fica fÃ¡cil.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica: trêÂªs comandos bastam para comeêÂ§ar</h3>
+<p class="text-neutral-300 text-sm">VocêÂª nêÂ£o precisa decorar nada. Para se virar no comeêÂ§o, trêÂªs ordens resolvem quase tudo: <code class="font-mono text-neutral-100">cd</code> (entrar numa pasta), <code class="font-mono text-neutral-100">ls</code> (ver o que tem) e <code class="font-mono text-neutral-100">pwd</code> (saber onde vocêÂª estêÂ¡). Com isso vocêÂª jêÂ¡ navega. O resto vocêÂª pede para a IA escrever ê¢â¬â e aêÂ­ entender o que ela escreveu fica fêÂ¡cil.</p>
 </div>
 <!-- TABELA de comandos essenciais -->
 <div class="overflow-x-auto mb-6">
 <table class="w-full text-sm border border-dark-600 rounded-xl overflow-hidden">
 <thead class="bg-dark-800 text-neutral-400">
-<tr><th class="text-left font-semibold px-4 py-3 border-b border-dark-600">VocÃª digita</th><th class="text-left font-semibold px-4 py-3 border-b border-dark-600">O que acontece</th></tr>
+<tr><th class="text-left font-semibold px-4 py-3 border-b border-dark-600">VocêÂª digita</th><th class="text-left font-semibold px-4 py-3 border-b border-dark-600">O que acontece</th></tr>
 </thead>
 <tbody class="text-neutral-300">
 <tr class="bg-dark-800/40"><td class="px-4 py-3 border-b border-dark-700 font-mono text-emerald-400">cd pasta</td><td class="px-4 py-3 border-b border-dark-700">Entra numa pasta (como dar dois cliques nela)</td></tr>
-<tr><td class="px-4 py-3 border-b border-dark-700 font-mono text-emerald-400">cd ..</td><td class="px-4 py-3 border-b border-dark-700">Volta uma pasta para trÃ¡s</td></tr>
-<tr class="bg-dark-800/40"><td class="px-4 py-3 border-b border-dark-700 font-mono text-emerald-400">ls</td><td class="px-4 py-3 border-b border-dark-700">Lista os arquivos e pastas onde vocÃª estÃ¡</td></tr>
-<tr><td class="px-4 py-3 font-mono text-emerald-400">pwd</td><td class="px-4 py-3">Mostra o caminho completo de onde vocÃª estÃ¡</td></tr>
+<tr><td class="px-4 py-3 border-b border-dark-700 font-mono text-emerald-400">cd ..</td><td class="px-4 py-3 border-b border-dark-700">Volta uma pasta para trêÂ¡s</td></tr>
+<tr class="bg-dark-800/40"><td class="px-4 py-3 border-b border-dark-700 font-mono text-emerald-400">ls</td><td class="px-4 py-3 border-b border-dark-700">Lista os arquivos e pastas onde vocêÂª estêÂ¡</td></tr>
+<tr><td class="px-4 py-3 font-mono text-emerald-400">pwd</td><td class="px-4 py-3">Mostra o caminho completo de onde vocêÂª estêÂ¡</td></tr>
 </tbody>
 </table>
 </div>
-<p class="text-xs text-neutral-500 -mt-3 mb-6">Tabela ilustrativa dos comandos mais usados no dia a dia. Em Windows alguns nomes mudam, mas a ideia Ã© idÃªntica.</p>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Tabela ilustrativa dos comandos mais usados no dia a dia. Em Windows alguns nomes mudam, mas a ideia êÂ© idêÂªntica.</p>
 <!-- GRID Conceitos-chave -->
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Ã‰ uma conversa</div><div class="text-xs text-neutral-400">texto, nÃ£o clique</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Familiaridade</div><div class="text-xs text-neutral-400">nÃ£o domÃ­nio total</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">TrÃªs comandos</div><div class="text-xs text-neutral-400">cd Â· ls Â· pwd</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">êâ° uma conversa</div><div class="text-xs text-neutral-400">texto, nêÂ£o clique</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Familiaridade</div><div class="text-xs text-neutral-400">nêÂ£o domêÂ­nio total</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">TrêÂªs comandos</div><div class="text-xs text-neutral-400">cd êÂ· ls êÂ· pwd</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">A porta</div><div class="text-xs text-neutral-400">servidores e deploy</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 â€” Git e GitHub -->
-<section class="mb-16" data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-3" data-ARCKHÉ-track="1" id="topico-3">
+<!-- TêâPICO 3 ê¢â¬â Git e GitHub -->
+<section class="mb-16" data-ARCKHê-module="1-3" data-ARCKHê-topic="modulo-1-3#topico-3" data-ARCKHê-track="1" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸŒ¿ Git e GitHub: versionar Ã© guardar versÃµes</h2>
+<h2 class="text-2xl font-bold">ê°Å¸ÅÂ¿ Git e GitHub: versionar êÂ© guardar versêÂµes</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-3-t3-p1">Imagine um videogame onde vocÃª pode salvar o jogo a qualquer momento e voltar para qualquer save quando errar. Ã‰ exatamente isso que o <strong class="text-emerald-400">Git</strong> faz com o seu projeto: cada vez que vocÃª "salva", ele guarda uma foto completa de tudo â€” isso se chama <em class="text-neutral-400">commit</em>. O <strong class="text-emerald-400">GitHub</strong> Ã© o lugar na internet onde essas fotos ficam guardadas, longe do seu computador. Git Ã© a ferramenta que tira a foto; GitHub Ã© o Ã¡lbum na nuvem. Versionar nÃ£o Ã© coisa de programador avanÃ§ado â€” Ã© sÃ³ o hÃ¡bito de salvar com histÃ³ria.</p>
-<!-- TIMELINE: do trabalho ao repositÃ³rio (vertical) -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-3-t3-p1">Imagine um videogame onde vocêÂª pode salvar o jogo a qualquer momento e voltar para qualquer save quando errar. êâ° exatamente isso que o <strong class="text-emerald-400">Git</strong> faz com o seu projeto: cada vez que vocêÂª "salva", ele guarda uma foto completa de tudo ê¢â¬â isso se chama <em class="text-neutral-400">commit</em>. O <strong class="text-emerald-400">GitHub</strong> êÂ© o lugar na internet onde essas fotos ficam guardadas, longe do seu computador. Git êÂ© a ferramenta que tira a foto; GitHub êÂ© o êÂ¡lbum na nuvem. Versionar nêÂ£o êÂ© coisa de programador avanêÂ§ado ê¢â¬â êÂ© sêÂ³ o hêÂ¡bito de salvar com histêÂ³ria.</p>
+<!-- TIMELINE: do trabalho ao repositêÂ³rio (vertical) -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">O caminho de um trabalho atÃ© a nuvem</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-5">O caminho de um trabalho atêÂ© a nuvem</h3>
 <div class="space-y-4">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">VocÃª trabalha</h4><p class="text-neutral-300 text-sm">Edita arquivos na pasta do projeto, como sempre fez.</p></div>
+<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">VocêÂª trabalha</h4><p class="text-neutral-300 text-sm">Edita arquivos na pasta do projeto, como sempre fez.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">Faz um <span class="font-mono text-emerald-400">commit</span></h4><p class="text-neutral-300 text-sm">Tira uma "foto" do estado atual e escreve uma frase do que mudou: <em>"adicionei a pasta de anotaÃ§Ãµes"</em>.</p></div>
+<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">Faz um <span class="font-mono text-emerald-400">commit</span></h4><p class="text-neutral-300 text-sm">Tira uma "foto" do estado atual e escreve uma frase do que mudou: <em>"adicionei a pasta de anotaêÂ§êÂµes"</em>.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">Faz um <span class="font-mono text-emerald-400">push</span></h4><p class="text-neutral-300 text-sm">Envia as fotos para o GitHub. Agora seu trabalho estÃ¡ seguro na nuvem, com todo o histÃ³rico.</p></div>
+<div class="flex-1 bg-dark-900/50 rounded-xl p-5 border border-dark-700"><h4 class="font-semibold text-neutral-100 mb-1">Faz um <span class="font-mono text-emerald-400">push</span></h4><p class="text-neutral-300 text-sm">Envia as fotos para o GitHub. Agora seu trabalho estêÂ¡ seguro na nuvem, com todo o histêÂ³rico.</p></div>
 </div>
 </div>
 </div>
 <!-- MONO/CODE BOX: o ciclo em comandos (ilustrativo) -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">O ciclo, em trÃªs linhas</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">O ciclo, em trêÂªs linhas</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-emerald-400">git add .</span> <span class="text-neutral-500"># "quero salvar o que mudei"</span></div>
 <div><span class="text-emerald-400">git commit -m "o que mudou"</span> <span class="text-neutral-500"># tira a foto + descreve</span></div>
 <div><span class="text-emerald-400">git push</span> <span class="text-neutral-500"># envia para o GitHub</span></div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">Comandos ilustrativos â€” vocÃª vai colÃ¡-los uma vez e repetir sempre. NÃ£o precisa decorar: precisa entender que cada linha Ã© um passo do "salvar com histÃ³ria".</p>
+<p class="text-xs text-neutral-500 mt-3">Comandos ilustrativos ê¢â¬â vocêÂª vai colêÂ¡-los uma vez e repetir sempre. NêÂ£o precisa decorar: precisa entender que cada linha êÂ© um passo do "salvar com histêÂ³ria".</p>
 </div>
 <!-- GRID Conceitos-chave -->
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">RepositÃ³rio</div><div class="text-xs text-neutral-400">o projeto versionado</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">RepositêÂ³rio</div><div class="text-xs text-neutral-400">o projeto versionado</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Commit</div><div class="text-xs text-neutral-400">uma foto com legenda</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Push</div><div class="text-xs text-neutral-400">enviar para a nuvem</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Git Ã— GitHub</div><div class="text-xs text-neutral-400">cÃ¢mera Ã— Ã¡lbum</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Git êâ GitHub</div><div class="text-xs text-neutral-400">cêÂ¢mera êâ êÂ¡lbum</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 â€” HistÃ³rico e colaboraÃ§Ã£o -->
-<section class="mb-16" data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-4" data-ARCKHÉ-track="1" id="topico-4">
+<!-- TêâPICO 4 ê¢â¬â HistêÂ³rico e colaboraêÂ§êÂ£o -->
+<section class="mb-16" data-ARCKHê-module="1-3" data-ARCKHê-topic="modulo-1-3#topico-4" data-ARCKHê-track="1" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ“œ HistÃ³rico e colaboraÃ§Ã£o: a memÃ³ria do projeto</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÅ HistêÂ³rico e colaboraêÂ§êÂ£o: a memêÂ³ria do projeto</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-3-t4-p1">Versionar nÃ£o serve sÃ³ para vocÃª nÃ£o perder o trabalho. Quando o histÃ³rico estÃ¡ no GitHub, ele vira a <strong class="text-emerald-400">memÃ³ria do projeto</strong>: dÃ¡ para ver quem mudou o quÃª, quando e por quÃª. E isso destrava algo essencial â€” vÃ¡rias pessoas (ou vÃ¡rias IAs) trabalhando no mesmo projeto <strong class="text-emerald-400">sem se atropelar</strong>. SoluÃ§Ãµes reais quase nunca sÃ£o feitas sozinhas. O histÃ³rico Ã© o que permite voltar atrÃ¡s com seguranÃ§a e o que permite confiar quando outra pessoa mexe.</p>
-<!-- GRID âœ“/âœ— (2 de 2): com histÃ³rico Ã— sem histÃ³rico -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-3-t4-p1">Versionar nêÂ£o serve sêÂ³ para vocêÂª nêÂ£o perder o trabalho. Quando o histêÂ³rico estêÂ¡ no GitHub, ele vira a <strong class="text-emerald-400">memêÂ³ria do projeto</strong>: dêÂ¡ para ver quem mudou o quêÂª, quando e por quêÂª. E isso destrava algo essencial ê¢â¬â vêÂ¡rias pessoas (ou vêÂ¡rias IAs) trabalhando no mesmo projeto <strong class="text-emerald-400">sem se atropelar</strong>. SoluêÂ§êÂµes reais quase nunca sêÂ£o feitas sozinhas. O histêÂ³rico êÂ© o que permite voltar atrêÂ¡s com seguranêÂ§a e o que permite confiar quando outra pessoa mexe.</p>
+<!-- GRID ê¢Åâ/ê¢Åâ (2 de 2): com histêÂ³rico êâ sem histêÂ³rico -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">âœ“ Com histÃ³rico (GitHub)</h4>
+<h4 class="font-bold text-emerald-400 mb-4">ê¢Åâ Com histêÂ³rico (GitHub)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>"Quebrou? Volto para a versÃ£o de ontem em 1 minuto."</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>DÃ¡ para ver quem mudou cada linha e por quÃª.</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>Duas pessoas mexem no mesmo projeto sem sobrescrever uma Ã  outra.</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">âœ“</span><span>O projeto tem memÃ³ria â€” nada se perde no "salvar por cima".</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>"Quebrou? Volto para a versêÂ£o de ontem em 1 minuto."</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>DêÂ¡ para ver quem mudou cada linha e por quêÂª.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>Duas pessoas mexem no mesmo projeto sem sobrescrever uma êÂ  outra.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">ê¢Åâ</span><span>O projeto tem memêÂ³ria ê¢â¬â nada se perde no "salvar por cima".</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Sem histÃ³rico (arquivos soltos)</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Sem histêÂ³rico (arquivos soltos)</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span><code class="font-mono">projeto_final_v3_AGORA_VAI.zip</code></span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>NinguÃ©m sabe qual Ã© a versÃ£o certa.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Um salva por cima do outro e o trabalho some.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Funcionava semana passada" â€” e nÃ£o dÃ¡ para voltar.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span><code class="font-mono">projeto_final_v3_AGORA_VAI.zip</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>NinguêÂ©m sabe qual êÂ© a versêÂ£o certa.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Um salva por cima do outro e o trabalho some.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"Funcionava semana passada" ê¢â¬â e nêÂ£o dêÂ¡ para voltar.</span></li>
 </ul>
 </div>
 </div>
-<!-- MOCK de histÃ³rico de commits (ilustrativo) -->
+<!-- MOCK de histêÂ³rico de commits (ilustrativo) -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Como o histÃ³rico aparece</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Como o histêÂ³rico aparece</h3>
 <div class="font-mono text-sm space-y-2 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
-<div class="flex items-center gap-3"><span class="text-emerald-400">â—</span><span class="text-neutral-200">criei a estrutura de pastas</span><span class="text-neutral-500 ml-auto text-xs">Maria Â· hÃ¡ 3 dias</span></div>
-<div class="flex items-center gap-3"><span class="text-emerald-400">â—</span><span class="text-neutral-200">adicionei a alma do assistente</span><span class="text-neutral-500 ml-auto text-xs">JoÃ£o Â· hÃ¡ 2 dias</span></div>
-<div class="flex items-center gap-3"><span class="text-emerald-400">â—</span><span class="text-neutral-200">corrigi o texto do leiame</span><span class="text-neutral-500 ml-auto text-xs">VocÃª Â· hoje</span></div>
+<div class="flex items-center gap-3"><span class="text-emerald-400">ê¢âÂ</span><span class="text-neutral-200">criei a estrutura de pastas</span><span class="text-neutral-500 ml-auto text-xs">Maria êÂ· hêÂ¡ 3 dias</span></div>
+<div class="flex items-center gap-3"><span class="text-emerald-400">ê¢âÂ</span><span class="text-neutral-200">adicionei a alma do assistente</span><span class="text-neutral-500 ml-auto text-xs">JoêÂ£o êÂ· hêÂ¡ 2 dias</span></div>
+<div class="flex items-center gap-3"><span class="text-emerald-400">ê¢âÂ</span><span class="text-neutral-200">corrigi o texto do leiame</span><span class="text-neutral-500 ml-auto text-xs">VocêÂª êÂ· hoje</span></div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">RecriaÃ§Ã£o ilustrativa de um histÃ³rico no GitHub. Cada ponto Ã© um commit â€” uma foto com legenda, autor e data.</p>
+<p class="text-xs text-neutral-500 mt-3">RecriaêÂ§êÂ£o ilustrativa de um histêÂ³rico no GitHub. Cada ponto êÂ© um commit ê¢â¬â uma foto com legenda, autor e data.</p>
 </div>
 <!-- GRID Conceitos-chave -->
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">HistÃ³rico</div><div class="text-xs text-neutral-400">quem, o quÃª, quando</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">ColaboraÃ§Ã£o</div><div class="text-xs text-neutral-400">sem se atropelar</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Rastreabilidade</div><div class="text-xs text-neutral-400">voltar com seguranÃ§a</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">HistêÂ³rico</div><div class="text-xs text-neutral-400">quem, o quêÂª, quando</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">ColaboraêÂ§êÂ£o</div><div class="text-xs text-neutral-400">sem se atropelar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Rastreabilidade</div><div class="text-xs text-neutral-400">voltar com seguranêÂ§a</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Backup vivo</div><div class="text-xs text-neutral-400">nada se perde</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 â€” Entender o mapa -->
-<section class="mb-16" data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-5" data-ARCKHÉ-track="1" id="topico-5">
+<!-- TêâPICO 5 ê¢â¬â Entender o mapa -->
+<section class="mb-16" data-ARCKHê-module="1-3" data-ARCKHê-topic="modulo-1-3#topico-5" data-ARCKHê-track="1" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸ—ºï¸ Entender o mapa, nÃ£o dominar tudo</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂºê¯Â¸Â Entender o mapa, nêÂ£o dominar tudo</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-3-t5-p1">Aqui estÃ¡ a libertaÃ§Ã£o deste mÃ³dulo: vocÃª <strong class="text-emerald-400">nÃ£o precisa dominar a infraestrutura como um engenheiro sÃªnior</strong>. Precisa entender o mapa. Um motorista de tÃ¡xi nÃ£o construiu as ruas nem sabe a engenharia do asfalto â€” mas conhece a cidade e chega onde precisa. Ã‰ essa a sua meta com pastas, terminal e Git: saber o suficiente para decidir, pedir a coisa certa e nÃ£o depender de ninguÃ©m para atravessar o caminho.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-3-t5-p1">Aqui estêÂ¡ a libertaêÂ§êÂ£o deste mêÂ³dulo: vocêÂª <strong class="text-emerald-400">nêÂ£o precisa dominar a infraestrutura como um engenheiro sêÂªnior</strong>. Precisa entender o mapa. Um motorista de têÂ¡xi nêÂ£o construiu as ruas nem sabe a engenharia do asfalto ê¢â¬â mas conhece a cidade e chega onde precisa. êâ° essa a sua meta com pastas, terminal e Git: saber o suficiente para decidir, pedir a coisa certa e nêÂ£o depender de ninguêÂ©m para atravessar o caminho.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ðŸ§­</span> Mapa Ã— domÃ­nio: a diferenÃ§a que liberta</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">ê°Å¸Â§Â­</span> Mapa êâ domêÂ­nio: a diferenêÂ§a que liberta</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li><strong class="text-neutral-100">Dominar</strong> seria saber cada comando, cada detalhe, cada caso raro â€” anos de estudo, e nÃ£o Ã© o seu trabalho.</li>
-<li><strong class="text-neutral-100">Entender o mapa</strong> Ã© saber o que existe, para que serve e quando usar â€” semanas de familiaridade, e Ã© exatamente o que o arquiteto precisa.</li>
-<li><strong class="text-neutral-100">A IA preenche o resto:</strong> ela escreve o comando difÃ­cil; vocÃª entende o que ela escreveu e decide se estÃ¡ certo.</li>
+<li><strong class="text-neutral-100">Dominar</strong> seria saber cada comando, cada detalhe, cada caso raro ê¢â¬â anos de estudo, e nêÂ£o êÂ© o seu trabalho.</li>
+<li><strong class="text-neutral-100">Entender o mapa</strong> êÂ© saber o que existe, para que serve e quando usar ê¢â¬â semanas de familiaridade, e êÂ© exatamente o que o arquiteto precisa.</li>
+<li><strong class="text-neutral-100">A IA preenche o resto:</strong> ela escreve o comando difêÂ­cil; vocêÂª entende o que ela escreveu e decide se estêÂ¡ certo.</li>
 </ul>
 </div>
 <!-- TIP BOX (2 de 2) -->
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica prÃ¡tica: a pergunta certa para a IA</h3>
-<p class="text-neutral-300 text-sm">Quando travar na infraestrutura, nÃ£o pergunte "como faÃ§o tudo isso?". Pergunte: <em>"me explica em uma frase o que esse comando faz e qual o risco de rodar ele"</em>. VocÃª continua no comando da decisÃ£o â€” a IA vira o seu copiloto tÃ©cnico, nÃ£o o seu chefe.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Dica prêÂ¡tica: a pergunta certa para a IA</h3>
+<p class="text-neutral-300 text-sm">Quando travar na infraestrutura, nêÂ£o pergunte "como faêÂ§o tudo isso?". Pergunte: <em>"me explica em uma frase o que esse comando faz e qual o risco de rodar ele"</em>. VocêÂª continua no comando da decisêÂ£o ê¢â¬â a IA vira o seu copiloto têÂ©cnico, nêÂ£o o seu chefe.</p>
 </div>
 <!-- GRID Conceitos-chave -->
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Mapa</div><div class="text-xs text-neutral-400">saber o que existe</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">DomÃ­nio</div><div class="text-xs text-neutral-400">nÃ£o Ã© o seu papel</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Autonomia</div><div class="text-xs text-neutral-400">nÃ£o depender de ninguÃ©m</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">DomêÂ­nio</div><div class="text-xs text-neutral-400">nêÂ£o êÂ© o seu papel</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Autonomia</div><div class="text-xs text-neutral-400">nêÂ£o depender de ninguêÂ©m</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Decidir</div><div class="text-xs text-neutral-400">o suficiente pra escolher</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 â€” O ambiente do arquiteto -->
-<section class="mb-16" data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-6" data-ARCKHÉ-track="1" id="topico-6">
+<!-- TêâPICO 6 ê¢â¬â O ambiente do arquiteto -->
+<section class="mb-16" data-ARCKHê-module="1-3" data-ARCKHê-topic="modulo-1-3#topico-6" data-ARCKHê-track="1" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ§° O ambiente do arquiteto: montar uma vez</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Â§Â° O ambiente do arquiteto: montar uma vez</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dÃºvida neste tÃ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DÃºvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Marcar dêÂºvida neste têÂ³pico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">DêÂºvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-3-t6-p1">Por fim, o arquiteto monta um <strong class="text-emerald-400">ambiente de trabalho</strong> â€” o conjunto mÃ­nimo de ferramentas onde ele constrÃ³i. NÃ£o Ã© muita coisa: um editor para escrever, o terminal aberto ao lado, uma conta no GitHub e o hÃ¡bito de organizar. VocÃª monta esse ambiente uma Ãºnica vez e ele economiza horas em todos os projetos seguintes. Ã‰ como arrumar a bancada antes de comeÃ§ar a trabalhar: cinco minutos no inÃ­cio poupam o dia inteiro de procurar ferramenta.</p>
-<!-- KIT mÃ­nimo em cards (variaÃ§Ã£o de layout) -->
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m1-3-t6-p1">Por fim, o arquiteto monta um <strong class="text-emerald-400">ambiente de trabalho</strong> ê¢â¬â o conjunto mêÂ­nimo de ferramentas onde ele constrêÂ³i. NêÂ£o êÂ© muita coisa: um editor para escrever, o terminal aberto ao lado, uma conta no GitHub e o hêÂ¡bito de organizar. VocêÂª monta esse ambiente uma êÂºnica vez e ele economiza horas em todos os projetos seguintes. êâ° como arrumar a bancada antes de comeêÂ§ar a trabalhar: cinco minutos no inêÂ­cio poupam o dia inteiro de procurar ferramenta.</p>
+<!-- KIT mêÂ­nimo em cards (variaêÂ§êÂ£o de layout) -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“</div><h4 class="font-semibold text-neutral-100 mb-1">Um editor</h4><p class="text-xs text-neutral-400">Onde vocÃª escreve e lÃª os arquivos do projeto.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">âŒ¨ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">O terminal</h4><p class="text-xs text-neutral-400">Aberto ao lado, para dar as ordens rÃ¡pidas.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">â˜ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">Conta no GitHub</h4><p class="text-xs text-neutral-400">O Ã¡lbum na nuvem que guarda tudo.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ§¹</div><h4 class="font-semibold text-neutral-100 mb-1">HÃ¡bito de organizar</h4><p class="text-xs text-neutral-400">A convenÃ§Ã£o de pastas e nomes, sempre.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÂ</div><h4 class="font-semibold text-neutral-100 mb-1">Um editor</h4><p class="text-xs text-neutral-400">Onde vocêÂª escreve e lêÂª os arquivos do projeto.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê¢ÅÂ¨ê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">O terminal</h4><p class="text-xs text-neutral-400">Aberto ao lado, para dar as ordens rêÂ¡pidas.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê¢ËÂê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">Conta no GitHub</h4><p class="text-xs text-neutral-400">O êÂ¡lbum na nuvem que guarda tudo.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸Â§Â¹</div><h4 class="font-semibold text-neutral-100 mb-1">HêÂ¡bito de organizar</h4><p class="text-xs text-neutral-400">A convenêÂ§êÂ£o de pastas e nomes, sempre.</p></div>
 </div>
-<!-- CHECKLIST de setup (variaÃ§Ã£o) -->
+<!-- CHECKLIST de setup (variaêÂ§êÂ£o) -->
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">âœ…</span> Checklist do ambiente montado</h3>
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">ê¢Åâ¦</span> Checklist do ambiente montado</h3>
 <div class="space-y-3">
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">âœ“</span><span class="text-neutral-300 text-sm">Tenho um editor instalado e sei abrir uma pasta nele.</span></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">âœ“</span><span class="text-neutral-300 text-sm">Consigo abrir o terminal e navegar com <code class="font-mono">cd</code> e <code class="font-mono">ls</code>.</span></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">âœ“</span><span class="text-neutral-300 text-sm">Tenho uma conta no GitHub criada.</span></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">âœ“</span><span class="text-neutral-300 text-sm">Adotei uma convenÃ§Ã£o de pastas e nomes para os meus projetos.</span></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">ê¢Åâ</span><span class="text-neutral-300 text-sm">Tenho um editor instalado e sei abrir uma pasta nele.</span></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">ê¢Åâ</span><span class="text-neutral-300 text-sm">Consigo abrir o terminal e navegar com <code class="font-mono">cd</code> e <code class="font-mono">ls</code>.</span></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">ê¢Åâ</span><span class="text-neutral-300 text-sm">Tenho uma conta no GitHub criada.</span></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-0.5">ê¢Åâ</span><span class="text-neutral-300 text-sm">Adotei uma convenêÂ§êÂ£o de pastas e nomes para os meus projetos.</span></div>
 </div>
 </div>
 <!-- GRID Conceitos-chave -->
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Setup</div><div class="text-xs text-neutral-400">montar uma vez</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Editor</div><div class="text-xs text-neutral-400">ler e escrever</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Kit mÃ­nimo</div><div class="text-xs text-neutral-400">poucas ferramentas</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Kit mêÂ­nimo</div><div class="text-xs text-neutral-400">poucas ferramentas</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Economia</div><div class="text-xs text-neutral-400">horas em cada projeto</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Marcar como lido</span><span class="ARCKHê-label-done">Lido</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-1-3#q1">
-<p class="font-medium mb-4">Auto-checagem (opcional): qual Ã© a meta deste mÃ³dulo em relaÃ§Ã£o Ã  infraestrutura?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Dominar terminal, Git e servidores como um engenheiro sÃªnior.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Perder o medo e entender o mapa â€” o suficiente para decidir e nÃ£o depender de ninguÃ©m.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Evitar o terminal e o Git para sempre, deixando tudo com o time tÃ©cnico.</button>
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-1-3#q1">
+<p class="font-medium mb-4">Auto-checagem (opcional): qual êÂ© a meta deste mêÂ³dulo em relaêÂ§êÂ£o êÂ  infraestrutura?</p>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Dominar terminal, Git e servidores como um engenheiro sêÂªnior.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Perder o medo e entender o mapa ê¢â¬â o suficiente para decidir e nêÂ£o depender de ninguêÂ©m.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Evitar o terminal e o Git para sempre, deixando tudo com o time têÂ©cnico.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ“</span> Resumo do mÃ³dulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸âÂ</span> Resumo do mêÂ³dulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Pastas e arquivos</strong><span class="text-neutral-400"> â€” uma pasta por projeto, nomes em minÃºsculas com hÃ­fen: 90% da bagunÃ§a resolvida.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">O terminal</strong><span class="text-neutral-400"> â€” uma conversa por texto; trÃªs comandos (cd, ls, pwd) jÃ¡ te fazem navegar.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Git e GitHub</strong><span class="text-neutral-400"> â€” salvar com histÃ³ria: commit Ã© a foto, GitHub Ã© o Ã¡lbum na nuvem.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">HistÃ³rico e colaboraÃ§Ã£o</strong><span class="text-neutral-400"> â€” a memÃ³ria do projeto: voltar atrÃ¡s e trabalhar em equipe sem atropelo.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Entender o mapa</strong><span class="text-neutral-400"> â€” saber o suficiente para decidir; a IA escreve o comando difÃ­cil.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-neutral-100">O ambiente do arquiteto</strong><span class="text-neutral-400"> â€” editor, terminal, GitHub e hÃ¡bito: montar uma vez, economizar sempre.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Pastas e arquivos</strong><span class="text-neutral-400"> ê¢â¬â uma pasta por projeto, nomes em minêÂºsculas com hêÂ­fen: 90% da bagunêÂ§a resolvida.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">O terminal</strong><span class="text-neutral-400"> ê¢â¬â uma conversa por texto; trêÂªs comandos (cd, ls, pwd) jêÂ¡ te fazem navegar.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Git e GitHub</strong><span class="text-neutral-400"> ê¢â¬â salvar com histêÂ³ria: commit êÂ© a foto, GitHub êÂ© o êÂ¡lbum na nuvem.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">HistêÂ³rico e colaboraêÂ§êÂ£o</strong><span class="text-neutral-400"> ê¢â¬â a memêÂ³ria do projeto: voltar atrêÂ¡s e trabalhar em equipe sem atropelo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Entender o mapa</strong><span class="text-neutral-400"> ê¢â¬â saber o suficiente para decidir; a IA escreve o comando difêÂ­cil.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">O ambiente do arquiteto</strong><span class="text-neutral-400"> ê¢â¬â editor, terminal, GitHub e hêÂ¡bito: montar uma vez, economizar sempre.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-emerald-400 mb-2">PrÃ³ximo mÃ³dulo:</h3>
-<p class="text-neutral-300">1.4 â€” Publicar no Mundo: tirar a soluÃ§Ã£o do seu computador e colocÃ¡-la no ar para o mundo usar.</p>
+<h3 class="font-semibold text-emerald-400 mb-2">PrêÂ³ximo mêÂ³dulo:</h3>
+<p class="text-neutral-300">1.4 ê¢â¬â Publicar no Mundo: tirar a soluêÂ§êÂ£o do seu computador e colocêÂ¡-la no ar para o mundo usar.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Voltar para o Dia 1</a>
-<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-4.html">PrÃ³ximo: 1.4 Publicar no Mundo â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Voltar para o Dia 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-4.html">PrêÂ³ximo: 1.4 Publicar no Mundo ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Ãndice do mÃ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">Nesta pÃ¡gina <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="êÂndice do mêÂ³dulo" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">Nesta pêÂ¡gina <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. Pastas e arquivos</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. O terminal</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-3">3. Git e GitHub</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. HistÃ³rico e colaboraÃ§Ã£o</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. HistêÂ³rico e colaboraêÂ§êÂ£o</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-5">5. Entender o mapa</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. O ambiente do arquiteto</a></li>
 </ol>
@@ -626,21 +626,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>Arquitetura de IntenÃ§Ã£o da IA Â· MÃ©todo JARVIS â€” Dia 1 Â· MÃ³dulo 1.3</p>
+<p>Arquitetura de IntenêÂ§êÂ£o da IA êÂ· MêÂ©todo JARVIS ê¢â¬â Dia 1 êÂ· MêÂ³dulo 1.3</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-1-3#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-1-3#q1', {
           answer: 1,
           explain: {
-            0: 'NÃ£o â€” vocÃª nÃ£o precisa virar engenheiro. A meta Ã© entender o mapa, nÃ£o dominar cada detalhe.',
+            0: 'NêÂ£o ê¢â¬â vocêÂª nêÂ£o precisa virar engenheiro. A meta êÂ© entender o mapa, nêÂ£o dominar cada detalhe.',
             1: 'Isso. Perder o medo e entender o mapa: o suficiente para decidir, pedir certo e ter autonomia.',
-            2: 'Ao contrÃ¡rio â€” fugir da infraestrutura Ã© o que cria dependÃªncia. O objetivo Ã© a familiaridade que liberta.'
+            2: 'Ao contrêÂ¡rio ê¢â¬â fugir da infraestrutura êÂ© o que cria dependêÂªncia. O objetivo êÂ© a familiaridade que liberta.'
           }
         });
       }

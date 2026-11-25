@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="jarvis" name="ARCKHÉ-course"/>
+<meta content="jarvis" name="ARCKHê-course"/>
 <!-- 1) ANTI-FOUC (REL = "../..") -->
 <script>
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHê-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHê-dark'; }
       } catch (e) { p = clone(DEF); }
-      var THEMES = { 'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
-      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
+      var THEMES = { 'ARCKHê-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['ARCKHê-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
       html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
       var s = html.style; var scale = (+p.fontScale||100);
-      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--ARCKHê-font-scale', (scale/100).toString()); s.setProperty('font-size', scale+'%');
       s.setProperty('--measure', (+p.lineWidth||68)+'ch'); s.setProperty('--lh-body', (+p.leading||1.7).toString());
       var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
       s.setProperty('--font-body', fam);
@@ -36,7 +36,7 @@
   })();
   </script>
 <!-- 2) Manifesto (identico em TODAS as paginas) -->
-<script data-ARCKHÉ-manifest="" type="application/json">
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "jarvis",
     "tracks": [
@@ -67,7 +67,7 @@
     ]
   }
   </script>
-<title>Module 3.1 Â· Intent at the Center | AI Intent Architecture</title>
+<title>Module 3.1 êÂ· Intent at the Center | AI Intent Architecture</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -130,7 +130,7 @@
     html:not(.dark) .toc-link.is-active { color: #7c3aed; }
   </style>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip" href="#conteudo">Skip to content</a>
 <!-- NAV COMPLETO -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -138,10 +138,10 @@
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">ðŸ§ </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
+<span class="text-2xl">ê°Å¸Â§Â </span><span class="font-bold text-lg hidden sm:inline">Intent Architecture</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHê AI" target="_blank">ARCKHê AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
@@ -150,46 +150,46 @@
 <span class="sm:hidden">D2</span><span class="hidden sm:inline">Day 2</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html">
 <span class="sm:hidden">D3</span><span class="hidden sm:inline">Day 3</span></a>
-<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHÉ-journey-open="" title="My journey" type="button">
-<span aria-hidden="true">â—·</span><span class="hidden sm:inline">Journey</span>
-<span class="ARCKHÉ-journey-badge hidden" data-count="0" data-ARCKHÉ-journey-badge=""></span>
+<button class="ml-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-ARCKHê-journey-open="" title="My journey" type="button">
+<span aria-hidden="true">ê¢âÂ·</span><span class="hidden sm:inline">Journey</span>
+<span class="ARCKHê-journey-badge hidden" data-count="0" data-ARCKHê-journey-badge=""></span>
 </button>
 <div class="appearance-anchor">
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">â—‘</span></button>
-<div class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="">
-<div aria-label="Theme" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
-<button data-ARCKHÉ-set-theme="claro" type="button">Clear</button>
-<button data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
-<button data-ARCKHÉ-set-theme="contraste" type="button">High contrast</button>
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-neutral-300" data-ARCKHê-appearance-toggle="[data-ARCKHê-appearance]" title="Appearance and readability" type="button"><span aria-hidden="true">ê¢ââ</span></button>
+<div class="ARCKHê-appearance-pop" data-ARCKHê-appearance="">
+<div aria-label="Theme" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-theme="ARCKHê-dark" type="button">Dark</button>
+<button data-ARCKHê-set-theme="claro" type="button">Clear</button>
+<button data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button data-ARCKHê-set-theme="foco" type="button">Focus</button>
+<button data-ARCKHê-set-theme="contraste" type="button">High contrast</button>
 </div>
-<div aria-label="Source" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-font="inter" type="button">Inter</button>
-<button data-ARCKHÉ-set-font="system" type="button">System</button>
-<button data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
+<div aria-label="Source" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-font="inter" type="button">Inter</button>
+<button data-ARCKHê-set-font="system" type="button">System</button>
+<button data-ARCKHê-set-font="leitura" type="button">Reading</button>
 </div>
-<div aria-label="Text size" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="Text size" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Line width" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-linewidth="60" type="button">Narrow</button>
-<button data-ARCKHÉ-set-linewidth="68" type="button">Medium</button>
-<button data-ARCKHÉ-set-linewidth="75" type="button">Wide</button>
+<div aria-label="Line width" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-linewidth="60" type="button">Narrow</button>
+<button data-ARCKHê-set-linewidth="68" type="button">Medium</button>
+<button data-ARCKHê-set-linewidth="75" type="button">Wide</button>
 </div>
-<div aria-label="Subtext" class="ARCKHÉ-segment" role="group">
-<button data-ARCKHÉ-set-leading="1.45" type="button">Compact</button>
-<button data-ARCKHÉ-set-leading="1.7" type="button">Comfortable</button>
+<div aria-label="Subtext" class="ARCKHê-segment" role="group">
+<button data-ARCKHê-set-leading="1.45" type="button">Compact</button>
+<button data-ARCKHê-set-leading="1.7" type="button">Comfortable</button>
 </div>
-<div aria-label="Accent color" class="ARCKHÉ-accent-grid" role="group">
-<button data-ARCKHÉ-set-accent="emerald" title="Emerald" type="button"></button>
-<button data-ARCKHÉ-set-accent="blue" title="Blue" type="button"></button>
-<button data-ARCKHÉ-set-accent="purple" title="Purple" type="button"></button>
-<button data-ARCKHÉ-set-accent="amber" title="Amber" type="button"></button>
-<button data-ARCKHÉ-set-accent="teal" title="Teal" type="button"></button>
-<button data-ARCKHÉ-set-accent="rose" title="Pink" type="button"></button>
+<div aria-label="Accent color" class="ARCKHê-accent-grid" role="group">
+<button data-ARCKHê-set-accent="emerald" title="Emerald" type="button"></button>
+<button data-ARCKHê-set-accent="blue" title="Blue" type="button"></button>
+<button data-ARCKHê-set-accent="purple" title="Purple" type="button"></button>
+<button data-ARCKHê-set-accent="amber" title="Amber" type="button"></button>
+<button data-ARCKHê-set-accent="teal" title="Teal" type="button"></button>
+<button data-ARCKHê-set-accent="rose" title="Pink" type="button"></button>
 </div>
 </div>
 </div>
@@ -209,9 +209,9 @@
 <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MODULE 3.1</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸŽ¯ Intent at the Center</h1>
-<p class="text-lg text-neutral-400 max-w-3xl mb-8">Intent is the solutionâ€™s destination. Before any tool, agent, or prompt comes clarity: what to solve, for whom, what outcome matters, and how to measure it. Without a destination, any automation seems goodâ€”and none of it solves the problem. Here you install the architectâ€™s first skill.</p>
-<!-- SVG HEADER: a intenÃ§Ã£o no CENTRO, com as 4 perguntas irradiando -->
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">ê°Å¸Å½Â¯ Intent at the Center</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-8">Intent is the solutionê¢â¬â¢s destination. Before any tool, agent, or prompt comes clarity: what to solve, for whom, what outcome matters, and how to measure it. Without a destination, any automation seems goodê¢â¬âand none of it solves the problem. Here you install the architectê¢â¬â¢s first skill.</p>
+<!-- SVG HEADER: a intenêÂ§êÂ£o no CENTRO, com as 4 perguntas irradiando -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
 <svg aria-label="Intent at the center, with four questions radiating from it: what to solve, for whom, what outcome matters, and how to measure it" class="w-full h-auto" role="img" viewbox="0 0 1000 250">
 <defs>
@@ -222,14 +222,14 @@
 <marker id="m31-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
 </defs>
 <rect fill="url(#m31-grid)" height="250" width="1000" x="0" y="0"></rect>
-<!-- raios da intenÃ§Ã£o atÃ© cada pergunta (ciano = perguntas que derivam da intenÃ§Ã£o) -->
+<!-- raios da intenêÂ§êÂ£o atêÂ© cada pergunta (ciano = perguntas que derivam da intenêÂ§êÂ£o) -->
 <g fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.8">
 <path d="M430,100 C360,80 300,58 244,52" marker-end="url(#m31-ahc)"></path>
 <path d="M430,150 C360,170 300,192 244,198" marker-end="url(#m31-ahc)"></path>
 <path d="M570,100 C640,80 700,58 756,52" marker-end="url(#m31-ahc)"></path>
 <path d="M570,150 C640,170 700,192 756,198" marker-end="url(#m31-ahc)"></path>
 </g>
-<!-- nÃºcleo: a intenÃ§Ã£o -->
+<!-- nêÂºcleo: a intenêÂ§êÂ£o -->
 <g filter="url(#m31-glow)"><rect fill="#1a1230" height="64" rx="16" stroke="url(#m31-grad)" stroke-width="2.5" width="160" x="420" y="93"></rect></g>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="19" font-weight="600" text-anchor="middle" x="500" y="122">Intent</text>
 <text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="142">the destination</text>
@@ -240,7 +240,7 @@
 <g class="wf-a"><rect fill="#0e1b26" height="48" rx="11" stroke="#38bdf8" stroke-width="2" width="200" x="760" y="26"></rect><text fill="#bfe6ff" text-anchor="middle" x="860" y="47">what result</text><text fill="#9ad6ff" font-size="10.5" font-weight="400" text-anchor="middle" x="860" y="64">what success is</text></g>
 <g class="wf-a"><rect fill="#0e1b26" height="48" rx="11" stroke="#38bdf8" stroke-width="2" width="200" x="760" y="176"></rect><text fill="#bfe6ff" text-anchor="middle" x="860" y="197">how to measure</text><text fill="#9ad6ff" font-size="10.5" font-weight="400" text-anchor="middle" x="860" y="214">the metric</text></g>
 </g>
-<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="232">Every solution decision answers one of these four questionsâ€”and they all start with intent.</text>
+<text fill="#9aa4b2" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="232">Every solution decision answers one of these four questionsê¢â¬âand they all start with intent.</text>
 </svg>
 </div>
 <div class="grid grid-cols-4 gap-4 max-w-2xl mb-6">
@@ -249,46 +249,46 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Applied</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Practice</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 3.1 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHÉ-meter="modulo:3-1" role="progressbar" style="max-width:420px">
-<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHÉ-meter-frac="">0 of 6</strong> Â· <span data-ARCKHÉ-meter-pct="">0%</span></span></div>
-<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
+<div aria-label="Module 3.1 Progress" aria-valuemax="100" aria-valuemin="0" data-ARCKHê-meter="modulo:3-1" role="progressbar" style="max-width:420px">
+<div class="flex items-center justify-between text-sm text-neutral-400 mb-2"><span>Module Progress</span><span><strong class="text-neutral-200" data-ARCKHê-meter-frac="">0 of 6</strong> êÂ· <span data-ARCKHê-meter-pct="">0%</span></span></div>
+<div class="ARCKHê-bar"><div class="ARCKHê-bar__fill" data-ARCKHê-meter-fill=""></div></div>
 </div>
 </div>
 </header>
 <!-- CORPO + TOC -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
 <main id="conteudo">
-<!-- TÃ“PICO 1 -->
-<section class="mb-16" data-ARCKHÉ-module="3-1" data-ARCKHÉ-topic="modulo-3-1#topico-1" data-ARCKHÉ-track="3" id="topico-1">
+<!-- TêâPICO 1 -->
+<section class="mb-16" data-ARCKHê-module="3-1" data-ARCKHê-topic="modulo-3-1#topico-1" data-ARCKHê-track="3" id="topico-1">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">ðŸŽ¯ Intent is the destination</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Å½Â¯ Intent is the destination</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t1-p1">Intent is the <strong class="text-purple-400">result you want to achieve</strong> with the solution â€” the destination that guides every decision afterward. Which channel to use, which agent to create, which tool to connect: everything is decided by looking at the intent. It is neither the task nor the tool; it is the destination. And without a clear destination, any path seems good â€” because you have nothing to compare it against.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-1-t1-p1">Intent is the <strong class="text-purple-400">result you want to achieve</strong> with the solution ê¢â¬â the destination that guides every decision afterward. Which channel to use, which agent to create, which tool to connect: everything is decided by looking at the intent. It is neither the task nor the tool; it is the destination. And without a clear destination, any path seems good ê¢â¬â because you have nothing to compare it against.</p>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸ§­</span> Intent as the destination</h3>
-<p class="text-neutral-300">Think of a trip. Without a destination, you drive well, burn fuel, cover milesâ€”and don't get anywhere in particular. With a destination, every turn has a criterion: does it bring you closer or take you farther away? Intent does the same for your AI solution. It turns "doing things with AI" into "achieving a result with AI."</p>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â­</span> Intent as the destination</h3>
+<p class="text-neutral-300">Think of a trip. Without a destination, you drive well, burn fuel, cover milesê¢â¬âand don't get anywhere in particular. With a destination, every turn has a criterion: does it bring you closer or take you farther away? Intent does the same for your AI solution. It turns "doing things with AI" into "achieving a result with AI."</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">âœ“ With intent</h4>
+<h4 class="font-bold text-purple-400 mb-4">ê¢Åâ With intent</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>Each choice has a clear criterion.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>You can say â€œthis doesnâ€™t serve the goal.â€</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>The result can be recognized.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>The effort converges in one place.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>Each choice has a clear criterion.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>You can say ê¢â¬Åthis doesnê¢â¬â¢t serve the goal.ê¢â¬Â</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>The result can be recognized.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>The effort converges in one place.</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— No intent</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ No intent</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Any automation seems like a good idea.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>Nothing seems insufficientâ€”or sufficient.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>You switch tools without a clear reason.</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>A lot of activity, little direction.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Any automation seems like a good idea.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>Nothing seems insufficientê¢â¬âor sufficient.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>You switch tools without a clear reason.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>A lot of activity, little direction.</span></li>
 </ul>
 </div>
 </div>
@@ -296,28 +296,28 @@
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Destination</div><div class="text-xs text-neutral-400">the destination</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Criterion</div><div class="text-xs text-neutral-400">does it bring you closer or push you away?</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Direction Ã— motion</div><div class="text-xs text-neutral-400">just moving isn't enough</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Direction êâ motion</div><div class="text-xs text-neutral-400">just moving isn't enough</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">In service of the</div><div class="text-xs text-neutral-400">result</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 2 -->
-<section class="mb-16" data-ARCKHÉ-module="3-1" data-ARCKHÉ-topic="modulo-3-1#topico-2" data-ARCKHÉ-track="3" id="topico-2">
+<!-- TêâPICO 2 -->
+<section class="mb-16" data-ARCKHê-module="3-1" data-ARCKHê-topic="modulo-3-1#topico-2" data-ARCKHê-track="3" id="topico-2">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">â“ What we want to solve</h2>
+<h2 class="text-2xl font-bold">ê¢Ââ What we want to solve</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t2-p1">The first question of intent is to name, precisely, <strong class="text-purple-400">the problem the solution will tackle</strong>. The most common mistake is confusing the desire to â€œuse AIâ€ with a problem. â€œI want to use AI in customer serviceâ€ isnâ€™t a problemâ€”itâ€™s a vague desire. â€œThe customer waits 4 hours for a simple answer and gives upâ€ is a problem. The difference? The second one hurts, is concrete, and can be checked to see whether it was solved.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-1-t2-p1">The first question of intent is to name, precisely, <strong class="text-purple-400">the problem the solution will tackle</strong>. The most common mistake is confusing the desire to ê¢â¬Åuse AIê¢â¬Â with a problem. ê¢â¬ÅI want to use AI in customer serviceê¢â¬Â isnê¢â¬â¢t a problemê¢â¬âitê¢â¬â¢s a vague desire. ê¢â¬ÅThe customer waits 4 hours for a simple answer and gives upê¢â¬Â is a problem. The difference? The second one hurts, is concrete, and can be checked to see whether it was solved.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Vague Ã— specific â€” write yours</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Vague êâ specific ê¢â¬â write yours</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-red-400">vague:</span>      "I want to use AI in sales"</div>
 <div><span class="text-purple-400">specific:</span> "reduce lead response time from 4h to 5min"</div>
@@ -327,42 +327,42 @@
 <p class="text-xs text-neutral-500 mt-3">If the sentence doesn't fit in one clear line, it's still too vague.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">To test whether a problem is well defined, ask: "who is affected by this, and what changes when we solve it?". If you can't answer in one sentence, the problem is still vagueâ€”and a solution to a vague problem solves nothing.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">To test whether a problem is well defined, ask: "who is affected by this, and what changes when we solve it?". If you can't answer in one sentence, the problem is still vagueê¢â¬âand a solution to a vague problem solves nothing.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Key concepts</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Specific</div><div class="text-xs text-neutral-400">Ã— vague desire</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Specific</div><div class="text-xs text-neutral-400">êâ vague desire</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Concrete pain point</div><div class="text-xs text-neutral-400">fits in one sentence</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Scope</div><div class="text-xs text-neutral-400">of the scope</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Half of the</div><div class="text-xs text-neutral-400">solution</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 3 -->
-<section class="mb-16" data-ARCKHÉ-module="3-1" data-ARCKHÉ-topic="modulo-3-1#topico-3" data-ARCKHÉ-track="3" id="topico-3">
+<!-- TêâPICO 3 -->
+<section class="mb-16" data-ARCKHê-module="3-1" data-ARCKHê-topic="modulo-3-1#topico-3" data-ARCKHê-track="3" id="topico-3">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">ðŸ‘¤ Who we want to help</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ¤ Who we want to help</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t3-p1">Every solution serves <strong class="text-purple-400">someone specific</strong>: the end customer, the support representative, the manager, the business owner. Each audience changes everythingâ€”the response tone, the right channel, what counts as success. A solution for the customer needs to be simple and fast; the same goal, aimed at the manager, needs reporting and visibility. Trying to solve things â€œfor everyoneâ€ effectively means solving them for no one.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-1-t3-p1">Every solution serves <strong class="text-purple-400">someone specific</strong>: the end customer, the support representative, the manager, the business owner. Each audience changes everythingê¢â¬âthe response tone, the right channel, what counts as success. A solution for the customer needs to be simple and fast; the same goal, aimed at the manager, needs reporting and visibility. Trying to solve things ê¢â¬Åfor everyoneê¢â¬Â effectively means solving them for no one.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ›ï¸</div><h4 class="font-semibold text-neutral-100 mb-1">End customer</h4><p class="text-xs text-neutral-400">Wants a quick, simple answer.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸŽ§</div><h4 class="font-semibold text-neutral-100 mb-1">Support agent</h4><p class="text-xs text-neutral-400">Wants to serve more people without getting overwhelmed.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ“Š</div><h4 class="font-semibold text-neutral-100 mb-1">Manager</h4><p class="text-xs text-neutral-400">Wants a clearer view and better decisions.</p></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ðŸ‘”</div><h4 class="font-semibold text-neutral-100 mb-1">Owner</h4><p class="text-xs text-neutral-400">Wants results and growth.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âºÂê¯Â¸Â</div><h4 class="font-semibold text-neutral-100 mb-1">End customer</h4><p class="text-xs text-neutral-400">Wants a quick, simple answer.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸Å½Â§</div><h4 class="font-semibold text-neutral-100 mb-1">Support agent</h4><p class="text-xs text-neutral-400">Wants to serve more people without getting overwhelmed.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸âÅ </div><h4 class="font-semibold text-neutral-100 mb-1">Manager</h4><p class="text-xs text-neutral-400">Wants a clearer view and better decisions.</p></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><div class="text-2xl mb-2">ê°Å¸ââ</div><h4 class="font-semibold text-neutral-100 mb-1">Owner</h4><p class="text-xs text-neutral-400">Wants results and growth.</p></div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ðŸŽ¯</span> Who feels it Ã— who decides</h3>
-<p class="text-neutral-300 text-sm">Often, the person who feels the pain and the person who decides on the solution are different. The support agent feels the overload; the manager decides to invest. Knowing who youâ€™re solving the problem forâ€”and who needs to see the benefitsâ€”determines how the solution is designed and presented.</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Å½Â¯</span> Who feels it êâ who decides</h3>
+<p class="text-neutral-300 text-sm">Often, the person who feels the pain and the person who decides on the solution are different. The support agent feels the overload; the manager decides to invest. Knowing who youê¢â¬â¢re solving the problem forê¢â¬âand who needs to see the benefitsê¢â¬âdetermines how the solution is designed and presented.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Key concepts</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
@@ -372,30 +372,30 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Focus</div><div class="text-xs text-neutral-400">in the user</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 4 -->
-<section class="mb-16" data-ARCKHÉ-module="3-1" data-ARCKHÉ-topic="modulo-3-1#topico-4" data-ARCKHÉ-track="3" id="topico-4">
+<!-- TêâPICO 4 -->
+<section class="mb-16" data-ARCKHê-module="3-1" data-ARCKHê-topic="modulo-3-1#topico-4" data-ARCKHê-track="3" id="topico-4">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">ðŸ† Which result matters</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Ââ  Which result matters</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t4-p1">Before building, define what the <strong class="text-purple-400">"before" and "after"</strong> â€” the concrete result that proves the solution worked. This is the antidote to the most common trap in AI projects: â€œit looks nice, but nothing changed.â€ A defined result ties the solution to a real gain, not an impression of modernity.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-1-t4-p1">Before building, define what the <strong class="text-purple-400">"before" and "after"</strong> ê¢â¬â the concrete result that proves the solution worked. This is the antidote to the most common trap in AI projects: ê¢â¬Åit looks nice, but nothing changed.ê¢â¬Â A defined result ties the solution to a real gain, not an impression of modernity.</p>
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Describe the â€œbeforeâ€</h4><p class="text-neutral-300 text-sm">What things are like today, without the solution: how much time, how many errors, how much waiting.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Describe the ê¢â¬Åbeforeê¢â¬Â</h4><p class="text-neutral-300 text-sm">What things are like today, without the solution: how much time, how many errors, how much waiting.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Describe the â€œafterâ€</h4><p class="text-neutral-300 text-sm">What will it look like when it works? Thatâ€™s the result youâ€™re working toward.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-neutral-100 mb-1">Describe the ê¢â¬Åafterê¢â¬Â</h4><p class="text-neutral-300 text-sm">What will it look like when it works? Thatê¢â¬â¢s the result youê¢â¬â¢re working toward.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
@@ -404,48 +404,48 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
-<h4 class="font-bold text-purple-400 mb-4">âœ“ Concrete result</h4>
+<h4 class="font-bold text-purple-400 mb-4">ê¢Åâ Concrete result</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>"Answer in 5 min, not 4 hours."</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>"80% of questions resolved without a human."</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400">âœ“</span><span>"2h a day returned to the team."</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>"Answer in 5 min, not 4 hours."</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>"80% of questions resolved without a human."</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">ê¢Åâ</span><span>"2h a day returned to the team."</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">âœ— Vague impression</h4>
+<h4 class="font-bold text-red-400 mb-4">ê¢Åâ Vague impression</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"It looks more modern."</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"People thought it was cool."</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">âœ—</span><span>"Now we use AI."</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"It looks more modern."</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"People thought it was cool."</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">ê¢Åâ</span><span>"Now we use AI."</span></li>
 </ul>
 </div>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Key concepts</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Before Ã— after</div><div class="text-xs text-neutral-400">the leap</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Before êâ after</div><div class="text-xs text-neutral-400">the leap</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Success</div><div class="text-xs text-neutral-400">defined beforehand</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Concrete gain</div><div class="text-xs text-neutral-400">Ã— impression</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Concrete gain</div><div class="text-xs text-neutral-400">êâ impression</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ties together</div><div class="text-xs text-neutral-400">value proposition</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 5 -->
-<section class="mb-16" data-ARCKHÉ-module="3-1" data-ARCKHÉ-topic="modulo-3-1#topico-5" data-ARCKHÉ-track="3" id="topico-5">
+<!-- TêâPICO 5 -->
+<section class="mb-16" data-ARCKHê-module="3-1" data-ARCKHê-topic="modulo-3-1#topico-5" data-ARCKHê-track="3" id="topico-5">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">ðŸ“ How Weâ€™ll Measure</h2>
+<h2 class="text-2xl font-bold">ê°Å¸âÂ How Weê¢â¬â¢ll Measure</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t5-p1">Measurement isnâ€™t the last stepâ€”it starts <strong class="text-purple-400">along with the intent</strong>. While youâ€™re designing, choose the number that will tell you whether it worked: time saved, customer requests resolved, errors reduced, recovered sales. If you donâ€™t decide on the metric at the start, you end up measuring whatever is easy at the endâ€”and almost always fool yourself with numbers that mean nothing.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-1-t5-p1">Measurement isnê¢â¬â¢t the last stepê¢â¬âit starts <strong class="text-purple-400">along with the intent</strong>. While youê¢â¬â¢re designing, choose the number that will tell you whether it worked: time saved, customer requests resolved, errors reduced, recovered sales. If you donê¢â¬â¢t decide on the metric at the start, you end up measuring whatever is easy at the endê¢â¬âand almost always fool yourself with numbers that mean nothing.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">The intent metricâ€”fill it in</h3>
+<h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">The intent metricê¢â¬âfill it in</h3>
 <div class="font-mono text-sm text-neutral-300 space-y-1.5 bg-dark-900/60 rounded-lg p-4 border border-dark-700">
 <div><span class="text-purple-400">what_to_measure:</span>   _____________________________</div>
 <div><span class="text-purple-400">valor_hoje:</span>    _____________________________</div>
@@ -453,11 +453,11 @@
 <div><span class="text-purple-400">como_coletar:</span>  _____________________________</div>
 <div><span class="text-purple-400">when_to_measure:</span>  _____________________________</div>
 </div>
-<p class="text-xs text-neutral-500 mt-3">If you canâ€™t fill in "valor_hoje," you donâ€™t understand the problem well enough yet.</p>
+<p class="text-xs text-neutral-500 mt-3">If you canê¢â¬â¢t fill in "valor_hoje," you donê¢â¬â¢t understand the problem well enough yet.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Practical tip</h3>
-<p class="text-neutral-300 text-sm">Measure intent, not effort. "I ran 200 prompts" is effort. "Response time dropped from 4 hours to 8 minutes" is intent. The number that matters is the one that shows the problem being solvedâ€”not how much you worked.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ê°Å¸âÂ¡</span> Practical tip</h3>
+<p class="text-neutral-300 text-sm">Measure intent, not effort. "I ran 200 prompts" is effort. "Response time dropped from 4 hours to 8 minutes" is intent. The number that matters is the one that shows the problem being solvedê¢â¬ânot how much you worked.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Key concepts</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
@@ -467,88 +467,88 @@
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Against</div><div class="text-xs text-neutral-400">the illusion</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- TÃ“PICO 6 -->
-<section class="mb-16" data-ARCKHÉ-module="3-1" data-ARCKHÉ-topic="modulo-3-1#topico-6" data-ARCKHÉ-track="3" id="topico-6">
+<!-- TêâPICO 6 -->
+<section class="mb-16" data-ARCKHê-module="3-1" data-ARCKHê-topic="modulo-3-1#topico-6" data-ARCKHê-track="3" id="topico-6">
 <div class="flex items-start justify-between gap-4 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">ðŸ§­ Clarity as the first skill</h2>
+<h2 class="text-2xl font-bold">ê°Å¸Â§Â­ Clarity as the first skill</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-doubt-toggle="" title="Mark a question on this topic" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t6-p1">The most valuable skill for an intent architect isnâ€™t technicalâ€”itâ€™s <strong class="text-purple-400">think clearly</strong>. Define the problem, audience, outcome, and measure before touching any tool. Tools change every week; clarity is what makes any tool deliver. Itâ€™s the only asset that doesnâ€™t become obsoleteâ€”and itâ€™s what separates those who deliver from those stuck chasing the next new thing.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHê-block="m3-1-t6-p1">The most valuable skill for an intent architect isnê¢â¬â¢t technicalê¢â¬âitê¢â¬â¢s <strong class="text-purple-400">think clearly</strong>. Define the problem, audience, outcome, and measure before touching any tool. Tools change every week; clarity is what makes any tool deliver. Itê¢â¬â¢s the only asset that doesnê¢â¬â¢t become obsoleteê¢â¬âand itê¢â¬â¢s what separates those who deliver from those stuck chasing the next new thing.</p>
 <div class="space-y-3 mb-6">
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-purple-400 text-xl flex-shrink-0">â‘ </span><div><strong class="text-neutral-100">Clarity first</strong><p class="text-sm text-neutral-400 mt-1">Problem, audience, outcome, and metricâ€”in writing, not just in your head.</p></div></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-purple-400 text-xl flex-shrink-0">â‘¡</span><div><strong class="text-neutral-100">After the architecture</strong><p class="text-sm text-neutral-400 mt-1">Only then do you decide on channels, agents, and toolsâ€”guided by intent.</p></div></div>
-<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-purple-400 text-xl flex-shrink-0">â‘¢</span><div><strong class="text-neutral-100">The tool comes last</strong><p class="text-sm text-neutral-400 mt-1">The tool is the part that changes the most and matters the least at first.</p></div></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-purple-400 text-xl flex-shrink-0">ê¢âÂ </span><div><strong class="text-neutral-100">Clarity first</strong><p class="text-sm text-neutral-400 mt-1">Problem, audience, outcome, and metricê¢â¬âin writing, not just in your head.</p></div></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-purple-400 text-xl flex-shrink-0">ê¢âÂ¡</span><div><strong class="text-neutral-100">After the architecture</strong><p class="text-sm text-neutral-400 mt-1">Only then do you decide on channels, agents, and toolsê¢â¬âguided by intent.</p></div></div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 flex items-start gap-4"><span class="text-purple-400 text-xl flex-shrink-0">ê¢âÂ¢</span><div><strong class="text-neutral-100">The tool comes last</strong><p class="text-sm text-neutral-400 mt-1">The tool is the part that changes the most and matters the least at first.</p></div></div>
 </div>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ðŸ§­</span> The asset that never ages</h3>
-<p class="text-neutral-300">Those who learn a tool master a tool. Those who learn to think clearly master every tool that comes along. A well-defined intention is what makes the rest of the courseâ€”architecture, prototype, measurementâ€”work. Without it, every subsequent module becomes a disconnected attempt.</p>
+<h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">ê°Å¸Â§Â­</span> The asset that never ages</h3>
+<p class="text-neutral-300">Those who learn a tool master a tool. Those who learn to think clearly master every tool that comes along. A well-defined intention is what makes the rest of the courseê¢â¬âarchitecture, prototype, measurementê¢â¬âwork. Without it, every subsequent module becomes a disconnected attempt.</p>
 </div>
 <h3 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">Key concepts</h3>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Clarity</div><div class="text-xs text-neutral-400">the first skill</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Thinking Ã— execution</div><div class="text-xs text-neutral-400">in that order</div></div>
-<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Doesnâ€™t become obsolete</div><div class="text-xs text-neutral-400">tools change</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Thinking êâ execution</div><div class="text-xs text-neutral-400">in that order</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Doesnê¢â¬â¢t become obsolete</div><div class="text-xs text-neutral-400">tools change</div></div>
 <div class="bg-dark-800 rounded-lg border border-dark-600 p-4"><div class="text-purple-400 font-bold text-sm mb-1">Base</div><div class="text-xs text-neutral-400">of every solution</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
-<span aria-hidden="true" class="ARCKHÉ-ico-todo">â—‹</span><span aria-hidden="true" class="ARCKHÉ-ico-done">â—</span>
-<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHê-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHê-ico-todo">ê¢ââ¹</span><span aria-hidden="true" class="ARCKHê-ico-done">ê¢âÂ</span>
+<span class="ARCKHê-label-todo">Mark as read</span><span class="ARCKHê-label-done">Read</span>
 </button>
 </div>
 </section>
-<!-- CHECAGEM LEVE (opcional, nÃ£o bloqueia) -->
-<div class="ARCKHÉ-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-3-1#q1">
+<!-- CHECAGEM LEVE (opcional, nêÂ£o bloqueia) -->
+<div class="ARCKHê-check mt-4 mb-12 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHê-check="modulo-3-1#q1">
 <p class="font-medium mb-4">Self-check (optional): why does intent come before the tool?</p>
-<div class="ARCKHÉ-check-options space-y-2">
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Because the right tool solves any problem on its own.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Because without a clear destination, any automation seems good, but nothing truly gets solved.</button>
-<button class="ARCKHÉ-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Because tools are expensive and intent is free.</button>
+<div class="ARCKHê-check-options space-y-2">
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="0" type="button">Because the right tool solves any problem on its own.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="1" type="button">Because without a clear destination, any automation seems good, but nothing truly gets solved.</button>
+<button class="ARCKHê-check__option block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHê-check-option="2" type="button">Because tools are expensive and intent is free.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHê-check-feedback="" role="status"></div>
 </div>
 <!-- RESUMO -->
 <section class="mb-8">
 <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸŽ¯</span> Module summary</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ê°Å¸Å½Â¯</span> Module summary</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Intent is the destination</strong><span class="text-neutral-400"> â€” guides every decision; without it, any path seems good.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">What to solve</strong><span class="text-neutral-400"> â€” a specific problem that hurts, not the vague desire to "use AI".</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">For whom</strong><span class="text-neutral-400"> â€” one audience determines the tone, channel, and what counts as success.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">What result</strong><span class="text-neutral-400"> â€” define â€œbeforeâ€ and â€œafterâ€; concrete gains, not impressions.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">How to measure</strong><span class="text-neutral-400"> â€” the metric starts with intent; measure intent, not effort.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-neutral-100">Clarity first</strong><span class="text-neutral-400"> â€” the architectâ€™s first skill; an asset that never gets old.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Intent is the destination</strong><span class="text-neutral-400"> ê¢â¬â guides every decision; without it, any path seems good.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">What to solve</strong><span class="text-neutral-400"> ê¢â¬â a specific problem that hurts, not the vague desire to "use AI".</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">For whom</strong><span class="text-neutral-400"> ê¢â¬â one audience determines the tone, channel, and what counts as success.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">What result</strong><span class="text-neutral-400"> ê¢â¬â define ê¢â¬Åbeforeê¢â¬Â and ê¢â¬Åafterê¢â¬Â; concrete gains, not impressions.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">How to measure</strong><span class="text-neutral-400"> ê¢â¬â the metric starts with intent; measure intent, not effort.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">ê¢Åâ</span><div><strong class="text-neutral-100">Clarity first</strong><span class="text-neutral-400"> ê¢â¬â the architectê¢â¬â¢s first skill; an asset that never gets old.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
 <h3 class="font-semibold text-purple-400 mb-2">Next module:</h3>
-<p class="text-neutral-300">3.2 â€” Map the Problem: understand the company and see where AI can multiply results.</p>
+<p class="text-neutral-300">3.2 ê¢â¬â Map the Problem: understand the company and see where AI can multiply results.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">â† Back to Day 3</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-2.html">Next: 3.2 Map the Problem â†’</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">ê¢â Â Back to Day 3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-2.html">Next: 3.2 Map the Problem ê¢â â</a>
 </div>
 </div>
 </section>
 </main>
 <!-- TOC STICKY + SCROLLSPY -->
 <aside class="hidden lg:block">
-<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHÉ-toc="">
-<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHÉ-section-counter=""></span></p>
+<nav aria-label="Module index" class="sticky top-20 self-start text-sm" data-ARCKHê-toc="">
+<p class="text-neutral-400 mb-3 font-medium">On this page <span class="text-neutral-500" data-ARCKHê-section-counter=""></span></p>
 <ol class="space-y-2 border-l border-dark-600 pl-4">
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-1">1. Intent is the destination</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. What We Want to Solve</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. Who we want to solve this for</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. Which result matters</a></li>
-<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. How weâ€™ll measure</a></li>
+<li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. How weê¢â¬â¢ll measure</a></li>
 <li><a class="toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. Clarity as the first skill</a></li>
 </ol>
 </nav>
@@ -556,21 +556,21 @@
 </div>
 <footer class="border-t border-dark-600 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>AI Intent Architecture Â· JARVIS Method â€” Day 3 Â· Module 3.1</p>
+<p>AI Intent Architecture êÂ· JARVIS Method ê¢â¬â Day 3 êÂ· Module 3.1</p>
 </div>
 </footer>
 <!-- learn.js + init + checagem -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
-      if (ARCKHÉ.registerCheck) {
-        ARCKHÉ.registerCheck('modulo-3-1#q1', {
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
+      if (ARCKHê.registerCheck) {
+        ARCKHê.registerCheck('modulo-3-1#q1', {
           answer: 1,
           explain: {
-            0: 'NÃ£o â€” nenhuma ferramenta resolve sozinha; ela sÃ³ serve a uma intenÃ§Ã£o clara.',
-            1: 'Isso. A intenÃ§Ã£o Ã© o destino: sem ela, qualquer automaÃ§Ã£o parece boa e nada resolve de fato.',
-            2: 'Quase â€” custo existe, mas o ponto Ã© direÃ§Ã£o: sem intenÃ§Ã£o, falta critÃ©rio para qualquer escolha.'
+            0: 'NêÂ£o ê¢â¬â nenhuma ferramenta resolve sozinha; ela sêÂ³ serve a uma intenêÂ§êÂ£o clara.',
+            1: 'Isso. A intenêÂ§êÂ£o êÂ© o destino: sem ela, qualquer automaêÂ§êÂ£o parece boa e nada resolve de fato.',
+            2: 'Quase ê¢â¬â custo existe, mas o ponto êÂ© direêÂ§êÂ£o: sem intenêÂ§êÂ£o, falta critêÂ©rio para qualquer escolha.'
           }
         });
       }
